@@ -1,0 +1,1 @@
+warproom=room_househub_extra
