@@ -19,7 +19,7 @@ if global.cutscenestate=2 && !audio_is_playing(snd_bossintro1_line2) && talking=
 	global.cutscenestate=3
 	talking=false
 }
-if global.cutscenestate=4 && !audio_is_playing(snd_bossintro1_line4) && talking=true
+if (global.cutscenestate=4 && !audio_is_playing(snd_bossintro1_line4) && talking=true) || ((keyboard_check_pressed(ord("C"))) || (gamepad_button_check_pressed(0, gp_face3)))
 {
 	global.cutscenestate=5
 	talking=false
@@ -39,5 +39,9 @@ if global.cutscenestate=1 || global.cutscenestate=3
 if global.cutscenestate=5
 {
 	instance_destroy()
+	audio_stop_sound(snd_bossintro1_line1_y)
+	audio_stop_sound(snd_bossintro1_line2)
+	audio_stop_sound(snd_bossintro1_line3_y)
+	audio_stop_sound(snd_bossintro1_line4)
 	instance_create_depth(x,y,depth,obj_electrobot)
 }

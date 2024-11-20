@@ -13,4 +13,5 @@ if hide=false && !(room=room_chillfields_boss) {
 }
 if hide=false && (room=room_chillfields_boss) {
 	health_system_hearts(spr_pizza);
+	boss_health_hearts(spr_fringleglasses);
 }

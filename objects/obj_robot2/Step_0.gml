@@ -21,7 +21,7 @@ if spotted=true && shoottimer=0
 {
 	instance_create_depth(x-32,y-8,depth+1,obj_robot2_boolet,
 	{
-		dir:image_xscale
+		dir:-image_xscale
 	});
 	audio_play_sound(snd_shoot,1,false)
 	sprite_index=spr_robot2_shoot

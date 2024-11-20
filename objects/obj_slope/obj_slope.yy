@@ -9,7 +9,10 @@
     "name":"levelobjs",
     "path":"folders/Objects/levelobjs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_collision",
+    "path":"objects/obj_collision/obj_collision.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,5 +35,5 @@
     "path":"sprites/spr_slope/spr_slope.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

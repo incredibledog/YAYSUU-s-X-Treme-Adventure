@@ -36,4 +36,5 @@ if global.cutscenestate=5
 {
 	instance_destroy()
 	instance_create_depth(x,y,depth,obj_player)
+	instance_create_layer(0,0,"gui",obj_mobilecontrols)
 }

@@ -7,3 +7,10 @@ if room=room_tutorial
 else {
 global.subtitlefont=font_add_sprite_ext(spr_subtitlefont, "()[]!#$%'*,.?@^abcdefghijklmnopqrstuvwxyz~{}0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",false,0)
 }
+if os_type=os_android
+{
+	yoff=96
+}
+else {
+	yoff=0
+}

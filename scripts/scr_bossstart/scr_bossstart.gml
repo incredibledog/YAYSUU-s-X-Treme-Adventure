@@ -17,6 +17,7 @@ function bossstart()
 		instance_create_layer(32,64,"gui",obj_hud)
 	}
 	instance_create_layer(0,0,"endlevel",obj_fadeblack)
+	instance_create_layer(320,160,"endlevel",obj_stageclear)
 	instance_create_layer(32,416,"gui",obj_lives)
 	instance_create_layer(128,416,"gui",obj_subtitle)
 	instance_create_layer(0,0,"gui",obj_pause)

@@ -9,7 +9,7 @@ if st=0
 {
 	image_alpha=1
 }
-if key_start && st=0
+if key_start && st=0 || ev_gesture_tap && st=0
 {
 	obj_fadeblack.fading=true
 	audio_play_sound(snd_confirm,1,false)

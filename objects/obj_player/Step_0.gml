@@ -2,7 +2,7 @@ key_left = (keyboard_check(vk_left) || keyboard_check(ord("A"))) || gamepad_axis
 key_right = (keyboard_check(vk_right) || keyboard_check(ord("D"))) || gamepad_axis_value(0, gp_axislh) > 0.352 || gamepad_button_check(0, gp_padr);
 key_up = (keyboard_check(vk_up) || keyboard_check(ord("W"))) || gamepad_axis_value(0, gp_axislv) < -0.352 || gamepad_button_check(0, gp_padl);
 key_jump = (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(0, gp_face1)
-key_dash = (keyboard_check_pressed(ord("X")) || keyboard_check_pressed(ord("E"))) || gamepad_button_check_pressed(0, gp_face4)
+key_dash = (keyboard_check_pressed(ord("X")) || keyboard_check_pressed(ord("E"))) || keyboard_check_pressed(vk_control) || gamepad_button_check_pressed(0, gp_face4)
 key_run = (keyboard_check(ord("C")) || keyboard_check(vk_shift)) || gamepad_button_check(0, gp_face3)
 key_down = (keyboard_check(vk_down) || keyboard_check(ord("S"))) || gamepad_axis_value(0, gp_axislv) > 0.352 || gamepad_button_check(0, gp_padd) || gamepad_button_check(0, gp_face2)
 key_downp = (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))) || gamepad_button_check_pressed(0, gp_face2) || gamepad_button_check_pressed(0, gp_padd)
@@ -175,7 +175,7 @@ if ((place_meeting(x, y, obj_die)) && global.hp > 0)
 {
     global.hp = 0
 }
-if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) || keyboard_check_pressed(ord("O"))) && global.hp > 0 && (hurtt == 0 || keyboard_check_pressed(ord("O"))) && (!winning))
+if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) || (instance_exists(obj_boss) && (place_meeting(x, y, obj_boss)) && obj_boss.vulnerable=false && obj_boss.cooldown=false ) || keyboard_check_pressed(ord("O"))) && global.hp > 0 && (hurtt == 0 || keyboard_check_pressed(ord("O"))) && (!winning))
 {
     hurtd = 1
     obj_camera.vshakeoffset = 30

@@ -19,7 +19,13 @@ if begintimer>0
 }
 if begintimer=0 && results=true && bangtime=false
 {
-	display=1
+	if room=room_chillfields_boss
+	{
+		display=4
+	}
+	else {
+		display=1
+	}
 	bangtime=true
 	audio_play_sound(snd_bang,1,false)
 	bangtimer=room_speed*0.25
@@ -36,7 +42,7 @@ if bangtimer=0 && display>0 && display<4
 }
 if hide=false
 {
-	nextkey=keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_face1)
+	nextkey=keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_alt) || gamepad_button_check_pressed(0,gp_face1)
 	retrykey=keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_shift) || gamepad_button_check_pressed(0,gp_face2)
 	image_xscale=clamp(image_xscale,1,2)
 	image_yscale=clamp(image_yscale,1,2)
@@ -53,7 +59,12 @@ if hide=false
 	{
 		image_alpha+=0.01
 	}
-	if nextkey && display>=4
+	if display>=4
+	{
+		virtual_key_add(224,416,96,32,vk_enter)
+		virtual_key_add(320,416,96,32,vk_shift)
+	}
+	if (nextkey && display>=4) || (keyboard_check_pressed(vk_f6) && display>=4) 
 	{
 		hide=true
 		display=0
