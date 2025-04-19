@@ -10,7 +10,7 @@ if instance_exists(obj_goalflag)
 }
 if hide=false
 {
-	if timer=room_speed
+	if timer=60
 	{
 		seconds+=1
 		timebonus-=10

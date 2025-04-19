@@ -14,7 +14,8 @@ if os_type=os_android
 {
 	draw_text(32,160,"ANDROID DETECTED")
 }
-else {
+else
+{
 	if window_get_fullscreen()
 	{
 		draw_text(32,160,"FULLSCREEN  ON")
@@ -40,10 +41,11 @@ else
 {
 	draw_text(32,224,"BORDERS  OFF")
 }
-draw_text(32,256,"RESET RECORDS")
-draw_text(32,288,"RESET 2 DEFAULT")
-draw_text(32,320,"SAVE N QUIT")
-draw_text(32,352,"QUIT")
+draw_text(32,256,"CHOOSE INPUT")
+draw_text(32,288,"RESET RECORDS")
+draw_text(32,320,"RESET 2 DEFAULT")
+draw_text(32,352,"SAVE N QUIT")
+draw_text(32,384,"QUIT")
 switch chos
 {
 	case 1:
@@ -76,5 +78,8 @@ switch chos
 	break;
 	case 9:
 	draw_sprite(spr_cursor_options,0,0,352)
+	break;
+	case 10:
+	draw_sprite(spr_cursor_options,0,0,384)
 	break;
 }
