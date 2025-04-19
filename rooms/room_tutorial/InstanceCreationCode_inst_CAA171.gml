@@ -1,0 +1,1 @@
+hintsound=snd_tutorialvo1

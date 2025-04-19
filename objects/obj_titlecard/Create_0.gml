@@ -14,6 +14,18 @@ switch room {
 	case room_chillfields_2b:
 	image_alpha=0
 	break;
+	case room_chillfields_2c:
+	image_alpha=0
+	break;
+	case room_chillfields_2d:
+	image_alpha=0
+	break;
+	case room_mysticmanor_1:
+	sprite_index=spr_mysticmanor1 
+	break;
+	case room_glowstickcity:
+	sprite_index=spr_glowstickcity
+	break;
 	case room_tutorial:
 	sprite_index=spr_tutorial
 	break;

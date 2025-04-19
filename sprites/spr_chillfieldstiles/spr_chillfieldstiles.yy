@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_chillfieldstiles",
   "bboxMode":0,
-  "bbox_bottom":63,
+  "bbox_bottom":127,
   "bbox_left":32,
   "bbox_right":511,
   "bbox_top":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"43cfa181-d733-4972-8e17-81f066889c11","name":"43cfa181-d733-4972-8e17-81f066889c11","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9c90a3fd-6f11-43a4-81b5-d178849bf23e","name":"9c90a3fd-6f11-43a4-81b5-d178849bf23e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":128,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"72050d3a-60a5-4680-8192-d4d4626f996b","blendMode":0,"displayName":"default","isLocked":false,"name":"72050d3a-60a5-4680-8192-d4d4626f996b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"dc1f5c94-0c60-44cb-aa6c-00bc2f2080b5","blendMode":0,"displayName":"default","isLocked":false,"name":"dc1f5c94-0c60-44cb-aa6c-00bc2f2080b5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_chillfieldstiles",
   "nineSlice":null,
@@ -32,7 +32,7 @@
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
-    "$GMSequence":"",
+    "$GMSequence":"v1",
     "%Name":"spr_chillfieldstiles",
     "autoRecord":true,
     "backdropHeight":768,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"43cfa181-d733-4972-8e17-81f066889c11","path":"sprites/spr_chillfieldstiles/spr_chillfieldstiles.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"019eb83e-2f64-47bc-8ad6-ab0a78d43026","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9c90a3fd-6f11-43a4-81b5-d178849bf23e","path":"sprites/spr_chillfieldstiles/spr_chillfieldstiles.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1deb063b-084b-4996-a332-0d321ca251be","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

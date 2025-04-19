@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.377125,
+  "duration":6.426083,
   "name":"snd_extralife",
   "parent":{
     "name":"Sounds",

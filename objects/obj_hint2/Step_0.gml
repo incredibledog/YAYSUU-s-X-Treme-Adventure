@@ -30,14 +30,7 @@ if room=room_tutorial
 {
 	if global.char="Y"
 	{
-		if !gamepad_is_connected(0)
-		{
-			hint2string="Press DOWN in the air \nto perform a bounce."
-		}
-		if gamepad_is_connected(0)
-		{
-			hint2string="Press B in the air \nto perform a bounce."
-		}
+		hint2string="Press DOWN in the air \nto perform a bounce."
 	}
 	if global.char="T"
 	{

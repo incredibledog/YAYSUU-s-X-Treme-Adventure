@@ -3,7 +3,6 @@
 if place_meeting(x,y,obj_player)
 {
 	global.hubstart=false
-	global.checkpoint=false
 	global.score+=global.scoreadd
 	global.scoreadd=0
 	global.nextroom=warproom

@@ -12,7 +12,7 @@ if global.pause=true
 		draw_sprite(spr_paused,0,192,128)
 		draw_set_font(global.font)
 		draw_text(224,224,"RESUME")
-		if room=room_househub || room=room_househub_extra || global.lives=1
+		if room=room_househub || room=room_househub_extra || global.lives<=1
 		{
 			draw_set_alpha(0.5)
 		}
@@ -46,7 +46,7 @@ if global.pause=true
 		draw_set_color(c_white)
 		draw_sprite(spr_paused,0,192,128)
 		draw_sprite(spr_resume,0,160,224)
-		if room=room_househub || room=room_househub_extra || global.lives=1
+		if room=room_househub || room=room_househub_extra || global.lives<=1
 		{
 			draw_set_alpha(0.5)
 		}

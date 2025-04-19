@@ -3,10 +3,11 @@
 if global.char="Y"
 {
 	sprite_index=spr_yaysuugameover
+	gameoversong=mus_gameover_y
 }
 else if global.char="T"
 {
 	sprite_index=spr_teddygameover
+	gameoversong=mus_gameover_t
 }
-gameoversong=mus_gameover_y
 audio_play_sound(gameoversong,1,false)

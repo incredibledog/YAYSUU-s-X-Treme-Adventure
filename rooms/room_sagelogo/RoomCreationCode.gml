@@ -1,1 +1,0 @@
-window_set_caption("...for SAGE 2024...")

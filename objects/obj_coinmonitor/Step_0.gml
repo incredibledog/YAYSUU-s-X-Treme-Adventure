@@ -5,14 +5,7 @@ if (instance_exists(obj_player))
 	if ((!obj_player.vulnerable) && (place_meeting(x,y,obj_player)))
 	{
 		instance_destroy()
-		if global.coins+10>50
-		{
-			global.coins=0
-		}
-		else {
-			global.coins+=10
-		}
-		audio_play_sound(snd_coin,1,false)
+		instance_create_depth(0,0,depth,obj_itemcoin)
 		obj_camera.vshakeoffset=30
 		instance_create_depth(x,y,depth,obj_explode)
 	}

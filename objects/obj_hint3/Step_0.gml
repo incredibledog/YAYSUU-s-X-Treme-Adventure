@@ -36,7 +36,7 @@ if room=room_tutorial
 		}
 		if gamepad_is_connected(0)
 		{
-			hint3string="Press the Y button in the air \nto perform an airdash."
+			hint3string="Press the B button in the air \nto perform an airdash."
 		}
 	}
 	if global.char="T"

@@ -1,29 +1,24 @@
 /// @description Insert description here
 // You can write your code in this editor
-keyleft=keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || gamepad_axis_value(0,gp_axislh) < -0.352 || gamepad_button_check_pressed(0,gp_padl)
-keyright=keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")) || gamepad_axis_value(0,gp_axislh) > 0.352 || gamepad_button_check_pressed(0,gp_padr)
-keyplay=keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_face1)
-keystop=keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_shift) || gamepad_button_check_pressed(0,gp_face2)
-keyleave=keyboard_check_pressed(ord("C")) || keyboard_check_pressed(vk_rcontrol) || gamepad_button_check_pressed(0,gp_face3)
 select=clamp(select,0,22)
-if keyleft && !audio_is_playing(currentsound)
+if global.key_leftp && !audio_is_playing(currentsound)
 {
 	select-=1
 }
-if keyright && !audio_is_playing(currentsound)
+if global.key_rightp && !audio_is_playing(currentsound)
 {
 	select+=1
 }
-if keyplay
+if global.key_jump
 {
 	audio_stop_all()
 	audio_play_sound(currentsound,1,false)
 }
-if keystop
+if global.key_dash
 {
 	audio_stop_all()
 }
-if keyleave
+if global.key_runp
 {
 	global.nextroom=room_titlescreen
 	obj_fadeblack.fading=true

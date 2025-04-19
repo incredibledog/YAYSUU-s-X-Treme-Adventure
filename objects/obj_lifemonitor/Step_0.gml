@@ -5,8 +5,7 @@ if (instance_exists(obj_player))
 	if ((!obj_player.vulnerable) && (place_meeting(x,y,obj_player)))
 	{
 		instance_destroy()
-		global.lives+=1
-		audio_play_sound(snd_extralife,1,false)
+		instance_create_depth(0,0,depth,obj_lifeitem)
 		obj_camera.vshakeoffset=30
 		instance_create_depth(x,y,depth,obj_explode)
 	}

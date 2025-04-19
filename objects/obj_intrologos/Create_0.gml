@@ -2,14 +2,16 @@
 // You can write your code in this editor
 if room=room_idlogo
 {
-	sprite_index=spr_idlogo
-	jingle=mus_idlogo
+	video_open("idlogo.mp4")
+	video_pause()
+	video_seek_to(0)
+	loadtime=50
 	global.nextroom=room_titlescreen
 }
-if room=room_sagelogo
+if room=room_idalogo
 {
-	sprite_index=spr_sage24bg
-	jingle=mus_sagelogo
+	sprite_index=spr_idalogo
+	jingle=mus_idalogo
 	global.nextroom=room_titlescreen
 }
-audio_play_sound(jingle,1,false)
+//audio_play_sound(jingle,1,false)

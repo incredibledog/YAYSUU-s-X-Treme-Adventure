@@ -4,8 +4,15 @@ if sprite_index=spr_yaysuu_win
 {
 	sprite_index=spr_yaysuu_winb
 }
+if sprite_index=spr_yaysuu_idle
+{
+	sprite_index=spr_yaysuu_wait
+}
+if sprite_index=spr_teddy_idle
+{
+	sprite_index=spr_teddy_wait
+}
 if sprite_index=spr_teddy_win
 {
-	image_speed=0
-	image_index=15
+	sprite_index=spr_teddy_winb
 }

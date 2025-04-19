@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_chillfields1vo4_y",
+  "audioGroupId":{
+    "name":"voicelines",
+    "path":"audiogroups/voicelines",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.951837,
+  "name":"snd_chillfields1vo4_y",
+  "parent":{
+    "name":"stagevo",
+    "path":"folders/Sounds/stagevo.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_chillfields1vo4_y.mp3",
+  "type":0,
+  "volume":1.0,
+}

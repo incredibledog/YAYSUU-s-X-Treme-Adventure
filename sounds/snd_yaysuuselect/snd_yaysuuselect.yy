@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_yaysuuselect",
+  "audioGroupId":{
+    "name":"voicelines",
+    "path":"audiogroups/voicelines",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.828571,
+  "name":"snd_yaysuuselect",
+  "parent":{
+    "name":"stagevo",
+    "path":"folders/Sounds/stagevo.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_yaysuuselect.mp3",
+  "type":0,
+  "volume":1.0,
+}

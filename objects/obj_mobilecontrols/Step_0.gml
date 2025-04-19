@@ -4,6 +4,6 @@ if instance_exists(obj_goalflag)
 {
 	if obj_goalflag.winning=true
 	{
-		hide=true
+		instance_destroy()
 	}
 }

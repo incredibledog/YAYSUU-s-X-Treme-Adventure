@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_teddywinboss",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.4650567,
+  "name":"snd_teddywinboss",
+  "parent":{
+    "name":"stagevo",
+    "path":"folders/Sounds/stagevo.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_teddywinboss.mp3",
+  "type":0,
+  "volume":1.0,
+}

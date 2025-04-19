@@ -78,6 +78,7 @@ else {
 if state=6 && place_meeting(x,y,obj_player) && obj_player.vulnerable=false
 {
 	global.bosshp--
+	obj_camera.vshakeoffset=30
 	if global.bosshp>0
 	{
 		delaying=false
@@ -110,11 +111,7 @@ if delay=0 && state=0 && delaying=true
 {
 	bounces=0
 	boolettimes=0
-	state=floor(random_range(1,5.9))
-	if state=4
-	{
-		state=5
-	}
+	state=floor(choose(2,3,5))
 	delaying=false
 }
 if delay=0 && state=4 && delaying=true
@@ -139,9 +136,7 @@ if delay=0 && state=9 && delaying=true
 if state=1 && jumpd=true && place_meeting(x,y+vsp,obj_collision)
 {
 	image_xscale=image_xscale*-1
-	jumpd=false
-	hsp=0
-	state=0
+	hsp=hsp*-1
 }
 if state=1 && jumpd=false
 {
@@ -182,7 +177,7 @@ if state=3 && jumpd=false
 {
 	gravityapplies=false
 	jumpd=true
-	audio_play_sound(snd_electrobotjump,0,false)
+	audio_play_sound(snd_electrobotjump,1,false,2)
 	sprite_index=spr_electrobot_jump
 	image_index=0
 	hsp=2*-image_xscale

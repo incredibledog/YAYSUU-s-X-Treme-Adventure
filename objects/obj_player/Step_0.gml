@@ -1,15 +1,24 @@
-key_left = (keyboard_check(vk_left) || keyboard_check(ord("A"))) || gamepad_axis_value(0, gp_axislh) < -0.352 || gamepad_button_check(0, gp_padl);
-key_right = (keyboard_check(vk_right) || keyboard_check(ord("D"))) || gamepad_axis_value(0, gp_axislh) > 0.352 || gamepad_button_check(0, gp_padr);
-key_up = (keyboard_check(vk_up) || keyboard_check(ord("W"))) || gamepad_axis_value(0, gp_axislv) < -0.352 || gamepad_button_check(0, gp_padl);
-key_jump = (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(0, gp_face1)
-key_dash = (keyboard_check_pressed(ord("X")) || keyboard_check_pressed(ord("E"))) || keyboard_check_pressed(vk_control) || gamepad_button_check_pressed(0, gp_face4)
-key_run = (keyboard_check(ord("C")) || keyboard_check(vk_shift)) || gamepad_button_check(0, gp_face3)
-key_down = (keyboard_check(vk_down) || keyboard_check(ord("S"))) || gamepad_axis_value(0, gp_axislv) > 0.352 || gamepad_button_check(0, gp_padd) || gamepad_button_check(0, gp_face2)
-key_downp = (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))) || gamepad_button_check_pressed(0, gp_face2) || gamepad_button_check_pressed(0, gp_padd)
-var move = (key_right - key_left) 
+var move = (global.key_right - global.key_left) 
+var boing = (hpush=0)
+var lastimage_xscale = image_xscale
+if (move == 1) && brake=false
+{
+    image_xscale = 1
+}
+else if (move == -1) && brake=false
+{
+    image_xscale = -1
+}
 if (dieded == 0)
 {
-    hsp = ((wsp * move) + dsh + hpush)
+	if run=true || brake=true
+	{
+		hsp = ((wsp*image_xscale) + dsh + hpush)
+	}
+	if run=false
+	{
+		hsp = ((wsp * move * boing) + dsh + hpush)
+	}
 }
 vsp += grv
 var forcecheck = 0
@@ -31,54 +40,129 @@ if (grounded == 0 && vsp >= 0)
     }
 }
 walled = (place_meeting((x + hsp), y, obj_collision) && (!(place_meeting((x + hsp), y, obj_slope))))
-hpush = clamp(hpush,-20,20)
 // airdash
-if ((!grounded) && key_dash && dsh == 0 && dshed == 0 && dieded == 0 && global.char="Y")
+if ((!grounded) && global.key_dash && dsh == 0 && dshed == 0 && dieded == 0 && global.char="Y")
 {
-    dsh = (15 * image_xscale)
+    dsh = (20 * image_xscale)
     dshed = 1
     stmpd = 0
     audio_play_sound(snd_airdash, 1, false)
     sprite_index = spr_yaysuu_airdash
     image_index = 0
 }
-if (((key_dash && key_down) || (key_run && key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="Y")
+if (((global.key_dash && global.key_down) || (global.key_run && global.key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="Y")
 {
-    dsh = (15 * image_xscale)
+    dsh = (20 * image_xscale)
     audio_play_sound(snd_slide, 1, false)
 	sprite_index = spr_yaysuu_slide
     image_index = 0
 }
-if (((key_dash) || (key_run && key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="T")
+if (((global.key_dash) || (global.key_run && global.key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="T")
 {
-    dsh = (15 * image_xscale)
+    dsh = (20 * image_xscale)
     audio_play_sound(snd_slide, 1, false)
-	if key_down
+	if global.key_down
 	{
 		sprite_index = spr_teddy_slide
 	}
-	if !key_down
+	if !global.key_down
 	{
 		sprite_index = spr_teddy_dash
 	}
     image_index = 0
 }
-if (grounded && semisolidcollision && key_down && key_run && grounded && (!dieded) && (!winning) && dsh == 0 && global.platfall)
+if (grounded && semisolidcollision && move=0 && global.key_down && global.key_runp && grounded && (!stmpd) && (!bounce) && (!dieded) && (!winning) && dsh == 0 && global.platfall)
 {
     y += 1
     grounded = 0
     semisolidcollision = 0
     stmpd = 0
 }
-if (key_run && (move > 0 || move < 0) && (!walled))
+if (global.key_runp && (!walled) && braketimer=0 && wsp>0 && !brake && !run)
 {
-    wsp = 8
+	audio_play_sound(snd_dashpad,1,false)
+    run=true
+	if !(instance_exists(obj_boost))
+	{
+		instance_create_depth(x,y,depth-1,obj_boost)
+	}
 }
-else {
-    wsp = 4
+if run=true && !walled
+{
+	wsp=10
+	if !(audio_is_playing(snd_run) && grounded)
+	{
+		if !brake
+		{
+			audio_play_sound(snd_run,1,true)
+		}
+	}
+	if (audio_is_playing(snd_run) && !grounded)
+	{
+		audio_stop_sound(snd_run)
+	}
+}
+if run=true && walled
+{
+	run=false
+	wsp=4
+	if (audio_is_playing(snd_run))
+	{
+		audio_stop_sound(snd_run)
+	}
+	if (instance_exists(obj_boost))
+	{
+		instance_destroy(obj_boost)
+	}
+}
+if ((!global.key_run && run=true && grounded) || (lastimage_xscale != image_xscale && run=true && grounded)) && brake=false
+{
+	brake=true
+	audio_play_sound(snd_brake,1,false)
+	savedimage_xscale=image_xscale
+	braketimer=room_speed*0.5
+	if (audio_is_playing(snd_run))
+	{
+		audio_stop_sound(snd_run)
+	}
+	if (instance_exists(obj_boost))
+	{
+		instance_destroy(obj_boost)
+	}
+}
+if braketimer=0 && brake=true
+{
+	if !global.key_run
+	{
+		run=false
+		wsp=4
+	}
+	if global.key_run
+	{
+		run=true
+		if !(instance_exists(obj_boost))
+		{
+			instance_create_depth(x,y,depth-1,obj_boost)
+		}
+		if !(audio_is_playing(snd_run) && grounded)
+		{
+			audio_play_sound(snd_run,1,true)
+		}
+		if (audio_is_playing(snd_run) && !grounded)
+		{
+			audio_stop_sound(snd_run)
+		}
+	}
+	brake=false
+}
+if braketimer>0 && brake=true
+{
+	braketimer--
+	wsp=2
+	image_xscale=savedimage_xscale
 }
 // stomp
-if ((!grounded) && key_downp && stmpd == 0 && dieded == 0 && hurtd == 0)
+if ((!grounded) && global.key_downp && stmpd == 0 && dieded == 0 && hurtd == 0)
 {
     stmpd = 1
     hsp = 0
@@ -98,12 +182,20 @@ if (stmpd == 1)
 }
 // dash and hpush deceleration
 if (dsh > 0)
-{
-    dsh -= 0.5
+{ 
+	dsh -= 0.5
 }
 if (dsh < 0)
 {
-    dsh += 0.5
+	dsh += 0.5
+}
+if dsh>0 && dsh<0.5
+{
+	dsh = 0
+}
+if dsh<0 && dsh>0.5
+{
+	dsh = 0
 }
 if (hpush > 0)
 {
@@ -114,7 +206,7 @@ if (hpush < 0)
 	hpush += 0.5
 }
 // jumping
-if ((grounded || prevgrounded) && key_jump && (!winning) && global.char="Y")
+if ((grounded || prevgrounded) && global.key_jump && (!winning) && global.char="Y" && !brake)
 {
     if (!(place_meeting(x, (y + jmp), obj_collision)))
     {
@@ -122,30 +214,33 @@ if ((grounded || prevgrounded) && key_jump && (!winning) && global.char="Y")
 		jumpd = true
         grounded = 0
         prevgrounded = 0
-        key_down = 0
+        global.key_down = 0
         dsh = 0
         audio_play_sound(snd_jump, 1, false)
         image_index = 0
     }
 }
-if (!djumpd && key_jump && (!winning) && global.char="T")
+if (!djumpd && global.key_jump && (!winning) && global.char="T" && !brake)
 {
     if (!(place_meeting(x, (y + jmp), obj_collision)))
     {
-        vsp = jmp
-        grounded = 0
-        prevgrounded = 0
-        key_down = 0
-        dsh = 0
 		if jumpd
 		{
 			audio_play_sound(snd_doublejump, 1, false)
 			djumpd=true
+			vsp=jmp*1.2
+			grounded=0
+			prevgrounded=0
+			global.key_down=0
 		}
-		if !jumpd
+		if !jumpd && (grounded || prevgrounded)
 		{
 			audio_play_sound(snd_jump, 1, false)
 			jumpd=true
+			vsp=jmp
+			grounded=0
+			prevgrounded=0
+			global.key_down=0
 		}
         image_index = 0
     }
@@ -161,21 +256,29 @@ if ((place_meeting(x, (y + vsp), obj_explode) || grounded) && stmpd && global.ch
         stmpd = 0
         dshed = 0
         bounce = 1
-        key_down = 0
+        global.key_down = 0
         dsh = 0
         audio_play_sound(snd_jump, 1, false)
         image_index = 0
     }
 }
-if (grounded && key_down && dsh == 0 && (!winning))
+if (grounded && global.key_down && dsh == 0 && (!winning))
 {
     wsp = 0
+}
+else if run=false && brake=false
+{
+	wsp = 4
 }
 if ((place_meeting(x, y, obj_die)) && global.hp > 0)
 {
     global.hp = 0
 }
-if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) || (instance_exists(obj_boss) && (place_meeting(x, y, obj_boss)) && obj_boss.vulnerable=false && obj_boss.cooldown=false ) || keyboard_check_pressed(ord("O"))) && global.hp > 0 && (hurtt == 0 || keyboard_check_pressed(ord("O"))) && (!winning))
+if ((place_meeting(x, y, obj_uncanny)) && global.hp > 0 && global.inv = false)
+{
+    global.hp = 0
+}
+if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) || (instance_exists(obj_boss) && (place_meeting(x, y, obj_boss)) && obj_boss.vulnerable=false && obj_boss.cooldown=false )) && global.hp > 0 && global.inv = 0 && (hurtt == 0) && (!winning))
 {
     hurtd = 1
     obj_camera.vshakeoffset = 30
@@ -183,6 +286,14 @@ if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) || (inst
     vsp = -3
     grounded = 0
     global.hp = (global.hp - 1)
+	if global.coins < 50
+	{
+		global.coins = 0
+	}
+	if global.coins >= 50
+	{
+		global.coins -= 50
+	}
     if (global.scoreadd >= 50)
 	{
         global.scoreadd -= 50
@@ -200,7 +311,7 @@ if (hurtt == 0)
 {
 	hurtd = 0
 }
-if (dsh == 0 && stmpd == 0)
+if (dsh == 0 && stmpd == 0 && global.inv == 0)
 {
     vulnerable = 1
 }
@@ -221,7 +332,6 @@ else
     image_alpha = 1
 if (place_meeting(x, y, obj_spring) && ((!hurtd) || dieded))
 {
-    vsp = (jmp * 2)
 	bounce = 1
     grounded = 0
     obj_camera.vshakeoffset = 5
@@ -229,7 +339,6 @@ if (place_meeting(x, y, obj_spring) && ((!hurtd) || dieded))
 }
 if (place_meeting(x, y, obj_diagspring) && ((!hurtd) || dieded))
 {
-    vsp = (jmp * 2)
 	bounce = 1
     grounded = 0
     obj_camera.vshakeoffset = 5
@@ -241,12 +350,19 @@ if (place_meeting(x, y, obj_sidespring) && ((!hurtd) || dieded))
     obj_camera.vshakeoffset = 5
     stmpd = 0
 }
+if (place_meeting(x, y, obj_dashpad) && ((!hurtd) || dieded))
+{
+    obj_camera.vshakeoffset = 5
+    stmpd = 0
+}
 if (global.hp == 0 && dieded == 0)
 {
     dieded = 1
     if (global.lives >= 1)
         global.lives = (global.lives - 1)
     vsp = -10
+	run = false
+	brake = false
     grounded = 0
 	if global.char="Y"
 	{
@@ -266,14 +382,21 @@ if (dieded == 1)
 }
 if instance_exists(obj_goalflag)
 {
-    if (obj_goalflag.winning == 1)
+    if (obj_goalflag.winning == 1) && winning = 0
+	{
+		image_index=0
         winning = 1
+	}
 }
 if instance_exists(obj_goalflag)
 {
     if (obj_goalflag.winning == 1 && grounded)
     {
         hsp = 0
+		run = false
+		brake = false
+		audio_stop_sound(snd_run)
+		instance_destroy(obj_boost)
         move = 0
     }
 }
@@ -301,29 +424,11 @@ if (hurtd == 1 && (!grounded))
 		sprite_index = spr_teddy_ouch
 	}
 }
+
 if (dieded == 0)
 {
     var dogroundsnap = 1
     var loopprevent = 0
-	if place_meeting(x,y,obj_collision) // emergency systems
-	{
-		if !(place_meeting(x+5,y,obj_collision))
-		{
-			x+=5
-		}
-		if !(place_meeting(x-5,y,obj_collision))
-		{
-			x-=5
-		}
-		if !(place_meeting(x,y+5,obj_collision))
-		{
-			y+=5
-		}
-		if !(place_meeting(x,y-5,obj_collision))
-		{
-			y-=5
-		}
-	}
     if place_meeting((x + hsp), y, obj_slope)
     {
         x += hsp
@@ -450,20 +555,73 @@ if (dieded == 0)
         grounded = 1
     }
 }
+if (place_meeting(x, y, obj_stop) && ((!hurtd) || dieded))
+{
+	hsp=0
+	vsp=-10
+	dsh=0
+	dshed=0
+	stmpd=0
+	bounce=1
+	image_index=0
+}
 x += hsp
 vsp=clamp(vsp,-20,10)
 y += vsp
+if (place_meeting(x, y, obj_collision)) && (!dieded)
+{
+    if !(place_meeting((x + 1), y, obj_collision))
+        x += 1
+    else if (!(place_meeting((x - 1), y, obj_collision)))
+        x -= 1
+    else if (!(place_meeting(x, (y + 1), obj_collision)))
+        y += 1
+    else if (!(place_meeting(x, (y - 1), obj_collision)))
+        y -= 1
+    else if (!(place_meeting((x + 5), y, obj_collision)))
+        x += 5
+    else if (!(place_meeting((x - 5), y, obj_collision)))
+        x -= 5
+    else if (!(place_meeting(x, (y + 5), obj_collision)))
+        y += 5
+    else if (!(place_meeting(x, (y - 5), obj_collision)))
+        y -= 5
+    else if (!(place_meeting((x + 10), y, obj_collision)))
+        x += 10
+    else if (!(place_meeting((x - 10), y, obj_collision)))
+        x -= 10
+    else if (!(place_meeting(x, (y + 10), obj_collision)))
+        y += 10
+    else if (!(place_meeting(x, (y - 10), obj_collision)))
+        y -= 10
+    else if (!(place_meeting((x + 20), y, obj_collision)))
+        x += 20
+    else if (!(place_meeting((x - 20), y, obj_collision)))
+        x -= 20
+    else if (!(place_meeting(x, (y + 20), obj_collision)))
+        y += 20
+    else if (!(place_meeting(x, (y - 20), obj_collision)))
+        y -= 20
+}
 if (global.char == "Y")
 {
-    if (hsp == 0 && (vsp == 0 || (vsp > 0 && grounded)) && key_down == 0 && winning == 0)
+    if (hsp == 0 && (vsp == 0 || (vsp > 0 && grounded)) && global.key_down == 0 && winning == 0) && !(sprite_index=spr_yaysuu_wait)
 	{
-        sprite_index = spr_yaysuu_idle
+		if !(sprite_index=spr_yaysuu_idle)
+		{
+			sprite_index = spr_yaysuu_idle
+			image_index=0
+		}
 	}
-    if ((hsp > 0 || hsp < 0) && grounded && key_down == 0 && dshed == 0)
+    if ((hsp > 0 || hsp < 0) && grounded && global.key_down == 0 && dshed == 0)
 	{
         sprite_index = spr_yaysuu_walk
 	}
-    if ((hsp > 6 || hsp < -6) && grounded && key_down == 0)
+	if brake=true && grounded
+	{
+		sprite_index = spr_yaysuu_brake
+	}
+    if ((hsp > 6 || hsp < -6) && grounded && global.key_down == 0)
 	{
         sprite_index = spr_yaysuu_run
 	}
@@ -477,9 +635,15 @@ if (global.char == "Y")
 	}
     if (vsp > 0 && dsh == 0 && stmpd == 0 && hurtd == 0 && global.hp > 0 && (!grounded))
 	{
-        sprite_index = spr_yaysuu_fall
+		if run=true
+		{
+			sprite_index = spr_yaysuu_launch
+		}
+		else {
+			sprite_index = spr_yaysuu_fall
+		}
 	}
-    if (grounded && key_down && dsh == 0 && (!winning))
+    if (grounded && global.key_down && dsh == 0 && (!winning))
 	{
         sprite_index = spr_yaysuu_crouch
 	}
@@ -495,33 +659,47 @@ if (global.char == "Y")
 }
 else if (global.char == "T")
 {
-    if (hsp == 0 && (vsp == 0 || (vsp > 0 && grounded)) && dsh=0 && key_down == 0 && winning == 0)
-        sprite_index = spr_teddy_idle
-    if ((hsp > 0 || hsp < 0) && dsh=0 && grounded && key_down == 0 && dshed == 0)
+    if (hsp == 0 && (vsp == 0 || (vsp > 0 && grounded)) && dsh=0 && global.key_down == 0 && winning == 0 && !(sprite_index=spr_teddy_wait))
+	{
+		if !(sprite_index=spr_teddy_idle)
+		{
+			sprite_index = spr_teddy_idle
+			image_index = 0
+		}
+	}
+    if ((hsp > 0 || hsp < 0) && dsh=0 && grounded && global.key_down == 0 && dshed == 0)
+	{
         sprite_index = spr_teddy_walk
-    if ((hsp > 6 || hsp < -6) && dsh=0 && grounded && key_down == 0)
+	}
+	if brake=true && grounded
+	{
+		sprite_index = spr_teddy_brake
+	}
+    if ((hsp > 6 || hsp < -6) && dsh=0 && grounded && global.key_down == 0)
+	{
         sprite_index = spr_teddy_run
+	}
     if (vsp < 0 && dsh == 0 && hurtd == 0 && global.hp > 0 && bounce == 0)
+	{
         sprite_index = spr_teddy_jump
+	}
     if (vsp > 0 && dsh == 0 && stmpd == 0 && hurtd == 0 && global.hp > 0 && (!grounded))
+	{
         sprite_index = spr_teddy_fall
-    if (grounded && key_down && dsh == 0 && (!winning))
+	}
+    if (grounded && global.key_down && dsh == 0 && (!winning))
+	{
         sprite_index = spr_teddy_crouch
+	}
     if (winning == 1 && sprite_index != spr_teddy_winb && hsp == 0 && grounded)
+	{
         sprite_index = spr_teddy_win
+	}
     if dieded
     {
         sprite_index = spr_teddy_die
         image_angle -= hsp
     }
-}
-if (move == 1)
-{
-    image_xscale = 1
-}
-else if (move == -1)
-{
-    image_xscale = -1
 }
 if (sprite_index == spr_yaysuu_crouch || sprite_index == spr_yaysuu_slide || sprite_index == spr_teddy_crouch)
 {

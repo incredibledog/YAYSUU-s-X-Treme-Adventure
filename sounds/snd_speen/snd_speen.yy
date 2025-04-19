@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.926646,
+  "duration":0.9266667,
   "name":"snd_speen",
   "parent":{
     "name":"Sounds",

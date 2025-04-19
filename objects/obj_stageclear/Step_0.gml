@@ -11,6 +11,21 @@ if hide=false && results=false && bangtime=false
 {
 	results=true
 	global.score+=global.scoreadd+obj_hud.timebonus+(global.coins*10)
+	ini_open("savedata.ini")
+	if global.score>ini_read_real("records",string(room)+string("_score"),0) && !(room=room_chillfields_boss)
+	{
+		ini_write_real("records",string(room)+string("_score"),global.score)
+	}
+	if obj_hud.minutes<ini_read_real("records",string(room)+string("_minutes"),99) && !(room=room_chillfields_boss)
+	{
+		ini_write_real("records",string(room)+string("_minutes"),obj_hud.minutes)
+		ini_write_real("records",string(room)+string("_seconds"),obj_hud.seconds)
+	}
+	else if (obj_hud.minutes=ini_read_real("records",string(room)+string("_minutes"),99) && !(room=room_chillfields_boss)) && obj_hud.seconds<ini_read_real("records",string(room)+string("_minutes"),59)
+	{
+		ini_write_real("records",string(room)+string("_minutes"),obj_hud.minutes)
+		ini_write_real("records",string(room)+string("_seconds"),obj_hud.seconds)
+	}
 	begintimer=room_speed*2
 }
 if begintimer>0
@@ -42,8 +57,6 @@ if bangtimer=0 && display>0 && display<4
 }
 if hide=false
 {
-	nextkey=keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_alt) || gamepad_button_check_pressed(0,gp_face1)
-	retrykey=keyboard_check_pressed(ord("X")) || keyboard_check_pressed(vk_shift) || gamepad_button_check_pressed(0,gp_face2)
 	image_xscale=clamp(image_xscale,1,2)
 	image_yscale=clamp(image_yscale,1,2)
 	image_alpha=clamp(image_alpha,0,1)
@@ -61,31 +74,40 @@ if hide=false
 	}
 	if display>=4
 	{
-		virtual_key_add(224,416,96,32,vk_enter)
+		virtual_key_add(224,416,96,32,vk_space)
 		virtual_key_add(320,416,96,32,vk_shift)
 	}
-	if (nextkey && display>=4) || (keyboard_check_pressed(vk_f6) && display>=4) 
+	if (global.key_jump && display>=4) || (keyboard_check_pressed(vk_f6) && display>=4) 
 	{
 		hide=true
 		display=0
 		audio_play_sound(snd_confirm,1,false)
 		instance_destroy(obj_hud)
 		global.checkpoint=false
-		switch (room)
+		if global.trial=true
 		{
-			case room_chillfields_1:
-				global.nextroom=room_chillfields_2
-			break;
-			case room_chillfields_2b:
-				global.nextroom=room_chillfields_boss
-			break;
-			default:
-				global.nextroom=room_titlescreen
-			break;
+			global.nextroom=room_trialmenu
+		}
+		else {
+			switch (room)
+			{
+				case room_chillfields_1:
+					global.nextroom=room_chillfields_2
+				break;
+				case room_chillfields_2d:
+					global.nextroom=room_chillfields_boss
+				break;
+				case room_chillfields_boss:
+					global.nextroom=room_mysticmanor_1
+				break;
+				default:
+					global.nextroom=room_househub
+				break;
+			}
 		}
 		obj_fadeblack.fading=true
 	}
-	if retrykey && display>=4
+	if global.key_dash && display>=4
 	{
 		hide=true
 		display=0
@@ -98,7 +120,7 @@ if hide=false
 		instance_destroy(obj_hud)
 		switch (room)
 		{
-			case room_chillfields_2b:
+			case room_chillfields_2d:
 				global.nextroom=room_chillfields_2
 			break;
 			default:

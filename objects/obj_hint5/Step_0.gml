@@ -31,7 +31,7 @@ if room=room_tutorial
 {
 	if global.char="Y"
 	{
-		hint5string="Use your bounce to \ntake out those enemies."
+		hint5string="Use the moves you've \nlearned to take out those \nenemies."
 	}
 	if global.char="T"
 	{

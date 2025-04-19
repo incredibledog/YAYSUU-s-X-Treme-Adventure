@@ -1,9 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-pausekey=keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0,gp_start)
-upkey=keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(0,gp_padu)
-downkey=keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(0,gp_padd)
-confirmkey=keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0,gp_face1)
 resumekey=keyboard_check_pressed(vk_f5)
 retrykey=keyboard_check_pressed(vk_f6)
 quitkey=keyboard_check_pressed(vk_f7)
@@ -25,14 +21,14 @@ else {
 if global.pause
 {
 	instance_deactivate_all(true)
-	instance_activate_object(obj_fullscreen)
+	instance_activate_object(obj_gamecontroller)
 	instance_activate_object(obj_fadeblack)
 }
 if !global.pause
 {
 	instance_activate_all()
 }
-if pausekey
+if global.key_start
 {
 	global.pause=!global.pause
 	if global.pause
@@ -50,17 +46,17 @@ if pausekey
 }
 if !(os_type=os_android)
 {
-	if upkey and global.pause
+	if global.key_upp and global.pause
 	{
 		cursor-=1
 		audio_play_sound(snd_move,1,false)
 	}
-	if downkey and global.pause
+	if global.key_downp and global.pause
 	{
 		cursor+=1
 		audio_play_sound(snd_move,1,false)
 	}
-	if confirmkey and global.pause
+	if global.key_jump and global.pause
 	{
 		if cursor=0
 		{
@@ -78,7 +74,7 @@ if !(os_type=os_android)
 			audio_stop_all()
 			audio_play_sound(snd_confirm,1,false)
 		}
-		else if cursor=1 && (room=room_househub || room=room_househub_extra || global.lives=1)
+		else if cursor=1 && (room=room_househub || room=room_househub_extra || global.lives<=1)
 		{
 			audio_play_sound(snd_nicetry,1,false)
 		}
@@ -88,10 +84,13 @@ if !(os_type=os_android)
 			global.checkpoint=false
 			if (room=room_househub || room=room_househub_extra)
 			{
-				global.nextroom=room_chillfields_boss
+				global.nextroom=room_glowstickcity
 			}
-			else
+			else if global.trial=true
 			{
+				global.nextroom=room_trialmenu
+			}
+			else {
 				global.nextroom=room_househub
 			}
 			instance_activate_object(obj_fadeblack)
@@ -131,10 +130,13 @@ if os_type=os_android
 		global.checkpoint=false
 		if (room=room_househub || room=room_househub_extra)
 		{
-			global.nextroom=room_titlescreen
+			global.nextroom=room_glowstickcity
 		}
-		else
+		else if global.trial=true
 		{
+			global.nextroom=room_trialmenu
+		}
+		else {
 			global.nextroom=room_househub
 		}
 		instance_activate_object(obj_fadeblack)

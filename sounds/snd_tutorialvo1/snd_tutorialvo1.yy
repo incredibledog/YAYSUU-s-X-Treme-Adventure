@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_tutorialvo1",
+  "audioGroupId":{
+    "name":"voicelines",
+    "path":"audiogroups/voicelines",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.8692063,
+  "name":"snd_tutorialvo1",
+  "parent":{
+    "name":"stagevo",
+    "path":"folders/Sounds/stagevo.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_tutorialvo1.mp3",
+  "type":0,
+  "volume":1.0,
+}

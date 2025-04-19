@@ -37,7 +37,7 @@ if room=room_tutorial
 		}
 		if gamepad_is_connected(0)
 		{
-			hint4string="Hold DOWN or B, then press Y\nto perform a slide."
+			hint4string="Hold DOWN, then press B\nto perform a slide."
 		}
 	}
 	if global.char="T"
@@ -48,7 +48,7 @@ if room=room_tutorial
 		}
 		if gamepad_is_connected(0)
 		{
-			hint4string="Press Y to \nperform a dash attack."
+			hint4string="Press B to \nperform a dash attack."
 		}
 	}
 	hintlength=room_speed*5

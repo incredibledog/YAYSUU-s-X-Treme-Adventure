@@ -9,6 +9,15 @@ if layer_exists("layer1")
 		case room_chillfields_1:
 		voffset=600
 		break;
+		case room_chillfields_2c:
+		voffset=0
+		break;
+		case room_mysticmanor_1:
+		voffset=0
+		break;
+		case room_glowstickcity:
+		voffset=0
+		break;
 		default:
 		voffset=100
 		break;

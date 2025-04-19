@@ -1,0 +1,10 @@
+/// @description Insert description here
+// You can write your code in this editor
+obj_mainmenu_cursor.chos=2
+global.nextroom=room_charselect
+global.trial=true
+obj_mainmenu_cursor.image_alpha=1
+obj_mainmenu_cursor.image_speed=1
+obj_mainmenu_cursor.delay=room_speed 
+obj_mainmenu_cursor.selected=true
+audio_play_sound(snd_confirm,1,false)

@@ -4,25 +4,36 @@ function levelstart()
 {
 	audio_resume_all()
 	global.scoreadd=0
-	global.coins=0
-	if !(audio_is_playing(global.currentsong))
-	{
-		audio_stop_all()
-		audio_play_sound(global.currentsong,1,true);
-	}
-	// This is how the hud gets made. Don't Fucking Touch unless yk what your doing!!!
-	if global.checkpoint=false
-	{
-		instance_create_depth(obj_spawn.x,obj_spawn.y,0,obj_player)
-	}
-	else if global.checkpoint=true
-	{
-		instance_create_depth(obj_checkpoint.x,obj_checkpoint.y,0,obj_player)
-	}
+	audio_stop_sound(mus_invincibility)
 	if !instance_exists(obj_hud)
 	{
 		global.score=0
 		instance_create_layer(32,128,"gui",obj_hud)
+	}
+	if !(audio_is_playing(global.currentsong))
+	{
+		audio_stop_all()
+		audio_play_sound(global.currentsong,1,true);
+		global.coins=0
+		if global.checkpoint=false
+		{
+			obj_hud.minutes=0
+			obj_hud.seconds=0
+			obj_hud.timer=0
+		}
+	}
+	if (global.hp=0)
+	{
+		global.hp=global.maxhp
+	}
+	// This is how the hud gets made. Don't Fucking Touch unless yk what your doing!!!
+	if global.checkpoint=true && instance_exists(obj_checkpoint)
+	{
+		instance_create_depth(obj_checkpoint.x,obj_checkpoint.y,0,obj_player)
+	}
+	else
+	{
+		instance_create_depth(obj_spawn.x,obj_spawn.y,0,obj_player)
 	}
 	instance_create_layer(0,0,"endlevel",obj_fadeblack)
 	instance_create_layer(0,0,"gui",obj_mobilecontrols)

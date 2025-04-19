@@ -3,3 +3,4 @@
 image_alpha=0
 fadet=room_speed*1.5
 ufadet=room_speed*2
+sprite_index=spr_fadewhite
