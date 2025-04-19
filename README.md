@@ -8,4 +8,5 @@ KNOWN ISSUES:
 * If you pause whilst the invincibility music is playing, and resume, the level music will resume too.
 * If you get a better time, but only by a few seconds, the record doesn't update.
 * Unused content from SAGE still exists. Dataminers, Now's your chance!
+* The button prompts for obj_stageclear are invisible. Huh??
 * More to be added...
