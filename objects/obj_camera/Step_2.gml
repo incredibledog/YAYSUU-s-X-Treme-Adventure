@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.inlevel && !obj_player.dieded
+if global.inlevel && obj_player.state != playerstates.dead && obj_player.state != playerstates.dead
 {
 	if (abs(obj_player.x - x) > maxvarience || abs(obj_player.y - y) > maxvarience)
 	    followtimer = 60
@@ -42,14 +42,8 @@ if global.screenshake
 	vwobble = (-vwobble)
 else
 	vwobble=0
-if vshakeoffset=0
-{
-	gamepad_set_vibration(0,0,0)
-}
-else
-{
-	vshakeoffset-=1
-	gamepad_set_vibration(0,(vwobble=-1),(vwobble=1))
-}
+if vshakeoffset > 0
+	vshakeoffset--
 
+gamepad_set_vibration(0, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
 camera_set_view_pos(view_camera[0], round(x - 320), round(y - 240 + voffset + (vshakeoffset * vwobble)))
