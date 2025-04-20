@@ -10,11 +10,6 @@ if (global.newlevel)
 if (global.inlevel)
 {
 	global.scoreadd = 0
-	if !audio_is_playing(global.currentsong)
-	{
-		audio_stop_all()
-		audio_play_sound(global.currentsong, 1, true);
-	}
 	
 	if global.checkpoint == true && instance_exists(obj_checkpoint)
 	{
@@ -26,4 +21,11 @@ if (global.inlevel)
 		obj_player.x = obj_spawn.x
 		obj_player.y = obj_spawn.y
 	}
+}
+if (global.currentsong == -1)
+	audio_stop_all()
+else if !audio_is_playing(global.currentsong)
+{
+	audio_stop_all()
+	audio_play_sound(global.currentsong, 1, true);
 }

@@ -7,6 +7,7 @@ if type="video_start"
 if type="video_end"
 {
 	video_close()
-	room_goto(global.nextroom)
+	loadroom(room_titlescreen, false)
+	obj_fadeblack.image_alpha = 1
 	audio_stop_all()
 }

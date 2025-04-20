@@ -4,12 +4,11 @@ image_alpha=clamp(image_alpha,0,1)
 
 if fading
 {
-	image_alpha+=0.05
-	if image_alpha=1
+	if image_alpha >= 1
 	{
 		room_goto(global.nextroom)
 	}
-
+	image_alpha+=0.05
 }
 else if image_alpha > 0
 {

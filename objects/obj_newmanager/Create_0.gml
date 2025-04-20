@@ -20,11 +20,13 @@ global.newlevel = false
 global.mobile = false
 axislh = gamepad_axis_value(0,gp_axislh)
 axislv = gamepad_axis_value(0,gp_axislv)
+global.char="Y"
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)
 instance_create_depth(0,0, 100, obj_player)
 
+global.returntosettings = false
 if (global.inputtype == -1)
 	room_goto(room_setupinput)
 else
