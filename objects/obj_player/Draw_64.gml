@@ -1,3 +1,5 @@
+if (!global.inlevel)
+	return
 draw_set_valign(fa_bottom)
 draw_set_font(global.optfont)
 draw_text_transformed(0, 480, "STATE " + state, 0.5, 0.5, 0)
