@@ -22,6 +22,7 @@ select=clamp(select,0,5)
 if (changedlevel)
 {
 	var musicposition = audio_sound_get_track_position(playingmusic)
+	audio_stop_sound(playingmusic)
 	switch select
 	{
 		case 0:
