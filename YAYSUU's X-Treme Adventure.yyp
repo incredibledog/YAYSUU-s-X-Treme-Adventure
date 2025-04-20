@@ -208,6 +208,7 @@
     {"id":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"id":{"name":"amiwalled","path":"scripts/amiwalled/amiwalled.yy",},},
     {"id":{"name":"loadroom","path":"scripts/loadroom/loadroom.yy",},},
+    {"id":{"name":"preloadactualroom","path":"scripts/preloadactualroom/preloadactualroom.yy",},},
     {"id":{"name":"scr_bosshealth","path":"scripts/scr_bosshealth/scr_bosshealth.yy",},},
     {"id":{"name":"scr_bossstart","path":"scripts/scr_bossstart/scr_bossstart.yy",},},
     {"id":{"name":"scr_healthsystem","path":"scripts/scr_healthsystem/scr_healthsystem.yy",},},

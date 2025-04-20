@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"preloadactualroom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"preloadactualroom",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

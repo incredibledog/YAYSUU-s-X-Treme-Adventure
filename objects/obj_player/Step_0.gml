@@ -15,6 +15,9 @@ enum playerstates
 if (!global.inlevel)
 	return;
 
+if (global.key_start)
+	loadroom(room_trialmenu, false)
+
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
@@ -46,7 +49,7 @@ if (grounded == 0 && vsp >= 0)
 
 if (state != playerstates.hurt)
 {
-	if (state == playerstates.crouch || state == playerstates.inactive)
+	if (state == playerstates.crouch || state == playerstates.inactive || state == playerstates.win)
 		wsp = 0
 	else if (global.key_run)
 		wsp = runspeed

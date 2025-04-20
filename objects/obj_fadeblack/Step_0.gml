@@ -6,6 +6,7 @@ if fading
 {
 	if image_alpha >= 1
 	{
+		preloadactualroom()
 		room_goto(global.nextroom)
 	}
 	image_alpha+=0.05

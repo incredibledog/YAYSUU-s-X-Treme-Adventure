@@ -5,8 +5,14 @@ currentlevel=room_tutorial
 endlevel=room_tutorial
 lvlname="Tutorial Stage"
 sprname=spr_tutorialscroll
+ini_open("savedata.ini")
+hiscore=ini_read_real("records",string(endlevel)+string("_score"),0)
+timer=string_replace_all(((string_format(ini_read_real("records",string(endlevel)+string("_minutes"),99), 2, 0)) + ":" + (string_format(ini_read_real("records",string(endlevel)+string("_seconds"),59), 2, 0))), " ", "0")
+ini_close()
 xoffset=0
 playingmusic = audio_play_sound(mus_trialmenu_t,1,true,0)
 changedlevel = false
 hiscore = 2763
 timer = 1337
+//newmusic = -1
+//musicposition = 0
