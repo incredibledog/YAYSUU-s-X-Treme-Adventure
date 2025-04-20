@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teddy_idle",
-    "path":"sprites/spr_teddy_idle/spr_teddy_idle.yy",
+    "name":"spr_teddy_die",
+    "path":"sprites/spr_teddy_die/spr_teddy_die.yy",
   },
   "spriteMaskId":null,
   "visible":true,

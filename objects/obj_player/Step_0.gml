@@ -80,7 +80,7 @@ if (!candodashdo)
 //airdash
 if ((!grounded) && global.key_dashp && global.char="Y" && (state == playerstates.normal || state == playerstates.bounce) && newstate == state && !dshed && candodashdo)
 {
-    hsp = dashboost * move
+    hsp = dashboost * image_xscale
     dshed = true
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
@@ -92,7 +92,7 @@ else if (state == playerstates.dash && newstate == state && grounded)
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo && global.char="Y")
 {
-    hsp = dashboost * move
+    hsp = dashboost * image_xscale
 	newstate = playerstates.slide
     audio_play_sound(snd_slide, 1, false)
 }
@@ -131,7 +131,7 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if ((grounded || prevgrounded) && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !!(place_meeting(x, (y + jmp), obj_collision)))
+if ((grounded || prevgrounded) && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_collision)))
 {
     vsp = jmp
     grounded = false

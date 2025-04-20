@@ -9,6 +9,7 @@ as this is currently being worked on by me, mrs. fazmade, i do not actually reco
 * reimplement hud
 * update objects for new systems
 * parent objects for robots and monitors
+* teddy
 
 ## KNOWN ISSUES:
 * there are no fucking wind up frames yaysuu have you heard of Game Design
