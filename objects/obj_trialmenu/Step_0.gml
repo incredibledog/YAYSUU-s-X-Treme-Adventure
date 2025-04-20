@@ -22,7 +22,8 @@ select=clamp(select,0,5)
 if (changedlevel)
 {
 	var musicposition = audio_sound_get_track_position(playingmusic)
-	audio_stop_sound(playingmusic)
+	//audio_stop_sound(playingmusic)
+	audio_stop_all()
 	switch select
 	{
 		case 0:
@@ -68,7 +69,7 @@ if (changedlevel)
 		case 5:
 			currentlevel=room_glowstickcity
 			endlevel=room_glowstickcity
-			lvlname="Glow Stick City (unfinished -w-)"
+			lvlname="Glow Stick City (unfinished)"
 			sprname=spr_tutorialscroll
 			playingmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			audio_sound_set_track_position(playingmusic, musicposition)

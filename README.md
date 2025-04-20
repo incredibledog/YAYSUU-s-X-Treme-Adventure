@@ -15,3 +15,5 @@ as this is currently being worked on by me, mrs. fazmade, i do not actually reco
 * there are no fucking wind up frames yaysuu have you heard of Game Design
 * if it's not fun, why bother? -reggie nintendo
 * GM1024 The built-in variable 'room_speed' is deprecated and usage is discouraged.
+
+dear yaysuu please give me a upwards/jumping variation of spr_yaysuu_launch and add the - character to the subtitle font :3
