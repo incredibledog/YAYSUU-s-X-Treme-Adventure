@@ -511,6 +511,10 @@ if (global.char == "Y")
 			if (move != 0)
 				image_xscale = move
 			break;
+		case playerstates.win:
+			if (sprite_index != spr_yaysuu_winb)
+				newsprite = spr_yaysuu_win
+			break;
 	}
 	if (newsprite != sprite_index)
 		image_index = 0
