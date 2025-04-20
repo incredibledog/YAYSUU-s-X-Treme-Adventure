@@ -454,14 +454,14 @@ if (global.char == "Y")
 					else
 						newsprite = spr_yaysuu_idle
 				}
-				else if (abs(hsp) <= runspriterequirement)
-					newsprite = spr_yaysuu_walk
-				else
+				else if (abs(hsp) > runspriterequirement)
 					newsprite = spr_yaysuu_run
+				else
+					newsprite = spr_yaysuu_walk
 			}
 			else
 			{
-				if (abs(hsp) <= runspriterequirement)
+				if (abs(hsp) > runspriterequirement)
 					newsprite = spr_yaysuu_launch
 				else if (vsp > 0)
 					newsprite = spr_yaysuu_fall

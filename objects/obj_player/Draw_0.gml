@@ -12,5 +12,5 @@ if (global.inlevel)
 		drawx = x
 		drawy = y
 	}
-	draw_sprite(sprite_index, image_index, drawx, drawy)
+	draw_sprite_ext(sprite_index, image_index, drawx, drawy, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
