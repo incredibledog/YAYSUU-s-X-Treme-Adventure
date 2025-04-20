@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.115917,
+  "duration":2.1159184,
   "name":"snd_thunderstrike",
   "parent":{
     "name":"Sounds",

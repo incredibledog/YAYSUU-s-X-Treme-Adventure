@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.332208,
+  "duration":1.3322449,
   "name":"snd_nahnvm",
   "parent":{
     "name":"Sounds",

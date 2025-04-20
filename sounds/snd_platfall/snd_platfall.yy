@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_jump",
+  "%Name":"snd_platfall",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.2277551,
-  "name":"snd_jump",
+  "duration":0.6950113,
+  "name":"snd_platfall",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_jump.mp3",
+  "soundFile":"snd_platfall.wav",
   "type":0,
   "volume":1.0,
 }

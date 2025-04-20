@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.150542,
+  "duration":2.1505442,
   "name":"snd_jumpscare",
   "parent":{
     "name":"Sounds",

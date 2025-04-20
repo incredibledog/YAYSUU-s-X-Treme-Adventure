@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.91425,
+  "duration":0.9142857,
   "name":"snd_coin",
   "parent":{
     "name":"Sounds",

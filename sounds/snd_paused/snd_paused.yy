@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.862042,
+  "duration":0.8620408,
   "name":"snd_paused",
   "parent":{
     "name":"Sounds",
