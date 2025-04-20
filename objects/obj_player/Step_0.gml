@@ -210,10 +210,16 @@ vulnerable = !(state == playerstates.dash || state == playerstates.slide || stat
 
 if (state == playerstates.dead)
 {
-    move = 0
-    image_xscale = 1
+	if (!audio_is_playing(mus_dead))
+	{
+	    if (global.lives == 0)
+		    loadroom(room_gameover, false)
+		else
+		    loadroom(room, false)
+	}
+
 }
-if instance_exists(obj_goalflag)
+else if instance_exists(obj_goalflag)
 {
     if (obj_goalflag.winning == 1)
 	{
@@ -222,18 +228,6 @@ if instance_exists(obj_goalflag)
 			newstate = playerstates.win
 	}
 }
-if (dieded == 1 && (!audio_is_playing(mus_dead)))
-{
-    if (global.lives == 0)
-    {
-        instance_destroy(obj_hud)
-        global.nextroom = room_gameover
-    }
-    else
-        global.nextroom = room
-    obj_fadeblack.fading = 1
-}
-
 //actual movement
 if (abs(yearnedhsp - hsp) < yearnaccel)
 {
