@@ -14,7 +14,7 @@ if (started)
 }
 else
 {
-	if global.key_start && st=0
+	if global.key_start || (global.key_jumpp && st=0)
 	{
 		delay=60
 		started=true

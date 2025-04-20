@@ -21,6 +21,8 @@ global.mobile = false
 axislh = gamepad_axis_value(0,gp_axislh)
 axislv = gamepad_axis_value(0,gp_axislv)
 global.char="Y"
+global.currentsong = -1
+global.maxhp = 3
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)

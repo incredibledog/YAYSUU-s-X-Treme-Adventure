@@ -6,6 +6,7 @@ if (global.newlevel)
 	global.checkpoint=false
 	global.coins=0
 	global.hp=global.maxhp
+	global.lives=3
 }
 if (global.inlevel)
 {

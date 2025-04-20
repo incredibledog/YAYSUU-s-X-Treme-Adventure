@@ -1,7 +1,20 @@
+enum playerstates
+{
+    normal,
+    crouch,
+    run,
+    dash,
+    stomp,
+    hurt,
+    inactive,
+	dead
+}
+
 if (!global.inlevel)
 	return;
 
-var move = (global.key_right - global.key_left) 
+var move = (global.key_right - global.key_left)
+
 var boing = (hpush=0)
 var lastimage_xscale = image_xscale
 if (move == 1) && brake=false

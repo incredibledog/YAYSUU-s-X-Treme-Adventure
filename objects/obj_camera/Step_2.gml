@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-if instance_exists(obj_player) && obj_player.dieded = false
+if global.inlevel && !obj_player.dieded
 {
-	if (abs(obj_player.x - x) > maxvarience || abs(obj_player.y - y) > maxvarience || obj_player.taunting)
+	if (abs(obj_player.x - x) > maxvarience || abs(obj_player.y - y) > maxvarience)
 	    followtimer = 60
 	else if (obj_player.hsp == 0 && obj_player.vsp == 0 && (!dontunfocus))
 	    followtimer--
