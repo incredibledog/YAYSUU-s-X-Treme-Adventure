@@ -1,0 +1,7 @@
+draw_set_valign(fa_bottom)
+draw_set_font(global.optfont)
+draw_text_transformed(0, 480, "STATE " + state, 0.5, 0.5, 0)
+draw_text_transformed(0, 480 - 16, "VSP " + vsp, 0.5, 0.5, 0)
+draw_text_transformed(0, 480 - 32, "HSP " + hsp, 0.5, 0.5, 0)
+draw_text_transformed(0, 480 - 48, "YEARNEDHSP " + yearnedhsp, 0.5, 0.5, 0)
+draw_set_valign(fa_top)

@@ -37,7 +37,7 @@ if (grounded == 0 && vsp >= 0)
     var semiinstance = instance_place(x, ((y + vsp) + forcecheck), obj_semisolid_a)
     if (semiinstance != noone)
     {
-        grounded = (y + 31) < semiinstance.y
+        grounded = (y + 32 - checkscale) < semiinstance.y
         semisolidcollision = grounded
     }
 }
@@ -434,6 +434,8 @@ if (place_meeting(x, y, obj_collision)) && (!dieded)
     else if (!(place_meeting(x, (y - 20), obj_collision)))
         y -= 20
 }
+
+//SPRITES! MY FABOLITE
 if (global.char == "Y")
 {
 	var newsprite = sprite_index
