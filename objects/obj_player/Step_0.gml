@@ -15,7 +15,9 @@ enum playerstates
 if (!global.inlevel)
 	return;
 
-var move = (global.key_right - global.key_left)
+move = (global.key_right - global.key_left)
+if (move != 0)
+	facingdirection = move
 
 //grounded checking
 if (state == playerstates.stomp)
@@ -43,9 +45,7 @@ if (grounded == 0 && vsp >= 0)
 }
 walled = (place_meeting((x + hsp), y, obj_collision) && (!(place_meeting((x + hsp), y, obj_slope))))
 
-if (state == playerstates.hurt)
-	yearnedhsp = (-3 * image_xscale)
-else
+if (state != playerstates.hurt)
 {
 	if (state == playerstates.crouch || state == playerstates.inactive)
 		wsp = 0
@@ -80,7 +80,7 @@ if (!candodashdo)
 //airdash
 if ((!grounded) && global.key_dashp && global.char="Y" && (state == playerstates.normal || state == playerstates.bounce) && newstate == state && !dshed && candodashdo)
 {
-    hsp = dashboost * image_xscale
+    hsp = dashboost * facingdirection
     dshed = true
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
@@ -92,7 +92,7 @@ else if (state == playerstates.dash && newstate == state && grounded)
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo && global.char="Y")
 {
-    hsp = dashboost * image_xscale
+    hsp = dashboost * facingdirection
 	newstate = playerstates.slide
     audio_play_sound(snd_slide, 1, false)
 }
@@ -156,6 +156,8 @@ if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) && globa
 		obj_camera.vshakeoffset = 30
 	    hurtt = 120
 		vsp = -3
+		yearnedhsp = facingdirection * -3
+		hsp = yearnedhsp
 	    grounded = false
 		global.hp = (global.hp - 1)
 		if global.coins < 50
@@ -206,7 +208,6 @@ else
 }
 
 vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1)
-
 
 if (state == playerstates.dead)
 {
@@ -444,45 +445,36 @@ if (global.char == "Y")
 		case playerstates.normal:
 			if (grounded)
 			{
-				if (abs(hsp) < yearnaccel)
+				if (sign(hsp) != sign(yearnedhsp))
+						newsprite = spr_yaysuu_brake
+				else if (abs(hsp) < yearnaccel)
 				{
 					if (idletime > 600)
 						newsprite = spr_yaysuu_wait
 					else
 						newsprite = spr_yaysuu_idle
 				}
-				else if (abs(hsp) <= runspriterequireemt)
-				{
+				else if (abs(hsp) <= runspriterequirement)
 					newsprite = spr_yaysuu_walk
-				}
 				else
-				{
 					newsprite = spr_yaysuu_run
-				}
 			}
 			else
 			{
-				if (abs(hsp) <= runspriterequireemt)
-				{
+				if (abs(hsp) <= runspriterequirement)
 					newsprite = spr_yaysuu_launch
-				}
 				else if (vsp > 0)
-				{
 					newsprite = spr_yaysuu_fall
-				}
 				else
-				{
 					newsprite = spr_yaysuu_jump
-				}
 			}
 			
-			if (move != 0)
-				image_xscale = move
+			if (newsprite != spr_yaysuu_brake)
+				image_xscale = facingdirection
 			break;
 		case playerstates.crouch:
 			newsprite = spr_yaysuu_crouch
-			if (move != 0)
-				image_xscale = move
+			image_xscale = facingdirection
 			break;
 		case playerstates.dash:
 			newsprite = spr_yaysuu_airdash
@@ -504,8 +496,7 @@ if (global.char == "Y")
 			break;
 		case playerstates.bounce:
 			newsprite = spr_yaysuu_spinball
-			if (move != 0)
-				image_xscale = move
+			image_xscale = facingdirection
 			break;
 		case playerstates.win:
 			if (sprite_index != spr_yaysuu_winb)
