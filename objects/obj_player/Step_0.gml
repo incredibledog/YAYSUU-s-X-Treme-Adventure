@@ -1,3 +1,6 @@
+if (!global.inlevel)
+	return;
+
 var move = (global.key_right - global.key_left) 
 var boing = (hpush=0)
 var lastimage_xscale = image_xscale
@@ -41,7 +44,7 @@ if (grounded == 0 && vsp >= 0)
 }
 walled = (place_meeting((x + hsp), y, obj_collision) && (!(place_meeting((x + hsp), y, obj_slope))))
 // airdash
-if ((!grounded) && global.key_dash && dsh == 0 && dshed == 0 && dieded == 0 && global.char="Y")
+if ((!grounded) && global.key_dashp && dsh == 0 && dshed == 0 && dieded == 0 && global.char="Y")
 {
     dsh = (20 * image_xscale)
     dshed = 1
@@ -50,14 +53,14 @@ if ((!grounded) && global.key_dash && dsh == 0 && dshed == 0 && dieded == 0 && g
     sprite_index = spr_yaysuu_airdash
     image_index = 0
 }
-if (((global.key_dash && global.key_down) || (global.key_run && global.key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="Y")
+if (((global.key_dashp && global.key_down) || (global.key_run && global.key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="Y")
 {
     dsh = (20 * image_xscale)
     audio_play_sound(snd_slide, 1, false)
 	sprite_index = spr_yaysuu_slide
     image_index = 0
 }
-if (((global.key_dash) || (global.key_run && global.key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="T")
+if (((global.key_dashp) || (global.key_run && global.key_downp)) && grounded && dsh == 0 && dieded == 0 && winning == 0 && global.char="T")
 {
     dsh = (20 * image_xscale)
     audio_play_sound(snd_slide, 1, false)
@@ -71,7 +74,7 @@ if (((global.key_dash) || (global.key_run && global.key_downp)) && grounded && d
 	}
     image_index = 0
 }
-if (grounded && semisolidcollision && move=0 && global.key_down && global.key_runp && grounded && (!stmpd) && (!bounce) && (!dieded) && (!winning) && dsh == 0 && global.platfall)
+if (grounded && semisolidcollision && move=0 && global.key_down && global.key_runp && grounded && (!stmpd) && (!bounce) && (!dieded) && (!winning) && dsh == 0)
 {
     y += 1
     grounded = 0
@@ -120,7 +123,7 @@ if ((!global.key_run && run=true && grounded) || (lastimage_xscale != image_xsca
 	brake=true
 	audio_play_sound(snd_brake,1,false)
 	savedimage_xscale=image_xscale
-	braketimer=room_speed*0.5
+	braketimer=30
 	if (audio_is_playing(snd_run))
 	{
 		audio_stop_sound(snd_run)
@@ -206,7 +209,7 @@ if (hpush < 0)
 	hpush += 0.5
 }
 // jumping
-if ((grounded || prevgrounded) && global.key_jump && (!winning) && global.char="Y" && !brake)
+if ((grounded || prevgrounded) && global.key_jumpp && (!winning) && global.char="Y" && !brake)
 {
     if (!(place_meeting(x, (y + jmp), obj_collision)))
     {
@@ -220,7 +223,7 @@ if ((grounded || prevgrounded) && global.key_jump && (!winning) && global.char="
         image_index = 0
     }
 }
-if (!djumpd && global.key_jump && (!winning) && global.char="T" && !brake)
+if (!djumpd && global.key_jumpp && (!winning) && global.char="T" && !brake)
 {
     if (!(place_meeting(x, (y + jmp), obj_collision)))
     {
@@ -282,7 +285,7 @@ if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) || (inst
 {
     hurtd = 1
     obj_camera.vshakeoffset = 30
-    hurtt = (room_speed * 2)
+    hurtt = 120
     vsp = -3
     grounded = 0
     global.hp = (global.hp - 1)
@@ -460,7 +463,6 @@ if (dieded == 0)
         }
         hsp = 0
         dsh = 0
-        key_run = 0
     }
     if (vsp < 0 && place_meeting(x, (y + vsp), obj_collision))
     {
@@ -701,10 +703,7 @@ else if (global.char == "T")
         image_angle -= hsp
     }
 }
-if (sprite_index == spr_yaysuu_crouch || sprite_index == spr_yaysuu_slide || sprite_index == spr_teddy_crouch)
-{
+if (sprite_index == spr_yaysuu_crouch || sprite_index == spr_yaysuu_slide || sprite_index == spr_teddy_crouch || sprite_index == spr_teddy_slide)
     mask_index = spr_crouchcollisionmask
-}
-else {
+else
     mask_index = spr_collisionmask
-}

@@ -4,6 +4,7 @@ function roomstart()
 {
 	if global.hubstart=false
 	{
+		global.inlevel = true
 		global.hubstart=true
 		global.checkpoint=false
 		global.score=0

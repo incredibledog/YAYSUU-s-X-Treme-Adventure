@@ -5,6 +5,7 @@ function bossstart()
 	audio_resume_all()
 	global.scoreadd=0
 	global.coins=0
+	global.inlevel = true
 	if !(audio_is_playing(global.currentsong))
 	{
 		audio_stop_all()

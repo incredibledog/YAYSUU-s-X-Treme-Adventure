@@ -3,7 +3,10 @@
 function levelstart()
 {
 	audio_resume_all()
-	global.scoreadd=0
+	if (global.newlevel)
+	{
+		global.newlevel = false
+	}
 	audio_stop_sound(mus_invincibility)
 	//if !instance_exists(obj_hud)
 	//{

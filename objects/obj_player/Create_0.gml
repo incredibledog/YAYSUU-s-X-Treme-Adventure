@@ -29,3 +29,5 @@ prevgrounded = 1
 checkscale = 0.1
 mask_index = spr_collisionmask
 maxloop = 1000
+walled = false
+state = 0

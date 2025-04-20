@@ -7,6 +7,6 @@ if type="video_start"
 if type="video_end"
 {
 	video_close()
-	room=global.nextroom
+	room_goto(global.nextroom)
 	audio_stop_all()
 }

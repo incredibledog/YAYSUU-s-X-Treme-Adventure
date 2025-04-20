@@ -24,7 +24,7 @@ else
 	draw_set_font(global.optfont)
 	draw_text(0,0,"MESSY")
 	draw_set_font(global.subtitlefont)
-	draw_text(0,32,"all of the inputs from the original trail")
+	draw_text(0,32,"all of the inputs from the\noriginal trail build")
 }
 
 draw_set_valign(fa_bottom)
