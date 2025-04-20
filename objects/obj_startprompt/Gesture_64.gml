@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-if st=0 && started=false
+if st=0 && started=false && global.mobile
 {
-	delay=room_speed
+	delay=60
 	started=true
 	audio_stop_sound(mus_title)
 	image_speed=2

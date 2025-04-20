@@ -4,9 +4,4 @@
 Made in Gamemaker Studio 2. Please DOWNLOAD the Project and edit it in gamemaker, then commit your changes Here!
 
 KNOWN ISSUES:
-* Mystic Manor 1's collision layout is slightly outdated
-* If you pause whilst the invincibility music is playing, and resume, the level music will resume too.
-* If you get a better time, but only by a few seconds, the record doesn't update.
-* Unused content from SAGE still exists. Dataminers, Now's your chance!
-* The button prompts for obj_stageclear are invisible. Huh??
-* More to be added...
+* the entire fucking game

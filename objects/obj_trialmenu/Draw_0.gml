@@ -5,7 +5,7 @@ if select!=3
 {
 	draw_text_yxa(64,64,"Choose a Stage! \n"+string(lvlname)+"\nLeft and right to cycle \nHigh Score: "+string(hiscore)+"\nBest Time: "+string(timer),"white",true)
 }
-if select=3
+else
 {
 	draw_text_yxa(64,64,"Choose a Stage! \n"+string(lvlname)+"\nLeft and right to cycle","white",true)
 }

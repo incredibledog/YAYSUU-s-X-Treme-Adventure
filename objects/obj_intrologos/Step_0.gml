@@ -8,12 +8,12 @@ if loadtime>0
 {
 	loadtime--
 }
-if global.key_start
+if global.key_jumpp
 {
 	if room=room_idalogo
 	{
 		show_error("SEE YOU NEXT TIME ...",true)
 	}
-	obj_fadeblack.fading=true
+	loadroom(room_titlescreen, false)
 	audio_stop_all()
 }
