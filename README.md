@@ -13,3 +13,4 @@ as this is currently being worked on by me, mrs. fazmade, i do not actually reco
 ## KNOWN ISSUES:
 * there are no fucking wind up frames yaysuu have you heard of Game Design
 * if it's not fun, why bother? -reggie nintendo
+* GM1024 The built-in variable 'room_speed' is deprecated and usage is discouraged.
