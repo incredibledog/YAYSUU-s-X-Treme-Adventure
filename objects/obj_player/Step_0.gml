@@ -8,7 +8,8 @@ enum playerstates
     inactive,
 	dead,
 	slide,
-	bounce
+	bounce,
+	win
 }
 
 if (!global.inlevel)
@@ -84,6 +85,10 @@ if ((!grounded) && global.key_dashp && global.char="Y" && (state == playerstates
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
 }
+else if (state == playerstates.dash && newstate == state && grounded)
+{
+	newstate = playerstates.normal
+}
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo && global.char="Y")
 {
@@ -126,7 +131,7 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if ((grounded || prevgrounded) && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && newstate != playerstates.inactive) && !!(place_meeting(x, (y + jmp), obj_collision)))
+if ((grounded || prevgrounded) && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !!(place_meeting(x, (y + jmp), obj_collision)))
 {
     vsp = jmp
     grounded = false
@@ -143,7 +148,7 @@ if ((place_meeting(x, y, obj_uncanny)) && global.hp > 0 && global.inv = false)
 {
     global.hp = 0
 }
-if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) && global.inv = 0 && hurtt == 0 && (!winning))
+if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) && global.inv = 0 && hurtt == 0 && (!winning)))
 {
 	if (global.hp > 0)
 	{
@@ -177,9 +182,6 @@ if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) && globa
 if (state == playerstates.hurt && grounded)
 		newstate = playerstates.normal
 
-vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1)
-
-
 hurtt--
 if (hurtt > 0)
 {
@@ -201,8 +203,10 @@ if (hurtt > 0)
 else
 {
     image_alpha = 1
-	
 }
+
+vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1)
+
 
 if (state == playerstates.dead)
 {
@@ -211,17 +215,12 @@ if (state == playerstates.dead)
 }
 if instance_exists(obj_goalflag)
 {
-    if (obj_goalflag.winning == 1) && winning = 0
+    if (obj_goalflag.winning == 1)
 	{
-		image_index=0
         winning = 1
+		if (grounded)
+			newstate = 
 	}
-    if (obj_goalflag.winning == 1 && grounded)
-    {
-		audio_stop_sound(snd_run)
-		instance_destroy(obj_boost)
-        move = 0
-    }
 }
 if (dieded == 1 && (!audio_is_playing(mus_dead)))
 {
@@ -443,57 +442,87 @@ if (place_meeting(x, y, obj_collision)) && (!dieded)
 }
 if (global.char == "Y")
 {
-    if (hsp == 0 && (vsp == 0 || (vsp > 0 && grounded)) && global.key_down == 0 && winning == 0) && !(sprite_index=spr_yaysuu_wait)
+	var newsprite = sprite_index
+    switch (state)
 	{
-		if !(sprite_index=spr_yaysuu_idle)
-		{
-			sprite_index = spr_yaysuu_idle
-			image_index=0
-		}
+		case playerstates.normal:
+			if (grounded)
+			{
+				if (abs(hsp) < yearnaccel)
+				{
+					if (idletime > 600)
+						newsprite = spr_yaysuu_wait
+					else
+						newsprite = spr_yaysuu_idle
+				}
+				else if (abs(hsp) <= runspriterequireemt)
+				{
+					newsprite = spr_yaysuu_walk
+				}
+				else
+				{
+					newsprite = spr_yaysuu_run
+				}
+			}
+			else
+			{
+				if (abs(hsp) <= runspriterequireemt)
+				{
+					newsprite = spr_yaysuu_launch
+				}
+				else if (vsp > 0)
+				{
+					newsprite = spr_yaysuu_fall
+				}
+				else
+				{
+					newsprite = spr_yaysuu_jump
+				}
+			}
+			
+			if (move != 0)
+				image_xscale = move
+			break;
+		case playerstates.crouch:
+			newsprite = spr_yaysuu_crouch
+			if (move != 0)
+				image_xscale = move
+			break;
+		case playerstates.dash:
+			newsprite = spr_yaysuu_airdash
+			break;
+		case playerstates.stomp:
+			newsprite = spr_yaysuu_stomp
+			break;
+		case playerstates.hurt:
+			newsprite = spr_yaysuu_ouchie
+			break;
+		case playerstates.inactive:
+			break;
+		case playerstates.dead:
+			newsprite = dead
+			image_angle += hsp
+			break;
+		case playerstates.slide:
+			newsprite = spr_yaysuu_slide
+			break;
+		case playerstates.bounce:
+			newsprite = spr_yaysuu_spinball
+			if (move != 0)
+				image_xscale = move
+			break;
 	}
-    if ((hsp > 0 || hsp < 0) && grounded && global.key_down == 0 && dshed == 0)
-	{
-        sprite_index = spr_yaysuu_walk
-	}
-	if brake=true && grounded
-	{
-		sprite_index = spr_yaysuu_brake
-	}
-    if ((hsp > 6 || hsp < -6) && grounded && global.key_down == 0)
-	{
-        sprite_index = spr_yaysuu_run
-	}
-    if (vsp < 0 && dsh == 0 && hurtd == 0 && global.hp > 0 && bounce == 0)
-	{
-        sprite_index = spr_yaysuu_jump
-	}
-    if ((!grounded) && dsh == 0 && hurtd == 0 && global.hp > 0 && bounce == 1 && (!stmpd))
-	{
-        sprite_index = spr_yaysuu_spinball
-	}
-    if (vsp > 0 && dsh == 0 && stmpd == 0 && hurtd == 0 && global.hp > 0 && (!grounded))
-	{
-		if run=true
-		{
-			sprite_index = spr_yaysuu_launch
-		}
-		else {
-			sprite_index = spr_yaysuu_fall
-		}
-	}
-    if (grounded && global.key_down && dsh == 0 && (!winning))
-	{
-        sprite_index = spr_yaysuu_crouch
-	}
-    if (winning == 1 && sprite_index != spr_yaysuu_winb && hsp == 0 && grounded)
-	{
-        sprite_index = spr_yaysuu_win
-	}
-    if dieded
-    {
-        sprite_index = spr_yaysuu_deaded
-        image_angle -= hsp
-    }
+	if (newsprite != sprite_index)
+		image_index = 0
+	sprite_index = newsprite
+	
+	if (sprite_index == spr_yaysuu_jump && image_index == 4) //don't replay the animation. thanks for adding 2 extra useless frame yaysuu!
+		image_index = 2
+	
+	if (sprite_index == spr_yaysuu_idle || sprite_index == spr_yaysuu_wait)
+		idletime++
+	else
+		idletime = 0
 }
 else if (global.char == "T")
 {
@@ -506,39 +535,26 @@ else if (global.char == "T")
 		}
 	}
     if ((hsp > 0 || hsp < 0) && dsh=0 && grounded && global.key_down == 0 && dshed == 0)
-	{
         sprite_index = spr_teddy_walk
-	}
 	if brake=true && grounded
-	{
 		sprite_index = spr_teddy_brake
-	}
     if ((hsp > 6 || hsp < -6) && dsh=0 && grounded && global.key_down == 0)
-	{
         sprite_index = spr_teddy_run
-	}
     if (vsp < 0 && dsh == 0 && hurtd == 0 && global.hp > 0 && bounce == 0)
-	{
         sprite_index = spr_teddy_jump
-	}
     if (vsp > 0 && dsh == 0 && stmpd == 0 && hurtd == 0 && global.hp > 0 && (!grounded))
-	{
         sprite_index = spr_teddy_fall
-	}
     if (grounded && global.key_down && dsh == 0 && (!winning))
-	{
         sprite_index = spr_teddy_crouch
-	}
     if (winning == 1 && sprite_index != spr_teddy_winb && hsp == 0 && grounded)
-	{
-        sprite_index = spr_teddy_win
-	}
+        sprite_index = spr_teddy_winb
     if dieded
     {
         sprite_index = spr_teddy_die
         image_angle -= hsp
     }
 }
+
 if (sprite_index == spr_yaysuu_crouch || sprite_index == spr_yaysuu_slide || sprite_index == spr_teddy_crouch || sprite_index == spr_teddy_slide)
     mask_index = spr_crouchcollisionmask
 else
