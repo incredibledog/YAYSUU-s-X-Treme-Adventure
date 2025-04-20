@@ -219,7 +219,7 @@ if instance_exists(obj_goalflag)
 	{
         winning = 1
 		if (grounded)
-			newstate = 
+			newstate = playerstates.win
 	}
 }
 if (dieded == 1 && (!audio_is_playing(mus_dead)))
