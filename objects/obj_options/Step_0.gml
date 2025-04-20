@@ -93,7 +93,7 @@ switch chos
 	case 6:
 	if global.key_jump 
 	{
-		global.nextroom=room_mainmenu
+		global.nextroom=room_setupinput
 		obj_fadeblack.fading=true
 		instance_destroy()
 		global.returntosettings = true

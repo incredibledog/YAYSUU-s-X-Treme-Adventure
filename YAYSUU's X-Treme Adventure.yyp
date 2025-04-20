@@ -199,6 +199,7 @@
     {"id":{"name":"room_mainmenu","path":"rooms/room_mainmenu/room_mainmenu.yy",},},
     {"id":{"name":"room_mysticmanor_1","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},},
     {"id":{"name":"room_options","path":"rooms/room_options/room_options.yy",},},
+    {"id":{"name":"room_setupinput","path":"rooms/room_setupinput/room_setupinput.yy",},},
     {"id":{"name":"room_soundtest","path":"rooms/room_soundtest/room_soundtest.yy",},},
     {"id":{"name":"room_titlescreen","path":"rooms/room_titlescreen/room_titlescreen.yy",},},
     {"id":{"name":"room_trialmenu","path":"rooms/room_trialmenu/room_trialmenu.yy",},},
@@ -323,6 +324,7 @@
     {"id":{"name":"spr_chillfieldstiles","path":"sprites/spr_chillfieldstiles/spr_chillfieldstiles.yy",},},
     {"id":{"name":"spr_chillhills","path":"sprites/spr_chillhills/spr_chillhills.yy",},},
     {"id":{"name":"spr_chrselectbg","path":"sprites/spr_chrselectbg/spr_chrselectbg.yy",},},
+    {"id":{"name":"spr_cloud","path":"sprites/spr_cloud/spr_cloud.yy",},},
     {"id":{"name":"spr_coinmonitor","path":"sprites/spr_coinmonitor/spr_coinmonitor.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},
     {"id":{"name":"spr_collisionmask","path":"sprites/spr_collisionmask/spr_collisionmask.yy",},},
@@ -557,6 +559,7 @@
     {"roomId":{"name":"room_options","path":"rooms/room_options/room_options.yy",},},
     {"roomId":{"name":"room_glowstickcity","path":"rooms/room_glowstickcity/room_glowstickcity.yy",},},
     {"roomId":{"name":"room_trialmenu","path":"rooms/room_trialmenu/room_trialmenu.yy",},},
+    {"roomId":{"name":"room_setupinput","path":"rooms/room_setupinput/room_setupinput.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
