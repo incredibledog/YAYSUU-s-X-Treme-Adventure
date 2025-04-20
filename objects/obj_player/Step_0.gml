@@ -42,7 +42,7 @@ if (grounded == 0 && vsp >= 0)
     var semiinstance = instance_place(x, ((y + vsp) + forcecheck), obj_semisolid_a)
     if (semiinstance != noone)
     {
-        grounded = (y + 32 - checkscale) < semiinstance.y
+        grounded = (y + 31) < semiinstance.y
         semisolidcollision = grounded
     }
 }
@@ -506,7 +506,7 @@ if (global.char == "Y")
 		case playerstates.inactive:
 			break;
 		case playerstates.dead:
-			newsprite = dead
+			newsprite = spr_yaysuu_deaded
 			image_angle += hsp
 			break;
 		case playerstates.slide:
