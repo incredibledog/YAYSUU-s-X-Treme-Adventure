@@ -206,6 +206,7 @@
     {"id":{"name":"room_titlescreen","path":"rooms/room_titlescreen/room_titlescreen.yy",},},
     {"id":{"name":"room_trialmenu","path":"rooms/room_trialmenu/room_trialmenu.yy",},},
     {"id":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
+    {"id":{"name":"amiwalled","path":"scripts/amiwalled/amiwalled.yy",},},
     {"id":{"name":"loadroom","path":"scripts/loadroom/loadroom.yy",},},
     {"id":{"name":"scr_bosshealth","path":"scripts/scr_bosshealth/scr_bosshealth.yy",},},
     {"id":{"name":"scr_bossstart","path":"scripts/scr_bossstart/scr_bossstart.yy",},},

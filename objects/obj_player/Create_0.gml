@@ -25,7 +25,6 @@ prevgrounded = true
 checkscale = 0.1
 mask_index = spr_collisionmask
 maxloop = 1000
-walled = false
 state = playerstates.normal
 newstate = playerstates.normal
 yearnedhsp = 0

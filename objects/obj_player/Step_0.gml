@@ -43,7 +43,6 @@ if (grounded == 0 && vsp >= 0)
         semisolidcollision = grounded
     }
 }
-walled = (place_meeting((x + hsp), y, obj_collision) && (!(place_meeting((x + hsp), y, obj_slope))))
 
 if (state != playerstates.hurt)
 {
@@ -61,9 +60,9 @@ if (grounded)
 	dshed = false
 	djump = true;
 }
-var candodashdo = abs(hsp) < runspeed
+var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
 
-if (!candodashdo)
+if (candodashdo)
 {
 	if (state == playerstates.dash)
 	{
@@ -100,6 +99,10 @@ if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp)
 if ((!grounded) && global.key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
 {
     hsp /= 2
+	if (vsp < 0)
+		vsp = 5
+	else
+		vsp += 5
     audio_play_sound(snd_stomp, 1, false)
 	newstate = playerstates.stomp
 }
@@ -108,6 +111,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 	newstate = playerstates.bounce
 	vsp = bounceheight
     audio_play_sound(snd_bounce, 1, false)
+    grounded = false
 }
 else if (state == playerstates.bounce && newstate == state)
 {
@@ -131,11 +135,12 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if ((grounded || prevgrounded) && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_collision)))
+if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_collision)))
 {
     vsp = jmp
     grounded = false
     audio_play_sound(snd_jump, 1, false)
+	grounded = false;
 }
 
 
@@ -182,7 +187,7 @@ if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) && globa
 	}
 }
 if (state == playerstates.hurt && grounded)
-		newstate = playerstates.normal
+	newstate = playerstates.normal
 
 hurtt--
 if (hurtt > 0)
@@ -271,7 +276,7 @@ if (state != playerstates.dead)
         if (vsp > 0)
             vsp = 0
     }
-    else if walled
+    else if amiwalled(hsp)
     {
         if (hsp != 0)
         {
@@ -400,7 +405,7 @@ if (state != playerstates.dead)
 x += hsp
 vsp=clamp(vsp,-20,10)
 y += vsp
-if (place_meeting(x, y, obj_collision)) && (!dieded)
+if (place_meeting(x, y, obj_collision)) && (state != playerstates.dead)
 {
     if !(place_meeting((x + 1), y, obj_collision))
         x += 1
@@ -446,7 +451,12 @@ if (global.char == "Y")
 			if (grounded)
 			{
 				if (sign(hsp) != sign(yearnedhsp))
+				{
+					if (yearnedhsp == 0 && abs(hsp) < walkspeed)
+						newsprite = spr_yaysuu_idle
+					else
 						newsprite = spr_yaysuu_brake
+				}
 				else if (abs(hsp) < yearnaccel)
 				{
 					if (idletime > 600)
