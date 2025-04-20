@@ -5,6 +5,5 @@ if place_meeting(x,y,obj_player)
 	global.hubstart=false
 	global.score+=global.scoreadd
 	global.scoreadd=0
-	global.nextroom=warproom
-	obj_fadeblack.fading=true
+	loadroom(warproom, false)
 }

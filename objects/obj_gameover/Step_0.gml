@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if !audio_is_playing(gameoversong)
+if !audio_is_playing(gameoversong) && !obj_fadeblack.fading
 {
-	global.nextroom=room_titlescreen
-	obj_fadeblack.fading=true
+	loadroom(room_titlescreen, false)
 }

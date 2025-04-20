@@ -452,9 +452,6 @@ if (global.char == "Y")
 			{
 				if (sign(hsp) != sign(yearnedhsp))
 				{
-					if (yearnedhsp == 0 && abs(hsp) < walkspeed)
-						newsprite = spr_yaysuu_idle
-					else
 						newsprite = spr_yaysuu_brake
 				}
 				else if (abs(hsp) < yearnaccel)
@@ -472,11 +469,19 @@ if (global.char == "Y")
 			else
 			{
 				if (abs(hsp) > runspriterequirement)
-					newsprite = spr_yaysuu_launch
-				else if (vsp > 0)
-					newsprite = spr_yaysuu_fall
+				{
+					if (vsp > 0)
+						newsprite = spr_yaysuu_launch
+					else
+						newsprite = spr_yaysuu_launch //yaysuu PLEASE give me a jumping version of this one :sob:
+				}
 				else
-					newsprite = spr_yaysuu_jump
+				{
+					if (vsp > 0)
+						newsprite = spr_yaysuu_fall
+					else
+						newsprite = spr_yaysuu_jump
+				}
 			}
 			
 			if (newsprite != spr_yaysuu_brake)
