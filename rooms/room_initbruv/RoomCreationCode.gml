@@ -14,6 +14,14 @@ global.trial=false
 global.font=font_add_sprite_ext(spr_text,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.,:!?-",false,0)
 global.subtitlefont=font_add_sprite_ext(spr_subtitlefont, "()[]!#$%'*,.:?@^abcdefghijklmnopqrstuvwxyz~{}0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",false,0)
 global.optfont=font_add_sprite_ext(spr_text_options,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.,:!?-",false,0)
+	
+instance_create_depth(0,0, depth, obj_hud)
+instance_create_depth(0,0, depth, obj_pause)
+instance_create_depth(0,0, depth, obj_mobilecontrols)
+instance_create_depth(0,0, depth, obj_gamecontroller)
+instance_create_depth(0,0, depth, obj_camera)
+instance_create_depth(0,0, depth, obj_fadeblack)
+
 if (global.inputtype == -1)
 	room_goto(room_setupinput)
 else

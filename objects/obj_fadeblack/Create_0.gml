@@ -2,4 +2,3 @@
 // You can write your code in this editor
 image_alpha=0
 fading=false
-sprite_index=spr_fadeblack
