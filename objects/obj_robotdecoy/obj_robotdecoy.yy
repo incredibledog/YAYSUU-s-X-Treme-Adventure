@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_robotdecoy",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_robotdecoy",
   "overriddenProperties":[],
@@ -10,8 +12,8 @@
     "path":"folders/Objects/levelobjs/enemys.yy",
   },
   "parentObjectId":{
-    "name":"obj_monitor",
-    "path":"objects/obj_monitor/obj_monitor.yy",
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
