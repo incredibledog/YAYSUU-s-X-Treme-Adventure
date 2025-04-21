@@ -5,6 +5,7 @@ if xoffset=632
 else
 	xoffset+=8
 
+var prevselect = select
 if global.key_leftp
 {
 	select-=1
@@ -21,8 +22,8 @@ select=clamp(select,0,5)
 
 if (changedlevel)
 {
-	//musicposition = audio_sound_get_track_position(playingmusic)
-	//audio_stop_sound(playingmusic)
+	audio_sound_gain(playingmusic[prevselect], 0, 1000);
+	audio_sound_gain(playingmusic[select], 1, 1000);
 	switch select
 	{
 		case 0:
@@ -74,11 +75,6 @@ if (changedlevel)
 	timer=string_replace_all(((string_format(ini_read_real("records",string(endlevel)+string("_minutes"),99), 2, 0)) + ":" + (string_format(ini_read_real("records",string(endlevel)+string("_seconds"),59), 2, 0))), " ", "0")
 	ini_close()
 }
-//else if !audio_is_playing(playingmusic)
-//{
-//	playingmusic = newmusic
-//	audio_sound_set_track_position(newmusic, musicposition)
-//}
 changedlevel = false
 
 if global.key_jumpp

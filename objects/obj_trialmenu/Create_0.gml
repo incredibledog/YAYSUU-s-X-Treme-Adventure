@@ -10,9 +10,10 @@ hiscore=ini_read_real("records",string(endlevel)+string("_score"),0)
 timer=string_replace_all(((string_format(ini_read_real("records",string(endlevel)+string("_minutes"),99), 2, 0)) + ":" + (string_format(ini_read_real("records",string(endlevel)+string("_seconds"),59), 2, 0))), " ", "0")
 ini_close()
 xoffset=0
-playingmusic = audio_play_sound(mus_trialmenu_t,1,true,0)
+playingmusic[0] = audio_play_sound(mus_trialmenu_t, 1, true, 1)
+playingmusic[1] = audio_play_sound(mus_trialmenu_cf1, 1, true, 0)
+playingmusic[2] = audio_play_sound(mus_trialmenu_cf2, 1, true, 0)
+playingmusic[3] = audio_play_sound(mus_trialmenu_cf3, 1, true, 0)
+playingmusic[4] = audio_play_sound(mus_trialmenu_mm1, 1, true, 0)
+playingmusic[5] = audio_play_sound(mus_trialmenu_gc, 1, true, 0)
 changedlevel = false
-hiscore = 2763
-timer = 1337
-//newmusic = -1
-//musicposition = 0

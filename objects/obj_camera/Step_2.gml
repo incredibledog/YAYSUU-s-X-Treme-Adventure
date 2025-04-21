@@ -40,8 +40,8 @@ if global.inlevel && obj_player.state != playerstates.dead && obj_player.state !
 x = clamp(x, 320, (room_width - 320))
 y = clamp(y, 240, (room_height - 240))
 
-var actualcamx = x
-var actualcamy = y
+actualcamx = x
+actualcamy = y
 
 if (!focusonpoint)
 {
