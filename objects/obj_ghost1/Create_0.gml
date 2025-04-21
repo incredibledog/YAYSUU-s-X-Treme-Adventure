@@ -3,3 +3,4 @@
 event_inherited()
 small = true
 noticed=false
+image_alpha = 0.5
