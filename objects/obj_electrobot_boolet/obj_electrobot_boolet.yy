@@ -2,7 +2,6 @@
   "$GMObject":"",
   "%Name":"obj_electrobot_boolet",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
@@ -13,8 +12,8 @@
     "path":"folders/Objects/levelobjs/enemys.yy",
   },
   "parentObjectId":{
-    "name":"obj_harmful",
-    "path":"objects/obj_harmful/obj_harmful.yy",
+    "name":"obj_robot2_boolet",
+    "path":"objects/obj_robot2_boolet/obj_robot2_boolet.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
