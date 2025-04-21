@@ -1,51 +1,54 @@
 /// @description Insert description here
 // You can write your code in this editor
-chos=clamp(chos,1,2)
-if chos=1
+if (selected)
 {
-	x=224
+	if delay > 0
+		delay--
+	else if (!obj_fadeblack.fading)
+		loadroom(room_trialmenu, false)
 }
-if chos=2
+else
 {
-	x=416
-}
-if global.key_rightp && selected=false
-{
-	audio_play_sound(snd_move,1,false)
-	chos+=1
-}
-if global.key_leftp && selected=false
-{
-	audio_play_sound(snd_move,1,false)
-	chos-=1
-}
-if (global.key_start || global.key_jump) && chos=1 && selected=false
-{
-	global.char="Y"
-	delay=room_speed*2
-	selected=true
-	audio_play_sound(snd_confirm,1,false)
-	audio_play_sound(snd_yaysuuselect,1,false)
-}
-if (global.key_start || global.key_jump) && chos=2 && selected=false
-{
-	global.char="T"
-	delay=room_speed*2
-	selected=true
-	audio_play_sound(snd_confirm,1,false)
-	audio_play_sound(snd_teddyselect,1,false)
-}
-if global.key_dash
-{
-	global.nextroom=room_mainmenu
-	obj_fadeblack.fading=true
-	audio_play_sound(snd_nahnvm,1,false)
-}
-if delay=0 && selected=true
-{
-	obj_fadeblack.fading=true
-}
-if delay>0 && selected=true
-{
-	delay--
+	if (global.key_start || global.key_jumpp)
+	{
+		if (!teddyavailable && chos == 2)
+			audio_play_sound(snd_nicetry,1,false)
+		else
+		{
+			delay=120
+			selected=true
+			audio_play_sound(snd_confirm,1,false)
+			if (chos == 1)
+			{
+				global.char="Y"
+				audio_play_sound(snd_yaysuuselect,1,false)
+			}
+			else
+			{
+				global.char="T"
+				audio_play_sound(snd_teddyselect,1,false)
+			}
+		}
+	}
+	else if global.key_dashp
+	{
+		loadroom(room_mainmenu, false)
+		audio_play_sound(snd_nahnvm,1,false)
+	}
+	else if global.key_rightp
+	{
+		audio_play_sound(snd_move,1,false)
+		chos++
+	}
+	else if global.key_leftp
+	{
+		audio_play_sound(snd_move,1,false)
+		chos--
+	}
+	
+	chos=clamp(chos,1,2)
+	if chos=1
+		x=224
+	else
+		x=416
 }

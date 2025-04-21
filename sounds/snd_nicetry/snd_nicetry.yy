@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.071,
+  "duration":1.0710204,
   "name":"snd_nicetry",
   "parent":{
     "name":"Sounds",
