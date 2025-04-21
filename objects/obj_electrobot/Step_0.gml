@@ -13,7 +13,7 @@ if state=0
 	}
 	if delaying=false
 	{
-		delay=2*room_speed
+		delay=120
 		delaying=true
 	}
 }
@@ -25,7 +25,7 @@ if state=6
 	vulnerable=true
 	if delaying=false
 	{
-		delay=2*room_speed
+		delay=120
 		delaying=true
 	}
 }
@@ -42,7 +42,7 @@ if state=8
 	}
 	if delaying=false
 	{
-		delay=2*room_speed
+		delay=120
 		delaying=true
 	}
 }
@@ -55,13 +55,13 @@ if state=9
 	cooldown=false
 	if delaying=false
 	{
-		delay=5*room_speed
+		delay=300
 		delaying=true
 	}
 	if kablooeyjrtimer<=0
 	{
 		instance_create_depth(x+random_range(-16,16),y+random_range(-16,16),depth-1,obj_explode_jr)
-		kablooeyjrtimer=room_speed*0.0625
+		kablooeyjrtimer=37.5
 	}
 	if kablooeyjrtimer>0
 	{
@@ -195,7 +195,7 @@ if state=4
 	vsp=0
 	if thundertimer=0 && thundertimes<3
 	{
-		thundertimer=0.9*room_speed
+		thundertimer=54
 		thundertimes++
 		instance_create_depth(obj_player.x-16,0,depth,obj_electrobot_warning)
 	}
@@ -205,7 +205,7 @@ if state=4
 	}
 	if delaying=false
 	{
-		delay=room_speed*4
+		delay=240
 		delaying=true
 	}
 }

@@ -5,7 +5,7 @@ if instance_exists(obj_player)
 	if (place_meeting(x,y,obj_player)) && touched=false
 	{
 		touched=true
-		endtimer=room_speed*2
+		endtimer=120
 		if global.char="Y"
 		{
 			sprite_index=spr_goalflag_transition

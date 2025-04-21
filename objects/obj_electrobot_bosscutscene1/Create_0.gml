@@ -4,5 +4,5 @@ sprite_index=spr_electrobot_idle
 talking=false
 bossname="ELECTRO-BOT"
 stringchr=0
-alarm_set(0,room_speed*0.25)
+alarm_set(0,15)
 global.bosshp=6

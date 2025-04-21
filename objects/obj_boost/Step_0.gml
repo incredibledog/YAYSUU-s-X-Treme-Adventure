@@ -6,7 +6,7 @@ image_xscale=obj_player.image_xscale
 if trailtimer=0
 {
 	instance_create_depth(x-10*obj_player.image_xscale,y,depth,obj_boost_trail)
-	trailtimer=room_speed*0.2
+	trailtimer=12
 }
 if trailtimer>0
 {

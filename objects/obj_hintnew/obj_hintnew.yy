@@ -9,8 +9,8 @@
   "name":"obj_hintnew",
   "overriddenProperties":[],
   "parent":{
-    "name":"hints",
-    "path":"folders/Objects/levelobjs/hints.yy",
+    "name":"levelobjs",
+    "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":null,
   "persistent":false,
