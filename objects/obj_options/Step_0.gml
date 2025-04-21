@@ -93,8 +93,7 @@ switch chos
 	case 6:
 	if global.key_jump 
 	{
-		global.nextroom=room_setupinput
-		obj_fadeblack.fading=true
+		loadroom(room_setupinput, false)
 		instance_destroy()
 		global.returntosettings = true
 		audio_play_sound(snd_confirm,1,false)
@@ -136,8 +135,7 @@ switch chos
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_confirm,1,false)
-			global.nextroom=room_mainmenu
-			obj_fadeblack.fading=true
+			loadroom(room_mainmenu, false)
 			instance_destroy()
 		}
 	}
@@ -157,8 +155,7 @@ switch chos
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_nahnvm,1,false)
-			global.nextroom=room_mainmenu
-			obj_fadeblack.fading=true
+			loadroom(room_mainmenu, false)
 			instance_destroy()
 		}
 	}
@@ -177,7 +174,6 @@ if global.key_dash
 	ini_close()
 	audio_stop_sound(mus_options)
 	audio_play_sound(snd_nahnvm,1,false)
-	global.nextroom=room_mainmenu
-	obj_fadeblack.fading=true
+	loadroom(room_mainmenu, false)
 	instance_destroy()
 }

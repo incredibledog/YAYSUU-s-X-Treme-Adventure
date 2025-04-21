@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 draw_set_font(global.optfont)
+draw_set_valign(fa_top)
 draw_text(32,32,"OPTIONS")
 draw_text(32,96,"VOLUME  "+string_format(volume,1,2))
 if os_type=os_android && !gamepad_is_connected(0)
