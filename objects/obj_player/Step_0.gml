@@ -455,6 +455,9 @@ if (global.char == "Y")
 			{
 				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
 				{
+					if ((sprite_index == spr_yaysuu_idle || sprite_index == spr_yaysuu_walk) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
+						newsprite = spr_yaysuu_idle
+					else
 						newsprite = spr_yaysuu_brake
 				}
 				else if (abs(hsp) < yearnaccel)
@@ -542,11 +545,15 @@ if (global.char == "Y")
 		
 		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
 		audio_sound_pitch(runningsound, runpitch)
+		image_speed = runpitch
 	}
 	else if !audio_is_paused(runningsound)
+	{
 		audio_pause_sound(runningsound)
+		image_speed = 1
+	}
 		
-	if (sprite_index == spr_yaysuu_brake)
+	if (sprite_index == spr_yaysuu_brake && abs(hsp) > walkspeed)
 	{
 		if (!hasplayedbrakesound)
 		{

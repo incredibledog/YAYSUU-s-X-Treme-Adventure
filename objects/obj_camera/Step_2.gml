@@ -66,10 +66,10 @@ else
 if vshakeoffset > 0
 	vshakeoffset--
 
-actualcamx = clamp(actualcamx, 320, (room_width - 320))
-actualcamy = clamp(actualcamy, 240, (room_height - 240))
 actualcamx = round(actualcamx - 320)
 actualcamy = round(actualcamy - 240 + (vshakeoffset * vwobble))
+actualcamx = clamp(actualcamx, 320, (room_width - 320))
+actualcamy = clamp(actualcamy, 240, (room_height - 240))
 
 gamepad_set_vibration(0, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
 camera_set_view_pos(view_camera[0], actualcamx, actualcamy)
