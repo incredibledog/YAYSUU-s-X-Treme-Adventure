@@ -20,3 +20,4 @@ if spotted
 }
 else
 	shoottimer = 80
+event_inherited()
