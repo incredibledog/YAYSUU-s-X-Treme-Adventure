@@ -2,16 +2,14 @@
 // You can write your code in this editor
 x=obj_player.x
 y=obj_player.y
-if trailtimer=0
+if trailtimer>0
+	trailtimer--
+else
 {
 	instance_create_depth(x,y,depth,obj_invincibility_trail)
-	trailtimer=room_speed*0.5
+	trailtimer=30
 }
-if trailtimer>0
-{
-	trailtimer--
-}
-if !audio_is_playing(mus_invincibility) || obj_player.dieded=true
+if !audio_is_playing(mus_invincibility) || obj_player.state == playerstates.dead
 {
 	audio_resume_sound(global.currentsong)
 	global.inv=0

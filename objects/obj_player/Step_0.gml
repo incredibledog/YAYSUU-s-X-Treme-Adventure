@@ -146,40 +146,43 @@ if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != 
 	grounded = false;
 }
 //ow! ow! that hurts! that hurts!
-if (global.inv = 0 && hurtt == 0 && !winning && ouchies)
+if (ouchies)
 {
-	if (global.hp > 0)
+	ouchies = false
+	if (!global.inv && hurtt == 0 && !winning)
 	{
-	    newstate = playerstates.hurt
-		obj_camera.vshakeoffset = 30
-	    hurtt = 120
-		vsp = -3
-		yearnedhsp = facingdirection * -3
-		hsp = yearnedhsp
-	    grounded = false
-		global.hp = (global.hp - 1)
-		if global.coins < 50
+		if (global.hp > 0)
 		{
-			global.coins = 0
+		    newstate = playerstates.hurt
+			obj_camera.vshakeoffset = 30
+			hurtt = 120
+			vsp = -3
+			yearnedhsp = facingdirection * -3
+			hsp = yearnedhsp
+		    grounded = false
+			global.hp = (global.hp - 1)
+			if global.coins < 50
+			{
+				global.coins = 0
+			}
+			if global.coins >= 50
+			{
+				global.coins -= 50
+			}
+		    global.scoreadd -= 50
+			audio_play_sound(snd_ouchie, 1, false)
 		}
-		if global.coins >= 50
+		else
 		{
-			global.coins -= 50
+		    newstate = playerstates.dead
+			if (global.lives > 0)
+				global.lives--
+		    vsp = -abs(vsp)
+		    audio_stop_all()
+			audio_play_sound(mus_dead, 1, false)
 		}
-	    global.scoreadd -= 50
-		audio_play_sound(snd_ouchie, 1, false)
-	}
-	else
-	{
-	    newstate = playerstates.dead
-		if (global.lives > 0)
-			global.lives--
-	    vsp = -abs(vsp)
-	    audio_stop_all()
-		audio_play_sound(mus_dead, 1, false)
 	}
 }
-ouchies = false
 if (state == playerstates.hurt && grounded)
 	newstate = playerstates.normal
 
@@ -217,15 +220,18 @@ if (state == playerstates.dead)
 		else
 		    loadroom(room, false)
 	}
-
 }
-else if instance_exists(obj_goalflag)
+else
 {
-    if (obj_goalflag.winning == 1)
+	image_angle = 0
+	if instance_exists(obj_goalflag)
 	{
-        winning = 1
-		if (grounded)
-			newstate = playerstates.win
+	    if (obj_goalflag.winning == 1)
+		{
+	        winning = 1
+			if (grounded)
+				newstate = playerstates.win
+		}
 	}
 }
 
@@ -561,4 +567,14 @@ else if (global.char == "T")
         sprite_index = spr_teddy_die
         image_angle -= hsp
     }
+}
+
+if (global.inv)
+{
+	rainbowtimer++
+	image_blend = make_color_hsv((rainbowtimer / 60 * 128) mod 256,64,255);
+}
+else
+{
+	image_blend = c_white
 }

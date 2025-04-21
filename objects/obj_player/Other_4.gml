@@ -5,4 +5,11 @@ if (global.newlevel)
 	mask_index = spr_collisionmask
 	state = playerstates.normal
 	newstate = playerstates.normal
+	hsp = 0
+	yearnedhsp = 0
+	vsp = 0
+	hurtt = 0
+	grounded = true
+	prevgrounded = true
+	winning = false
 }
