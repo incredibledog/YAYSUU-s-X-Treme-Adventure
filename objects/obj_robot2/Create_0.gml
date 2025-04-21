@@ -2,4 +2,4 @@
 // You can write your code in this editor
 event_inherited()
 spotted=false
-shoottimer=0
+shoottimer=80
