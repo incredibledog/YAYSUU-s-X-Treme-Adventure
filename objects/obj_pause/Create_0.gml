@@ -4,3 +4,6 @@ global.pause=false
 cursor=0
 scrollx=0
 scrolly=0
+resumekey=false
+retrykey=false
+quitkey=false

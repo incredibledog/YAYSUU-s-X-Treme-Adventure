@@ -3,7 +3,7 @@
 if touched=false
 {
 		touched=true
-		endtimer=room_speed*2
+		endtimer=120
 }
 if endtimer>0 && touched=true
 {

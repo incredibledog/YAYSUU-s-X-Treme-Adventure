@@ -26,7 +26,8 @@ if hide=false && results=false && bangtime=false
 		ini_write_real("records",string(room)+string("_minutes"),obj_hud.minutes)
 		ini_write_real("records",string(room)+string("_seconds"),obj_hud.seconds)
 	}
-	begintimer=room_speed*2
+	begintimer=120
+	ini_close()
 }
 if begintimer>0
 {
@@ -43,7 +44,7 @@ if begintimer=0 && results=true && bangtime=false
 	}
 	bangtime=true
 	audio_play_sound(snd_bang,1,false)
-	bangtimer=room_speed*0.25
+	bangtimer=15
 }
 if bangtimer>0
 {
@@ -53,7 +54,7 @@ if bangtimer=0 && display>0 && display<4
 {
 	display+=1
 	audio_play_sound(snd_bang,1,false)
-	bangtimer=room_speed*0.25
+	bangtimer=15
 }
 if hide=false
 {

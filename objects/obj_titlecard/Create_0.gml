@@ -2,7 +2,7 @@
 // You can write your code in this editor
 x=288 // sorry, this is hardcoded
 y=192
-goawaytime=room_speed*1
+goawaytime=60
 goawayspeed=0
 switch room {
 	case room_chillfields_1:
