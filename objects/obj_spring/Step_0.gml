@@ -6,7 +6,7 @@ if (place_meeting(x,y,obj_player)) && springtmr=0
 	springtmr=30
 	audio_play_sound(snd_boing,1,false)
 	if (obj_player.state == playerstates.stomp)
-		obj_player.newstate == playerstates.bounce
+		obj_player.newstate = playerstates.bounce
 }
 if springtmr>0
 {
