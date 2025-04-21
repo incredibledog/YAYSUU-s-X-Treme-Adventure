@@ -22,9 +22,14 @@ switch chos
 		volume+=0.01
 		audio_master_gain(volume)
 	}
-	if global.key_left
+	else if global.key_left
 	{
 		volume-=0.01
+		audio_master_gain(volume)
+	}
+	else
+	{
+		volume = round(volume / 0.05) * 0.05
 		audio_master_gain(volume)
 	}
 	break;
@@ -35,9 +40,13 @@ switch chos
 		{
 			global.controlalpha+=0.01
 		}
-		if global.key_left 
+		else if global.key_left 
 		{
 			global.controlalpha-=0.01
+		}
+		else
+		{
+			global.controlalpha = round(global.controlalpha / 0.05) * 0.05
 		}
 	}
 	else {
@@ -45,14 +54,18 @@ switch chos
 		{
 			global.sensitivity+=0.01
 		}
-		if global.key_left 
+		else if global.key_left 
 		{
 			global.sensitivity-=0.01
+		}
+		else
+		{
+			global.sensitivity = round(global.sensitivity / 0.05) * 0.05
 		}
 	}
 	break;
 	case 3:
-	if global.key_jump 
+	if global.key_jumpp
 	{
 		if window_get_fullscreen()
 		{
@@ -65,7 +78,7 @@ switch chos
 	}
 	break;
 	case 4:
-	if global.key_jump 
+	if global.key_jumpp
 	{
 		if global.screenshake=true
 		{
@@ -78,7 +91,7 @@ switch chos
 	}
 	break;
 	case 5:
-	if global.key_jump 
+	if global.key_jumpp
 	{
 		if global.borders=true
 		{
@@ -91,7 +104,7 @@ switch chos
 	}
 	break;
 	case 6:
-	if global.key_jump 
+	if global.key_jumpp
 	{
 		loadroom(room_setupinput, false)
 		instance_destroy()
@@ -100,7 +113,7 @@ switch chos
 	}
 	break;
 	case 7:
-	if global.key_jump
+	if global.key_jumpp
 	{
 		ini_open("savedata.ini")
 		ini_section_delete("records")
@@ -109,7 +122,7 @@ switch chos
 	}
 	break;
 	case 8:
-	if global.key_jump 
+	if global.key_jumpp
 	{
 		volume=1
 		audio_master_gain(volume)
@@ -122,7 +135,7 @@ switch chos
 	break;
 	case 9:
 	{
-		if global.key_jump
+		if global.key_jumpp
 		{
 			ini_open("savedata.ini")
 			ini_write_real("settings","volume",volume)
@@ -142,7 +155,7 @@ switch chos
 	break;
 	case 10:
 	{
-		if global.key_jump
+		if global.key_jumpp
 		{
 			ini_open("savedata.ini")
 			audio_master_gain(ini_read_real("settings","volume",1))
@@ -161,7 +174,7 @@ switch chos
 	}
 	break;
 }
-if global.key_dash
+if global.key_dashp
 {
 	ini_open("savedata.ini")
 	audio_master_gain(ini_read_real("settings","volume",1))

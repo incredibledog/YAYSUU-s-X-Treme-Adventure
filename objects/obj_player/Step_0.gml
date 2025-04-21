@@ -145,19 +145,10 @@ if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != 
     audio_play_sound(snd_jump, 1, false)
 	grounded = false;
 }
-
-
-
-if ((place_meeting(x, y, obj_die)) && global.hp > 0)
+//ow! ow! that hurts! that hurts!
+if (global.inv = 0 && hurtt == 0 && !winning && ouchies)
 {
-    global.hp = 0
-}
-if ((place_meeting(x, y, obj_uncanny)) && global.hp > 0 && global.inv = false)
-{
-    global.hp = 0
-}
-if ((place_meeting(x, y, obj_enemy) || place_meeting(x, y, obj_harmful) && global.inv = 0 && hurtt == 0 && (!winning)))
-{
+	ouchies = false
 	if (global.hp > 0)
 	{
 	    newstate = playerstates.hurt
@@ -237,27 +228,36 @@ else if instance_exists(obj_goalflag)
 			newstate = playerstates.win
 	}
 }
+
 //actual movement
-if (abs(yearnedhsp - hsp) < yearnaccel)
-{
+var accel
+if (sign(hsp) != sign(hsp - yearnedhsp) && abs(hsp) <= walkspeed)
+	accel = yearnaccelunderspeed
+else if (sign(hsp) == sign(hsp - yearnedhsp) && abs(hsp) >= walkspeed)
+	accel = yearnacceloverspeed
+else
+	accel = yearnaccel
+
+if (abs(yearnedhsp - hsp) < accel)
 	hsp = yearnedhsp
-}
 else if (yearnedhsp > hsp)
-{
-	if (hsp > walkspeed)
-		hsp += yearnacceloverspeed
-	else
-		hsp += yearnaccel
-}
+	hsp += accel
 else if (yearnedhsp < hsp)
-{
-	if (hsp < -walkspeed)
-		hsp -= yearnacceloverspeed
-	else
-		hsp -= yearnaccel
-}
+	hsp -= accel
 
 state = newstate
+
+if (state == playerstates.stomp)
+	vsp=clamp(vsp,-10,20)
+else
+	vsp=clamp(vsp,-20,10)
+
+if (state == playerstates.dead)
+    mask_index = noone
+else if (state == playerstates.crouch || state == playerstates.slide)
+    mask_index = spr_collisionmask
+else
+    mask_index = spr_collisionmask
 
 if (state != playerstates.dead)
 {
@@ -406,7 +406,6 @@ if (state != playerstates.dead)
 	}
 }
 x += hsp
-vsp=clamp(vsp,-20,10)
 y += vsp
 if (place_meeting(x, y, obj_collision)) && (state != playerstates.dead)
 {
@@ -563,8 +562,3 @@ else if (global.char == "T")
         image_angle -= hsp
     }
 }
-
-if (sprite_index == spr_yaysuu_crouch || sprite_index == spr_yaysuu_slide || sprite_index == spr_teddy_crouch || sprite_index == spr_teddy_slide)
-    mask_index = spr_crouchcollisionmask
-else
-    mask_index = spr_collisionmask

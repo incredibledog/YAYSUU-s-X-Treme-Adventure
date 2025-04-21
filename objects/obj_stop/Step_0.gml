@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (place_meeting(x,y,obj_player)) && goaway=false && obj_player.dieded=false
+if (place_meeting(x,y,obj_player)) && !goaway
 {
 	goaway=true
 	audio_play_sound(snd_stopngo,1,false)

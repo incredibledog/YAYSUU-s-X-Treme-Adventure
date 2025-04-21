@@ -1,3 +1,4 @@
+draw_set_valign(fa_top)
 if global.inputtype == 0
 {
 	draw_set_font(global.optfont)

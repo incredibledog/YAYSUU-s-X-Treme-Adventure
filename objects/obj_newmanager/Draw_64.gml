@@ -1,3 +1,6 @@
+if global.jumpscare=true
+	draw_sprite(spr_uncanny_jumpscare,0,0,0)
+
 if window_get_fullscreen() && global.borders=true
 {
 	switch room
@@ -32,21 +35,4 @@ if window_get_fullscreen() && global.borders=true
 		draw_sprite(spr_default_border,0,0,0)
 		break;
 	}
-}
-
-
-if (instance_number(obj_fadeblack) > 1)
-{
-	draw_set_font(global.subtitlefont)
-	draw_text(0, 0, "mah boy there are " + instance_number(obj_fadeblack) + "obj_fadeblack here")
-}
-if (instance_number(obj_pause) > 1)
-{
-	draw_set_font(global.subtitlefont)
-	draw_text(0, 16, "mah boy there are " + instance_number(obj_pause) + "obj_pause here")
-}
-if (instance_number(obj_camera) > 1)
-{
-	draw_set_font(global.subtitlefont)
-	draw_text(0, 32, "mah boy there are " + instance_number(obj_camera) + "obj_camera here")
 }

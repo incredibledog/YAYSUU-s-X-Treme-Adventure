@@ -5,43 +5,26 @@ draw_set_valign(fa_top)
 draw_text(32,32,"OPTIONS")
 draw_text(32,96,"VOLUME  "+string_format(volume,1,2))
 if os_type=os_android && !gamepad_is_connected(0)
-{
 	draw_text(32,128,"PAD OPACITY  "+string_format(global.controlalpha,1,2))
-}
-else {
+else
 	draw_text(32,128,"SENSITIVITY  "+string_format(global.sensitivity,1,2))
-}
 if os_type=os_android
-{
 	draw_text(32,160,"ANDROID DETECTED")
-}
 else
 {
 	if window_get_fullscreen()
-	{
 		draw_text(32,160,"FULLSCREEN  ON")
-	}
 	else
-	{
 		draw_text(32,160,"FULLSCREEN  OFF")
-	}
 }
 if global.screenshake=true
-{
 	draw_text(32,192,"SCREENSHAKE  ON")
-}
 else
-{
 	draw_text(32,192,"SCREENSHAKE  OFF")
-}
 if global.borders=true
-{
 	draw_text(32,224,"BORDERS  ON")
-}
 else
-{
 	draw_text(32,224,"BORDERS  OFF")
-}
 draw_text(32,256,"CHOOSE INPUT")
 draw_text(32,288,"RESET RECORDS")
 draw_text(32,320,"RESET 2 DEFAULT")
