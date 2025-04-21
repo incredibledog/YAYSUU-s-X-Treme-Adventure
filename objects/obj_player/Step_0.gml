@@ -111,10 +111,7 @@ if ((!grounded) && global.key_downp && newstate == state && (state == playerstat
 }
 else if (grounded && state == playerstates.stomp && newstate == state)
 {
-	newstate = playerstates.bounce
-	vsp = bounceheight
-    audio_play_sound(snd_bounce, 1, false)
-    grounded = false
+	scr_player_trybounce()
 }
 else if (state == playerstates.bounce && newstate == state)
 {
@@ -236,10 +233,10 @@ else
 
 //actual movement
 var accel
-if (sign(hsp) != sign(hsp - yearnedhsp) && abs(hsp) <= walkspeed)
-	accel = yearnaccelunderspeed
-else if (sign(hsp) == sign(hsp - yearnedhsp) && abs(hsp) >= walkspeed)
+if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) //wants to increase above walking
 	accel = yearnacceloverspeed
+else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0
+	accel = yearnaccelunderspeed
 else
 	accel = yearnaccel
 
@@ -252,10 +249,6 @@ else if (yearnedhsp < hsp)
 
 state = newstate
 
-if (state == playerstates.stomp)
-	vsp=clamp(vsp,-10,20)
-else
-	vsp=clamp(vsp,-20,10)
 
 if (state == playerstates.dead)
     mask_index = -1
@@ -264,6 +257,7 @@ else if (state == playerstates.crouch || state == playerstates.slide)
 else
     mask_index = spr_collisionmask
 
+vsp=clamp(vsp,-20,10)
 var gotwalled = false
 if (state != playerstates.dead)
 {
@@ -470,14 +464,14 @@ if (global.char == "Y")
 					else
 						newsprite = spr_yaysuu_idle
 				}
-				else if (abs(hsp) > runspriterequirement)
+				else if (abs(hsp) > walkspeed)
 					newsprite = spr_yaysuu_run
 				else
 					newsprite = spr_yaysuu_walk
 			}
 			else
 			{
-				if (abs(hsp) > runspriterequirement)
+				if (abs(hsp) > walkspeed)
 				{
 					if (vsp > 0)
 						newsprite = spr_yaysuu_launch
@@ -569,6 +563,18 @@ else if (global.char == "T")
         image_angle -= hsp
     }
 }
+
+if (!audio_exists(runningsound))
+	runningsound = audio_play_sound(snd_run, 1, true)
+if (state == playerstates.normal && abs(hsp) > walkspeed && grounded)
+{
+	if audio_is_paused(runningsound)
+		audio_resume_sound(runningsound)
+	var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
+	audio_sound_pitch(runningsound, runpitch)
+}
+else if !audio_is_paused(runningsound)
+	audio_pause_sound(runningsound)
 
 if (global.inv)
 {

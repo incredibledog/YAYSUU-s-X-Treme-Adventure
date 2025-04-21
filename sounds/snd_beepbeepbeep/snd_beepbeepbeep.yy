@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.731417,
+  "duration":0.73142856,
   "name":"snd_beepbeepbeep",
   "parent":{
     "name":"Sounds",

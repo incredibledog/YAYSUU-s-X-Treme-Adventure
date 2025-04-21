@@ -3,7 +3,6 @@
   "%Name":"obj_explode_jr",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_explode_jr",
@@ -12,7 +11,10 @@
     "name":"enemys",
     "path":"folders/Objects/levelobjs/enemys.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_explode",
+    "path":"objects/obj_explode/obj_explode.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
