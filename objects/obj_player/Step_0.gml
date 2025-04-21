@@ -145,11 +145,12 @@ if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != 
 //ow! ow! that hurts! that hurts!
 if (ouchies)
 {
-	global.debugmessage = "yeah i've got a case of the ouchies"
 	ouchies = false
-	if (!global.inv && hurtt <= 0 && !winning && state != playerstates.dead)
+	if ((!global.inv && hurtt <= 0 && !winning) || deathies) && state != playerstates.dead
 	{
 		global.debugmessage = "yeoch!"
+		if (deathies)
+			global.hp = 0
 		if (global.hp > 0)
 		{
 		    newstate = playerstates.hurt
@@ -170,6 +171,7 @@ if (ouchies)
 		}
 		else
 		{
+			deathies = false;
 		    newstate = playerstates.dead
 			if (global.lives > 0)
 				global.lives--

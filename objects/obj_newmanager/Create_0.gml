@@ -25,6 +25,14 @@ global.currentsong = -1
 global.maxhp = 3
 global.jumpscare = false
 global.debugmessage = ""
+global.timer = 0
+global.score = 0
+global.checkpoint=false
+global.coins=0
+global.maxhp=3
+global.hp=global.maxhp
+global.scoreadd = 0
+global.lives=3
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)

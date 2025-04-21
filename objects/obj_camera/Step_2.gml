@@ -52,6 +52,13 @@ if (!focusonpoint)
 	{
 		wantedspeedoffset = obj_player.hsp * speedoffsetscale
 	}
+	
+	var speedoffsetspeed
+	if (abs(wantedspeedoffset) > speedoffset * sign(wantedspeedoffset))
+		speedoffsetspeed = speedoffsetspeedincrease
+	else
+		speedoffsetspeed = speedoffsetspeeddecrease
+	
 	if (abs(wantedspeedoffset - speedoffset) < speedoffsetspeed)
 		speedoffset = wantedspeedoffset
 	else
@@ -68,8 +75,8 @@ if vshakeoffset > 0
 
 actualcamx = round(actualcamx - 320)
 actualcamy = round(actualcamy - 240 + (vshakeoffset * vwobble))
-actualcamx = clamp(actualcamx, 320, (room_width - 320))
-actualcamy = clamp(actualcamy, 240, (room_height - 240))
+actualcamx = clamp(actualcamx, 0, (room_width - 640))
+actualcamy = clamp(actualcamy, 0, (room_height - 480))
 
 gamepad_set_vibration(0, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
 camera_set_view_pos(view_camera[0], actualcamx, actualcamy)

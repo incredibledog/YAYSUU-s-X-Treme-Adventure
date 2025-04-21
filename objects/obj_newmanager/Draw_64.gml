@@ -1,6 +1,18 @@
 if global.jumpscare=true
 	draw_sprite(spr_uncanny_jumpscare,0,0,0)
 
+if (global.inlevel)
+{
+	draw_set_font(global.subtitlefont)
+	draw_set_halign(fa_right)
+	draw_text(640, 0, "temp hud :3")
+	draw_set_halign(fa_left)
+	draw_set_font(global.font)
+	draw_text(0, 0, "SCORE: " + string(global.score + global.scoreadd))
+	draw_text(0, 32, "COINS: " + string(global.coins))
+	draw_text(0, 64, "HEALTH: " + string(global.hp))
+}
+
 if window_get_fullscreen() && global.borders=true
 {
 	switch room

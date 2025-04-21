@@ -18,4 +18,5 @@ focusonpointstored = false
 dontunfocus = false
 speedoffset = 0
 speedoffsetscale = 8
-speedoffsetspeed = 0.5
+speedoffsetspeedincrease = 0.5
+speedoffsetspeeddecrease = 2
