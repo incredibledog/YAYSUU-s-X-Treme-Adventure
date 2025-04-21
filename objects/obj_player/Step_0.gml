@@ -147,7 +147,7 @@ if (ouchies)
 {
 	global.debugmessage = "yeah i've got a case of the ouchies"
 	ouchies = false
-	if (!global.inv && hurtt == 0 && !winning && state != playerstates.dead)
+	if (!global.inv && hurtt <= 0 && !winning && state != playerstates.dead)
 	{
 		global.debugmessage = "yeoch!"
 		if (global.hp > 0)
@@ -532,6 +532,30 @@ if (global.char == "Y")
 		idletime++
 	else
 		idletime = 0
+
+	if (!audio_exists(runningsound))
+		runningsound = audio_play_sound(snd_run, 1, true)
+	if (sprite_index == spr_yaysuu_run)
+	{
+		if audio_is_paused(runningsound)
+			audio_resume_sound(runningsound)
+		
+		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
+		audio_sound_pitch(runningsound, runpitch)
+	}
+	else if !audio_is_paused(runningsound)
+		audio_pause_sound(runningsound)
+		
+	if (sprite_index == spr_yaysuu_brake)
+	{
+		if (!hasplayedbrakesound)
+		{
+			audio_play_sound(snd_brake, 1, false)
+			hasplayedbrakesound = true
+		}
+	}
+	else
+		hasplayedbrakesound = false
 }
 else if (global.char == "T")
 {
@@ -563,18 +587,6 @@ else if (global.char == "T")
         image_angle -= hsp
     }
 }
-
-if (!audio_exists(runningsound))
-	runningsound = audio_play_sound(snd_run, 1, true)
-if (state == playerstates.normal && abs(hsp) > walkspeed && grounded)
-{
-	if audio_is_paused(runningsound)
-		audio_resume_sound(runningsound)
-	var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
-	audio_sound_pitch(runningsound, runpitch)
-}
-else if !audio_is_paused(runningsound)
-	audio_pause_sound(runningsound)
 
 if (global.inv)
 {

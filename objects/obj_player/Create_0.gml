@@ -37,3 +37,4 @@ ouchies = false
 rainbowtimer = 0
 runningsound = audio_play_sound(snd_run, 1, true)
 audio_pause_sound(runningsound)
+hasplayedbrakesound = false

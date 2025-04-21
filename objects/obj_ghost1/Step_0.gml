@@ -9,15 +9,15 @@ if noticed
 		image_xscale=-1
 	
 	if (image_alpha < 1)
-		image_alpha += 0.01
+		image_alpha -= 0.01
 	
-	if distance_to_object(obj_player)>=320
+	if distance_to_object(obj_player)>=160
 		noticed=false
 }
 else if distance_to_object(obj_player)<=128
 {
 	noticed=true
 	if (image_alpha > 0.5)
-		image_alpha -= 0.01
+		image_alpha += 0.01
 }
 event_inherited()

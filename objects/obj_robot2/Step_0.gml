@@ -25,7 +25,7 @@ if spotted=true && shoottimer=0
 	});
 	audio_play_sound(snd_shoot,1,false)
 	sprite_index=spr_robot2_shoot
-	shoottimer=room_speed*1
+	shoottimer=60
 }
 if shoottimer>0
 {

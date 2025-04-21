@@ -36,8 +36,29 @@ if global.inlevel && obj_player.state != playerstates.dead && obj_player.state !
 	    lerpy = 0
 	}
 }
+
 x = clamp(x, 320, (room_width - 320))
 y = clamp(y, 240, (room_height - 240))
+
+var actualcamx = x
+var actualcamy = y
+
+if (!focusonpoint)
+{
+	actualcamy += voffset
+	
+	var wantedspeedoffset = 0
+	if (abs(obj_player.hsp) > obj_player.walkspeed)
+	{
+		wantedspeedoffset = obj_player.hsp * speedoffsetscale
+	}
+	if (abs(wantedspeedoffset - speedoffset) < speedoffsetspeed)
+		speedoffset = wantedspeedoffset
+	else
+		speedoffset += sign(wantedspeedoffset - speedoffset) * speedoffsetspeed
+	actualcamx += speedoffset
+}
+
 if global.screenshake
 	vwobble = (-vwobble)
 else
@@ -45,5 +66,10 @@ else
 if vshakeoffset > 0
 	vshakeoffset--
 
+actualcamx = clamp(actualcamx, 320, (room_width - 320))
+actualcamy = clamp(actualcamy, 240, (room_height - 240))
+actualcamx = round(actualcamx - 320)
+actualcamy = round(actualcamy - 240 + (vshakeoffset * vwobble))
+
 gamepad_set_vibration(0, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
-camera_set_view_pos(view_camera[0], round(x - 320), round(y - 240 + voffset + (vshakeoffset * vwobble)))
+camera_set_view_pos(view_camera[0], actualcamx, actualcamy)

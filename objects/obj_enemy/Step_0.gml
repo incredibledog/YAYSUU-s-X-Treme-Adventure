@@ -7,7 +7,10 @@ if place_meeting(x,y,obj_player)
 	else
 	{
 		instance_destroy()
-		with (obj_player)
-			scr_player_trybounce()
+		if (!small)
+		{
+			with (obj_player)
+				scr_player_trybounce()
+		}
 	}
 }

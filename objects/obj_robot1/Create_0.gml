@@ -1,6 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited()
 robot1_hsp = 1
-robot1_die = 0
-robot1_died = false
-sprite_index = spr_robot1

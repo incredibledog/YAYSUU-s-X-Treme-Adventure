@@ -16,3 +16,6 @@ focuspointy = 480
 focusonpoint = false
 focusonpointstored = false
 dontunfocus = false
+speedoffset = 0
+speedoffsetscale = 8
+speedoffsetspeed = 0.5
