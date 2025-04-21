@@ -87,6 +87,7 @@
     {"name":"obj_lvlselect","order":7,"path":"objects/obj_lvlselect/obj_lvlselect.yy",},
     {"name":"obj_menubg","order":2,"path":"objects/obj_menubg/obj_menubg.yy",},
     {"name":"obj_mobilecontrols","order":13,"path":"objects/obj_mobilecontrols/obj_mobilecontrols.yy",},
+    {"name":"obj_monitor","order":4,"path":"objects/obj_monitor/obj_monitor.yy",},
     {"name":"obj_newmanager","order":5,"path":"objects/obj_newmanager/obj_newmanager.yy",},
     {"name":"obj_nogoalflag","order":22,"path":"objects/obj_nogoalflag/obj_nogoalflag.yy",},
     {"name":"obj_options","order":17,"path":"objects/obj_options/obj_options.yy",},

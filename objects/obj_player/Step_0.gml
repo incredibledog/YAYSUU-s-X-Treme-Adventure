@@ -148,7 +148,6 @@ if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != 
 //ow! ow! that hurts! that hurts!
 if (global.inv = 0 && hurtt == 0 && !winning && ouchies)
 {
-	ouchies = false
 	if (global.hp > 0)
 	{
 	    newstate = playerstates.hurt
@@ -180,6 +179,7 @@ if (global.inv = 0 && hurtt == 0 && !winning && ouchies)
 		audio_play_sound(mus_dead, 1, false)
 	}
 }
+ouchies = false
 if (state == playerstates.hurt && grounded)
 	newstate = playerstates.normal
 

@@ -137,6 +137,7 @@
     {"id":{"name":"obj_mainmenu_cursor","path":"objects/obj_mainmenu_cursor/obj_mainmenu_cursor.yy",},},
     {"id":{"name":"obj_menubg","path":"objects/obj_menubg/obj_menubg.yy",},},
     {"id":{"name":"obj_mobilecontrols","path":"objects/obj_mobilecontrols/obj_mobilecontrols.yy",},},
+    {"id":{"name":"obj_monitor","path":"objects/obj_monitor/obj_monitor.yy",},},
     {"id":{"name":"obj_newmanager","path":"objects/obj_newmanager/obj_newmanager.yy",},},
     {"id":{"name":"obj_nogoalflag","path":"objects/obj_nogoalflag/obj_nogoalflag.yy",},},
     {"id":{"name":"obj_options","path":"objects/obj_options/obj_options.yy",},},
