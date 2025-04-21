@@ -379,6 +379,7 @@
     {"name":"inst_4512EAD3","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
     {"name":"inst_710F2D0E","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
     {"name":"inst_3913D1B","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
+    {"name":"inst_590ED92A","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -765,6 +766,7 @@
         {"$GMRInstance":"v2","%Name":"inst_4512EAD3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4512EAD3","objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":3648.0,"y":800.0,},
         {"$GMRInstance":"v2","%Name":"inst_710F2D0E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_710F2D0E","objectId":{"name":"obj_semisolid_a","path":"objects/obj_semisolid_a/obj_semisolid_a.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":1.0,"x":800.0,"y":688.0,},
         {"$GMRInstance":"v2","%Name":"inst_3913D1B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3913D1B","objectId":{"name":"obj_semisolid_a","path":"objects/obj_semisolid_a/obj_semisolid_a.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":1.0,"x":4448.0,"y":336.0,},
+        {"$GMRInstance":"v2","%Name":"inst_590ED92A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_590ED92A","objectId":{"name":"obj_turnaround","path":"objects/obj_turnaround/obj_turnaround.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":672.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"tileset","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tileset","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":30,"SerialiseWidth":324,"TileCompressedData":[
           -37,-2147483648,2,2,0,-39,-2147483648,-24,53,-2,2,-10,0,-32,-2147483648,-2,2,-74,-2147483648,-5,2,-44,
