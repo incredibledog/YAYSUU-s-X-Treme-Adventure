@@ -24,6 +24,7 @@ global.char="Y"
 global.currentsong = -1
 global.maxhp = 3
 global.jumpscare = false
+global.debugmessage = ""
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)

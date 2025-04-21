@@ -148,27 +148,26 @@ if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != 
 //ow! ow! that hurts! that hurts!
 if (ouchies)
 {
+	global.debugmessage = "yeah i've got a case of the ouchies"
 	ouchies = false
-	if (!global.inv && hurtt == 0 && !winning)
+	if (!global.inv && hurtt == 0 && !winning && state != playerstates.dead)
 	{
+		global.debugmessage = "yeoch!"
 		if (global.hp > 0)
 		{
 		    newstate = playerstates.hurt
+			grounded = false
 			obj_camera.vshakeoffset = 30
 			hurtt = 120
 			vsp = -3
 			yearnedhsp = facingdirection * -3
 			hsp = yearnedhsp
 		    grounded = false
-			global.hp = (global.hp - 1)
+			global.hp--
 			if global.coins < 50
-			{
 				global.coins = 0
-			}
-			if global.coins >= 50
-			{
+			else
 				global.coins -= 50
-			}
 		    global.scoreadd -= 50
 			audio_play_sound(snd_ouchie, 1, false)
 		}
@@ -186,9 +185,9 @@ if (ouchies)
 if (state == playerstates.hurt && grounded)
 	newstate = playerstates.normal
 
-hurtt--
 if (hurtt > 0)
 {
+	hurtt--
 	if (hurtt < 30)
 	{
 		if (hurtt % 2 == 0)
@@ -213,7 +212,7 @@ vulnerable = !(state == playerstates.dash || state == playerstates.slide || stat
 
 if (state == playerstates.dead)
 {
-	if (!audio_is_playing(mus_dead))
+	if (!audio_is_playing(mus_dead) && !obj_fadeblack.fading)
 	{
 	    if (global.lives == 0)
 		    loadroom(room_gameover, false)
@@ -259,12 +258,13 @@ else
 	vsp=clamp(vsp,-20,10)
 
 if (state == playerstates.dead)
-    mask_index = noone
+    mask_index = -1
 else if (state == playerstates.crouch || state == playerstates.slide)
     mask_index = spr_collisionmask
 else
     mask_index = spr_collisionmask
 
+var gotwalled = false
 if (state != playerstates.dead)
 {
     var dogroundsnap = 1
@@ -299,6 +299,7 @@ if (state != playerstates.dead)
                 global.debugmessage = "LOOP PREVENT: WALLED"
         }
         hsp = 0
+		gotwalled = true
     }
     if (vsp < 0 && place_meeting(x, (y + vsp), obj_collision))
     {
@@ -458,7 +459,7 @@ if (global.char == "Y")
 		case playerstates.normal:
 			if (grounded)
 			{
-				if (sign(hsp) != sign(yearnedhsp))
+				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
 				{
 						newsprite = spr_yaysuu_brake
 				}
