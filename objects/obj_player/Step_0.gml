@@ -290,7 +290,6 @@ else if (state == playerstates.crouch || state == playerstates.slide)
 else
     mask_index = spr_collisionmask
 
-vsp=clamp(vsp,-20,10)
 var gotwalled = false
 if (state != playerstates.dead)
 {
