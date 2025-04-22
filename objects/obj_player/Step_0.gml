@@ -527,7 +527,11 @@ if (global.char == "Y")
 			break;
 	}
 	if (newsprite != sprite_index)
+	{
 		image_index = 0
+		if sprite_index == spr_yaysuu_brake
+			image_xscale = facingdirection
+	}
 	sprite_index = newsprite
 	
 	if (sprite_index == spr_yaysuu_jump && image_index == 4) //don't replay the animation. thanks for adding 2 extra useless frame yaysuu!
