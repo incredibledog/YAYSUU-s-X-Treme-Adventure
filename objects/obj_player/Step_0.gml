@@ -123,7 +123,13 @@ if ((!grounded) && global.key_downp && newstate == state && (state == playerstat
 }
 else if (grounded && state == playerstates.stomp && newstate == state)
 {
-	scr_player_trybounce()
+	if (global.char == "T")
+	{
+		newstate = playerstates.normal
+		vsp = smashbump
+	}
+	else
+		scr_player_trybounce()
 }
 else if (state == playerstates.bounce && newstate == state)
 {
