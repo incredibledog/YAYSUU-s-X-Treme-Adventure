@@ -15,4 +15,5 @@ if (global.newlevel)
 	grounded = true
 	prevgrounded = true
 	winning = false
+	facingdirection = 1
 }

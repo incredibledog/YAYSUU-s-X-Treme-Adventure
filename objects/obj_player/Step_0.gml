@@ -28,7 +28,12 @@ if (state == playerstates.stomp)
 	grv = stompgrav
 else
 	grv = normalgrav
-vsp += grv
+if (abs(vsp - maxfallspeed) < grv)
+	vsp = maxfallspeed
+else if (vsp < maxfallspeed)
+	vsp += grv
+else if (vsp > maxfallspeed)
+	vsp -= grv
 var forcecheck = 0
 if (vsp == 0)
     forcecheck = grv
@@ -154,7 +159,8 @@ if (state == playerstates.golfstop && newstate == state)
 	if (global.key_jumpp)
 	{
 		vsp = jmp
-		hsp = yearnedhsp
+		hsp = move * walkspeed
+		newstate = playerstates.normal
 	}
 	else
 	{
@@ -278,7 +284,7 @@ if (state != playerstates.golfstop)
 }
 
 if (state == playerstates.dead)
-    mask_index = -1
+    mask_index = noone
 else if (state == playerstates.crouch || state == playerstates.slide)
     mask_index = spr_crouchcollisionmask
 else
@@ -563,6 +569,9 @@ if (global.char == "Y")
 		case playerstates.win:
 			if (sprite_index != spr_yaysuu_winb)
 				newsprite = spr_yaysuu_win
+			break;
+		case playerstates.golfstop:
+			newsprite = spr_yaysuu_spinball
 			break;
 	}
 	if (newsprite != sprite_index)
