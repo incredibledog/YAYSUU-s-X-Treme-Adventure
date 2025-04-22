@@ -348,9 +348,9 @@ if (state != playerstates.dead)
     {
         vsp = 0
         loopprevent = 0
-        while ((!((place_meeting(x, (y + vsp), obj_slope) || place_meeting(x, (y + vsp), obj_collision)))) && loopprevent < maxloop)
+        while ((!((place_meeting(x, (y + checkscale), obj_slope) || place_meeting(x, (y + checkscale), obj_collision)))) && loopprevent < maxloop)
         {
-            vsp += checkscale
+            y += checkscale
             loopprevent++
         }
         if (loopprevent == maxloop)
