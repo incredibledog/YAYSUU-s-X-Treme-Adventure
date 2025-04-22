@@ -7,16 +7,16 @@ if (!obj_player.vulnerable)
 {
 	if (obj_player.state == playerstates.stomp)
 	{
-		hascollision = !(obj_player.x + 32 > x && obj_player.x - 32 < x + 32 && obj_player.y + 32 < y)
+		hascollision = !(obj_player.bbox_right > bbox_left && obj_player.bbox_left < bbox_right && obj_player.bbox_bottom < bbox_top)
 		checkoffsetx = 0
 		checkoffsety = obj_player.vsp
 	}
 	else
 	{
 		if (obj_player.facingdirection == 1)
-			hascollision = !(obj_player.y + 32 > y && obj_player.y - 32 < y + 32 && obj_player.x - 32 < x)
+			hascollision = !(obj_player.bbox_bottom-1 > bbox_top && obj_player.bbox_top < bbox_bottom && obj_player.bbox_left < bbox_right)
 		else
-			hascollision = !(obj_player.y + 32 > y && obj_player.y - 32 < y + 32 && obj_player.x + 32 > x)
+			hascollision = !(obj_player.bbox_bottom-1 > bbox_top && obj_player.bbox_top < bbox_bottom && obj_player.bbox_right > bbox_left)
 		checkoffsetx = obj_player.hsp
 		checkoffsety = 0
 	}

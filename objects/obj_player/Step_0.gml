@@ -260,7 +260,7 @@ state = newstate
 if (state == playerstates.dead)
     mask_index = -1
 else if (state == playerstates.crouch || state == playerstates.slide)
-    mask_index = spr_collisionmask
+    mask_index = spr_crouchcollisionmask
 else
     mask_index = spr_collisionmask
 
