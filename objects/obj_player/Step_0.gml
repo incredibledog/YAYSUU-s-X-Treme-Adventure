@@ -117,6 +117,11 @@ else if (state == playerstates.bounce && newstate == state)
 {
 	if (vsp >= 0 || (grounded && !prevgrounded))
 		newstate = playerstates.normal
+	else if (global.key_downp)
+	{
+		audio_play_sound(snd_stomp, 1, false)
+		newstate = playerstates.stomp
+	}
 }
 
 //crouching
