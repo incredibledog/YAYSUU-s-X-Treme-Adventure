@@ -64,10 +64,10 @@ if (state != playerstates.hurt)
 	yearnedhsp = move * wsp
 }
 
-if (grounded)
+if (grounded || state == playerstates.golfstop)
 {
 	dshed = false
-	djump = true;
+	djump = global.char == "T"
 }
 var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
 
@@ -95,7 +95,7 @@ if ((!grounded) && global.key_dashp && global.char="Y" && (state == playerstates
 }
 else if (state == playerstates.dash && newstate == state && grounded)
 {
-	newstate = playerstates.normal
+	newstate = playerstates.slide
 }
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo && global.char="Y")
@@ -108,10 +108,16 @@ if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp)
 if ((!grounded) && global.key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
 {
     hsp /= 2
-	if (vsp < 0)
-		vsp = 5
+	if (global.char == "T")
+	{
+		if (vsp < 10)
+			vsp = 10
+	}
 	else
-		vsp += 5
+	{
+		if (vsp < 5)
+			vsp = 5
+	}
     audio_play_sound(snd_stomp, 1, false)
 	newstate = playerstates.stomp
 }
@@ -129,12 +135,27 @@ else if (state == playerstates.bounce && newstate == state)
 		newstate = playerstates.stomp
 	}
 }
+//teddy's dash run
+if (global.char == "T" && global.key_runp && state == playerstates.normal && newstate == state)
+{
+	yearnedhsp = facingdirection * runspeed
+	hsp = yearnedhsp
+	audio_play_sound(snd_dashpad, 1, false)
+}
 
 //crouching
 if (grounded && newstate == state && state == playerstates.normal && global.key_down)
 	newstate = playerstates.crouch
 else if (state == playerstates.crouch && newstate == state && (!grounded || !global.key_down))
 	newstate = playerstates.normal
+
+if (state != playerstates.crouch && state != playerstates.slide && place_meeting(x, y, obj_playercollision))
+{
+	if (abs(hsp) <= runspeed || amiwalled(hsp))
+		newstate = playerstates.normal
+	else
+		newstate = playerstates.slide
+}
 
 //going through platform
 if (grounded && semisolidcollision && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
@@ -146,12 +167,14 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
+if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
 {
     vsp = jmp
     grounded = false
-    audio_play_sound(snd_jump, 1, false)
-	grounded = false;
+	if djump
+		audio_play_sound(snd_doublejump, 1, false)
+	else
+		audio_play_sound(snd_jump, 1, false)
 }
 
 if (state == playerstates.golfstop && newstate == state)
@@ -175,7 +198,6 @@ if (ouchies)
 	ouchies = false
 	if ((!global.inv && hurtt <= 0 && !winning) || deathies) && state != playerstates.dead
 	{
-		global.debugmessage = "yeoch!"
 		if (deathies)
 			global.hp = 0
 		if (global.hp > 0)
@@ -234,7 +256,7 @@ else
     image_alpha = 1
 }
 
-vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1)
+vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || (global.char == "T" && abs(hsp) > teddyrundamagespeed && sign(hsp) == sign(yearnedhsp)))
 if (vulnerable)
 	global.combo = 0
 
@@ -619,33 +641,125 @@ if (global.char == "Y")
 }
 else if (global.char == "T")
 {
-    if (hsp == 0 && (vsp == 0 || (vsp > 0 && grounded)) && dsh=0 && global.key_down == 0 && winning == 0 && !(sprite_index=spr_teddy_wait))
+    var newsprite = sprite_index
+    switch (state)
 	{
-		if !(sprite_index=spr_teddy_idle)
+		case playerstates.normal:
+			if (grounded)
+			{
+				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
+				{
+					if ((sprite_index == spr_teddy_idle || sprite_index == spr_yaysuu_walk) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
+						newsprite = spr_teddy_idle
+					else
+						newsprite = spr_teddy_brake
+				}
+				else if (abs(hsp) < yearnaccel)
+				{
+					if (idletime > 600)
+						newsprite = spr_teddy_wait
+					else
+						newsprite = spr_teddy_idle
+				}
+				else if (abs(hsp) > walkspeed)
+					newsprite = spr_teddy_run
+				else
+					newsprite = spr_teddy_walk
+			}
+			else
+			{
+				if (abs(hsp) > walkspeed)
+				{
+					if (vsp > 0)
+						newsprite = spr_teddy_fall
+					else
+						newsprite = spr_teddy_jump
+				}
+				else
+				{
+					if (vsp > 0)
+						newsprite = spr_teddy_fall
+					else
+						newsprite = spr_teddy_jump
+				}
+			}
+			
+			if (newsprite != spr_teddy_brake)
+				image_xscale = facingdirection
+			break;
+		case playerstates.crouch:
+			newsprite = spr_teddy_crouch
+			image_xscale = facingdirection
+			break;
+		case playerstates.dash:
+			newsprite = spr_teddy_dash
+			break;
+		case playerstates.stomp:
+			newsprite = spr_teddy_stomp
+			break;
+		case playerstates.hurt:
+			newsprite = spr_teddy_ouch
+			break;
+		case playerstates.inactive:
+			break;
+		case playerstates.dead:
+			newsprite = spr_teddy_die
+			image_angle += hsp
+			break;
+		case playerstates.slide:
+			newsprite = spr_teddy_slide
+			break;
+		case playerstates.win:
+			if (sprite_index != spr_teddy_winb)
+				newsprite = spr_teddy_win
+			break;
+		case playerstates.golfstop:
+			newsprite = spr_yaysuu_spinball
+			break;
+	}
+	if (newsprite != sprite_index)
+	{
+		image_index = 0
+		if sprite_index == spr_teddy_brake
+			image_xscale = facingdirection
+	}
+	sprite_index = newsprite
+	
+	if (sprite_index == spr_teddy_jump && image_index == 5)
+		image_index = 2
+	
+	if (sprite_index == spr_teddy_idle || sprite_index == spr_teddy_wait)
+		idletime++
+	else
+		idletime = 0
+
+	if (!audio_exists(runningsound))
+		runningsound = audio_play_sound(snd_run, 1, true)
+	if (sprite_index == spr_teddy_run)
+	{
+		if audio_is_paused(runningsound)
+			audio_resume_sound(runningsound)
+		
+		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
+		audio_sound_pitch(runningsound, runpitch)
+		image_speed = runpitch
+	}
+	else if !audio_is_paused(runningsound)
+	{
+		audio_pause_sound(runningsound)
+		image_speed = 1
+	}
+		
+	if (sprite_index == spr_teddy_brake && abs(hsp) > walkspeed)
+	{
+		if (!hasplayedbrakesound)
 		{
-			sprite_index = spr_teddy_idle
-			image_index = 0
+			audio_play_sound(snd_brake, 1, false)
+			hasplayedbrakesound = true
 		}
 	}
-    if ((hsp > 0 || hsp < 0) && dsh=0 && grounded && global.key_down == 0 && dshed == 0)
-        sprite_index = spr_teddy_walk
-	if brake=true && grounded
-		sprite_index = spr_teddy_brake
-    if ((hsp > 6 || hsp < -6) && dsh=0 && grounded && global.key_down == 0)
-        sprite_index = spr_teddy_run
-    if (vsp < 0 && dsh == 0 && hurtd == 0 && global.hp > 0 && bounce == 0)
-        sprite_index = spr_teddy_jump
-    if (vsp > 0 && dsh == 0 && stmpd == 0 && hurtd == 0 && global.hp > 0 && (!grounded))
-        sprite_index = spr_teddy_fall
-    if (grounded && global.key_down && dsh == 0 && (!winning))
-        sprite_index = spr_teddy_crouch
-    if (winning == 1 && sprite_index != spr_teddy_winb && hsp == 0 && grounded)
-        sprite_index = spr_teddy_winb
-    if dieded
-    {
-        sprite_index = spr_teddy_die
-        image_angle -= hsp
-    }
+	else
+		hasplayedbrakesound = false
 }
 
 if (global.inv)

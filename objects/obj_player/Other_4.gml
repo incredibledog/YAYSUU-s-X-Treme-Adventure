@@ -16,4 +16,8 @@ if (global.newlevel)
 	prevgrounded = true
 	winning = false
 	facingdirection = 1
+	if (global.char == "Y")
+		runspeed = 10
+	else if (global.char == "T")
+		runspeed = 8
 }

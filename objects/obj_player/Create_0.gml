@@ -1,18 +1,19 @@
 /// @description initial variables
 // You can write your code in this editor
-hsp = 0; // horizontal speed
-vsp = 0; // vertical speed
-grv = 0.3; // gravity
-jmp = -7; // jump strength
+hsp = 0 // horizontal speed
+vsp = 0 // vertical speed
+grv = 0.3 // gravity
+jmp = -7 // jump strength
 wsp = 5
-djump = true; // double jumped
-dshed = false; // airdashed
-walkspeed = 5; // max speed
+djump = true // double jumped
+dshed = false // airdashed
+walkspeed = 5 // max speed
 runspeed = 10
+teddyrundamagespeed = 7
 bounceheight = -10
 normalgrav = 0.3
 stompgrav = 1
-vulnerable = true;
+vulnerable = true
 winning = false
 hurtt = 0; // hurt timer
 sprite_index = spr_yaysuu_idle

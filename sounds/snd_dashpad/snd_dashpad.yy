@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.239167,
+  "duration":3.2391837,
   "name":"snd_dashpad",
   "parent":{
     "name":"Sounds",
