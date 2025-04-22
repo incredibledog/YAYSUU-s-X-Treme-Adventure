@@ -240,9 +240,9 @@ else
 
 //actual movement
 var accel
-if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) //wants to increase above walking
+if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv //wants to increase above walking
 	accel = yearnacceloverspeed
-else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0
+else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0 //wants to decrease below walking
 	accel = yearnaccelunderspeed
 else
 	accel = yearnaccel
