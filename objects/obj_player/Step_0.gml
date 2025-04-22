@@ -382,35 +382,49 @@ if (state != playerstates.dead)
 			{
 				xstepped += xstep
 				if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+				{
 					finished = true
+					x += xstepped - xstep
+					hsp = 0
+				}
 				else
 				{
 					ystepped += ystep
 					if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+					{
 						finished = true
+						ystepped -= ystep
+						y += ystepped - ystep
+						vsp = 0
+					}
 				}
 			}
 			else
 			{
 				ystepped += ystep
 				if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+				{
 					finished = true
+					ystepped -= ystep
+					y += ystepped - ystep
+					vsp = 0
+				}
 				else
 				{
 					xstepped += xstep
 					if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+					{
 						finished = true
+						xstepped -= xstep
+						x += xstepped - xstep
+						hsp = 0
+					}
 				}
 			}
             loopprevent++
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: DIAGONAL CORNER SNAP"
-		else
-		{
-			hsp = xstepped
-			vsp = ystepped
-		}
 	}
 }
 x += hsp
