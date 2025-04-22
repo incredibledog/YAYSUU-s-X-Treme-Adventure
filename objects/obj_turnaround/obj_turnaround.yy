@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_turnaround",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_turnaround",
   "overriddenProperties":[],
@@ -32,5 +34,5 @@
     "path":"sprites/spr_turnaround/spr_turnaround.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

@@ -35,5 +35,5 @@
     "path":"sprites/spr_stair/spr_stair.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

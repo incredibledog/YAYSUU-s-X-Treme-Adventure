@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_semisolid_a",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_semisolid_a",
   "overriddenProperties":[],
@@ -37,5 +39,5 @@
     "path":"sprites/spr_semistop_a/spr_semistop_a.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
