@@ -35,7 +35,7 @@ prevgrounded = grounded
 grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_slope)
 var slopey = grounded
 if (!grounded)
-    grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_collision)
+    grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_playercollision)
 var semisolidcollision = 0
 if (grounded == 0 && vsp >= 0)
 {
@@ -140,7 +140,7 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_collision)))
+if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
 {
     vsp = jmp
     grounded = false
@@ -291,7 +291,7 @@ if (state != playerstates.dead)
         if (hsp != 0)
         {
             loopprevent = 0
-            while ((!(place_meeting((x + (sign(hsp) * checkscale)), y, obj_collision))) && loopprevent < maxloop)
+            while ((!(place_meeting((x + (sign(hsp) * checkscale)), y, obj_playercollision))) && loopprevent < maxloop)
             {
                 x += (sign(hsp) * checkscale)
                 loopprevent++
@@ -302,10 +302,10 @@ if (state != playerstates.dead)
         hsp = 0
 		gotwalled = true
     }
-    if (vsp < 0 && place_meeting(x, (y + vsp), obj_collision))
+    if (vsp < 0 && place_meeting(x, (y + vsp), obj_playercollision))
     {
         loopprevent = 0
-        while ((!(place_meeting(x, (y - checkscale), obj_collision))) && loopprevent < maxloop)
+        while ((!(place_meeting(x, (y - checkscale), obj_playercollision))) && loopprevent < maxloop)
         {
             y -= checkscale
             loopprevent++
@@ -318,7 +318,7 @@ if (state != playerstates.dead)
     if (grounded && (!semisolidcollision) && dogroundsnap)
     {
         loopprevent = 0
-        while ((!(place_meeting(x, (y + checkscale), obj_collision))) && (!(place_meeting(x, (y + checkscale), obj_slope))) && loopprevent < maxloop)
+        while ((!(place_meeting(x, (y + checkscale), obj_playercollision))) && (!(place_meeting(x, (y + checkscale), obj_slope))) && loopprevent < maxloop)
         {
             y += checkscale
             loopprevent++
@@ -348,7 +348,7 @@ if (state != playerstates.dead)
     {
         vsp = 0
         loopprevent = 0
-        while ((!((place_meeting(x, (y + checkscale), obj_slope) || place_meeting(x, (y + checkscale), obj_collision)))) && loopprevent < maxloop)
+        while ((!((place_meeting(x, (y + checkscale), obj_slope) || place_meeting(x, (y + checkscale), obj_playercollision)))) && loopprevent < maxloop)
         {
             y += checkscale
             loopprevent++
@@ -357,7 +357,7 @@ if (state != playerstates.dead)
             global.debugmessage = "LOOP PREVENT: SLOPE DOWN SNAP"
         grounded = 1
     }
-	if (place_meeting((x + hsp), (y + vsp), obj_collision) && hsp != 0 && vsp != 0 && !slopey)
+	if (place_meeting((x + hsp), (y + vsp), obj_playercollision) && hsp != 0 && vsp != 0 && !slopey)
 	{
 		var xstep
 		var ystep
@@ -381,24 +381,24 @@ if (state != playerstates.dead)
 			if (dohorzfirst)
 			{
 				xstepped += xstep
-				if (place_meeting(x + xstepped, y + ystepped, obj_collision))
+				if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
 					finished = true
 				else
 				{
 					ystepped += ystep
-					if (place_meeting(x + xstepped, y + ystepped, obj_collision))
+					if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
 						finished = true
 				}
 			}
 			else
 			{
 				ystepped += ystep
-				if (place_meeting(x + xstepped, y + ystepped, obj_collision))
+				if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
 					finished = true
 				else
 				{
 					xstepped += xstep
-					if (place_meeting(x + xstepped, y + ystepped, obj_collision))
+					if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
 						finished = true
 				}
 			}
@@ -415,39 +415,39 @@ if (state != playerstates.dead)
 }
 x += hsp
 y += vsp
-if (place_meeting(x, y, obj_collision)) && (state != playerstates.dead)
+if (place_meeting(x, y, obj_playercollision)) && (state != playerstates.dead)
 {
-    if !(place_meeting((x + 1), y, obj_collision))
+    if !(place_meeting((x + 1), y, obj_playercollision))
         x += 1
-    else if (!(place_meeting((x - 1), y, obj_collision)))
+    else if (!(place_meeting((x - 1), y, obj_playercollision)))
         x -= 1
-    else if (!(place_meeting(x, (y + 1), obj_collision)))
+    else if (!(place_meeting(x, (y + 1), obj_playercollision)))
         y += 1
-    else if (!(place_meeting(x, (y - 1), obj_collision)))
+    else if (!(place_meeting(x, (y - 1), obj_playercollision)))
         y -= 1
-    else if (!(place_meeting((x + 5), y, obj_collision)))
+    else if (!(place_meeting((x + 5), y, obj_playercollision)))
         x += 5
-    else if (!(place_meeting((x - 5), y, obj_collision)))
+    else if (!(place_meeting((x - 5), y, obj_playercollision)))
         x -= 5
-    else if (!(place_meeting(x, (y + 5), obj_collision)))
+    else if (!(place_meeting(x, (y + 5), obj_playercollision)))
         y += 5
-    else if (!(place_meeting(x, (y - 5), obj_collision)))
+    else if (!(place_meeting(x, (y - 5), obj_playercollision)))
         y -= 5
-    else if (!(place_meeting((x + 10), y, obj_collision)))
+    else if (!(place_meeting((x + 10), y, obj_playercollision)))
         x += 10
-    else if (!(place_meeting((x - 10), y, obj_collision)))
+    else if (!(place_meeting((x - 10), y, obj_playercollision)))
         x -= 10
-    else if (!(place_meeting(x, (y + 10), obj_collision)))
+    else if (!(place_meeting(x, (y + 10), obj_playercollision)))
         y += 10
-    else if (!(place_meeting(x, (y - 10), obj_collision)))
+    else if (!(place_meeting(x, (y - 10), obj_playercollision)))
         y -= 10
-    else if (!(place_meeting((x + 20), y, obj_collision)))
+    else if (!(place_meeting((x + 20), y, obj_playercollision)))
         x += 20
-    else if (!(place_meeting((x - 20), y, obj_collision)))
+    else if (!(place_meeting((x - 20), y, obj_playercollision)))
         x -= 20
-    else if (!(place_meeting(x, (y + 20), obj_collision)))
+    else if (!(place_meeting(x, (y + 20), obj_playercollision)))
         y += 20
-    else if (!(place_meeting(x, (y - 20), obj_collision)))
+    else if (!(place_meeting(x, (y - 20), obj_playercollision)))
         y -= 20
 }
 
