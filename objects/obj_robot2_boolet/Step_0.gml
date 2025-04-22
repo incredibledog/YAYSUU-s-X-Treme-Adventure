@@ -2,5 +2,5 @@
 // You can write your code in this editor
 x+=bulletspeed*image_xscale
 event_inherited()
-if (place_meeting(x,y,obj_collision)) || (place_meeting(x,y,obj_turnaround))
+if place_meeting(x,y,obj_collision)
 	instance_destroy()
