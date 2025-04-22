@@ -38,24 +38,6 @@ else if global.inputtype == 1
 	global.key_runp = keyboard_check_pressed(vk_shift)
 	global.key_start = keyboard_check_pressed(vk_escape)
 }
-else if global.inputtype == 2
-{
-	global.key_left = axislh < -global.sensitivity || gamepad_button_check(0,gp_padl)
-	global.key_leftp = (axislh < -global.sensitivity && prevaxislh >= -global.sensitivity) || gamepad_button_check_pressed(0,gp_padl)
-	global.key_right = axislh > global.sensitivity || gamepad_button_check(0,gp_padr)
-	global.key_rightp = (axislh > global.sensitivity && prevaxislh <= global.sensitivity) || gamepad_button_check_pressed(0,gp_padr)
-	global.key_up = axislv < -global.sensitivity || gamepad_button_check(0,gp_padu)
-	global.key_upp = (axislv < -global.sensitivity && prevaxislv >= -global.sensitivity) || gamepad_button_check_pressed(0,gp_padu)
-	global.key_down = axislv > global.sensitivity || gamepad_button_check(0,gp_padd)
-	global.key_downp = (axislv > global.sensitivity && prevaxislv <= global.sensitivity) || gamepad_button_check_pressed(0,gp_padd)
-	global.key_jump = gamepad_button_check(0,gp_face1)
-	global.key_jumpp = gamepad_button_check_pressed(0,gp_face1)
-	global.key_dash = gamepad_button_check(0,gp_face2)
-	global.key_dashp = gamepad_button_check_pressed(0,gp_face2)
-	global.key_run = gamepad_button_check(0,gp_face3)
-	global.key_runp = gamepad_button_check_pressed(0,gp_face3)
-	global.key_start = gamepad_button_check_pressed(0,gp_start)
-}
 else
 {
 	global.key_left = keyboard_check(vk_left) || keyboard_check(ord("A")) || axislh < -global.sensitivity || gamepad_button_check(0,gp_padl)
@@ -73,4 +55,23 @@ else
 	global.key_run = keyboard_check(vk_control) || keyboard_check(ord("C")) || gamepad_button_check(0,gp_face3)
 	global.key_runp = keyboard_check_pressed(vk_control) || keyboard_check_pressed(ord("C")) || gamepad_button_check_pressed(0,gp_face3)
 	global.key_start = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("P")) || gamepad_button_check_pressed(0,gp_start)
+}
+
+if (gamepad_is_connected(0))
+{
+	global.key_left = axislh < -global.sensitivity || gamepad_button_check(0,gp_padl)
+	global.key_leftp = (axislh < -global.sensitivity && prevaxislh >= -global.sensitivity) || gamepad_button_check_pressed(0,gp_padl)
+	global.key_right = axislh > global.sensitivity || gamepad_button_check(0,gp_padr)
+	global.key_rightp = (axislh > global.sensitivity && prevaxislh <= global.sensitivity) || gamepad_button_check_pressed(0,gp_padr)
+	global.key_up = axislv < -global.sensitivity || gamepad_button_check(0,gp_padu)
+	global.key_upp = (axislv < -global.sensitivity && prevaxislv >= -global.sensitivity) || gamepad_button_check_pressed(0,gp_padu)
+	global.key_down = axislv > global.sensitivity || gamepad_button_check(0,gp_padd)
+	global.key_downp = (axislv > global.sensitivity && prevaxislv <= global.sensitivity) || gamepad_button_check_pressed(0,gp_padd)
+	global.key_jump = gamepad_button_check(0,gp_face1)
+	global.key_jumpp = gamepad_button_check_pressed(0,gp_face1)
+	global.key_dash = gamepad_button_check(0,gp_face2)
+	global.key_dashp = gamepad_button_check_pressed(0,gp_face2)
+	global.key_run = gamepad_button_check(0,gp_face3)
+	global.key_runp = gamepad_button_check_pressed(0,gp_face3)
+	global.key_start = gamepad_button_check_pressed(0,gp_start)
 }
