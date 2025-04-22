@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.scoreadd+=100
+global.combo++
 if (small)
 {
 	obj_camera.vshakeoffset=5

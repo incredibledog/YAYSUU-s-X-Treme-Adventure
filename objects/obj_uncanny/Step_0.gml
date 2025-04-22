@@ -1,4 +1,4 @@
-if (!global.jumpscare && abs(obj_player.x - x) < 400 && abs(obj_player.y - y) < 300)
+if (!global.jumpscare && abs(obj_camera.actualcamx - x) < 400 && abs(obj_camera.actualcamy - y) < 300)
 	move_towards_point(obj_player.x,obj_player.y,1)
 else
 	speed = 0

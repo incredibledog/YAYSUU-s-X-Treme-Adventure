@@ -10,7 +10,16 @@ if (global.inlevel)
 	draw_set_font(global.font)
 	draw_text(0, 0, "SCORE: " + string(global.score + global.scoreadd))
 	draw_text(0, 32, "COINS: " + string(global.coins))
-	draw_text(0, 64, "HEALTH: " + string(global.hp))
+	draw_text(0, 64, "HEALTH:" + string(global.hp))
+	if (comboshowtimer > 0)
+	{
+		if (global.combo > 1)
+			draw_text_color(0, 96, "COMBO: " + string(showncombo), c_lime, c_lime, c_lime, c_lime, 1)
+		else if (comboshowtimer > 60)
+			draw_text_color(0, 96, "COMBO: " + string(showncombo), c_red, c_red, c_red, c_red, 1)
+		else
+			draw_text_color(0, 96, "COMBO: " + string(showncombo), c_red, c_red, c_red, c_red, comboshowtimer / 60)
+	}
 }
 
 if window_get_fullscreen() && global.borders=true

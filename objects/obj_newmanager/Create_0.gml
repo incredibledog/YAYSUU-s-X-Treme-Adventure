@@ -34,6 +34,9 @@ global.hp=global.maxhp
 global.scoreadd = 0
 global.lives=3
 global.showcollision = false
+global.combo = 0
+comboshowtimer = 0
+showncombo = 0
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)

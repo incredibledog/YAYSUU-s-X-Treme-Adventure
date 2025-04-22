@@ -4,12 +4,9 @@ if (place_meeting(x,y,obj_player)) && !goaway
 {
 	goaway=true
 	audio_play_sound(snd_stopngo,1,false)
+	obj_player.newstate = playerstates.golfstop
 }
-if goaway=true
-{
-	image_alpha-=0.5
-}
+else if goaway && obj_player.state != playerstates.golfstop
+	image_alpha-=0.1
 if image_alpha=0
-{
 	instance_destroy()
-}

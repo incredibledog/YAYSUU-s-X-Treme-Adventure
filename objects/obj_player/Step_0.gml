@@ -9,7 +9,8 @@ enum playerstates
 	dead,
 	slide,
 	bounce,
-	win
+	win,
+	golfstop
 }
 
 if (!global.inlevel)
@@ -140,13 +141,28 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
+if (grounded && global.key_jumpp && (state != playerstates.slide && newstate != playerstates.slide && state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
 {
     vsp = jmp
     grounded = false
     audio_play_sound(snd_jump, 1, false)
 	grounded = false;
 }
+
+if (state == playerstates.golfstop && newstate == state)
+{
+	if (global.key_jumpp)
+	{
+		vsp = jmp
+		hsp = yearnedhsp
+	}
+	else
+	{
+		vsp = 0
+		hsp = 0
+	}
+}
+
 //ow! ow! that hurts! that hurts!
 if (ouchies)
 {
@@ -213,6 +229,8 @@ else
 }
 
 vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1)
+if (vulnerable)
+	global.combo = 0
 
 if (state == playerstates.dead)
 {
@@ -238,24 +256,26 @@ else
 	}
 }
 
-//actual movement
-var accel
-if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv //wants to increase above walking
-	accel = yearnacceloverspeed
-else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0 //wants to decrease below walking
-	accel = yearnaccelunderspeed
-else
-	accel = yearnaccel
-
-if (abs(yearnedhsp - hsp) < accel)
-	hsp = yearnedhsp
-else if (yearnedhsp > hsp)
-	hsp += accel
-else if (yearnedhsp < hsp)
-	hsp -= accel
-
 state = newstate
 
+//actual movement
+if (state != playerstates.golfstop)
+{
+	var accel
+	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv //wants to increase above walking
+		accel = yearnacceloverspeed
+	else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0 //wants to decrease below walking
+		accel = yearnaccelunderspeed
+	else
+		accel = yearnaccel
+	
+	if (abs(yearnedhsp - hsp) < accel)
+		hsp = yearnedhsp
+	else if (yearnedhsp > hsp)
+		hsp += accel
+	else if (yearnedhsp < hsp)
+		hsp -= accel
+}
 
 if (state == playerstates.dead)
     mask_index = -1
