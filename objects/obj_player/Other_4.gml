@@ -3,8 +3,11 @@ if (global.newlevel)
 	sprite_index = spr_yaysuu_idle
 	global.inv=0
 	mask_index = spr_collisionmask
-	state = playerstates.normal
-	newstate = playerstates.normal
+	if (room == room_chillfields_boss)
+		state = playerstates.inactive
+	else
+		state = playerstates.normal
+	newstate = state
 	hsp = 0
 	yearnedhsp = 0
 	vsp = 0

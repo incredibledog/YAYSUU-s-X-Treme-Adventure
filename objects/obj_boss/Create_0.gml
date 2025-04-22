@@ -3,3 +3,4 @@
 cooldown=false
 vulnerable=false
 hurt=false
+candamage = true

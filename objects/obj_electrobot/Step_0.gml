@@ -58,14 +58,12 @@ if state=9
 		delay=300
 		delaying=true
 	}
-	if kablooeyjrtimer<=0
+	if kablooeyjrtimer>0
+		kablooeyjrtimer--
+	else
 	{
 		instance_create_depth(x+random_range(-16,16),y+random_range(-16,16),depth-1,obj_explode_jr)
-		kablooeyjrtimer=37.5
-	}
-	if kablooeyjrtimer>0
-	{
-		kablooeyjrtimer--
+		kablooeyjrtimer=12.5
 	}
 }
 if state=8 && image_alpha=1
@@ -75,17 +73,20 @@ if state=8 && image_alpha=1
 else {
 	image_alpha=1
 }
-if state=6 && place_meeting(x,y,obj_player) && obj_player.vulnerable=false
+if state=6 && place_meeting(x,y,obj_player) && !obj_player.vulnerable
 {
 	global.bosshp--
 	obj_camera.vshakeoffset=30
+	with(obj_player)
+		scr_player_trybounce()
+	candamage = false
 	if global.bosshp>0
 	{
 		delaying=false
 		state=7
 		vsp=-5
 	}
-	if global.bosshp=0
+	else
 	{
 		delaying=false
 		state=9
@@ -95,13 +96,17 @@ if state=6 && place_meeting(x,y,obj_player) && obj_player.vulnerable=false
 }
 if state=7 && !place_meeting(x,y+vsp,obj_collision)
 {
-	hsp=3*-image_xscale
-	sprite_index=spr_electrobot_hurt
-}
-if state=7 && place_meeting(x,y+vsp,obj_collision)
-{
-	delaying=false
-	state=8
+	if (place_meeting(x,y+vsp,obj_collision))
+	{
+		delaying=false
+		state=8
+		candamage = true
+	}
+	else
+	{
+		hsp=3*-image_xscale
+		sprite_index=spr_electrobot_hurt
+	}
 }
 if delay>0
 {
@@ -220,13 +225,10 @@ if state=5 && boolettimes=4
 if gravityapplies
 {
 	if !place_meeting(x,y+vsp,obj_collision)
-	{
 		vsp+=grv
-	}
-	if place_meeting(x,y+vsp,obj_collision)
-	{
+	else
 		vsp=0
-	}
 }
 x+=hsp
 y+=vsp
+event_inherited()
