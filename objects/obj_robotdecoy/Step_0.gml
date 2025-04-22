@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (obj_player.vulnerable)
+if (!obj_player.vulnerable)
 	event_inherited()
 
