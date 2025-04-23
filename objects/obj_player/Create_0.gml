@@ -43,3 +43,4 @@ deathies = false
 maxfallspeed = 10
 smashbump = -2
 runanimtimer = -1
+hascollision = true

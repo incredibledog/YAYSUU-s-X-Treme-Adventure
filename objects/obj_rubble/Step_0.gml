@@ -39,7 +39,7 @@ else
 {
 	mycollision.mask_index = -1
 	mycollision.visible = false
-	if place_meeting(x - checkoffsetx, y - checkoffsety, obj_player)
+	if touchingplayer(x - checkoffsetx, y - checkoffsety)
 	{
 		destroyedbyplayer = true
 		instance_destroy()

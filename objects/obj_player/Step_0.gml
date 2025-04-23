@@ -40,12 +40,13 @@ var forcecheck = 0
 if (vsp == 0)
     forcecheck = grv
 prevgrounded = grounded
+
 grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_slope)
 var slopey = grounded
 if (!grounded)
     grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_playercollision)
-var semisolidcollision = 0
-if (grounded == 0 && vsp >= 0)
+var semisolidcollision = false
+if (!grounded && vsp >= 0)
 {
     var semiinstance = instance_place(x, ((y + vsp) + forcecheck), obj_semisolid_a)
     if (semiinstance != noone)
@@ -335,8 +336,9 @@ if (state != playerstates.golfstop)
 }
 
 //set mask
+hascollision = true
 if (state == playerstates.dead)
-    mask_index = noone
+    hascollision = false
 else if (state == playerstates.crouch || state == playerstates.slide)
     mask_index = spr_crouchcollisionmask
 else
@@ -344,7 +346,7 @@ else
 
 //COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 var gotwalled = false
-if (state != playerstates.dead)
+if (hascollision)
 {
     var dogroundsnap = 1
     var loopprevent = 0
@@ -393,6 +395,19 @@ if (state != playerstates.dead)
         vsp = 0
         grounded = false
     }
+    if (vsp > 0 && (!grounded) && prevgrounded && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
+    {
+        vsp = 0
+        loopprevent = 0
+        while ((!((place_meeting(x, (y + checkscale), obj_slope) || place_meeting(x, (y + checkscale), obj_playercollision)))) && loopprevent < maxloop)
+        {
+            y += checkscale
+            loopprevent++
+        }
+        if (loopprevent == maxloop)
+            global.debugmessage = "LOOP PREVENT: SLOPE DOWN SNAP"
+        grounded = 1
+    }
     if (grounded && (!semisolidcollision) && dogroundsnap)
     {
         loopprevent = 0
@@ -421,19 +436,6 @@ if (state != playerstates.dead)
                 global.debugmessage = "LOOP PREVENT: SEMISOLIDING"
         }
         vsp = 0
-    }
-    if (vsp > 0 && (!grounded) && prevgrounded && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
-    {
-        vsp = 0
-        loopprevent = 0
-        while ((!((place_meeting(x, (y + checkscale), obj_slope) || place_meeting(x, (y + checkscale), obj_playercollision)))) && loopprevent < maxloop)
-        {
-            y += checkscale
-            loopprevent++
-        }
-        if (loopprevent == maxloop)
-            global.debugmessage = "LOOP PREVENT: SLOPE DOWN SNAP"
-        grounded = 1
     }
 	if (place_meeting((x + hsp), (y + vsp), obj_playercollision) && hsp != 0 && vsp != 0 && !slopey)
 	{
@@ -508,7 +510,7 @@ if (state != playerstates.dead)
 x += hsp
 y += vsp
 //emergency fixing
-if (place_meeting(x, y, obj_playercollision)) && (state != playerstates.dead)
+if (place_meeting(x, y, obj_playercollision)) && hascollision
 {
     if !(place_meeting((x + 1), y, obj_playercollision))
         x += 1

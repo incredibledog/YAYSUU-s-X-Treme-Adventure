@@ -216,6 +216,7 @@
     {"id":{"name":"scr_roomstart","path":"scripts/scr_roomstart/scr_roomstart.yy",},},
     {"id":{"name":"scr_startlevel","path":"scripts/scr_startlevel/scr_startlevel.yy",},},
     {"id":{"name":"scr_subtitlefont","path":"scripts/scr_subtitlefont/scr_subtitlefont.yy",},},
+    {"id":{"name":"touchingplayer","path":"scripts/touchingplayer/touchingplayer.yy",},},
     {"id":{"name":"sqc_test","path":"sequences/sqc_test/sqc_test.yy",},},
     {"id":{"name":"mus_chillfields_1","path":"sounds/mus_chillfields_1/mus_chillfields_1.yy",},},
     {"id":{"name":"mus_chillfields_2","path":"sounds/mus_chillfields_2/mus_chillfields_2.yy",},},

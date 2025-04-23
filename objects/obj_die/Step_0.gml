@@ -1,4 +1,4 @@
-if place_meeting(x, y, obj_player)
+if touchingplayer(x, y)
 {
 	obj_player.ouchies = true
 	obj_player.deathies = true

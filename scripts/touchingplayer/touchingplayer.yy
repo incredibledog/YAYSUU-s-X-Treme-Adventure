@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"touchingplayer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"touchingplayer",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

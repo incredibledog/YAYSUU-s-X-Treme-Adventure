@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (place_meeting(x,y,obj_player)) && springtmr=0
+if touchingplayer(x, y) && springtmr=0
 {
 	obj_player.vsp = -14 * image_yscale
 	springtmr=30
