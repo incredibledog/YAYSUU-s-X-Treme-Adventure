@@ -431,6 +431,7 @@
     {"name":"spr_text_options","order":87,"path":"sprites/spr_text_options/spr_text_options.yy",},
     {"name":"spr_text","order":13,"path":"sprites/spr_text/spr_text.yy",},
     {"name":"spr_thisisntthelvlselectbg","order":88,"path":"sprites/spr_thisisntthelvlselectbg/spr_thisisntthelvlselectbg.yy",},
+    {"name":"spr_tile_chill","order":110,"path":"sprites/spr_tile_chill/spr_tile_chill.yy",},
     {"name":"spr_tile_tutorial","order":109,"path":"sprites/spr_tile_tutorial/spr_tile_tutorial.yy",},
     {"name":"spr_total","order":49,"path":"sprites/spr_total/spr_total.yy",},
     {"name":"spr_trialbutton","order":19,"path":"sprites/spr_trialbutton/spr_trialbutton.yy",},

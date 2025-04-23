@@ -501,6 +501,7 @@
     {"id":{"name":"spr_text_options","path":"sprites/spr_text_options/spr_text_options.yy",},},
     {"id":{"name":"spr_text","path":"sprites/spr_text/spr_text.yy",},},
     {"id":{"name":"spr_thisisntthelvlselectbg","path":"sprites/spr_thisisntthelvlselectbg/spr_thisisntthelvlselectbg.yy",},},
+    {"id":{"name":"spr_tile_chill","path":"sprites/spr_tile_chill/spr_tile_chill.yy",},},
     {"id":{"name":"spr_tile_tutorial","path":"sprites/spr_tile_tutorial/spr_tile_tutorial.yy",},},
     {"id":{"name":"spr_total","path":"sprites/spr_total/spr_total.yy",},},
     {"id":{"name":"spr_trialbutton","path":"sprites/spr_trialbutton/spr_trialbutton.yy",},},

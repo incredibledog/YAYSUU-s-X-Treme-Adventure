@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"til_chillfieldstiles",
-  "out_columns":8,
+  "out_columns":4,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_chillfieldstiles",
-    "path":"sprites/spr_chillfieldstiles/spr_chillfieldstiles.yy",
+    "name":"spr_tile_chill",
+    "path":"sprites/spr_tile_chill/spr_tile_chill.yy",
   },
   "spriteNoExport":true,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":64,
+  "tile_count":20,
 }
