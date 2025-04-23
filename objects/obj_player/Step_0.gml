@@ -95,10 +95,6 @@ if ((!grounded) && global.key_dashp && (state == playerstates.normal || state ==
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
 }
-else if (state == playerstates.dash && newstate == state && grounded)
-{
-	newstate = playerstates.slide
-}
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo)
 {
@@ -153,18 +149,23 @@ if (global.char == "T" && global.key_runp && state == playerstates.normal && new
 }
 
 //crouching
-if (grounded && newstate == state && state == playerstates.normal && global.key_down)
-	newstate = playerstates.crouch
-else if (state == playerstates.crouch && newstate == state && (!grounded || !global.key_down))
-	newstate = playerstates.normal
-
-if (state != playerstates.crouch && state != playerstates.slide && place_meeting(x, y, obj_playercollision))
+var forcecrouch = false
+var savedmask = mask_index
+mask_index = spr_collisionmask
+if (place_meeting(x, y, obj_playercollision))
 {
-	if (abs(hsp) <= runspeed || amiwalled(hsp))
+	if ((abs(hsp) <= runspeed || amiwalled(hsp)) && state != playerstates.slide)
 		newstate = playerstates.crouch
 	else
 		newstate = playerstates.slide
+	forcecrouch = true
 }
+mask_index = savedmask
+
+if (grounded && newstate == state && state == playerstates.normal && global.key_down)
+	newstate = playerstates.crouch
+else if (state == playerstates.crouch && newstate == state && (!grounded || !global.key_down) && !forcecrouch)
+	newstate = playerstates.normal
 
 //going through platform
 if (grounded && semisolidcollision && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
@@ -173,6 +174,7 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
     grounded = false
     semisolidcollision = false
     audio_play_sound(snd_platfall, 1, false)
+	newstate = playerstates.normal
 }
 
 // jumping
@@ -187,6 +189,7 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 	else
 		audio_play_sound(snd_jump, 1, false)
     grounded = false
+	newstate = playerstates.normal
 }
 
 if (state == playerstates.golfstop && newstate == state)
@@ -269,7 +272,7 @@ else
 }
 
 //vulnerability
-var runattack = (global.char == "T" && abs(hsp) > teddyrundamagespeed && sign(hsp) == sign(yearnedhsp))
+var runattack = (abs(hsp) > rundamagespeed && sign(hsp) == sign(yearnedhsp) && state == playerstates.normal)
 vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || runattack)
 if (vulnerable)
 	global.combo = 0
@@ -278,7 +281,7 @@ if (runattack)
 else
 	runanimtimer = -1
 
-//deading
+//the death fade
 if (state == playerstates.dead)
 {
 	if (!audio_is_playing(mus_dead) && !obj_fadeblack.fading)
@@ -324,6 +327,7 @@ if (state != playerstates.golfstop)
 		hsp -= accel
 }
 
+//set mask
 if (state == playerstates.dead)
     mask_index = noone
 else if (state == playerstates.crouch || state == playerstates.slide)

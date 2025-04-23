@@ -70,6 +70,7 @@
     {"name":"inst_264033CE","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_3ACF2F33","path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"inst_6695989A","path":"rooms/room_tutorial/room_tutorial.yy",},
+    {"name":"inst_3405A406","path":"rooms/room_tutorial/room_tutorial.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -141,6 +142,7 @@
         {"$GMRInstance":"v2","%Name":"inst_264033CE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_264033CE","objectId":{"name":"obj_rubble","path":"objects/obj_rubble/obj_rubble.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3040.0,"y":288.0,},
         {"$GMRInstance":"v2","%Name":"inst_3ACF2F33","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3ACF2F33","objectId":{"name":"obj_rubble","path":"objects/obj_rubble/obj_rubble.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3072.0,"y":288.0,},
         {"$GMRInstance":"v2","%Name":"inst_6695989A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6695989A","objectId":{"name":"obj_rubble","path":"objects/obj_rubble/obj_rubble.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3104.0,"y":288.0,},
+        {"$GMRInstance":"v2","%Name":"inst_3405A406","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3405A406","objectId":{"name":"obj_collision","path":"objects/obj_collision/obj_collision.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":1.0,"x":3200.0,"y":416.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"tiles","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":24,"SerialiseWidth":125,"TileCompressedData":[
           -116,-2147483648,-9,4,-116,-2147483648,-9,4,-116,-2147483648,-9,4,-116,-2147483648,-9,4,-116,-2147483648,
