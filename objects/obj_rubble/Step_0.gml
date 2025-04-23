@@ -3,6 +3,7 @@
 var checkoffsetx
 var checkoffsety
 var hascollision = true
+var resetplayerstate = false
 if (!obj_player.vulnerable)
 {
 	if (obj_player.state == playerstates.stomp)
@@ -21,6 +22,13 @@ if (!obj_player.vulnerable)
 		checkoffsety = 0
 	}
 }
+else if (obj_player.state == playerstates.bounce)
+{
+	hascollision = !(obj_player.bbox_right > bbox_left && obj_player.bbox_left < bbox_right && obj_player.bbox_top > bbox_bottom)
+	checkoffsetx = 0
+	checkoffsety = obj_player.vsp * 2
+	resetplayerstate = true
+}
 
 if hascollision
 {
@@ -35,5 +43,7 @@ else
 	{
 		destroyedbyplayer = true
 		instance_destroy()
+		if (resetplayerstate)
+			obj_player.newstate = playerstates.normal
 	}
 }
