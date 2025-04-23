@@ -71,8 +71,12 @@ if (grounded || state == playerstates.golfstop)
 	dshed = false
 	djump = global.char == "T"
 }
+
 var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
 
+if (state != playerstates.dead)
+{
+	
 if (candodashdo)
 {
 	if (state == playerstates.dash)
@@ -281,6 +285,8 @@ if (runattack)
 else
 	runanimtimer = -1
 
+}
+
 //the death fade
 if (state == playerstates.dead)
 {
@@ -306,7 +312,8 @@ else
 	}
 }
 
-state = newstate
+if (state != playerstates.dead)
+	state = newstate
 
 //actual movement
 if (state != playerstates.golfstop)
