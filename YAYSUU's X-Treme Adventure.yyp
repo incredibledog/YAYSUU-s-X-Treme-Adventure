@@ -451,6 +451,8 @@
     {"id":{"name":"spr_run","path":"sprites/spr_run/spr_run.yy",},},
     {"id":{"name":"spr_sagelogo","path":"sprites/spr_sagelogo/spr_sagelogo.yy",},},
     {"id":{"name":"spr_scoreicon","path":"sprites/spr_scoreicon/spr_scoreicon.yy",},},
+    {"id":{"name":"spr_secrettile_chill","path":"sprites/spr_secrettile_chill/spr_secrettile_chill.yy",},},
+    {"id":{"name":"spr_secrettile_manor","path":"sprites/spr_secrettile_manor/spr_secrettile_manor.yy",},},
     {"id":{"name":"spr_seecretarea","path":"sprites/spr_seecretarea/spr_seecretarea.yy",},},
     {"id":{"name":"spr_semistop_a","path":"sprites/spr_semistop_a/spr_semistop_a.yy",},},
     {"id":{"name":"spr_semistop_b","path":"sprites/spr_semistop_b/spr_semistop_b.yy",},},

@@ -383,6 +383,8 @@
     {"name":"spr_run","order":6,"path":"sprites/spr_run/spr_run.yy",},
     {"name":"spr_sagelogo","order":62,"path":"sprites/spr_sagelogo/spr_sagelogo.yy",},
     {"name":"spr_scoreicon","order":38,"path":"sprites/spr_scoreicon/spr_scoreicon.yy",},
+    {"name":"spr_secrettile_chill","order":107,"path":"sprites/spr_secrettile_chill/spr_secrettile_chill.yy",},
+    {"name":"spr_secrettile_manor","order":108,"path":"sprites/spr_secrettile_manor/spr_secrettile_manor.yy",},
     {"name":"spr_seecretarea","order":106,"path":"sprites/spr_seecretarea/spr_seecretarea.yy",},
     {"name":"spr_semistop_a","order":23,"path":"sprites/spr_semistop_a/spr_semistop_a.yy",},
     {"name":"spr_semistop_b","order":24,"path":"sprites/spr_semistop_b/spr_semistop_b.yy",},
