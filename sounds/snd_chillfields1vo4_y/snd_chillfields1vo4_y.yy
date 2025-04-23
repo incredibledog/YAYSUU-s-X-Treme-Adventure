@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.951837,
+  "duration":2.909297,
   "name":"snd_chillfields1vo4_y",
   "parent":{
     "name":"stagevo",

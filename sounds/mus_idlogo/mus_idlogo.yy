@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":5.333333,
+  "duration":5.3333335,
   "name":"mus_idlogo",
   "parent":{
     "name":"Sounds",
