@@ -1,13 +1,13 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"til_mysticmanortiles",
+  "%Name":"til_mysticmanortiles_dark",
   "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"til_mysticmanortiles",
+  "name":"til_mysticmanortiles_dark",
   "out_columns":6,
   "out_tilehborder":2,
   "out_tilevborder":2,
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_tile_manor",
-    "path":"sprites/spr_tile_manor/spr_tile_manor.yy",
+    "name":"spr_tile_manordark",
+    "path":"sprites/spr_tile_manordark/spr_tile_manordark.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
