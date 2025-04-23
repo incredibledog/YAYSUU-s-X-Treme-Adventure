@@ -60,7 +60,7 @@
     "name":"spr_rubble",
     "playback":1,
     "playbackSpeed":1.0,
-    "playbackSpeedType":1,
+    "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
     "seqHeight":32.0,

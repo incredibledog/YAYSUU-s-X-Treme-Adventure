@@ -42,3 +42,4 @@ hasplayedbrakesound = false
 deathies = false
 maxfallspeed = 10
 smashbump = -2
+runanimtimer = -1

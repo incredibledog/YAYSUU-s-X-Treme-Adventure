@@ -22,6 +22,8 @@ if (global.key_start)
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
+else if (global.key_run && global.char == "T")
+	move = facingdirection
 
 //grounded checking
 if (state == playerstates.stomp)
@@ -86,7 +88,7 @@ if (candodashdo)
 }
 
 //airdash
-if ((!grounded) && global.key_dashp && global.char="Y" && (state == playerstates.normal || state == playerstates.bounce) && newstate == state && !dshed && candodashdo)
+if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce) && newstate == state && !dshed && candodashdo)
 {
     hsp = dashboost * facingdirection
     dshed = true
@@ -98,7 +100,7 @@ else if (state == playerstates.dash && newstate == state && grounded)
 	newstate = playerstates.slide
 }
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
-if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo && global.char="Y")
+if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo)
 {
     hsp = dashboost * facingdirection
 	newstate = playerstates.slide
@@ -125,8 +127,9 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 {
 	if (global.char == "T")
 	{
-		newstate = playerstates.normal
+		newstate = playerstates.bounce
 		vsp = smashbump
+		grounded = false
 	}
 	else
 		scr_player_trybounce()
@@ -158,7 +161,7 @@ else if (state == playerstates.crouch && newstate == state && (!grounded || !glo
 if (state != playerstates.crouch && state != playerstates.slide && place_meeting(x, y, obj_playercollision))
 {
 	if (abs(hsp) <= runspeed || amiwalled(hsp))
-		newstate = playerstates.normal
+		newstate = playerstates.crouch
 	else
 		newstate = playerstates.slide
 }
@@ -176,11 +179,14 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
 {
     vsp = jmp
-    grounded = false
-	if djump
+	if (!grounded)
+	{
+		djump = false
 		audio_play_sound(snd_doublejump, 1, false)
+	}
 	else
 		audio_play_sound(snd_jump, 1, false)
+    grounded = false
 }
 
 if (state == playerstates.golfstop && newstate == state)
@@ -262,10 +268,17 @@ else
     image_alpha = 1
 }
 
-vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || (global.char == "T" && abs(hsp) > teddyrundamagespeed && sign(hsp) == sign(yearnedhsp)))
+//vulnerability
+var runattack = (global.char == "T" && abs(hsp) > teddyrundamagespeed && sign(hsp) == sign(yearnedhsp))
+vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || runattack)
 if (vulnerable)
 	global.combo = 0
+if (runattack)
+	runanimtimer++
+else
+	runanimtimer = -1
 
+//deading
 if (state == playerstates.dead)
 {
 	if (!audio_is_playing(mus_dead) && !obj_fadeblack.fading)
@@ -296,7 +309,7 @@ state = newstate
 if (state != playerstates.golfstop)
 {
 	var accel
-	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv //wants to increase above walking
+	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char != "T" //wants to increase above walking
 		accel = yearnacceloverspeed
 	else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0 //wants to decrease below walking
 		accel = yearnaccelunderspeed
@@ -318,6 +331,7 @@ else if (state == playerstates.crouch || state == playerstates.slide)
 else
     mask_index = spr_collisionmask
 
+//COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 var gotwalled = false
 if (state != playerstates.dead)
 {
@@ -482,6 +496,7 @@ if (state != playerstates.dead)
 }
 x += hsp
 y += vsp
+//emergency fixing
 if (place_meeting(x, y, obj_playercollision)) && (state != playerstates.dead)
 {
     if !(place_meeting((x + 1), y, obj_playercollision))
@@ -553,7 +568,7 @@ if (global.char == "Y")
 					if (vsp > 0)
 						newsprite = spr_yaysuu_launch
 					else
-						newsprite = spr_yaysuu_launch //yaysuu PLEASE give me a jumping version of this one :sob:
+						newsprite = spr_yaysuu_launchjump
 				}
 				else
 				{
@@ -677,9 +692,9 @@ else if (global.char == "T")
 				if (abs(hsp) > walkspeed)
 				{
 					if (vsp > 0)
-						newsprite = spr_teddy_fall
+						newsprite = spr_teddy_launch
 					else
-						newsprite = spr_teddy_jump
+						newsprite = spr_teddy_launchjump
 				}
 				else
 				{
@@ -714,6 +729,10 @@ else if (global.char == "T")
 			break;
 		case playerstates.slide:
 			newsprite = spr_teddy_slide
+			break;
+		case playerstates.bounce:
+			newsprite = spr_teddy_fall
+			image_xscale = facingdirection
 			break;
 		case playerstates.win:
 			if (sprite_index != spr_teddy_winb)
