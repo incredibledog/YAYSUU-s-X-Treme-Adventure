@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"til_tutorialtiles",
-  "out_columns":6,
+  "out_columns":4,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_tutorialtiles",
-    "path":"sprites/spr_tutorialtiles/spr_tutorialtiles.yy",
+    "name":"spr_tile_tutorial",
+    "path":"sprites/spr_tile_tutorial/spr_tile_tutorial.yy",
   },
   "spriteNoExport":true,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":32,
+  "tile_count":16,
 }
