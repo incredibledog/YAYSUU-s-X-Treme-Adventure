@@ -10,8 +10,8 @@
   "name":"obj_rubbledebris",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"effects",
+    "path":"folders/Objects/levelobjs/effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
