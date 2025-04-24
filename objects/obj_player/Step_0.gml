@@ -22,14 +22,20 @@ if (global.key_start)
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
-else if (global.key_run && global.char == "T")
+else if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed)
 	move = facingdirection
 
 //grounded checking
 if (state == playerstates.stomp)
+{
 	grv = stompgrav
+	maxfallspeed = stompmaxfall
+}
 else
+{
 	grv = normalgrav
+	maxfallspeed = normmaxfall
+}
 if (abs(vsp - maxfallspeed) < grv)
 	vsp = maxfallspeed
 else if (vsp < maxfallspeed)
@@ -100,6 +106,11 @@ if ((!grounded) && global.key_dashp && (state == playerstates.normal || state ==
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
 }
+if (state == playerstates.dash && newstate == state && grounded)
+{
+	newstate = playerstates.normal
+}
+
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo)
 {
@@ -107,10 +118,10 @@ if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp)
 	newstate = playerstates.slide
     audio_play_sound(snd_slide, 1, false)
 }
+
 //stomp
 if ((!grounded) && global.key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
 {
-    hsp /= 2
 	if (global.char == "T")
 	{
 		if (vsp < 10)
@@ -145,12 +156,18 @@ else if (state == playerstates.bounce && newstate == state)
 		newstate = playerstates.stomp
 	}
 }
-//teddy's dash run
-if (global.char == "T" && global.key_runp && state == playerstates.normal && newstate == state)
+
+//dash run
+if (global.key_runp && state == playerstates.normal && newstate == state)
 {
 	yearnedhsp = facingdirection * runspeed
 	hsp = yearnedhsp
 	audio_play_sound(snd_dashpad, 1, false)
+	with (instance_create_depth(x, y, depth + 1, obj_animatedeffect))
+	{
+		image_xscale = other.facingdirection
+		sprite_index = spr_runwhoosh
+	}
 }
 
 //crouching
@@ -185,14 +202,17 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 // jumping
 if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
 {
-    vsp = jmp
 	if (!grounded)
 	{
+		vsp = djmp
 		djump = false
 		audio_play_sound(snd_doublejump, 1, false)
 	}
 	else
+	{
+		vsp = jmp
 		audio_play_sound(snd_jump, 1, false)
+	}
     grounded = false
 	newstate = playerstates.normal
 }
@@ -320,9 +340,9 @@ if (state != playerstates.dead)
 if (state != playerstates.golfstop)
 {
 	var accel
-	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char != "T" //wants to increase above walking
-		accel = yearnacceloverspeed
-	else if sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0 //wants to decrease below walking
+	//if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char != "T" //wants to increase above walking
+	//	accel = yearnacceloverspeed
+	if (sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0) || (abs(hsp) <= runspeed) //wants to decrease below walking
 		accel = yearnaccelunderspeed
 	else
 		accel = yearnaccel

@@ -5,7 +5,7 @@ global.controlalpha=ini_read_real("settings","controlalpha",0.5)
 window_set_fullscreen(ini_read_real("settings","fullscreen",0))
 global.screenshake=ini_read_real("settings","screenshake",1)
 global.borders=ini_read_real("settings","borders",1)
-global.inputtype=ini_read_real("settings","inputtype",-1)
+global.inputtype=ini_read_real("settings","inputtype",0)
 ini_close()
 global.voicelines=false
 audio_group_load(voicelines)
@@ -43,7 +43,4 @@ instance_create_depth(0,0, 100, obj_fadeblack)
 instance_create_depth(0,0, 100, obj_player)
 
 global.returntosettings = false
-if (global.inputtype == -1)
-	room_goto(room_setupinput)
-else
-	room_goto(room_idlogo)
+room_goto(room_idlogo)

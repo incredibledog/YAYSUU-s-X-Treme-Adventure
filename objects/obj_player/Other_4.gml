@@ -18,12 +18,10 @@ if (global.newlevel)
 	facingdirection = 1
 	if (global.char == "Y")
 	{
-		runspeed = 10
 		rundamagespeed = 12
 	}
 	else if (global.char == "T")
 	{
-		runspeed = 8
-		rundamagespeed = 7
+		rundamagespeed = 8
 	}
 }
