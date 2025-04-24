@@ -144,6 +144,7 @@ else if (state == playerstates.bounce && newstate == state)
 		newstate = playerstates.normal
 	else if (global.key_downp)
 	{
+		vsp += 5
 		audio_play_sound(snd_stomp, 1, false)
 		newstate = playerstates.stomp
 	}
