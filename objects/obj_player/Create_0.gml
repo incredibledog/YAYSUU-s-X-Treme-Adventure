@@ -42,7 +42,7 @@ audio_pause_sound(runningsound)
 hasplayedbrakesound = false
 deathies = false
 maxfallspeed = 10
-smashbump = -2
+smashbump = 4
 runanimtimer = -1
 hascollision = true
 normmaxfall = 10

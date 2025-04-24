@@ -131,9 +131,9 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 {
 	if (global.char == "T")
 	{
-		newstate = playerstates.bounce
-		vsp = smashbump
-		grounded = false
+		newstate = playerstates.normal
+		grounded = true
+		hsp += move * smashbump
 	}
 	else
 		scr_player_trybounce()
