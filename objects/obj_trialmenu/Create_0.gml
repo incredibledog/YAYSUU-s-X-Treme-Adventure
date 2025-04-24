@@ -16,4 +16,5 @@ playingmusic[2] = audio_play_sound(mus_trialmenu_cf2, 1, true, 0)
 playingmusic[3] = audio_play_sound(mus_trialmenu_cf3, 1, true, 0)
 playingmusic[4] = audio_play_sound(mus_trialmenu_mm1, 1, true, 0)
 playingmusic[5] = audio_play_sound(mus_trialmenu_gc, 1, true, 0)
+playingmusic[6] = audio_play_sound(mus_trialmenu_t, 1, true, 1)
 changedlevel = false

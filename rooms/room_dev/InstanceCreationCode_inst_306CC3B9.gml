@@ -1,0 +1,1 @@
+text = "press O to toggle\nchanged speed"

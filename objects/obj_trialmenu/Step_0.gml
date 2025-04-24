@@ -18,7 +18,7 @@ if global.key_rightp
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-select=clamp(select,0,5)
+select=clamp(select,0,6)
 
 if (changedlevel)
 {
@@ -65,6 +65,13 @@ if (changedlevel)
 			currentlevel=room_glowstickcity
 			endlevel=room_glowstickcity
 			lvlname="Glow Stick City (unfinished)"
+			sprname=spr_tutorialscroll
+			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
+			break;
+		case 6:
+			currentlevel=room_dev
+			endlevel=room_dev
+			lvlname="Fun Dev Room!"
 			sprname=spr_tutorialscroll
 			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			break;
