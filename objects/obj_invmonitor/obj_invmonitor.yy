@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"monitors",
-    "path":"folders/Objects/levelobjs/enemys/monitors.yy",
+    "path":"folders/Objects/levelobjs/monitors.yy",
   },
   "parentObjectId":{
     "name":"obj_monitor",

@@ -4,3 +4,4 @@
 // Inherit the parent event
 event_inherited();
 debrissprite = spr_silverdebris
+breaksound = snd_breaksilver

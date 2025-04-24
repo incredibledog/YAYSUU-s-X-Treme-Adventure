@@ -67,49 +67,31 @@ switch chos
 	case 3:
 	if global.key_jumpp
 	{
-		if window_get_fullscreen()
-		{
-			window_set_fullscreen(false)
-		}
-		else {
-			window_set_fullscreen(true)
-		}
+		window_set_fullscreen(!window_get_fullscreen())
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 4:
 	if global.key_jumpp
 	{
-		if global.screenshake=true
-		{
-			global.screenshake=false
-		}
-		else {
-			global.screenshake=true
-		}
+		global.screenshake=!global.screenshake
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 5:
 	if global.key_jumpp
 	{
-		if global.borders=true
-		{
-			global.borders=false
-		}
-		else {
-			global.borders=true
-		}
+		global.borders=!global.borders
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 6:
 	if global.key_jumpp
 	{
-		loadroom(room_setupinput, false)
-		instance_destroy()
-		global.returntosettings = true
-		audio_play_sound(snd_confirm,1,false)
+		//loadroom(room_setupinput, false)
+		//instance_destroy()
+		//global.returntosettings = true
+		audio_play_sound(snd_nicetry,1,false)
 	}
 	break;
 	case 7:
@@ -144,7 +126,7 @@ switch chos
 			ini_write_real("settings","fullscreen",window_get_fullscreen())
 			ini_write_real("settings","screenshake",global.screenshake)
 			ini_write_real("settings","borders",global.borders)
-			ini_write_real("settings","inputtype",global.inputtype)
+			//ini_write_real("settings","inputtype",global.inputtype)
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_confirm,1,false)
@@ -164,7 +146,7 @@ switch chos
 			window_set_fullscreen(ini_read_real("settings","fullscreen",0))
 			global.screenshake=ini_read_real("settings","screenshake",1)
 			global.borders=ini_read_real("settings","borders",1)
-			global.inputtype=ini_read_real("settings","inputtype",1)
+			//global.inputtype=ini_read_real("settings","inputtype",1)
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_nahnvm,1,false)
@@ -183,7 +165,7 @@ if global.key_dashp
 	window_set_fullscreen(ini_read_real("settings","fullscreen",0))
 	global.screenshake=ini_read_real("settings","screenshake",1)
 	global.borders=ini_read_real("settings","borders",1)
-	global.inputtype=ini_read_real("settings","inputtype",1)
+	//global.inputtype=ini_read_real("settings","inputtype",1)
 	ini_close()
 	audio_stop_sound(mus_options)
 	audio_play_sound(snd_nahnvm,1,false)

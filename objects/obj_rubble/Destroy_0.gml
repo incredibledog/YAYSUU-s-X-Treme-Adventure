@@ -1,13 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 instance_destroy(mycollision)
-audio_play_sound(snd_breakrubble, 1, false, 1, 0, random_range(0.8, 1.2))
+audio_play_sound(breaksound, 1, false, 1, 0, random_range(0.8, 1.2))
 obj_camera.vshakeoffset += 2
 repeat (3)
 {
 	with(instance_create_depth(x, y, depth, obj_rubbledebris))
 	{
-		sprite_index = debrissprite
+		sprite_index = other.debrissprite
 		if (other.destroyedbyplayer)
 		{
 			hsp = (sqrt(abs(obj_player.hsp)) * sign(obj_player.hsp)) + random_range(-2, 4)

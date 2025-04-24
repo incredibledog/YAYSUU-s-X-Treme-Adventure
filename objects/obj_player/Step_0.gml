@@ -167,6 +167,7 @@ if (global.key_runp && state == playerstates.normal && newstate == state)
 	{
 		image_xscale = other.facingdirection
 		sprite_index = spr_runwhoosh
+		fade = true
 	}
 }
 

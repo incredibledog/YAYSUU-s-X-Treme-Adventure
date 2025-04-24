@@ -32,6 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":null,
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }
