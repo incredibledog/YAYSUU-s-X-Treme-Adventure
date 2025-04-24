@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"monitors",
-    "path":"folders/Sprites/enemys/monitors.yy",
+    "path":"folders/Sprites/monitors.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

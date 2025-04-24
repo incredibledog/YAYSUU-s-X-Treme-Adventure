@@ -36,6 +36,9 @@
     "name":"spr_coinmonitor",
     "path":"sprites/spr_coinmonitor/spr_coinmonitor.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }

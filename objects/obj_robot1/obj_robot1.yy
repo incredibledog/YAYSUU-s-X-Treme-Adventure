@@ -37,6 +37,9 @@
     "name":"spr_robot1",
     "path":"sprites/spr_robot1/spr_robot1.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }

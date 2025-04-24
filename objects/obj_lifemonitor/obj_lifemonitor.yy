@@ -37,6 +37,9 @@
     "name":"spr_lifemonitor_y",
     "path":"sprites/spr_lifemonitor_y/spr_lifemonitor_y.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }

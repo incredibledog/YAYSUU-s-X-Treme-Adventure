@@ -36,6 +36,9 @@
     "name":"spr_invinciblemonitor",
     "path":"sprites/spr_invinciblemonitor/spr_invinciblemonitor.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }

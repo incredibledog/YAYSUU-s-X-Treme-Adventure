@@ -36,6 +36,9 @@
     "name":"spr_pizzamonitor",
     "path":"sprites/spr_pizzamonitor/spr_pizzamonitor.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }
