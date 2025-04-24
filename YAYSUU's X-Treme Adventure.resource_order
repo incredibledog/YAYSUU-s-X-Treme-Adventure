@@ -67,6 +67,7 @@
     {"name":"obj_fadewhite","order":3,"path":"objects/obj_fadewhite/obj_fadewhite.yy",},
     {"name":"obj_fakecheckpoint","order":30,"path":"objects/obj_fakecheckpoint/obj_fakecheckpoint.yy",},
     {"name":"obj_formergoalflag","order":16,"path":"objects/obj_formergoalflag/obj_formergoalflag.yy",},
+    {"name":"obj_fringlemonitor","order":5,"path":"objects/obj_fringlemonitor/obj_fringlemonitor.yy",},
     {"name":"obj_gamecontroller","order":15,"path":"objects/obj_gamecontroller/obj_gamecontroller.yy",},
     {"name":"obj_gameover","order":8,"path":"objects/obj_gameover/obj_gameover.yy",},
     {"name":"obj_ghost1_dieded","order":16,"path":"objects/obj_ghost1_dieded/obj_ghost1_dieded.yy",},

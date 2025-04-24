@@ -115,6 +115,7 @@
     {"id":{"name":"obj_fadewhite","path":"objects/obj_fadewhite/obj_fadewhite.yy",},},
     {"id":{"name":"obj_fakecheckpoint","path":"objects/obj_fakecheckpoint/obj_fakecheckpoint.yy",},},
     {"id":{"name":"obj_formergoalflag","path":"objects/obj_formergoalflag/obj_formergoalflag.yy",},},
+    {"id":{"name":"obj_fringlemonitor","path":"objects/obj_fringlemonitor/obj_fringlemonitor.yy",},},
     {"id":{"name":"obj_gamecontroller","path":"objects/obj_gamecontroller/obj_gamecontroller.yy",},},
     {"id":{"name":"obj_gameover","path":"objects/obj_gameover/obj_gameover.yy",},},
     {"id":{"name":"obj_ghost1_dieded","path":"objects/obj_ghost1_dieded/obj_ghost1_dieded.yy",},},
