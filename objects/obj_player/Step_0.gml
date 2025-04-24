@@ -62,7 +62,7 @@ if (!grounded && vsp >= 0)
     }
 }
 
-if (state != playerstates.hurt)
+if (state != playerstates.hurt && state != playerstates.dead)
 {
 	if (state == playerstates.crouch || state == playerstates.inactive || state == playerstates.win)
 		wsp = 0
@@ -317,7 +317,7 @@ if (state == playerstates.dead)
 	    if (global.lives == 0)
 		    loadroom(room_gameover, false)
 		else
-		    loadroom(room, false)
+		    loadroom(room, true)
 	}
 }
 else
@@ -827,6 +827,4 @@ if (global.inv)
 	image_blend = make_color_hsv((rainbowtimer / 60 * 128) mod 256,64,255);
 }
 else
-{
 	image_blend = c_white
-}
