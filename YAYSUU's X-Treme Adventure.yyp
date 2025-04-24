@@ -470,6 +470,7 @@
     {"id":{"name":"spr_scoreicon","path":"sprites/spr_scoreicon/spr_scoreicon.yy",},},
     {"id":{"name":"spr_secrettile_chill","path":"sprites/spr_secrettile_chill/spr_secrettile_chill.yy",},},
     {"id":{"name":"spr_secrettile_chilldark","path":"sprites/spr_secrettile_chilldark/spr_secrettile_chilldark.yy",},},
+    {"id":{"name":"spr_secrettile_chillgrass","path":"sprites/spr_secrettile_chillgrass/spr_secrettile_chillgrass.yy",},},
     {"id":{"name":"spr_secrettile_manor","path":"sprites/spr_secrettile_manor/spr_secrettile_manor.yy",},},
     {"id":{"name":"spr_seecretarea","path":"sprites/spr_seecretarea/spr_seecretarea.yy",},},
     {"id":{"name":"spr_semistop_a","path":"sprites/spr_semistop_a/spr_semistop_a.yy",},},
