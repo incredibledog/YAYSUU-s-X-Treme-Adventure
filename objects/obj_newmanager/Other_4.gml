@@ -11,6 +11,10 @@ if (global.inlevel)
 		obj_player.y = obj_spawn.y
 	}
 }
+else
+{
+	comboshowtimer = 0
+}
 if (global.currentsong == -1)
 	audio_stop_all()
 else if !audio_is_playing(global.currentsong)

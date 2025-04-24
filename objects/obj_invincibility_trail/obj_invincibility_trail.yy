@@ -9,8 +9,8 @@
   "name":"obj_invincibility_trail",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"effects",
+    "path":"folders/Objects/levelobjs/effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -79,7 +79,7 @@
     {"name":"obj_inputchooser","order":20,"path":"objects/obj_inputchooser/obj_inputchooser.yy",},
     {"name":"obj_interactwarp","order":19,"path":"objects/obj_interactwarp/obj_interactwarp.yy",},
     {"name":"obj_intrologos","order":11,"path":"objects/obj_intrologos/obj_intrologos.yy",},
-    {"name":"obj_invincibility_trail","order":23,"path":"objects/obj_invincibility_trail/obj_invincibility_trail.yy",},
+    {"name":"obj_invincibility_trail","order":4,"path":"objects/obj_invincibility_trail/obj_invincibility_trail.yy",},
     {"name":"obj_invincibility","order":22,"path":"objects/obj_invincibility/obj_invincibility.yy",},
     {"name":"obj_invmonitor","order":2,"path":"objects/obj_invmonitor/obj_invmonitor.yy",},
     {"name":"obj_itemcoin","order":1,"path":"objects/obj_itemcoin/obj_itemcoin.yy",},

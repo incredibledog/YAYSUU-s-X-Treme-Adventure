@@ -11,7 +11,5 @@ else
 }
 if !audio_is_playing(mus_invincibility) || obj_player.state == playerstates.dead
 {
-	audio_resume_sound(global.currentsong)
-	global.inv=false
 	instance_destroy()
 }
