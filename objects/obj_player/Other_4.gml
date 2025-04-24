@@ -28,5 +28,9 @@ if (global.inlevel)
 			rundamagespeed = 8
 		}
 		image_angle = 0
+		if (room == room_tutorial)
+			whooshcolor = #C2C3C7
+		else
+			whooshcolor = #FFF1E8
 	}
 }

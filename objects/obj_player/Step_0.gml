@@ -122,16 +122,8 @@ if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp)
 //stomp
 if ((!grounded) && global.key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
 {
-	if (global.char == "T")
-	{
-		if (vsp < 10)
-			vsp = 10
-	}
-	else
-	{
-		if (vsp < 5)
-			vsp = 5
-	}
+	if (vsp < 10)
+		vsp = 10
     audio_play_sound(snd_stomp, 1, false)
 	newstate = playerstates.stomp
 }
@@ -168,6 +160,7 @@ if (global.key_runp && state == playerstates.normal && newstate == state)
 		image_xscale = other.facingdirection
 		sprite_index = spr_runwhoosh
 		fade = true
+		image_blend = other.whooshcolor
 	}
 }
 
