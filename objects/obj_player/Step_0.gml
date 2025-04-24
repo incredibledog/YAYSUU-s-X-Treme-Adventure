@@ -196,7 +196,7 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 }
 
 // jumping
-if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.crouch && newstate != playerstates.crouch && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead) && !(place_meeting(x, (y + jmp), obj_playercollision)))
+if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch) && !(place_meeting(x, (y + jmp), obj_playercollision)))
 {
 	if (!grounded)
 	{
