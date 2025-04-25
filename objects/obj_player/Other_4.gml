@@ -46,4 +46,6 @@ if (global.inlevel)
 		x = obj_spawn.x
 		y = obj_spawn.y
 	}
+	obj_camera.x = x
+	obj_camera.y = y
 }

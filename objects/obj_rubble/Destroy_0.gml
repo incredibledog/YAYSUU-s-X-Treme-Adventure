@@ -21,3 +21,4 @@ repeat (3)
 		rsp = random_range(-10, 10)
 	}
 }
+global.scoreadd += 5

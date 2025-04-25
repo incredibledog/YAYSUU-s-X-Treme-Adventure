@@ -251,6 +251,8 @@ if (ouchies)
 	{
 		if (deathies)
 			global.hp = 0
+		else
+			global.hp--
 		if (global.hp > 0)
 		{
 		    newstate = playerstates.hurt
@@ -261,7 +263,6 @@ if (ouchies)
 			yearnedhsp = facingdirection * -3
 			hsp = yearnedhsp
 		    grounded = false
-			global.hp--
 			if global.coins < 50
 				global.coins = 0
 			else
