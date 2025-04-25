@@ -43,8 +43,8 @@ else if (vsp < maxfallspeed)
 else if (vsp > maxfallspeed)
 	vsp -= grv
 prevgrounded = grounded
+prevslopey = slopey
 var semisolidcollision = false
-var slopey = false
 var semiinstance = noone
 if (vsp >= 0)
 {
@@ -68,12 +68,17 @@ if (vsp >= 0)
 	
 	if (!grounded && prevgrounded)
 	{
-		if (place_meeting(x, (y + vsp + forcecheck + 1), obj_slope))
+		if (place_meeting(x, (y + vsp + abs(hsp) + 1), obj_slope))
 		{
 			grounded = true
 			slopey = true
 		}
 	}
+}
+else
+{
+	grounded = false
+	slopey = false
 }
 
 if (state != playerstates.hurt && state != playerstates.dead)
@@ -204,6 +209,7 @@ if (grounded && semisolidcollision && global.key_runp && state = playerstates.cr
 {
     y += 1
     grounded = false
+	prevgrounded = false
     semisolidcollision = false
     audio_play_sound(snd_platfall, 1, false)
 	newstate = playerstates.normal
@@ -224,6 +230,9 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 		audio_play_sound(snd_jump, 1, false)
 	}
     grounded = false
+	prevgrounded = false
+	slopey = false
+	prevslopey = false
 	newstate = playerstates.normal
 }
 
@@ -347,7 +356,7 @@ if (state != playerstates.dead)
 	state = newstate
 
 //actual movement
-if (state != playerstates.golfstop)
+if (state != playerstates.golfstop && state != playerstates.dead)
 {
 	var accel
 	//if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char != "T" //wants to increase above walking
@@ -376,6 +385,10 @@ else
 
 //COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 var gotwalled = false
+if (!grounded)
+	slopey = false
+if (!prevgrounded)
+	prevslopey = false
 if (hascollision)
 {
     var dogroundsnap = 1
@@ -390,6 +403,8 @@ if (hascollision)
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: SLOPE UP SNAP"
+		else
+            global.debugmessage = "SLOPE UP SNAP"
         x -= hsp
         dogroundsnap = 0
         grounded = 1
@@ -408,6 +423,8 @@ if (hascollision)
             }
             if (loopprevent == maxloop)
                 global.debugmessage = "LOOP PREVENT: WALLED"
+			else
+			    global.debugmessage = "WALLED"
         }
         hsp = 0
 		gotwalled = true
@@ -422,10 +439,12 @@ if (hascollision)
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: CEILING"
+		else
+            global.debugmessage = "CEILING"
         vsp = 0
         grounded = false
     }
-    if (vsp > 0 && (!grounded) && prevgrounded && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
+    if (vsp >= 0 && prevslopey && !slopey && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
     {
         vsp = 0
         loopprevent = 0
@@ -436,20 +455,23 @@ if (hascollision)
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: SLOPE DOWN SNAP"
-        grounded = 1
+		else
+            global.debugmessage = "SLOPE DOWN SNAP"
+        grounded = true
+		slopey = true
     }
-    if (grounded && (!semisolidcollision) && dogroundsnap)
+    else if (grounded && !semisolidcollision && dogroundsnap)
     {
         loopprevent = 0
-        while ((!(place_meeting(x, (y + checkscale), obj_playercollision))) && (!(place_meeting(x, (y + checkscale), obj_slope))) && loopprevent < maxloop)
+        while (!place_meeting(x, (y + checkscale), obj_playercollision) && loopprevent < maxloop)
         {
             y += checkscale
             loopprevent++
         }
         if (loopprevent == maxloop)
-		{
             global.debugmessage = "LOOP PREVENT: GROUNDING"
-		}
+		else
+            global.debugmessage = "GROUNDING"
         vsp = 0
     }
     else if (semisolidcollision && grounded)
@@ -464,6 +486,8 @@ if (hascollision)
             }
             if (loopprevent == maxloop)
                 global.debugmessage = "LOOP PREVENT: SEMISOLIDING"
+			else
+			    global.debugmessage = "SEMISOLIDING"
         }
         vsp = 0
     }
@@ -535,6 +559,8 @@ if (hascollision)
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: DIAGONAL CORNER SNAP"
+		else
+            global.debugmessage = "DIAGONAL CORNER SNAP"
 	}
 }
 x += hsp

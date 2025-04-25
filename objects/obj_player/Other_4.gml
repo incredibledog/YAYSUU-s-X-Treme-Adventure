@@ -20,6 +20,8 @@ if (global.inlevel)
 		winning = false
 		facingdirection = 1
 		image_angle = 0
+		slopey = false
+		prevslopey = false
 		if (global.levelloadtype == loadtype.newlevel)
 		{
 			if (global.char == "Y")

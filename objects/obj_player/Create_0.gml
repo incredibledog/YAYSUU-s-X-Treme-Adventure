@@ -49,3 +49,5 @@ hascollision = true
 normmaxfall = 10
 stompmaxfall = 15
 whooshcolor = #FFF1E8
+slopey = false
+prevslopey = false
