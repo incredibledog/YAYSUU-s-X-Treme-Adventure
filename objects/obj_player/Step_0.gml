@@ -202,6 +202,8 @@ if (grounded && global.key_runp && state = playerstates.crouch && (newstate == s
 		prevgrounded = false
 		audio_play_sound(snd_platfall, 1, false)
 		newstate = playerstates.normal
+		with (instance_place(x, y + vsp + forcecheck, obj_semisolid_new))
+			y = -2763
 	}
 }
 
