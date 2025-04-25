@@ -10,7 +10,7 @@ if (started)
 	if delay>0
 		delay--
 	else if (!obj_fadeblack.fading)
-		loadroom(room_mainmenu, false)
+		loadroom(room_mainmenu, loadtype.menu)
 }
 else
 {

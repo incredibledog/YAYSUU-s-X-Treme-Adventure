@@ -5,7 +5,7 @@ if (selected)
 	if delay > 0
 		delay--
 	else if (!obj_fadeblack.fading)
-		loadroom(room_trialmenu, false)
+		loadroom(room_trialmenu, loadtype.menu)
 }
 else
 {
@@ -32,7 +32,7 @@ else
 	}
 	else if global.key_dashp
 	{
-		loadroom(room_mainmenu, false)
+		loadroom(room_mainmenu, loadtype.menu)
 		audio_play_sound(snd_nahnvm,1,false)
 	}
 	else if global.key_rightp

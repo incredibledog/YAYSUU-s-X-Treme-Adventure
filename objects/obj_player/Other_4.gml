@@ -1,6 +1,6 @@
 if (global.inlevel)
 {
-	if (global.newlevel)
+	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 	{
 		sprite_index = spr_yaysuu_idle
 		mask_index = spr_collisionmask
@@ -19,18 +19,21 @@ if (global.inlevel)
 		prevgrounded = true
 		winning = false
 		facingdirection = 1
-		if (global.char == "Y")
-		{
-			rundamagespeed = 12
-		}
-		else if (global.char == "T")
-		{
-			rundamagespeed = 8
-		}
 		image_angle = 0
-		if (room == room_tutorial)
-			whooshcolor = #C2C3C7
-		else
-			whooshcolor = #FFF1E8
+		if (global.levelloadtype == loadtype.newlevel)
+		{
+			if (global.char == "Y")
+			{
+				rundamagespeed = 12
+			}
+			else if (global.char == "T")
+			{
+				rundamagespeed = 8
+			}
+			if (room == room_tutorial)
+				whooshcolor = #C2C3C7
+			else
+				whooshcolor = #FFF1E8
+		}
 	}
 }

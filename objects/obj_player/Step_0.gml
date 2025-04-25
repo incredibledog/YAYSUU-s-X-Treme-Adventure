@@ -17,7 +17,7 @@ if (!global.inlevel)
 	return;
 
 if (global.key_start)
-	loadroom(room_trialmenu, false)
+	loadroom(room_trialmenu, loadtype.menu)
 
 move = (global.key_right - global.key_left)
 if (move != 0)
@@ -310,9 +310,9 @@ if (state == playerstates.dead)
 	if (!audio_is_playing(mus_dead) && !obj_fadeblack.fading)
 	{
 	    if (global.lives == 0)
-		    loadroom(room_gameover, false)
+		    loadroom(room_gameover, loadtype.menu)
 		else
-		    loadroom(room, true)
+		    loadroom(room, loadtype.respawn)
 	}
 }
 else

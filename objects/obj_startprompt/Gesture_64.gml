@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if st=0 && started=false && global.mobile
+if st=0 && started=false && os_type == os_android
 {
 	delay=60
 	started=true

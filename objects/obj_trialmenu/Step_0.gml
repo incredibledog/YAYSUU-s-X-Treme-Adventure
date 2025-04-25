@@ -93,11 +93,11 @@ if global.key_jumpp
 	global.checkpoint=false
 	global.coins=0
 	global.lives=3
-	loadroom(currentlevel, true)
+	loadroom(currentlevel, loadtype.newlevel)
 }
 else if global.key_start
 {
 	audio_stop_all()
 	audio_play_sound(snd_nahnvm,1,false)
-	loadroom(room_charselect, false)
+	loadroom(room_charselect, loadtype.menu)
 }

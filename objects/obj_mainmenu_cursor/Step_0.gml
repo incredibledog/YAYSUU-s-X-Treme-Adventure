@@ -66,5 +66,5 @@ if delay>0
 	delay--
 else if selected=true && !obj_fadeblack.fading
 {
-	loadroom(nextroom, false)
+	loadroom(nextroom, loadtype.menu)
 }

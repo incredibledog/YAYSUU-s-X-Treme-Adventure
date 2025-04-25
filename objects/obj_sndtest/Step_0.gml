@@ -9,12 +9,12 @@ if global.key_rightp && !audio_is_playing(currentsound)
 {
 	select+=1
 }
-if global.key_jump
+if global.key_jumpp
 {
 	audio_stop_all()
 	audio_play_sound(currentsound,1,false)
 }
-if global.key_dash
+if global.key_dashp
 {
 	audio_stop_all()
 }
