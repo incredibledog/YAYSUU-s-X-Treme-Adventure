@@ -10,8 +10,8 @@
     "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":{
-    "name":"obj_playercollision",
-    "path":"objects/obj_playercollision/obj_playercollision.yy",
+    "name":"obj_notsemisolid",
+    "path":"objects/obj_notsemisolid/obj_notsemisolid.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -8,8 +8,8 @@
   "name":"obj_semisolid_a",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"old",
+    "path":"folders/Objects/levelobjs/old.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_semistop_a",
-    "path":"sprites/spr_semistop_a/spr_semistop_a.yy",
+    "name":"spr_semistop_b",
+    "path":"sprites/spr_semistop_b/spr_semistop_b.yy",
   },
   "spriteMaskId":null,
   "visible":true,

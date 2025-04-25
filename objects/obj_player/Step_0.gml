@@ -44,27 +44,15 @@ else if (vsp > maxfallspeed)
 	vsp -= grv
 prevgrounded = grounded
 prevslopey = slopey
-var semisolidcollision = false
-var semiinstance = noone
+var forcecheck = 0
 if (vsp >= 0)
 {
-	var forcecheck = 0
 	if (vsp == 0)
 		forcecheck = grv
-	grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_slope)
+	grounded = place_meeting(x, y + vsp + forcecheck, obj_slope)
 	slopey = grounded
 	if (!grounded)
-	    grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_playercollision)
-	
-	if (!grounded)
-	{
-	    semiinstance = instance_place(x, ((y + vsp) + forcecheck), obj_semisolid_a)
-		if (semiinstance != noone)
-	    {
-		    grounded = (y + 31) < semiinstance.y
-	        semisolidcollision = grounded
-		}
-	}
+	    grounded = place_meeting(x, y + vsp + forcecheck, obj_playercollision)
 	
 	if (!grounded && prevgrounded)
 	{
@@ -205,14 +193,16 @@ else if (state == playerstates.crouch && newstate == state && (!grounded || !glo
 	newstate = playerstates.normal
 
 //going through platform
-if (grounded && semisolidcollision && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
+if (grounded && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
 {
-    y += 1
-    grounded = false
-	prevgrounded = false
-    semisolidcollision = false
-    audio_play_sound(snd_platfall, 1, false)
-	newstate = playerstates.normal
+	if (place_meeting(x, y + vsp + forcecheck, obj_semisolid_new) && !place_meeting(x, y + vsp + forcecheck, obj_notsemisolid))
+	{
+		y += 1
+		grounded = false
+		prevgrounded = false
+		audio_play_sound(snd_platfall, 1, false)
+		newstate = playerstates.normal
+	}
 }
 
 // jumping
@@ -460,7 +450,7 @@ if (hascollision)
         grounded = true
 		slopey = true
     }
-    else if (grounded && !semisolidcollision && dogroundsnap)
+    else if (grounded && dogroundsnap)
     {
         loopprevent = 0
         while (!place_meeting(x, (y + checkscale), obj_playercollision) && loopprevent < maxloop)
@@ -472,23 +462,6 @@ if (hascollision)
             global.debugmessage = "LOOP PREVENT: GROUNDING"
 		else
             global.debugmessage = "GROUNDING"
-        vsp = 0
-    }
-    else if (semisolidcollision && grounded)
-    {
-        if (vsp >= 0)
-        {
-            loopprevent = 0
-            while ((!(place_meeting(x, (y + checkscale), obj_semisolid_a))) && loopprevent < maxloop)
-            {
-                y += checkscale
-                loopprevent++
-            }
-            if (loopprevent == maxloop)
-                global.debugmessage = "LOOP PREVENT: SEMISOLIDING"
-			else
-			    global.debugmessage = "SEMISOLIDING"
-        }
         vsp = 0
     }
 	if (place_meeting((x + hsp), (y + vsp), obj_playercollision) && hsp != 0 && vsp != 0 && !slopey)

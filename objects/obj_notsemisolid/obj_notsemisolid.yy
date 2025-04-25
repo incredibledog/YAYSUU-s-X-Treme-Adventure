@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_playercollision",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_notsemisolid",
+  "eventList":[],
   "managed":true,
-  "name":"obj_playercollision",
+  "name":"obj_notsemisolid",
   "overriddenProperties":[],
   "parent":{
     "name":"levelobjs",
     "path":"folders/Objects/levelobjs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_playercollision",
+    "path":"objects/obj_playercollision/obj_playercollision.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_playercollision",
+    "path":"sprites/spr_playercollision/spr_playercollision.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

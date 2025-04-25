@@ -1,17 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_playercollision",
+  "%Name":"obj_semislope",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_playercollision",
+  "name":"obj_semislope",
   "overriddenProperties":[],
   "parent":{
     "name":"levelobjs",
     "path":"folders/Objects/levelobjs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_slope",
+    "path":"objects/obj_slope/obj_slope.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +34,13 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
-  "spriteMaskId":null,
+  "spriteId":{
+    "name":"spr_semislope",
+    "path":"sprites/spr_semislope/spr_semislope.yy",
+  },
+  "spriteMaskId":{
+    "name":"spr_semislope_collision",
+    "path":"sprites/spr_semislope_collision/spr_semislope_collision.yy",
+  },
   "visible":true,
 }
