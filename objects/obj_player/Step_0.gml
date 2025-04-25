@@ -562,6 +562,15 @@ if (place_meeting(x, y, obj_playercollision)) && hascollision
         y -= 20
 }
 
+//always wrap
+if (room == room_dev)
+{
+	if (x < -64)
+		x = room_width + 32
+	else if (x > room_width + 64)
+		x = -32
+}
+
 //SPRITES! MY FABOLITE
 if (global.char == "Y")
 {

@@ -4,7 +4,10 @@ function scr_player_trybounce(){
 	if (state == playerstates.stomp && newstate == state && global.char == "Y")
 	{
 		newstate = playerstates.bounce
-		vsp = bounceheight
+		if (abs(hsp) > walkspeed)
+			vsp = bounceheightbigger
+		else
+			vsp = bounceheight
 	    audio_play_sound(snd_bounce, 1, false)
 	    grounded = false
 	}

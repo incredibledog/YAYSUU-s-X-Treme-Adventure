@@ -1,11 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_roomwrap",
+  "%Name":"obj_racetimer",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_roomwrap",
+  "name":"obj_racetimer",
   "overriddenProperties":[],
   "parent":{
     "name":"levelobjs",
@@ -30,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gobox",
-    "path":"sprites/spr_gobox/spr_gobox.yy",
+    "name":"spr_turnaround",
+    "path":"sprites/spr_turnaround/spr_turnaround.yy",
   },
   "spriteMaskId":null,
   "visible":true,

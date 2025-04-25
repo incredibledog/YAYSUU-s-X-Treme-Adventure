@@ -3,7 +3,7 @@ if global.jumpscare=true
 
 if (global.inlevel)
 {
-	draw_set_font(global.subtitlefont)
+	/*draw_set_font(global.subtitlefont)
 	draw_set_halign(fa_right)
 	draw_text(640, 0, "temp hud :3")
 	draw_set_halign(fa_left)
@@ -19,7 +19,7 @@ if (global.inlevel)
 			draw_text_color(0, 96, "COMBO: " + string(showncombo), c_red, c_red, c_red, c_red, 1)
 		else
 			draw_text_color(0, 96, "COMBO: " + string(showncombo), c_red, c_red, c_red, c_red, comboshowtimer / 60)
-	}
+	}*/
 }
 
 if window_get_fullscreen() && global.borders=true

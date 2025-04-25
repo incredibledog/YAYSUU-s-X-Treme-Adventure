@@ -12,6 +12,7 @@ walkspeed = 5 // max speed
 runspeed = 10
 rundamagespeed = 12
 bounceheight = -10
+bounceheightbigger = -11
 normalgrav = 0.3
 stompgrav = 1
 vulnerable = true

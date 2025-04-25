@@ -9,8 +9,6 @@ if room=room_chillfields_boss
 hide=false
 draw_set_font(global.font)
 timer=0
-minutes=0
-seconds=0
 timebonus=1200
 timerstring="00:00"
 //To add more hearts, add something to the "maxhp".
