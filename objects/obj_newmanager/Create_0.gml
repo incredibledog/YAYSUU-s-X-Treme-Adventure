@@ -33,12 +33,13 @@ global.scoreadd = 0
 global.lives=3
 global.showcollision = false
 global.combo = 0
-comboshowtimer = 0
-showncombo = 0
+global.inboss = false
+global.levelloadtype = loadtype.menu
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)
 instance_create_depth(0,0, 100, obj_player)
+instance_create_depth(0,0, 100, obj_hud)
 
 global.returntosettings = false
 room_goto(room_idlogo)

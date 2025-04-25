@@ -13,6 +13,13 @@ if touchingplayer(x, y) && touched=false
 		sprite_index=spr_goalflag_transition_t
 	}
 	audio_play_sound(snd_flagspin,1,false)
+	global.score+=global.scoreadd+obj_hud.timebonus+(global.coins*10)
+	ini_open("savedata.ini")
+	if global.score > ini_read_real("records", string(room) + "_score", 0) && !global.inboss
+		ini_write_real("records", string(room) + "_score", global.score)
+	if obj_hud.timer < ini_read_real("records", string(room) + "_time", 359999) && !global.inboss
+		ini_write_real("records", string(room) + "_time", obj_hud.timer)
+	ini_close()
 }
 if endtimer>0 && touched=true
 {
@@ -24,8 +31,6 @@ if endtimer=0 && touched=true && winning=false
 	audio_stop_all()
 	virtual_key_delete(6)
 	virtual_key_delete(7)
-	instance_destroy(obj_pause)
-	instance_destroy(obj_mobilecontrols)
 	if global.char="Y"
 	{
 		audio_play_sound(mus_yaysuuwin,1,false)

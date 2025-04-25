@@ -23,17 +23,25 @@ if (global.inlevel)
 		if (global.levelloadtype == loadtype.newlevel)
 		{
 			if (global.char == "Y")
-			{
 				rundamagespeed = 12
-			}
 			else if (global.char == "T")
-			{
 				rundamagespeed = 8
-			}
 			if (room == room_tutorial)
 				whooshcolor = #C2C3C7
 			else
 				whooshcolor = #FFF1E8
+			global.checkpoint = false
 		}
+	}
+	
+	if global.checkpoint == true && instance_exists(obj_checkpoint)
+	{
+		x = obj_checkpoint.x
+		y = obj_checkpoint.y
+	}
+	else
+	{
+		x = obj_spawn.x
+		y = obj_spawn.y
 	}
 }

@@ -79,7 +79,8 @@ if (changedlevel)
 
 	ini_open("savedata.ini")
 	hiscore=ini_read_real("records",string(endlevel)+string("_score"),0)
-	timer=string_replace_all(((string_format(ini_read_real("records",string(endlevel)+string("_minutes"),99), 2, 0)) + ":" + (string_format(ini_read_real("records",string(endlevel)+string("_seconds"),59), 2, 0))), " ", "0")
+	timer = ini_read_real("records",string(endlevel)+string("_time"),359999)
+	timestring=string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0) + "." + string_format(timer % 60, 2, 0), " ", "0")
 	ini_close()
 }
 changedlevel = false

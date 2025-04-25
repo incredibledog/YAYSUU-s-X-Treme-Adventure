@@ -42,24 +42,38 @@ else if (vsp < maxfallspeed)
 	vsp += grv
 else if (vsp > maxfallspeed)
 	vsp -= grv
-var forcecheck = 0
-if (vsp == 0)
-    forcecheck = grv
 prevgrounded = grounded
-
-grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_slope)
-var slopey = grounded
-if (!grounded)
-    grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_playercollision)
 var semisolidcollision = false
-if (!grounded && vsp >= 0)
+var slopey = false
+var semiinstance = noone
+if (vsp >= 0)
 {
-    var semiinstance = instance_place(x, ((y + vsp) + forcecheck), obj_semisolid_a)
-    if (semiinstance != noone)
-    {
-        grounded = (y + 31) < semiinstance.y
-        semisolidcollision = grounded
-    }
+	var forcecheck = 0
+	if (vsp == 0)
+		forcecheck = grv
+	grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_slope)
+	slopey = grounded
+	if (!grounded)
+	    grounded = place_meeting(x, ((y + vsp) + forcecheck), obj_playercollision)
+	
+	if (!grounded)
+	{
+	    semiinstance = instance_place(x, ((y + vsp) + forcecheck), obj_semisolid_a)
+		if (semiinstance != noone)
+	    {
+		    grounded = (y + 31) < semiinstance.y
+	        semisolidcollision = grounded
+		}
+	}
+	
+	if (!grounded && prevgrounded)
+	{
+		if (place_meeting(x, (y + vsp + forcecheck + 1), obj_slope))
+		{
+			grounded = true
+			slopey = true
+		}
+	}
 }
 
 if (state != playerstates.hurt && state != playerstates.dead)
@@ -99,7 +113,7 @@ if (candodashdo)
 }
 
 //airdash
-if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce) && newstate == state && !dshed && candodashdo)
+if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo)
 {
     hsp = dashboost * facingdirection
     dshed = true
@@ -133,10 +147,10 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 	{
 		newstate = playerstates.normal
 		grounded = true
-		hsp += move * smashbump
 	}
 	else
 		scr_player_trybounce()
+	hsp += move * smashbump
 }
 else if (state == playerstates.bounce && newstate == state)
 {

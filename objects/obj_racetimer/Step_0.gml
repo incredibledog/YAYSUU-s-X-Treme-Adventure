@@ -2,9 +2,14 @@
 // You can write your code in this editor
 if (timing)
 	timer++
-if (touchingplayer(x,y))
+var tottch = touchingplayer(x,y)
+if (storedtouching != tottch)
 {
-	timing = !timing
-	if (timing)
-		timer = 0
+	storedtouching = tottch
+	if (tottch)
+	{
+		timing = !timing
+		if (timing)
+			timer = 0
+	}
 }

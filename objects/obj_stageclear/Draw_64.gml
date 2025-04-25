@@ -1,17 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-if !(room=room_chillfields_boss)
+draw_self()
+draw_set_valign(fa_top)
+if !global.inboss
 {
-	if hide=false
-	{
-		draw_self()
-	}
 	if display>=1
 	{
-		draw_sprite(spr_stopwatch,0,96,288)
-		draw_text(128,288,obj_hud.timerstring)
-		draw_sprite(spr_bonus,0,320,288)
-		draw_text(384,288,obj_hud.timebonus)
+		draw_sprite(spr_stopwatch,0,64,288)
+		draw_text(96,288,obj_hud.timerstring)
+		draw_sprite(spr_bonus,0,352,288)
+		draw_text(416,288,obj_hud.timebonus)
 	}
 	if display>=2
 	{
@@ -36,13 +34,13 @@ if display>=4
 			draw_sprite(spr_next,0,416,416)
 			draw_sprite(spr_retry,0,512,416)
 		}
-		if os_type=os_android
+		else
 		{
 			draw_sprite(spr_next,2,224,416)
 			draw_sprite(spr_retry,2,320,416)
 		}
 	}
-	if gamepad_is_connected(0)
+	else
 	{
 		draw_sprite(spr_next,1,416,416)
 		draw_sprite(spr_retry,1,512,416)

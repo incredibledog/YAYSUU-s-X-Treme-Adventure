@@ -3,7 +3,7 @@ var prevaxislv = axislv
 axislh = gamepad_axis_value(0,gp_axislh)
 axislv = gamepad_axis_value(0,gp_axislv)
 
-if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(ord("P"))) && global.inputtype != 0
+/*if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(ord("P"))) && global.inputtype != 0
 {
 	global.inputtype = 0
 	ini_open("savedata.ini")
@@ -23,7 +23,7 @@ else if (gamepad_button_check_pressed(0,gp_face1) || gamepad_button_check_presse
 	ini_open("savedata.ini")
 	ini_write_real("settings","inputtype",2)
 	ini_close()
-}
+}*/
 
 if global.inputtype == 0
 {

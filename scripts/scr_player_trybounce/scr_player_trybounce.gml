@@ -10,5 +10,6 @@ function scr_player_trybounce(){
 			vsp = bounceheight
 	    audio_play_sound(snd_bounce, 1, false)
 	    grounded = false
+		dshed = false
 	}
 }

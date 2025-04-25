@@ -7,9 +7,9 @@ if room=room_chillfields_boss
 	global.maxbosshp = 6
 }
 hide=false
-draw_set_font(global.font)
+timerstring = ""
 timer=0
 timebonus=1200
-timerstring="00:00"
-//To add more hearts, add something to the "maxhp".
-
+comboshowtimer = 0
+showncombo = 0
+showresults = false

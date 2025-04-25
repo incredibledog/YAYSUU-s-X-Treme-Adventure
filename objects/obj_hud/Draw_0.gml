@@ -2,8 +2,7 @@
 // You can write your code in this editor
 
 
-if (global.drawhud)
-{
+/*
 	if (room=room_chillfields_boss)
 		boss_health_hearts(spr_fringleglasses);
 	else
