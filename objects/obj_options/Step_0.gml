@@ -88,10 +88,10 @@ switch chos
 	case 6:
 	if global.key_jumpp
 	{
-		//loadroom(room_setupinput, false)
-		//instance_destroy()
-		//global.returntosettings = true
-		audio_play_sound(snd_nicetry,1,false)
+		loadroom(room_setupinput, false)
+		instance_destroy()
+		global.returntosettings = true
+		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 7:

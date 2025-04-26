@@ -5,7 +5,7 @@ global.controlalpha=ini_read_real("settings","controlalpha",0.5)
 window_set_fullscreen(ini_read_real("settings","fullscreen",0))
 global.screenshake=ini_read_real("settings","screenshake",1)
 global.borders=ini_read_real("settings","borders",1)
-global.inputtype=ini_read_real("settings","inputtype",0)
+global.keytype=ini_read_real("settings","keytype",-1)
 ini_close()
 global.voicelines=false
 audio_group_load(voicelines)
@@ -35,6 +35,12 @@ global.showcollision = false
 global.combo = 0
 global.inboss = false
 global.levelloadtype = loadtype.menu
+if (os_type == os_android)
+	global.inputtype = 3
+else if (gamepad_is_connected(0))
+	global.inputtype = 2
+else
+	global.inputtype = global.keytype
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)
@@ -42,4 +48,7 @@ instance_create_depth(0,0, 100, obj_player)
 instance_create_depth(0,0, 100, obj_hud)
 
 global.returntosettings = false
-room_goto(room_idlogo)
+if (global.inputtype == -1)
+	room_goto(room_setupinput)
+else
+	room_goto(room_idlogo)

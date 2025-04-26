@@ -5,6 +5,6 @@ if (global.key_jumpp)
 	else
 		loadroom(room_idlogo, false)
 	ini_open("savedata.ini")
-	ini_write_real("settings","inputtype",global.inputtype)
+	ini_write_real("settings","keytype",global.keytype)
 	ini_close()
 }

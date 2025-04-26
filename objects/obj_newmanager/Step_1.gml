@@ -3,29 +3,15 @@ var prevaxislv = axislv
 axislh = gamepad_axis_value(0,gp_axislh)
 axislv = gamepad_axis_value(0,gp_axislv)
 
-if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(ord("P"))) && global.inputtype != 0
+if (global.inputtype != 3)
 {
-	global.inputtype = 0
-	ini_open("savedata.ini")
-	ini_write_real("settings","inputtype",0)
-	ini_close()
-}
-else if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_escape)) && global.inputtype != 1
-{
-	global.inputtype = 1
-	ini_open("savedata.ini")
-	ini_write_real("settings","inputtype",1)
-	ini_close()
-}
-else if (gamepad_button_check_pressed(0,gp_face1) || gamepad_button_check_pressed(0,gp_start)) && global.inputtype != 2
-{
-	global.inputtype = 2
-	ini_open("savedata.ini")
-	ini_write_real("settings","inputtype",2)
-	ini_close()
+	if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_escape))
+		global.inputtype = global.keytype
+	else if (gamepad_button_check_pressed(0,gp_face1) || gamepad_button_check_pressed(0,gp_start))
+		global.inputtype = 2
 }
 
-if global.inputtype == 0
+if (global.inputtype == 0) || (global.inputtype == 3)
 {
 	global.key_left = keyboard_check(vk_left)
 	global.key_leftp = keyboard_check_pressed(vk_left)
@@ -78,4 +64,22 @@ else if global.inputtype == 2
 	global.key_run = gamepad_button_check(0,gp_face3)
 	global.key_runp = gamepad_button_check_pressed(0,gp_face3)
 	global.key_start = gamepad_button_check_pressed(0,gp_start)
+}
+else
+{
+	global.key_left = false
+	global.key_leftp = false
+	global.key_right = false
+	global.key_rightp = false
+	global.key_up = false
+	global.key_upp = false
+	global.key_down = false
+	global.key_downp = false
+	global.key_jump = false
+	global.key_jumpp = false
+	global.key_dash = false
+	global.key_dashp = false
+	global.key_run = false
+	global.key_runp = false
+	global.key_start = false
 }
