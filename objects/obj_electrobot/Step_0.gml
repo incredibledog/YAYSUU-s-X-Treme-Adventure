@@ -115,6 +115,7 @@ switch (state)
 		{
 			delay = idledelay
 			state = electrobotstates.idle
+			audio_stop_sound(snd_speen)
 		}
 		break;
 	case electrobotstates.shoot:
