@@ -1,234 +1,206 @@
 /// @description Insert description here
 // You can write your code in this editor
-if state=0
+enum electrobotstates
 {
-	gravityapplies=true
-	hsp=0
-	sprite_index=spr_electrobot_idle
-	vulnerable=false
-	cooldown=false
-	if (obj_player.x>x && image_xscale=1) || (obj_player.x<x && image_xscale=-1)
-	{
-		image_xscale*=-1
-	}
-	if delaying=false
-	{
-		delay=120
-		delaying=true
-	}
+    idle,
+    jump,
+	thunder,
+    spin,
+	inactive,
+	damaged,
+	shoot,
+	dying
 }
-if state=6
+
+if (gravityapplies)
+	grounded = place_meeting(x, y + vsp + grv, obj_collision)
+else
+	grounded = false
+
+vulnerable = false
+candamage = true
+switch (state)
 {
-	gravityapplies=true
-	hsp=0
-	sprite_index=spr_electrobot_vulnerable
-	vulnerable=true
-	if delaying=false
-	{
-		delay=120
-		delaying=true
-	}
+	case electrobotstates.idle:
+		hsp = 0
+		if (obj_player.x > x)
+			image_xscale = 1
+		else if (obj_player.x < x)
+			image_xscale = -1
+		if (!hasdamaged)
+		{
+			vulnerable = true
+			if (touchingplayer(x, y) && !obj_player.vulnerable)
+			{
+				delay = 1337
+				with (obj_player)
+					scr_player_trybounce()
+				candamage = false
+				state = electrobotstates.damaged
+				vsp = -5
+				hsp = -3 * image_xscale
+				audio_play_sound(snd_ouchie,1,false)
+				global.bosshp--
+				obj_camera.vshakeoffset = 30
+				hasdamaged = true
+				if (global.bosshp == 3) //it gets HARDERS!?
+					idledelay = 100
+			}
+		}
+		if (delay > 0)
+			delay--
+		else if (grounded)
+		{
+			vulnerable = false
+			state = choose(electrobotstates.jump, electrobotstates.spin, electrobotstates.shoot)
+			attackcount = 3
+			hasdamaged = false
+			switch (state) //ah yes switch statements in switch statements
+			{
+				case electrobotstates.jump:
+					gravityapplies = false
+					break;
+				case electrobotstates.spin:
+					audio_play_sound(snd_speen,1,true)
+					break;
+				case electrobotstates.spin:
+					sprite_index = spr_electrobot_shoot
+					image_index = 2
+					delay = 15
+					break;
+			}
+		}
+		break;
+	case electrobotstates.jump:
+		y = ((y + 64) / jumpsmoothing) - 64
+		if (y < -48)
+		{
+			state = electrobotstates.thunder
+			y = -48
+		}
+		break;
+	case electrobotstates.thunder:
+		if (delay > 0)
+			delay--
+		else
+		{
+			if (attackcount == 0)
+			{
+				delay = idledelay
+				state = electrobotstates.idle
+				vsp = 5
+				gravityapplies = true
+				x = obj_player.x
+			}
+			else
+			{
+				delay = 54
+				attackcount--
+				instance_create_depth(obj_player.x-16,0,depth,obj_electrobot_warning)
+			}
+		}
+		break;
+	case electrobotstates.spin:
+		hsp = image_xscale * 6
+		if (place_meeting(x + hsp, y, obj_collision))
+		{
+			vsp = -3
+			image_xscale = -image_xscale
+			hsp = image_xscale * 6
+			attackcount--
+			grounded = false
+		}
+		if (attackcount == 0 && grounded)
+		{
+			delay = idledelay
+			state = electrobotstates.idle
+		}
+		break;
+	case electrobotstates.shoot:
+		if (delay > 0)
+			delay--
+		else
+		{
+			if (attackcount == 0)
+			{
+				delay = idledelay
+				state = electrobotstates.idle
+			}
+			else
+			{
+				image_index = 0
+				with (instance_create_depth(x,y,depth+1,obj_electrobot_boolet))
+					image_xscale = other.image_xscale	
+				delay = 30
+				attackcount--
+			}
+		}
+		break;
+	case electrobotstates.damaged:
+		if (place_meeting(x + hsp, y, obj_collision))
+			hsp = 0
+		if (grounded)
+		{
+			if (global.bosshp == 0)
+			{
+				state = electrobotstates.dying
+				delay = 300
+			}
+			else
+			{
+				candamage = true
+				state = electrobotstates.idle
+				delay = idledelay
+			}
+		}
+		break;
 }
-if state=8
+
+if (gravityapplies)
+	vsp += grv
+
+if (grounded)
 {
-	gravityapplies=true
-	hsp=0
-	sprite_index=spr_electrobot_idle
-	vulnerable=false
-	cooldown=true
-	if (obj_player.x>x && image_xscale=1) || (obj_player.x<x && image_xscale=-1)
-	{
-		image_xscale*=-1
-	}
-	if delaying=false
-	{
-		delay=120
-		delaying=true
-	}
+	var loopprevent = 0
+    while (!place_meeting(x, (y + checkscale), obj_playercollision) && loopprevent < maxloop)
+    {
+        y += checkscale
+        loopprevent++
+    }
+    vsp = 0
 }
-if state=9
+x += hsp
+y += vsp
+
+var oldsprite = sprite_index
+switch (state)
 {
-	gravityapplies=true
-	hsp=0
-	sprite_index=spr_electrobot_dying
-	vulnerable=true
-	cooldown=false
-	if delaying=false
-	{
-		delay=300
-		delaying=true
-	}
-	if kablooeyjrtimer>0
-		kablooeyjrtimer--
-	else
-	{
-		instance_create_depth(x+random_range(-16,16),y+random_range(-16,16),depth-1,obj_explode_jr)
-		kablooeyjrtimer=12.5
-	}
+	case electrobotstates.idle:
+		if (vulnerable)
+			sprite_index = spr_electrobot_vulnerable
+		else
+			sprite_index = spr_electrobot_idle
+		break;
+	case electrobotstates.jump:
+		sprite_index = spr_electrobot_jump
+		break;
+	case electrobotstates.spin:
+		sprite_index = spr_electrobot_speen
+		break;
+	case electrobotstates.damaged:
+		sprite_index = spr_electrobot_hurt
+		break;
+	case electrobotstates.shoot:
+		sprite_index = spr_electrobot_shoot
+		break;
+	case electrobotstates.dying:
+		sprite_index = spr_electrobot_dying
+		break;
 }
-if state=8 && image_alpha=1
-{
-	image_alpha=0
-}
-else {
-	image_alpha=1
-}
-if state=6 && place_meeting(x,y,obj_player) && !obj_player.vulnerable
-{
-	global.bosshp--
-	obj_camera.vshakeoffset=30
-	with(obj_player)
-		scr_player_trybounce()
-	candamage = false
-	if global.bosshp>0
-	{
-		delaying=false
-		state=7
-		vsp=-5
-	}
-	else
-	{
-		delaying=false
-		state=9
-		audio_stop_sound(mus_chillfields_boss)
-	}
-	audio_play_sound(snd_ouchie,1,false)
-}
-if state=7 && !place_meeting(x,y+vsp,obj_collision)
-{
-	if (place_meeting(x,y+vsp,obj_collision))
-	{
-		delaying=false
-		state=8
-		candamage = true
-	}
-	else
-	{
-		hsp=3*-image_xscale
-		sprite_index=spr_electrobot_hurt
-	}
-}
-if delay>0
-{
-	delay-=1
-}
-if delay=0 && state=0 && delaying=true
-{
-	bounces=0
-	boolettimes=0
-	state=floor(choose(2,3,5))
-	delaying=false
-}
-if delay=0 && state=4 && delaying=true
-{
-	gravityapplies=true
-	bounces=0
-	state=6
-	delaying=false
-}
-if delay=0 && (state=6 || state=8) && delaying=true
-{
-	bounces=0
-	state=0
-	delaying=false
-}
-if delay=0 && state=9 && delaying=true
-{
-	instance_destroy()
-	instance_create_depth(x,y,depth,obj_explode)
-	instance_create_depth(x,y,depth,obj_nogoalflag)
-}
-if state=1 && jumpd=true && place_meeting(x,y+vsp,obj_collision)
-{
-	image_xscale=image_xscale*-1
-	hsp=hsp*-1
-}
-if state=1 && jumpd=false
-{
-	gravityapplies=true
-	jumpd=true
-	audio_play_sound(snd_electrobotjump,0,false)
-	sprite_index=spr_electrobot_jump
-	image_index=0
-	hsp=6*-image_xscale
-	vsp=-10
-}
-if state=2
-{
-	gravityapplies=true
-	hsp=6*-image_xscale
-	sprite_index=spr_electrobot_speen
-}
-if state=2 && !audio_is_playing(snd_speen)
-{
-	audio_play_sound(snd_speen,1,true)
-}
-else if !(state=2)
-{
-	audio_stop_sound(snd_speen)
-}
-if state=2 && place_meeting(x+hsp,y,obj_collision)
-{
-	image_xscale*=-1
-	bounces++
-	vsp=-3
-}
-if state=2 && bounces=3
-{
-	hsp=0
-	state=6
-}
-if state=3 && jumpd=false
-{
-	gravityapplies=false
-	jumpd=true
-	audio_play_sound(snd_electrobotjump,1,false,2)
-	sprite_index=spr_electrobot_jump
-	image_index=0
-	hsp=2*-image_xscale
-	vsp=-10
-}
-if state=3 && place_meeting(x,y,obj_turnaround)
-{
-	thundertimes=0
-	state=4
-}
-if state=4
-{
-	jumpd=false
-	hsp=0
-	vsp=0
-	if thundertimer=0 && thundertimes<3
-	{
-		thundertimer=54
-		thundertimes++
-		instance_create_depth(obj_player.x-16,0,depth,obj_electrobot_warning)
-	}
-	if thundertimer>0
-	{
-		thundertimer--
-	}
-	if delaying=false
-	{
-		delay=240
-		delaying=true
-	}
-}
-if state=5
-{
-	sprite_index=spr_electrobot_shoot
-}
-if state=5 && boolettimes=4
-{
-	state=6
-}
-if gravityapplies
-{
-	if !place_meeting(x,y+vsp,obj_collision)
-		vsp+=grv
-	else
-		vsp=0
-}
-x+=hsp
-y+=vsp
+if (sprite_index != oldsprite)
+	image_index = 0
+	
+if (sprite_index == spr_electrobot_jump && image_index == 6)
+	image_index = 2
+
 event_inherited()

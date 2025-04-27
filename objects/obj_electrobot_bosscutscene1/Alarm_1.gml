@@ -3,9 +3,9 @@
 instance_destroy()
 obj_player.state = playerstates.normal
 obj_player.newstate = playerstates.normal
+obj_electrobot.state = electrobotstates.idle
 instance_create_layer(0,0,"gui",obj_mobilecontrols)
 instance_destroy(obj_player_bosscutscene1)
-instance_create_depth(x,y,depth,obj_electrobot)
 audio_group_stop_all(voicelines)
 if global.voicelines=true
 {
