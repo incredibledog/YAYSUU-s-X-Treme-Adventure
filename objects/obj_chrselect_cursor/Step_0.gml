@@ -23,6 +23,11 @@ else
 				global.char="Y"
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
+			else if (global.key_up && global.key_down)
+			{
+				global.char="C"
+				audio_play_sound(snd_cottonselect,1,false)
+			}
 			else
 			{
 				global.char="T"

@@ -22,11 +22,16 @@ if (global.key_start)
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
-else if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed)
+if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed && global.char != "C")
 	move = facingdirection
 
 //grounded checking
-if (state == playerstates.stomp)
+if (state == playerstates.normal && !grounded && !djump)
+{
+	grv = floatgrav
+	maxfallspeed = floatmaxfall
+}
+else if (state == playerstates.stomp)
 {
 	grv = stompgrav
 	maxfallspeed = stompmaxfall
@@ -83,7 +88,7 @@ if (state != playerstates.hurt && state != playerstates.dead)
 if (grounded || state == playerstates.golfstop)
 {
 	dshed = false
-	djump = global.char == "T"
+	djump = (global.char == "T" || global.char == "C")
 }
 
 var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
@@ -106,7 +111,7 @@ if (candodashdo)
 }
 
 //airdash
-if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo)
+if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo && global.char != "C")
 {
     hsp = dashboost * facingdirection
     dshed = true
@@ -158,7 +163,7 @@ else if (state == playerstates.bounce && newstate == state)
 }
 
 //dash run
-if (global.key_runp && state == playerstates.normal && newstate == state && !amiwalled(hsp))
+if (global.key_runp && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C")
 {
 	yearnedhsp = facingdirection * runspeed
 	if (abs(hsp) < (yearnedhsp) || sign(hsp) != sign(yearnedhsp)) //you will not slow down if you start a run
@@ -212,7 +217,10 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 {
 	if (!grounded)
 	{
-		vsp = djmp
+		if (global.char == "C")
+			vsp = fjmp
+		else
+			vsp = djmp
 		djump = false
 		audio_play_sound(snd_doublejump, 1, false)
 	}
@@ -352,9 +360,9 @@ if (state != playerstates.dead)
 if (state != playerstates.golfstop && state != playerstates.dead)
 {
 	var accel
-	//if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char != "T" //wants to increase above walking
-	//	accel = yearnacceloverspeed
-	if (sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0) || (abs(hsp) <= runspeed) //wants to decrease below walking
+	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char == "C" //cotton's gradual run
+		accel = yearnacceloverspeed
+	else if (sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0) || (abs(hsp) <= runspeed) //wants to decrease below walking
 		accel = yearnaccelunderspeed
 	else
 		accel = yearnaccel
@@ -834,6 +842,127 @@ else if (global.char == "T")
 		if (!hasplayedbrakesound)
 		{
 			audio_play_sound(snd_brake, 1, false)
+			hasplayedbrakesound = true
+		}
+	}
+	else
+		hasplayedbrakesound = false
+}
+else if (global.char == "C")
+{
+	var newsprite = sprite_index
+    switch (state)
+	{
+		case playerstates.normal:
+			if (grounded)
+			{
+				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
+				{
+					if ((sprite_index == spr_cotton_idle || sprite_index == spr_cotton_walk) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
+						newsprite = spr_cotton_idle
+					else
+						newsprite = spr_cotton_brake
+				}
+				else if (abs(hsp) < yearnaccel)
+				{
+					if (idletime > 600)
+						newsprite = spr_cotton_wait
+					else
+						newsprite = spr_cotton_idle
+				}
+				else if (abs(hsp) > walkspeed)
+					newsprite = spr_cotton_run
+				else
+					newsprite = spr_cotton_walk
+			}
+			else
+			{
+				if (!djump)
+				{
+					newsprite = spr_cotton_fly
+				}
+				else
+				{
+					if (vsp > 0)
+						newsprite = spr_cotton_fall
+					else
+						newsprite = spr_cotton_jump
+				}
+			}
+			
+			if (newsprite != spr_cotton_brake)
+				image_xscale = facingdirection
+			break;
+		case playerstates.crouch:
+			newsprite = spr_cotton_crouch
+			image_xscale = facingdirection
+			break;
+		case playerstates.stomp:
+			newsprite = spr_cotton_ball
+			image_xscale = 1
+			break;
+		case playerstates.hurt:
+			newsprite = spr_cotton_ouchie
+			break;
+		case playerstates.inactive:
+			break;
+		case playerstates.dead:
+			newsprite = spr_cotton_dieded
+			image_angle += hsp
+			break;
+		case playerstates.slide:
+			newsprite = spr_cotton_slide
+			break;
+		case playerstates.bounce:
+			newsprite = spr_cotton_ball
+			image_xscale = 1
+			break;
+		case playerstates.win:
+			newsprite = spr_cotton_win
+			break;
+		case playerstates.golfstop:
+			newsprite = spr_cotton_ball
+			image_xscale = 1
+			break;
+	}
+	if (newsprite != sprite_index)
+	{
+		image_index = 0
+		if sprite_index == spr_cotton_brake
+			image_xscale = facingdirection
+	}
+	sprite_index = newsprite
+	
+	if (sprite_index == spr_cotton_jump && image_index == 2) //don't replay the animation. thanks for adding 2 extra useless frame yaysuu!
+		image_index = 1
+	
+	if (sprite_index == spr_cotton_idle || sprite_index == spr_cotton_wait)
+		idletime++
+	else
+		idletime = 0
+
+	if (!audio_exists(runningsound))
+		runningsound = audio_play_sound(snd_run, 1, true)
+	if (sprite_index == spr_cotton_run)
+	{
+		if audio_is_paused(runningsound)
+			audio_resume_sound(runningsound)
+		
+		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
+		audio_sound_pitch(runningsound, runpitch)
+		image_speed = runpitch
+	}
+	else if !audio_is_paused(runningsound)
+	{
+		audio_pause_sound(runningsound)
+		image_speed = 1
+	}
+		
+	if (sprite_index == spr_cotton_brake && abs(hsp) > walkspeed)
+	{
+		if (!hasplayedbrakesound)
+		{
+			audio_play_sound(snd_slip, 1, false)
 			hasplayedbrakesound = true
 		}
 	}
