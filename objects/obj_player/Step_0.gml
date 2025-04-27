@@ -26,7 +26,7 @@ if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed && gl
 	move = facingdirection
 
 //grounded checking
-if (state == playerstates.normal && !grounded && !djump)
+if (state == playerstates.normal && !grounded && !djump && global.char == "C")
 {
 	grv = floatgrav
 	maxfallspeed = floatmaxfall
