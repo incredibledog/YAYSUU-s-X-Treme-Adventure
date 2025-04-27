@@ -45,6 +45,7 @@ switch (state)
 				hasdamaged = true
 				if (global.bosshp == 3) //it gets HARDERS!?
 					idledelay = 100
+				grounded = false
 			}
 		}
 		if (delay > 0)
@@ -145,13 +146,35 @@ switch (state)
 			{
 				state = electrobotstates.dying
 				delay = 300
+				hsp = 0
+				kablooeyjrtimer=0
 			}
 			else
 			{
 				candamage = true
 				state = electrobotstates.idle
 				delay = idledelay
+				hsp = 0
 			}
+		}
+		break;
+	case electrobotstates.dying:
+		if (delay > 0)
+		{
+			delay--
+			if (kablooeyjrtimer > 0)
+				kablooeyjrtimer--
+			else
+			{
+				instance_create_depth(x+random_range(-16,16),y+random_range(-16,16),depth-1,obj_explode_jr)
+				kablooeyjrtimer=15
+			}
+		}
+		else
+		{
+			instance_create_depth(x,y,depth,obj_explode_jr)
+			state = electrobotstates.inactive
+			visible = false
 		}
 		break;
 }
