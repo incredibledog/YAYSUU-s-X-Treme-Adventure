@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if touchingplayer(x, y) && touched=false
+if touchingplayer(x, y) && !touched
 {
 	touched=true
 	endtimer=120
@@ -21,11 +21,11 @@ if touchingplayer(x, y) && touched=false
 		ini_write_real("records", string(room) + "_time", obj_hud.timer)
 	ini_close()
 }
-if endtimer>0 && touched=true
+if endtimer>0 && touched
 {
 	endtimer-=1
 }
-if endtimer=0 && touched=true && winning=false
+else if endtimer=0 && touched && winning
 {
 	winning=true
 	audio_stop_all()
@@ -42,5 +42,9 @@ if endtimer=0 && touched=true && winning=false
 		audio_play_sound(mus_teddywin,1,false)
 		audio_group_stop_all(voicelines)
 		audio_play_sound(snd_teddywinstage,1,false)
+	}
+	else if global.char="C"
+	{
+		audio_play_sound(mus_cottonwin,1,false)
 	}
 }

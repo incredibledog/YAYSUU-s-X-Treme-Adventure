@@ -11,8 +11,8 @@
   "name":"obj_stageclear",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelend",
-    "path":"folders/Objects/gui/levelend.yy",
+    "name":"gui",
+    "path":"folders/Objects/gui.yy",
   },
   "parentObjectId":null,
   "persistent":false,

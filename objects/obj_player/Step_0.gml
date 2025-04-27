@@ -218,16 +218,24 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 	if (!grounded)
 	{
 		if (global.char == "C")
+		{
 			vsp = fjmp
+			audio_play_sound(snd_doublejump_c, 1, false)
+		}
 		else
+		{
 			vsp = djmp
+			audio_play_sound(snd_doublejump, 1, false)
+		}
 		djump = false
-		audio_play_sound(snd_doublejump, 1, false)
 	}
 	else
 	{
 		vsp = jmp
-		audio_play_sound(snd_jump, 1, false)
+		if (global.char == "C")
+			audio_play_sound(snd_jump_c, 1, false)
+		else
+			audio_play_sound(snd_jump, 1, false)
 	}
     grounded = false
 	prevgrounded = false

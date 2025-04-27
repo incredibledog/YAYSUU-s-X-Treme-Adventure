@@ -10,4 +10,9 @@ else if global.char="T"
 	sprite_index=spr_teddygameover
 	gameoversong=mus_gameover_t
 }
+else if global.char="T"
+{
+	sprite_index=spr_cottongameover
+	gameoversong=mus_gameover_c
+}
 audio_play_sound(gameoversong,1,false)

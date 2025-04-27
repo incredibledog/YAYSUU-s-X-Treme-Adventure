@@ -4,11 +4,11 @@ if touchingplayer(x, y)
 {
 	instance_destroy()
 	audio_play_sound(coinsound,1,false)
-	global.coins+=1
-	if (global.coins+1)%100=0
+	global.coins++
+	if global.coins % 100 == 0
 	{
 		instance_destroy()
-		if global.hp=global.maxhp
+		if global.hp = global.maxhp
 		{
 			instance_create_depth(0,0,depth,obj_lifeitem)
 		}
