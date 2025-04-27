@@ -38,5 +38,5 @@
     "path":"sprites/spr_spawn/spr_spawn.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
