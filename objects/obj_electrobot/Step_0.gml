@@ -17,8 +17,6 @@ if (gravityapplies)
 else
 	grounded = false
 
-vulnerable = false
-candamage = true
 switch (state)
 {
 	case electrobotstates.idle:
@@ -35,8 +33,8 @@ switch (state)
 				delay = 1337
 				with (obj_player)
 					scr_player_trybounce()
-				candamage = false
 				state = electrobotstates.damaged
+				candamage = false
 				vsp = -5
 				hsp = -3 * image_xscale
 				audio_play_sound(snd_ouchie,1,false)
@@ -60,6 +58,8 @@ switch (state)
 			{
 				case electrobotstates.jump:
 					gravityapplies = false
+					vsp = -10
+					grounded = false
 					break;
 				case electrobotstates.spin:
 					audio_play_sound(snd_speen,1,true)
@@ -73,7 +73,6 @@ switch (state)
 		}
 		break;
 	case electrobotstates.jump:
-		y = ((y + 64) / jumpsmoothing) - 64
 		if (y < -48)
 		{
 			state = electrobotstates.thunder
@@ -156,6 +155,7 @@ switch (state)
 				state = electrobotstates.idle
 				delay = idledelay
 				hsp = 0
+				vulnerable = false
 			}
 		}
 		break;

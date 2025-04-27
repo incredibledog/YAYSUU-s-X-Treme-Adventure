@@ -17,5 +17,5 @@ grounded = true
 checkscale = 0.1
 maxloop = 1000
 image_xscale = -1
-jumpsmoothing = 1.5
+jumpsmoothing = 1.1
 idledelay = 120
