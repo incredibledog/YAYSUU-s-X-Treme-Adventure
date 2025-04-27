@@ -9,7 +9,8 @@ enum electrobotstates
 	inactive,
 	damaged,
 	shoot,
-	dying
+	dying,
+	fuckingdead
 }
 
 vsp += grv
@@ -175,9 +176,17 @@ switch (state)
 		else
 		{
 			instance_create_depth(x,y,depth,obj_explode)
-			state = electrobotstates.inactive
+			state = electrobotstates.fuckingdead
 			visible = false
-			instance_create_depth(320,-64,depth,obj_fallinggoalflag)
+		}
+		break;
+	case electrobotstates.fuckingdead:
+		if (!instance_exists(obj_explode) && !instance_exists(obj_goalflag))
+		{
+			if (obj_player.x > 320)
+				instance_create_depth(160,-64,depth,obj_fallinggoalflag)
+			else
+				instance_create_depth(480,-64,depth,obj_fallinggoalflag)
 		}
 		break;
 }
