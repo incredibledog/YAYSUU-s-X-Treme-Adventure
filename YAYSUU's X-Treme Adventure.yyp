@@ -114,6 +114,7 @@
     {"id":{"name":"obj_fadeblack","path":"objects/obj_fadeblack/obj_fadeblack.yy",},},
     {"id":{"name":"obj_fadewhite","path":"objects/obj_fadewhite/obj_fadewhite.yy",},},
     {"id":{"name":"obj_fakecheckpoint","path":"objects/obj_fakecheckpoint/obj_fakecheckpoint.yy",},},
+    {"id":{"name":"obj_fallinggoalflag","path":"objects/obj_fallinggoalflag/obj_fallinggoalflag.yy",},},
     {"id":{"name":"obj_formergoalflag","path":"objects/obj_formergoalflag/obj_formergoalflag.yy",},},
     {"id":{"name":"obj_fpschanger","path":"objects/obj_fpschanger/obj_fpschanger.yy",},},
     {"id":{"name":"obj_fringlemonitor","path":"objects/obj_fringlemonitor/obj_fringlemonitor.yy",},},

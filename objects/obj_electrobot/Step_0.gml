@@ -12,10 +12,8 @@ enum electrobotstates
 	dying
 }
 
-if (gravityapplies)
-	grounded = place_meeting(x, y + vsp + grv, obj_collision)
-else
-	grounded = false
+vsp += grv
+grounded = place_meeting(x, y + vsp, obj_collision)
 
 switch (state)
 {
@@ -57,8 +55,7 @@ switch (state)
 			switch (state) //ah yes switch statements in switch statements
 			{
 				case electrobotstates.jump:
-					gravityapplies = false
-					vsp = -10
+					vsp = -20
 					grounded = false
 					break;
 				case electrobotstates.spin:
@@ -80,6 +77,7 @@ switch (state)
 		}
 		break;
 	case electrobotstates.thunder:
+		vsp = 0
 		if (delay > 0)
 			delay--
 		else
@@ -132,22 +130,23 @@ switch (state)
 				image_index = 0
 				with (instance_create_depth(x,y,depth+1,obj_electrobot_boolet))
 					image_xscale = other.image_xscale	
-				delay = 30
+				delay = 20
 				attackcount--
 			}
 		}
 		break;
 	case electrobotstates.damaged:
 		if (place_meeting(x + hsp, y, obj_collision))
-			hsp = 0
+			hsp = -hsp
 		if (grounded)
 		{
 			if (global.bosshp == 0)
 			{
 				state = electrobotstates.dying
-				delay = 300
+				delay = 150
 				hsp = 0
 				kablooeyjrtimer=0
+				audio_stop_sound(global.currentsong)
 			}
 			else
 			{
@@ -158,35 +157,35 @@ switch (state)
 				vulnerable = false
 			}
 		}
+		else if (vsp > 0 && touchingplayer(x, y) && !obj_player.vulnerable) //gives extra time for the player to leave the boss' hitbox
+			vsp = -5
 		break;
 	case electrobotstates.dying:
+		delay--
 		if (delay > 0)
 		{
-			delay--
 			if (kablooeyjrtimer > 0)
 				kablooeyjrtimer--
 			else
 			{
 				instance_create_depth(x+random_range(-16,16),y+random_range(-16,16),depth-1,obj_explode_jr)
-				kablooeyjrtimer=15
+				kablooeyjrtimer = 5
 			}
 		}
 		else
 		{
-			instance_create_depth(x,y,depth,obj_explode_jr)
+			instance_create_depth(x,y,depth,obj_explode)
 			state = electrobotstates.inactive
 			visible = false
+			instance_create_depth(320,-64,depth,obj_fallinggoalflag)
 		}
 		break;
 }
 
-if (gravityapplies)
-	vsp += grv
-
 if (grounded)
 {
 	var loopprevent = 0
-    while (!place_meeting(x, (y + checkscale), obj_playercollision) && loopprevent < maxloop)
+    while (!place_meeting(x, (y + checkscale), obj_collision) && loopprevent < maxloop)
     {
         y += checkscale
         loopprevent++

@@ -66,6 +66,7 @@
     {"name":"obj_fadeblack","order":6,"path":"objects/obj_fadeblack/obj_fadeblack.yy",},
     {"name":"obj_fadewhite","order":3,"path":"objects/obj_fadewhite/obj_fadewhite.yy",},
     {"name":"obj_fakecheckpoint","order":23,"path":"objects/obj_fakecheckpoint/obj_fakecheckpoint.yy",},
+    {"name":"obj_fallinggoalflag","order":38,"path":"objects/obj_fallinggoalflag/obj_fallinggoalflag.yy",},
     {"name":"obj_formergoalflag","order":12,"path":"objects/obj_formergoalflag/obj_formergoalflag.yy",},
     {"name":"obj_fpschanger","order":33,"path":"objects/obj_fpschanger/obj_fpschanger.yy",},
     {"name":"obj_fringlemonitor","order":5,"path":"objects/obj_fringlemonitor/obj_fringlemonitor.yy",},

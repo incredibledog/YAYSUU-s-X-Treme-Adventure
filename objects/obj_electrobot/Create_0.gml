@@ -19,3 +19,4 @@ maxloop = 1000
 image_xscale = -1
 jumpsmoothing = 1.1
 idledelay = 120
+extradamagebounces = 0
