@@ -63,7 +63,7 @@ switch (state)
 				case electrobotstates.spin:
 					audio_play_sound(snd_speen,1,true)
 					break;
-				case electrobotstates.spin:
+				case electrobotstates.shoot:
 					sprite_index = spr_electrobot_shoot
 					image_index = 2
 					delay = 15
