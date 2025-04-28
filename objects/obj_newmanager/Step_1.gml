@@ -86,3 +86,16 @@ else
 global.globaltimer++
 if (windowtimer > 0)
 	windowtimer--
+
+if (windowtimer < 1 || newwindowname != windowname)
+{
+	if (windowpos < 1)
+		windowpos += 0.05
+	else if (newwindowname != windowname)
+		windowname = newwindowname
+}
+else
+{
+	if (windowpos > 0)
+		windowpos -= 0.05
+}

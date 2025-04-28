@@ -39,6 +39,8 @@ global.inhub = false
 global.globaltimer = 0
 windowtimer = 0
 windowname = ""
+newwindowname = ""
+windowpos = 0
 
 if (os_type == os_android)
 	global.inputtype = 3
@@ -48,7 +50,7 @@ else
 	global.inputtype = global.keytype
 
 instance_create_depth(0,0, 100, obj_camera)
-instance_create_depth(0,0, 100, obj_fadeblack)
+instance_create_depth(0,0, depth + 1, obj_fadeblack)
 instance_create_depth(0,0, 100, obj_player)
 instance_create_depth(0,0, 100, obj_hud)
 instance_create_depth(0,0, 100, obj_pause)

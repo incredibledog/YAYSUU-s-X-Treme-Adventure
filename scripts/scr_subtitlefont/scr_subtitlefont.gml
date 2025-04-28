@@ -57,7 +57,7 @@ function draw_text_yxa(x,y,textstring,color,dropshadow){
 	}
 	if dropshadow=true
 	{
-		draw_text_color(x+1,y+1,string(textstring),c_black,c_black,c_black,c_black,1)
+		draw_text_ext_color(x+1,y+1,string(textstring),16,640,c_black,c_black,c_black,c_black,1)
 	}
-	draw_text_color(x,y,string(textstring),colorhex,colorhex,colorhex,colorhex,1)
+	draw_text_ext_color(x,y,string(textstring),16,640,colorhex,colorhex,colorhex,colorhex,1)
 }
