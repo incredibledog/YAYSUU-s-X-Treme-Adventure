@@ -152,7 +152,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 }
 else if (state == playerstates.bounce && newstate == state)
 {
-	if (vsp >= 0 || (grounded && !prevgrounded))
+	if ((vsp >= 0 && global.char != "C") || (grounded && !prevgrounded))
 		newstate = playerstates.normal
 	else if (global.key_downp)
 	{
@@ -326,14 +326,13 @@ else
 
 //vulnerability
 var runattack = (abs(hsp) > rundamagespeed && sign(hsp) == sign(yearnedhsp) && state == playerstates.normal)
-vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || runattack)
+vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || runattack || ((state == playerstates.bounce || newstate == playerstates.bounce) && global.char == "C"))
 if (vulnerable)
 	global.combo = 0
 if (runattack)
 	runanimtimer++
 else
 	runanimtimer = -1
-
 }
 
 //the death fade
@@ -941,7 +940,7 @@ else if (global.char == "C")
 	}
 	sprite_index = newsprite
 	
-	if (sprite_index == spr_cotton_jump && image_index == 2) //don't replay the animation. thanks for adding 2 extra useless frame yaysuu!
+	if (sprite_index == spr_cotton_jump && round(image_index) == 3)
 		image_index = 1
 	
 	if (sprite_index == spr_cotton_idle || sprite_index == spr_cotton_wait)

@@ -12,6 +12,12 @@ if (!obj_player.vulnerable)
 		checkoffsetx = 0
 		checkoffsety = obj_player.vsp * 2
 	}
+	else if (obj_player.state == playerstates.bounce)
+	{
+		hascollision = false
+		checkoffsetx = obj_player.hsp * 2
+		checkoffsety = obj_player.vsp * 2
+	}
 	else
 	{
 		if (obj_player.facingdirection == 1)
@@ -27,7 +33,6 @@ else if (obj_player.state == playerstates.bounce)
 	hascollision = !(obj_player.bbox_right > bbox_left && obj_player.bbox_left < bbox_right && obj_player.bbox_top > bbox_bottom)
 	checkoffsetx = 0
 	checkoffsety = obj_player.vsp * 2
-	resetplayerstate = true
 }
 
 if hascollision
@@ -43,7 +48,5 @@ else
 	{
 		destroyedbyplayer = true
 		instance_destroy()
-		if (resetplayerstate)
-			obj_player.newstate = playerstates.normal
 	}
 }
