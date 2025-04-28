@@ -35,8 +35,13 @@ if (global.key_jumpp || global.key_start) && selected=false
 	switch (chos)
 	{
 		case 1:
-			audio_stop_sound(snd_nicetry)
-			audio_play_sound(snd_nicetry,1,false)
+			global.trial=false
+			nextroom=room_chillfields_1
+			image_alpha=1
+			image_speed=1
+			delay=60 
+			selected=true
+			audio_play_sound(snd_confirm,1,false)
 			break
 		case 2:
 			global.trial=true

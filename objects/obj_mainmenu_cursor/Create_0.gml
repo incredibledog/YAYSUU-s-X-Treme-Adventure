@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-chos=2
+chos=1
 image_speed=0
 selected=false
 delay=0

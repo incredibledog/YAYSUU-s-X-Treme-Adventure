@@ -279,10 +279,7 @@ if (ouchies)
 			yearnedhsp = facingdirection * -3
 			hsp = yearnedhsp
 		    grounded = false
-			if global.coins < 50
-				global.coins = 0
-			else
-				global.coins -= 50
+			scr_collectcoins(-50)
 		    global.scoreadd -= 50
 			audio_play_sound(snd_ouchie, 1, false)
 		}

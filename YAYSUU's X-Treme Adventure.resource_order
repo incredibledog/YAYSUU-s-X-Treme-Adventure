@@ -179,6 +179,7 @@
     {"name":"preloadactualroom","order":10,"path":"scripts/preloadactualroom/preloadactualroom.yy",},
     {"name":"scr_bosshealth","order":1,"path":"scripts/scr_bosshealth/scr_bosshealth.yy",},
     {"name":"scr_bossstart","order":4,"path":"scripts/scr_bossstart/scr_bossstart.yy",},
+    {"name":"scr_collectcoins","order":14,"path":"scripts/scr_collectcoins/scr_collectcoins.yy",},
     {"name":"scr_levelstart","order":2,"path":"scripts/scr_levelstart/scr_levelstart.yy",},
     {"name":"scr_player_trybounce","order":11,"path":"scripts/scr_player_trybounce/scr_player_trybounce.yy",},
     {"name":"scr_roomstart","order":3,"path":"scripts/scr_roomstart/scr_roomstart.yy",},

@@ -91,8 +91,10 @@ if global.key_jumpp
 	audio_play_sound(snd_confirm,1,false)
 	global.timer = 0
 	global.score = 0
+	global.scoreadd = 0
 	global.checkpoint=false
 	global.coins=0
+	global.coingoal = 100
 	global.lives=3
 	loadroom(currentlevel, loadtype.newlevel)
 }
