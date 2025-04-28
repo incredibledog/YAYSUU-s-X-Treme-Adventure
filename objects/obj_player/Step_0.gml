@@ -401,89 +401,108 @@ if (hascollision)
 {
     var dogroundsnap = 1
     var loopprevent = 0
+	var newpos = 0
     if place_meeting((x + hsp), y, obj_slope)
     {
-        x += hsp
-        while (place_meeting(x, y, obj_slope) && loopprevent < maxloop)
+		newpos = y
+        while (place_meeting(x + hsp, newpos, obj_slope) && loopprevent < maxloop)
         {
-            y -= checkscale
+            newpos -= checkscale
             loopprevent++
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: SLOPE UP SNAP"
 		else
+		{
+			y = newpos
             global.debugmessage = "SLOPE UP SNAP"
-        x -= hsp
-        dogroundsnap = 0
-        grounded = 1
-        if (vsp > 0)
-            vsp = 0
+			dogroundsnap = 0
+			grounded = 1
+			if (vsp > 0)
+				vsp = 0
+		}
     }
-    else if amiwalled(hsp)
+    else if amiwalled(hsp) && hsp != 0
     {
-        if (hsp != 0)
-        {
-            loopprevent = 0
-            while ((!(place_meeting((x + (sign(hsp) * checkscale)), y, obj_playercollision))) && loopprevent < maxloop)
-            {
-                x += (sign(hsp) * checkscale)
-                loopprevent++
-            }
-            if (loopprevent == maxloop)
-                global.debugmessage = "LOOP PREVENT: WALLED"
-			else
-			    global.debugmessage = "WALLED"
-        }
-        hsp = 0
-		gotwalled = true
+		loopprevent = 0
+		newpos = x
+		while ((!(place_meeting((newpos + (sign(hsp) * checkscale)), y, obj_playercollision))) && loopprevent < maxloop)
+		{
+			newpos += (sign(hsp) * checkscale)
+			loopprevent++
+		}
+		if (loopprevent == maxloop)
+			global.debugmessage = "LOOP PREVENT: WALLED"
+		else
+		{
+			x = newpos
+			global.debugmessage = "WALLED"
+			hsp = 0
+			gotwalled = true
+		}
     }
     if (vsp < 0 && place_meeting(x, (y + vsp), obj_playercollision))
     {
         loopprevent = 0
-        while ((!(place_meeting(x, (y - checkscale), obj_playercollision))) && loopprevent < maxloop)
+		newpos = y
+        while ((!(place_meeting(x, (newpos - checkscale), obj_playercollision))) && loopprevent < maxloop)
         {
-            y -= checkscale
+            newpos -= checkscale
             loopprevent++
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: CEILING"
 		else
+		{
+			y = newpos
             global.debugmessage = "CEILING"
-        vsp = 0
-        grounded = false
+			vsp = 0
+			grounded = false
+		}
     }
     if (vsp >= 0 && prevslopey && !slopey && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
     {
-        vsp = 0
         loopprevent = 0
-        while ((!((place_meeting(x, (y + checkscale), obj_slope) || place_meeting(x, (y + checkscale), obj_playercollision)))) && loopprevent < maxloop)
+		newpos = y
+        while ((!((place_meeting(x, (newpos + checkscale), obj_slope) || place_meeting(x, (newpos + checkscale), obj_playercollision)))) && loopprevent < maxloop)
         {
-            y += checkscale
+            newpos += checkscale
             loopprevent++
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: SLOPE DOWN SNAP"
 		else
+		{
+			y = newpos
             global.debugmessage = "SLOPE DOWN SNAP"
-        grounded = true
-		slopey = true
+			vsp = 0
+			grounded = true
+			slopey = true
+		}
     }
     else if (grounded && dogroundsnap)
     {
         loopprevent = 0
-        while (!place_meeting(x, (y + checkscale), obj_playercollision) && loopprevent < maxloop)
+		newpos = y
+        while (!place_meeting(x, (newpos + checkscale), obj_playercollision) && loopprevent < maxloop)
         {
-            y += checkscale
+            newpos += checkscale
             loopprevent++
         }
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: GROUNDING"
 		else
+		{
+			y = newpos
             global.debugmessage = "GROUNDING"
-        vsp = 0
+			vsp = 0
+		}
     }
 	if (place_meeting((x + hsp), (y + vsp), obj_playercollision) && hsp != 0 && vsp != 0 && !slopey)
 	{
+		newpos = x
+		var newposy = y
+		
 		var xstep
 		var ystep
 		var dohorzfirst = abs(hsp) > abs(vsp)
@@ -506,20 +525,20 @@ if (hascollision)
 			if (dohorzfirst)
 			{
 				xstepped += xstep
-				if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+				if (place_meeting(newpos + xstepped, newposy + ystepped, obj_playercollision))
 				{
 					finished = true
-					x += xstepped - xstep
+					newpos += xstepped - xstep
 					hsp = 0
 				}
 				else
 				{
 					ystepped += ystep
-					if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+					if (place_meeting(newpos + xstepped, newposy + ystepped, obj_playercollision))
 					{
 						finished = true
 						ystepped -= ystep
-						y += ystepped - ystep
+						newposy += ystepped - ystep
 						vsp = 0
 					}
 				}
@@ -527,21 +546,21 @@ if (hascollision)
 			else
 			{
 				ystepped += ystep
-				if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+				if (place_meeting(newpos + xstepped, newposy + ystepped, obj_playercollision))
 				{
 					finished = true
 					ystepped -= ystep
-					y += ystepped - ystep
+					newposy += ystepped - ystep
 					vsp = 0
 				}
 				else
 				{
 					xstepped += xstep
-					if (place_meeting(x + xstepped, y + ystepped, obj_playercollision))
+					if (place_meeting(newpos + xstepped, newposy + ystepped, obj_playercollision))
 					{
 						finished = true
 						xstepped -= xstep
-						x += xstepped - xstep
+						newpos += xstepped - xstep
 						hsp = 0
 					}
 				}
@@ -551,7 +570,11 @@ if (hascollision)
         if (loopprevent == maxloop)
             global.debugmessage = "LOOP PREVENT: DIAGONAL CORNER SNAP"
 		else
+		{
+			x = newpos
+			y = newposy
             global.debugmessage = "DIAGONAL CORNER SNAP"
+		}
 	}
 }
 x += hsp
