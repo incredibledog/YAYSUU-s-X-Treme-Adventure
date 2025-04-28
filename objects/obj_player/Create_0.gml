@@ -54,3 +54,4 @@ floatmaxfall = 5
 whooshcolor = #FFF1E8
 slopey = false
 prevslopey = false
+showarrow = false

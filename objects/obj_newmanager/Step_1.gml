@@ -83,3 +83,4 @@ else
 	global.key_runp = false
 	global.key_start = false
 }
+global.globaltimer++

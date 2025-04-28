@@ -2,7 +2,6 @@ if (global.inlevel)
 {
 	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 	{
-		sprite_index = spr_yaysuu_idle
 		mask_index = spr_collisionmask
 		if (room == room_chillfields_boss)
 			state = playerstates.inactive
@@ -19,6 +18,7 @@ if (global.inlevel)
 		prevgrounded = true
 		winning = false
 		facingdirection = 1
+		image_xscale = 1
 		image_angle = 0
 		slopey = false
 		prevslopey = false
@@ -28,16 +28,19 @@ if (global.inlevel)
 			{
 				rundamagespeed = 12
 				smashbump = 4
+				sprite_index = spr_yaysuu_idle
 			}
 			else if (global.char == "T")
 			{
 				rundamagespeed = 8
 				smashbump = 4
+				sprite_index = spr_teddy_idle
 			}
 			else if (global.char == "C")
 			{
 				rundamagespeed = 12
 				smashbump = 1
+				sprite_index = spr_cotton_idle
 			}
 			if (room == room_tutorial)
 				whooshcolor = #C2C3C7

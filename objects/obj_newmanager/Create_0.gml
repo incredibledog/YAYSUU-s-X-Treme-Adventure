@@ -36,6 +36,7 @@ global.combo = 0
 global.inboss = false
 global.levelloadtype = loadtype.menu
 global.inhub = false
+global.globaltimer = 0
 
 
 if (os_type == os_android)
