@@ -57,7 +57,7 @@ else if (!obj_fadeblack.fading)
 					loadroom(room_mysticmanor_1, loadtype.newlevel)
 					break;
 				default:
-					loadroom(room_mainmenu, loadtype.menu)
+					loadroom(room_househub, loadtype.newlevel)
 					break;
 			}
 		}
@@ -65,14 +65,6 @@ else if (!obj_fadeblack.fading)
 	else if global.key_dashp
 	{
 		audio_play_sound(snd_confirm,1,false)
-		switch (room)
-		{
-			case room_chillfields_2d:
-				loadroom(room_chillfields_2, loadtype.newlevel)
-				break;
-			default:
-				loadroom(room, loadtype.newlevel)
-				break;
-		}
+		scr_restartlevel()
 	}
 }

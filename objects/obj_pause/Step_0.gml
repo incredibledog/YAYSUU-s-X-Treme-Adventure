@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.key_start
+if global.key_start && global.inlevel
 {
 	global.pause = !global.pause
 	if global.pause
@@ -23,10 +23,10 @@ if global.key_start
 
 if (global.pause)
 {
-	if scroll<64
+	if scroll < 64
 		scroll++
 	else
-		scrollx=0
+		scroll = 0
 	if (os_type != os_android)
 	{
 		if global.key_upp
@@ -41,7 +41,7 @@ if (global.pause)
 		}
 		cursor=clamp(cursor,0,2)
 		
-		if global.key_jump
+		if global.key_jumpp
 		{
 			switch(cursor)
 			{
@@ -52,7 +52,7 @@ if (global.pause)
 					instance_activate_all()
 					break;
 				case 1:
-					if (global.lives == 1 || global.inhub)
+					if (global.lives == 1)
 						audio_play_sound(snd_nicetry,1,false)
 					else
 					{
@@ -60,15 +60,13 @@ if (global.pause)
 						global.checkpoint=false
 						audio_stop_all()
 						audio_play_sound(snd_confirm,1,false)
-						loadroom(room_househub, loadtype.newlevel)
+						scr_restartlevel()
 					}
 					break;
 				case 2:
 					global.checkpoint=false
 					audio_play_sound(snd_confirm,1,false)
-					if (room == room_househub || room == room_househub_extra)
-						loadroom(room_glowstickcity, loadtype.newlevel)
-					else if global.trial
+					if global.trial
 						loadroom(room_trialmenu, loadtype.menu)
 					else
 						loadroom(room_househub, loadtype.newlevel)

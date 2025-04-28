@@ -3,4 +3,5 @@ function preloadactualroom(){
 	global.inboss = (global.nextroom == room_chillfields_boss)
 	global.inhub = (global.nextroom == room_househub || global.nextroom == room_househub_extra)
 	global.jumpscare = false
+	instance_activate_all()
 }

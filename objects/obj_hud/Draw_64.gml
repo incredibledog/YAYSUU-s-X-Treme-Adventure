@@ -1,5 +1,5 @@
 /// @description Call HUD script
-if global.inlevel && room != room_dev
+if global.inlevel && room != room_dev && !global.inhub
 {
 	if (!instance_exists(obj_stageclear))
 	{
