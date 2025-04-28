@@ -1,1 +1,0 @@
-textstring="Fazmade"

@@ -1,1 +1,1 @@
-textstring="Credits"
+text="Credits"

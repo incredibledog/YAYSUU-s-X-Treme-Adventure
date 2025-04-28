@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.pause=true
+if global.pause
 {
 	if !(os_type=os_android)
 	{
-		draw_sprite_tiled(spr_lvlselectbg,0,0+scrollx,0+scrolly)
+		draw_sprite_tiled(spr_lvlselectbg,0,0+scroll,0+scroll)
 		draw_set_color(c_black)
 		draw_rectangle(0,0,-10000,480,false)
 		draw_rectangle(640,0,10000,480,false)

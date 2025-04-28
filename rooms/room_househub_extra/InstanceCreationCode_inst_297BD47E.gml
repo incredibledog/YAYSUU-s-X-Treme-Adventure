@@ -1,1 +1,0 @@
-textstring="Hall of Fame \n(playtesters who submitted \nsprites of themselves)"

@@ -1,1 +1,1 @@
-textstring="Play Tutorial"
+text="Play Tutorial"

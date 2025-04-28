@@ -505,6 +505,7 @@
     {"name":"spr_uncanny","order":9,"path":"sprites/spr_uncanny/spr_uncanny.yy",},
     {"name":"spr_uncannycoin","order":15,"path":"sprites/spr_uncannycoin/spr_uncannycoin.yy",},
     {"name":"spr_uparrow","order":1,"path":"sprites/spr_uparrow/spr_uparrow.yy",},
+    {"name":"spr_vassie","order":3,"path":"sprites/spr_vassie/spr_vassie.yy",},
     {"name":"spr_warning","order":10,"path":"sprites/spr_warning/spr_warning.yy",},
     {"name":"spr_wasdorarrows","order":11,"path":"sprites/spr_wasdorarrows/spr_wasdorarrows.yy",},
     {"name":"spr_yaysuu_airdash","order":4,"path":"sprites/spr_yaysuu_airdash/spr_yaysuu_airdash.yy",},

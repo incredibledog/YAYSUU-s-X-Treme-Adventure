@@ -36,7 +36,7 @@ if (global.key_jumpp || global.key_start) && selected=false
 	{
 		case 1:
 			global.trial=false
-			nextroom=room_chillfields_1
+			nextroom=room_charselect
 			image_alpha=1
 			image_speed=1
 			delay=60 

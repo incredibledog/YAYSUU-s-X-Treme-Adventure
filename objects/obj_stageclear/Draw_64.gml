@@ -16,7 +16,7 @@ if !global.inboss
 		draw_sprite(spr_yaysuucoinicon,0,96,320)
 		draw_text(128,320,global.coins)
 		draw_sprite(spr_bonus,0,320,320)
-		draw_text(384,320,(global.coins*5))
+		draw_text(384,320,((global.coins % 100) * 10))
 	}
 	if display>=3
 	{

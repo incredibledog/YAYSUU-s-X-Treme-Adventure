@@ -3,7 +3,7 @@
 if (os_type != os_android)
 	return;
 obj_mainmenu_cursor.chos=2
-global.nextroom=room_charselect
+obj_mainmenu_cursor.nextroom=room_charselect
 global.trial=true
 obj_mainmenu_cursor.image_alpha=1
 obj_mainmenu_cursor.image_speed=1

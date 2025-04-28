@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (global.inlevel)
+if (global.inlevel && !inhub)
 {
 	if (!instance_exists(obj_stageclear))
 	{

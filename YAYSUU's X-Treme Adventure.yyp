@@ -587,6 +587,7 @@
     {"id":{"name":"spr_uncannycoin","path":"sprites/spr_uncannycoin/spr_uncannycoin.yy",},},
     {"id":{"name":"spr_up","path":"sprites/spr_up/spr_up.yy",},},
     {"id":{"name":"spr_uparrow","path":"sprites/spr_uparrow/spr_uparrow.yy",},},
+    {"id":{"name":"spr_vassie","path":"sprites/spr_vassie/spr_vassie.yy",},},
     {"id":{"name":"spr_warning","path":"sprites/spr_warning/spr_warning.yy",},},
     {"id":{"name":"spr_wasdorarrows","path":"sprites/spr_wasdorarrows/spr_wasdorarrows.yy",},},
     {"id":{"name":"spr_yaysuu_airdash","path":"sprites/spr_yaysuu_airdash/spr_yaysuu_airdash.yy",},},

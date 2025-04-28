@@ -35,6 +35,9 @@ global.showcollision = false
 global.combo = 0
 global.inboss = false
 global.levelloadtype = loadtype.menu
+global.inhub = false
+
+
 if (os_type == os_android)
 	global.inputtype = 3
 else if (gamepad_is_connected(0))
@@ -46,6 +49,7 @@ instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, 100, obj_fadeblack)
 instance_create_depth(0,0, 100, obj_player)
 instance_create_depth(0,0, 100, obj_hud)
+instance_create_depth(0,0, 100, obj_pause)
 randomize()
 
 global.returntosettings = false
