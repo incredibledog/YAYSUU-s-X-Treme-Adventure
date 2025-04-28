@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_chrselect_teddy",
+  "%Name":"obj_chrselect_cotton",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_chrselect_teddy",
+  "name":"obj_chrselect_cotton",
   "overriddenProperties":[],
   "parent":{
     "name":"chrselect",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_teddy_chrselect",
-    "path":"sprites/spr_teddy_chrselect/spr_teddy_chrselect.yy",
+    "name":"spr_cotton_chrselect",
+    "path":"sprites/spr_cotton_chrselect/spr_cotton_chrselect.yy",
   },
   "spriteMaskId":null,
   "visible":true,

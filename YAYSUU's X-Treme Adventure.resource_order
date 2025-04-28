@@ -44,6 +44,8 @@
     {"name":"obj_camera","order":8,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_checkpoint","order":10,"path":"objects/obj_checkpoint/obj_checkpoint.yy",},
     {"name":"obj_chrselect_back","order":3,"path":"objects/obj_chrselect_back/obj_chrselect_back.yy",},
+    {"name":"obj_chrselect_cotton","order":4,"path":"objects/obj_chrselect_cotton/obj_chrselect_cotton.yy",},
+    {"name":"obj_chrselect_parent","order":5,"path":"objects/obj_chrselect_parent/obj_chrselect_parent.yy",},
     {"name":"obj_chrselect_teddy","order":2,"path":"objects/obj_chrselect_teddy/obj_chrselect_teddy.yy",},
     {"name":"obj_chrselect_yaysuu","order":1,"path":"objects/obj_chrselect_yaysuu/obj_chrselect_yaysuu.yy",},
     {"name":"obj_coin","order":5,"path":"objects/obj_coin/obj_coin.yy",},

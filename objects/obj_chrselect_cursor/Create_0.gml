@@ -7,3 +7,4 @@ global.char="Y"
 if os_type=os_android && !gamepad_is_connected(0)
 	image_alpha=0
 teddyavailable = true
+prevchos = 0

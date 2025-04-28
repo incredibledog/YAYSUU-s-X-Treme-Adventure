@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (!global.mobile)
+if (os_type != os_android)
 	return;
 obj_mainmenu_cursor.chos=3
 global.nextroom=room_options

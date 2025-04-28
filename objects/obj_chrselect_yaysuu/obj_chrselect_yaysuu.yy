@@ -2,9 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_chrselect_yaysuu",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":13,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_chrselect_yaysuu",
@@ -13,7 +11,10 @@
     "name":"chrselect",
     "path":"folders/Objects/menus/chrselect.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_chrselect_parent",
+    "path":"objects/obj_chrselect_parent/obj_chrselect_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
