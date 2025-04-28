@@ -5,13 +5,11 @@ if touchingplayer(x, y) && !touched
 	touched=true
 	endtimer=120
 	if global.char="Y"
-	{
 		sprite_index=spr_goalflag_transition
-	}
 	else if global.char="T"
-	{
 		sprite_index=spr_goalflag_transition_t
-	}
+	else if global.char="C"
+		sprite_index=spr_goalflag_transition_cotton
 	audio_play_sound(snd_flagspin,1,false)
 	global.score+=global.scoreadd+obj_hud.timebonus+(global.coins*10)
 	ini_open("savedata.ini")
@@ -22,10 +20,8 @@ if touchingplayer(x, y) && !touched
 	ini_close()
 }
 if endtimer>0 && touched
-{
-	endtimer-=1
-}
-else if endtimer=0 && touched && winning
+	endtimer--
+else if endtimer=0 && touched && !winning
 {
 	winning=true
 	audio_stop_all()

@@ -10,5 +10,5 @@ if global.char="Y"
 	sprite_index=spr_stageclear_y
 else if global.char="T"
 	sprite_index=spr_stageclear_t
-else if global.char="T"
+else if global.char="C"
 	sprite_index=spr_stageclear_c
