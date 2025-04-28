@@ -2,6 +2,7 @@
 // You can write your code in this editor
 draw_self()
 draw_set_valign(fa_top)
+draw_set_font(global.font)
 if !global.inboss
 {
 	if display>=1
@@ -27,9 +28,9 @@ if !global.inboss
 }
 if display>=4
 {
-	if !gamepad_is_connected(0)
+	if global.inputtype == 2
 	{
-		if !os_type=os_android
+		if os_type != os_android
 		{
 			draw_sprite(spr_next,0,416,416)
 			draw_sprite(spr_retry,0,512,416)
