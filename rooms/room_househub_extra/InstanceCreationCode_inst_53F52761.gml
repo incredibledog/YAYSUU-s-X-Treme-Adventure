@@ -1,2 +1,2 @@
-warproom=room_credits
+warproom = room_credits
 warptype = loadtype.menu

@@ -93,7 +93,7 @@ if (grounded || state == playerstates.golfstop)
 
 var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
 
-if (state != playerstates.dead)
+if (state != playerstates.dead && state != playerstates.inactive)
 {
 	
 if (candodashdo)
@@ -263,7 +263,7 @@ if (state == playerstates.golfstop && newstate == state)
 if (ouchies)
 {
 	ouchies = false
-	if ((!global.inv && hurtt <= 0 && !winning) || deathies) && state != playerstates.dead
+	if ((!global.inv && hurtt <= 0 && !winning) || deathies) && state != playerstates.dead && state != playerstates.inactive
 	{
 		if (deathies)
 			global.hp = 0
