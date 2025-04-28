@@ -1,1 +1,1 @@
-window_set_caption("HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA")
+scr_windowtitle("HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA HA")

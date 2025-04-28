@@ -241,6 +241,7 @@
     {"id":{"name":"scr_restartlevel","path":"scripts/scr_restartlevel/scr_restartlevel.yy",},},
     {"id":{"name":"scr_roomstart","path":"scripts/scr_roomstart/scr_roomstart.yy",},},
     {"id":{"name":"scr_subtitlefont","path":"scripts/scr_subtitlefont/scr_subtitlefont.yy",},},
+    {"id":{"name":"scr_windowtitle","path":"scripts/scr_windowtitle/scr_windowtitle.yy",},},
     {"id":{"name":"touchingplayer","path":"scripts/touchingplayer/touchingplayer.yy",},},
     {"id":{"name":"sqc_test","path":"sequences/sqc_test/sqc_test.yy",},},
     {"id":{"name":"mus_chillfields_1","path":"sounds/mus_chillfields_1/mus_chillfields_1.yy",},},

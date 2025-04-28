@@ -1,2 +1,2 @@
 global.checkpoint=false
-window_set_caption("LEVEL SELECT")
+scr_windowtitle("LEVEL SELECT")

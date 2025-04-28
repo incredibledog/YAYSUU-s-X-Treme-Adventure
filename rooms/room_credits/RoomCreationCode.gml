@@ -1,2 +1,2 @@
 global.checkpoint=false
-window_set_caption("List of people who are Very Cool...")
+scr_windowtitle("List of people who are Very Cool!")

@@ -1,1 +1,1 @@
-window_set_caption("There's always a next time...")
+scr_windowtitle("There's always a next time...")

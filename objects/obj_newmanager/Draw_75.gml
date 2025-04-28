@@ -2,6 +2,19 @@ if global.jumpscare=true
 	draw_sprite(spr_uncanny_jumpscare,0,0,0)
 
 draw_set_valign(fa_top)
+draw_set_font(global.subtitlefont)
+if (windowtimer > 60)
+{
+	draw_set_alpha(1)
+	draw_text_yxa(0, 0, windowname, "lgray", true)
+}
+else if (windowtimer > 0)
+{
+	draw_set_alpha(windowtimer / 60)
+	draw_text_yxa(0, 0, windowname, "lgray", true)
+}
+draw_set_alpha(1)
+
 
 if window_get_fullscreen() && global.borders=true
 {

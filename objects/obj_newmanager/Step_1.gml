@@ -84,3 +84,5 @@ else
 	global.key_start = false
 }
 global.globaltimer++
+if (windowtimer > 0)
+	windowtimer--

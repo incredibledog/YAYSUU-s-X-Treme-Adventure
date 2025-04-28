@@ -1,1 +1,1 @@
-window_set_caption("Incredible Dog Presents...")
+scr_windowtitle("Incredible Dog Presents...")

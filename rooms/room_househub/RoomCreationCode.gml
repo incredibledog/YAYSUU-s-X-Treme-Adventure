@@ -1,6 +1,5 @@
 global.currentsong=mus_househub
-window_set_caption("Home Sweet Home...")
-
+scr_windowtitle("Home Sweet Home!")
 global.timer = 0
 global.score = 0
 global.scoreadd = 0
