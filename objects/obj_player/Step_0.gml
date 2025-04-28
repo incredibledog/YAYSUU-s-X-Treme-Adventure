@@ -152,7 +152,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 }
 else if (state == playerstates.bounce && newstate == state)
 {
-	if ((vsp >= 0 && global.char != "C") || (grounded && !prevgrounded))
+	if ((vsp >= 0 && global.char != "C") || grounded)
 		newstate = playerstates.normal
 	else if (global.key_downp)
 	{
@@ -414,9 +414,12 @@ if (hascollision)
 			y = newpos
             global.debugmessage = "SLOPE UP SNAP"
 			dogroundsnap = 0
-			grounded = 1
+			grounded = true
 			if (vsp > 0)
 				vsp = 0
+			
+			if (state == playerstates.bounce && global.char == "C") // ):<
+				newstate = playerstates.normal
 		}
     }
     else if amiwalled(hsp) && hsp != 0

@@ -14,7 +14,7 @@ if (selected)
 }
 else
 {
-	if (global.key_start || global.key_jumpp)
+	if (global.key_jumpp)
 	{
 		if (!teddyavailable && chos == 2)
 			audio_play_sound(snd_nicetry,1,false)
@@ -40,7 +40,7 @@ else
 			}
 		}
 	}
-	else if global.key_dashp
+	else if global.key_start
 	{
 		loadroom(room_mainmenu, loadtype.menu)
 		audio_play_sound(snd_nahnvm,1,false)
