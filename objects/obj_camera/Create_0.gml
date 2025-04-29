@@ -22,3 +22,5 @@ speedoffsetspeedincrease = 0.5
 speedoffsetspeeddecrease = 2
 actualcamx = 0
 actualcamy = 0
+deltax = 0
+deltay = 0

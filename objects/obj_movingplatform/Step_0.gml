@@ -27,6 +27,7 @@ if (moving)
 		obj_player.x += x-oldx
 		obj_player.y += intendedy-oldy
 		playertouching = true
+		obj_camera.followtimer = 60
 	}
 	else if (playertouching)
 	{
