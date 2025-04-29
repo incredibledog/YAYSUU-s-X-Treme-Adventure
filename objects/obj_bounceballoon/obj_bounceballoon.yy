@@ -1,19 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_spring",
+  "%Name":"obj_bounceballoon",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_spring",
+  "name":"obj_bounceballoon",
   "overriddenProperties":[],
   "parent":{
     "name":"levelobjs",
     "path":"folders/Objects/levelobjs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_spring",
+    "path":"objects/obj_spring/obj_spring.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_spring",
-    "path":"sprites/spr_spring/spr_spring.yy",
+    "name":"spr_bounceballoon",
+    "path":"sprites/spr_bounceballoon/spr_bounceballoon.yy",
   },
   "spriteMaskId":null,
   "visible":true,
