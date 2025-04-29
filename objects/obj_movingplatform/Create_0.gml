@@ -3,8 +3,11 @@
 
 // Inherit the parent event
 event_inherited();
-firstpoint = x
+firstpointx = x
+firstpointy = y
 position = 0
 wantedside = 0
 moving = false
 playertouching = false
+//movingsound = audio_play_sound(snd_movingplatform_move, 1, true)
+movingsound = -1
