@@ -36,6 +36,11 @@ if (moving)
 			obj_player.vsp += intendedy-oldy
 		playertouching = false
 	}
+	if instance_exists(attachedobject)
+	{
+		attachedobject.x += x-oldx
+		attachedobject.y += intendedy-oldy
+	}
 }
 else
 {
@@ -43,7 +48,7 @@ else
 		audio_stop_sound(movingsound)
 	sprite_index = spr_movingplatform
 	
-	if (touchingplayer(x, intendedy-1) && obj_player.grounded)
+	if (touchingplayer(x, intendedy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < bbox_top)
 	{
 		if (!playertouching)
 		{

@@ -11,3 +11,4 @@ moving = false
 playertouching = false
 //movingsound = audio_play_sound(snd_movingplatform_move, 1, true)
 movingsound = -1
+attachedobject = 0
