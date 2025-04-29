@@ -19,6 +19,12 @@ if (!global.inlevel)
 if (global.key_start)
 	loadroom(room_trialmenu, loadtype.menu)
 
+if (inbackground)
+{
+	if (!place_meeting(x, y, obj_backplate) && !place_meeting(x, y, obj_backdoor))
+		inbackground = false
+}
+
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
@@ -304,22 +310,20 @@ if (hurtt > 0)
 	if (hurtt < 30)
 	{
 		if (hurtt % 2 == 0)
-			image_alpha = 0.5
+			damageflash = true
 		else
-			image_alpha = 1
+			damageflash = false
 	}
 	else
 	{
 		if (hurtt % 4 > 1)
-			image_alpha = 0.5
+			damageflash = true
 		else
-			image_alpha = 1
+			damageflash = false
 	}
 }
 else
-{
-    image_alpha = 1
-}
+    damageflash = false
 
 //vulnerability
 var runattack = (abs(hsp) > rundamagespeed && sign(hsp) == sign(yearnedhsp) && state == playerstates.normal)
@@ -1007,3 +1011,8 @@ if (global.inv)
 }
 else
 	image_blend = c_white
+
+if (inbackground && image_alpha > 0.5)
+	image_alpha -= 0.05
+else if (!inbackground && image_alpha < 1)
+	image_alpha += 0.05

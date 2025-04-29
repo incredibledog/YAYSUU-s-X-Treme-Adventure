@@ -36,14 +36,10 @@ else if (obj_player.state == playerstates.bounce)
 }
 
 if hascollision
-{
-	mycollision.mask_index = spr_playercollision
-	mycollision.visible = global.showcollision
-}
+	mycollision.y = y
 else
 {
-	mycollision.mask_index = -1
-	mycollision.visible = false
+	mycollision.y = -2763
 	if touchingplayer(x - checkoffsetx, y - checkoffsety)
 	{
 		destroyedbyplayer = true

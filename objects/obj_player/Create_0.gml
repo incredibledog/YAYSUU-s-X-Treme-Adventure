@@ -55,3 +55,5 @@ whooshcolor = #FFF1E8
 slopey = false
 prevslopey = false
 showarrow = false
+inbackground = false
+damageflash = false
