@@ -7,5 +7,5 @@ popsprite = spr_bounceballoon_pop
 //hbounce = 0
 vbounce = -14
 //hbouncesmall = 0
-vbouncesmall = -3
-vbouncejump = -5
+vbouncesmall = -3.5
+vbouncejump = -6
