@@ -12,3 +12,5 @@ playertouching = false
 //movingsound = audio_play_sound(snd_movingplatform_move, 1, true)
 movingsound = -1
 attachedobject = 0
+sprite_index = spr_movingplatform_leftside
+image_speed = 0

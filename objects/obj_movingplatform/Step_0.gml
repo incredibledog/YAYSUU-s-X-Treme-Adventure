@@ -4,7 +4,7 @@ if (moving)
 {
 	if (!audio_is_playing(movingsound))
 		movingsound = audio_play_sound(snd_movingplatform_move, 1, true)
-	sprite_index = spr_movingplatform_active
+	image_speed = 1
 	
 	if (wantedside > position)
 		position += movespeed
@@ -46,7 +46,7 @@ else
 {
 	if (audio_is_playing(movingsound))
 		audio_stop_sound(movingsound)
-	sprite_index = spr_movingplatform
+	image_speed = 0
 	
 	if (touchingplayer(x, intendedy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < bbox_top)
 	{
