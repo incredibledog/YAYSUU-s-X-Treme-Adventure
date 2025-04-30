@@ -5,15 +5,4 @@
 
 as this is currently being worked on by me, mrs. fazmade, i do not actually recommend downloading it because it will almost certainly contain unfinished things.
 
-## TODO:
-* reimplement hud
-* update objects for new systems
-* parent objects for robots and monitors
-* teddy
-
-## KNOWN ISSUES:
-* there are no fucking wind up frames yaysuu have you heard of Game Design
-* if it's not fun, why bother? -reggie nintendo
-* GM1024 The built-in variable 'room_speed' is deprecated and usage is discouraged.
-
 dear yaysuu please give me a upwards/jumping variation of spr_yaysuu_launch and add the - character to the subtitle font :3
