@@ -22,12 +22,12 @@ if (image_xscale > 1)
 if (moving)
 {
 	if (invertfacedir)
-		draw_sprite_ext(spr_movingplatform_movingfella, 1 - movementfacedir, x + (image_xscale * 16), intendedy, 1, 1, image_angle, image_blend, image_alpha)
+		draw_sprite_ext(movingfella, 1 - movementfacedir, x + (image_xscale * 16), intendedy, 1, 1, image_angle, image_blend, image_alpha)
 	else
-		draw_sprite_ext(spr_movingplatform_movingfella, 1 + movementfacedir, x + (image_xscale * 16), intendedy, 1, 1, image_angle, image_blend, image_alpha)
+		draw_sprite_ext(movingfella, 1 + movementfacedir, x + (image_xscale * 16), intendedy, 1, 1, image_angle, image_blend, image_alpha)
 }
 else
-	draw_sprite_ext(spr_movingplatform_fella, 0, x + (image_xscale * 16), intendedy, 1, 1, image_angle, image_blend, image_alpha)
+	draw_sprite_ext(idlefella, 0, x + (image_xscale * 16), intendedy, 1, 1, image_angle, image_blend, image_alpha)
 
 
 if (global.showcollision)

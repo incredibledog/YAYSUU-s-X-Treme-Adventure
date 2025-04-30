@@ -1,4 +1,4 @@
-otherpointx = 1408
+otherpointx = 1920
 otherpointy = 1024
-movespeed = 0.01
+movespeed = 0.05
 scr_calcplatformdir()

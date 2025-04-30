@@ -55,7 +55,7 @@ else
 	
 	if (touchingplayer(x, intendedy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < bbox_top)
 	{
-		if (!playertouching)
+		if (!playertouching && playeractivated)
 		{
 			if (wantedside == 0)
 				wantedside = 1

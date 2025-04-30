@@ -15,3 +15,6 @@ attachedobject = 0
 screwindex = 0
 movementfacedir = 0
 invertfacedir = false
+playeractivated = true
+idlefella = spr_movingplatform_fella
+movingfella = spr_movingplatform_movingfella
