@@ -191,19 +191,6 @@ switch (state)
 		break;
 }
 
-if (grounded)
-{
-	var loopprevent = 0
-    while (!place_meeting(x, (y + checkscale), obj_collision) && loopprevent < maxloop)
-    {
-        y += checkscale
-        loopprevent++
-    }
-    vsp = 0
-}
-x += hsp
-y += vsp
-
 var oldsprite = sprite_index
 switch (state)
 {

@@ -6,3 +6,4 @@ if !obj_player.vulnerable && touchingplayer(x, y)
 	with (obj_player)
 		scr_player_trybounce()
 }
+event_inherited()

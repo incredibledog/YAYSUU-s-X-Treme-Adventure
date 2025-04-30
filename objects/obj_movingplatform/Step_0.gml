@@ -28,7 +28,7 @@ if (moving)
 	x = round(lerp(firstpointx, otherpointx, smoothedpos))
 	intendedy = round(lerp(firstpointy, otherpointy, smoothedpos))
 	
-	if (touchingplayer(oldx, oldy-1) && obj_player.grounded)
+	if (touchingplayer(oldx, oldy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < oldy)
 	{
 		obj_player.x += x-oldx
 		obj_player.y += intendedy-oldy
@@ -42,6 +42,7 @@ if (moving)
 			obj_player.vsp += intendedy-oldy
 		playertouching = false
 	}
+	
 	if instance_exists(attachedobject)
 	{
 		attachedobject.x += x-oldx
@@ -53,7 +54,7 @@ else
 	if (audio_is_playing(movingsound))
 		audio_stop_sound(movingsound)
 	
-	if (touchingplayer(x, intendedy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < bbox_top)
+	if (touchingplayer(x, intendedy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < intendedy)
 	{
 		if (!playertouching && playeractivated)
 		{

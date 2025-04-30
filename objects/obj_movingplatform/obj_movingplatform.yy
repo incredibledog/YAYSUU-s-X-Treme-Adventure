@@ -10,8 +10,8 @@
   "name":"obj_movingplatform",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"mechanical",
+    "path":"folders/Objects/levelobjs/mechanical.yy",
   },
   "parentObjectId":{
     "name":"obj_semisolid_new",

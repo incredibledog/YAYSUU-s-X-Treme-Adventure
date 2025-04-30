@@ -3,4 +3,5 @@
 image_speed = 0
 toggled = false
 prevtoggled = false
-connectedthing = -1
+connectedthing = noone
+modifiervalue = 1

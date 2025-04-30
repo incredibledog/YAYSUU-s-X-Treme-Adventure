@@ -29,5 +29,8 @@ if spotted
 	}
 }
 else
+{
 	shoottimer = 60
+	sprite_index=spr_robot2
+}
 event_inherited()

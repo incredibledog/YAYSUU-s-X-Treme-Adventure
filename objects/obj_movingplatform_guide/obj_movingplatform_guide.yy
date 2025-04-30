@@ -8,8 +8,8 @@
   "name":"obj_movingplatform_guide",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"mechanical",
+    "path":"folders/Objects/levelobjs/mechanical.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,7 +6,7 @@ if (touchingplayer(x, y))
 	obj_player.showarrow = true
 	if (obj_player.hsp * obj_player.image_xscale > obj_player.runspeed)
 		toggled = true
-	else if (obj_player.hsp * obj_player.image_xscale < -obj_player.runspeed)
+	else if (obj_player.hsp * -obj_player.image_xscale < -obj_player.runspeed)
 		toggled = false
 	else if (global.key_upp)
 		toggled = !toggled
@@ -20,23 +20,4 @@ else
 	image_speed = 0
 
 if (toggled != prevtoggled)
-{
-	with (connectedthing)
-	{
-		if (object_index == obj_movingplatform_toggled || object_index == obj_movingplatform)
-		{
-			if (other.toggled)
-				wantedside = 1
-			else
-				wantedside = 0
-			moving = true
-		}
-		else if (object_index == obj_conveyor)
-		{
-			if (other.toggled)
-				directionmodifier = other.modifiervalue
-			else
-				directionmodifier = 1
-		}
-	}
-}
+	scr_setlogicobject(connectedthing, toggled, modifiervalue)

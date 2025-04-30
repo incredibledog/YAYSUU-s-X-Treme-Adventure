@@ -2,9 +2,9 @@
 // You can write your code in this editor
 if touchingplayer(x, y)
 {
-	if obj_player.vulnerable
+	if obj_player.vulnerable && candamage
 		obj_player.ouchies = true
-	else
+	else if !obj_player.vulnerable
 	{
 		instance_destroy()
 		if (!small)
@@ -14,3 +14,4 @@ if touchingplayer(x, y)
 		}
 	}
 }
+event_inherited()

@@ -9,8 +9,8 @@
   "name":"obj_lever",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"mechanical",
+    "path":"folders/Objects/levelobjs/mechanical.yy",
   },
   "parentObjectId":null,
   "persistent":false,
