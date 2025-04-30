@@ -4,12 +4,18 @@ if (moving)
 {
 	if (!audio_is_playing(movingsound))
 		movingsound = audio_play_sound(snd_movingplatform_move, 1, true)
-	image_speed = 1
+	screwindex += 0.2
 	
 	if (wantedside > position)
+	{
 		position += movespeed
+		invertfacedir = false
+	}
 	else
+	{
 		position -= movespeed
+		invertfacedir = true
+	}
 	position = clamp(position, 0, 1)
 	if (wantedside == position)
 	{
@@ -46,7 +52,6 @@ else
 {
 	if (audio_is_playing(movingsound))
 		audio_stop_sound(movingsound)
-	image_speed = 0
 	
 	if (touchingplayer(x, intendedy-1) && obj_player.grounded && obj_player.bbox_bottom - 1 < bbox_top)
 	{
