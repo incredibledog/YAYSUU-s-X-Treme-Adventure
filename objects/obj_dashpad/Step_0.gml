@@ -3,6 +3,6 @@
 if touchingplayer(x, y)
 {
 	obj_player.hsp = 25 * self.image_xscale
-	if (obj_player.hsp <= 20)
+	if (abs(obj_player.hsp) < 25)
 		audio_play_sound(snd_dashpad,1,false)
 }

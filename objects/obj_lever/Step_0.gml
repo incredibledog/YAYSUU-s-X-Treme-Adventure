@@ -3,10 +3,13 @@
 prevtoggled = toggled
 if (touchingplayer(x, y))
 {
-	if (obj_player.hsp > 2)
+	obj_player.showarrow = true
+	if (obj_player.hsp * obj_player.image_xscale > obj_player.runspeed)
 		toggled = true
-	else if (obj_player.hsp < -2)
+	else if (obj_player.hsp * obj_player.image_xscale < -obj_player.runspeed)
 		toggled = false
+	else if (global.key_upp)
+		toggled = !toggled
 }
 
 if (toggled && image_index != 4)
@@ -20,13 +23,20 @@ if (toggled != prevtoggled)
 {
 	with (connectedthing)
 	{
-		if (object_index == obj_movingplatform_toggled)
+		if (object_index == obj_movingplatform_toggled || object_index == obj_movingplatform)
 		{
 			if (other.toggled)
 				wantedside = 1
 			else
 				wantedside = 0
 			moving = true
+		}
+		else if (object_index == obj_conveyor)
+		{
+			if (other.toggled)
+				directionmodifier = other.modifiervalue
+			else
+				directionmodifier = 1
 		}
 	}
 }
