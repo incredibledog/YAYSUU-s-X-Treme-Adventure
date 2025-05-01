@@ -22,6 +22,7 @@ if (global.inlevel)
 		image_angle = 0
 		slopey = false
 		prevslopey = false
+		inwater = false
 		if (global.levelloadtype == loadtype.newlevel)
 		{
 			if (global.char == "Y")

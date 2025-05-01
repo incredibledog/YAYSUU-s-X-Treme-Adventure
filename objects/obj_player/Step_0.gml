@@ -25,6 +25,8 @@ if (inbackground)
 		inbackground = false
 }
 
+inwater = place_meeting(x, y, obj_water)
+
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
@@ -32,7 +34,12 @@ if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed && gl
 	move = facingdirection
 
 //grounded checking
-if (state == playerstates.normal && !grounded && !djump && global.char == "C")
+if (inwater)
+{
+	grv = watergrav
+	maxfallspeed = normmaxfall
+}
+else if (state == playerstates.normal && !grounded && !djump && global.char == "C")
 {
 	grv = floatgrav
 	maxfallspeed = floatmaxfall
@@ -169,7 +176,7 @@ else if (state == playerstates.bounce && newstate == state)
 }
 
 //dash run
-if (global.key_runp && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C")
+if (global.key_runp && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C" && !inwater)
 {
 	yearnedhsp = facingdirection * runspeed
 	if (abs(hsp) < (yearnedhsp) || sign(hsp) != sign(yearnedhsp)) //you will not slow down if you start a run
@@ -230,14 +237,20 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 		}
 		else
 		{
-			vsp = djmp
+			if (inwater)
+				vsp = wdjmp
+			else
+				vsp = djmp
 			audio_play_sound(snd_doublejump, 1, false)
 		}
 		djump = false
 	}
 	else
 	{
-		vsp = jmp
+		if (inwater)
+			vsp = wjmp
+		else
+			vsp = jmp
 		if (global.char == "C")
 			audio_play_sound(snd_jump_c, 1, false)
 		else
@@ -248,6 +261,11 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 	slopey = false
 	prevslopey = false
 	newstate = playerstates.normal
+}
+else if (inwater && global.key_jumpp && state == playerstates.normal && newstate == state && !(place_meeting(x, (y + wbop), obj_playercollision)))
+{
+	vsp = wbop
+	audio_play_sound(snd_waterswim, 1, false)
 }
 
 if (state == playerstates.golfstop && newstate == state)
