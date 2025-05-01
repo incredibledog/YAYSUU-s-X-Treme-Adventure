@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if touchingplayer(x, y + 4)
+if touchingplayer(x, y + 16)
 {
 	if (image_alpha > 0.6)
 		image_alpha -= fadespeed
