@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"skin_initialize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"skin_initialize",
+  "parent":{
+    "name":"skinsystem",
+    "path":"folders/Scripts/skinsystem.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
