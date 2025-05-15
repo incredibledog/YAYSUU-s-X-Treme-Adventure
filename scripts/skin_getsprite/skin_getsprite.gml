@@ -1,6 +1,5 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function skin_loadskin(skinname){
-	global.skinname = skinname
-	ini_open("custom/character/" + skinname + "")
+function skin_getsprite(foldername, spritename){
+	
 }

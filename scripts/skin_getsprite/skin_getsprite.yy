@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"skin_getsprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"skin_getsprite",
+  "parent":{
+    "name":"skinsystem",
+    "path":"folders/Scripts/skinsystem.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
