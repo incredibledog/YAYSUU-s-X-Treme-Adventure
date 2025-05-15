@@ -6,3 +6,6 @@
 as this is currently being worked on by me, ms. fazmade, i do not actually recommend downloading it because it will almost certainly contain unfinished things.
 
 dear yaysuu please give me a upwards/jumping variation of spr_yaysuu_launch and add the - character to the subtitle font :3
+
+
+brrranch skibidi test test text yes yes
