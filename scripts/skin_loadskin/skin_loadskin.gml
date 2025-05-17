@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function skin_loadskin(skinname){
 	global.skinname = skinname
+	if (skinname == "")
+		return //empty skinname means no custom skin active
 	ini_open("custom/character/" + skinname + "/info.ini")
 	global.char = ini_read_string("character", "basechar", "Y")
 	ini_close()

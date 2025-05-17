@@ -20,6 +20,7 @@ else
 			audio_play_sound(snd_nicetry,1,false)
 		else
 		{
+			skin_loadskin(keyboard_string)
 			delay=120
 			selected=true
 			audio_play_sound(snd_confirm,1,false)
