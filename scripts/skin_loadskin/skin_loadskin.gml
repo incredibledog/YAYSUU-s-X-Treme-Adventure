@@ -29,7 +29,7 @@ function skin_loadskin(skinname){
 		}
 		return
 	}
-	ini_open("custom/character/" + skinname + "/info.ini")
+	ini_open(working_directory + "custom/character/" + skinname + "/info.ini")
 	global.char = ini_read_string("character", "basechar", "Y")
 	ini_close()
 	global.sprite_brake = skin_getsprite("brake")
