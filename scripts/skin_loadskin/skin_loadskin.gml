@@ -52,4 +52,5 @@ function skin_loadskin(skinname){
 		global.sprite_airdash = skin_getsprite("airdash")
 		global.sprite_spinball = skin_getsprite("spinball")
 	}
+	global.spriteloaded = true
 }

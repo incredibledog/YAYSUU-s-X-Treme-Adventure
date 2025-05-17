@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function skin_initialize(){
 	global.skinname = ""
-	
+	global.spriteloaded = false
 	//set all them to minus one because no loaded
 	global.sprite_brake = -1
 	global.sprite_crouch = -1

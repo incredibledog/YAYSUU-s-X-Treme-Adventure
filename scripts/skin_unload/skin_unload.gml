@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function skin_unload(){
+	if (!global.spriteloaded)
+		return
+	global.spriteloaded = false
 	sprite_delete(global.sprite_brake)
 	sprite_delete(global.sprite_crouch)
 	sprite_delete(global.sprite_dead)
