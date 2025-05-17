@@ -21,4 +21,7 @@ function skin_unload(){
 	sprite_delete(global.sprite_win)
 	sprite_delete(global.sprite_airdash)
 	sprite_delete(global.sprite_spinball)
+	sprite_delete(global.sprite_dash)
+	sprite_delete(global.sprite_ball)
+	sprite_delete(global.sprite_fly)
 }

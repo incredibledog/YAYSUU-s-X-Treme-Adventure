@@ -23,3 +23,10 @@ else
 		image_speed=2
 	}
 }
+
+if (keyboard_string != "" && keyboard_string != "2" && keyboard_string != "27" && keyboard_string != "276")
+{
+	if (keyboard_string == "2763")
+		loadroom(room_imagetest, loadtype.menu)
+	keyboard_string = ""
+}

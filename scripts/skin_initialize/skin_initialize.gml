@@ -21,4 +21,7 @@ function skin_initialize(){
 	global.sprite_win = -1
 	global.sprite_airdash = -1
 	global.sprite_spinball = -1
+	global.sprite_dash = -1
+	global.sprite_ball = -1
+	global.sprite_fly = -1
 }
