@@ -297,6 +297,7 @@
     {"id":{"name":"skin_getsprite","path":"scripts/skin_getsprite/skin_getsprite.yy",},},
     {"id":{"name":"skin_initialize","path":"scripts/skin_initialize/skin_initialize.yy",},},
     {"id":{"name":"skin_loadskin","path":"scripts/skin_loadskin/skin_loadskin.yy",},},
+    {"id":{"name":"skin_unload","path":"scripts/skin_unload/skin_unload.yy",},},
     {"id":{"name":"touchingplayer","path":"scripts/touchingplayer/touchingplayer.yy",},},
     {"id":{"name":"sqc_test","path":"sequences/sqc_test/sqc_test.yy",},},
     {"id":{"name":"mus_chillfields_1","path":"sounds/mus_chillfields_1/mus_chillfields_1.yy",},},

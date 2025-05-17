@@ -41,6 +41,7 @@ windowtimer = 0
 windowname = ""
 newwindowname = ""
 windowpos = 0
+skin_initialize()
 
 if (os_type == os_android)
 	global.inputtype = 3
