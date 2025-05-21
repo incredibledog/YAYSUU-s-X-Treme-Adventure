@@ -5,7 +5,6 @@ if st=0 && started=false && os_type == os_android
 	global.inputtype=3
 	delay=60
 	started=true
-	audio_stop_sound(mus_title)
 	image_speed=2
 	audio_play_sound(snd_confirm,1,false)
 }

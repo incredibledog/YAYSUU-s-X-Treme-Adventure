@@ -4,7 +4,7 @@ image_alpha=0
 st=120
 started=false
 delay=0
-if os_type=os_android
+if global.inputtype=3
 {
 	sprite_index=spr_pressstart_m
 }

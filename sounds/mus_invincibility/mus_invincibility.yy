@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":22.184988,
+  "duration":23.928164,
   "name":"mus_invincibility",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":48000,
-  "soundFile":"mus_invincibility.wav",
+  "soundFile":"mus_invincibility.mp3",
   "type":0,
   "volume":1.0,
 }

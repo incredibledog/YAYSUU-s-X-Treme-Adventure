@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":9.351833,
+  "duration":9.351837,
   "name":"mus_yaysuuwin",
   "parent":{
     "name":"Sounds",

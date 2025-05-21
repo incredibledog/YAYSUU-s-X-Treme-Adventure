@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.832653,
+  "duration":4.797483,
   "name":"mus_teddywin",
   "parent":{
     "name":"Sounds",

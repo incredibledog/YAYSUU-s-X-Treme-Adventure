@@ -1,44 +1,48 @@
 /// @description Insert description here
 // You can write your code in this editor
-if st>0
-	st--
-else
-	image_alpha=1
-
-if (started)
+if !started
 {
-	if delay>0
-		delay--
-	else if (!obj_fadeblack.fading)
-		loadroom(room_mainmenu, loadtype.menu)
-}
-else
-{
-	if keyboard_check_pressed(vk_enter) && st=0
+	if keyboard_check_pressed(vk_enter)
 	{
 		global.inputtype=0
 		delay=60
 		started=true
-		audio_stop_sound(mus_title)
 		audio_play_sound(snd_confirm,1,false)
 		image_speed=2
 	}
-	if keyboard_check_pressed(vk_escape) && st=0
+	if keyboard_check_pressed(vk_escape) 
 	{
 		global.inputtype=1
 		delay=60
 		started=true
-		audio_stop_sound(mus_title)
 		audio_play_sound(snd_confirm,1,false)
 		image_speed=2
 	}
-	if gamepad_button_check_pressed(0,gp_start) && st=0
+	if gamepad_button_check_pressed(0,gp_start)
 	{
 		global.inputtype=2
 		delay=60
 		started=true
-		audio_stop_sound(mus_title)
 		audio_play_sound(snd_confirm,1,false)
 		image_speed=2
+	}
+}
+else if started
+{
+	if delay=0
+	{
+		instance_destroy()
+		if global.pause
+		{
+			instance_activate_object(obj_pause)
+		}
+		else {
+			instance_activate_all()
+			audio_resume_sound(global.currentsong)
+		}
+	}
+	if delay>0
+	{
+		delay--
 	}
 }

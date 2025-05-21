@@ -8,7 +8,7 @@ if loadtime>0
 {
 	loadtime--
 }
-if global.key_jumpp
+if keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_start)
 {
 	if room=room_idalogo
 	{
