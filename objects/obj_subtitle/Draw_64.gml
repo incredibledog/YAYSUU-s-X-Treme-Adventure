@@ -77,7 +77,7 @@ if audio_is_playing(snd_tutorialvo3_t)
 }
 if audio_is_playing(snd_tutorialvo4_y)
 {
-	draw_text_yxa(x,y-yoff,"If you press the DASH button \nwhilst crouching, \nyou will slide!","purple",true)
+	draw_text_yxa(x,y-yoff,"If you press the DASH button \nwhilst grounded, \nyou will slide!","purple",true)
 }
 if audio_is_playing(snd_tutorialvo4_t)
 {

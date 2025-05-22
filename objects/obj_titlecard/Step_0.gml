@@ -8,8 +8,9 @@ else if goawaytime=0
 {
 	goawayspeed+=1
 	x+=goawayspeed
+	image_alpha-=1/60
 }
 if x>=640
 {
-	instance_destroy() // unload it just to be safe
+	image_alpha=0
 }

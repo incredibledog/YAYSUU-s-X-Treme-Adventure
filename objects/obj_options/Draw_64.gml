@@ -25,7 +25,10 @@ if global.borders=true
 	draw_text(32,224,"BORDERS  ON")
 else
 	draw_text(32,224,"BORDERS  OFF")
-draw_text(32,256,"CHOOSE INPUT")
+if global.speedrun=true
+	draw_text(32,256,"SPEEDRUN TIMER  ON")
+else
+	draw_text(32,256,"SPEEDRUN TIMER  OFF")
 draw_text(32,288,"RESET RECORDS")
 draw_text(32,320,"RESET 2 DEFAULT")
 draw_text(32,352,"SAVE N QUIT")

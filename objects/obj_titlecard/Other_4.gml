@@ -1,5 +1,6 @@
 /// @description which level am i on
 // You can write your code in this editor
+image_alpha=1
 x=288 // sorry, this is hardcoded
 y=192
 goawaytime=60
@@ -11,15 +12,6 @@ switch room {
 	case room_chillfields_2:
 	sprite_index=spr_chillfields2
 	break;
-	case room_chillfields_2b:
-	image_alpha=0
-	break;
-	case room_chillfields_2c:
-	image_alpha=0
-	break;
-	case room_chillfields_2d:
-	image_alpha=0
-	break;
 	case room_mysticmanor_1:
 	sprite_index=spr_mysticmanor1 
 	break;
@@ -28,5 +20,8 @@ switch room {
 	break;
 	case room_tutorial:
 	sprite_index=spr_tutorial
+	break;
+	default:
+	image_alpha=0
 	break;
 }

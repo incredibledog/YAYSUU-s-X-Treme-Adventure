@@ -29,7 +29,7 @@ if os_type=os_android && hide=false && !gamepad_is_connected(0)
 		draw_sprite(spr_jump,0,416,384)
 		draw_sprite(spr_dash,0,480,384)
 		draw_sprite(spr_run,0,544,384)
-		draw_sprite(spr_pause,0,576,32)
 		draw_set_alpha(1)
+		draw_sprite(spr_pause,0,576,32)
 	}
 }

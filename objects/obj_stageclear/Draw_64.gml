@@ -7,10 +7,20 @@ if !global.inboss
 {
 	if display>=1
 	{
-		draw_sprite(spr_stopwatch,0,64,288)
-		draw_text(96,288,obj_hud.timerstring)
-		draw_sprite(spr_bonus,0,352,288)
-		draw_text(416,288,obj_hud.timebonus)
+		if global.speedrun=true
+		{
+			draw_sprite(spr_stopwatch,0,64,288)
+			draw_text(96,288,obj_hud.timerstring)
+			draw_sprite(spr_bonus,0,352,288)
+			draw_text(416,288,obj_hud.timebonus)
+		}
+		else
+		{
+			draw_sprite(spr_stopwatch,0,96,288)
+			draw_text(128,288,obj_hud.timerstring)
+			draw_sprite(spr_bonus,0,320,288)
+			draw_text(384,288,obj_hud.timebonus)
+		}
 	}
 	if display>=2
 	{
