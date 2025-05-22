@@ -18,7 +18,7 @@ if (keyboard_check_pressed(ord("O")))
 {
 	dofps = !dofps
 	if (!dofps)
-		game_set_speed(60, gamespeed_fps)
+		game_set_speed(global.defaultfps, gamespeed_fps)
 }
 
 if (dofps)

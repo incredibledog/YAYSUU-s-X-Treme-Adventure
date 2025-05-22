@@ -40,7 +40,11 @@ else
 			}
 		}
 	}
+<<<<<<< HEAD
 	else if global.key_dashp
+=======
+	else if global.key_start || global.key_dashp
+>>>>>>> 90c21b3d9ef2087f7b51e8a61aab81fc5d607717
 	{
 		loadroom(room_mainmenu, loadtype.menu)
 		audio_play_sound(snd_nahnvm,1,false)

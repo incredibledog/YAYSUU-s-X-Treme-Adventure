@@ -15,10 +15,11 @@ if (global.inlevel && !global.inhub)
 		if (dotime)
 		{
 			timer++
-			if (timer % 60 == 0)
+			if (timer % global.defaultfps == 0)
 				timebonus -= 10
 			timebonus=clamp(timebonus,0,3000)
 		}
+<<<<<<< HEAD
 		if global.speedrun=true
 		{
 			timerstring = string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0) + "." + string_format(timer % 60, 2, 0), " ", "0")
@@ -27,6 +28,9 @@ if (global.inlevel && !global.inhub)
 		{
 			timerstring = string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0), " ", "0")
 		}
+=======
+		timerstring = string_replace_all(string_format(floor(timer / (global.defaultfps * global.defaultfps)), 2, 0) + ":" + string_format(floor(timer / global.defaultfps) % global.defaultfps, 2, 0) + "." + string_format(timer % global.defaultfps, 2, 0), " ", "0")
+>>>>>>> 90c21b3d9ef2087f7b51e8a61aab81fc5d607717
 	}
 	
 	if (global.combo > 1)

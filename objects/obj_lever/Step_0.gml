@@ -12,9 +12,9 @@ if (touchingplayer(x, y))
 		toggled = !toggled
 }
 
-if (toggled && image_index != 4)
+if (toggled && round(image_index != 4))
 	image_speed = 1
-else if (!toggled && image_index != 0)
+else if (!toggled && round(image_index != 0))
 	image_speed = -1
 else
 	image_speed = 0

@@ -42,6 +42,19 @@ windowtimer = 0
 windowname = ""
 newwindowname = ""
 windowpos = 0
+global.pal = false
+if (global.pal)
+{
+	global.defaultfps = 50
+	global.animationscale = 5/6
+}
+else
+{
+	global.defaultfps = 60
+	global.animationscale = 1
+}
+game_set_speed(global.defaultfps, gamespeed_fps)
+
 
 if (os_type == os_android)
 	global.inputtype = 3

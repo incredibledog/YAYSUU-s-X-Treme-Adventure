@@ -12,12 +12,15 @@ if touchingplayer(x, y) && !touched
 		sprite_index=spr_goalflag_transition_cotton
 	audio_play_sound(snd_flagspin,1,false)
 	global.score += global.scoreadd + obj_hud.timebonus + ((global.coins % 100) * 10)
+	if (!global.pal)
+	{
 	ini_open("savedata.ini")
-	if global.score > ini_read_real("records", string(room) + "_score", 0) && !global.inboss
-		ini_write_real("records", string(room) + "_score", global.score)
-	if obj_hud.timer < ini_read_real("records", string(room) + "_time", 359999) && !global.inboss
-		ini_write_real("records", string(room) + "_time", obj_hud.timer)
-	ini_close()
+		if global.score > ini_read_real("records", string(room) + "_score", 0) && !global.inboss
+			ini_write_real("records", string(room) + "_score", global.score)
+		if obj_hud.timer < ini_read_real("records", string(room) + "_time", 359999) && !global.inboss
+			ini_write_real("records", string(room) + "_time", obj_hud.timer)
+		ini_close()
+	}
 }
 if endtimer>0 && touched
 	endtimer--
