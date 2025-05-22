@@ -12,31 +12,27 @@ if (started)
 	else if (!obj_fadeblack.fading)
 		loadroom(room_mainmenu, loadtype.menu)
 }
-else
+else if st==0
 {
-	if keyboard_check_pressed(vk_enter) && st=0
+	if keyboard_check_pressed(vk_enter) || keyboard_check(ord("Z"))
 	{
 		global.inputtype=0
-		delay=60
-		started=true
-		audio_stop_sound(mus_title)
-		audio_play_sound(snd_confirm,1,false)
-		image_speed=2
+		started = true
 	}
-	if keyboard_check_pressed(vk_escape) && st=0
+	else if keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_space)
 	{
 		global.inputtype=1
-		delay=60
-		started=true
-		audio_stop_sound(mus_title)
-		audio_play_sound(snd_confirm,1,false)
-		image_speed=2
+		started = true
 	}
-	if gamepad_button_check_pressed(0,gp_start) && st=0
+	else if gamepad_button_check_pressed(0,gp_start) || gamepad_button_check_pressed(0,gp_face1)
 	{
 		global.inputtype=2
+		started = true
+	}
+	
+	if started
+	{
 		delay=60
-		started=true
 		audio_stop_sound(mus_title)
 		audio_play_sound(snd_confirm,1,false)
 		image_speed=2

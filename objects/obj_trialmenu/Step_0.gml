@@ -98,7 +98,7 @@ if global.key_jumpp
 	global.lives=3
 	loadroom(currentlevel, loadtype.newlevel)
 }
-else if global.key_start
+else if global.key_start || global.key_dashp
 {
 	audio_stop_all()
 	audio_play_sound(snd_nahnvm,1,false)

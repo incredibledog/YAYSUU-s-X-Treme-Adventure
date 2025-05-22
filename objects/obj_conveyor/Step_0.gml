@@ -13,6 +13,6 @@ else if (playertouching)
 	playertouching = false
 }
 if (touchingplayer(x, y-1))
-	image_speed = conveyorspeed * directionmodifier
+	image_speed = conveyorspeed * directionmodifier * global.animationscale
 else
-	image_speed = conveyorspeed * directionmodifier * 0.25
+	image_speed = conveyorspeed * directionmodifier * 0.25 * global.animationscale

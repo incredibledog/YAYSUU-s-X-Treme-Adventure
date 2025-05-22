@@ -40,7 +40,7 @@ else
 			}
 		}
 	}
-	else if global.key_start
+	else if global.key_start || global.key_dashp
 	{
 		loadroom(room_mainmenu, loadtype.menu)
 		audio_play_sound(snd_nahnvm,1,false)
