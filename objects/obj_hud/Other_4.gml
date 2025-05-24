@@ -8,11 +8,13 @@ if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtyp
 	hide=false
 	comboshowtimer = 0
 	showncombo = 0
-	
-	if (global.levelloadtype == loadtype.newlevel)
+	global.scoreadd = 0
+	if (global.checkpoint = false)
 	{
 		timer = 0
 		timebonus=1200
+		global.coins=0
+		global.coingoal=100
 	}
 	if global.inboss
 	{

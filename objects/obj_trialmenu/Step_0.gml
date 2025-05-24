@@ -85,7 +85,7 @@ if (changedlevel)
 }
 changedlevel = false
 
-if global.key_jumpp
+if global.key_jumpp || global.key_start
 {
 	audio_stop_all()
 	audio_play_sound(snd_confirm,1,false)
@@ -98,11 +98,7 @@ if global.key_jumpp
 	global.lives=3
 	loadroom(currentlevel, loadtype.newlevel)
 }
-<<<<<<< HEAD
 else if global.key_dashp
-=======
-else if global.key_start || global.key_dashp
->>>>>>> 90c21b3d9ef2087f7b51e8a61aab81fc5d607717
 {
 	audio_stop_all()
 	audio_play_sound(snd_nahnvm,1,false)
