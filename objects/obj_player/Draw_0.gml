@@ -1,10 +1,6 @@
 if (global.inlevel)
 {
-	if (global.showcollision)
-	{
-		draw_sprite(mask_index, 0, x, y)
-		draw_sprite_ext(mask_index, 0, x + hsp, y + vsp, 1, 1, image_angle, c_white, 0.5)
-	}
+	scr_draw_hitbox()
 	
 	var drawx
 	var drawy

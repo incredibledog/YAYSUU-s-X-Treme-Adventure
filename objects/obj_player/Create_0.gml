@@ -62,3 +62,5 @@ showarrow = false
 inbackground = false
 damageflash = false
 inwater = false
+whichcollisionsdid = ""
+hitboxcolor = c_lime

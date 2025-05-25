@@ -7,3 +7,4 @@ grounded = true
 checkscale = 0.1
 maxloop = 320
 slowdown = 0.5
+hitboxcolor = c_white

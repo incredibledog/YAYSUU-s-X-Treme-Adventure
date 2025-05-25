@@ -80,6 +80,8 @@ if (vsp >= 0)
 			slopey = true
 		}
 	}
+	if (!grounded && !slopey && prevslopey)
+		grounded = true
 }
 else
 {
@@ -165,7 +167,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 }
 else if (state == playerstates.bounce && newstate == state)
 {
-	if ((vsp >= 0 && global.char != "C") || grounded)
+	if ((vsp >= 0 && global.char != "C") || grounded || slopey)
 		newstate = playerstates.normal
 	else if (global.key_downp)
 	{
@@ -226,7 +228,7 @@ if (grounded && global.key_runp && state = playerstates.crouch && (newstate == s
 }
 
 // jumping
-if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch) && !(place_meeting(x, (y + jmp), obj_playercollision)))
+if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch))
 {
 	if (!grounded)
 	{
@@ -263,7 +265,7 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 	prevslopey = false
 	newstate = playerstates.normal
 }
-else if (inwater && global.key_jumpp && state == playerstates.normal && newstate == state && !(place_meeting(x, (y + wbop), obj_playercollision)))
+else if (inwater && global.key_jumpp && state == playerstates.normal && newstate == state)
 {
 	vsp = wbop
 	audio_play_sound(snd_waterswim, 1, false)
@@ -417,6 +419,7 @@ if (!grounded)
 	slopey = false
 if (!prevgrounded)
 	prevslopey = false
+whichcollisionsdid = ""
 if (hascollision)
 {
     var dogroundsnap = true
@@ -435,7 +438,7 @@ if (hascollision)
 		else
 		{
 			y = newpos
-            global.debugmessage = "SLOPE UP SNAP"
+            whichcollisionsdid = whichcollisionsdid + "SLOP "
 			dogroundsnap = false
 			grounded = true
 			if (vsp > 0)
@@ -459,7 +462,7 @@ if (hascollision)
 		else
 		{
 			x = newpos
-			global.debugmessage = "WALLED"
+            whichcollisionsdid = whichcollisionsdid + "WALL "
 			hsp = 0
 			gotwalled = true
 		}
@@ -478,7 +481,7 @@ if (hascollision)
 		else
 		{
 			y = newpos
-            global.debugmessage = "CEILING"
+            whichcollisionsdid = whichcollisionsdid + "CEIL "
 			vsp = 0
 			grounded = false
 		}
@@ -517,7 +520,7 @@ if (hascollision)
 		else
 		{
 			y = newpos
-            global.debugmessage = "GROUNDING"
+            whichcollisionsdid = whichcollisionsdid + "GRND "
 			vsp = 0
 		}
     }
@@ -596,7 +599,7 @@ if (hascollision)
 		{
 			x = newpos
 			y = newposy
-            global.debugmessage = "DIAGONAL CORNER SNAP"
+            whichcollisionsdid = whichcollisionsdid + "DIAG "
 		}
 	}
 }

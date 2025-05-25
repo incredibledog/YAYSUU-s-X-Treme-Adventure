@@ -251,6 +251,7 @@
     {"id":{"name":"scr_bossstart","path":"scripts/scr_bossstart/scr_bossstart.yy",},},
     {"id":{"name":"scr_calcplatformdir","path":"scripts/scr_calcplatformdir/scr_calcplatformdir.yy",},},
     {"id":{"name":"scr_collectcoins","path":"scripts/scr_collectcoins/scr_collectcoins.yy",},},
+    {"id":{"name":"scr_draw_hitbox","path":"scripts/scr_draw_hitbox/scr_draw_hitbox.yy",},},
     {"id":{"name":"scr_healthsystem","path":"scripts/scr_healthsystem/scr_healthsystem.yy",},},
     {"id":{"name":"scr_levelstart","path":"scripts/scr_levelstart/scr_levelstart.yy",},},
     {"id":{"name":"scr_player_trybounce","path":"scripts/scr_player_trybounce/scr_player_trybounce.yy",},},

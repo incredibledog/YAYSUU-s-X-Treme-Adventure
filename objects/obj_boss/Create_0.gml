@@ -3,3 +3,4 @@
 event_inherited()
 vulnerable=false
 candamage = true
+hitboxcolor = c_red

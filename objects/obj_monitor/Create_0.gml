@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-event_inherited()
-small = false
-candamage = true
-hitboxcolor = c_red
+
+// Inherit the parent event
+event_inherited();
+hitboxcolor = c_blue
