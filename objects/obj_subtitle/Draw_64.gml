@@ -55,7 +55,7 @@ draw_set_font(global.subtitlefont)
 //		draw_set_font(global.font)
 //	}
 //}
-if audio_is_playing(snd_tutorialvo1)
+/*if audio_is_playing(snd_tutorialvo1)
 {
 	draw_text_yxa(x,y-yoff,"Press the JUMP button \nto jump!","purple",true)
 }
@@ -158,7 +158,7 @@ if audio_is_playing(snd_bossintro1_line3_y)
 if audio_is_playing(snd_bossintro1_line4)
 {
 	draw_text_yxa(x,y-yoff,"PREPARING TO ELIMINATE","red",false)
-}
+}*/
 if room=room_levelselect
 {
 	draw_text(x,y,"Press 1 for Chill fields stage 1\nPress 2 for Tutorial Stage\nPress 3 for Chill fields stage 2")

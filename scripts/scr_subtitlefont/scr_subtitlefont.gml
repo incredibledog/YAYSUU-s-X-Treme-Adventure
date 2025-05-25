@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function draw_text_yxa(x,y,textstring,color,dropshadow){
+function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
 	var colorhex = #000000
 	switch color {
 		case "white":
@@ -57,7 +57,7 @@ function draw_text_yxa(x,y,textstring,color,dropshadow){
 	}
 	if dropshadow=true
 	{
-		draw_text_ext_color(x+1,y+1,string(textstring),16,640,c_black,c_black,c_black,c_black,1)
+		draw_text_ext_color(x+1,y+1,string(textstring),16,maxlength,c_black,c_black,c_black,c_black,1)
 	}
-	draw_text_ext_color(x,y,string(textstring),16,640,colorhex,colorhex,colorhex,colorhex,1)
+	draw_text_ext_color(x,y,string(textstring),16,maxlength,colorhex,colorhex,colorhex,colorhex,1)
 }
