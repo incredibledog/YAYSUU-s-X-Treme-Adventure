@@ -418,7 +418,7 @@ if (!prevgrounded)
 	prevslopey = false
 if (hascollision)
 {
-    var dogroundsnap = 1
+    var dogroundsnap = true
     var loopprevent = 0
 	var newpos = 0
     if place_meeting((x + hsp), y, obj_slope)
@@ -435,7 +435,7 @@ if (hascollision)
 		{
 			y = newpos
             global.debugmessage = "SLOPE UP SNAP"
-			dogroundsnap = 0
+			dogroundsnap = false
 			grounded = true
 			if (vsp > 0)
 				vsp = 0
@@ -482,7 +482,7 @@ if (hascollision)
 			grounded = false
 		}
     }
-    if (vsp >= 0 && prevslopey && !slopey && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
+    /*if (vsp >= 0 && prevslopey && !slopey && place_meeting(x, ((y + abs(hsp)) + 1), obj_slope))
     {
         loopprevent = 0
 		newpos = y
@@ -501,8 +501,8 @@ if (hascollision)
 			grounded = true
 			slopey = true
 		}
-    }
-    else if (grounded && dogroundsnap)
+    }*/
+    else if ((grounded || (prevslopey && !grounded)) && dogroundsnap)
     {
         loopprevent = 0
 		newpos = y

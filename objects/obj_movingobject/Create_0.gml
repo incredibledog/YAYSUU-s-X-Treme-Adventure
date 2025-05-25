@@ -5,5 +5,5 @@ vsp = 0
 grv = 0.3
 grounded = true
 checkscale = 0.1
-maxloop = 1000
+maxloop = 320
 slowdown = 0.5
