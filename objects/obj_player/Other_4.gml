@@ -23,7 +23,7 @@ if (global.inlevel)
 		slopey = false
 		prevslopey = false
 		inwater = false
-		if (global.levelloadtype == loadtype.newlevel)
+		if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 		{
 			if (global.char == "Y")
 			{

@@ -56,7 +56,7 @@ switch (state)
 			switch (state) //ah yes switch statements in switch statements
 			{
 				case electrobotstates.jump:
-					vsp = -20
+					vsp = -22
 					grounded = false
 					break;
 				case electrobotstates.spin:
@@ -145,7 +145,6 @@ switch (state)
 			{
 				state = electrobotstates.dying
 				delay = 150
-				hsp = 0
 				kablooeyjrtimer=0
 				audio_stop_sound(global.currentsong)
 			}
@@ -154,7 +153,6 @@ switch (state)
 				candamage = true
 				state = electrobotstates.idle
 				delay = idledelay
-				hsp = 0
 				vulnerable = false
 			}
 		}

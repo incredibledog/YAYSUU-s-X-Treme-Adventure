@@ -33,6 +33,42 @@ if (place_meeting(x + hsp, y, obj_collision) || place_meeting(x + hsp, y, obj_ot
 
 x += hsp
 y += vsp
+//emergency fixing
+if (place_meeting(x, y, obj_othercollision))
+{
+    if !(place_meeting((x + 1), y, obj_othercollision))
+        x += 1
+    else if (!(place_meeting((x - 1), y, obj_othercollision)))
+        x -= 1
+    else if (!(place_meeting(x, (y + 1), obj_othercollision)))
+        y += 1
+    else if (!(place_meeting(x, (y - 1), obj_othercollision)))
+        y -= 1
+    else if (!(place_meeting((x + 5), y, obj_othercollision)))
+        x += 5
+    else if (!(place_meeting((x - 5), y, obj_othercollision)))
+        x -= 5
+    else if (!(place_meeting(x, (y + 5), obj_othercollision)))
+        y += 5
+    else if (!(place_meeting(x, (y - 5), obj_othercollision)))
+        y -= 5
+    else if (!(place_meeting((x + 10), y, obj_othercollision)))
+        x += 10
+    else if (!(place_meeting((x - 10), y, obj_othercollision)))
+        x -= 10
+    else if (!(place_meeting(x, (y + 10), obj_othercollision)))
+        y += 10
+    else if (!(place_meeting(x, (y - 10), obj_othercollision)))
+        y -= 10
+    else if (!(place_meeting((x + 20), y, obj_othercollision)))
+        x += 20
+    else if (!(place_meeting((x - 20), y, obj_othercollision)))
+        x -= 20
+    else if (!(place_meeting(x, (y + 20), obj_othercollision)))
+        y += 20
+    else if (!(place_meeting(x, (y - 20), obj_othercollision)))
+        y -= 20
+}
 
 if (slowdown != 0)
 {
