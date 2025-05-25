@@ -65,14 +65,14 @@ if (changedlevel)
 			currentlevel=room_glowstickcity
 			endlevel=room_glowstickcity
 			lvlname="Glow Stick City (unfinished)"
-			sprname=spr_tutorialscroll
+			sprname=spr_glowstickcityscroll
 			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			break;
 		case 6:
 			currentlevel=room_dev
 			endlevel=room_dev
 			lvlname="Fun Dev Room!"
-			sprname=spr_tutorialscroll
+			sprname=spr_devroomscroll
 			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			break;
 	}
