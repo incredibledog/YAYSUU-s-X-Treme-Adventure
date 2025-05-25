@@ -10,4 +10,8 @@ if touchingplayer(x, y) && sprite_index == normsprite
 	if (obj_player.state == playerstates.stomp)
 		obj_player.newstate = playerstates.bounce
 	sprite_index = bouncesprite
+	obj_player.grounded = false
+	obj_player.slopey = false
+	obj_player.prevgrounded = false
+	obj_player.prevslopey = false
 }
