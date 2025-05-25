@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
-	var colorhex = #000000
+	var colorhex = #FF00FF
 	switch color {
 		case "white":
 		colorhex = #FFF1E8 
@@ -51,13 +51,14 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
 		case "peach":
 		colorhex = #FFCCAA 
 		break;
+		case "none":
+		colorhex = #FFFFFF 
+		break;
 		default:
 		show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to scr_subtitlefont for more details.",true)
 		break;
 	}
-	if dropshadow=true
-	{
+	if dropshadow
 		draw_text_ext_color(x+1,y+1,string(textstring),16,maxlength,c_black,c_black,c_black,c_black,1)
-	}
 	draw_text_ext_color(x,y,string(textstring),16,maxlength,colorhex,colorhex,colorhex,colorhex,1)
 }

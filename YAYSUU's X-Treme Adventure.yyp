@@ -575,6 +575,7 @@
     {"id":{"name":"spr_silverdebris","path":"sprites/spr_silverdebris/spr_silverdebris.yy",},},
     {"id":{"name":"spr_sircub","path":"sprites/spr_sircub/spr_sircub.yy",},},
     {"id":{"name":"spr_slope","path":"sprites/spr_slope/spr_slope.yy",},},
+    {"id":{"name":"spr_smalloptionstext","path":"sprites/spr_smalloptionstext/spr_smalloptionstext.yy",},},
     {"id":{"name":"spr_sndtestbg","path":"sprites/spr_sndtestbg/spr_sndtestbg.yy",},},
     {"id":{"name":"spr_spawn","path":"sprites/spr_spawn/spr_spawn.yy",},},
     {"id":{"name":"spr_spike","path":"sprites/spr_spike/spr_spike.yy",},},

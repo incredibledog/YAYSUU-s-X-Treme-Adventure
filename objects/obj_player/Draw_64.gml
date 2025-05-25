@@ -2,51 +2,63 @@ if (!global.inlevel || !global.showcollision)
 	return
 
 draw_set_valign(fa_bottom)
-draw_set_font(global.optfont)
-var actualstatename = "I DUNNO"
+draw_set_font(global.smalloptfont)
+var actualstatename = "i dunno"
 switch (state)
 {
 	case playerstates.normal:
-		actualstatename = "NORMAL"
+		actualstatename = "normal"
 		break;
 	case playerstates.crouch:
-		actualstatename = "CROUCH"
+		actualstatename = "crouch"
 		break;
 	case playerstates.dash:
-		actualstatename = "DASH"
+		actualstatename = "dash"
 		break;
 	case playerstates.stomp:
-		actualstatename = "STOMP"
+		actualstatename = "stomp"
 		break;
 	case playerstates.hurt:
-		actualstatename = "HURT"
+		actualstatename = "hurt"
 		break;
 	case playerstates.inactive:
-		actualstatename = "INACTIVE"
+		actualstatename = "inactive"
 		break;
 	case playerstates.dead:
-		actualstatename = "DEAD"
+		actualstatename = "dead"
 		break;
 	case playerstates.slide:
-		actualstatename = "SLIDE"
+		actualstatename = "slide"
 		break;
 	case playerstates.bounce:
-		actualstatename = "BOUNCE"
+		actualstatename = "bounce"
 		break;
 	case playerstates.win:
-		actualstatename = "WIN"
+		actualstatename = "win"
 		break;
 	case playerstates.golfstop:
-		actualstatename = "GOLFSTOP"
+		actualstatename = "golfstop"
 		break;
 }
-draw_text_transformed(0, 480 - (16 * 1), "STATE " + actualstatename + " (" + string(state) + ")", 0.5, 0.5, 0)
-draw_text_transformed(0, 480 - (16 * 2), "VSP " + string(vsp), 0.5, 0.5, 0)
-draw_text_transformed(0, 480 - (16 * 3), "HSP " + string(hsp), 0.5, 0.5, 0)
-draw_text_transformed(0, 480 - (16 * 4), "YEARNEDHSP " + string(yearnedhsp), 0.5, 0.5, 0)
-draw_text_transformed(0, 480 - (16 * 5), string_upper(global.debugmessage), 0.5, 0.5, 0)
+draw_text(0, 480 - (16 * 1), "state:" + actualstatename + "(" + string(state) + ")")
+draw_text(0, 480 - (16 * 2), "vsp:" + string(vsp))
+draw_text(0, 480 - (16 * 3), "hsp:" + string(hsp))
+draw_text(0, 480 - (16 * 4), "yearnedhsp:" + string(yearnedhsp))
 if (grounded)
-	draw_text_transformed(0, 480 - (16 * 6), "GROUNDED", 0.5, 0.5, 0)
+	actualstatename = "GR✓"
 else
-	draw_text_transformed(0, 480 - (16 * 6), "UNGROUNDED", 0.5, 0.5, 0)
+	actualstatename = "GR✗"
+if (prevgrounded)
+	actualstatename = actualstatename + " PG✓"
+else
+	actualstatename = actualstatename + " PG✗"
+if (slopey)
+	actualstatename = actualstatename + " SL✓"
+else
+	actualstatename = actualstatename + " SL✗"
+if (prevslopey)
+	actualstatename = actualstatename + " PS✓"
+else
+	actualstatename = actualstatename + " PS✗"
+draw_text(0, 480 - (16 * 5), actualstatename) //recycling :3
 draw_set_valign(fa_top)
