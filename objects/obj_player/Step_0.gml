@@ -723,8 +723,7 @@ if (global.char == "Y")
 			image_xscale = facingdirection
 			break;
 		case playerstates.win:
-			if (sprite_index != spr_yaysuu_winb)
-				newsprite = spr_yaysuu_win
+			newsprite = spr_yaysuu_win
 			break;
 		case playerstates.golfstop:
 			newsprite = spr_yaysuu_spinball
@@ -738,8 +737,10 @@ if (global.char == "Y")
 	}
 	sprite_index = newsprite
 	
-	if (sprite_index == spr_yaysuu_jump && image_index == 4) //don't replay the animation. thanks for adding 2 extra useless frame yaysuu!
-		image_index = 2
+	if ((sprite_index == spr_yaysuu_jump || sprite_index == spr_yaysuu_win) && floor(image_index) == image_number-1)
+		image_speed = 0
+	else
+		image_speed = 1
 	
 	if (sprite_index == spr_yaysuu_idle || sprite_index == spr_yaysuu_wait)
 		idletime++
@@ -849,8 +850,7 @@ else if (global.char == "T")
 			image_xscale = facingdirection
 			break;
 		case playerstates.win:
-			if (sprite_index != spr_teddy_winb)
-				newsprite = spr_teddy_win
+			newsprite = spr_teddy_win
 			break;
 		case playerstates.golfstop:
 			newsprite = spr_yaysuu_spinball
@@ -864,8 +864,10 @@ else if (global.char == "T")
 	}
 	sprite_index = newsprite
 	
-	if (sprite_index == spr_teddy_jump && image_index == 5)
-		image_index = 2
+	if ((sprite_index == spr_teddy_jump || sprite_index == spr_teddy_win) && floor(image_index) == image_number-1)
+		image_speed = 0
+	else
+		image_speed = 1
 	
 	if (sprite_index == spr_teddy_idle || sprite_index == spr_teddy_wait)
 		idletime++
