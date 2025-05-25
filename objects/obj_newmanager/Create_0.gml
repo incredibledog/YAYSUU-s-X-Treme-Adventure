@@ -39,6 +39,7 @@ global.inboss = false
 global.levelloadtype = loadtype.menu
 global.inhub = false
 global.globaltimer = 0
+global.debugmessageoffset = 0
 windowtimer = 0
 windowname = ""
 newwindowname = ""

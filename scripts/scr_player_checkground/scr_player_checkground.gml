@@ -5,7 +5,7 @@ function scr_player_checkground(){
 	if (vsp >= 0)
 	{
 		if (vsp == 0)
-			forcecheck = grv
+			forcecheck = checkscale
 		grounded = place_meeting(x, y + vsp + forcecheck, obj_slope)
 		slopey = grounded
 		if (!grounded)

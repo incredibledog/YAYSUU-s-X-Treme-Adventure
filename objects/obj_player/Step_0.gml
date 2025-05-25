@@ -190,7 +190,7 @@ else if (state == playerstates.crouch && newstate == state && (!grounded || !glo
 //going through platform
 if (grounded && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
 {
-	if (place_meeting(x, y + vsp + forcecheck, obj_semisolid_new) && !place_meeting(x, y + vsp + forcecheck, obj_notsemisolid))
+	if (place_meeting(x, y + vsp + checkscale, obj_semisolid_new) && !place_meeting(x, y + vsp + checkscale, obj_notsemisolid))
 	{
 		y += 1
 		grounded = false
@@ -410,7 +410,7 @@ if (hascollision)
             loopprevent++
         }
         if (loopprevent == maxloop)
-            global.debugmessage = "LOOP PREVENT: SLOPE UP SNAP"
+			scr_debugmessage("LOOP PREVENT:SLOPE UP SNAP")
 		else
 		{
 			y = newpos
@@ -434,7 +434,7 @@ if (hascollision)
 			loopprevent++
 		}
 		if (loopprevent == maxloop)
-			global.debugmessage = "LOOP PREVENT: WALLED"
+			scr_debugmessage("LOOP PREVENT:WALLED")
 		else
 		{
 			x = newpos
@@ -453,7 +453,7 @@ if (hascollision)
             loopprevent++
         }
         if (loopprevent == maxloop)
-            global.debugmessage = "LOOP PREVENT: CEILING"
+			scr_debugmessage("LOOP PREVENT:CEILING")
 		else
 		{
 			y = newpos
@@ -492,7 +492,7 @@ if (hascollision)
             loopprevent++
         }
         if (loopprevent == maxloop)
-            global.debugmessage = "LOOP PREVENT: GROUNDING"
+			scr_debugmessage("LOOP PREVENT:GROUNDING")
 		else
 		{
 			y = newpos
@@ -570,7 +570,7 @@ if (hascollision)
             loopprevent++
         }
         if (loopprevent == maxloop)
-            global.debugmessage = "LOOP PREVENT: DIAGONAL CORNER SNAP"
+			scr_debugmessage("LOOP PREVENT:DIAGONAL CORNER SNAP")
 		else
 		{
 			x = newpos
