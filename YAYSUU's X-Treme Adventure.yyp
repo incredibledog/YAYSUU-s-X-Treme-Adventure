@@ -254,6 +254,7 @@
     {"id":{"name":"scr_draw_hitbox","path":"scripts/scr_draw_hitbox/scr_draw_hitbox.yy",},},
     {"id":{"name":"scr_healthsystem","path":"scripts/scr_healthsystem/scr_healthsystem.yy",},},
     {"id":{"name":"scr_levelstart","path":"scripts/scr_levelstart/scr_levelstart.yy",},},
+    {"id":{"name":"scr_player_checkground","path":"scripts/scr_player_checkground/scr_player_checkground.yy",},},
     {"id":{"name":"scr_player_trybounce","path":"scripts/scr_player_trybounce/scr_player_trybounce.yy",},},
     {"id":{"name":"scr_restartlevel","path":"scripts/scr_restartlevel/scr_restartlevel.yy",},},
     {"id":{"name":"scr_roomstart","path":"scripts/scr_roomstart/scr_roomstart.yy",},},

@@ -197,6 +197,7 @@
     {"name":"scr_collectcoins","order":14,"path":"scripts/scr_collectcoins/scr_collectcoins.yy",},
     {"name":"scr_draw_hitbox","order":19,"path":"scripts/scr_draw_hitbox/scr_draw_hitbox.yy",},
     {"name":"scr_levelstart","order":2,"path":"scripts/scr_levelstart/scr_levelstart.yy",},
+    {"name":"scr_player_checkground","order":20,"path":"scripts/scr_player_checkground/scr_player_checkground.yy",},
     {"name":"scr_player_trybounce","order":11,"path":"scripts/scr_player_trybounce/scr_player_trybounce.yy",},
     {"name":"scr_restartlevel","order":15,"path":"scripts/scr_restartlevel/scr_restartlevel.yy",},
     {"name":"scr_roomstart","order":3,"path":"scripts/scr_roomstart/scr_roomstart.yy",},

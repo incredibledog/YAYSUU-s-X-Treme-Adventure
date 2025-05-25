@@ -62,32 +62,7 @@ else if (vsp > maxfallspeed)
 	vsp -= grv
 prevgrounded = grounded
 prevslopey = slopey
-var forcecheck = 0
-if (vsp >= 0)
-{
-	if (vsp == 0)
-		forcecheck = grv
-	grounded = place_meeting(x, y + vsp + forcecheck, obj_slope)
-	slopey = grounded
-	if (!grounded)
-	    grounded = place_meeting(x, y + vsp + forcecheck, obj_playercollision)
-	
-	if (!grounded && prevgrounded)
-	{
-		if (place_meeting(x, (y + vsp + abs(hsp) + 1), obj_slope))
-		{
-			grounded = true
-			slopey = true
-		}
-	}
-	if (!grounded && !slopey && prevslopey)
-		grounded = true
-}
-else
-{
-	grounded = false
-	slopey = false
-}
+scr_player_checkground()
 
 if (state != playerstates.hurt && state != playerstates.dead)
 {
@@ -414,6 +389,7 @@ else
     mask_index = spr_collisionmask
 
 //COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+scr_player_checkground()
 var gotwalled = false
 if (!grounded)
 	slopey = false
