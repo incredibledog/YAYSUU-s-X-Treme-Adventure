@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-image_xscale=0.1
-image_yscale=0.1
-fadeouttimer=120
+
+// Inherit the parent event
+event_inherited();
+popupsprite=spr_iteminvincible

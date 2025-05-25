@@ -2,3 +2,12 @@
 // You can write your code in this editor
 obj_camera.vshakeoffset = 30
 instance_create_depth(x,y,depth,obj_explode)
+with (instance_create_layer(320,416,"gui",obj_itemdefault))
+{
+	sprite_index = other.popupsprite
+	if (sprite_index == spr_itemlife_y || sprite_index == spr_itemlife_t)
+	{
+		audio_pause_sound(global.currentsong)
+		audio_play_sound(snd_extralife,1,false)
+	}
+}

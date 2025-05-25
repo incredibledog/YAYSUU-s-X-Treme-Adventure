@@ -5,3 +5,4 @@ if (global.char == "C")
 	sprite_index=spr_balloonmonitor
 else
 	sprite_index=spr_coinmonitor
+popupsprite=spr_itemcoin

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.22775,
+  "duration":1.2277551,
   "name":"snd_ghostdie",
   "parent":{
     "name":"Sounds",
