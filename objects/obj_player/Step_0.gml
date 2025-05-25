@@ -244,6 +244,7 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 			audio_play_sound(snd_doublejump, 1, false)
 		}
 		djump = false
+		image_index = 0
 	}
 	else
 	{
