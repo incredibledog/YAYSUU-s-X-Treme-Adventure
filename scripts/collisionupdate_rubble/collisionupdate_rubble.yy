@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"collisionupdate_rubble",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"collisionupdate_rubble",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

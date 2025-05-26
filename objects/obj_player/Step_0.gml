@@ -33,7 +33,6 @@ if (move != 0)
 if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed && global.char != "C")
 	move = facingdirection
 
-//grounded checking
 if (inwater)
 {
 	grv = watergrav
@@ -62,6 +61,7 @@ else if (vsp > maxfallspeed)
 	vsp -= grv
 prevgrounded = grounded
 prevslopey = slopey
+scr_updatecollision()
 scr_player_checkground()
 
 if (state != playerstates.hurt && state != playerstates.dead)
@@ -197,7 +197,7 @@ if (grounded && global.key_runp && state = playerstates.crouch && (newstate == s
 		prevgrounded = false
 		audio_play_sound(snd_platfall, 1, false)
 		newstate = playerstates.normal
-		with (instance_place(x, y + vsp + forcecheck, obj_semisolid_new))
+		with (instance_place(x, y + vsp + checkscale, obj_semisolid_new))
 			y = -2763
 	}
 }
@@ -389,6 +389,7 @@ else
     mask_index = spr_collisionmask
 
 //COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+scr_updatecollision()
 scr_player_checkground()
 var gotwalled = false
 if (!grounded)
