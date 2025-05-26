@@ -58,6 +58,10 @@ else
 }
 game_set_speed(global.defaultfps, gamespeed_fps)
 
+global.totalobjectidcount = 100
+while(object_exists(global.totalobjectidcount)) {
+	global.totalobjectidcount++;
+}
 
 if (os_type == os_android)
 	global.inputtype = 3

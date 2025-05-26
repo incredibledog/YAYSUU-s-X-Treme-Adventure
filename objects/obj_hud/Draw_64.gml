@@ -1,5 +1,5 @@
 /// @description Call HUD script
-if global.inlevel && room != room_dev && !global.inhub
+if global.inlevel && !global.inhub
 {
 	if (!instance_exists(obj_stageclear))
 	{
@@ -42,26 +42,29 @@ if global.inlevel && room != room_dev && !global.inhub
 			draw_set_halign(fa_left)
 		}
 		
-		draw_set_font(global.font)
-		if (os_type != os_android)
+		if (!global.showcollision)
 		{
-			if global.char="Y"
-				draw_sprite(spr_yaysuulifeicon,0,32,416)
-			else if global.char="T"
-				draw_sprite(spr_teddylifeicon,0,32,416)
-			else if global.char="C"
-				draw_sprite(spr_cottonlifeicon,0,32,416)
-			draw_text(64,416,global.lives)
-		}
-		else
-		{
-			if global.char="Y"
-				draw_sprite(spr_yaysuulifeicon,0,480,32)
-			else if global.char="T"
-				draw_sprite(spr_teddylifeicon,0,480,32)
-			else if global.char="C"
-				draw_sprite(spr_cottonlifeicon,0,480,32)
-			draw_text(64,416,global.lives)
+			draw_set_font(global.font)
+			if (os_type != os_android)
+			{
+				if global.char="Y"
+					draw_sprite(spr_yaysuulifeicon,0,32,416)
+				else if global.char="T"
+					draw_sprite(spr_teddylifeicon,0,32,416)
+				else if global.char="C"
+					draw_sprite(spr_cottonlifeicon,0,32,416)
+				draw_text(64,416,global.lives)
+			}
+			else
+			{
+				if global.char="Y"
+					draw_sprite(spr_yaysuulifeicon,0,480,32)
+				else if global.char="T"
+					draw_sprite(spr_teddylifeicon,0,480,32)
+				else if global.char="C"
+					draw_sprite(spr_cottonlifeicon,0,480,32)
+				draw_text(64,416,global.lives)
+			}
 		}
 	}
 }

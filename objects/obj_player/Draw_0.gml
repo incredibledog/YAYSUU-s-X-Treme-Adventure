@@ -1,6 +1,7 @@
 if (global.inlevel)
 {
-	scr_draw_hitbox()
+	if (hascollision)
+		scr_draw_hitbox()
 	
 	var drawx
 	var drawy
@@ -23,4 +24,11 @@ if (global.inlevel)
 		draw_sprite_ext(spr_boost, runanimtimer / 60 * 16, drawx, drawy, image_xscale, image_yscale, image_angle, image_blend, image_alpha * damagealpha)
 	if (showarrow)
 		draw_sprite(spr_uparrow, (global.globaltimer / 8) % 4, x, y - 32)
+	if (state == playerstates.debug)
+	{
+		draw_set_font(global.smalloptfont)
+		draw_set_halign(fa_center)
+		draw_text(x, y+32, object_get_name(selecteddebugobject)+ "(" + string(selecteddebugobject) + ")")
+		draw_set_halign(fa_left)
+	}
 }

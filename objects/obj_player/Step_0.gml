@@ -11,14 +11,12 @@ enum playerstates
 	bounce,
 	win,
 	golfstop,
-	launched
+	launched,
+	debug
 }
 
 if (!global.inlevel)
 	return;
-
-if (global.key_start)
-	loadroom(room_trialmenu, loadtype.menu)
 
 if (inbackground)
 {
@@ -65,7 +63,7 @@ prevslopey = slopey
 scr_updatecollision()
 scr_player_checkground()
 
-if (state != playerstates.hurt && state != playerstates.dead)
+if (state != playerstates.hurt && state != playerstates.dead && state != playerstates.debug)
 {
 	if (state == playerstates.crouch || state == playerstates.inactive || state == playerstates.win)
 		wsp = 0
@@ -84,7 +82,7 @@ if (grounded || state == playerstates.golfstop)
 
 var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
 
-if (state != playerstates.dead && state != playerstates.inactive)
+if (state != playerstates.dead && state != playerstates.inactive && state != playerstates.debug)
 {
 	
 if (candodashdo)
@@ -340,7 +338,9 @@ if (runattack)
 	runanimtimer++
 else
 	runanimtimer = -1
-}
+
+} //the skip that dead, inactive and debug do end here
+
 
 //the death fade
 if (state == playerstates.dead)
@@ -367,11 +367,11 @@ else
 	}
 }
 
-if (state != playerstates.dead)
+if (state != playerstates.dead || state != playerstates.debug)
 	state = newstate
 
 //actual movement
-if (state != playerstates.golfstop && state != playerstates.dead)
+if (state != playerstates.golfstop && state != playerstates.dead && state != playerstates.debug)
 {
 	var accel
 	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char == "C" //cotton's gradual run
@@ -391,12 +391,91 @@ if (state != playerstates.golfstop && state != playerstates.dead)
 
 //set mask
 hascollision = true
-if (state == playerstates.dead)
+if (state == playerstates.dead) || (state == playerstates.debug)
     hascollision = false
 else if (state == playerstates.crouch || state == playerstates.slide)
     mask_index = spr_crouchcollisionmask
 else
     mask_index = spr_collisionmask
+
+if (state == playerstates.debug)
+{
+	image_xscale = 1
+	if (global.key_run)
+	{
+		hsp = move * 20
+		vsp = (global.key_down - global.key_up) * 20
+		if (global.key_jumpp)
+		{
+			audio_play_sound(snd_typewriterclick, 1, false)
+			selecteddebugobject--
+			if (selecteddebugobject == -1)
+				selecteddebugobject = global.totalobjectidcount-1
+		}
+		else if (global.key_dashp)
+		{
+			audio_play_sound(snd_balloonpop, 1, false)
+			state = playerstates.normal
+			newstate = playerstates.normal
+		}
+	}
+	else
+	{
+		hsp = move * 6
+		vsp = (global.key_down - global.key_up) * 6
+		if (global.key_jumpp)
+		{
+			audio_play_sound(snd_typewriterclick, 1, false)
+			selecteddebugobject++
+			if (selecteddebugobject == global.totalobjectidcount)
+				selecteddebugobject = 0
+		}
+		else if (global.key_dashp)
+		{
+			audio_play_sound(snd_bang, 1, false)
+			with (instance_create_depth(x, y, depth, selecteddebugobject))
+			{
+				//set default values for certain objects so that you can use them
+				switch (object_index)
+				{
+					case obj_conveyor:
+						conveyorspeed = 2
+						break;
+					case obj_lever:
+					case obj_superbutton:
+						connectedthing = other.previousspawnedobject
+						if (other.previousspawnedobject.object_index == obj_conveyor)
+							modifiervalue = -1
+						break;
+					case obj_movingplatform:
+					case obj_movingplatform_toggled:
+						otherpointx = x + 128
+						otherpointy = y
+						movespeed = 0.02
+						scr_calcplatformdir()
+						break;
+					case obj_devnote:
+					case obj_inleveltext:
+						text = choose("i'm the grass man, oh man!", "lorem pissum", "random text!", "skee... hahaha")
+						break;
+					case obj_hintnew:
+						hintsound = snd_hfail
+						subtitle = "...oops."
+						break;
+					case obj_warp:
+						warproom = room
+						break;
+					case obj_interactwarp:
+						warproom = room
+						warptype = loadtype.nextroom
+						break;
+				}
+				other.previousspawnedobject = id
+			}
+			
+		}
+	}
+}
 
 //COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 scr_updatecollision()
@@ -722,6 +801,14 @@ if (global.char == "Y")
 		case playerstates.launched:
 			newsprite = spr_yaysuu_launched
 			break;
+		case playerstates.debug:
+			newsprite = object_get_sprite(selecteddebugobject)
+			if (newsprite == -1)
+			{
+				newsprite = spr_smalloptionstext
+				image_index = 75
+			}
+			break;
 	}
 	if (newsprite != sprite_index)
 	{
@@ -852,6 +939,14 @@ else if (global.char == "T")
 		case playerstates.launched:
 			newsprite = spr_yaysuu_launched
 			break;
+		case playerstates.debug:
+			newsprite = object_get_sprite(selecteddebugobject)
+			if (newsprite == -1)
+			{
+				newsprite = spr_smalloptionstext
+				image_index = 75
+			}
+			break;
 	}
 	if (newsprite != sprite_index)
 	{
@@ -977,6 +1072,14 @@ else if (global.char == "C")
 			break;
 		case playerstates.launched:
 			newsprite = spr_yaysuu_launched
+			break;
+		case playerstates.debug:
+			newsprite = object_get_sprite(selecteddebugobject)
+			if (newsprite == -1)
+			{
+				newsprite = spr_smalloptionstext
+				image_index = 75
+			}
 			break;
 	}
 	if (newsprite != sprite_index)

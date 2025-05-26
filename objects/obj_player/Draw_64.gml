@@ -42,6 +42,9 @@ switch (state)
 	case playerstates.launched:
 		actualstatename = "launched"
 		break;
+	case playerstates.debug:
+		actualstatename = "debug"
+		break;
 }
 draw_text(0, 480 - (16 * 1), "state:" + actualstatename + "(" + string(state) + ")")
 draw_text(0, 480 - (16 * 2), "vsp:" + string(vsp))

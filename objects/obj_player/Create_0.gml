@@ -64,3 +64,5 @@ damageflash = false
 inwater = false
 whichcollisionsdid = ""
 hitboxcolor = c_lime
+selecteddebugobject = 0
+previousspawnedobject = noone
