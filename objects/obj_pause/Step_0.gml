@@ -52,7 +52,7 @@ if (global.pause)
 					instance_activate_all()
 					break;
 				case 1:
-					if (global.lives == 1 && !global.trial)
+					if (global.lives <= 1 && !global.trial)
 						audio_play_sound(snd_nicetry,1,false)
 					else
 					{
