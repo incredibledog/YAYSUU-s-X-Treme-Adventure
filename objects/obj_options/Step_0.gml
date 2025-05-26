@@ -1,9 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-chos=clamp(chos,1,10)
-volume=clamp(volume,0,1)
-global.sensitivity=clamp(global.sensitivity,0.01,1)
-global.controlalpha=clamp(global.controlalpha,0.01,1)
 if global.key_downp
 {
 	chos++
@@ -14,24 +10,30 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
+chos=clamp(chos,1,10)
 switch chos
 {
 	case 1:
 	if global.key_right
 	{
+		if (global.key_rightp)
+			volume+=0.02
 		volume+=0.01
-		audio_master_gain(volume)
+		audio_master_gain(round(volume / 0.05) * 0.05)
 	}
 	else if global.key_left
 	{
+		if (global.key_rightp)
+			volume-=0.02
 		volume-=0.01
-		audio_master_gain(volume)
+		audio_master_gain(round(volume / 0.05) * 0.05)
 	}
 	else
 	{
 		volume = round(volume / 0.05) * 0.05
 		audio_master_gain(volume)
 	}
+	volume=clamp(volume,0,2)
 	break;
 	case 2:
 	if os_type=os_android && !gamepad_is_connected(0)
@@ -48,6 +50,7 @@ switch chos
 		{
 			global.controlalpha = round(global.controlalpha / 0.05) * 0.05
 		}
+		global.controlalpha=clamp(global.controlalpha,0.01,1)
 	}
 	else {
 		if global.key_right 
@@ -62,6 +65,7 @@ switch chos
 		{
 			global.sensitivity = round(global.sensitivity / 0.05) * 0.05
 		}
+		global.sensitivity=clamp(global.sensitivity,0.01,1)
 	}
 	break;
 	case 3:
