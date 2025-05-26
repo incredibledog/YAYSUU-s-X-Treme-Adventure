@@ -1,0 +1,1 @@
+text = "teddy only path"

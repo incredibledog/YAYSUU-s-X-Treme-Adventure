@@ -1,0 +1,1 @@
+text = "don't have a slope going into a wall or on a dropoff"

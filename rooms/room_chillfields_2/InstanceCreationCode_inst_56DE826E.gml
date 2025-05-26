@@ -1,0 +1,1 @@
+text = "this part is still a bit weird because yaysuu cannot break the rubble by running"
