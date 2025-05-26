@@ -507,6 +507,8 @@
     {"name":"spr_silverblock","order":6,"path":"sprites/spr_silverblock/spr_silverblock.yy",},
     {"name":"spr_silverdebris","order":4,"path":"sprites/spr_silverdebris/spr_silverdebris.yy",},
     {"name":"spr_slope","order":7,"path":"sprites/spr_slope/spr_slope.yy",},
+    {"name":"spr_smallcollisionmask_air","order":22,"path":"sprites/spr_smallcollisionmask_air/spr_smallcollisionmask_air.yy",},
+    {"name":"spr_smallcollisionmask","order":21,"path":"sprites/spr_smallcollisionmask/spr_smallcollisionmask.yy",},
     {"name":"spr_smalloptionstext","order":4,"path":"sprites/spr_smalloptionstext/spr_smalloptionstext.yy",},
     {"name":"spr_sndtestbg","order":29,"path":"sprites/spr_sndtestbg/spr_sndtestbg.yy",},
     {"name":"spr_spawn","order":14,"path":"sprites/spr_spawn/spr_spawn.yy",},

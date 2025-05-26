@@ -35,6 +35,9 @@
     "name":"spr_dashpad",
     "path":"sprites/spr_dashpad/spr_dashpad.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_smallcollisionmask",
+    "path":"sprites/spr_smallcollisionmask/spr_smallcollisionmask.yy",
+  },
   "visible":true,
 }

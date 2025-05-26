@@ -34,6 +34,9 @@
     "name":"spr_yaysuucoin",
     "path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_smallcollisionmask_air",
+    "path":"sprites/spr_smallcollisionmask_air/spr_smallcollisionmask_air.yy",
+  },
   "visible":true,
 }

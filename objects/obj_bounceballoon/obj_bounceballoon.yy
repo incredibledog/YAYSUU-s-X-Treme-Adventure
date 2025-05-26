@@ -38,6 +38,9 @@
     "name":"spr_bounceballoon",
     "path":"sprites/spr_bounceballoon/spr_bounceballoon.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_smallcollisionmask_air",
+    "path":"sprites/spr_smallcollisionmask_air/spr_smallcollisionmask_air.yy",
+  },
   "visible":true,
 }

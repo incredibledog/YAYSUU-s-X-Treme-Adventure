@@ -36,6 +36,9 @@
     "name":"spr_fringlemonitor",
     "path":"sprites/spr_fringlemonitor/spr_fringlemonitor.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_collisionmask",
+    "path":"sprites/spr_collisionmask/spr_collisionmask.yy",
+  },
   "visible":true,
 }

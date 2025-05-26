@@ -586,6 +586,8 @@
     {"id":{"name":"spr_silverdebris","path":"sprites/spr_silverdebris/spr_silverdebris.yy",},},
     {"id":{"name":"spr_sircub","path":"sprites/spr_sircub/spr_sircub.yy",},},
     {"id":{"name":"spr_slope","path":"sprites/spr_slope/spr_slope.yy",},},
+    {"id":{"name":"spr_smallcollisionmask_air","path":"sprites/spr_smallcollisionmask_air/spr_smallcollisionmask_air.yy",},},
+    {"id":{"name":"spr_smallcollisionmask","path":"sprites/spr_smallcollisionmask/spr_smallcollisionmask.yy",},},
     {"id":{"name":"spr_smalloptionstext","path":"sprites/spr_smalloptionstext/spr_smalloptionstext.yy",},},
     {"id":{"name":"spr_sndtestbg","path":"sprites/spr_sndtestbg/spr_sndtestbg.yy",},},
     {"id":{"name":"spr_spawn","path":"sprites/spr_spawn/spr_spawn.yy",},},
