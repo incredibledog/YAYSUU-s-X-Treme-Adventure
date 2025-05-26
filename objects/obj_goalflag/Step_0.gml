@@ -14,7 +14,7 @@ if touchingplayer(x, y) && !touched
 	global.score += global.scoreadd + obj_hud.timebonus + ((global.coins % 100) * 10)
 	if (!global.pal)
 	{
-	ini_open("savedata.ini")
+		ini_open("savedata.ini")
 		if global.score > ini_read_real("records", string(room) + "_score", 0) && !global.inboss
 			ini_write_real("records", string(room) + "_score", global.score)
 		if obj_hud.timer < ini_read_real("records", string(room) + "_time", 359999) && !global.inboss
@@ -24,7 +24,7 @@ if touchingplayer(x, y) && !touched
 }
 if endtimer>0 && touched
 	endtimer--
-else if endtimer=0 && touched && !winning
+else if endtimer==0 && touched && !winning
 {
 	winning=true
 	audio_stop_all()

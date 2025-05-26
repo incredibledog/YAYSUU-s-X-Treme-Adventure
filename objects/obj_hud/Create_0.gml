@@ -1,11 +1,4 @@
 /// @description Variables
-global.hp = 3;
-global.maxhp = 3;
-if room=room_chillfields_boss
-{
-	global.bosshp = 6
-	global.maxbosshp = 6
-}
 hide=false
 timerstring = ""
 timer=0

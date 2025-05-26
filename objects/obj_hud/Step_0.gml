@@ -19,14 +19,10 @@ if (global.inlevel && !global.inhub)
 				timebonus -= 10
 			timebonus=clamp(timebonus,0,3000)
 		}
-		if global.speedrun=true
-		{
+		if global.speedrun
 			timerstring = string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0) + "." + string_format(timer % 60, 2, 0), " ", "0")
-		}
 		else
-		{
 			timerstring = string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0), " ", "0")
-		}
 	}
 	if (global.combo > 1)
 	{
