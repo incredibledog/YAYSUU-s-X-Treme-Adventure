@@ -39,6 +39,9 @@ switch (state)
 	case playerstates.golfstop:
 		actualstatename = "golfstop"
 		break;
+	case playerstates.launched:
+		actualstatename = "launched"
+		break;
 }
 draw_text(0, 480 - (16 * 1), "state:" + actualstatename + "(" + string(state) + ")")
 draw_text(0, 480 - (16 * 2), "vsp:" + string(vsp))
