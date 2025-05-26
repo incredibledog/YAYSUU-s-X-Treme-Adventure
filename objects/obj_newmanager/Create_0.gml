@@ -79,8 +79,5 @@ instance_create_depth(0,0,100,obj_titlecard)
 instance_create_depth(0,0, 100, obj_pause)
 randomize()
 
-global.returntosettings = false
-if (global.inputtype == -1)
-	room_goto(room_setupinput)
-else
-	room_goto(room_idlogo)
+global.prevroom = room_initbruv
+room_goto(room_idlogo)
