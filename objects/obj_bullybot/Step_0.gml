@@ -13,6 +13,7 @@ if (touchingplayer(x,y) && (playerinfront || obj_player.vulnerable) && sprite_in
 	obj_player.newstate = playerstates.launched
 	obj_player.vulnerable = true
 	obj_player.vsp = -14
+	scr_shake(5, false)
 	if (!playerinfront)
 		image_xscale = -image_xscale
 }

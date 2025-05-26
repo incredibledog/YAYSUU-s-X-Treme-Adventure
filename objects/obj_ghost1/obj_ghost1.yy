@@ -37,6 +37,9 @@
     "name":"spr_ghost1",
     "path":"sprites/spr_ghost1/spr_ghost1.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_smallcollisionmask_air",
+    "path":"sprites/spr_smallcollisionmask_air/spr_smallcollisionmask_air.yy",
+  },
   "visible":true,
 }

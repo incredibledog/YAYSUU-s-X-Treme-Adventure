@@ -38,7 +38,7 @@ switch (state)
 				hsp = -3 * image_xscale
 				audio_play_sound(snd_ouchie,1,false)
 				global.bosshp--
-				obj_camera.vshakeoffset = 30
+				scr_shake(30)
 				hasdamaged = true
 				if (global.bosshp == 3) //it gets HARDERS!?
 					idledelay = 100
@@ -167,7 +167,9 @@ switch (state)
 				kablooeyjrtimer--
 			else
 			{
+				var sanke = obj_camera.vshakeoffset;
 				instance_create_depth(x+random_range(-16,16),y+random_range(-16,16),depth-1,obj_explode_jr)
+				obj_camera.vshakeoffset = sanke //negates the shaking obj_explode_jr causes
 				kablooeyjrtimer = 5
 			}
 		}

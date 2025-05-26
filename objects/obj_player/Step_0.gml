@@ -285,7 +285,7 @@ if (ouchies)
 		{
 		    newstate = playerstates.hurt
 			grounded = false
-			obj_camera.vshakeoffset = 30
+			scr_shake(30, false)
 			hurtt = 120
 			vsp = -3
 			yearnedhsp = facingdirection * -3

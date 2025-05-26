@@ -208,6 +208,7 @@
     {"name":"scr_restartlevel","order":15,"path":"scripts/scr_restartlevel/scr_restartlevel.yy",},
     {"name":"scr_roomstart","order":3,"path":"scripts/scr_roomstart/scr_roomstart.yy",},
     {"name":"scr_setlogicobject","order":18,"path":"scripts/scr_setlogicobject/scr_setlogicobject.yy",},
+    {"name":"scr_shake","order":26,"path":"scripts/scr_shake/scr_shake.yy",},
     {"name":"scr_subtitlefont","order":5,"path":"scripts/scr_subtitlefont/scr_subtitlefont.yy",},
     {"name":"scr_updatecollision","order":22,"path":"scripts/scr_updatecollision/scr_updatecollision.yy",},
     {"name":"scr_windowtitle","order":16,"path":"scripts/scr_windowtitle/scr_windowtitle.yy",},

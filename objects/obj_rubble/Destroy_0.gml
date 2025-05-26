@@ -2,7 +2,7 @@
 // You can write your code in this editor
 instance_destroy(mycollision)
 audio_play_sound(breaksound, 1, false, 1, 0, random_range(0.8, 1.2))
-obj_camera.vshakeoffset += 2
+scr_shake(2, true)
 repeat (3)
 {
 	with(instance_create_depth(x, y, depth, obj_rubbledebris))
