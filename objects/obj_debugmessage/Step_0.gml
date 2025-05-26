@@ -4,3 +4,5 @@ delay--
 image_alpha = clamp(delay / 60, 0, 1)
 if (delay == 0)
 	instance_destroy()
+if (x < 640)
+	x++

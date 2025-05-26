@@ -10,7 +10,8 @@ enum playerstates
 	slide,
 	bounce,
 	win,
-	golfstop
+	golfstop,
+	launched
 }
 
 if (!global.inlevel)
@@ -261,6 +262,15 @@ if (state == playerstates.golfstop && newstate == state)
 	}
 }
 
+//launched
+if (state == playerstates.launched && newstate == state)
+{
+	if (grounded)
+	{
+		newstate = playerstates.normal
+	}
+}
+
 //ow! ow! that hurts! that hurts!
 if (ouchies)
 {
@@ -323,7 +333,7 @@ else
 
 //vulnerability
 var runattack = (abs(hsp) > rundamagespeed && sign(hsp) == sign(yearnedhsp) && state == playerstates.normal)
-vulnerable = !(state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || global.inv == 1 || runattack || ((state == playerstates.bounce || newstate == playerstates.bounce) && global.char == "C"))
+vulnerable = !(global.inv == 1 || (newstate != playerstates.launched && (state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || runattack || ( (state == playerstates.bounce || newstate == playerstates.bounce) && global.char == "C")) ))
 if (vulnerable)
 	global.combo = 0
 if (runattack)
@@ -709,6 +719,9 @@ if (global.char == "Y")
 		case playerstates.golfstop:
 			newsprite = spr_yaysuu_spinball
 			break;
+		case playerstates.launched:
+			newsprite = spr_yaysuu_launched
+			break;
 	}
 	if (newsprite != sprite_index)
 	{
@@ -836,6 +849,9 @@ else if (global.char == "T")
 		case playerstates.golfstop:
 			newsprite = spr_yaysuu_spinball
 			break;
+		case playerstates.launched:
+			newsprite = spr_yaysuu_launched
+			break;
 	}
 	if (newsprite != sprite_index)
 	{
@@ -958,6 +974,9 @@ else if (global.char == "C")
 		case playerstates.golfstop:
 			newsprite = spr_cotton_ball
 			image_xscale = 1
+			break;
+		case playerstates.launched:
+			newsprite = spr_yaysuu_launched
 			break;
 	}
 	if (newsprite != sprite_index)
