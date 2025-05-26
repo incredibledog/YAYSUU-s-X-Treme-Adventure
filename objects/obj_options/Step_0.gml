@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (obj_fadeblack.fading)
+	return
+
 if global.key_downp
 {
 	chos++
@@ -133,7 +136,6 @@ switch chos
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_confirm,1,false)
 			loadroom(room_mainmenu, false)
-			instance_destroy()
 		}
 	}
 	break;
@@ -153,7 +155,6 @@ switch chos
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_nahnvm,1,false)
 			loadroom(room_mainmenu, false)
-			instance_destroy()
 		}
 	}
 	break;
@@ -172,5 +173,4 @@ if global.key_dashp
 	audio_stop_sound(mus_options)
 	audio_play_sound(snd_nahnvm,1,false)
 	loadroom(room_mainmenu, false)
-	instance_destroy()
 }
