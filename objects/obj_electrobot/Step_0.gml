@@ -38,7 +38,7 @@ switch (state)
 				hsp = -3 * image_xscale
 				audio_play_sound(snd_ouchie,1,false)
 				global.bosshp--
-				scr_shake(30)
+				scr_shake(30, false)
 				hasdamaged = true
 				if (global.bosshp == 3) //it gets HARDERS!?
 					idledelay = 100
@@ -76,6 +76,11 @@ switch (state)
 			state = electrobotstates.thunder
 			y = -48
 		}
+		else if (vsp >= 0)
+		{
+			vsp = 0
+			y -= 8
+		}
 		break;
 	case electrobotstates.thunder:
 		vsp = 0
@@ -109,7 +114,7 @@ switch (state)
 			attackcount--
 			grounded = false
 		}
-		if (attackcount == 0 && grounded)
+		if (attackcount == 0 && grounded) || (attackcount < -1)
 		{
 			delay = idledelay
 			state = electrobotstates.idle
