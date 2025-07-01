@@ -1,7 +1,7 @@
 /// @description Call HUD script
 if global.inlevel && !global.inhub
 {
-	if (!instance_exists(obj_stageclear))
+	if (!instance_exists(obj_stageclear)) && (!instance_exists(obj_gameover))
 	{
 		draw_set_font(global.font)
 		draw_set_halign(fa_left)

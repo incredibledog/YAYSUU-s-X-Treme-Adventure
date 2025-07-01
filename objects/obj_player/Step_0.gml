@@ -347,10 +347,13 @@ if (state == playerstates.dead)
 {
 	if (!audio_is_playing(mus_dead) && !obj_fadeblack.fading)
 	{
-	    if (global.lives == 0)
-		    loadroom(room_gameover, loadtype.menu)
+	    if (global.lives > 0)
+			loadroom(room, loadtype.respawn)
 		else
-		    loadroom(room, loadtype.respawn)
+		    if !instance_exists(obj_gameover)
+			{
+				instance_create_depth(0,0,depth,obj_gameover)
+			}
 	}
 }
 else

@@ -15,4 +15,5 @@ else if global.char="T"
 	sprite_index=spr_cottongameover
 	gameoversong=mus_gameover_c
 }
+image_alpha=0
 audio_play_sound(gameoversong,1,false)
