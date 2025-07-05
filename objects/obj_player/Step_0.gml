@@ -29,7 +29,7 @@ inwater = place_meeting(x, y, obj_water)
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
-if (global.key_run && state == playerstates.normal && abs(hsp) > walkspeed && global.char != "C")
+if (global.key_run && state == playerstates.normal && global.char != "C")
 	move = facingdirection
 
 if (inwater)
@@ -122,9 +122,9 @@ if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp)
 
 //stomp
 if ((!grounded) && global.key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
-{
-	if (vsp < 10)
-		vsp = 10
+{	
+	vsp = 15
+	yearnedhsp = 15
     audio_play_sound(snd_stomp, 1, false)
 	newstate = playerstates.stomp
 }
@@ -145,7 +145,8 @@ else if (state == playerstates.bounce && newstate == state)
 		newstate = playerstates.normal
 	else if (global.key_downp)
 	{
-		vsp += 5
+		vsp = 15
+		yearnedhsp = 15
 		audio_play_sound(snd_stomp, 1, false)
 		newstate = playerstates.stomp
 	}

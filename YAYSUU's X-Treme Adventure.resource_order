@@ -465,6 +465,7 @@
     {"name":"spr_mysticmanor1scroll","order":4,"path":"sprites/spr_mysticmanor1scroll/spr_mysticmanor1scroll.yy",},
     {"name":"spr_mysticmanorbg_1","order":8,"path":"sprites/spr_mysticmanorbg_1/spr_mysticmanorbg_1.yy",},
     {"name":"spr_mysticmanorbg_2","order":9,"path":"sprites/spr_mysticmanorbg_2/spr_mysticmanorbg_2.yy",},
+    {"name":"spr_mysticmanorbg_city","order":11,"path":"sprites/spr_mysticmanorbg_city/spr_mysticmanorbg_city.yy",},
     {"name":"spr_mysticmanortiles","order":1,"path":"sprites/spr_mysticmanortiles/spr_mysticmanortiles.yy",},
     {"name":"spr_next","order":2,"path":"sprites/spr_next/spr_next.yy",},
     {"name":"spr_nocontroller","order":41,"path":"sprites/spr_nocontroller/spr_nocontroller.yy",},
