@@ -24,6 +24,20 @@ if (global.inlevel && !global.inhub)
 		else
 			timerstring = string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0), " ", "0")
 	}
+	if (global.combo != 0)
+	{
+		if (global.combo > 1) && (global.combo < 3)
+		{
+			combosprite = spr_good
+		}
+		else if (global.combo > 3) {
+			combosprite = spr_cool
+		}
+	}
+	else
+	{
+		combosprite = combosprite
+	}
 	if (global.combo > 1)
 	{
 		comboshowtimer = 120

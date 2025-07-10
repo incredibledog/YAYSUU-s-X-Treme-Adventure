@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.key_start && global.inlevel && obj_player.state!=playerstates.dead && !instance_exists(obj_gameover)
+if global.key_start && global.inlevel && !instance_exists(obj_gameover)
 {
 	global.pause = !global.pause
 	if global.pause

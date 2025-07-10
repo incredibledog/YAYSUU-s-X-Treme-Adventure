@@ -29,7 +29,7 @@ inwater = place_meeting(x, y, obj_water)
 move = (global.key_right - global.key_left)
 if (move != 0)
 	facingdirection = move
-if (global.key_run && state == playerstates.normal && global.char != "C")
+if (global.key_run && state == playerstates.normal && !global.key_down && global.char != "C")
 	move = facingdirection
 
 if (inwater)
@@ -153,7 +153,7 @@ else if (state == playerstates.bounce && newstate == state)
 }
 
 //dash run
-if (global.key_runp && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C" && !inwater)
+if (global.key_runp && !global.key_down && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C" && !inwater)
 {
 	yearnedhsp = facingdirection * runspeed
 	if (abs(hsp) < (yearnedhsp) || sign(hsp) != sign(yearnedhsp)) //you will not slow down if you start a run

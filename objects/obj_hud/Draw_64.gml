@@ -32,13 +32,12 @@ if global.inlevel && !global.inhub
 			health_system_hearts(spr_pizza, global.hp, global.maxhp, 32, healthheight)
 		if (comboshowtimer > 0)
 		{
-			draw_set_halign(fa_right)
-			if (global.combo > 1)
-				draw_text_color(608, 32, string(showncombo) + " COMBO!", c_yellow, c_yellow, c_yellow, c_yellow, 1)
-			else if (comboshowtimer > 60)
-				draw_text_color(608, 32, string(showncombo) + " COMBO!", c_red, c_red, c_red, c_red, 1)
-			else
-				draw_text_color(608, 32, string(showncombo) + " COMBO!", c_red, c_red, c_red, c_red, comboshowtimer / 60)
+			if (global.combo>1) || (comboshowtimer>60) {
+				draw_sprite(combosprite,0,512,64)
+			}
+			else if (comboshowtimer <= 60) {
+				draw_sprite_ext(combosprite,0,512,64,1,1,0,c_white,comboshowtimer/60)
+			}
 			draw_set_halign(fa_left)
 		}
 		

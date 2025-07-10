@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"snd_tutorialvo4_y",
+  "%Name":"snd_tutorialvo7",
   "audioGroupId":{
-    "name":"voicelines",
-    "path":"audiogroups/voicelines",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.3701587,
-  "name":"snd_tutorialvo4_y",
+  "duration":4.7949204,
+  "name":"snd_tutorialvo7",
   "parent":{
     "name":"stagevo",
     "path":"folders/Sounds/stagevo.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_tutorialvo4_y.mp3",
+  "soundFile":"snd_tutorialvo7.mp3",
   "type":0,
   "volume":1.0,
 }

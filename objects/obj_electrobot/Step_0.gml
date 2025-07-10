@@ -1,5 +1,7 @@
 /// @description Insert description here
-// You can write your code in this editor
+// TODO: WHY IS THE STATE FOR ELECTROBOT FLASHING AFTER BEING HIT GONE. THAT MADE IT SO THAT 
+// IF YOU DAMAGED ELECTROBOT, YOU HAD A BRIEF GRACE PERIOD TO GET OUT OF THE WAY OF 
+// ELECTROBOT'S DAMAGE TOUCH. WHAT! WHAT!! WHAT!!!
 enum electrobotstates
 {
     idle,

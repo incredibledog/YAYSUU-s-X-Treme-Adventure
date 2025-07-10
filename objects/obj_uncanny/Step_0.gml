@@ -12,25 +12,19 @@ if (vsp != 0)
 	y += vsp
 	hsp -= sign(vsp)
 }
-if (place_meeting(x,y+obj_player.vsp,obj_player)) && !global.jumpscare
+if (place_meeting(x,y,obj_player)) && !global.jumpscare
 {
-	if (obj_player.vulnerable)
+	if (global.inv=false)
 	{
 		global.jumpscare=true
 		global.injumpscare = true;
 		audio_play_sound(snd_jumpscare,1,false)
-		obj_player.state = playerstates.inactive
-	}
-	else
-	{
-		hsp = obj_player.hsp
-		vsp = obj_player.vsp
-		obj_player.hsp = 0
-		obj_player.vsp = 0
+		audio_stop_sound(global.currentsong)
 	}
 }
 else if global.jumpscare && !audio_is_playing(snd_jumpscare)
 {
 	obj_player.ouchies = true
+	obj_player.deathies = true
 	global.jumpscare = false
 }
