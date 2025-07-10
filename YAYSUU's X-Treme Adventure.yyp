@@ -252,6 +252,7 @@
     {"id":{"name":"collisionupdate_semisolid","path":"scripts/collisionupdate_semisolid/collisionupdate_semisolid.yy",},},
     {"id":{"name":"draw_sprite_tileblock","path":"scripts/draw_sprite_tileblock/draw_sprite_tileblock.yy",},},
     {"id":{"name":"loadroom","path":"scripts/loadroom/loadroom.yy",},},
+    {"id":{"name":"movingobject_start","path":"scripts/movingobject_start/movingobject_start.yy",},},
     {"id":{"name":"preloadactualroom","path":"scripts/preloadactualroom/preloadactualroom.yy",},},
     {"id":{"name":"scr_bosshealth","path":"scripts/scr_bosshealth/scr_bosshealth.yy",},},
     {"id":{"name":"scr_bossstart","path":"scripts/scr_bossstart/scr_bossstart.yy",},},
