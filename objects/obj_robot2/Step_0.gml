@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+movingobject_start()
 if (image_xscale == 1)
 	spotted = obj_player.x == (clamp(obj_player.x, x, x + 384))
 else
@@ -34,3 +35,4 @@ else
 	sprite_index=spr_robot2
 }
 event_inherited()
+movingobject_end()

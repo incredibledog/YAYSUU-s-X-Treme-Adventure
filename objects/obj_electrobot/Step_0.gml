@@ -13,8 +13,8 @@ enum electrobotstates
 	fuckingdead
 }
 
-vsp += grv
-grounded = place_meeting(x, y + vsp, obj_collision)
+
+movingobject_start()
 
 switch (state)
 {
@@ -228,3 +228,4 @@ if (sprite_index == spr_electrobot_jump && image_index == 6)
 	image_index = 2
 
 event_inherited()
+movingobject_end()
