@@ -16,18 +16,22 @@ switch (chos)
 	case 1:
 		x=122
 		y=118
+		menustring="Experience the story of YAYSUU's X-Treme Adventure. "
 		break
 	case 2:
 		x=158
 		y=182
+		menustring="Go for a highscore or a record time in Trial Mode! "
 		break
 	case 3:
 		x=194
 		y=246
+		menustring="Tweak your experience to your liking. "
 		break
 	case 4:
 		x=230
 		y=310
+		menustring="Access cheats, and other such extra doodads! "
 		break
 }
 if (global.key_jumpp || global.key_start) && selected=false
@@ -61,8 +65,12 @@ if (global.key_jumpp || global.key_start) && selected=false
 			audio_play_sound(snd_confirm,1,false)
 			break
 		case 4:
-			audio_stop_sound(snd_nicetry)
-			audio_play_sound(snd_nicetry,1,false)
+			nextroom=room_extras
+			image_alpha=1
+			image_speed=1
+			delay=60 
+			selected=true
+			audio_play_sound(snd_confirm,1,false)
 			break
 	}
 }

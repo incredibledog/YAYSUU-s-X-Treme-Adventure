@@ -163,15 +163,4 @@ if room=room_levelselect
 {
 	draw_text(x,y,"Press 1 for Chill fields stage 1\nPress 2 for Tutorial Stage\nPress 3 for Chill fields stage 2")
 }
-if room=room_soundtest
-{
-	if !gamepad_is_connected(0)
-	{
-		draw_text(x,y,string("Welcome to sound test \n") + string(obj_sndtest.sndname) + string("\nPress left or right to cycle \nZ to play \nX to stop \nC to leave"))
-	}
-	if gamepad_is_connected(0)
-	{
-		draw_text(x,y,string("Welcome to sound test \n") + string(obj_sndtest.sndname) + string("\nPress left or right to cycle \nA to play \nB to stop \nX to leave"))
-	}
-}
 draw_set_font(global.font)

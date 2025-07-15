@@ -44,5 +44,5 @@ with (obj_fadeblack)
 
 draw_set_valign(fa_top)
 draw_set_font(global.subtitlefont)
-if (windowpos != 1)
+if (windowpos != 1) && global.inlevel=true
 	draw_text_yxa(0, windowpos*windowpos*-32, windowname, "lgray", true)

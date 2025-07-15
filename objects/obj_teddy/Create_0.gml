@@ -14,7 +14,17 @@ dieded = false;
 vulnerable = true;
 hurtt = 0;
 winning = false;
-sprite_index = spr_teddy_idle
+followingqueue=ds_queue_create()
+x=obj_player.x-obj_player.image_xscale*64
+yearnedx=x
+yearnedy=y
+if global.char="Y"
+{
+	sprite_index = spr_teddy_idle
+}
+else {
+	sprite_index = spr_yaysuu_idle
+}
 global.hp=3
 
 

@@ -3,7 +3,10 @@
 x=obj_player.x
 y=obj_player.y
 depth=obj_player.depth-1
-//if !audio_is_paused
+if !audio_is_paused(global.currentsong) && audio_is_playing(mus_invincibility)
+{
+	audio_pause_sound(global.currentsong)
+}
 if trailtimer>0
 	trailtimer--
 else

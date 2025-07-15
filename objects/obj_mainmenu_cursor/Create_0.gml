@@ -11,10 +11,14 @@ switch (global.prevroom)
 	case room_options:
 		chos=3
 		break
+	case room_extras:
+		chos=4
+		break
 }
 image_speed=0
 selected=false
 delay=0
+menustring="TEST STRING!! "
 if os_type=os_android && !gamepad_is_connected(0)
 {
 	image_alpha=0
