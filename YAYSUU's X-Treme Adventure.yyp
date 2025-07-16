@@ -210,6 +210,7 @@
     {"id":{"name":"obj_subtitle","path":"objects/obj_subtitle/obj_subtitle.yy",},},
     {"id":{"name":"obj_superbutton","path":"objects/obj_superbutton/obj_superbutton.yy",},},
     {"id":{"name":"obj_teddy","path":"objects/obj_teddy/obj_teddy.yy",},},
+    {"id":{"name":"obj_teddy2","path":"objects/obj_teddy2/obj_teddy2.yy",},},
     {"id":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},},
     {"id":{"name":"obj_titlecard","path":"objects/obj_titlecard/obj_titlecard.yy",},},
     {"id":{"name":"obj_trialbutton","path":"objects/obj_trialbutton/obj_trialbutton.yy",},},

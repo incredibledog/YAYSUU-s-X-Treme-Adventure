@@ -155,6 +155,7 @@
     {"name":"obj_subtitle","order":3,"path":"objects/obj_subtitle/obj_subtitle.yy",},
     {"name":"obj_superbutton","order":5,"path":"objects/obj_superbutton/obj_superbutton.yy",},
     {"name":"obj_teddy","order":1,"path":"objects/obj_teddy/obj_teddy.yy",},
+    {"name":"obj_teddy2","order":3,"path":"objects/obj_teddy2/obj_teddy2.yy",},
     {"name":"obj_text","order":5,"path":"objects/obj_text/obj_text.yy",},
     {"name":"obj_titlecard","order":2,"path":"objects/obj_titlecard/obj_titlecard.yy",},
     {"name":"obj_trialbutton","order":2,"path":"objects/obj_trialbutton/obj_trialbutton.yy",},
