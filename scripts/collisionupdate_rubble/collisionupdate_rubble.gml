@@ -32,9 +32,4 @@ function collisionupdate_rubble(){
 		checkoffsetx = 0
 		checkoffsety = obj_player.vsp * 2
 	}
-	
-	if hascollision
-		mycollision.y = y
-	else
-		mycollision.y = -2763
 }
