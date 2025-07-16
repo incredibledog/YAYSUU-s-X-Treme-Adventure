@@ -1,5 +1,6 @@
 /// @description he waddles
 // You can write your code in this editor
+movingobject_start()
 if abs(hsp) <= movespeed
 	hsp = movespeed * image_xscale
 
@@ -12,4 +13,5 @@ if (hsp != 0)
 			hsp = movespeed * image_xscale
 	}
 }
+movingobject_end()
 event_inherited()

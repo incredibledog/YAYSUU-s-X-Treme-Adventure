@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+movingobject_start()
+
 if (image_xscale == 1)
 	playerinfront = obj_player.x > x
 else
@@ -18,4 +20,5 @@ if (touchingplayer(x,y) && (playerinfront || obj_player.vulnerable) && sprite_in
 		image_xscale = -image_xscale
 }
 
+movingobject_end()
 event_inherited()

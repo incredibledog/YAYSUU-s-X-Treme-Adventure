@@ -14,4 +14,3 @@ if touchingplayer(x, y)
 		}
 	}
 }
-event_inherited()
