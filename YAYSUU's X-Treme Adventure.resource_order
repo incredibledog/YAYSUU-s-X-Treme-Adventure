@@ -201,6 +201,7 @@
     {"name":"collisionupdate_semisolid","order":23,"path":"scripts/collisionupdate_semisolid/collisionupdate_semisolid.yy",},
     {"name":"draw_sprite_tileblock","order":12,"path":"scripts/draw_sprite_tileblock/draw_sprite_tileblock.yy",},
     {"name":"loadroom","order":8,"path":"scripts/loadroom/loadroom.yy",},
+    {"name":"localized","order":29,"path":"scripts/localized/localized.yy",},
     {"name":"movingobject_end","order":28,"path":"scripts/movingobject_end/movingobject_end.yy",},
     {"name":"movingobject_start","order":27,"path":"scripts/movingobject_start/movingobject_start.yy",},
     {"name":"preloadactualroom","order":10,"path":"scripts/preloadactualroom/preloadactualroom.yy",},

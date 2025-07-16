@@ -29,21 +29,21 @@ if (changedlevel)
 		case 0:
 			currentlevel=room_tutorial
 			endlevel=room_tutorial
-			lvlname="Tutorial Stage"
+			lvlname=localized("Tutorial Stage", "Tutorial Level")
 			sprname=spr_tutorialscroll
 			//newmusic = audio_play_sound(mus_trialmenu_t,1,true)
 			break;
 		case 1:
 			currentlevel=room_chillfields_1
 			endlevel=room_chillfields_1
-			lvlname="Chill Fields Stage 1"
+			lvlname=localized("Chill Fields Stage 1", "Kalme Heuvels Level 1")
 			sprname=spr_chillfields1scroll
 			//newmusic = audio_play_sound(mus_trialmenu_cf1,1,true)
 			break;
 		case 2:
 			currentlevel=room_chillfields_2
 			endlevel=room_chillfields_2d
-			lvlname="Chill Fields Stage 2"
+			lvlname=localized("Chill Fields Stage 1", "Kalme Heuvels Level 2")
 			sprname=spr_chillfields2scroll
 			//newmusic = audio_play_sound(mus_trialmenu_cf2,1,true)
 			break;
@@ -57,7 +57,7 @@ if (changedlevel)
 		case 4:
 			currentlevel=room_mysticmanor_1
 			endlevel=room_mysticmanor_1
-			lvlname="Mystic Manor Stage 1"
+			lvlname=localized("Mystic Manor Stage 1", "Mystieke huis Level 1")
 			sprname=spr_mysticmanor1scroll
 			//newmusic = audio_play_sound(mus_trialmenu_mm1,1,true)
 			break;
@@ -71,7 +71,7 @@ if (changedlevel)
 		case 6:
 			currentlevel=room_dev
 			endlevel=room_dev
-			lvlname="Fun Dev Room!"
+			lvlname=localized("Fun Dev Room!", "Leuke Ontwikkel Kamer!")
 			sprname=spr_devroomscroll
 			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			break;
