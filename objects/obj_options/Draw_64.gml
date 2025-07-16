@@ -8,18 +8,18 @@ if (chos == 1)
 {
 	var roundedvolume = round(volume / 0.05) * 0.05
 	var volumestring = ""
-	if (roundedvolume == 0)
-		volumestring = "SOUND CAPABILITY DEACTIVATED"
+	if (roundedvolume == 0 || roundedvolume == 2)
+		volumestring = "i am deaf incarnate!"
 	else if (roundedvolume < 0.4)
-		volumestring = "SOUND CAPABILITY QUIET"
+		volumestring = "i'm too sensitive for sound"
 	else if (roundedvolume < 0.8)
-		volumestring = "SOUND CAPABILITY REDUCED"
+		volumestring = "hey, not too loud"
 	else if (roundedvolume < 1.2)
-		volumestring = "SOUND CAPABILITY NORMAL"
+		volumestring = "hear me plenty"
 	else if (roundedvolume < 1.6)
-		volumestring = "SOUND CAPABILITY INCREASED"
+		volumestring = "ultra-volume"
 	else
-		volumestring = "SOUND CAPABILITY BLARING"
+		volumestring = "my ear!"
 	draw_set_font(global.smalloptfont)
 	draw_text(32,80,volumestring)
 }
