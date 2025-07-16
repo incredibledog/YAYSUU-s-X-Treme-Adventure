@@ -37,8 +37,11 @@ if global.inlevel && obj_player.state != playerstates.dead && obj_player.state !
 	}
 }
 
-x = clamp(x, 320, (room_width - 320))
-y = clamp(y, 240, (room_height - 240))
+if (obj_player.state != playerstates.debug)
+{
+	x = clamp(x, 320, (room_width - 320))
+	y = clamp(y, 240, (room_height - 240))
+}
 
 actualcamx = x
 actualcamy = y
@@ -75,8 +78,11 @@ if vshakeoffset > 0
 
 actualcamx = round(actualcamx)
 actualcamy = round(actualcamy + (vshakeoffset * vwobble))
-actualcamx = clamp(actualcamx, 320, (room_width - 320))
-actualcamy = clamp(actualcamy, 240, (room_height - 240))
+if (obj_player.state != playerstates.debug)
+{
+	actualcamx = clamp(actualcamx, 320, (room_width - 320))
+	actualcamy = clamp(actualcamy, 240, (room_height - 240))
+}
 
 deltax -= actualcamx
 deltax *= -1

@@ -70,4 +70,3 @@ else
 	else
 		playertouching = false
 }
-event_inherited()

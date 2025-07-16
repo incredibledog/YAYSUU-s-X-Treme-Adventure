@@ -176,6 +176,7 @@
     {"id":{"name":"obj_othercollision","path":"objects/obj_othercollision/obj_othercollision.yy",},},
     {"id":{"name":"obj_p_layer1","path":"objects/obj_p_layer1/obj_p_layer1.yy",},},
     {"id":{"name":"obj_p_layer2","path":"objects/obj_p_layer2/obj_p_layer2.yy",},},
+    {"id":{"name":"obj_parallax","path":"objects/obj_parallax/obj_parallax.yy",},},
     {"id":{"name":"obj_pause","path":"objects/obj_pause/obj_pause.yy",},},
     {"id":{"name":"obj_physicstest","path":"objects/obj_physicstest/obj_physicstest.yy",},},
     {"id":{"name":"obj_pizzamonitor","path":"objects/obj_pizzamonitor/obj_pizzamonitor.yy",},},

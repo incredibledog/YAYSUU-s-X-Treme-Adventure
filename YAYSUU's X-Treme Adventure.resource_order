@@ -123,6 +123,7 @@
     {"name":"obj_optionsbutton","order":3,"path":"objects/obj_optionsbutton/obj_optionsbutton.yy",},
     {"name":"obj_othercollision","order":50,"path":"objects/obj_othercollision/obj_othercollision.yy",},
     {"name":"obj_p_layer1","order":1,"path":"objects/obj_p_layer1/obj_p_layer1.yy",},
+    {"name":"obj_parallax","order":2,"path":"objects/obj_parallax/obj_parallax.yy",},
     {"name":"obj_pause","order":6,"path":"objects/obj_pause/obj_pause.yy",},
     {"name":"obj_physicstest","order":3,"path":"objects/obj_physicstest/obj_physicstest.yy",},
     {"name":"obj_pizzamonitor","order":1,"path":"objects/obj_pizzamonitor/obj_pizzamonitor.yy",},
