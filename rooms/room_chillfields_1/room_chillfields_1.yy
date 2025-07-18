@@ -319,7 +319,6 @@
     {"name":"inst_706FFCEB","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
     {"name":"inst_2ACC9B38","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
     {"name":"inst_1B77DCA0","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
-    {"name":"inst_2C45103D","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -652,7 +651,6 @@
         {"$GMRInstance":"v2","%Name":"inst_706FFCEB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_706FFCEB","objectId":{"name":"obj_pizzamonitor","path":"objects/obj_pizzamonitor/obj_pizzamonitor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":7104.0,"y":1472.0,},
         {"$GMRInstance":"v2","%Name":"inst_2ACC9B38","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2ACC9B38","objectId":{"name":"obj_seecret","path":"objects/obj_seecret/obj_seecret.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":4.0,"x":9120.0,"y":1312.0,},
         {"$GMRInstance":"v2","%Name":"inst_1B77DCA0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1B77DCA0","objectId":{"name":"obj_devnote","path":"objects/obj_devnote/obj_devnote.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2464.0,"y":800.0,},
-        {"$GMRInstance":"v2","%Name":"inst_2C45103D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2C45103D","objectId":{"name":"obj_teddy","path":"objects/obj_teddy/obj_teddy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":1280.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"tileset","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tileset","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":48,"SerialiseWidth":384,"TileCompressedData":[
           -20,-2147483648,-242,0,-94,-2147483648,-6,7,-6,0,1,1,-15,7,-20,-2147483648,-242,0,-94,-2147483648,-6,
