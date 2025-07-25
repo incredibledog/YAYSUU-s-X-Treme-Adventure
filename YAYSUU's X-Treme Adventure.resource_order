@@ -48,6 +48,7 @@
     {"name":"obj_bounceballoon","order":40,"path":"objects/obj_bounceballoon/obj_bounceballoon.yy",},
     {"name":"obj_bullybot","order":18,"path":"objects/obj_bullybot/obj_bullybot.yy",},
     {"name":"obj_camera","order":8,"path":"objects/obj_camera/obj_camera.yy",},
+    {"name":"obj_cheats","order":24,"path":"objects/obj_cheats/obj_cheats.yy",},
     {"name":"obj_checkpoint","order":10,"path":"objects/obj_checkpoint/obj_checkpoint.yy",},
     {"name":"obj_chrselect_back","order":3,"path":"objects/obj_chrselect_back/obj_chrselect_back.yy",},
     {"name":"obj_chrselect_cotton","order":4,"path":"objects/obj_chrselect_cotton/obj_chrselect_cotton.yy",},

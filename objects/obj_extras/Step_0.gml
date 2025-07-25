@@ -33,7 +33,11 @@ switch chos
 	// TODO: MUSEUM GOES HERE... FOR CLICKTEAM VERSIONS OF LEVELS AND OTHER SUCH OLD MATERIAL LIKE JADE GULLY
 	break;
 	case 4:
-	// TODO: CHEATS GO HERE... HEY! HERE'S A FUTURE OPPORTUNITY TO ADD FUNNY GAMEPLAY TWEAKS TO THE REPO!
+	if global.key_jumpp
+	{
+		instance_deactivate_object(obj_extras)
+		instance_create_depth(x,y,depth,obj_cheats)
+	}
 	break;
 	case 5:
 	// TODO: LISTEN I RAN OUT OF IDEAS 

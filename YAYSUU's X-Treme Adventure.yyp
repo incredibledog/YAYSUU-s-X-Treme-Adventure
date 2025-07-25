@@ -91,6 +91,7 @@
     {"id":{"name":"obj_bounceballoon","path":"objects/obj_bounceballoon/obj_bounceballoon.yy",},},
     {"id":{"name":"obj_bullybot","path":"objects/obj_bullybot/obj_bullybot.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"obj_cheats","path":"objects/obj_cheats/obj_cheats.yy",},},
     {"id":{"name":"obj_checkpoint","path":"objects/obj_checkpoint/obj_checkpoint.yy",},},
     {"id":{"name":"obj_chrselect_back","path":"objects/obj_chrselect_back/obj_chrselect_back.yy",},},
     {"id":{"name":"obj_chrselect_cotton","path":"objects/obj_chrselect_cotton/obj_chrselect_cotton.yy",},},
