@@ -24,6 +24,10 @@ if keyboard_check_pressed(vk_enter)
 		global.voicelines=true
 		keyboard_string=""
 		break;
+		case "skibiditoilet":
+		audio_play_sound(snd_confirm,1,false)
+		rewardstring="This doesn't do anything yet. But per the request of Fazmade..."
+		keyboard_string=""
 		case "":
 		audio_play_sound(snd_nicetry,1,false)
 		rewardstring="Please enter in a cheat."
