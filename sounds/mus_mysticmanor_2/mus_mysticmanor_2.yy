@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"mus_chillfields_2",
+  "%Name":"mus_mysticmanor_2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":96.00719,
-  "name":"mus_chillfields_2",
+  "duration":153.62718,
+  "name":"mus_mysticmanor_2",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_chillfields_2.mp3",
+  "soundFile":"mus_mysticmanor_2.mp3",
   "type":0,
-  "volume":0.5,
+  "volume":0.6,
 }

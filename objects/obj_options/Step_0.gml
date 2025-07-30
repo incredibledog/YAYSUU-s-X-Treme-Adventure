@@ -13,7 +13,7 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-chos=clamp(chos,1,10)
+chos=clamp(chos,1,11)
 switch chos
 {
 	case 1:
@@ -79,27 +79,38 @@ switch chos
 	}
 	break;
 	case 4:
+	window_set_size(640*global.screenscale,480*global.screenscale)
+	if global.key_rightp && global.screenscale=1
+	{
+		global.screenscale=2
+	}
+	if global.key_leftp && global.screenscale>=2
+	{
+		global.screenscale=1
+	}
+	break;
+	case 5:
 	if global.key_jumpp
 	{
 		global.screenshake=!global.screenshake
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
-	case 5:
+	case 6:
 	if global.key_jumpp
 	{
 		global.borders=!global.borders
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
-	case 6:
+	case 7:
 	if global.key_jumpp
 	{
 		global.speedrun=!global.speedrun
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
-	case 7:
+	case 8:
 	if global.key_jumpp
 	{
 		ini_open("savedata.ini")
@@ -108,7 +119,7 @@ switch chos
 		audio_play_sound(snd_kablooey,1,false)
 	}
 	break;
-	case 8:
+	case 9:
 	if global.key_jumpp
 	{
 		volume=1
@@ -120,7 +131,7 @@ switch chos
 		audio_play_sound(snd_kablooey,1,false)
 	}
 	break;
-	case 9:
+	case 10:
 	{
 		if global.key_jumpp
 		{
@@ -132,6 +143,7 @@ switch chos
 			ini_write_real("settings","screenshake",global.screenshake)
 			ini_write_real("settings","borders",global.borders)
 			ini_write_real("settings","speedrun",global.speedrun)
+			ini_write_real("settings","screenscale",global.screenscale)
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_confirm,1,false)
@@ -139,7 +151,7 @@ switch chos
 		}
 	}
 	break;
-	case 10:
+	case 11:
 	{
 		if global.key_jumpp
 		{
@@ -151,6 +163,7 @@ switch chos
 			global.screenshake=ini_read_real("settings","screenshake",1)
 			global.borders=ini_read_real("settings","borders",1)
 			global.speedrun=ini_read_real("settings","speedrun",0)
+			global.screenscale=ini_read_real("settings","screenscale",1)
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_nahnvm,1,false)
@@ -169,6 +182,7 @@ if global.key_dashp
 	global.screenshake=ini_read_real("settings","screenshake",1)
 	global.borders=ini_read_real("settings","borders",1)
 	global.speedrun=ini_read_real("settings","speedrun",1)
+	global.screenscale=ini_read_real("settings","screenscale",1)
 	ini_close()
 	audio_stop_sound(mus_options)
 	audio_play_sound(snd_nahnvm,1,false)

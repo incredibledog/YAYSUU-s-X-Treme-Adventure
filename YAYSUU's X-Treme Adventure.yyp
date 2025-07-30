@@ -302,6 +302,7 @@
     {"id":{"name":"mus_mainmenu","path":"sounds/mus_mainmenu/mus_mainmenu.yy",},},
     {"id":{"name":"mus_mussic","path":"sounds/mus_mussic/mus_mussic.yy",},},
     {"id":{"name":"mus_mysticmanor_1","path":"sounds/mus_mysticmanor_1/mus_mysticmanor_1.yy",},},
+    {"id":{"name":"mus_mysticmanor_2","path":"sounds/mus_mysticmanor_2/mus_mysticmanor_2.yy",},},
     {"id":{"name":"mus_night","path":"sounds/mus_night/mus_night.yy",},},
     {"id":{"name":"mus_options","path":"sounds/mus_options/mus_options.yy",},},
     {"id":{"name":"mus_teddywin","path":"sounds/mus_teddywin/mus_teddywin.yy",},},

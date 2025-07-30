@@ -21,12 +21,14 @@ switch chos
 	case 1:
 	if global.key_jumpp
 	{
+		audio_play_sound(snd_confirm,1,false)
 		loadroom(room_credits,loadtype.menu)
 	}
 	break;
 	case 2:
 	if global.key_jumpp
 	{
+		audio_play_sound(snd_confirm,1,false)
 		loadroom(room_soundtest,loadtype.menu)
 	}
 	case 3:
@@ -35,6 +37,7 @@ switch chos
 	case 4:
 	if global.key_jumpp
 	{
+		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
 		instance_create_depth(x,y,depth,obj_cheats)
 	}
