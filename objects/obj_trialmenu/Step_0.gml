@@ -18,12 +18,10 @@ if global.key_rightp
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-select=clamp(select,0,6)
+select=clamp(select,0,7)
 
 if (changedlevel)
 {
-	audio_sound_gain(playingmusic[prevselect], 0, 1000);
-	audio_sound_gain(playingmusic[select], 1, 1000);
 	switch select
 	{
 		case 0:
@@ -62,13 +60,19 @@ if (changedlevel)
 			//newmusic = audio_play_sound(mus_trialmenu_mm1,1,true)
 			break;
 		case 5:
+			currentlevel=room_mysticmanor_2
+			endlevel=room_mysticmanor_2
+			lvlname="Mystic Manor Stage 2"
+			sprname=spr_mysticmanor2scroll
+			break;
+		case 6:
 			currentlevel=room_glowstickcity
 			endlevel=room_glowstickcity
 			lvlname="Glow Stick City (unfinished)"
 			sprname=spr_glowstickcityscroll
 			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			break;
-		case 6:
+		case 7:
 			currentlevel=room_dev
 			endlevel=room_dev
 			lvlname="Fun Dev Room!"

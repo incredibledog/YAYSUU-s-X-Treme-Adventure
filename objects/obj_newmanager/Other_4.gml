@@ -12,11 +12,8 @@ if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtyp
 	global.hp = 3;
 	global.maxhp = 3;
 	global.scoreadd = 0
-	if (global.checkpoint)
-	{
-		global.coins=0
-		global.coingoal=100
-	}
+	global.coins=0
+	global.coingoal=100
 	if global.inboss
 	{
 		global.bosshp = 6

@@ -1,5 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
+switch chos
+{
+	case 1:
+	charname="YAYSUU"
+	charlife=0
+	break;
+	case 1.5:
+	charname="COTTON"
+	break;
+	case 2:
+	charname="TEDDY"
+	charlife=1
+	break;
+}
 if (selected)
 {
 	if delay > 0
@@ -55,13 +69,14 @@ else
 		audio_play_sound(snd_move,1,false)
 		chos--
 	}
-	else if global.key_upp
-	{
-		audio_play_sound(snd_move,1,false)
-		if (chos != 1.5)
-			prevchos = chos
-		chos = 1.5
-	}
+	//else if global.key_upp
+	//{
+	//	audio_play_sound(snd_move,1,false)
+	//	if (chos != 1.5)
+	//		prevchos = chos
+	//	chos = 1.5
+	//}
+	// NOT YET...
 	else if global.key_downp && chos == 1.5
 	{
 		audio_play_sound(snd_move,1,false)

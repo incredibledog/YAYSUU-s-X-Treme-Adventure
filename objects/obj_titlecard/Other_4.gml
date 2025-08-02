@@ -15,6 +15,9 @@ switch room {
 	case room_mysticmanor_1:
 	sprite_index=spr_mysticmanor1 
 	break;
+	case room_mysticmanor_2:
+	sprite_index=spr_mysticmanor2
+	break;
 	case room_glowstickcity:
 	sprite_index=spr_glowstickcity
 	break;

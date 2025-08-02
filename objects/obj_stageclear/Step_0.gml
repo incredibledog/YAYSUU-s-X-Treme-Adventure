@@ -56,6 +56,9 @@ else if (!obj_fadeblack.fading)
 				case room_chillfields_boss:
 					loadroom(room_mysticmanor_1, loadtype.newlevel)
 					break;
+				case room_mysticmanor_1:
+					loadroom(room_mysticmanor_2, loadtype.newlevel)
+					break;
 				default:
 					loadroom(room_househub, loadtype.newlevel)
 					break;
