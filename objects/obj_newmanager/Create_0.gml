@@ -1,5 +1,4 @@
 ini_open("savedata.ini")
-ini_write_string("settings","disclaimer","Yes, you CAN edit the settings values to be higher than ingame. No, you probably shouldn't. Yes, you're probably gonna do it anyway.")
 audio_master_gain(ini_read_real("settings","volume",1))
 global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 global.controlalpha=ini_read_real("settings","controlalpha",0.5)
@@ -10,7 +9,6 @@ global.keytype=ini_read_real("settings","keytype",-1)
 global.speedrun=ini_read_real("settings","speedrun",0)
 global.screenscale=ini_read_real("settings","screenscale",1)
 ini_close()
-window_set_size(640*global.screenscale,480*global.screenscale)
 global.voicelines=false
 audio_group_load(voicelines)
 window_enable_borderless_fullscreen(true)

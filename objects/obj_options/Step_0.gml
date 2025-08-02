@@ -74,40 +74,32 @@ switch chos
 	case 3:
 	if global.key_jumpp
 	{
-		window_set_fullscreen(!window_get_fullscreen())
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_coin,1,false)
+		window_set_fullscreen(!(window_get_fullscreen()))
 	}
 	break;
 	case 4:
-	window_set_size(640*global.screenscale,480*global.screenscale)
-	if global.key_rightp && global.screenscale=1
+	if global.key_jumpp
 	{
-		global.screenscale=2
-	}
-	if global.key_leftp && global.screenscale>=2
-	{
-		global.screenscale=1
+		audio_play_sound(snd_nicetry,1,false)
 	}
 	break;
 	case 5:
 	if global.key_jumpp
 	{
 		global.screenshake=!global.screenshake
-		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 6:
 	if global.key_jumpp
 	{
 		global.borders=!global.borders
-		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 7:
 	if global.key_jumpp
 	{
 		global.speedrun=!global.speedrun
-		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 8:
@@ -144,6 +136,7 @@ switch chos
 			ini_write_real("settings","borders",global.borders)
 			ini_write_real("settings","speedrun",global.speedrun)
 			ini_write_real("settings","screenscale",global.screenscale)
+
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_confirm,1,false)

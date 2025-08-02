@@ -203,9 +203,9 @@ if (grounded && global.key_runp && state = playerstates.crouch && (newstate == s
 }
 
 // jumping
-if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch))
+if global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
 {
-	if (!grounded)
+	if (!grounded && global.char="T")
 	{
 		if (global.char == "C")
 		{
@@ -214,16 +214,36 @@ if ((grounded || djump) && global.key_jumpp && (state != playerstates.inactive &
 		}
 		else
 		{
-			if (inwater)
-				vsp = wdjmp
-			else
-				vsp = djmp
-			audio_play_sound(snd_doublejump, 1, false)
+			if place_meeting(x+facingdirection,y,obj_collision) // WALL JUMP
+			{
+				if (inwater) {
+					vsp = wdjmp
+					hsp=(15*-facingdirection)
+					facingdirection=-facingdirection
+				}
+				else {
+					vsp = djmp
+					hsp=(15*-facingdirection)
+					facingdirection=-facingdirection
+				}
+				audio_play_sound(snd_walljump, 1, false)
+				audio_play_sound(snd_doublejump, 1, false)
+			}
+			else if djump
+			{
+				if (inwater) {
+					vsp = wdjmp
+				}
+				else {
+					vsp = djmp
+				}
+				audio_play_sound(snd_doublejump, 1, false)
+				djump = false
+			}
 		}
-		djump = false
 		image_index = 0
 	}
-	else
+	else if grounded
 	{
 		if (inwater)
 			vsp = wjmp

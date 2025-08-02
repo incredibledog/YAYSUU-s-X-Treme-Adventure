@@ -335,6 +335,7 @@
     {"name":"snd_tutorialvo7","order":27,"path":"sounds/snd_tutorialvo7/snd_tutorialvo7.yy",},
     {"name":"snd_typewriterclick","order":67,"path":"sounds/snd_typewriterclick/snd_typewriterclick.yy",},
     {"name":"snd_uncannycoin","order":63,"path":"sounds/snd_uncannycoin/snd_uncannycoin.yy",},
+    {"name":"snd_walljump","order":95,"path":"sounds/snd_walljump/snd_walljump.yy",},
     {"name":"snd_waterswim","order":91,"path":"sounds/snd_waterswim/snd_waterswim.yy",},
     {"name":"snd_yaysuuwinboss","order":13,"path":"sounds/snd_yaysuuwinboss/snd_yaysuuwinboss.yy",},
     {"name":"snd_yaysuuwinstage","order":6,"path":"sounds/snd_yaysuuwinstage/snd_yaysuuwinstage.yy",},

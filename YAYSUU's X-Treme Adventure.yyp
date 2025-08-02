@@ -395,6 +395,7 @@
     {"id":{"name":"snd_tutorialvo7","path":"sounds/snd_tutorialvo7/snd_tutorialvo7.yy",},},
     {"id":{"name":"snd_typewriterclick","path":"sounds/snd_typewriterclick/snd_typewriterclick.yy",},},
     {"id":{"name":"snd_uncannycoin","path":"sounds/snd_uncannycoin/snd_uncannycoin.yy",},},
+    {"id":{"name":"snd_walljump","path":"sounds/snd_walljump/snd_walljump.yy",},},
     {"id":{"name":"snd_waterswim","path":"sounds/snd_waterswim/snd_waterswim.yy",},},
     {"id":{"name":"snd_yaysuuselect","path":"sounds/snd_yaysuuselect/snd_yaysuuselect.yy",},},
     {"id":{"name":"snd_yaysuuwinboss","path":"sounds/snd_yaysuuwinboss/snd_yaysuuwinboss.yy",},},
