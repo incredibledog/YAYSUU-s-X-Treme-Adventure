@@ -2,7 +2,7 @@
 // You can write your code in this editor
 draw_set_font(global.optfont)
 draw_set_valign(fa_top)
-draw_text(0,0,string(window_get_x())+" "+string(window_get_y())+" "+string(chos))
+draw_text(0,0,string(window_get_x())+" "+string(window_get_y())+" "+string(window_get_fullscreen()))
 draw_text(32,32,"OPTIONS")
 draw_text(32,96,"VOLUME  "+string_format(round(volume / 0.05) * 0.05,1,2))
 if (chos == 1)
@@ -29,11 +29,17 @@ if os_type=os_android && !gamepad_is_connected(0)
 	draw_text(32,128,"PAD OPACITY  "+string_format(global.controlalpha,1,2))
 else
 	draw_text(32,128,"SENSITIVITY  "+string_format(global.sensitivity,1,2))
-if window_get_fullscreen()
-	draw_text(32,160,"FULLSCREEN  ON")
-else
-	draw_text(32,160,"FULLSCREEN  OFF")
-draw_text(32,192,"WINDOW SCALE  "+string(global.screenscale)+"X")
+if os_type=os_android {
+	draw_text(32,160,"ANDROID DETECTED")
+	draw_text(32,192,"ANDROID DETECTED")
+}
+else {
+	if window_get_fullscreen()
+		draw_text(32,160,"FULLSCREEN  ON")
+	else
+		draw_text(32,160,"FULLSCREEN  OFF")
+	draw_text(32,192,"WINDOW SCALE  "+string(global.screenscale)+"X")
+}
 if global.screenshake=true
 	draw_text(32,224,"SCREENSHAKE  ON")
 else
