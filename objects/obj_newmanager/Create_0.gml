@@ -7,7 +7,6 @@ global.screenshake=ini_read_real("settings","screenshake",true)
 global.borders=ini_read_real("settings","borders",true)
 global.keytype=ini_read_real("settings","keytype",-1)
 global.speedrun=ini_read_real("settings","speedrun",false)
-global.screenscale=ini_read_real("settings","screenscale",1)
 ini_close()
 global.voicelines=false
 audio_group_load(voicelines)
