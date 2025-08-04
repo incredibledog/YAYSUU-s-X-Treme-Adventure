@@ -13,7 +13,7 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-chos=clamp(chos,1,10)
+chos=clamp(chos,1,11)
 switch chos
 {
 	case 1:
@@ -76,39 +76,63 @@ switch chos
 	{
 		window_set_fullscreen(!window_get_fullscreen())
 		audio_play_sound(snd_confirm,1,false)
+		global.key_jumpp=false // HACKY, But this is the ONLY WAY To get it to not register more than once.
 	}
-	break;
 	case 4:
-	if global.key_jumpp
+	var prevscale=global.screenscale
+	if global.key_rightp
 	{
-		global.screenshake=!global.screenshake
-		audio_play_sound(snd_confirm,1,false)
+		global.screenscale++
+		audio_play_sound(snd_move,1,false)
+		global.key_rightp=false // Ouh
+	}
+	if global.key_leftp
+	{
+		global.screenscale--
+		audio_play_sound(snd_move,1,false)
+		global.key_leftp=false // Euh
+	}
+	global.screenscale=clamp(global.screenscale,1,3)
+	if !(global.screenscale=prevscale)
+	{
+		window_set_size(640*global.screenscale,480*global.screenscale)
 	}
 	break;
 	case 5:
 	if global.key_jumpp
 	{
-		global.borders=!global.borders
+		global.screenshake=!global.screenshake
 		audio_play_sound(snd_confirm,1,false)
+		global.key_jumpp=false // I hate this
 	}
 	break;
 	case 6:
 	if global.key_jumpp
 	{
-		global.speedrun=!global.speedrun
+		global.borders=!global.borders
 		audio_play_sound(snd_confirm,1,false)
+		global.key_jumpp=false // And again...
 	}
 	break;
 	case 7:
+	if global.key_jumpp
+	{
+		global.speedrun=!global.speedrun
+		audio_play_sound(snd_confirm,1,false)
+		global.key_jumpp=false // One more time
+	}
+	break;
+	case 8:
 	if global.key_jumpp
 	{
 		ini_open("savedata.ini")
 		ini_section_delete("records")
 		ini_close()
 		audio_play_sound(snd_kablooey,1,false)
+		global.key_jumpp=false // Haha sike
 	}
 	break;
-	case 8:
+	case 9:
 	if global.key_jumpp
 	{
 		volume=1
@@ -117,10 +141,12 @@ switch chos
 		global.controlalpha=0.5
 		global.screenshake=true
 		global.borders=true
+		global.speedrun=false
+		global.screenscale=1
 		audio_play_sound(snd_kablooey,1,false)
 	}
 	break;
-	case 9:
+	case 10:
 	{
 		if global.key_jumpp
 		{
@@ -132,6 +158,7 @@ switch chos
 			ini_write_real("settings","screenshake",global.screenshake)
 			ini_write_real("settings","borders",global.borders)
 			ini_write_real("settings","speedrun",global.speedrun)
+			ini_write_real("settings","screenscale",global.screenscale)
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_confirm,1,false)
@@ -139,7 +166,7 @@ switch chos
 		}
 	}
 	break;
-	case 10:
+	case 11:
 	{
 		if global.key_jumpp
 		{
@@ -151,6 +178,7 @@ switch chos
 			global.screenshake=ini_read_real("settings","screenshake",1)
 			global.borders=ini_read_real("settings","borders",1)
 			global.speedrun=ini_read_real("settings","speedrun",0)
+			global.screenscale=ini_read_real("settings","screenscale",1)
 			ini_close()
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_nahnvm,1,false)

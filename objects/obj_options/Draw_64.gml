@@ -29,30 +29,32 @@ if os_type=os_android && !gamepad_is_connected(0)
 else
 	draw_text(32,128,"SENSITIVITY  "+string_format(global.sensitivity,1,2))
 if os_type=os_android
-	draw_text(32,160,"ANDROID DETECTED")
-else
-{
-	if window_get_fullscreen()
-		draw_text(32,160,"FULLSCREEN  ON")
-	else
-		draw_text(32,160,"FULLSCREEN  OFF")
+	draw_set_alpha(0.5)
+if window_get_fullscreen() {
+	draw_text(32,160,"FULLSCREEN  ON")
+	draw_text(32,192,"WINDOW SCALE  FULL")
 }
+else {
+	draw_text(32,160,"FULLSCREEN  OFF")
+	draw_text(32,192,"WINDOW SCALE  "+string(global.screenscale)+"X")
+}
+draw_set_alpha(1)
 if global.screenshake=true
-	draw_text(32,192,"SCREENSHAKE  ON")
+	draw_text(32,224,"SCREENSHAKE  ON")
 else
-	draw_text(32,192,"SCREENSHAKE  OFF")
+	draw_text(32,224,"SCREENSHAKE  OFF")
 if global.borders=true
-	draw_text(32,224,"BORDERS  ON")
+	draw_text(32,256,"BORDERS  ON")
 else
-	draw_text(32,224,"BORDERS  OFF")
+	draw_text(32,256,"BORDERS  OFF")
 if global.speedrun=true
-	draw_text(32,256,"SPEEDRUN TIMER  ON")
+	draw_text(32,288,"SPEEDRUN TIMER  ON")
 else
-	draw_text(32,256,"SPEEDRUN TIMER  OFF")
-draw_text(32,288,"RESET RECORDS")
-draw_text(32,320,"RESET 2 DEFAULT")
-draw_text(32,352,"SAVE N QUIT")
-draw_text(32,384,"QUIT")
+	draw_text(32,288,"SPEEDRUN TIMER  OFF")
+draw_text(32,320,"RESET RECORDS")
+draw_text(32,352,"RESET 2 DEFAULT")
+draw_text(32,384,"SAVE N QUIT")
+draw_text(32,416,"QUIT")
 switch chos
 {
 	case 1:
@@ -70,6 +72,11 @@ switch chos
 	break;
 	case 4:
 	draw_sprite(spr_cursor_options,0,0,192)
+	if !window_get_fullscreen()
+	{
+		draw_sprite(spr_cursor_options,1,448,192)
+		draw_sprite(spr_cursor_options,0,544,192)
+	}
 	break;
 	case 5:
 	draw_sprite(spr_cursor_options,0,0,224)
@@ -88,5 +95,8 @@ switch chos
 	break;
 	case 10:
 	draw_sprite(spr_cursor_options,0,0,384)
+	break;
+	case 11:
+	draw_sprite(spr_cursor_options,0,0,416)
 	break;
 }

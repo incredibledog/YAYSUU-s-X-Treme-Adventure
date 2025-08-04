@@ -773,10 +773,7 @@ if (global.char == "Y")
 			{
 				if (abs(hsp) > walkspeed)
 				{
-					if (vsp > 0)
-						newsprite = spr_yaysuu_launch
-					else
-						newsprite = spr_yaysuu_launchjump
+					newsprite = spr_yaysuu_spinball
 				}
 				else
 				{
@@ -911,10 +908,7 @@ else if (global.char == "T")
 			{
 				if (abs(hsp) > walkspeed)
 				{
-					if (vsp > 0)
-						newsprite = spr_teddy_launch
-					else
-						newsprite = spr_teddy_launchjump
+					newsprite = spr_teddy_launch
 				}
 				else
 				{

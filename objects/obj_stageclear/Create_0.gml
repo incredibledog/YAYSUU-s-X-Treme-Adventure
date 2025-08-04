@@ -6,6 +6,7 @@ image_alpha=0
 begintimer=120
 bangtimer=0
 display=0
+stageprogress=0
 if global.char="Y"
 	sprite_index=spr_stageclear_y
 else if global.char="T"

@@ -47,22 +47,33 @@ else if (!obj_fadeblack.fading)
 		{
 			switch (room)
 			{
+				case room_tutorial:
+					loadroom(room_househub, loadtype.newlevel)
+					stageprogress=0
+					global.score=0
+					global.lives=3
+					break;
 				case room_chillfields_1:
 					loadroom(room_chillfields_2, loadtype.newlevel)
+					stageprogress=1
 					break;
 				case room_chillfields_2d:
 					loadroom(room_chillfields_boss, loadtype.newlevel)
+					stageprogress=2
 					break;
 				case room_chillfields_boss:
 					loadroom(room_mysticmanor_1, loadtype.newlevel)
+					stageprogress=3
 					break;
 				case room_mysticmanor_1:
 					loadroom(room_mysticmanor_2, loadtype.newlevel)
+					stageprogress=4
 					break;
 				default:
-					loadroom(room_househub, loadtype.newlevel)
+					loadroom(room_credits, false)
 					break;
 			}
+			savestory(stageprogress)
 		}
 	}
 	else if global.key_dashp

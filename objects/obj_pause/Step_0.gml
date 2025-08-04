@@ -69,10 +69,10 @@ if (global.pause)
 					audio_play_sound(snd_confirm,1,false)
 					if global.trial
 						loadroom(room_trialmenu, loadtype.menu)
-					else if (global.inhub)
-						loadroom(room_mainmenu, loadtype.menu)
-					else
+					else if room=room_tutorial
 						loadroom(room_househub, loadtype.newlevel)
+					else
+						loadroom(room_mainmenu, loadtype.menu)
 					break;
 			}
 		}
