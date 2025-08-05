@@ -2,12 +2,14 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_restartlevel(){
 	global.timer = 0
-	global.score = 0
+	if global.trial
+	{
+		global.score = 0
+	}
 	global.scoreadd = 0
 	global.checkpoint=false
 	global.coins=0
 	global.coingoal = 100
-	global.lives=3
 	switch (room)
 	{
 		default:

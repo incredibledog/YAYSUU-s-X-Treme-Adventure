@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.2277551,
+  "duration":1.4522449,
   "name":"snd_kablooey",
   "parent":{
     "name":"Sounds",

@@ -96,7 +96,7 @@ if global.key_runp && !global.trial
 }
 else
 {
-	if (global.key_jumpp || global.key_start)
+	if (global.key_jumpp || global.key_start) && !selected
 	{
 		if (!teddyavailable && chos == 2)
 			audio_play_sound(snd_nicetry,1,false)
