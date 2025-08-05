@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ghost1_dieded",
+  "%Name":"obj_testnpc",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_ghost1_dieded",
+  "name":"obj_testnpc",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemys",
-    "path":"folders/Objects/levelobjs/enemys.yy",
+    "name":"npcs",
+    "path":"folders/Objects/levelobjs/npcs.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ghost1_dieded",
-    "path":"sprites/spr_ghost1_dieded/spr_ghost1_dieded.yy",
+    "name":"spr_vassie",
+    "path":"sprites/spr_vassie/spr_vassie.yy",
   },
   "spriteMaskId":null,
   "visible":true,

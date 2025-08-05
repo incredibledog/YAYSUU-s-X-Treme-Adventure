@@ -41,7 +41,7 @@ if global.inlevel && !global.inhub
 			draw_set_halign(fa_left)
 		}
 		
-		if (!global.showcollision)
+		if (!global.showcollision) && !(instance_exists(obj_dialoguebox))
 		{
 			draw_set_font(global.font)
 			if (os_type != os_android)

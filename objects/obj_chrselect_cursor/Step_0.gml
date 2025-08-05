@@ -42,7 +42,7 @@ switch savestage[charlife]
 	gameprogress=33
 	break;
 	default:
-	currentstage=room_credits
+	currentstage=room_jasperror
 	lvlname="???"
 	gameprogress=404
 	break;
@@ -53,9 +53,7 @@ if (selected)
 		delay--
 	else if (!obj_fadeblack.fading)
 	{
-		if (global.trial)
-			loadroom(room_trialmenu, loadtype.menu)
-		else
+		if !(global.trial) {
 			global.timer = 0
 			global.score = savescore[charlife]
 			global.scoreadd = 0
@@ -64,9 +62,13 @@ if (selected)
 			global.coingoal = 100
 			global.lives=savelives[charlife]
 			loadroom(currentstage, loadtype.newlevel)
+		}
+		else {
+			loadroom(room_trialmenu, loadtype.menu)
+		}
 	}
 }
-if global.key_runp
+if global.key_runp && !global.trial
 {
 	ini_open("savedata.ini")
 	if charlife=0
