@@ -38,7 +38,12 @@ if window_get_fullscreen() && global.borders=true
 }
 with (obj_fadeblack)
 {
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+	gpu_set_blendmode(bm_subtract)
+	draw_set_color(color)
+	draw_rectangle(0,0,640,480,false)
+	gpu_set_blendmode(bm_normal)
+	draw_set_color(c_white)
+	//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 }
 
 
