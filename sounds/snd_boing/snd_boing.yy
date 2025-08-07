@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.78367347,
+  "duration":1.2277551,
   "name":"snd_boing",
   "parent":{
     "name":"Sounds",

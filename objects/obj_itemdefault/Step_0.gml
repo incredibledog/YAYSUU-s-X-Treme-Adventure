@@ -1,5 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+var previnstances=instances
+instances=instance_number(obj_itemdefault)
+if instances>previnstances
+{
+	x-=(instances-previnstances)*32
+}
 if (sprite_index == spr_itemlife_y || sprite_index == spr_itemlife_t)
 {
 	if !audio_is_playing(snd_extralife) && audio_is_paused(global.currentsong)
