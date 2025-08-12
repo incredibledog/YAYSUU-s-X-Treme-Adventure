@@ -1,6 +1,6 @@
 if (global.inlevel)
 {
-	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
+	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.nextroom || global.levelloadtype == loadtype.respawn)
 	{
 		mask_index = spr_collisionmask
 		if (room == room_chillfields_boss)
