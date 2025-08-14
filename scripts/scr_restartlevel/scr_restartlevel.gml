@@ -20,6 +20,10 @@ function scr_restartlevel(){
 		case room_chillfields_2d:
 			loadroom(room_chillfields_2, loadtype.newlevel)
 			break;
+		case room_mysticmanor_1b:
+		case room_mysticmanor_1c:
+			loadroom(room_mysticmanor_1, loadtype.newlevel)
+			break;
 		case room_househub:
 		case room_househub_extra:
 			loadroom(room_glowstickcity, loadtype.newlevel)

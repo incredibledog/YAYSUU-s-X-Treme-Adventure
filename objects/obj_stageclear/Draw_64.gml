@@ -27,16 +27,21 @@ if !global.inboss
 		draw_sprite(spr_yaysuucoinicon,0,96,320)
 		draw_text(128,320,global.coins)
 		draw_sprite(spr_bonus,0,320,320)
-		draw_text(384,320,((global.coins % 100) * 10))
+		draw_text(384,320,(global.coins * 10))
 	}
 	if display>=3
 	{
 		draw_sprite(spr_scoreicon,0,96,384)
 		draw_sprite(spr_total,0,128,384)
-		draw_text(192,384,global.score)
+		draw_text(192,384,round(yearnedscore))
+	}
+	if display>=4
+	{
+		draw_sprite(spr_ranktext,0,512,256)
+		draw_sprite(spr_rank,rank,512,288)
 	}
 }
-if display>=4
+if display>=5
 {
 	if global.inputtype == 2
 	{

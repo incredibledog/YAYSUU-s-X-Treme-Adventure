@@ -24,15 +24,33 @@ else if (display == 0)
 	audio_play_sound(snd_bang,1,false)
 	bangtimer=15
 }
-else if display < 4
+else if display < 3
 {
 	display+=1
 	audio_play_sound(snd_bang,1,false)
 	bangtimer=15
 }
-else if display == 4
+else if display = 3
+{
+	if yearnedscore=global.score
+	{
+		display+=1
+		audio_play_sound(snd_bang,1,false)
+		bangtimer=75
+	}
+	if yearnedscore<global.score
+	{
+		yearnedscore+=global.score/60
+		audio_play_sound(snd_dialogue_default,0,false)
+	}
+}
+else if display = 4
 {
 	display = 5
+}
+else if display == 5
+{
+	display = 6
 	virtual_key_add(224,416,96,32,vk_space)
 	virtual_key_add(320,416,96,32,vk_shift)
 }

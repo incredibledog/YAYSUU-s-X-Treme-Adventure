@@ -1,0 +1,2 @@
+warproom=room_mysticmanor_1c
+warptype=loadtype.nextroom

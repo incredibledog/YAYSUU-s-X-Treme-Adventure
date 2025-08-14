@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if (global.inlevel && !global.inhub)
 {
-	if (!instance_exists(obj_stageclear)) && (!instance_exists(obj_gameover))
+	if (!instance_exists(obj_stageclear)) && (!instance_exists(obj_gameover)) && (!instance_exists(obj_dialoguebox))
 	{
 		var dotime = true
 		if instance_exists(obj_goalflag)

@@ -11,7 +11,7 @@ if touchingplayer(x, y) && !touched
 	else if global.char="C"
 		sprite_index=spr_goalflag_transition_cotton
 	audio_play_sound(snd_flagspin,1,false)
-	global.score += global.scoreadd + obj_hud.timebonus + ((global.coins % 100) * 10)
+	global.score += global.scoreadd + obj_hud.timebonus + (global.coins * 10)
 	if (!global.pal)
 	{
 		ini_open("savedata.ini")

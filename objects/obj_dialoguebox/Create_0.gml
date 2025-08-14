@@ -9,9 +9,4 @@ color="white"
 dialoguesound=snd_dialogue_default
 playaudiosingle=false
 name=""
-initialsound=-1
 nobox=false
-if initialsound!=-1
-{
-	audio_play_sound(initialsound,1,false)
-}
