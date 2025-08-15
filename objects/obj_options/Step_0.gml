@@ -143,6 +143,7 @@ switch chos
 		global.borders=true
 		global.speedrun=false
 		global.screenscale=1
+		window_set_size(640*global.screenscale,480*global.screenscale)
 		audio_play_sound(snd_kablooey,1,false)
 	}
 	break;
@@ -180,6 +181,7 @@ switch chos
 			global.speedrun=ini_read_real("settings","speedrun",0)
 			global.screenscale=ini_read_real("settings","screenscale",1)
 			ini_close()
+			window_set_size(640*global.screenscale,480*global.screenscale)
 			audio_stop_sound(mus_options)
 			audio_play_sound(snd_nahnvm,1,false)
 			loadroom(room_mainmenu, false)
@@ -197,7 +199,9 @@ if global.key_dashp
 	global.screenshake=ini_read_real("settings","screenshake",1)
 	global.borders=ini_read_real("settings","borders",1)
 	global.speedrun=ini_read_real("settings","speedrun",1)
+	global.screenscale=ini_read_real("settings","screenscale",1)
 	ini_close()
+	window_set_size(640*global.screenscale,480*global.screenscale)
 	audio_stop_sound(mus_options)
 	audio_play_sound(snd_nahnvm,1,false)
 	loadroom(room_mainmenu, false)

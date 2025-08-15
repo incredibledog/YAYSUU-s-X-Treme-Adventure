@@ -34,7 +34,7 @@ else if display = 3
 {
 	if yearnedscore=global.score
 	{
-		display+=1
+		display+=1+(!global.trial)
 		audio_play_sound(snd_bang,1,false)
 		bangtimer=75
 	}
@@ -83,7 +83,7 @@ else if (!obj_fadeblack.fading)
 					loadroom(room_mysticmanor_1, loadtype.newlevel)
 					stageprogress=3
 					break;
-				case room_mysticmanor_1:
+				case room_mysticmanor_1c:
 					loadroom(room_mysticmanor_2, loadtype.newlevel)
 					stageprogress=4
 					break;
@@ -94,7 +94,7 @@ else if (!obj_fadeblack.fading)
 			savestory(stageprogress)
 		}
 	}
-	else if global.key_dashp
+	else if global.key_dashp && global.trial
 	{
 		audio_play_sound(snd_confirm,1,false)
 		scr_restartlevel()

@@ -35,7 +35,7 @@ if !global.inboss
 		draw_sprite(spr_total,0,128,384)
 		draw_text(192,384,round(yearnedscore))
 	}
-	if display>=4
+	if display>=4 && global.trial
 	{
 		draw_sprite(spr_ranktext,0,512,256)
 		draw_sprite(spr_rank,rank,512,288)
@@ -45,20 +45,26 @@ if display>=5
 {
 	if global.inputtype == 2
 	{
-		if os_type != os_android
+		draw_sprite(spr_next,1,416,416)
+		if global.trial
 		{
-			draw_sprite(spr_next,0,416,416)
-			draw_sprite(spr_retry,0,512,416)
-		}
-		else
-		{
-			draw_sprite(spr_next,2,224,416)
-			draw_sprite(spr_retry,2,320,416)
+			draw_sprite(spr_retry,1,512,416)
 		}
 	}
-	else
+	else if global.inputtype == 1 || global.inputtype == 0
 	{
-		draw_sprite(spr_next,1,416,416)
-		draw_sprite(spr_retry,1,512,416)
+		draw_sprite(spr_next,0,416,416)
+		if global.trial
+		{
+			draw_sprite(spr_retry,0,512,416)
+		}
+	}
+	else if global.inputtype == 3
+	{
+		draw_sprite(spr_next,2,416,416)
+		if global.trial
+		{
+			draw_sprite(spr_retry,0,512,416)
+		}
 	}
 }

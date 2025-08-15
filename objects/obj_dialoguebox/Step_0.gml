@@ -11,9 +11,9 @@ if (!finished)
     if (progressdelay == 0)
     {
         progress++
-        if (string_char_at(text, progress) == "." || string_char_at(text, progress) == "?" || string_char_at(text, progress) == "!" || string_char_at(text, progress) == ":")
+        if (string_char_at(text, progress) == "." || string_char_at(text, progress) == "?" || string_char_at(text, progress) == "!" || string_char_at(text, progress) == ":") && string_char_at(text,progress+1) == " "
             progressdelay = 15;
-        else if (string_char_at(text, progress) == ",")
+        else if (string_char_at(text, progress) == ",") && string_char_at(text, progress+1) == " "
             progressdelay = 10;
         else
             progressdelay = 1;

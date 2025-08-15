@@ -20,7 +20,7 @@ if talking && !talked
 			{
 				if global.char="Y"
 				{
-					text="(You don't feel too sleepy.)"
+					text="(You'll go to bed later.)"
 					color="white"
 				}
 				else
@@ -48,7 +48,7 @@ else if talking && talked
 			case 1:
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
-				text="(There's no time to relax!)"
+				text="(Looks comfy...)"
 				color="white"
 			}
 			break;
