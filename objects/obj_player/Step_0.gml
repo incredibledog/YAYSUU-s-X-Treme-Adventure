@@ -107,6 +107,10 @@ if ((!grounded) && global.key_dashp && (state == playerstates.normal || state ==
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
 }
+if state=playerstates.dash && global.char="T"
+{
+	vsp = 0
+}
 if (state == playerstates.dash && newstate == state && grounded)
 {
 	newstate = playerstates.normal
