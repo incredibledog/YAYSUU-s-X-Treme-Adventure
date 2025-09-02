@@ -1,13 +1,13 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"til_chillfieldstiles_dark",
+  "%Name":"til_mysticmanortiles_court",
   "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"til_chillfieldstiles_dark",
+  "name":"til_mysticmanortiles_court",
   "out_columns":5,
   "out_tilehborder":2,
   "out_tilevborder":2,
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_tile_chilldark",
-    "path":"sprites/spr_tile_chilldark/spr_tile_chilldark.yy",
+    "name":"spr_tile_manorcourt",
+    "path":"sprites/spr_tile_manorcourt/spr_tile_manorcourt.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
