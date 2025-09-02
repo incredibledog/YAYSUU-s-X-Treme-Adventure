@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"mus_chillfields_boss",
+  "%Name":"mus_results",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":82.44245,
-  "name":"mus_chillfields_boss",
+  "duration":57.3649,
+  "name":"mus_results",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_chillfields_boss.mp3",
+  "soundFile":"mus_results.mp3",
   "type":0,
   "volume":1.0,
 }

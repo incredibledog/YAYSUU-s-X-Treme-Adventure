@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":168.90776,
+  "duration":141.42694,
   "name":"mus_chillfields_1",
   "parent":{
     "name":"Sounds",

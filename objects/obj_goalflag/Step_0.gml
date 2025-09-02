@@ -12,7 +12,7 @@ if touchingplayer(x, y) && !touched
 		sprite_index=spr_goalflag_transition_cotton
 	audio_play_sound(snd_flagspin,1,false)
 	global.score += global.scoreadd + obj_hud.timebonus + (global.coins * 10)
-	if (!global.pal) && (!global.trial)
+	if (!global.pal)
 	{
 		ini_open("savedata.ini")
 		if global.score > ini_read_real("records", string(room) + "_score", 0) && !global.inboss

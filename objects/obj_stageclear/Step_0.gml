@@ -15,7 +15,7 @@ if begintimer > 0
 }
 if bangtimer>0
 	bangtimer--
-else if (display == 0)
+else if (display == 0) // skips straight to the next and retry if you're in a boss stage
 {
 	if global.inboss
 		display=4
@@ -24,7 +24,7 @@ else if (display == 0)
 	audio_play_sound(snd_bang,1,false)
 	bangtimer=15
 }
-else if display < 3
+else if display < 3 // shows the time and coin bonuses
 {
 	display+=1
 	audio_play_sound(snd_bang,1,false)
@@ -32,9 +32,9 @@ else if display < 3
 }
 else if display = 3
 {
-	if yearnedscore=global.score
+	if yearnedscore=global.score // shows your RANK!
 	{
-		display+=1+(!global.trial)
+		display++
 		audio_play_sound(snd_bang,1,false)
 		bangtimer=75
 	}
@@ -47,6 +47,7 @@ else if display = 3
 else if display = 4
 {
 	display = 5
+	audio_play_sound(mus_results,1,true)
 }
 else if display == 5
 {
@@ -68,8 +69,6 @@ else if (!obj_fadeblack.fading)
 				case room_tutorial:
 					loadroom(room_househub, loadtype.newlevel)
 					stageprogress=0
-					global.score=0
-					global.lives=3
 					break;
 				case room_chillfields_1:
 					loadroom(room_chillfields_2, loadtype.newlevel)

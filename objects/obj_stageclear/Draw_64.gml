@@ -35,7 +35,7 @@ if !global.inboss
 		draw_sprite(spr_total,0,128,384)
 		draw_text(192,384,round(yearnedscore))
 	}
-	if display>=4 && global.trial
+	if display>=4
 	{
 		draw_sprite(spr_ranktext,0,512,256)
 		draw_sprite(spr_rank,rank,512,288)
