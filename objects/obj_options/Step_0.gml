@@ -76,7 +76,6 @@ switch chos
 	{
 		window_set_fullscreen(!window_get_fullscreen())
 		audio_play_sound(snd_confirm,1,false)
-		global.key_jumpp=false // HACKY, But this is the ONLY WAY To get it to not register more than once.
 	}
 	case 4:
 	var prevscale=global.screenscale
@@ -84,13 +83,11 @@ switch chos
 	{
 		global.screenscale++
 		audio_play_sound(snd_move,1,false)
-		global.key_rightp=false // Ouh
 	}
 	if global.key_leftp
 	{
 		global.screenscale--
 		audio_play_sound(snd_move,1,false)
-		global.key_leftp=false // Euh
 	}
 	global.screenscale=clamp(global.screenscale,1,3)
 	if !(global.screenscale=prevscale)
@@ -103,7 +100,6 @@ switch chos
 	{
 		global.screenshake=!global.screenshake
 		audio_play_sound(snd_confirm,1,false)
-		global.key_jumpp=false // I hate this
 	}
 	break;
 	case 6:
@@ -111,7 +107,6 @@ switch chos
 	{
 		global.borders=!global.borders
 		audio_play_sound(snd_confirm,1,false)
-		global.key_jumpp=false // And again...
 	}
 	break;
 	case 7:
@@ -119,7 +114,6 @@ switch chos
 	{
 		global.speedrun=!global.speedrun
 		audio_play_sound(snd_confirm,1,false)
-		global.key_jumpp=false // One more time
 	}
 	break;
 	case 8:
@@ -129,7 +123,6 @@ switch chos
 		ini_section_delete("records")
 		ini_close()
 		audio_play_sound(snd_kablooey,1,false)
-		global.key_jumpp=false // Haha sike
 	}
 	break;
 	case 9:
