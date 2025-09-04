@@ -642,6 +642,7 @@
     {"id":{"name":"spr_savebar","path":"sprites/spr_savebar/spr_savebar.yy",},},
     {"id":{"name":"spr_savelifeicon","path":"sprites/spr_savelifeicon/spr_savelifeicon.yy",},},
     {"id":{"name":"spr_savescoreicon","path":"sprites/spr_savescoreicon/spr_savescoreicon.yy",},},
+    {"id":{"name":"spr_savetimeicon","path":"sprites/spr_savetimeicon/spr_savetimeicon.yy",},},
     {"id":{"name":"spr_scoreicon","path":"sprites/spr_scoreicon/spr_scoreicon.yy",},},
     {"id":{"name":"spr_secretorang","path":"sprites/spr_secretorang/spr_secretorang.yy",},},
     {"id":{"name":"spr_secrettile_chill","path":"sprites/spr_secrettile_chill/spr_secrettile_chill.yy",},},

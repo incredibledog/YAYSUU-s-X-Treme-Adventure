@@ -47,7 +47,10 @@ else if display = 3
 else if display = 4
 {
 	display = 5
-	audio_play_sound(mus_results,1,true)
+	if !global.inboss
+	{
+		audio_play_sound(mus_results,1,true)
+	}
 }
 else if display == 5
 {

@@ -7,6 +7,7 @@ if touchingplayer(x, y) && obj_player.grounded
 	{
 		loadroom(warproom, warptype)
 		obj_player.newstate = playerstates.inactive
+		global.checkpoint=false
 		if (global.char == "Y")
 			obj_player.sprite_index = spr_yaysuu_idle
 		else if (global.char == "T")

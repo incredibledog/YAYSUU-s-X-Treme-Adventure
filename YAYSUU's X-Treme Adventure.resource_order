@@ -564,6 +564,7 @@
     {"name":"spr_savebar","order":43,"path":"sprites/spr_savebar/spr_savebar.yy",},
     {"name":"spr_savelifeicon","order":19,"path":"sprites/spr_savelifeicon/spr_savelifeicon.yy",},
     {"name":"spr_savescoreicon","order":20,"path":"sprites/spr_savescoreicon/spr_savescoreicon.yy",},
+    {"name":"spr_savetimeicon","order":24,"path":"sprites/spr_savetimeicon/spr_savetimeicon.yy",},
     {"name":"spr_scoreicon","order":5,"path":"sprites/spr_scoreicon/spr_scoreicon.yy",},
     {"name":"spr_secretorang","order":12,"path":"sprites/spr_secretorang/spr_secretorang.yy",},
     {"name":"spr_secrettile_chill","order":7,"path":"sprites/spr_secrettile_chill/spr_secrettile_chill.yy",},

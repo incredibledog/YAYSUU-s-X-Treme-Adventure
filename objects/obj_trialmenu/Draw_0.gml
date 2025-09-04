@@ -4,7 +4,9 @@ draw_set_font(global.subtitlefont)
 draw_set_valign(fa_top)
 if !bosslvl
 {
-	draw_text_yxa(64,64,"Choose a Stage! \n" + lvlname + "\nLeft and right to cycle \nHigh Score: " + string(hiscore) + "\nBest Time: " + timestring,"white",true)
+	draw_text_yxa(64,64,"Choose a Stage! \n" + lvlname + "\nLeft and right to cycle \n  " + string(hiscore) + "\n  " + timestring,"white",true)
+	draw_sprite(spr_savescoreicon,0,64,112)
+	draw_sprite(spr_savetimeicon,0,64,128)
 	draw_sprite(spr_rank,rank,544,192)
 }
 else
