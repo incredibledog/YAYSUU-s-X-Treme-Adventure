@@ -8,8 +8,8 @@
   "name":"obj_harmful",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemys",
-    "path":"folders/Objects/levelobjs/enemys.yy",
+    "name":"levelobjs",
+    "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":null,
   "persistent":false,
