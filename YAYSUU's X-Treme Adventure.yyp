@@ -272,6 +272,7 @@
     {"id":{"name":"room_mysticmanor_1b","path":"rooms/room_mysticmanor_1b/room_mysticmanor_1b.yy",},},
     {"id":{"name":"room_mysticmanor_1c","path":"rooms/room_mysticmanor_1c/room_mysticmanor_1c.yy",},},
     {"id":{"name":"room_mysticmanor_2","path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},},
+    {"id":{"name":"room_mysticmanor_2b","path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},},
     {"id":{"name":"room_options","path":"rooms/room_options/room_options.yy",},},
     {"id":{"name":"room_setupinput","path":"rooms/room_setupinput/room_setupinput.yy",},},
     {"id":{"name":"room_soundtest","path":"rooms/room_soundtest/room_soundtest.yy",},},
@@ -578,6 +579,7 @@
     {"id":{"name":"spr_lvlselectbg","path":"sprites/spr_lvlselectbg/spr_lvlselectbg.yy",},},
     {"id":{"name":"spr_mainmenu_cursor","path":"sprites/spr_mainmenu_cursor/spr_mainmenu_cursor.yy",},},
     {"id":{"name":"spr_manorwindow_broken","path":"sprites/spr_manorwindow_broken/spr_manorwindow_broken.yy",},},
+    {"id":{"name":"spr_manorwindow_brokenext","path":"sprites/spr_manorwindow_brokenext/spr_manorwindow_brokenext.yy",},},
     {"id":{"name":"spr_manorwindow","path":"sprites/spr_manorwindow/spr_manorwindow.yy",},},
     {"id":{"name":"spr_menubars","path":"sprites/spr_menubars/spr_menubars.yy",},},
     {"id":{"name":"spr_menubg","path":"sprites/spr_menubg/spr_menubg.yy",},},
@@ -811,6 +813,7 @@
     {"roomId":{"name":"room_mysticmanor_1b","path":"rooms/room_mysticmanor_1b/room_mysticmanor_1b.yy",},},
     {"roomId":{"name":"room_mysticmanor_1c","path":"rooms/room_mysticmanor_1c/room_mysticmanor_1c.yy",},},
     {"roomId":{"name":"room_mysticmanor_2","path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},},
+    {"roomId":{"name":"room_mysticmanor_2b","path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

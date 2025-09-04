@@ -47,7 +47,7 @@ if (global.inlevel)
 				whooshcolor = #C2C3C7
 			else
 				whooshcolor = #FFF1E8
-			if global.levelloadtype == loadtype.newlevel
+			if global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.nextroom
 			{
 				global.checkpoint = false
 			}
