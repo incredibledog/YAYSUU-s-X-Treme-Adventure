@@ -6,8 +6,8 @@
   "name":"obj_spike",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemys",
-    "path":"folders/Objects/levelobjs/enemys.yy",
+    "name":"levelobjs",
+    "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":{
     "name":"obj_harmful",
