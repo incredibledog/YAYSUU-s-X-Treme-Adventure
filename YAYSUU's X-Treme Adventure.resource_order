@@ -149,6 +149,7 @@
     {"name":"obj_pizzamonitor","order":1,"path":"objects/obj_pizzamonitor/obj_pizzamonitor.yy",},
     {"name":"obj_playercollision","order":25,"path":"objects/obj_playercollision/obj_playercollision.yy",},
     {"name":"obj_racetimer","order":34,"path":"objects/obj_racetimer/obj_racetimer.yy",},
+    {"name":"obj_realvassie","order":14,"path":"objects/obj_realvassie/obj_realvassie.yy",},
     {"name":"obj_robot1","order":2,"path":"objects/obj_robot1/obj_robot1.yy",},
     {"name":"obj_robot2_boolet","order":8,"path":"objects/obj_robot2_boolet/obj_robot2_boolet.yy",},
     {"name":"obj_robot2","order":7,"path":"objects/obj_robot2/obj_robot2.yy",},

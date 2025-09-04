@@ -204,6 +204,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_playercollision","path":"objects/obj_playercollision/obj_playercollision.yy",},},
     {"id":{"name":"obj_racetimer","path":"objects/obj_racetimer/obj_racetimer.yy",},},
+    {"id":{"name":"obj_realvassie","path":"objects/obj_realvassie/obj_realvassie.yy",},},
     {"id":{"name":"obj_robot1","path":"objects/obj_robot1/obj_robot1.yy",},},
     {"id":{"name":"obj_robot2_boolet","path":"objects/obj_robot2_boolet/obj_robot2_boolet.yy",},},
     {"id":{"name":"obj_robot2","path":"objects/obj_robot2/obj_robot2.yy",},},
