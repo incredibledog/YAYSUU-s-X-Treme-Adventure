@@ -81,7 +81,10 @@ switch chos
 	var prevscale=global.screenscale
 	if global.key_rightp
 	{
-		global.screenscale++
+		if (global.screenscale == 0.5)
+			global.screenscale = 1
+		else
+			global.screenscale++
 		audio_play_sound(snd_move,1,false)
 	}
 	if global.key_leftp
@@ -89,7 +92,7 @@ switch chos
 		global.screenscale--
 		audio_play_sound(snd_move,1,false)
 	}
-	global.screenscale=clamp(global.screenscale,1,3)
+	global.screenscale=clamp(global.screenscale,0.5,3)
 	if !(global.screenscale=prevscale)
 	{
 		window_set_size(640*global.screenscale,480*global.screenscale)
