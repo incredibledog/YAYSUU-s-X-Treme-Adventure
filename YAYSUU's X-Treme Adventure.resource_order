@@ -167,7 +167,7 @@
     {"name":"obj_slope","order":6,"path":"objects/obj_slope/obj_slope.yy",},
     {"name":"obj_sndtest","order":9,"path":"objects/obj_sndtest/obj_sndtest.yy",},
     {"name":"obj_spawn","order":2,"path":"objects/obj_spawn/obj_spawn.yy",},
-    {"name":"obj_spike","order":4,"path":"objects/obj_spike/obj_spike.yy",},
+    {"name":"obj_spike","order":53,"path":"objects/obj_spike/obj_spike.yy",},
     {"name":"obj_spikeball","order":19,"path":"objects/obj_spikeball/obj_spikeball.yy",},
     {"name":"obj_spring","order":7,"path":"objects/obj_spring/obj_spring.yy",},
     {"name":"obj_stageclear","order":9,"path":"objects/obj_stageclear/obj_stageclear.yy",},
