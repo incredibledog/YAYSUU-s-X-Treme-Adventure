@@ -6,14 +6,9 @@ if !audio_is_playing(gameoversong) || global.key_start
 	audio_stop_all()
 	if !global.trial
 	{
-		if global.char="Y"
-		{
-			ini_write_real("fileY","lives",3)
-		}
-		if global.char="T"
-		{
-			ini_write_real("fileT","lives",3)
-		}
+		ini_open("savedata.ini")
+		ini_write_real("file" + global.char,"lives",3)
+		ini_close()
 	}
 	loadroom(room_titlescreen,loadtype.menu)
 }
