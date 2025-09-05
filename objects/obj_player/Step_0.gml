@@ -218,16 +218,16 @@ if global.key_jumpp && (state != playerstates.inactive && state != playerstates.
 		}
 		else
 		{
-			if place_meeting(x+facingdirection,y,obj_collision) // WALL JUMP
+			if place_meeting(x+facingdirection,y,obj_playercollision) // WALL JUMP
 			{
 				if (inwater) {
 					vsp = wdjmp
-					hsp=(15*-facingdirection)
+					hsp=wallbump * facingdirection
 					facingdirection=-facingdirection
 				}
 				else {
 					vsp = djmp
-					hsp=(15*-facingdirection)
+					hsp=wallbump * facingdirection
 					facingdirection=-facingdirection
 				}
 				audio_play_sound(snd_walljump, 1, false)
