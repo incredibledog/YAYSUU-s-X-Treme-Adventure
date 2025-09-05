@@ -194,14 +194,14 @@ else if (state == playerstates.crouch && newstate == state && (!grounded || !glo
 //going through platform
 if (grounded && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
 {
-	if (place_meeting(x, y + vsp + checkscale, obj_semisolid_new) && !place_meeting(x, y + vsp + checkscale, obj_notsemisolid))
+	if (place_meeting(x, y + vsp + checkscale, obj_semisolid_gothrough) && !place_meeting(x, y + vsp + checkscale, obj_notsemisolid))
 	{
 		y += 1
 		grounded = false
 		prevgrounded = false
 		audio_play_sound(snd_platfall, 1, false)
 		newstate = playerstates.normal
-		with (instance_place(x, y + vsp + checkscale, obj_semisolid_new))
+		with (instance_place(x, y + vsp + checkscale, obj_semisolid_gothrough))
 			y = -2763
 	}
 }

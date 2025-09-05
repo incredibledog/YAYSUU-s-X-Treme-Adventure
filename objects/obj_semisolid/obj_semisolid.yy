@@ -1,21 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_movingplatform",
+  "%Name":"obj_semisolid",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_movingplatform",
+  "name":"obj_semisolid",
   "overriddenProperties":[],
   "parent":{
-    "name":"mechanical",
-    "path":"folders/Objects/levelobjs/mechanical.yy",
+    "name":"levelobjs",
+    "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":{
-    "name":"obj_semisolid",
-    "path":"objects/obj_semisolid/obj_semisolid.yy",
+    "name":"obj_collision",
+    "path":"objects/obj_collision/obj_collision.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_movingplatform",
-    "path":"sprites/spr_movingplatform/spr_movingplatform.yy",
+    "name":"spr_semistop_a",
+    "path":"sprites/spr_semistop_a/spr_semistop_a.yy",
   },
   "spriteMaskId":null,
   "visible":true,

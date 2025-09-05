@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_semisolid_new",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_semisolid_gothrough",
+  "eventList":[],
   "managed":true,
-  "name":"obj_semisolid_new",
+  "name":"obj_semisolid_gothrough",
   "overriddenProperties":[],
   "parent":{
     "name":"levelobjs",
     "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":{
-    "name":"obj_playercollision",
-    "path":"objects/obj_playercollision/obj_playercollision.yy",
+    "name":"obj_semisolid",
+    "path":"objects/obj_semisolid/obj_semisolid.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_semistop_a",
-    "path":"sprites/spr_semistop_a/spr_semistop_a.yy",
+    "name":"spr_semigo",
+    "path":"sprites/spr_semigo/spr_semigo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

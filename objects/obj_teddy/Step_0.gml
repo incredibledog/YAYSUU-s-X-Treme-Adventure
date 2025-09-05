@@ -4,7 +4,7 @@
 // ideally somewhere around fortress fringlebert he should take over as the leader and then the other brother will be following
 // kthxbai
 image_alpha = obj_player.image_alpha;
-var grounded = place_meeting(x,y+1,obj_playercollision) || place_meeting(x,y+1,obj_collision) || place_meeting(x,y+1,obj_semisolid_new)
+var grounded = place_meeting(x,y+1,obj_playercollision) || place_meeting(x,y+1,obj_collision) || place_meeting(x,y+1,obj_semisolid_gothrough)
 if global.char="Y"
 {
 	if (obj_player.hsp != 0) {
