@@ -13,8 +13,8 @@
     "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":{
-    "name":"obj_collision",
-    "path":"objects/obj_collision/obj_collision.yy",
+    "name":"obj_playercollision",
+    "path":"objects/obj_playercollision/obj_playercollision.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
