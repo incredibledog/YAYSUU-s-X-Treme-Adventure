@@ -82,5 +82,6 @@ instance_create_depth(0,0, 100,obj_titlecard)
 instance_create_depth(0,0, 100, obj_pause)
 randomize()
 
+global.indev = true
 global.prevroom = room_initbruv
 room_goto(room_idlogo)
