@@ -3,5 +3,10 @@
 
 // Inherit the parent event
 event_inherited();
+if (sprite_index == spr_rubble_cave)
+{
+	sprite_index = spr_ironblock
+	debrissprite = spr_irondebris
+}
 debrissprite = spr_silverdebris
 breaksound = snd_breaksilver
