@@ -504,6 +504,7 @@
     {"name":"spr_mainmenu_cursor","order":21,"path":"sprites/spr_mainmenu_cursor/spr_mainmenu_cursor.yy",},
     {"name":"spr_manorwindow_broken","order":23,"path":"sprites/spr_manorwindow_broken/spr_manorwindow_broken.yy",},
     {"name":"spr_manorwindow_brokenext","order":24,"path":"sprites/spr_manorwindow_brokenext/spr_manorwindow_brokenext.yy",},
+    {"name":"spr_manorwindow_ext","order":25,"path":"sprites/spr_manorwindow_ext/spr_manorwindow_ext.yy",},
     {"name":"spr_manorwindow","order":16,"path":"sprites/spr_manorwindow/spr_manorwindow.yy",},
     {"name":"spr_menubars","order":16,"path":"sprites/spr_menubars/spr_menubars.yy",},
     {"name":"spr_menubg","order":2,"path":"sprites/spr_menubg/spr_menubg.yy",},
