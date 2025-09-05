@@ -12,7 +12,7 @@ if global.key_leftp
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-if global.key_rightp
+else if global.key_rightp
 {
 	select+=1
 	audio_play_sound(snd_move,1,false)
@@ -95,28 +95,19 @@ if (changedlevel)
 	timestring=string_replace_all(string_format(floor(timer / 3600), 2, 0) + ":" + string_format(floor(timer / 60) % 60, 2, 0) + "." + string_format(timer % 60, 2, 0), " ", "0")
 	ini_close()
 	if hiscore>=2500
-	{
 		rank=4
-	}
 	else if hiscore>=2000
-	{
 		rank=3
-	}
 	else if hiscore>=1500
-	{
 		rank=2
-	}
 	else if hiscore>=1000
-	{
 		rank=1
-	}
-	else {
+	else
 		rank=0
-	}
 }
 changedlevel = false
 
-if global.key_jumpp || global.key_start
+if global.key_menuaccept
 {
 	audio_stop_all()
 	audio_play_sound(snd_confirm,1,false)
@@ -129,7 +120,7 @@ if global.key_jumpp || global.key_start
 	global.lives=3
 	loadroom(currentlevel, loadtype.newlevel)
 }
-else if global.key_dashp
+else if global.key_menuquit
 {
 	audio_stop_all()
 	audio_play_sound(snd_nahnvm,1,false)

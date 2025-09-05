@@ -5,7 +5,7 @@ if global.key_upp && selected=false
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-if global.key_downp && selected=false
+else if global.key_downp && selected=false
 {
 	chos++
 	audio_play_sound(snd_move,1,false)
@@ -34,7 +34,7 @@ switch (chos)
 		menustring="Access cheats, and other such extra doodads! "
 		break
 }
-if (global.key_jumpp || global.key_start) && selected=false
+if (global.key_menuaccept) && selected=false
 {
 	switch (chos)
 	{

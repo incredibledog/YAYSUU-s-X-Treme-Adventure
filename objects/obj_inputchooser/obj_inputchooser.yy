@@ -9,8 +9,8 @@
   "name":"obj_inputchooser",
   "overriddenProperties":[],
   "parent":{
-    "name":"menus",
-    "path":"folders/Objects/menus.yy",
+    "name":"old",
+    "path":"folders/Objects/menus/old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

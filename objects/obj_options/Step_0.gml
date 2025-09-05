@@ -185,7 +185,7 @@ switch chos
 	}
 	break;
 }
-if global.key_dashp
+if global.key_menuquit
 {
 	ini_open("savedata.ini")
 	audio_master_gain(ini_read_real("settings","volume",1))

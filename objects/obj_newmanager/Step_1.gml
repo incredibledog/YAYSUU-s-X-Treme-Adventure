@@ -29,6 +29,8 @@ if (global.inputtype == 0) || (global.inputtype == 3)
 	global.key_run = keyboard_check(ord("C"))
 	global.key_runp = keyboard_check_pressed(ord("C"))
 	global.key_start = keyboard_check_pressed(vk_enter)
+	global.key_menuaccept = global.key_jumpp || global.key_start
+	global.key_menuquit = global.key_dashp
 }
 else if global.inputtype == 1
 {
@@ -47,6 +49,8 @@ else if global.inputtype == 1
 	global.key_run = keyboard_check(vk_shift)
 	global.key_runp = keyboard_check_pressed(vk_shift)
 	global.key_start = keyboard_check_pressed(vk_escape)
+	global.key_menuaccept = global.key_jumpp
+	global.key_menuquit = global.key_dashp || global.key_start
 }
 else if global.inputtype == 2
 {
@@ -67,6 +71,8 @@ else if global.inputtype == 2
 		global.key_run = gamepad_button_check(0,gp_face3)
 		global.key_runp = gamepad_button_check_pressed(0,gp_face3)
 		global.key_start = gamepad_button_check_pressed(0,gp_start)
+		global.key_menuaccept = global.key_jumpp || global.key_start
+		global.key_menuquit = global.key_dashp
 	}
 	else if !instance_exists(obj_nocontroller)
 	{

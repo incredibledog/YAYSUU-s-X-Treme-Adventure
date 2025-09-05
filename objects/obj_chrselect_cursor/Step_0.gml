@@ -81,7 +81,7 @@ if global.key_runp && !global.trial
 		savemonth[0]=ini_read_real("fileY","month",0)
 		saveyear[0]=ini_read_real("fileY","year",0)
 	}
-	if charlife=1
+	else if charlife=1
 	{
 		ini_section_delete("fileT")
 		savelives[1]=ini_read_real("fileT","lives",3)
@@ -96,7 +96,7 @@ if global.key_runp && !global.trial
 }
 else
 {
-	if (global.key_jumpp || global.key_start) && !selected
+	if global.key_menuaccept && !selected
 	{
 		if (!teddyavailable && chos == 2)
 			audio_play_sound(snd_nicetry,1,false)
@@ -122,7 +122,7 @@ else
 			}
 		}
 	}
-	else if global.key_dashp
+	else if global.key_menuquit
 	{
 		loadroom(room_mainmenu, loadtype.menu)
 		audio_play_sound(snd_nahnvm,1,false)
@@ -137,19 +137,19 @@ else
 		audio_play_sound(snd_move,1,false)
 		chos--
 	}
-	//else if global.key_upp
-	//{
-	//	audio_play_sound(snd_move,1,false)
-	//	if (chos != 1.5)
-	//		prevchos = chos
-	//	chos = 1.5
-	//}
-	// NOT YET...
-	else if global.key_downp && chos == 1.5
+	/*else if global.key_upp
 	{
 		audio_play_sound(snd_move,1,false)
-		chos = prevchos
+		if (chos != 1.5)
+			prevchos = chos
+		chos = 1.5
 	}
+	 NOT YET...
+	else if global.key_downp && chos == 1.5
+	{
+	audio_play_sound(snd_move,1,false)
+		chos = prevchos
+	}*/
 	
 	chos=clamp(chos,1,2)
 	if chos=1

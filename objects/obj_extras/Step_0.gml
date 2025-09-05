@@ -55,7 +55,7 @@ switch chos
 	// TODO: NOODLES ARE THE WATER.
 	break;
 	case 9:
-	// TODO: THIS GAME IS SPONSORED BY WOKE.
+	// TODO: THIS GAME IS SPONSORED BY -W-O-K-E- ME, VASSIE! I'M WOKE!.
 	break;
 	case 10:
 	{
