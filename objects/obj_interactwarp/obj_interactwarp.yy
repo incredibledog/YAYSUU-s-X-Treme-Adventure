@@ -9,8 +9,8 @@
   "name":"obj_interactwarp",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"geometry",
+    "path":"folders/Objects/levelobjs/geometry.yy",
   },
   "parentObjectId":null,
   "persistent":false,

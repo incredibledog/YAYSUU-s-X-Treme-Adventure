@@ -10,8 +10,8 @@
   "name":"obj_nogoalflag",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"uncommom",
+    "path":"folders/Objects/levelobjs/lvlassets/uncommom.yy",
   },
   "parentObjectId":{
     "name":"obj_goalflag",

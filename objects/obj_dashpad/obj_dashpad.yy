@@ -10,8 +10,8 @@
   "name":"obj_dashpad",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"lvlassets",
+    "path":"folders/Objects/levelobjs/lvlassets.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -10,8 +10,8 @@
   "name":"obj_devnote",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"dev",
+    "path":"folders/Objects/levelobjs/dev.yy",
   },
   "parentObjectId":null,
   "persistent":false,

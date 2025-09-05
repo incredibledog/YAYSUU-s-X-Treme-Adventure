@@ -6,8 +6,8 @@
   "name":"obj_backplate",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"uncommom",
+    "path":"folders/Objects/levelobjs/lvlassets/uncommom.yy",
   },
   "parentObjectId":null,
   "persistent":false,

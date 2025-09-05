@@ -9,8 +9,8 @@
   "name":"obj_dialoguetrigger",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"triggers",
+    "path":"folders/Objects/levelobjs/triggers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

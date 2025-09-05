@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"parallaxobjs",
-    "path":"folders/Objects/parallaxobjs.yy",
+    "path":"folders/Objects/levelobjs/parallaxobjs.yy",
   },
   "parentObjectId":null,
   "persistent":true,

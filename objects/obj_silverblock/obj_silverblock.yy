@@ -9,8 +9,8 @@
   "name":"obj_silverblock",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"lvlassets",
+    "path":"folders/Objects/levelobjs/lvlassets.yy",
   },
   "parentObjectId":{
     "name":"obj_rubble",

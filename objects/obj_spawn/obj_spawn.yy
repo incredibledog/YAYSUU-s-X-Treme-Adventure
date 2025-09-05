@@ -8,8 +8,8 @@
   "name":"obj_spawn",
   "overriddenProperties":[],
   "parent":{
-    "name":"players",
-    "path":"folders/Objects/levelobjs/players.yy",
+    "name":"geometry",
+    "path":"folders/Objects/levelobjs/geometry.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"mechanical",
-    "path":"folders/Objects/levelobjs/mechanical.yy",
+    "path":"folders/Objects/levelobjs/lvlassets/mechanical.yy",
   },
   "parentObjectId":{
     "name":"obj_collision",

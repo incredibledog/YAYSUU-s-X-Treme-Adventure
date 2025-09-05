@@ -18,8 +18,8 @@
   "name":"obj_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"players",
-    "path":"folders/Objects/levelobjs/players.yy",
+    "name":"levelobjs",
+    "path":"folders/Objects/levelobjs.yy",
   },
   "parentObjectId":null,
   "persistent":true,

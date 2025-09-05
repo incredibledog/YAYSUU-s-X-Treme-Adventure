@@ -8,8 +8,8 @@
   "name":"obj_playercollision",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"technical",
+    "path":"folders/Objects/levelobjs/technical.yy",
   },
   "parentObjectId":null,
   "persistent":false,

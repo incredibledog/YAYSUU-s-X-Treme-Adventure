@@ -6,8 +6,8 @@
   "name":"obj_semisolid_gothrough",
   "overriddenProperties":[],
   "parent":{
-    "name":"levelobjs",
-    "path":"folders/Objects/levelobjs.yy",
+    "name":"geometry",
+    "path":"folders/Objects/levelobjs/geometry.yy",
   },
   "parentObjectId":{
     "name":"obj_semisolid",

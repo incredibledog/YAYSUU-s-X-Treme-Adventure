@@ -8,3 +8,4 @@ if (insecret)
 {
 	secretsection = instance_place(x, y, obj_seecret)
 }
+candamage = false
