@@ -25,23 +25,21 @@ if (global.inlevel)
 		inwater = false
 		if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 		{
+			sprite_index = global.playersprites[playersprite.idle]
 			if (global.char == "Y")
 			{
 				rundamagespeed = 12
 				smashbump = 4
-				sprite_index = spr_yaysuu_idle
 			}
 			else if (global.char == "T")
 			{
 				rundamagespeed = 8
 				smashbump = 4
-				sprite_index = spr_teddy_idle
 			}
 			else if (global.char == "C")
 			{
 				rundamagespeed = 12
 				smashbump = 1
-				sprite_index = spr_cotton_idle
 			}
 			if (room == room_tutorial)
 				whooshcolor = #C2C3C7
