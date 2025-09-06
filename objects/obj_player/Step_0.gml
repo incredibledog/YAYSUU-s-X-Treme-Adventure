@@ -784,39 +784,39 @@ switch (state)
 			image_xscale = facingdirection
 		break;
 	case playerstates.crouch:
-		newsprite = spr_yaysuu_crouch
+		newsprite = global.playersprites[playersprite.crouch]
 		image_xscale = facingdirection
 		break;
 	case playerstates.dash:
-		newsprite = spr_yaysuu_airdash
+		newsprite = global.playersprites[playersprite.dash]
 		break;
 	case playerstates.stomp:
-		newsprite = spr_yaysuu_stomp
+		newsprite = global.playersprites[playersprite.stomp]
 		break;
 	case playerstates.hurt:
-		newsprite = spr_yaysuu_ouchie
+		newsprite = global.playersprites[playersprite.ouchie]
 		break;
 	case playerstates.inactive:
 		break;
 	case playerstates.dead:
-		newsprite = spr_yaysuu_deaded
+		newsprite = global.playersprites[playersprite.deaded]
 		image_angle += hsp
 		break;
 	case playerstates.slide:
-		newsprite = spr_yaysuu_slide
+		newsprite = global.playersprites[playersprite.slide]
 		break;
 	case playerstates.bounce:
-		newsprite = spr_yaysuu_spinball
+		newsprite = global.playersprites[playersprite.bounce]
 		image_xscale = facingdirection
 		break;
 	case playerstates.win:
-		newsprite = spr_yaysuu_win
+		newsprite = global.playersprites[playersprite.win]
 		break;
 	case playerstates.golfstop:
-		newsprite = spr_yaysuu_spinball
+		newsprite = global.playersprites[playersprite.golfstop]
 		break;
 	case playerstates.launched:
-		newsprite = spr_yaysuu_spinnykicked
+		newsprite = global.playersprites[playersprite.launched]
 		break;
 	case playerstates.debug:
 		newsprite = object_get_sprite(selecteddebugobject)
