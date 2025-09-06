@@ -211,41 +211,30 @@ if global.key_jumpp && (state != playerstates.inactive && state != playerstates.
 {
 	if (!grounded && global.char="T")
 	{
-		if (global.char == "C")
+		if place_meeting(x+(facingdirection*8),y,obj_playercollision) // WALL JUMP
 		{
-			vsp = fjmp
-			audio_play_sound(snd_doublejump_c, 1, false)
+			if (inwater)
+				vsp = wdjmp
+			else
+				vsp = djmp
+			hsp=wallbump * facingdirection
+			facingdirection=-facingdirection
+			audio_play_sound(snd_walljump, 1, false)
+			image_index = 0
+			sprite_index = global.playersprites[playersprite.jumpstart]
 		}
-		else
+		else if djump
 		{
-			if place_meeting(x+facingdirection,y,obj_playercollision) // WALL JUMP
-			{
-				if (inwater) {
-					vsp = wdjmp
-					hsp=wallbump * facingdirection
-					facingdirection=-facingdirection
-				}
-				else {
-					vsp = djmp
-					hsp=wallbump * facingdirection
-					facingdirection=-facingdirection
-				}
-				audio_play_sound(snd_walljump, 1, false)
-				audio_play_sound(snd_doublejump, 1, false)
-			}
-			else if djump
-			{
-				if (inwater) {
-					vsp = wdjmp
-				}
-				else {
-					vsp = djmp
-				}
-				audio_play_sound(snd_doublejump, 1, false)
-				djump = false
-			}
+			if (inwater)
+				vsp = wdjmp
+			else
+				vsp = djmp
+			audio_play_sound(snd_doublejump, 1, false)
+			djump = false
+			newstate = playerstates.normal
+			image_index = 0
+			sprite_index = global.playersprites[playersprite.jumpstart]
 		}
-		image_index = 0
 	}
 	else if grounded
 	{
@@ -257,12 +246,14 @@ if global.key_jumpp && (state != playerstates.inactive && state != playerstates.
 			audio_play_sound(snd_jump_c, 1, false)
 		else
 			audio_play_sound(snd_jump, 1, false)
+		grounded = false
+		prevgrounded = false
+		slopey = false
+		prevslopey = false
+		newstate = playerstates.normal
+		image_index = 0
+		sprite_index = global.playersprites[playersprite.jumpstart]
 	}
-    grounded = false
-	prevgrounded = false
-	slopey = false
-	prevslopey = false
-	newstate = playerstates.normal
 }
 else if (inwater && global.key_jumpp && state == playerstates.normal && newstate == state)
 {
@@ -746,7 +737,141 @@ if (room == room_dev)
 }
 
 //SPRITES! MY FABOLITE
-if (global.char == "Y")
+var newsprite = sprite_index
+switch (state)
+{
+	case playerstates.normal:
+		if (grounded)
+		{
+			if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
+			{
+				if ((sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait]) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
+					newsprite = global.playersprites[playersprite.idle]
+				else
+					newsprite = global.playersprites[playersprite.brake]
+			}
+			else if (abs(hsp) < yearnaccel)
+			{
+				if (idletime > 600)
+					newsprite = global.playersprites[playersprite.wait]
+				else
+					newsprite = global.playersprites[playersprite.idle]
+			}
+			else if (abs(hsp) > walkspeed)
+				newsprite = global.playersprites[playersprite.run]
+			else
+				newsprite = global.playersprites[playersprite.walk]
+		}
+		else
+		{
+			if (abs(hsp) > walkspeed)
+			{
+				if (vsp > 0)
+					newsprite = global.playersprites[playersprite.runfall]
+				else
+					newsprite = global.playersprites[playersprite.runjump]
+			}
+			else
+			{
+				if (vsp > 0)
+					newsprite = global.playersprites[playersprite.fall]
+				else if (sprite_index != global.playersprites[playersprite.jumpstart])
+					newsprite = global.playersprites[playersprite.jumploop]
+			}
+		}
+		
+		if (newsprite != global.playersprites[playersprite.brake])
+			image_xscale = facingdirection
+		break;
+	case playerstates.crouch:
+		newsprite = spr_yaysuu_crouch
+		image_xscale = facingdirection
+		break;
+	case playerstates.dash:
+		newsprite = spr_yaysuu_airdash
+		break;
+	case playerstates.stomp:
+		newsprite = spr_yaysuu_stomp
+		break;
+	case playerstates.hurt:
+		newsprite = spr_yaysuu_ouchie
+		break;
+	case playerstates.inactive:
+		break;
+	case playerstates.dead:
+		newsprite = spr_yaysuu_deaded
+		image_angle += hsp
+		break;
+	case playerstates.slide:
+		newsprite = spr_yaysuu_slide
+		break;
+	case playerstates.bounce:
+		newsprite = spr_yaysuu_spinball
+		image_xscale = facingdirection
+		break;
+	case playerstates.win:
+		newsprite = spr_yaysuu_win
+		break;
+	case playerstates.golfstop:
+		newsprite = spr_yaysuu_spinball
+		break;
+	case playerstates.launched:
+		newsprite = spr_yaysuu_spinnykicked
+		break;
+	case playerstates.debug:
+		newsprite = object_get_sprite(selecteddebugobject)
+		if (newsprite == -1)
+		{
+			newsprite = spr_smalloptionstext
+			image_index = 75
+		}
+		break;
+}
+if (newsprite != sprite_index)
+{
+	image_index = 0
+	if sprite_index == global.playersprites[playersprite.brake]
+		image_xscale = facingdirection
+}
+sprite_index = newsprite
+
+if ((sprite_index == global.playersprites[playersprite.win]) && floor(image_index) == image_number-1)
+	image_speed = 0
+else
+	image_speed = 1
+
+if (sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait])
+	idletime++
+else
+	idletime = 0
+if (!audio_exists(runningsound))
+	runningsound = audio_play_sound(snd_run, 1, true)
+if (sprite_index == global.playersprites[playersprite.run])
+{
+	if audio_is_paused(runningsound)
+		audio_resume_sound(runningsound)
+	
+	var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
+	audio_sound_pitch(runningsound, runpitch)
+	image_speed = runpitch
+}
+else if !audio_is_paused(runningsound)
+{
+	audio_pause_sound(runningsound)
+	image_speed = 1
+}
+	
+if (sprite_index == global.playersprites[playersprite.brake] && abs(hsp) > walkspeed)
+{
+	if (!hasplayedbrakesound)
+	{
+		audio_play_sound(snd_brake, 1, false)
+		hasplayedbrakesound = true
+	}
+}
+else
+	hasplayedbrakesound = false
+/*if (global.char == "Y")
 {
 	var newsprite = sprite_index
     switch (state)
@@ -1147,7 +1272,7 @@ else if (global.char == "C")
 	}
 	else
 		hasplayedbrakesound = false
-}
+}*/
 
 if (global.inv)
 {

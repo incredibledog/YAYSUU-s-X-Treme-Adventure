@@ -22,7 +22,7 @@ global.inlevel = false
 global.nextroom = room_idlogo
 axislh = gamepad_axis_value(0,gp_axislh)
 axislv = gamepad_axis_value(0,gp_axislv)
-global.char="Y"
+scr_changecharacter("Y")
 global.currentsong = -1
 global.jumpscare = false
 global.debugmessage = ""

@@ -107,17 +107,17 @@ else
 			audio_play_sound(snd_confirm,1,false)
 			if (chos == 1)
 			{
-				global.char="Y"
+				scr_changecharacter("Y")
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
 			else if (chos == 1.5)
 			{
-				global.char="C"
+				scr_changecharacter("C")
 				audio_play_sound(snd_cottonselect,1,false)
 			}
 			else
 			{
-				global.char="T"
+				scr_changecharacter("T")
 				audio_play_sound(snd_teddyselect,1,false)
 			}
 		}
