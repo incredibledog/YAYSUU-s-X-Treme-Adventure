@@ -170,7 +170,7 @@
     {"name":"obj_sndtest","order":8,"path":"objects/obj_sndtest/obj_sndtest.yy",},
     {"name":"obj_spawn","order":11,"path":"objects/obj_spawn/obj_spawn.yy",},
     {"name":"obj_spike","order":10,"path":"objects/obj_spike/obj_spike.yy",},
-    {"name":"obj_spikeball","order":19,"path":"objects/obj_spikeball/obj_spikeball.yy",},
+    {"name":"obj_spikeball","order":14,"path":"objects/obj_spikeball/obj_spikeball.yy",},
     {"name":"obj_spring","order":11,"path":"objects/obj_spring/obj_spring.yy",},
     {"name":"obj_stageclear","order":9,"path":"objects/obj_stageclear/obj_stageclear.yy",},
     {"name":"obj_stair","order":5,"path":"objects/obj_stair/obj_stair.yy",},

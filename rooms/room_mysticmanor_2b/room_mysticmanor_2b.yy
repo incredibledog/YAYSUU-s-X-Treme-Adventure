@@ -236,6 +236,7 @@
     {"name":"inst_3DAD5F47","path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},
     {"name":"inst_40E0CE3A","path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},
     {"name":"inst_645BA1BD","path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},
+    {"name":"inst_72BD6EF3","path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -472,6 +473,7 @@
         {"$GMRInstance":"v2","%Name":"inst_3DAD5F47","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3DAD5F47","objectId":{"name":"obj_robot2","path":"objects/obj_robot2/obj_robot2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":7584.0,"y":864.0,},
         {"$GMRInstance":"v2","%Name":"inst_40E0CE3A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40E0CE3A","objectId":{"name":"obj_collision","path":"objects/obj_collision/obj_collision.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":20.0,"x":-128.0,"y":0.0,},
         {"$GMRInstance":"v2","%Name":"inst_645BA1BD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_645BA1BD","objectId":{"name":"obj_die","path":"objects/obj_die/obj_die.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":23.0,"scaleY":1.0,"x":2016.0,"y":960.0,},
+        {"$GMRInstance":"v2","%Name":"inst_72BD6EF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_72BD6EF3","objectId":{"name":"obj_die","path":"objects/obj_die/obj_die.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":7104.0,"y":960.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"decor","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_2E59399","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2E59399","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_bush_dead","path":"sprites/spr_bush_dead/spr_bush_dead.yy",},"x":736.0,"y":544.0,},

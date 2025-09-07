@@ -2,6 +2,7 @@
 // You can write your code in this editor
 global.inv=true
 trailtimer=30
+invtimer=17*global.defaultfps
 x=obj_player.x
 y=obj_player.y
 if audio_is_playing(global.currentsong)

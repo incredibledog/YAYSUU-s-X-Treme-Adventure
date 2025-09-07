@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.021678,
+  "duration":0.9142857,
   "name":"snd_hint",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_hint.mp4",
+  "soundFile":"snd_hint.mp3",
   "type":0,
   "volume":1.0,
 }

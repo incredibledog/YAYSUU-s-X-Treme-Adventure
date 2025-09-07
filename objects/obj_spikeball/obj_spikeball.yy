@@ -6,8 +6,8 @@
   "name":"obj_spikeball",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemys",
-    "path":"folders/Objects/levelobjs/enemys.yy",
+    "name":"lvlassets",
+    "path":"folders/Objects/levelobjs/lvlassets.yy",
   },
   "parentObjectId":{
     "name":"obj_harmful",

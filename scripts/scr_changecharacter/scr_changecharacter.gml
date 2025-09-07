@@ -33,7 +33,7 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.jumpstart] = spr_yaysuu_jump
 		global.playersprites[playersprite.jumploop] = spr_yaysuu_jumploop
 		global.playersprites[playersprite.fall] = spr_yaysuu_fall
-		global.playersprites[playersprite.runjump] = spr_yaysuu_launchjump
+		global.playersprites[playersprite.runjump] = spr_yaysuu_launchjump // 
 		global.playersprites[playersprite.runfall] = spr_yaysuu_launch
 		global.playersprites[playersprite.crouch] = spr_yaysuu_crouch
 		global.playersprites[playersprite.dash] = spr_yaysuu_airdash
