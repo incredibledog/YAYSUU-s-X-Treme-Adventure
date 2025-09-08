@@ -27,10 +27,8 @@ if (inbackground)
 inwater = place_meeting(x, y, obj_water)
 
 move = (global.key_right - global.key_left)
-if (move != 0)
+if (move != 0 && !(global.skibispin && !grounded))
 	facingdirection = move
-if (global.key_run && state == playerstates.normal && !global.key_down && global.char != "C")
-	move = facingdirection
 
 if (inwater)
 {
@@ -46,6 +44,11 @@ else if (state == playerstates.stomp)
 {
 	grv = stompgrav
 	maxfallspeed = stompmaxfall
+}
+else if (state == playerstates.dash && global.char == "T")
+{
+	grv = 0
+	maxfallspeed = normmaxfall
 }
 else
 {
@@ -102,19 +105,27 @@ if (candodashdo)
 //airdash
 if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo && global.char != "C")
 {
-    hsp = dashboost * facingdirection
+	if (global.skibispin)
+	{
+		hsp = lengthdir_x(dashboost, visualrotation) * facingdirection
+		if global.char == "T"
+			vsp = lengthdir_y(dashboost, visualrotation) * facingdirection
+		else
+			vsp = lengthdir_y(dashboost, visualrotation) * facingdirection * 0.5
+		
+	}
+	else
+	{
+		hsp = dashboost * facingdirection
+		if global.char == "T"
+			vsp = 0
+	}
     dshed = true
 	newstate = playerstates.dash
     audio_play_sound(snd_airdash, 1, false)
 }
-if state=playerstates.dash && global.char="T"
-{
-	vsp = 0
-}
 if (state == playerstates.dash && newstate == state && grounded)
-{
 	newstate = playerstates.normal
-}
 
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
 if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo)
@@ -871,279 +882,7 @@ if (sprite_index == global.playersprites[playersprite.brake] && abs(hsp) > walks
 }
 else
 	hasplayedbrakesound = false
-/*if (global.char == "Y")
-{
-	var newsprite = sprite_index
-    switch (state)
-	{
-		case playerstates.normal:
-			if (grounded)
-			{
-				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
-				{
-					if ((sprite_index == spr_yaysuu_idle || sprite_index == spr_yaysuu_walk) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
-						newsprite = spr_yaysuu_idle
-					else
-						newsprite = spr_yaysuu_brake
-				}
-				else if (abs(hsp) < yearnaccel)
-				{
-					if (idletime > 600)
-						newsprite = spr_yaysuu_wait
-					else
-						newsprite = spr_yaysuu_idle
-				}
-				else if (abs(hsp) > walkspeed)
-					newsprite = spr_yaysuu_run
-				else
-					newsprite = spr_yaysuu_walk
-			}
-			else
-			{
-				if (abs(hsp) > walkspeed)
-				{
-					newsprite = spr_yaysuu_spinball
-				}
-				else
-				{
-					if (vsp > 0)
-						newsprite = spr_yaysuu_fall
-					else
-						newsprite = spr_yaysuu_jump
-				}
-			}
-			
-			if (newsprite != spr_yaysuu_brake)
-				image_xscale = facingdirection
-			break;
-		case playerstates.crouch:
-			newsprite = spr_yaysuu_crouch
-			image_xscale = facingdirection
-			break;
-		case playerstates.dash:
-			newsprite = spr_yaysuu_airdash
-			break;
-		case playerstates.stomp:
-			newsprite = spr_yaysuu_stomp
-			break;
-		case playerstates.hurt:
-			newsprite = spr_yaysuu_ouchie
-			break;
-		case playerstates.inactive:
-			break;
-		case playerstates.dead:
-			newsprite = spr_yaysuu_deaded
-			image_angle += hsp
-			break;
-		case playerstates.slide:
-			newsprite = spr_yaysuu_slide
-			break;
-		case playerstates.bounce:
-			newsprite = spr_yaysuu_spinball
-			image_xscale = facingdirection
-			break;
-		case playerstates.win:
-			newsprite = spr_yaysuu_win
-			break;
-		case playerstates.golfstop:
-			newsprite = spr_yaysuu_spinball
-			break;
-		case playerstates.launched:
-			newsprite = spr_yaysuu_launched
-			break;
-		case playerstates.debug:
-			newsprite = object_get_sprite(selecteddebugobject)
-			if (newsprite == -1)
-			{
-				newsprite = spr_smalloptionstext
-				image_index = 75
-			}
-			break;
-	}
-	if (newsprite != sprite_index)
-	{
-		image_index = 0
-		if sprite_index == spr_yaysuu_brake
-			image_xscale = facingdirection
-	}
-	sprite_index = newsprite
-	
-	if ((sprite_index == spr_yaysuu_jump || sprite_index == spr_yaysuu_win) && floor(image_index) == image_number-1)
-		image_speed = 0
-	else
-		image_speed = 1
-	
-	if (sprite_index == spr_yaysuu_idle || sprite_index == spr_yaysuu_wait)
-		idletime++
-	else
-		idletime = 0
-
-	if (!audio_exists(runningsound))
-		runningsound = audio_play_sound(snd_run, 1, true)
-	if (sprite_index == spr_yaysuu_run)
-	{
-		if audio_is_paused(runningsound)
-			audio_resume_sound(runningsound)
-		
-		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
-		audio_sound_pitch(runningsound, runpitch)
-		image_speed = runpitch
-	}
-	else if !audio_is_paused(runningsound)
-	{
-		audio_pause_sound(runningsound)
-		image_speed = 1
-	}
-		
-	if (sprite_index == spr_yaysuu_brake && abs(hsp) > walkspeed)
-	{
-		if (!hasplayedbrakesound)
-		{
-			audio_play_sound(snd_brake, 1, false)
-			hasplayedbrakesound = true
-		}
-	}
-	else
-		hasplayedbrakesound = false
-}
-else if (global.char == "T")
-{
-    var newsprite = sprite_index
-    switch (state)
-	{
-		case playerstates.normal:
-			if (grounded)
-			{
-				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
-				{
-					if ((sprite_index == spr_teddy_idle || sprite_index == spr_yaysuu_walk) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
-						newsprite = spr_teddy_idle
-					else
-						newsprite = spr_teddy_brake
-				}
-				else if (abs(hsp) < yearnaccel)
-				{
-					if (idletime > 600)
-						newsprite = spr_teddy_wait
-					else
-						newsprite = spr_teddy_idle
-				}
-				else if (abs(hsp) > walkspeed)
-					newsprite = spr_teddy_run
-				else
-					newsprite = spr_teddy_walk
-			}
-			else
-			{
-				if (abs(hsp) > walkspeed)
-				{
-					newsprite = spr_teddy_launch
-				}
-				else
-				{
-					if (vsp > 0)
-						newsprite = spr_teddy_fall
-					else
-						newsprite = spr_teddy_jump
-				}
-			}
-			
-			if (newsprite != spr_teddy_brake)
-				image_xscale = facingdirection
-			break;
-		case playerstates.crouch:
-			newsprite = spr_teddy_crouch
-			image_xscale = facingdirection
-			break;
-		case playerstates.dash:
-			newsprite = spr_teddy_dash
-			break;
-		case playerstates.stomp:
-			newsprite = spr_teddy_stomp
-			break;
-		case playerstates.hurt:
-			newsprite = spr_teddy_ouch
-			break;
-		case playerstates.inactive:
-			break;
-		case playerstates.dead:
-			newsprite = spr_teddy_die
-			image_angle += hsp
-			break;
-		case playerstates.slide:
-			newsprite = spr_teddy_slide
-			break;
-		case playerstates.bounce:
-			newsprite = spr_teddy_fall
-			image_xscale = facingdirection
-			break;
-		case playerstates.win:
-			newsprite = spr_teddy_win
-			break;
-		case playerstates.golfstop:
-			newsprite = spr_yaysuu_spinball
-			break;
-		case playerstates.launched:
-			newsprite = spr_yaysuu_launched
-			break;
-		case playerstates.debug:
-			newsprite = object_get_sprite(selecteddebugobject)
-			if (newsprite == -1)
-			{
-				newsprite = spr_smalloptionstext
-				image_index = 75
-			}
-			break;
-	}
-	if (newsprite != sprite_index)
-	{
-		image_index = 0
-		if sprite_index == spr_teddy_brake
-			image_xscale = facingdirection
-	}
-	sprite_index = newsprite
-	
-	if ((sprite_index == spr_teddy_jump || sprite_index == spr_teddy_win) && floor(image_index) == image_number-1)
-		image_speed = 0
-	else
-		image_speed = 1
-	
-	if (sprite_index == spr_teddy_idle || sprite_index == spr_teddy_wait)
-		idletime++
-	else
-		idletime = 0
-
-	if (!audio_exists(runningsound))
-		runningsound = audio_play_sound(snd_run, 1, true)
-	if (sprite_index == spr_teddy_run)
-	{
-		if audio_is_paused(runningsound)
-			audio_resume_sound(runningsound)
-		
-		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
-		audio_sound_pitch(runningsound, runpitch)
-		image_speed = runpitch
-	}
-	else if !audio_is_paused(runningsound)
-	{
-		audio_pause_sound(runningsound)
-		image_speed = 1
-	}
-		
-	if (sprite_index == spr_teddy_brake && abs(hsp) > walkspeed)
-	{
-		if (!hasplayedbrakesound)
-		{
-			audio_play_sound(snd_brake, 1, false)
-			hasplayedbrakesound = true
-		}
-	}
-	else
-		hasplayedbrakesound = false
-}
-else if (global.char == "C")
-{
-	var newsprite = sprite_index
+/*	var newsprite = sprite_index
     switch (state)
 	{
 		case playerstates.normal:
@@ -1229,49 +968,6 @@ else if (global.char == "C")
 			}
 			break;
 	}
-	if (newsprite != sprite_index)
-	{
-		image_index = 0
-		if sprite_index == spr_cotton_brake
-			image_xscale = facingdirection
-	}
-	sprite_index = newsprite
-	
-	if (sprite_index == spr_cotton_jump && round(image_index) == 3)
-		image_index = 1
-	
-	if (sprite_index == spr_cotton_idle || sprite_index == spr_cotton_wait)
-		idletime++
-	else
-		idletime = 0
-
-	if (!audio_exists(runningsound))
-		runningsound = audio_play_sound(snd_run, 1, true)
-	if (sprite_index == spr_cotton_run)
-	{
-		if audio_is_paused(runningsound)
-			audio_resume_sound(runningsound)
-		
-		var runpitch = ((abs(hsp) - walkspeed)  / (runspeed - walkspeed) * 0.5) + 0.5 //hsp=walkspeed -> 0.5   hsp=runspeed -> 1
-		audio_sound_pitch(runningsound, runpitch)
-		image_speed = runpitch
-	}
-	else if !audio_is_paused(runningsound)
-	{
-		audio_pause_sound(runningsound)
-		image_speed = 1
-	}
-		
-	if (sprite_index == spr_cotton_brake && abs(hsp) > walkspeed)
-	{
-		if (!hasplayedbrakesound)
-		{
-			audio_play_sound(snd_slip, 1, false)
-			hasplayedbrakesound = true
-		}
-	}
-	else
-		hasplayedbrakesound = false
 }*/
 
 if (global.inv)
@@ -1286,3 +982,22 @@ if (inbackground && image_alpha > 0.5)
 	image_alpha -= 0.05
 else if (!inbackground && image_alpha < 1)
 	image_alpha += 0.05
+
+if (global.skibispin)
+{
+	if (grounded || state == playerstates.stomp)
+	{
+		if (visualrotation > -2 && visualrotation < 2)
+			visualrotation = 0
+		else
+			visualrotation /= 2
+	}
+	else
+	{
+		visualrotation -= hsp
+		if (visualrotation > 180)
+			visualrotation -= 360
+		else if (visualrotation < -180)
+			visualrotation += 360
+	}
+}

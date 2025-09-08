@@ -290,6 +290,7 @@
     {"id":{"name":"room_trialmenu","path":"rooms/room_trialmenu/room_trialmenu.yy",},},
     {"id":{"name":"room_tutorial","path":"rooms/room_tutorial/room_tutorial.yy",},},
     {"id":{"name":"amiwalled","path":"scripts/amiwalled/amiwalled.yy",},},
+    {"id":{"name":"cheatsing","path":"scripts/cheatsing/cheatsing.yy",},},
     {"id":{"name":"collisionupdate_rubble","path":"scripts/collisionupdate_rubble/collisionupdate_rubble.yy",},},
     {"id":{"name":"collisionupdate_semislope","path":"scripts/collisionupdate_semislope/collisionupdate_semislope.yy",},},
     {"id":{"name":"collisionupdate_semisolid","path":"scripts/collisionupdate_semisolid/collisionupdate_semisolid.yy",},},

@@ -227,6 +227,7 @@
     {"name":"room_trialmenu","order":24,"path":"rooms/room_trialmenu/room_trialmenu.yy",},
     {"name":"room_tutorial","order":4,"path":"rooms/room_tutorial/room_tutorial.yy",},
     {"name":"amiwalled","order":9,"path":"scripts/amiwalled/amiwalled.yy",},
+    {"name":"cheatsing","order":31,"path":"scripts/cheatsing/cheatsing.yy",},
     {"name":"collisionupdate_rubble","order":25,"path":"scripts/collisionupdate_rubble/collisionupdate_rubble.yy",},
     {"name":"collisionupdate_semislope","order":24,"path":"scripts/collisionupdate_semislope/collisionupdate_semislope.yy",},
     {"name":"collisionupdate_semisolid","order":23,"path":"scripts/collisionupdate_semisolid/collisionupdate_semisolid.yy",},

@@ -24,7 +24,7 @@ if keyboard_check_pressed(vk_enter)
 		global.voicelines=true
 		keyboard_string=""
 		break;
-		case "zopkonserv":
+		case "zopkonserf":
 		audio_play_sound(snd_confirm,1,false)
 		rewardstring="SURPRISE!"
 		loadroom(room_mystery,loadtype.menu)
@@ -32,7 +32,8 @@ if keyboard_check_pressed(vk_enter)
 		break;
 		case "skibiditoilet":
 		audio_play_sound(snd_confirm,1,false)
-		rewardstring="This doesn't do anything yet. But per the request of Fazmade..."
+		rewardstring="funny text here please"
+		global.skibispin = true
 		keyboard_string=""
 		case "":
 		audio_play_sound(snd_nicetry,1,false)
