@@ -10,8 +10,6 @@ draw_text(32,192,"CHEATS")
 draw_text(32,224,"EXTRA STAGES")
 draw_text(32,256,"ACHIEVEMENTS")
 draw_text(32,288,"GALLERY")
-draw_text(32,320,"QUIT OPTION")
-draw_text(32,352,"DOWN HERE")
 draw_text(32,384,"QUIT")
 switch chos
 {
@@ -37,12 +35,6 @@ switch chos
 	draw_sprite(spr_menucursor,0,0,288)
 	break;
 	case 8:
-	draw_sprite(spr_menucursor,0,0,320)
-	break;
-	case 9:
-	draw_sprite(spr_menucursor,0,0,352)
-	break;
-	case 10:
 	draw_sprite(spr_menucursor,0,0,384)
 	break;
 }

@@ -12,3 +12,4 @@ if !global.trial
 }
 draw_set_font(global.font)
 draw_text(224,448,charname)
+draw_set_font(global.subtitlefont)

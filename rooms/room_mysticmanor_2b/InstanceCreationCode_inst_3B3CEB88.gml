@@ -1,0 +1,2 @@
+topsprite=spr_secrettile_manorcourtgrass
+sprite_index=spr_secrettile_manorcourt

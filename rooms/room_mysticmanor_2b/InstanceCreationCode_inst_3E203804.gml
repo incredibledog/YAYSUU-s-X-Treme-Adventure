@@ -1,1 +1,0 @@
-text="The code to your Surprise is \nthe demolition man's favorite pastime \nin a forgotten language"

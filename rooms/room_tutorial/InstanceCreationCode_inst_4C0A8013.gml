@@ -1,0 +1,2 @@
+warptype=loadtype.newlevel
+warproom=room_chillfields_1

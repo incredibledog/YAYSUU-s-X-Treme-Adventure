@@ -11,7 +11,6 @@ if (global.inputtype != 3)
 		global.inputtype = 2
 	// NOT ANYMORE!
 }
-
 if (global.inputtype == 0) || (global.inputtype == 3)
 {
 	global.key_left = keyboard_check(vk_left)
@@ -28,7 +27,7 @@ if (global.inputtype == 0) || (global.inputtype == 3)
 	global.key_dashp = keyboard_check_pressed(ord("X"))
 	global.key_run = keyboard_check(ord("C"))
 	global.key_runp = keyboard_check_pressed(ord("C"))
-	global.key_start = keyboard_check_pressed(vk_enter)
+	global.key_start = keyboard_check_pressed(vk_enter) && !keyboard_check(vk_alt)
 	global.key_menuaccept = global.key_jumpp || global.key_start
 	global.key_menuquit = global.key_dashp
 }

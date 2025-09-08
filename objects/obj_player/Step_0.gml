@@ -26,7 +26,7 @@ if (inbackground)
 
 inwater = place_meeting(x, y, obj_water)
 
-move = (global.key_right - global.key_left)
+move = (key_right - key_left)
 if (move != 0 && !(global.skibispin && !grounded))
 	facingdirection = move
 
@@ -70,11 +70,17 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 {
 	if (state == playerstates.crouch || state == playerstates.inactive || state == playerstates.win)
 		wsp = 0
-	else if (global.key_run)
+	else if (key_run)
 		wsp = runspeed
 	else
 		wsp = walkspeed
-	yearnedhsp = move * wsp
+	if (key_run)
+	{
+		yearnedhsp = facingdirection * wsp
+	}
+	else {
+		yearnedhsp = move * wsp
+	}
 }
 
 if (grounded || state == playerstates.golfstop)
@@ -103,7 +109,7 @@ if (candodashdo)
 }
 
 //airdash
-if ((!grounded) && global.key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo && global.char != "C")
+if ((!grounded) && key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo && global.char != "C")
 {
 	if (global.skibispin)
 	{
@@ -128,7 +134,7 @@ if (state == playerstates.dash && newstate == state && grounded)
 	newstate = playerstates.normal
 
 //sliiide to the left! sliiide to the right! criss-cross! criss-cross! cha cha real smooth~ *ragdoll noises*
-if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo)
+if (grounded && ((abs(hsp) > walkspeed && key_downp) || key_dashp) && (state == playerstates.normal || state == playerstates.crouch) && newstate == state && candodashdo)
 {
     hsp = dashboost * facingdirection
 	newstate = playerstates.slide
@@ -136,7 +142,7 @@ if (grounded && ((abs(hsp) > walkspeed && global.key_downp) || global.key_dashp)
 }
 
 //stomp
-if ((!grounded) && global.key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
+if ((!grounded) && key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
 {	
 	vsp = 15
 	yearnedhsp = 15
@@ -158,7 +164,7 @@ else if (state == playerstates.bounce && newstate == state)
 {
 	if ((vsp >= 0 && global.char != "C") || grounded || slopey)
 		newstate = playerstates.normal
-	else if (global.key_downp)
+	else if (key_downp)
 	{
 		vsp = 15
 		yearnedhsp = 15
@@ -168,7 +174,7 @@ else if (state == playerstates.bounce && newstate == state)
 }
 
 //dash run
-if (global.key_runp && !global.key_down && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C" && !inwater)
+if (key_runp && !key_down && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C" && !inwater)
 {
 	yearnedhsp = facingdirection * runspeed
 	if (abs(hsp) < (yearnedhsp) || sign(hsp) != sign(yearnedhsp)) //you will not slow down if you start a run
@@ -197,13 +203,13 @@ if (place_meeting(x, y, obj_playercollision))
 }
 mask_index = savedmask
 
-if (grounded && newstate == state && state == playerstates.normal && global.key_down)
+if (grounded && newstate == state && state == playerstates.normal && key_down)
 	newstate = playerstates.crouch
-else if (state == playerstates.crouch && newstate == state && (!grounded || !global.key_down) && !forcecrouch)
+else if (state == playerstates.crouch && newstate == state && (!grounded || !key_down) && !forcecrouch)
 	newstate = playerstates.normal
 
 //going through platform
-if (grounded && global.key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
+if (grounded && key_runp && state = playerstates.crouch && (newstate == state || newstate == playerstates.crouch))
 {
 	if (place_meeting(x, y + vsp + checkscale, obj_semisolid_gothrough) && !place_meeting(x, y + vsp + checkscale, obj_notsemisolid))
 	{
@@ -218,7 +224,7 @@ if (grounded && global.key_runp && state = playerstates.crouch && (newstate == s
 }
 
 // jumping
-if global.key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
+if key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
 {
 	if (!grounded && global.char="T")
 	{
@@ -266,7 +272,7 @@ if global.key_jumpp && (state != playerstates.inactive && state != playerstates.
 		sprite_index = global.playersprites[playersprite.jumpstart]
 	}
 }
-else if (inwater && global.key_jumpp && state == playerstates.normal && newstate == state)
+else if (inwater && key_jumpp && state == playerstates.normal && newstate == state)
 {
 	vsp = wbop
 	audio_play_sound(snd_waterswim, 1, false)
@@ -274,7 +280,7 @@ else if (inwater && global.key_jumpp && state == playerstates.normal && newstate
 
 if (state == playerstates.golfstop && newstate == state)
 {
-	if (global.key_jumpp)
+	if (key_jumpp)
 	{
 		vsp = jmp
 		hsp = move * walkspeed
@@ -431,18 +437,18 @@ else
 if (state == playerstates.debug)
 {
 	image_xscale = 1
-	if (global.key_run)
+	if (key_run)
 	{
 		hsp = move * 20
-		vsp = (global.key_down - global.key_up) * 20
-		if (global.key_jumpp)
+		vsp = (key_down - key_up) * 20
+		if (key_jumpp)
 		{
 			audio_play_sound(snd_typewriterclick, 1, false)
 			selecteddebugobject--
 			if (selecteddebugobject == -1)
 				selecteddebugobject = global.totalobjectidcount-1
 		}
-		else if (global.key_dashp)
+		else if (key_dashp)
 		{
 			audio_play_sound(snd_balloonpop, 1, false)
 			state = playerstates.normal
@@ -452,15 +458,15 @@ if (state == playerstates.debug)
 	else
 	{
 		hsp = move * 6
-		vsp = (global.key_down - global.key_up) * 6
-		if (global.key_jumpp)
+		vsp = (key_down - key_up) * 6
+		if (key_jumpp)
 		{
 			audio_play_sound(snd_typewriterclick, 1, false)
 			selecteddebugobject++
 			if (selecteddebugobject == global.totalobjectidcount)
 				selecteddebugobject = 0
 		}
-		else if (global.key_dashp)
+		else if (key_dashp)
 		{
 			audio_play_sound(snd_bang, 1, false)
 			with (instance_create_depth(x, y, depth, selecteddebugobject))

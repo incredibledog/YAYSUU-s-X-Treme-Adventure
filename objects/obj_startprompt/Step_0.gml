@@ -14,7 +14,7 @@ if (started)
 }
 else if st==0
 {
-	if keyboard_check_pressed(vk_enter) || keyboard_check(ord("Z"))
+	if keyboard_check_pressed(vk_enter) && !keyboard_check(vk_alt) || keyboard_check(ord("Z"))
 	{
 		global.inputtype=0
 		started = true

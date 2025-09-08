@@ -15,7 +15,7 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-chos=clamp(chos,1,10)
+chos=clamp(chos,1,8)
 switch chos
 {
 	case 1:
@@ -52,12 +52,6 @@ switch chos
 	// TODO: PROBABLY NOT
 	break;
 	case 8:
-	// TODO: NOODLES ARE THE WATER.
-	break;
-	case 9:
-	// TODO: THIS GAME IS SPONSORED BY -W-O-K-E- ME, VASSIE! I'M WOKE!.
-	break;
-	case 10:
 	{
 		if global.key_jumpp
 		{
