@@ -3,7 +3,7 @@
 function scr_updatecollision(){
 	if (instance_exists(obj_semisolid))
 	{
-		with (obj_semisolid_gothrough)
+		with (obj_semisolid)
 			collisionupdate_semisolid()
 	}
 	if (instance_exists(obj_semislope))
