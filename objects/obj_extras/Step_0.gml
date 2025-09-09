@@ -49,7 +49,12 @@ switch chos
 	// TODO: HMMM.. DO WE EVEN NEED THIS MANY OPTIONS FOR AN EXTRAS MENU
 	break;
 	case 7:
-	// TODO: PROBABLY NOT
+	if global.key_jumpp
+	{
+		audio_play_sound(snd_confirm,1,false)
+		instance_deactivate_object(obj_extras)
+		instance_create_depth(x,y,depth,obj_gallery)
+	}
 	break;
 	case 8:
 	{

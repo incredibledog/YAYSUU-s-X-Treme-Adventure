@@ -32,9 +32,10 @@ if keyboard_check_pressed(vk_enter)
 		break;
 		case "skibiditoilet":
 		audio_play_sound(snd_confirm,1,false)
-		rewardstring="funny text here please"
+		rewardstring="Skibidi spin enabled! Do a flip!"
 		global.skibispin = true
 		keyboard_string=""
+		break;
 		case "":
 		audio_play_sound(snd_nicetry,1,false)
 		rewardstring="Please enter in a cheat."

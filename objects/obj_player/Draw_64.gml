@@ -69,6 +69,4 @@ else
 	actualstatename = actualstatename + " PS✗"
 draw_text(0, 480 - (16 * 5), actualstatename) //recycling :3
 draw_text(0, 480 - (16 * 6), whichcollisionsdid)
-draw_text(0, 480 - (16 * 8), key_run)
-draw_text(0, 480 - (16 * 9), key_runp)
 draw_set_valign(fa_top)
