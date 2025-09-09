@@ -6,8 +6,9 @@ if string_length(keyboard_string)>15
 {
 	keyboard_string=string_copy(keyboard_string,1,15)
 }
-if keyboard_check_pressed(vk_escape)
+if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_face2)
 {
+	audio_play_sound(snd_nahnvm,0,false)
 	instance_destroy()
 }
 if keyboard_string="gaster"

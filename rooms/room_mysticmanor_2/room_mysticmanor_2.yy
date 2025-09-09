@@ -18,6 +18,7 @@
     {"name":"inst_72A790E9","path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},
     {"name":"inst_3C7CF8B9","path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},
     {"name":"inst_7B2F4591","path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},
+    {"name":"inst_3D749122","path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -36,6 +37,7 @@
         {"$GMRInstance":"v2","%Name":"inst_72A790E9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_72A790E9","objectId":{"name":"obj_semisolid_gothrough","path":"objects/obj_semisolid_gothrough/obj_semisolid_gothrough.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":448.0,"y":288.0,},
         {"$GMRInstance":"v2","%Name":"inst_3C7CF8B9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3C7CF8B9","objectId":{"name":"obj_formergoalflag","path":"objects/obj_formergoalflag/obj_formergoalflag.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":320.0,},
         {"$GMRInstance":"v2","%Name":"inst_7B2F4591","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7B2F4591","objectId":{"name":"obj_npc_lockeddoor2","path":"objects/obj_npc_lockeddoor2/obj_npc_lockeddoor2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":288.0,},
+        {"$GMRInstance":"v2","%Name":"inst_3D749122","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3D749122","objectId":{"name":"obj_robotdecoy","path":"objects/obj_robotdecoy/obj_robotdecoy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":-32.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"decor","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_6EFAF101_1","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_6EFAF101_1","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_door_dark","path":"sprites/spr_door_dark/spr_door_dark.yy",},"x":320.0,"y":320.0,},

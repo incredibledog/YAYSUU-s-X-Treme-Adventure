@@ -22,7 +22,8 @@ switch chos
 	if global.key_jumpp
 	{
 		audio_play_sound(snd_confirm,1,false)
-		loadroom(room_credits,loadtype.menu)
+		instance_deactivate_object(obj_extras)
+		instance_create_depth(x,y,depth,obj_credits)
 	}
 	break;
 	case 2:
@@ -46,7 +47,12 @@ switch chos
 	// TODO: LISTEN I RAN OUT OF IDEAS 
 	break;
 	case 6:
-	// TODO: HMMM.. DO WE EVEN NEED THIS MANY OPTIONS FOR AN EXTRAS MENU
+	if global.key_jumpp
+	{
+		audio_play_sound(snd_confirm,1,false)
+		instance_deactivate_object(obj_extras)
+		instance_create_depth(x,y,depth,obj_achievements)
+	}
 	break;
 	case 7:
 	if global.key_jumpp

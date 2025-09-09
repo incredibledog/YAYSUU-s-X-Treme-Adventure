@@ -81,6 +81,7 @@ instance_create_depth(0,0, 100, obj_parallax)
 //instance_create_depth(128,416,100,obj_subtitle)
 instance_create_depth(0,0, 100,obj_titlecard)
 instance_create_depth(0,0, 100, obj_pause)
+instance_create_depth(0,0, 100, obj_persistentachchecker)
 randomize()
 
 global.indev = true

@@ -377,6 +377,7 @@
     {"name":"inst_5D3C382E","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
     {"name":"inst_6366F23C","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
     {"name":"inst_6B0682B1","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
+    {"name":"inst_E0AC2B6","path":"rooms/room_mysticmanor_1/room_mysticmanor_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -754,6 +755,7 @@
         {"$GMRInstance":"v2","%Name":"inst_5D3C382E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5D3C382E","objectId":{"name":"obj_seecret","path":"objects/obj_seecret/obj_seecret.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":22.0,"scaleY":7.0,"x":9152.0,"y":704.0,},
         {"$GMRInstance":"v2","%Name":"inst_6366F23C","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6366F23C","objectId":{"name":"obj_seecret","path":"objects/obj_seecret/obj_seecret.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":16.0,"scaleY":17.0,"x":9856.0,"y":416.0,},
         {"$GMRInstance":"v2","%Name":"inst_6B0682B1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6B0682B1","objectId":{"name":"obj_turnaround","path":"objects/obj_turnaround/obj_turnaround.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":9984.0,"y":736.0,},
+        {"$GMRInstance":"v2","%Name":"inst_E0AC2B6","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_E0AC2B6","objectId":{"name":"obj_achievementtrigger","path":"objects/obj_achievementtrigger/obj_achievementtrigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.0,"scaleY":3.0,"x":3424.0,"y":512.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"decor","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_5E5091C0","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_5E5091C0","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},"x":2656.0,"y":160.0,},

@@ -323,6 +323,7 @@
     {"name":"inst_47E0E36E","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
     {"name":"inst_2BE6C9F1","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
     {"name":"inst_39EF4106","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
+    {"name":"inst_48AECAC1","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -669,6 +670,7 @@
         {"$GMRInstance":"v2","%Name":"inst_61C9C727","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61C9C727","objectId":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4512.0,"y":608.0,},
         {"$GMRInstance":"v2","%Name":"inst_12970F0B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_12970F0B","objectId":{"name":"obj_realvassie","path":"objects/obj_realvassie/obj_realvassie.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":1216.0,},
         {"$GMRInstance":"v2","%Name":"inst_47E0E36E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_47E0E36E","objectId":{"name":"obj_turnaround","path":"objects/obj_turnaround/obj_turnaround.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3232.0,"y":1184.0,},
+        {"$GMRInstance":"v2","%Name":"inst_48AECAC1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_48AECAC1","objectId":{"name":"obj_achievementtrigger","path":"objects/obj_achievementtrigger/obj_achievementtrigger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":7040.0,"y":1216.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"tileset","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tileset","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":48,"SerialiseWidth":384,"TileCompressedData":[
           -20,-2147483648,-242,0,-94,-2147483648,-6,7,-6,0,1,1,-15,7,-20,-2147483648,-242,0,-94,-2147483648,-6,

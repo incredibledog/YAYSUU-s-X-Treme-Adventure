@@ -59,7 +59,8 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
 		break;
 	}
 	draw_set_font(global.subtitlefont)
+	var alpha = draw_get_alpha()
 	if dropshadow
-		draw_text_ext_color(x+1,y+1,string(textstring),16,maxlength,c_black,c_black,c_black,c_black,1)
-	draw_text_ext_color(x,y,string(textstring),16,maxlength,colorhex,colorhex,colorhex,colorhex,1)
+		draw_text_ext_color(x+1,y+1,string(textstring),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
+	draw_text_ext_color(x,y,string(textstring),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
 }
