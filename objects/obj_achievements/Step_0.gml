@@ -3,10 +3,12 @@
 chos=clamp(chos,1,9)
 if global.key_rightp
 {
+	audio_play_sound(snd_move,1,false)
 	chos++
 }
 if global.key_leftp
 {
+	audio_play_sound(snd_move,1,false)
 	chos--
 }
 if global.key_dashp

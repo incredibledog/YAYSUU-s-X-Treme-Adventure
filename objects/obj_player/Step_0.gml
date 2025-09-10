@@ -74,7 +74,7 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 		wsp = runspeed
 	else
 		wsp = walkspeed
-	if (key_run)
+	if (key_run) && !(key_down)
 	{
 		yearnedhsp = facingdirection * wsp
 	}
