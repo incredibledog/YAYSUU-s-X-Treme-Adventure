@@ -19,7 +19,7 @@ chos=clamp(chos,1,8)
 switch chos
 {
 	case 1:
-	if global.key_jumpp
+	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -27,7 +27,7 @@ switch chos
 	}
 	break;
 	case 2:
-	if global.key_jumpp
+	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		loadroom(room_soundtest,loadtype.menu)
@@ -36,7 +36,7 @@ switch chos
 	// TODO: MUSEUM GOES HERE... FOR CLICKTEAM VERSIONS OF LEVELS AND OTHER SUCH OLD MATERIAL LIKE JADE GULLY
 	break;
 	case 4:
-	if global.key_jumpp
+	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -47,7 +47,7 @@ switch chos
 	// TODO: LISTEN I RAN OUT OF IDEAS 
 	break;
 	case 6:
-	if global.key_jumpp
+	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -55,7 +55,7 @@ switch chos
 	}
 	break;
 	case 7:
-	if global.key_jumpp
+	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -64,7 +64,7 @@ switch chos
 	break;
 	case 8:
 	{
-		if global.key_jumpp
+		if global.key_menuaccept
 		{
 			audio_stop_sound(mus_extras)
 			audio_play_sound(snd_nahnvm,1,false)
@@ -73,7 +73,7 @@ switch chos
 	}
 	break;
 }
-if global.key_dashp
+if global.key_menuquit
 {
 	audio_stop_sound(mus_extras)
 	audio_play_sound(snd_nahnvm,1,false)

@@ -18,7 +18,7 @@ else if global.key_rightp
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-select=clamp(select,0,7)
+select=clamp(select,0,5) // sorry no more dev room 3:
 
 if (changedlevel)
 {
@@ -70,22 +70,6 @@ if (changedlevel)
 			lvlname="Mystic Manor Stage 2"
 			sprname=spr_mysticmanor2scroll
 			bosslvl=false
-			break;
-		case 6:
-			currentlevel=room_glowstickcity
-			endlevel=room_glowstickcity
-			lvlname="Glow Stick City (unfinished)"
-			sprname=spr_glowstickcityscroll
-			bosslvl=false
-			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
-			break;
-		case 7:
-			currentlevel=room_dev
-			endlevel=room_dev
-			lvlname="Fun Dev Room!"
-			sprname=spr_devroomscroll
-			bosslvl=false
-			//newmusic = audio_play_sound(mus_trialmenu_gc,1,true)
 			break;
 	}
 
