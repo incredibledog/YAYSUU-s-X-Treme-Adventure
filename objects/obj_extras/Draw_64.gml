@@ -5,11 +5,10 @@ draw_set_valign(fa_top)
 draw_text(32,32,"EXTRAS")
 draw_text(32,96,"CREDITS")
 draw_text(32,128,"SOUNDTEST")
-draw_text(32,160,"MUSEUM")
-draw_text(32,192,"CHEATS")
-draw_text(32,224,"EXTRA STAGES")
-draw_text(32,256,"ACHIEVEMENTS")
-draw_text(32,288,"GALLERY")
+draw_text(32,160,"CHEATS")
+draw_text(32,192,"EXTRA STAGES")
+draw_text(32,224,"ACHIEVEMENTS")
+draw_text(32,256,"GALLERY")
 draw_text(32,384,"QUIT")
 switch chos
 {
@@ -32,9 +31,6 @@ switch chos
 	draw_sprite(spr_menucursor,0,0,256)
 	break;
 	case 7:
-	draw_sprite(spr_menucursor,0,0,288)
-	break;
-	case 8:
 	draw_sprite(spr_menucursor,0,0,384)
 	break;
 }

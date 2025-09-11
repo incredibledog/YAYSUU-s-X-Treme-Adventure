@@ -7,7 +7,7 @@ draw_set_font(global.subtitlefont)
 draw_text_yxa(32, 16*04, "YAYSUU (Programmer, Artist, Composer)", "white", true)
 draw_text_yxa(32, 16*05, "JarekTEK (Composer)", "white", true)
 draw_text_yxa(32, 16*06, "Fazmade (Programmer, Minor Artist)", "white", true)
-
+draw_text_yxa(32, 16*07, "Midi Bradford (Intro Logo Editing)", "white", true)
 draw_set_font(global.font)
 draw_text(32, 16*08, "SPECIAL THANKS")
 draw_set_font(global.subtitlefont)

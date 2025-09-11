@@ -15,7 +15,7 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-chos=clamp(chos,1,8)
+chos=clamp(chos,1,7)
 switch chos
 {
 	case 1:
@@ -32,10 +32,8 @@ switch chos
 		audio_play_sound(snd_confirm,1,false)
 		loadroom(room_soundtest,loadtype.menu)
 	}
-	case 3:
-	// TODO: MUSEUM GOES HERE... FOR CLICKTEAM VERSIONS OF LEVELS AND OTHER SUCH OLD MATERIAL LIKE JADE GULLY
 	break;
-	case 4:
+	case 3:
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
@@ -43,7 +41,7 @@ switch chos
 		instance_create_depth(x,y,depth,obj_cheats)
 	}
 	break;
-	case 5:
+	case 4:
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
@@ -51,7 +49,7 @@ switch chos
 		loadroom(room_charselect,loadtype.menu)
 	}
 	break;
-	case 6:
+	case 5:
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
@@ -59,7 +57,7 @@ switch chos
 		instance_create_depth(x,y,depth,obj_achievements)
 	}
 	break;
-	case 7:
+	case 6:
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
@@ -67,14 +65,12 @@ switch chos
 		instance_create_depth(x,y,depth,obj_gallery)
 	}
 	break;
-	case 8:
+	case 7:
+	if global.key_menuaccept
 	{
-		if global.key_menuaccept
-		{
-			audio_stop_sound(mus_extras)
-			audio_play_sound(snd_nahnvm,1,false)
-			loadroom(room_mainmenu, loadtype.menu)
-		}
+		audio_stop_sound(mus_extras)
+		audio_play_sound(snd_nahnvm,1,false)
+		loadroom(room_mainmenu, loadtype.menu)
 	}
 	break;
 }

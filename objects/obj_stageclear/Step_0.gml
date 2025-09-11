@@ -64,7 +64,13 @@ else if (!obj_fadeblack.fading)
 	{
 		audio_play_sound(snd_confirm,1,false)
 		if global.trial
-			loadroom(room_trialmenu, loadtype.menu)
+			if isextrastage()
+			{
+				loadroom(room_trialmenu, loadtype.menu)
+			}
+			else {
+				loadroom(room_trialmenu, loadtype.menu)
+			}
 		else
 		{
 			switch (room)
