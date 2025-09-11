@@ -1,0 +1,1 @@
+subtitle="Collect coins to gain a score bonus at the end of the stage! Collecting 100 will grant you an extra life."

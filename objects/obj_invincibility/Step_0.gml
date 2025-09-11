@@ -18,7 +18,7 @@ else
 	instance_create_depth(x,y,depth,obj_invincibility_trail)
 	trailtimer=30
 }
-if invtimer=0 || obj_player.state == playerstates.dead
+if invtimer=0 || obj_player.state == playerstates.dead || obj_player.state==playerstates.win
 {
 	instance_destroy()
 }

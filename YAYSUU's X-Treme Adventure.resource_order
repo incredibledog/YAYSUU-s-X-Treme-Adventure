@@ -99,6 +99,7 @@
     {"name":"obj_go","order":3,"path":"objects/obj_go/obj_go.yy",},
     {"name":"obj_goalflag","order":5,"path":"objects/obj_goalflag/obj_goalflag.yy",},
     {"name":"obj_harmful","order":2,"path":"objects/obj_harmful/obj_harmful.yy",},
+    {"name":"obj_hintdialoguebox","order":4,"path":"objects/obj_hintdialoguebox/obj_hintdialoguebox.yy",},
     {"name":"obj_hintnew","order":9,"path":"objects/obj_hintnew/obj_hintnew.yy",},
     {"name":"obj_inleveltext","order":10,"path":"objects/obj_inleveltext/obj_inleveltext.yy",},
     {"name":"obj_inputbutton","order":1,"path":"objects/obj_inputbutton/obj_inputbutton.yy",},

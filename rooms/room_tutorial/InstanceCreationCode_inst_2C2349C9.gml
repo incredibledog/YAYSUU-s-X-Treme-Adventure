@@ -1,0 +1,1 @@
+subtitle="This flag is a Checkpoint. When activated, you respawn from that point when you lose a life."

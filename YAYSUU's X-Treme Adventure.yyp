@@ -153,6 +153,7 @@
     {"id":{"name":"obj_go","path":"objects/obj_go/obj_go.yy",},},
     {"id":{"name":"obj_goalflag","path":"objects/obj_goalflag/obj_goalflag.yy",},},
     {"id":{"name":"obj_harmful","path":"objects/obj_harmful/obj_harmful.yy",},},
+    {"id":{"name":"obj_hintdialoguebox","path":"objects/obj_hintdialoguebox/obj_hintdialoguebox.yy",},},
     {"id":{"name":"obj_hintnew","path":"objects/obj_hintnew/obj_hintnew.yy",},},
     {"id":{"name":"obj_hud","path":"objects/obj_hud/obj_hud.yy",},},
     {"id":{"name":"obj_inleveltext","path":"objects/obj_inleveltext/obj_inleveltext.yy",},},
