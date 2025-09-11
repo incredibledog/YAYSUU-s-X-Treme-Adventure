@@ -334,7 +334,13 @@ if (ouchies)
 				global.lives--
 		    vsp = -abs(vsp)
 		    audio_stop_all()
-			audio_play_sound(mus_dead, 1, false)
+			if global.jumpscare
+			{
+				audio_play_sound(snd_jumpscare,1,false)
+			}
+			else {
+				audio_play_sound(mus_dead, 1, false)
+			}
 		}
 	}
 }
@@ -378,13 +384,14 @@ else
 //the death fade
 if (state == playerstates.dead)
 {
-	if (!audio_is_playing(mus_dead) && !obj_fadeblack.fading)
+	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading)
 	{
 	    if (global.lives > 0)
 			loadroom(room, loadtype.respawn)
 		else
 		    if !instance_exists(obj_gameover)
 			{
+				global.jumpscare=false
 				instance_create_depth(0,0,depth,obj_gameover)
 			}
 	}

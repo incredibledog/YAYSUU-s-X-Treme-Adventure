@@ -69,7 +69,13 @@ if (selected)
 			loadroom(currentstage, loadtype.newlevel)
 		}
 		else {
-			loadroom(room_trialmenu, loadtype.menu)
+			if global.prevroom=room_extrastages || global.prevroom=room_extras
+			{
+				loadroom(room_extrastages, loadtype.menu)
+			}
+			else {
+				loadroom(room_trialmenu, loadtype.menu)
+			}
 		}
 	}
 }
@@ -129,15 +135,31 @@ else
 	}
 	else if global.key_menuquit
 	{
-		loadroom(room_mainmenu, loadtype.menu)
+		if !selected
+		{
+			if global.prevroom=room_extras || global.prevroom=room_extrastages
+			{
+				loadroom(room_extras, loadtype.menu)
+			}
+			else {
+				loadroom(room_mainmenu, loadtype.menu)
+			}
+		}
+		else if selected
+		{
+			selected=false
+			delay=0
+			audio_stop_sound(snd_yaysuuselect)
+			audio_stop_sound(snd_teddyselect)
+		}
 		audio_play_sound(snd_nahnvm,1,false)
 	}
-	else if global.key_rightp
+	else if global.key_rightp && !selected
 	{
 		audio_play_sound(snd_move,1,false)
 		chos++
 	}
-	else if global.key_leftp
+	else if global.key_leftp && !selected
 	{
 		audio_play_sound(snd_move,1,false)
 		chos--

@@ -5,7 +5,10 @@ if obj_chrselect_cursor.selected=true && obj_chrselect_cursor.chos=chosindex && 
 	sprite_index=selectedsprite
 	image_index=0
 }
-
+else if sprite_index=selectedsprite && obj_chrselect_cursor.selected=false
+{
+	sprite_index=unselectedsprite
+}
 var pos
 if (verticalshift)
 	pos = y

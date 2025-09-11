@@ -1,2 +1,2 @@
 global.currentsong=mus_glowstickcity
-scr_windowtitle("Neon Sights... in Glowstick City")
+scr_windowtitle("Indulge yourself in consumerism... in Glowstick City")

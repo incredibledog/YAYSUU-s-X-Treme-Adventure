@@ -44,7 +44,12 @@ switch chos
 	}
 	break;
 	case 5:
-	// TODO: LISTEN I RAN OUT OF IDEAS 
+	if global.key_menuaccept
+	{
+		audio_play_sound(snd_confirm,1,false)
+		global.trial=true
+		loadroom(room_charselect,loadtype.menu)
+	}
 	break;
 	case 6:
 	if global.key_menuaccept
@@ -68,7 +73,7 @@ switch chos
 		{
 			audio_stop_sound(mus_extras)
 			audio_play_sound(snd_nahnvm,1,false)
-			loadroom(room_mainmenu, false)
+			loadroom(room_mainmenu, loadtype.menu)
 		}
 	}
 	break;
@@ -77,5 +82,5 @@ if global.key_menuquit
 {
 	audio_stop_sound(mus_extras)
 	audio_play_sound(snd_nahnvm,1,false)
-	loadroom(room_mainmenu, false)
+	loadroom(room_mainmenu, loadtype.menu)
 }

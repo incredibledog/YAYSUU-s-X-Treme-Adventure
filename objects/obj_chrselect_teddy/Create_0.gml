@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 chosindex = 2
+unselectedsprite = spr_teddy_chrselect
 selectedsprite = spr_teddy_chrselect_ok
 verticalshift = false
 normalpos = 416

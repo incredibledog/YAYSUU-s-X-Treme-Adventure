@@ -68,9 +68,10 @@ if (global.pause)
 					global.checkpoint=false
 					audio_play_sound(snd_confirm,1,false)
 					if global.trial
-						loadroom(room_trialmenu, loadtype.menu)
-					else if room=room_tutorial
-						loadroom(room_househub, loadtype.newlevel)
+						if isextrastage()
+							loadroom(room_extrastages, loadtype.menu)
+						else
+							loadroom(room_trialmenu, loadtype.menu)
 					else
 						loadroom(room_mainmenu, loadtype.menu)
 					break;
@@ -87,19 +88,24 @@ if (global.pause)
 		quitkey=keyboard_check_pressed(vk_f7)
 		if resumekey
 		{
-			global.pause=!global.pause
+			global.pause = false
 			audio_play_sound(snd_confirm,1,false)
 			audio_resume_all()
+			instance_activate_all()
 		}
 		if retrykey && !(room=room_househub || room=room_househub_extra) && global.lives!=1
 		{
-			global.hubstart=false
-			global.checkpoint=false
-			global.lives-=1
-			global.nextroom=room
-			obj_fadeblack.fading=true
-			audio_stop_all()
-			audio_play_sound(snd_confirm,1,false)
+			if (global.lives <= 1 && !global.trial)
+				audio_play_sound(snd_nicetry,1,false)
+			else
+			{
+				if (!global.trial)
+					global.lives--
+				global.checkpoint=false
+				audio_stop_all()
+				audio_play_sound(snd_confirm,1,false)
+				scr_restartlevel()
+			}
 		}
 		if retrykey && (room=room_househub || room=room_househub_extra || global.lives=1)
 		{
@@ -107,22 +113,15 @@ if (global.pause)
 		}
 		if quitkey
 		{
-			global.hubstart=false
 			global.checkpoint=false
-			if (room=room_househub || room=room_househub_extra)
-			{
-				global.nextroom=room_glowstickcity
-			}
-			else if global.trial=true
-			{
-				global.nextroom=room_trialmenu
-			}
-			else {
-				global.nextroom=room_househub
-			}
-			instance_activate_object(obj_fadeblack)
-			obj_fadeblack.fading=true
 			audio_play_sound(snd_confirm,1,false)
+			if global.trial
+				if isextrastage()
+					loadroom(room_extrastages, loadtype.menu)
+				else
+					loadroom(room_trialmenu, loadtype.menu)
+			else
+				loadroom(room_mainmenu, loadtype.menu)
 		}
 	}
 }

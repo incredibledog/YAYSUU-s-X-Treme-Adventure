@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_glowstickcitytiles",
-    "path":"sprites/spr_glowstickcitytiles/spr_glowstickcitytiles.yy",
+    "name":"spr_tile_glowstick",
+    "path":"sprites/spr_tile_glowstick/spr_tile_glowstick.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -28,10 +28,10 @@
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,
-  "tileHeight":16,
+  "tileHeight":32,
   "tilehsep":0,
   "tilevsep":0,
-  "tileWidth":16,
+  "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
   "tile_count":40,
