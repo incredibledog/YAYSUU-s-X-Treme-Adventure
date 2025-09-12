@@ -1,21 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.key_right
-{
-	x+=10
-}
-else if global.key_left
-{
-	x-=10
-}
-if global.key_up
-{
-	y-=10
-}
-else if global.key_down
-{
-	y+=10
-}
+x -= 10 * (global.key_left - global.key_left)
+y -= 10 * (global.key_down - global.key_up)
 if global.key_runp
 {
 	if image_index=image_number-1

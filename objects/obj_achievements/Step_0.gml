@@ -11,7 +11,7 @@ if global.key_leftp
 	audio_play_sound(snd_move,1,false)
 	chos--
 }
-if global.key_dashp
+if global.key_menuquit
 {
 	audio_play_sound(snd_nahnvm,1,false)
 	instance_destroy()
