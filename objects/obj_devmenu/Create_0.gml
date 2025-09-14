@@ -1,3 +1,3 @@
-selection = 3
+selection = 2
 optiontext = ""
 global.quickmenu = true

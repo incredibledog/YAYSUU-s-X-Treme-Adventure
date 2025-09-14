@@ -42,7 +42,10 @@ switch (state)
 				scr_shake(30, false)
 				hasdamaged = true
 				if (global.bosshp == 3) //it gets HARDERS!?
-					idledelay = 100
+				{
+					idledelay = 90
+					attackamount = 4
+				}
 				grounded = false
 			}
 		}
@@ -52,7 +55,10 @@ switch (state)
 		{
 			vulnerable = false
 			state = choose(electrobotstates.jump, electrobotstates.spin, electrobotstates.shoot)
-			attackcount = 3
+			while (state == prevattack)
+				state = choose(electrobotstates.jump, electrobotstates.spin, electrobotstates.shoot)
+			prevattack = state
+			attackcount = attackamount
 			hasdamaged = false
 			switch (state) //ah yes switch statements in switch statements
 			{
@@ -62,6 +68,7 @@ switch (state)
 					break;
 				case electrobotstates.spin:
 					audio_play_sound(snd_speen,1,true)
+					vsp = -3
 					break;
 				case electrobotstates.shoot:
 					sprite_index = spr_electrobot_shoot
@@ -93,9 +100,12 @@ switch (state)
 			{
 				delay = idledelay
 				state = electrobotstates.idle
-				vsp = 5
+				vsp = 10
 				gravityapplies = true
-				x = obj_player.x
+				if (obj_player.x > 320)
+					x = 160
+				else
+					x = 480
 			}
 			else
 			{
@@ -106,14 +116,14 @@ switch (state)
 		}
 		break;
 	case electrobotstates.spin:
-		hsp = image_xscale * 6
+		hsp = image_xscale * 7
 		if (place_meeting(x + hsp, y, obj_collision))
 		{
-			vsp = -3
 			image_xscale = -image_xscale
 			hsp = image_xscale * 6
 			attackcount--
 			grounded = false
+			vsp = -3
 		}
 		if (attackcount == 0 && grounded) || (attackcount < -1)
 		{
@@ -135,9 +145,13 @@ switch (state)
 			else
 			{
 				image_index = 0
+				if (obj_player.x > x)
+					image_xscale = 1
+				else if (obj_player.x < x)
+					image_xscale = -1
 				with (instance_create_depth(x,y,depth+1,obj_electrobot_boolet))
 					image_xscale = other.image_xscale	
-				delay = 20
+				delay = 25
 				attackcount--
 			}
 		}
@@ -166,6 +180,7 @@ switch (state)
 			vsp = -5
 		break;
 	case electrobotstates.dying:
+		hsp = 0
 		delay--
 		if (delay > 0)
 		{

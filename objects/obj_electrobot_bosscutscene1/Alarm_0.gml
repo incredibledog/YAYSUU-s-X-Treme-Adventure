@@ -4,9 +4,9 @@ if stringchr<string_length(bossname)
 {
 	stringchr++
 	audio_play_sound(snd_typewriterclick,1,false)
-	alarm_set(0,15)
+	alarm_set(0,global.quickmenu ? 1 : 15)
 }
 else
 {
-	alarm_set(1,60)
+	alarm_set(1,global.quickmenu ? 10 : 60)
 }

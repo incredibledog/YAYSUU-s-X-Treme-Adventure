@@ -15,3 +15,5 @@ jumpsmoothing = 1.1
 idledelay = 120
 extradamagebounces = 0
 slowdown = 0
+attackamount = 3
+prevattack = state

@@ -25,7 +25,7 @@ switch (selection)
 		}
 		break;
 	case 2:
-		optiontext = "TRIAL"
+		optiontext = "LEVEL SELECT"
 		if (global.key_jumpp)
 			loadroom(room_trialmenu, loadtype.menu)
 		break;
