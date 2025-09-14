@@ -224,7 +224,7 @@ if (grounded && key_runp && state = playerstates.crouch && (newstate == state ||
 	}
 }
 
-var canwalljump = !grounded && global.char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision)
+var canwalljump = !grounded && global.char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision) && !place_meeting(x+(facingdirection*8),y,obj_wallsoap)
 // jumping
 if key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
 {
