@@ -68,3 +68,4 @@ hitboxcolor = c_lime
 selecteddebugobject = 0
 previousspawnedobject = noone
 visualrotation = 0
+lastwall = 0

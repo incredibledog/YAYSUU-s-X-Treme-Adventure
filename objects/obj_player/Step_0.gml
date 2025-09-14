@@ -87,6 +87,7 @@ if (grounded || state == playerstates.golfstop)
 {
 	dshed = false
 	djump = (global.char == "T" || global.char == "C")
+	lastwall = 0
 }
 
 var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
@@ -228,13 +229,14 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 {
 	if (!grounded && global.char="T")
 	{
-		if place_meeting(x+(facingdirection*8),y,obj_playercollision) // WALL JUMP
+		if (facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision)) // WALL JUMP
 		{
 			if (inwater)
 				vsp = wdjmp
 			else
 				vsp = djmp
 			hsp=wallbump * facingdirection
+			lastwall = facingdirection
 			facingdirection=-facingdirection
 			audio_play_sound(snd_walljump, 1, false)
 			image_index = 0
