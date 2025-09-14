@@ -45,11 +45,6 @@ else if (state == playerstates.stomp)
 	grv = stompgrav
 	maxfallspeed = stompmaxfall
 }
-else if (state == playerstates.dash && global.char == "T")
-{
-	grv = 0
-	maxfallspeed = normmaxfall
-}
 else
 {
 	grv = normalgrav
@@ -70,7 +65,7 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 {
 	if (state == playerstates.crouch || state == playerstates.inactive || state == playerstates.win)
 		wsp = 0
-	else if (key_run)
+	else if (key_run && !(state == playerstates.stomp && global.char == "T"))
 		wsp = runspeed
 	else
 		wsp = walkspeed
@@ -90,11 +85,11 @@ if (grounded || state == playerstates.golfstop)
 	lastwall = 0
 }
 
-var candodashdo = abs(hsp) <= runspeed && !amiwalled(hsp)
+var candodashdo = (abs(hsp) <= runspeed) && !amiwalled(hsp)
 
 if (state != playerstates.dead && state != playerstates.inactive && state != playerstates.debug)
 {
-	
+
 if (candodashdo)
 {
 	if (state == playerstates.dash)
@@ -123,9 +118,8 @@ if ((!grounded) && key_dashp && (state == playerstates.normal || state == player
 	}
 	else
 	{
-		hsp = dashboost * facingdirection
-		if global.char == "T"
-			vsp = 0
+		hsp = airdashboost * facingdirection
+		vsp = 0
 	}
     dshed = true
 	newstate = playerstates.dash
@@ -146,7 +140,7 @@ if (grounded && ((abs(hsp) > walkspeed && key_downp) || key_dashp) && (state == 
 if ((!grounded) && key_downp && newstate == state && (state == playerstates.normal || state == playerstates.dash))
 {	
 	vsp = 15
-	yearnedhsp = 15
+	//yearnedhsp = 15
     audio_play_sound(snd_stomp, 1, false)
 	newstate = playerstates.stomp
 }
@@ -167,8 +161,10 @@ else if (state == playerstates.bounce && newstate == state)
 		newstate = playerstates.normal
 	else if (key_downp)
 	{
-		vsp = 15
-		yearnedhsp = 15
+		if (vsp < 0)
+			vsp /= 2
+		//vsp = 15
+		//yearnedhsp = 15
 		audio_play_sound(snd_stomp, 1, false)
 		newstate = playerstates.stomp
 	}

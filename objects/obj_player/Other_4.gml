@@ -29,17 +29,20 @@ if (global.inlevel)
 			if (global.char == "Y")
 			{
 				rundamagespeed = 12
-				smashbump = 4
+				smashbump = 6
+				airdashboost = 20
 			}
 			else if (global.char == "T")
 			{
 				rundamagespeed = 8
-				smashbump = 4
+				smashbump = 2
+				airdashboost = 17
 			}
 			else if (global.char == "C")
 			{
 				rundamagespeed = 12
 				smashbump = 1
+				airdashboost = 20
 			}
 			if (room == room_tutorial)
 				whooshcolor = #C2C3C7

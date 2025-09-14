@@ -4,12 +4,26 @@ if (touchingplayer(x, y) && obj_player.grounded)
 {
 	if (global.key_downp && gamefps != 1)
 	{
-		gamefps--
+		var fpschange
+		if (gamefps > 30)
+			fpschange = 10
+		else if (gamefps > 10)
+			fpschange = 5
+		else
+			fpschange = 1
+		gamefps -= fpschange
 		audio_play_sound(snd_typewriterclick, 1, false)
 	}
 	else if (global.key_upp && gamefps != 120)
 	{
-		gamefps++
+		var fpschange
+		if (gamefps >= 30)
+			fpschange = 10
+		else if (gamefps >= 10)
+			fpschange = 5
+		else
+			fpschange = 1
+		gamefps += fpschange
 		audio_play_sound(snd_typewriterclick, 1, false)
 	}
 }

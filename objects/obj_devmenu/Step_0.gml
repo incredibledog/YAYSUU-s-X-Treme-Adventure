@@ -32,12 +32,12 @@ switch (selection)
 	case 3:
 		optiontext = "MYSTIC 2"
 		if (global.key_jumpp)
-			loadroom(room_mysticmanor_2, loadtype.menu)
+			loadroom(room_mysticmanor_2, loadtype.newlevel)
 		break;
 	case 4:
 		optiontext = "DEVROOM"
 		if (global.key_jumpp)
-			loadroom(room_dev, loadtype.menu)
+			loadroom(room_dev, loadtype.newlevel)
 		break;
 }
 
