@@ -224,10 +224,11 @@ if (grounded && key_runp && state = playerstates.crouch && (newstate == state ||
 	}
 }
 
+var canwalljump = !grounded && global.char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision)
 // jumping
 if key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
 {
-	if (!grounded && global.char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision)) // WALL JUMP
+	if (canwalljump) // WALL JUMP
 	{
 		if (inwater)
 			vsp = wdjmp
@@ -787,7 +788,9 @@ switch (state)
 		}
 		else
 		{
-			if (abs(hsp) > walkspeed)
+			if (canwalljump)
+					newsprite = global.playersprites[playersprite.wallslide]
+			else if (abs(hsp) > walkspeed)
 			{
 				if (vsp > 0)
 					newsprite = global.playersprites[playersprite.runfall]
