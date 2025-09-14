@@ -20,6 +20,7 @@ if (global.inlevel)
 		facingdirection = 1
 		image_xscale = 1
 		image_angle = 0
+		visualrotation = 0
 		slopey = false
 		prevslopey = false
 		inwater = false

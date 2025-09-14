@@ -2,6 +2,7 @@
 // You can write your code in this editor
 global.hp=3
 talking=false
+image_angle = 0
 if global.char="Y"
 {
 	sprite_index=spr_yaysuu_idle

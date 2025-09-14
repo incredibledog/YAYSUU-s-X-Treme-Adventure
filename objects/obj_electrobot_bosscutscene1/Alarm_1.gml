@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 instance_destroy()
+obj_player.image_angle = 0
 obj_player.state = playerstates.normal
 obj_player.newstate = playerstates.normal
 obj_electrobot.state = electrobotstates.idle

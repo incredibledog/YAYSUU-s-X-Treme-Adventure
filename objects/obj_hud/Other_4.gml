@@ -12,3 +12,8 @@ if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtyp
 		timebonus=1200
 	}
 }
+if global.levelloadtype == loadtype.newlevel
+{
+	global.score=0
+	global.scoreadd=0
+}

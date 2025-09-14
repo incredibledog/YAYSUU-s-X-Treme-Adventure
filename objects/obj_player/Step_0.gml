@@ -69,7 +69,13 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 		wsp = runspeed
 	else
 		wsp = walkspeed
-	yearnedhsp = move * wsp
+	if (key_run && !key_down) || (key_run && (state=playerstates.stomp || state=playerstates.bounce)) // how many times do we have to teach you this LESSON OLD WOMAN!
+	{
+		yearnedhsp = facingdirection * wsp
+	}
+	else {
+		yearnedhsp = move * wsp
+	}
 }
 
 if (grounded || state == playerstates.golfstop)
@@ -320,16 +326,19 @@ if (ouchies)
 		{
 			deathies = false;
 		    newstate = playerstates.dead
-			if (global.lives > 0)
-				global.lives--
-		    vsp = -abs(vsp)
-		    audio_stop_all()
-			if global.jumpscare
+			if !instance_exists(obj_stageclear)
 			{
-				audio_play_sound(snd_jumpscare,1,false)
-			}
-			else {
-				audio_play_sound(mus_dead, 1, false)
+				if (global.lives > 0)
+					global.lives--
+			    vsp = -abs(vsp)
+			    audio_stop_all()
+				if global.jumpscare
+				{
+					audio_play_sound(snd_jumpscare,1,false)
+				}
+				else {
+					audio_play_sound(mus_dead, 1, false)
+				}
 			}
 		}
 	}
@@ -374,7 +383,7 @@ else
 //the death fade
 if (state == playerstates.dead)
 {
-	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading)
+	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading && !instance_exists(obj_stageclear)) // anti-dying when you beat the stage check
 	{
 	    if (global.lives > 0)
 			loadroom(room, loadtype.respawn)

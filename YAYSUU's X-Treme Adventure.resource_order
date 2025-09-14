@@ -660,6 +660,7 @@
     {"name":"spr_teddy_stomp","order":7,"path":"sprites/spr_teddy_stomp/spr_teddy_stomp.yy",},
     {"name":"spr_teddy_wait","order":14,"path":"sprites/spr_teddy_wait/spr_teddy_wait.yy",},
     {"name":"spr_teddy_walk","order":1,"path":"sprites/spr_teddy_walk/spr_teddy_walk.yy",},
+    {"name":"spr_teddy_wallslide","order":16,"path":"sprites/spr_teddy_wallslide/spr_teddy_wallslide.yy",},
     {"name":"spr_teddy_win","order":9,"path":"sprites/spr_teddy_win/spr_teddy_win.yy",},
     {"name":"spr_teddy_winb","order":10,"path":"sprites/spr_teddy_winb/spr_teddy_winb.yy",},
     {"name":"spr_teddygameover","order":30,"path":"sprites/spr_teddygameover/spr_teddygameover.yy",},

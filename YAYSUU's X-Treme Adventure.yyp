@@ -748,6 +748,7 @@
     {"id":{"name":"spr_teddy_stomp","path":"sprites/spr_teddy_stomp/spr_teddy_stomp.yy",},},
     {"id":{"name":"spr_teddy_wait","path":"sprites/spr_teddy_wait/spr_teddy_wait.yy",},},
     {"id":{"name":"spr_teddy_walk","path":"sprites/spr_teddy_walk/spr_teddy_walk.yy",},},
+    {"id":{"name":"spr_teddy_wallslide","path":"sprites/spr_teddy_wallslide/spr_teddy_wallslide.yy",},},
     {"id":{"name":"spr_teddy_win","path":"sprites/spr_teddy_win/spr_teddy_win.yy",},},
     {"id":{"name":"spr_teddy_winb","path":"sprites/spr_teddy_winb/spr_teddy_winb.yy",},},
     {"id":{"name":"spr_teddygameover","path":"sprites/spr_teddygameover/spr_teddygameover.yy",},},
