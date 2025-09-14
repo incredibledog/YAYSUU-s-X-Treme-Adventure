@@ -16,6 +16,7 @@
     {"name":"inst_2D49EB8B","path":"rooms/room_mysticmanor_1c/room_mysticmanor_1c.yy",},
     {"name":"inst_37FFBB4E","path":"rooms/room_mysticmanor_1c/room_mysticmanor_1c.yy",},
     {"name":"inst_6F915E93","path":"rooms/room_mysticmanor_1c/room_mysticmanor_1c.yy",},
+    {"name":"inst_1EBBF51C","path":"rooms/room_mysticmanor_1c/room_mysticmanor_1c.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -32,6 +33,7 @@
         {"$GMRInstance":"v2","%Name":"inst_2D49EB8B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D49EB8B","objectId":{"name":"obj_npc_closet","path":"objects/obj_npc_closet/obj_npc_closet.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":288.0,},
         {"$GMRInstance":"v2","%Name":"inst_37FFBB4E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_37FFBB4E","objectId":{"name":"obj_spawn","path":"objects/obj_spawn/obj_spawn.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":320.0,},
         {"$GMRInstance":"v2","%Name":"inst_6F915E93","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6F915E93","objectId":{"name":"obj_robotdecoy","path":"objects/obj_robotdecoy/obj_robotdecoy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":-32.0,},
+        {"$GMRInstance":"v2","%Name":"inst_1EBBF51C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EBBF51C","objectId":{"name":"obj_semisolid_gothrough","path":"objects/obj_semisolid_gothrough/obj_semisolid_gothrough.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":448.0,"y":288.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"decor","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_29764A27","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_29764A27","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_closet","path":"sprites/spr_closet/spr_closet.yy",},"x":192.0,"y":288.0,},
