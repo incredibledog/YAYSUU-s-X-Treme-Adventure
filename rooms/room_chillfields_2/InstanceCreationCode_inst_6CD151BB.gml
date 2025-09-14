@@ -1,1 +1,0 @@
-text = "yaysuu only path"

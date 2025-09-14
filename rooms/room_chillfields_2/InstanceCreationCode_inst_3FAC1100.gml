@@ -1,1 +1,0 @@
-text = "this part is kind of boring"
