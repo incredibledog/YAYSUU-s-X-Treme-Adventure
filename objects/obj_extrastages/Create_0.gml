@@ -3,7 +3,7 @@
 select=0
 currentlevel=room_glowstickcity
 endlevel=room_glowstickcity
-lvlname="Glowstick City"
+lvlname="Glowstick City (Uncanny Cat Golf)"
 sprname=spr_glowstickcityscroll
 bosslvl=false
 ini_open("savedata.ini")

@@ -8,17 +8,17 @@ else
 var prevselect = select
 if global.key_leftp
 {
-	//select-=1
+	select-=1
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
 else if global.key_rightp
 {
-	//select+=1
+	select+=1
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-select=clamp(select,0,0) // sorry ONLY GLOWSTICK CITY
+select=clamp(select,0,1) // nuh uh
 
 if (changedlevel)
 {
@@ -29,6 +29,13 @@ if (changedlevel)
 			endlevel=room_glowstickcity
 			lvlname="Glowstick City (Uncanny Cat Golf)"
 			sprname=spr_glowstickcityscroll
+			bosslvl=false
+			break;
+		case 1:
+			currentlevel=room_dev
+			endlevel=room_dev
+			lvlname="Fun Dev Room!"
+			sprname=spr_devroomscroll
 			bosslvl=false
 			break;
 	}
