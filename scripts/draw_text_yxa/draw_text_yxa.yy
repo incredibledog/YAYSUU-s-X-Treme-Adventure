@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_subtitlefont",
+  "%Name":"draw_text_yxa",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_subtitlefont",
+  "name":"draw_text_yxa",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

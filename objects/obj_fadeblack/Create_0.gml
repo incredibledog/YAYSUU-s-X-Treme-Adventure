@@ -6,3 +6,4 @@ red=255
 green=255
 blue=255
 color=make_color_rgb(red,green,blue)
+instaswitch = false

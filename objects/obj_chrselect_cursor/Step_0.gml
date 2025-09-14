@@ -54,7 +54,7 @@ switch savestage[charlife]
 }
 if (selected)
 {
-	if delay > 0
+	if delay > 0 && !global.quickmenu
 		delay--
 	else if (!obj_fadeblack.fading)
 	{

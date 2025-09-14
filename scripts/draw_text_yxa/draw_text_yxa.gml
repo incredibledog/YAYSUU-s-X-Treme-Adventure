@@ -55,10 +55,10 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
 		colorhex = #FFFFFF 
 		break;
 		default:
-		show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to scr_subtitlefont for more details.",true)
+		show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to draw_text_yxa for more details.",true)
 		break;
 	}
-	draw_set_font(global.subtitlefont)
+	//draw_set_font(global.subtitlefont)
 	var alpha = draw_get_alpha()
 	if dropshadow
 		draw_text_ext_color(x+1,y+1,string(textstring),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)

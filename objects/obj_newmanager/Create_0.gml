@@ -44,6 +44,7 @@ global.inhub = false
 global.globaltimer = 0
 global.debugmessageoffset = 0
 global.skibispin = false
+global.quickmenu = false
 windowtimer = 0
 windowname = ""
 newwindowname = ""

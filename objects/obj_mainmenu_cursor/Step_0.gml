@@ -75,7 +75,7 @@ if (global.key_menuaccept) && selected=false
 	}
 }
 
-if delay>0
+if delay>0 && !global.quickmenu
 	delay--
 else if selected=true && !obj_fadeblack.fading
 	loadroom(nextroom, loadtype.menu)

@@ -1,3 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.showcollision = !global.showcollision
+if (global.indev)
+	global.showcollision = !global.showcollision

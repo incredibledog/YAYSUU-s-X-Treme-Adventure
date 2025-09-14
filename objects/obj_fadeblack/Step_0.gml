@@ -2,8 +2,15 @@
 // You can write your code in this editor
 image_alpha=clamp(image_alpha,0,1)
 color=make_color_rgb(red,green,blue)
+var fadespeed = global.quickmenu ? 255 : 51;
 if fading
 {
+	if (instaswitch)
+	{
+		preloadactualroom()
+		room_goto(global.nextroom)
+		return
+	}
 	if red=255
 	{
 		if green=255
@@ -14,19 +21,13 @@ if fading
 				room_goto(global.nextroom)
 			}
 			if blue<255
-			{
-				blue+=51
-			}
+				blue+=fadespeed
 		}
 		if green<255
-		{
-			green+=51
-		}
+			green+=fadespeed
 	}
 	if red<255
-	{
-		red+=51
-	}
+		red+=fadespeed
 }
 else
 {
@@ -35,19 +36,13 @@ else
 		if green=0
 		{
 			if red>0
-			{
-				red-=51
-			}
+				red-=fadespeed
 		}
 		if green>0
-		{
-			green-=51
-		}
+			green-=fadespeed
 	}
 	if blue>0
-	{
-		blue-=51
-	}
+		blue-=fadespeed
 }
 //else if image_alpha > 0
 //{
