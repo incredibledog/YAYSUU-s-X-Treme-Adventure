@@ -69,13 +69,7 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 		wsp = runspeed
 	else
 		wsp = walkspeed
-	if (key_run) && !(key_down)
-	{
-		yearnedhsp = facingdirection * wsp
-	}
-	else {
-		yearnedhsp = move * wsp
-	}
+	yearnedhsp = move * wsp
 }
 
 if (grounded || state == playerstates.golfstop)
@@ -394,12 +388,11 @@ if (state == playerstates.dead)
 }
 else
 {
-	image_angle = 0
 	if instance_exists(obj_goalflag)
 	{
-	    if (obj_goalflag.winning == 1)
+	    if (obj_goalflag.winning)
 		{
-	        winning = 1
+	        winning = true
 			if (grounded)
 				newstate = playerstates.win
 		}
@@ -710,8 +703,7 @@ if (hascollision)
 }
 x += hsp
 y += vsp
-//emergency fixing
-if (place_meeting(x, y, obj_playercollision)) && hascollision
+if (place_meeting(x, y, obj_playercollision)) && hascollision //PANIC.
 {
     if !(place_meeting((x + 1), y, obj_playercollision))
         x += 1
@@ -822,7 +814,7 @@ switch (state)
 		break;
 	case playerstates.dead:
 		newsprite = global.playersprites[playersprite.deaded]
-		image_angle += hsp
+		visualrotation += hsp
 		break;
 	case playerstates.slide:
 		newsprite = global.playersprites[playersprite.slide]
