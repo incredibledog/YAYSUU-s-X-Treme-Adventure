@@ -227,33 +227,30 @@ if (grounded && key_runp && state = playerstates.crouch && (newstate == state ||
 // jumping
 if key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
 {
-	if (!grounded && global.char="T")
+	if (!grounded && global.char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision)) // WALL JUMP
 	{
-		if (facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision)) // WALL JUMP
-		{
-			if (inwater)
-				vsp = wdjmp
-			else
-				vsp = djmp
-			hsp=wallbump * facingdirection
-			lastwall = facingdirection
-			facingdirection=-facingdirection
-			audio_play_sound(snd_walljump, 1, false)
-			image_index = 0
-			sprite_index = global.playersprites[playersprite.jumpstart]
-		}
-		else if djump
-		{
-			if (inwater)
-				vsp = wdjmp
-			else
-				vsp = djmp
-			audio_play_sound(snd_doublejump, 1, false)
-			djump = false
-			newstate = playerstates.normal
-			image_index = 0
-			sprite_index = global.playersprites[playersprite.jumpstart]
-		}
+		if (inwater)
+			vsp = wdjmp
+		else
+			vsp = djmp
+		hsp=wallbump * facingdirection
+		lastwall = facingdirection
+		facingdirection=-facingdirection
+		audio_play_sound(snd_walljump, 1, false)
+		image_index = 0
+		sprite_index = global.playersprites[playersprite.jumpstart]
+	}
+	else if !grounded && global.char="T" && djump
+	{
+		if (inwater)
+			vsp = wdjmp
+		else
+			vsp = djmp
+		audio_play_sound(snd_doublejump, 1, false)
+		djump = false
+		newstate = playerstates.normal
+		image_index = 0
+		sprite_index = global.playersprites[playersprite.jumpstart]
 	}
 	else if grounded
 	{
@@ -273,11 +270,11 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		image_index = 0
 		sprite_index = global.playersprites[playersprite.jumpstart]
 	}
-}
-else if (inwater && key_jumpp && state == playerstates.normal && newstate == state)
-{
-	vsp = wbop
-	audio_play_sound(snd_waterswim, 1, false)
+	else if (inwater)
+	{
+		vsp = wbop
+		audio_play_sound(snd_waterswim, 1, false)
+	}
 }
 
 if (state == playerstates.golfstop && newstate == state)
