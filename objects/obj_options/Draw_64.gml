@@ -53,8 +53,8 @@ else
 	draw_text(32,288,"SPEEDRUN TIMER  OFF")
 draw_text(32,320,"RESET RECORDS")
 draw_text(32,352,"RESET 2 DEFAULT")
-draw_text(32,384,"SAVE N QUIT")
-draw_text(32,416,"QUIT")
+draw_text(32,384,"REBIND CONTROLS")
+draw_text(32,416,"SAVE N QUIT")
 switch chos
 {
 	case 1:

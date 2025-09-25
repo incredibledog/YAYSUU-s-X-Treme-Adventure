@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if !started
 {
-	if keyboard_check_pressed(vk_enter)
+	if keyboard_check_pressed(global.p1_startkey)
 	{
 		global.inputtype=0
 		delay=60
@@ -10,15 +10,7 @@ if !started
 		audio_play_sound(snd_confirm,1,false)
 		image_speed=2
 	}
-	if keyboard_check_pressed(vk_escape) 
-	{
-		global.inputtype=1
-		delay=60
-		started=true
-		audio_play_sound(snd_confirm,1,false)
-		image_speed=2
-	}
-	if gamepad_button_check_pressed(0,gp_start)
+	if gamepad_button_check_pressed(global.p1_controlslot,gp_start)
 	{
 		global.inputtype=2
 		delay=60

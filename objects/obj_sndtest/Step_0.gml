@@ -2,24 +2,24 @@
 // You can write your code in this editor
 // I'M SALVAGING THE OLD SOUND TEST!! WE'RE BACK!! AND BETTER THAN EVER!!!
 select=clamp(select,0,22)
-if global.key_leftp && !audio_is_playing(currentsound)
+if global.p1_key_leftp && !audio_is_playing(currentsound)
 {
 	select-=1
 }
-if global.key_rightp && !audio_is_playing(currentsound)
+if global.p1_key_rightp && !audio_is_playing(currentsound)
 {
 	select+=1
 }
-if global.key_jumpp
+if global.p1_key_jumpp
 {
 	audio_stop_all()
 	audio_play_sound(currentsound,1,loopthis)
 }
-if global.key_dashp
+if global.p1_key_dashp
 {
 	audio_stop_all()
 }
-if global.key_runp
+if global.p1_key_runp
 {
 	loadroom(room_extras,loadtype.menu)
 }

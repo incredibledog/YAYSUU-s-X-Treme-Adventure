@@ -25,7 +25,7 @@ if touchingplayer(x, y) && sprite_index == normsprite
 	else
 	{
 		var intendedbounce = vbouncesmall
-		if (global.key_jump || obj_player.bbox_bottom > y + 8)
+		if (obj_player.key_jump || obj_player.bbox_bottom > y + 8)
 			intendedbounce = vbouncejump
 		
 		if (obj_player.vsp*image_yscale > intendedbounce*image_yscale)

@@ -5,12 +5,12 @@
 if (obj_fadeblack.fading)
 	return
 
-if global.key_downp
+if global.p1_key_downp
 {
 	chos++
 	audio_play_sound(snd_move,1,false)
 }
-if global.key_upp
+if global.p1_key_upp
 {
 	chos--
 	audio_play_sound(snd_move,1,false)
@@ -19,7 +19,7 @@ chos=clamp(chos,1,7)
 switch chos
 {
 	case 1:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -27,14 +27,14 @@ switch chos
 	}
 	break;
 	case 2:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		loadroom(room_soundtest,loadtype.menu)
 	}
 	break;
 	case 3:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -42,7 +42,7 @@ switch chos
 	}
 	break;
 	case 4:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		global.trial=true
@@ -50,7 +50,7 @@ switch chos
 	}
 	break;
 	case 5:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -58,7 +58,7 @@ switch chos
 	}
 	break;
 	case 6:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
@@ -66,7 +66,7 @@ switch chos
 	}
 	break;
 	case 7:
-	if global.key_menuaccept
+	if global.p1_key_menuaccept
 	{
 		audio_stop_sound(mus_extras)
 		audio_play_sound(snd_nahnvm,1,false)
@@ -74,7 +74,7 @@ switch chos
 	}
 	break;
 }
-if global.key_menuquit
+if global.p1_key_menuquit
 {
 	audio_stop_sound(mus_extras)
 	audio_play_sound(snd_nahnvm,1,false)

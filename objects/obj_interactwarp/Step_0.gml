@@ -3,7 +3,7 @@
 if touchingplayer(x, y) && obj_player.grounded
 {
 	obj_player.showarrow = true
-	if (global.key_upp)
+	if (obj_player.key_upp)
 	{
 		loadroom(warproom, warptype)
 		obj_player.newstate = playerstates.inactive

@@ -36,7 +36,7 @@ if (!finished)
     }
 }
 
-if global.key_jumpp
+if obj_player.key_jumpp // oops
 {
     if (finished)
         instance_destroy();

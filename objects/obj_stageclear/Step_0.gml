@@ -66,7 +66,7 @@ else if display == 5
 }
 else if (!obj_fadeblack.fading)
 {
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
 		if global.trial
@@ -108,7 +108,7 @@ else if (!obj_fadeblack.fading)
 			savestory(stageprogress)
 		}
 	}
-	else if global.key_dashp && global.trial
+	else if global.p1_key_menuquit && global.trial
 	{
 		audio_play_sound(snd_confirm,1,false)
 		scr_restartlevel()

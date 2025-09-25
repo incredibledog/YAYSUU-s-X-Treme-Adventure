@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.key_start && global.inlevel && !instance_exists(obj_gameover)
+if global.p1_key_start && global.inlevel && !instance_exists(obj_gameover)
 {
 	global.pause = !global.pause
 	if global.pause
@@ -29,19 +29,19 @@ if (global.pause)
 		scroll = 0
 	if (os_type != os_android)
 	{
-		if global.key_upp
+		if global.p1_key_upp
 		{
 			cursor--
 			audio_play_sound(snd_move,1,false)
 		}
-		if global.key_downp
+		if global.p1_key_downp
 		{
 			cursor++
 			audio_play_sound(snd_move,1,false)
 		}
 		cursor=clamp(cursor,0,2)
 		
-		if global.key_jumpp
+		if global.p1_key_jumpp
 		{
 			switch(cursor)
 			{

@@ -3,7 +3,7 @@
 if touchingplayer(x, y) && obj_player.grounded
 {
 	obj_player.showarrow = true
-	if (global.key_upp) && talking=false
+	if (obj_player.key_upp) && talking=false
 	{
 		dialogueprogress=0
 		talking=true

@@ -1,11 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.key_upp && selected=false
+if global.p1_key_upp && selected=false
 {
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-else if global.key_downp && selected=false
+else if global.p1_key_downp && selected=false
 {
 	chos++
 	audio_play_sound(snd_move,1,false)
@@ -34,7 +34,7 @@ switch (chos)
 		menustring="Access cheats, and other such extra doodads! "
 		break
 }
-if (global.key_menuaccept) && selected=false
+if (global.p1_key_menuaccept) && selected=false
 {
 	switch (chos)
 	{

@@ -14,17 +14,12 @@ if (started)
 }
 else if st==0
 {
-	if keyboard_check_pressed(vk_enter) && !keyboard_check(vk_alt) || keyboard_check(ord("Z"))
+	if keyboard_check_pressed(global.p1_startkey) || keyboard_check_pressed(global.p1_jumpkey)
 	{
 		global.inputtype=0
 		started = true
 	}
-	else if keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_space)
-	{
-		global.inputtype=1
-		started = true
-	}
-	else if gamepad_button_check_pressed(0,gp_start) || gamepad_button_check_pressed(0,gp_face1)
+	else if gamepad_button_check_pressed(global.p1_controlslot,gp_start) || gamepad_button_check_pressed(global.p1_controlslot,gp_face1)
 	{
 		global.inputtype=2
 		started = true

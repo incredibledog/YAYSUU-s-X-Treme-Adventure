@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-x -= 10 * (global.key_right - global.key_left)
-y -= 10 * (global.key_down - global.key_up)
-if global.key_runp
+x -= 10 * (global.p1_key_right - global.p1_key_left)
+y -= 10 * (global.p1_key_down - global.p1_key_up)
+if global.p1_key_runp
 {
 	if image_index=image_number-1
 	{
@@ -12,12 +12,12 @@ if global.key_runp
 		image_index++
 	}
 }
-if global.key_jump
+if global.p1_key_jump
 {
 	image_xscale+=0.01
 	image_yscale+=0.01
 }
-else if global.key_dash
+else if global.p1_key_dash
 {
 	image_xscale-=0.01
 	image_yscale-=0.01
@@ -64,7 +64,7 @@ switch image_index
 	description="WOAH! UNUSED TEXT."
 	break;
 }
-if global.key_start
+if global.p1_key_start
 {
 	audio_play_sound(snd_nahnvm,1,false)
 	instance_destroy()

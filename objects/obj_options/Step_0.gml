@@ -3,12 +3,12 @@
 if (obj_fadeblack.fading)
 	return
 
-if global.key_downp
+if global.p1_key_downp
 {
 	chos++
 	audio_play_sound(snd_move,1,false)
 }
-if global.key_upp
+if global.p1_key_upp
 {
 	chos--
 	audio_play_sound(snd_move,1,false)
@@ -17,16 +17,16 @@ chos=clamp(chos,1,11)
 switch chos
 {
 	case 1:
-	if global.key_right
+	if global.p1_key_right
 	{
-		if (global.key_rightp)
+		if (global.p1_key_rightp)
 			volume+=0.02
 		volume+=0.01
 		audio_master_gain(round(volume / 0.05) * 0.05)
 	}
-	else if global.key_left
+	else if global.p1_key_left
 	{
-		if (global.key_rightp)
+		if (global.p1_key_rightp)
 			volume-=0.02
 		volume-=0.01
 		audio_master_gain(round(volume / 0.05) * 0.05)
@@ -41,11 +41,11 @@ switch chos
 	case 2:
 	if os_type=os_android && !gamepad_is_connected(0)
 	{
-		if global.key_right 
+		if global.p1_key_right 
 		{
 			global.controlalpha+=0.01
 		}
-		else if global.key_left 
+		else if global.p1_key_left 
 		{
 			global.controlalpha-=0.01
 		}
@@ -56,11 +56,11 @@ switch chos
 		global.controlalpha=clamp(global.controlalpha,0.01,1)
 	}
 	else {
-		if global.key_right 
+		if global.p1_key_right 
 		{
 			global.sensitivity+=0.01
 		}
-		else if global.key_left 
+		else if global.p1_key_left 
 		{
 			global.sensitivity-=0.01
 		}
@@ -72,14 +72,15 @@ switch chos
 	}
 	break;
 	case 3:
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		window_set_fullscreen(!window_get_fullscreen())
 		audio_play_sound(snd_confirm,1,false)
 	}
+	break;
 	case 4:
 	var prevscale=global.screenscale
-	if global.key_rightp
+	if global.p1_key_rightp
 	{
 		if (global.screenscale == 0.5)
 			global.screenscale = 1
@@ -87,7 +88,7 @@ switch chos
 			global.screenscale++
 		audio_play_sound(snd_move,1,false)
 	}
-	if global.key_leftp
+	if global.p1_key_leftp
 	{
 		global.screenscale--
 		audio_play_sound(snd_move,1,false)
@@ -99,28 +100,28 @@ switch chos
 	}
 	break;
 	case 5:
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		global.screenshake=!global.screenshake
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 6:
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		global.borders=!global.borders
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 7:
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		global.speedrun=!global.speedrun
 		audio_play_sound(snd_confirm,1,false)
 	}
 	break;
 	case 8:
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		ini_open("savedata.ini")
 		ini_section_delete("records")
@@ -129,7 +130,7 @@ switch chos
 	}
 	break;
 	case 9:
-	if global.key_jumpp
+	if global.p1_key_menuaccept
 	{
 		volume=1
 		audio_master_gain(volume)
@@ -144,48 +145,33 @@ switch chos
 	}
 	break;
 	case 10:
+	if global.p1_key_menuaccept
 	{
-		if global.key_jumpp
-		{
-			ini_open("savedata.ini")
-			ini_write_real("settings","volume",volume)
-			ini_write_real("settings","sensitivity",global.sensitivity)
-			ini_write_real("settings","controlalpha",global.controlalpha)
-			ini_write_real("settings","fullscreen",window_get_fullscreen())
-			ini_write_real("settings","screenshake",global.screenshake)
-			ini_write_real("settings","borders",global.borders)
-			ini_write_real("settings","speedrun",global.speedrun)
-			ini_write_real("settings","screenscale",global.screenscale)
-			ini_close()
-			audio_stop_sound(mus_options)
-			audio_play_sound(snd_confirm,1,false)
-			loadroom(room_mainmenu, false)
-		}
+		audio_play_sound(snd_confirm,1,false)
+		instance_deactivate_object(obj_options)
+		instance_create_depth(x,y,depth,obj_options_controls)
 	}
 	break;
 	case 11:
+	if global.p1_key_menuaccept
 	{
-		if global.key_jumpp
-		{
-			ini_open("savedata.ini")
-			audio_master_gain(ini_read_real("settings","volume",1))
-			global.sensitivity=ini_read_real("settings","sensitivity",0.35)
-			global.controlalpha=ini_read_real("settings","controlalpha",0.5)
-			window_set_fullscreen(ini_read_real("settings","fullscreen",0))
-			global.screenshake=ini_read_real("settings","screenshake",1)
-			global.borders=ini_read_real("settings","borders",1)
-			global.speedrun=ini_read_real("settings","speedrun",0)
-			global.screenscale=ini_read_real("settings","screenscale",1)
-			ini_close()
-			window_set_size(640*global.screenscale,480*global.screenscale)
-			audio_stop_sound(mus_options)
-			audio_play_sound(snd_nahnvm,1,false)
-			loadroom(room_mainmenu, false)
-		}
+		ini_open("savedata.ini")
+		ini_write_real("settings","volume",volume)
+		ini_write_real("settings","sensitivity",global.sensitivity)
+		ini_write_real("settings","controlalpha",global.controlalpha)
+		ini_write_real("settings","fullscreen",window_get_fullscreen())
+		ini_write_real("settings","screenshake",global.screenshake)
+		ini_write_real("settings","borders",global.borders)
+		ini_write_real("settings","speedrun",global.speedrun)
+		ini_write_real("settings","screenscale",global.screenscale)
+		ini_close()
+		audio_stop_sound(mus_options)
+		audio_play_sound(snd_confirm,1,false)
+		loadroom(room_mainmenu, false)
 	}
 	break;
 }
-if global.key_menuquit
+if global.p1_key_menuquit
 {
 	ini_open("savedata.ini")
 	audio_master_gain(ini_read_real("settings","volume",1))
