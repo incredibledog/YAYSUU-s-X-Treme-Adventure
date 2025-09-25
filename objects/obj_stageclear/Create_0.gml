@@ -3,6 +3,15 @@
 image_xscale=1.5
 image_yscale=1.5
 image_alpha=0
+switch room
+{
+	case room_glowstickcity:
+	bangsound=snd_glowstickcity_bang
+	break;
+	default:
+	bangsound=snd_bang
+	break;
+}
 begintimer=120
 bangtimer=0
 display=0

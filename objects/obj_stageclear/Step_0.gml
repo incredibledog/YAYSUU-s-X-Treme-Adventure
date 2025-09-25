@@ -21,13 +21,13 @@ else if (display == 0) // skips straight to the next and retry if you're in a bo
 		display=4
 	else
 		display=1
-	audio_play_sound(snd_bang,1,false)
+	audio_play_sound(bangsound,1,false)
 	bangtimer=15
 }
 else if display < 3 // shows the time and coin bonuses
 {
 	display+=1
-	audio_play_sound(snd_bang,1,false)
+	audio_play_sound(bangsound,1,false)
 	bangtimer=15
 }
 else if display = 3
@@ -35,7 +35,7 @@ else if display = 3
 	if yearnedscore=global.score // shows your RANK!
 	{
 		display++
-		audio_play_sound(snd_bang,1,false)
+		audio_play_sound(bangsound,1,false)
 		bangtimer=75
 	}
 	if yearnedscore<global.score
@@ -49,7 +49,13 @@ else if display = 4
 	display = 5
 	if !global.inboss
 	{
-		audio_play_sound(mus_results,1,true)
+		if room=room_glowstickcity
+		{
+			audio_play_sound(mus_glowstickcity_results,1,true)
+		}
+		else {
+			audio_play_sound(mus_results,1,true)
+		}
 	}
 }
 else if display == 5
@@ -66,7 +72,7 @@ else if (!obj_fadeblack.fading)
 		if global.trial
 			if isextrastage()
 			{
-				loadroom(room_trialmenu, loadtype.menu)
+				loadroom(room_extrastages, loadtype.menu)
 			}
 			else {
 				loadroom(room_trialmenu, loadtype.menu)

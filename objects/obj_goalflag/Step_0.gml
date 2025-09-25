@@ -10,7 +10,10 @@ if touchingplayer(x, y) && !touched
 		sprite_index=spr_goalflag_transition_t
 	else if global.char="C"
 		sprite_index=spr_goalflag_transition_cotton
-	audio_play_sound(snd_flagspin,1,false)
+	if room=room_glowstickcity
+		audio_play_sound(snd_glowstickcity_flagspin,1,false)
+	else
+		audio_play_sound(snd_flagspin,1,false)
 	global.score += global.scoreadd + obj_hud.timebonus + (global.coins * 10)
 	if (!cheatsing())
 	{
@@ -32,18 +35,26 @@ else if endtimer==0 && touched && !winning
 	virtual_key_delete(7)
 	if global.char="Y"
 	{
-		audio_play_sound(mus_yaysuuwin,1,false)
+		if room=room_glowstickcity
+		{
+			audio_play_sound(mus_glowstickcity_win,1,false)
+		}
+		else {
+			audio_play_sound(mus_yaysuuwin,1,false)
+		}
 		audio_group_stop_all(voicelines)
 		audio_play_sound(snd_yaysuuwinstage,1,false)
 	}
 	else if global.char="T"
 	{
-		audio_play_sound(mus_teddywin,1,false)
+		if room=room_glowstickcity
+		{
+			audio_play_sound(mus_glowstickcity_win,1,false)
+		}
+		else {
+			audio_play_sound(mus_teddywin,1,false)
+		}
 		audio_group_stop_all(voicelines)
 		audio_play_sound(snd_teddywinstage,1,false)
-	}
-	else if global.char="C"
-	{
-		audio_play_sound(mus_cottonwin,1,false)
 	}
 }

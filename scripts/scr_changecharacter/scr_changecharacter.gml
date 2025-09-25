@@ -65,10 +65,10 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.stomp] = spr_teddy_stomp
 		global.playersprites[playersprite.ouchie] = spr_teddy_ouch
 		global.playersprites[playersprite.deaded] = spr_teddy_die
-		global.playersprites[playersprite.bounce] = spr_teddy_fall
+		global.playersprites[playersprite.bounce] = spr_teddy_spinball
 		global.playersprites[playersprite.win] = spr_teddy_win
 		global.playersprites[playersprite.launched] = spr_teddy_die
-		global.playersprites[playersprite.golfstop] = spr_teddy_slide
+		global.playersprites[playersprite.golfstop] = spr_teddy_spinball
 		global.playersprites[playersprite.wallslide] = spr_teddy_wallslide // prace holduh no longer
 	}
 	/*else if (char == "C")
