@@ -14,6 +14,8 @@ if window_get_fullscreen() && global.borders=true
 		draw_sprite(spr_chillfields_border,0,0,0)
 		break;
 		case room_mysticmanor_1:
+		case room_mysticmanor_1b:
+		case room_mysticmanor_1c:
 		case room_mysticmanor_2:
 		case room_mysticmanor_2b:
 		case room_mysticmanor_2c:

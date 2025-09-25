@@ -102,7 +102,7 @@ else if (!obj_fadeblack.fading)
 					stageprogress=5
 					break;
 				default:
-					loadroom(room_credits, false)
+					loadroom(room_mainmenu, false)
 					break;
 			}
 			savestory(stageprogress)
