@@ -12,6 +12,7 @@ enum playerstates
 	win,
 	golfstop,
 	launched,
+	hangglide,
 	debug
 }
 
@@ -345,6 +346,7 @@ if (ouchies)
 }
 if (state == playerstates.hurt && grounded)
 	newstate = playerstates.normal
+	visualrotation = 0
 
 if (hurtt > 0)
 {
@@ -412,7 +414,7 @@ if (state != playerstates.dead || state != playerstates.debug)
 	state = newstate
 
 //actual movement
-if (state != playerstates.golfstop && state != playerstates.dead && state != playerstates.debug)
+if (state != playerstates.golfstop && state != playerstates.dead && state != playerstates.hangglide && state != playerstates.debug)
 {
 	var accel
 	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char == "C" //cotton's gradual run
@@ -438,7 +440,42 @@ else if (state == playerstates.crouch || state == playerstates.slide)
     mask_index = spr_crouchcollisionmask
 else
     mask_index = spr_collisionmask
-
+if (state == playerstates.hangglide)
+{
+	facingdirection = hangglidedir
+	var yearnedvsp = (key_down - key_up) * 5
+	if yearnedvsp>vsp
+	{
+		vsp+=0.5
+	}
+	else if yearnedvsp<vsp
+	{
+		vsp-=0.5
+	}
+	yearnedhsp = (facingdirection * 5) + (vsp * 0.5)
+	visualrotation = -(vsp)*2
+	if yearnedhsp>hsp
+	{
+		hsp+=0.5
+	}
+	if yearnedhsp<hsp
+	{
+		hsp-=0.5
+	}
+	if amiwalled(hsp)
+	{
+		yearnedhsp=-yearnedhsp
+		hsp=-hsp
+	}
+	if key_jumpp
+	{
+		audio_play_sound(snd_jump,1,false)
+		vsp=jmp
+		newstate=playerstates.bounce
+		state=playerstates.bounce
+		hsp=facingdirection*20
+	}
+}
 if (state == playerstates.debug)
 {
 	image_xscale = 1
@@ -840,6 +877,9 @@ switch (state)
 		break;
 	case playerstates.launched:
 		newsprite = global.playersprites[playersprite.launched]
+		break;
+	case playerstates.hangglide:
+		newsprite = global.playersprites[playersprite.hangglide]
 		break;
 	case playerstates.debug:
 		newsprite = object_get_sprite(selecteddebugobject)

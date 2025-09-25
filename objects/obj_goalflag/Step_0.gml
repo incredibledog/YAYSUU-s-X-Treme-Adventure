@@ -3,6 +3,11 @@
 if touchingplayer(x, y) && !touched
 {
 	touched=true
+	if obj_player.state=playerstates.hangglide
+	{
+		obj_player.newstate=playerstates.normal
+		obj_player.state=playerstates.normal
+	}
 	endtimer=120
 	if global.char="Y"
 		sprite_index=spr_goalflag_transition

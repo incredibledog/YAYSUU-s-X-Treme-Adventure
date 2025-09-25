@@ -64,6 +64,7 @@ showarrow = false
 inbackground = false
 damageflash = false
 inwater = false
+hangglidedir = 1
 whichcollisionsdid = ""
 hitboxcolor = c_lime
 selecteddebugobject = 0

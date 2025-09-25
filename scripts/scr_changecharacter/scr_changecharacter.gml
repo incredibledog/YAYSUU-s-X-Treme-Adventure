@@ -20,6 +20,7 @@ enum playersprite
 	win,
 	launched,
 	golfstop,
+	hangglide,
 	wallslide
 }
 
@@ -45,6 +46,7 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.bounce] = spr_yaysuu_spinball
 		global.playersprites[playersprite.win] = spr_yaysuu_win
 		global.playersprites[playersprite.launched] = spr_yaysuu_spinnykicked
+		global.playersprites[playersprite.hangglide] = spr_yaysuu_hangglide
 		global.playersprites[playersprite.golfstop] = spr_yaysuu_spinball
 	}
 	else if (char == "T")
@@ -69,6 +71,7 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.win] = spr_teddy_win
 		global.playersprites[playersprite.launched] = spr_teddy_die
 		global.playersprites[playersprite.golfstop] = spr_teddy_spinball
+		global.playersprites[playersprite.hangglide] = spr_yaysuu_hangglide // PRACE HOLDUH!
 		global.playersprites[playersprite.wallslide] = spr_teddy_wallslide // prace holduh no longer
 	}
 	/*else if (char == "C")

@@ -66,7 +66,7 @@ if (changedlevel)
 			break;
 		case 5:
 			currentlevel=room_mysticmanor_2
-			endlevel=room_mysticmanor_2
+			endlevel=room_mysticmanor_2c
 			lvlname="Mystic Manor Stage 2"
 			sprname=spr_mysticmanor2scroll
 			bosslvl=false

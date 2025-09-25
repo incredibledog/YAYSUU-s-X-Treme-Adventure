@@ -6,6 +6,7 @@ if touchingplayer(x, y)
 	{
 		global.score+=global.scoreadd
 		global.scoreadd=0
+		global.checkpoint=false
 		loadroom(warproom, loadtype.nextroom)
 	}
 	else
