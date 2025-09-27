@@ -3,5 +3,14 @@
 talking=false
 bossname="ELECTRO-BOT"
 stringchr=0
-alarm_set(0,15)
+if global.trial || global.levelloadtype=loadtype.respawn
+{
+	global.cutscenestate=8 // CUTSCENES, ARE FOR STORY MODE!
+	alarm_set(0,15)
+}
+else {
+	global.cutscenestate=0
+}
+sprite_index=spr_electrobot_idle
+//alarm_set(0,15)
 global.bosshp=6

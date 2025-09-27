@@ -1,4 +1,5 @@
 ini_open("savedata.ini")
+// SETTINGS SAVEDATA INITIALIZATION
 audio_master_gain(ini_read_real("settings","volume",1))
 global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 global.controlalpha=ini_read_real("settings","controlalpha",0.5)
@@ -8,6 +9,7 @@ global.borders=ini_read_real("settings","borders",true)
 global.keytype=ini_read_real("settings","keytype",-1)
 global.speedrun=ini_read_real("settings","speedrun",false)
 global.screenscale=ini_read_real("settings","screenscale",1)
+// P1 CONTROLS SAVEDATA INITIALIZATION
 global.p1_controlslot=ini_read_real("controls","p1controlslot",0)
 global.p1_leftkey=ini_read_real("controls","p1leftkey",vk_left)
 global.p1_rightkey=ini_read_real("controls","p1rightkey",vk_right)
@@ -29,8 +31,8 @@ global.optfont=font_add_sprite_ext(spr_text_options,"0123456789ABCDEFGHIJKLMNOPQ
 global.smalloptfont=font_add_sprite_ext(spr_smalloptionstext,"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?:-_()+%'abcdefghijklmnopqrstuvwxyz✓✗",false,0)
 global.inlevel = false
 global.nextroom = room_idlogo
-axislh = gamepad_axis_value(0,gp_axislh)
-axislv = gamepad_axis_value(0,gp_axislv)
+axislh = gamepad_axis_value(global.p1_controlslot,gp_axislh)
+axislv = gamepad_axis_value(global.p1_controlslot,gp_axislv)
 scr_changecharacter("Y")
 global.currentsong = -1
 global.jumpscare = false

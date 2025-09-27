@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_boss1vo_y",
+  "%Name":"snd_elecboss2vo",
   "audioGroupId":{
     "name":"voicelines",
     "path":"audiogroups/voicelines",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.030204,
-  "name":"snd_boss1vo_y",
+  "duration":1.1455328,
+  "name":"snd_elecboss2vo",
   "parent":{
     "name":"cutscenevo",
     "path":"folders/Sounds/cutscenevo.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_boss1vo_y.mp3",
+  "soundFile":"snd_elecboss2vo.wav",
   "type":0,
   "volume":1.0,
 }

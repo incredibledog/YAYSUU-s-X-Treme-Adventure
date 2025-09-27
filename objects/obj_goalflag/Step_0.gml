@@ -48,7 +48,13 @@ else if endtimer==0 && touched && !winning
 			audio_play_sound(mus_yaysuuwin,1,false)
 		}
 		audio_group_stop_all(voicelines)
-		audio_play_sound(snd_yaysuuwinstage,1,false)
+		if global.inboss
+		{
+			audio_play_sound(snd_yaysuuwinboss,1,false)
+		}
+		else {
+			audio_play_sound(snd_yaysuuwinstage,1,false)
+		}
 	}
 	else if global.char="T"
 	{
@@ -60,6 +66,12 @@ else if endtimer==0 && touched && !winning
 			audio_play_sound(mus_teddywin,1,false)
 		}
 		audio_group_stop_all(voicelines)
-		audio_play_sound(snd_teddywinstage,1,false)
+		if global.inboss
+		{
+			audio_play_sound(snd_teddywinboss,1,false)
+		}
+		else {
+			audio_play_sound(snd_teddywinstage,1,false)
+		}
 	}
 }

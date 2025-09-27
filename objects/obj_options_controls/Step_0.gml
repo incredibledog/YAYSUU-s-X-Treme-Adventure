@@ -3,12 +3,12 @@
 if (obj_fadeblack.fading)
 	return
 
-if global.p1_key_downp && !waitingforinput
+if global.key_downp && !waitingforinput
 {
 	chos++
 	audio_play_sound(snd_move,1,false)
 }
-if global.p1_key_upp && !waitingforinput
+if global.key_upp && !waitingforinput
 {
 	chos--
 	audio_play_sound(snd_move,1,false)
@@ -19,12 +19,12 @@ if !waitingforinput
 	switch chos
 	{
 		case 9:
-		if global.p1_key_rightp
+		if global.key_rightp
 		{
 			global.p1_controlslot++
 			audio_play_sound(snd_move,1,false)
 		}
-		if global.p1_key_leftp
+		if global.key_leftp
 		{
 			global.p1_controlslot--
 			audio_play_sound(snd_move,1,false)
@@ -32,7 +32,7 @@ if !waitingforinput
 		global.p1_controlslot=clamp(global.p1_controlslot,0,3)
 		break;
 		case 10:
-		if global.p1_key_menuaccept
+		if global.key_menuaccept
 		{
 			ini_open("savedata.ini")
 			global.p1_controlslot=ini_read_real("controls","p1controlslot",0)
@@ -49,7 +49,7 @@ if !waitingforinput
 		}
 		break;
 		case 11:
-		if global.p1_key_menuaccept
+		if global.key_menuaccept
 		{
 			ini_open("savedata.ini")
 			ini_write_real("controls","p1controlslot",global.p1_controlslot)
@@ -68,7 +68,7 @@ if !waitingforinput
 		}
 		break;
 		default:
-		if global.p1_key_menuaccept
+		if global.key_menuaccept
 		{
 			waitingforinput=true
 			audio_play_sound(snd_confirm,1,false)
@@ -108,7 +108,7 @@ if keyboard_check_pressed(vk_anykey) && waitingforinput
 	audio_play_sound(snd_confirm,1,false)
 	waitingforinput=false
 }
-if global.p1_key_menuquit && !waitingforinput
+if global.key_menuquit && !waitingforinput
 {
 	ini_open("savedata.ini")
 	global.p1_controlslot=ini_read_real("controls","p1controlslot",0)

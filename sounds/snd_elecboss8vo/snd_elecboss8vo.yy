@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_bossintro1_line2",
+  "%Name":"snd_elecboss8vo",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.728027,
-  "name":"snd_bossintro1_line2",
+  "duration":5.22585,
+  "name":"snd_elecboss8vo",
   "parent":{
     "name":"cutscenevo",
     "path":"folders/Sounds/cutscenevo.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_bossintro1_line2.wav",
+  "soundFile":"snd_elecboss8vo.wav",
   "type":0,
   "volume":1.0,
 }

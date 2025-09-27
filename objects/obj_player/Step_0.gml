@@ -440,6 +440,7 @@ else if (state == playerstates.crouch || state == playerstates.slide)
     mask_index = spr_crouchcollisionmask
 else
     mask_index = spr_collisionmask
+// hang glider! Implemented Entirely by ME! YAYSUU!
 if (state == playerstates.hangglide)
 {
 	facingdirection = hangglidedir
@@ -464,8 +465,15 @@ if (state == playerstates.hangglide)
 	}
 	if amiwalled(hsp)
 	{
-		yearnedhsp=-yearnedhsp
-		hsp=-hsp
+		if global.char="Y"
+		{
+			yearnedhsp=-yearnedhsp
+			hsp=-hsp
+		}
+		if global.char="T"
+		{
+			hangglidedir=-hangglidedir
+		}
 	}
 	if key_jumpp
 	{
@@ -880,6 +888,7 @@ switch (state)
 		break;
 	case playerstates.hangglide:
 		newsprite = global.playersprites[playersprite.hangglide]
+		image_xscale = facingdirection
 		break;
 	case playerstates.debug:
 		newsprite = object_get_sprite(selecteddebugobject)
@@ -1029,11 +1038,12 @@ if (global.inv)
 }
 else
 	image_blend = c_white
-
-if (inbackground && image_alpha > 0.5)
-	image_alpha -= 0.05
-else if (!inbackground && image_alpha < 1)
-	image_alpha += 0.05
+if !(global.inboss) {
+	if (inbackground && image_alpha > 0.5)
+		image_alpha -= 0.05
+	else if (!inbackground && image_alpha < 1)
+		image_alpha += 0.05
+}
 
 if (global.skibispin)
 {

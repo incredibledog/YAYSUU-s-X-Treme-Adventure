@@ -71,7 +71,7 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.win] = spr_teddy_win
 		global.playersprites[playersprite.launched] = spr_teddy_die
 		global.playersprites[playersprite.golfstop] = spr_teddy_spinball
-		global.playersprites[playersprite.hangglide] = spr_yaysuu_hangglide // PRACE HOLDUH!
+		global.playersprites[playersprite.hangglide] = spr_teddy_hangglide
 		global.playersprites[playersprite.wallslide] = spr_teddy_wallslide // prace holduh no longer
 	}
 	/*else if (char == "C")

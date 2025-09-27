@@ -11,6 +11,7 @@ kablooeyjrtimer=0
 state = electrobotstates.inactive
 hasdamaged = true
 image_xscale = -1
+image_alpha = 0
 jumpsmoothing = 1.1
 idledelay = 120
 extradamagebounces = 0

@@ -6,13 +6,13 @@ else
 	xoffset+=8
 
 var prevselect = select
-if global.p1_key_leftp
+if global.key_leftp
 {
 	select-=1
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-else if global.p1_key_rightp
+else if global.key_rightp
 {
 	select+=1
 	audio_play_sound(snd_move,1,false)
@@ -58,7 +58,7 @@ if (changedlevel)
 }
 changedlevel = false
 
-if global.p1_key_menuaccept
+if global.key_menuaccept
 {
 	audio_stop_all()
 	audio_play_sound(snd_confirm,1,false)
@@ -71,7 +71,7 @@ if global.p1_key_menuaccept
 	global.lives=3
 	loadroom(currentlevel, loadtype.newlevel)
 }
-else if global.p1_key_menuquit
+else if global.key_menuquit
 {
 	audio_stop_all()
 	audio_play_sound(snd_nahnvm,1,false)

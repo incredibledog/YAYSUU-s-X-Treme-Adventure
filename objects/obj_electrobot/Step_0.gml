@@ -164,6 +164,7 @@ switch (state)
 			if (global.bosshp == 0)
 			{
 				state = electrobotstates.dying
+				sayvoiceline(snd_elecboss8vo,"DAISY, DAISY...","red")
 				delay = 150
 				kablooeyjrtimer=0
 				audio_stop_sound(global.currentsong)

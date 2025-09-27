@@ -3,8 +3,10 @@ if (global.inlevel)
 	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.nextroom || global.levelloadtype == loadtype.respawn)
 	{
 		mask_index = spr_collisionmask
-		if (room == room_chillfields_boss)
-			state = playerstates.inactive
+		if (global.inboss) {
+			state = playerstates.inactive;
+			image_alpha=0
+		}
 		else
 			state = playerstates.normal
 		ouchies = false
