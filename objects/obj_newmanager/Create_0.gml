@@ -58,6 +58,7 @@ global.globaltimer = 0
 global.debugmessageoffset = 0
 global.skibispin = false
 global.quickmenu = false
+global.multiplayer = false
 windowtimer = 0
 windowname = ""
 newwindowname = ""
@@ -89,7 +90,8 @@ else
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, depth + 1, obj_fadeblack)
-instance_create_depth(0,0, 100, obj_player)
+global.mainplayer = instance_create_depth(0,0, 100, obj_player)
+global.otherplayer = noone
 instance_create_depth(0,0, 100, obj_hud)
 instance_create_depth(0,0, 100, obj_parallax)
 //instance_create_depth(128,416,100,obj_subtitle)

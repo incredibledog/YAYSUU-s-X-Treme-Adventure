@@ -32,7 +32,7 @@ switch (state)
 			{
 				delay = 1337
 				with (obj_player)
-					scr_player_trybounce()
+					scr_player_trybounce(false)
 				state = electrobotstates.damaged
 				candamage = false
 				vsp = -5

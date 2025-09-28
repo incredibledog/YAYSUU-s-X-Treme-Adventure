@@ -5,3 +5,4 @@ small = false
 candamage = true
 hitboxcolor = c_red
 deathobject = obj_explode
+dashbouncy = false

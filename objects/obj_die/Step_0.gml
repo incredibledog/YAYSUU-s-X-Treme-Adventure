@@ -1,5 +1,5 @@
 if touchingplayer(x, y)
 {
-	obj_player.ouchies = true
-	obj_player.deathies = true
+	scr_temphacky_closestplayer().ouchies = true
+	scr_temphacky_closestplayer().deathies = true
 }
