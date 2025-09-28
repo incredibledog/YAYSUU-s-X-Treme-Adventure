@@ -33,6 +33,8 @@ if touchingplayer(x, y) && sprite_index == normsprite
 			obj_player.vsp = intendedbounce * image_yscale
 			sprite_index = bouncesprite
 			audio_play_sound(snd_boing,1,false)
+			if (global.char == "T")
+				obj_player.djump = false;
 		}
 		//if (hbouncesmall != 0)
 		//	obj_player.hsp = hbouncesmall * image_xscale

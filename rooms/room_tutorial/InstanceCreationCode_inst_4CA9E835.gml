@@ -1,1 +1,1 @@
-subtitle="Break this Invincibility Monitor and plow through enemies with ease!"
+subtitle="This dash pad will give you a boost! Use it to run to the goal flag!"

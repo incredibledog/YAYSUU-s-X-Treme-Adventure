@@ -1,0 +1,1 @@
+subtitle="Teddy can walljump by holding onto a wall and jumping, although some walls are soapy and cannot be walljumped off."

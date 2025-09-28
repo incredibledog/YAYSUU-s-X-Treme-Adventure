@@ -1,1 +1,0 @@
-subtitle="This flag signifies the end of the Stage. Touch it to beat the Stage, and move on!"

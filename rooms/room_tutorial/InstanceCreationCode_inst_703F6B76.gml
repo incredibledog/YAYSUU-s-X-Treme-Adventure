@@ -1,0 +1,2 @@
+sprite_index = spr_secrettile_thatsjustwhite
+topsprite = spr_secrettile_tutorialgrass
