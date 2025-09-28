@@ -19,6 +19,8 @@ global.p1_jumpkey=ini_read_real("controls","p1jumpkey",ord("Z"))
 global.p1_dashkey=ini_read_real("controls","p1dashkey",ord("X"))
 global.p1_runkey=ini_read_real("controls","p1runkey",ord("C"))
 global.p1_startkey=ini_read_real("controls","p1startkey",vk_enter)
+global.autorun=ini_read_real("controls","autorun",true)
+global.menubuttontype=ini_read_real("controls","menubuttontype",false)
 ini_close()
 window_set_size(640*global.screenscale,480*global.screenscale)
 global.voicelines=false
@@ -83,7 +85,7 @@ if (os_type == os_android)
 else if (gamepad_is_connected(0))
 	global.inputtype = 2
 else
-	global.inputtype = global.keytype
+	global.inputtype = 0
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, depth + 1, obj_fadeblack)

@@ -70,13 +70,10 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 		wsp = runspeed
 	else
 		wsp = walkspeed
-	if (key_run && !key_down) || (key_run && (state=playerstates.stomp || state=playerstates.bounce)) // how many times do we have to teach you this LESSON OLD WOMAN!
-	{
+	if ((key_run && !key_down) || (key_run && (state=playerstates.stomp || state=playerstates.bounce))) && global.autorun
 		yearnedhsp = facingdirection * wsp
-	}
-	else {
+	else
 		yearnedhsp = move * wsp
-	}
 }
 
 if (grounded || state == playerstates.golfstop)

@@ -13,12 +13,26 @@ if global.key_upp && !waitingforinput
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-chos=clamp(chos,1,11)
+chos=clamp(chos,1,13)
 if !waitingforinput
 {
 	switch chos
 	{
 		case 9:
+		if global.key_jumpp
+		{
+			global.autorun = !global.autorun
+			audio_play_sound(snd_move,1,false)
+		}
+		break;
+		case 10:
+		if global.key_jumpp
+		{
+			global.menubuttontype = !global.menubuttontype
+			audio_play_sound(snd_move,1,false)
+		}
+		break;
+		case 11:
 		if global.key_rightp
 		{
 			global.p1_controlslot++
@@ -31,7 +45,7 @@ if !waitingforinput
 		}
 		global.p1_controlslot=clamp(global.p1_controlslot,0,3)
 		break;
-		case 10:
+		case 12:
 		if global.key_menuaccept
 		{
 			ini_open("savedata.ini")
@@ -44,11 +58,13 @@ if !waitingforinput
 			global.p1_dashkey=ini_read_real("controls","p1dashkey",ord("X"))
 			global.p1_runkey=ini_read_real("controls","p1runkey",ord("C"))
 			global.p1_startkey=ini_read_real("controls","p1startkey",vk_enter)
+			global.autorun=ini_read_real("controls","autorun",true)
+			global.menubuttontype=ini_read_real("controls","menubuttontype",false)
 			ini_close()
 			audio_play_sound(snd_kablooey,1,false)
 		}
 		break;
-		case 11:
+		case 13:
 		if global.key_menuaccept
 		{
 			ini_open("savedata.ini")
@@ -61,6 +77,8 @@ if !waitingforinput
 			ini_write_real("controls","p1dashkey",global.p1_dashkey)
 			ini_write_real("controls","p1runkey",global.p1_runkey)
 			ini_write_real("controls","p1startkey",global.p1_startkey)
+			ini_write_real("controls","autorun",global.autorun)
+			ini_write_real("controls","menubuttontype",global.menubuttontype)
 			ini_close()
 			instance_destroy()
 			instance_activate_object(obj_options)
@@ -120,6 +138,8 @@ if global.key_menuquit && !waitingforinput
 	global.p1_dashkey=ini_read_real("controls","p1dashkey",ord("X"))
 	global.p1_runkey=ini_read_real("controls","p1runkey",ord("C"))
 	global.p1_startkey=ini_read_real("controls","p1startkey",vk_enter)
+	global.autorun=ini_read_real("controls","autorun",true)
+	global.menubuttontype=ini_read_real("controls","menubuttontype",false)
 	ini_close()
 	instance_destroy()
 	instance_activate_object(obj_options)

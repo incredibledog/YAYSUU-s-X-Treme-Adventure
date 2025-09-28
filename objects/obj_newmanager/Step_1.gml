@@ -28,8 +28,8 @@ if (global.inputtype == 0) || (global.inputtype == 3)
 	global.key_run = keyboard_check(global.p1_runkey)
 	global.key_runp = keyboard_check_pressed(global.p1_runkey)
 	global.key_start = keyboard_check_pressed(global.p1_startkey) && !keyboard_check(vk_alt)
-	global.key_menuaccept = global.key_jumpp || global.key_start
-	global.key_menuquit = global.key_dashp
+	global.key_menuaccept = global.key_jumpp || (global.key_start && !global.menubuttontype)
+	global.key_menuquit = global.key_dashp || (global.key_start && global.menubuttontype)
 }
 else if global.inputtype == 2
 {
