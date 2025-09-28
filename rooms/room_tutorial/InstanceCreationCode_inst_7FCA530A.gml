@@ -1,2 +1,8 @@
-hintsound=snd_tutorialvo6
-subtitle = "Hold down the RUN button for a boost of speed!"
+if global.inputtype = 2
+{
+	subtitle = "Hold down X for a boost of speed!"
+}
+else if global.inputtype = 0
+{
+	subtitle = "Hold down "+keytostring(global.p1_runkey)+" for a boost of speed!"
+}
