@@ -70,7 +70,7 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 		wsp = runspeed
 	else
 		wsp = walkspeed
-	if ((key_run && !key_down) || (key_run && (state=playerstates.stomp || state=playerstates.bounce))) && global.autorun
+	if ((key_run && !key_down) || (key_run && (state=playerstates.stomp || state=playerstates.bounce))) && global.p1_autorun
 		yearnedhsp = facingdirection * wsp
 	else
 		yearnedhsp = move * wsp
