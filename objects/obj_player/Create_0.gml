@@ -85,3 +85,5 @@ key_dash=false
 key_dashp=false
 key_run=false
 key_runp=false
+
+isotherplayer = instance_exists(obj_player)

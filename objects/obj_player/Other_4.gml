@@ -71,3 +71,4 @@ if (global.inlevel)
 	obj_camera.x = x
 	obj_camera.y = y
 }
+else if (global.multiplayer)
