@@ -72,3 +72,6 @@ if (global.inlevel)
 	obj_camera.y = y
 }
 else if (global.multiplayer)
+{
+	instance_destroy()
+}

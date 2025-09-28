@@ -272,6 +272,7 @@
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
     {"id":{"name":"obj_yaysuudance","path":"objects/obj_yaysuudance/obj_yaysuudance.yy",},},
     {"id":{"name":"obj_yaysuurun","path":"objects/obj_yaysuurun/obj_yaysuurun.yy",},},
+    {"id":{"name":"room_charredforest","path":"rooms/room_charredforest/room_charredforest.yy",},},
     {"id":{"name":"room_charselect","path":"rooms/room_charselect/room_charselect.yy",},},
     {"id":{"name":"room_chillfields_1","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},},
     {"id":{"name":"room_chillfields_2","path":"rooms/room_chillfields_2/room_chillfields_2.yy",},},
@@ -692,6 +693,7 @@
     {"id":{"name":"spr_rank","path":"sprites/spr_rank/spr_rank.yy",},},
     {"id":{"name":"spr_ranktext","path":"sprites/spr_ranktext/spr_ranktext.yy",},},
     {"id":{"name":"spr_redo","path":"sprites/spr_redo/spr_redo.yy",},},
+    {"id":{"name":"spr_reference","path":"sprites/spr_reference/spr_reference.yy",},},
     {"id":{"name":"spr_resume","path":"sprites/spr_resume/spr_resume.yy",},},
     {"id":{"name":"spr_retry","path":"sprites/spr_retry/spr_retry.yy",},},
     {"id":{"name":"spr_right","path":"sprites/spr_right/spr_right.yy",},},
@@ -906,6 +908,7 @@
     {"roomId":{"name":"room_mystery","path":"rooms/room_mystery/room_mystery.yy",},},
     {"roomId":{"name":"room_extrastages","path":"rooms/room_extrastages/room_extrastages.yy",},},
     {"roomId":{"name":"room_mysticmanor_2c","path":"rooms/room_mysticmanor_2c/room_mysticmanor_2c.yy",},},
+    {"roomId":{"name":"room_charredforest","path":"rooms/room_charredforest/room_charredforest.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

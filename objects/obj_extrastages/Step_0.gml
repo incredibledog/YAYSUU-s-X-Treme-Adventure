@@ -18,7 +18,7 @@ else if global.key_rightp
 	audio_play_sound(snd_move,1,false)
 	changedlevel = true
 }
-select=clamp(select,0,1) // nuh uh
+select=clamp(select,0,2) // nuh uh
 
 if (changedlevel)
 {
@@ -36,6 +36,13 @@ if (changedlevel)
 			endlevel=room_dev
 			lvlname="Fun Dev Room!"
 			sprname=spr_devroomscroll
+			bosslvl=false
+			break;
+		case 2:
+			currentlevel=room_charredforest
+			endlevel=room_charredforest
+			lvlname="Charred Forest"
+			sprname=spr_chillfieldsbossscroll
 			bosslvl=false
 			break;
 	}
