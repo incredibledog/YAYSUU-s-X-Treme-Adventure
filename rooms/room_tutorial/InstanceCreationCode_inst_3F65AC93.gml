@@ -1,10 +1,15 @@
 if global.char="Y"
 {
-	hintsound=snd_tutorialvo3_y
-	subtitle = "Airdash over the gap by pressing the DASH button mid-air!"
+	if global.inputtype=2
+	{
+		subtitle = "Airdash over the gap by pressing B mid-air!"
+	}
+	else if global.inputtype=0
+	{
+		subtitle = "Airdash over the gap by pressing "+keytostring(global.p1_dashkey)+" mid-air!"
+	}
 }
 if global.char="T"
 {
-	hintsound=snd_tutorialvo3_t
 	subtitle = "Use the double-jump to cross the gap!"
 }

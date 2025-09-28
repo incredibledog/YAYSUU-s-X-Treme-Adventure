@@ -5,9 +5,9 @@ axislv = gamepad_axis_value(global.p1_controlslot,gp_axislv)
 
 if (global.inputtype != 3)
 {
-	//if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(ord("P")) || keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_escape))
-	//	global.inputtype = global.keytype
-	if (gamepad_button_check_pressed(0,gp_face1) || gamepad_button_check_pressed(0,gp_start))
+	if keyboard_check_pressed(vk_anykey) && global.inputtype != 0
+		global.inputtype = 0
+	if (gamepad_any_button_pressed(global.p1_controlslot) || axislh!=prevaxislh || axislv!=prevaxislv) && global.inputtype != 2
 		global.inputtype = 2
 	// NOT ANYMORE!
 }

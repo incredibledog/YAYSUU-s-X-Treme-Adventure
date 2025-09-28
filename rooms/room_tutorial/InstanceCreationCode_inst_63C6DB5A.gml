@@ -1,10 +1,8 @@
-if global.char="Y"
+if global.inputtype=2
 {
-	hintsound=snd_tutorialvo4_y
-	subtitle = "If you press the DASH button whilst grounded, you will slide!"
+	subtitle="Press B while grounded to attack the enemy!"
 }
-if global.char="T"
+else if global.inputtype=0
 {
-	hintsound=snd_tutorialvo4_t
-	subtitle = "Press the DASH button whilst standing or crouching to attack the enemy!"
+	subtitle="Press "+keytostring(global.p1_dashkey)+" while grounded to attack the enemy!"
 }

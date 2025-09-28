@@ -18,8 +18,20 @@ function scr_collectcoins(amount){
 		global.coingoal += 100
 		if (global.hp == global.maxhp)
 		{
-			global.lives++
-			audio_play_sound(snd_extralife,1,false)
+			with (instance_create_layer(320+(instance_number(obj_itemdefault)*32),416,"gui",obj_itemdefault))
+			{
+				depth = global.itempopupdepth
+				if global.char = "Y"
+				{
+					sprite_index=spr_itemlife_y
+				}
+				else if global.char = "T"
+				{
+					sprite_index=spr_itemlife_t
+				}
+				audio_pause_sound(global.currentsong)
+				audio_play_sound(snd_extralife,1,false)
+			}
 		}
 		else
 		{

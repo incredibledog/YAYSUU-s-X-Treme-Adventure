@@ -1,2 +1,8 @@
-hintsound=snd_tutorialvo1
-subtitle = "Press the JUMP button to jump!"
+if global.inputtype=2
+{
+	subtitle="Press A to jump!"
+}
+else if global.inputtype=0
+{
+	subtitle = "Press "+keytostring(global.p1_jumpkey)+" to jump!"
+}
