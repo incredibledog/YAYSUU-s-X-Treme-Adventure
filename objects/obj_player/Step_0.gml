@@ -150,7 +150,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 		grounded = true
 	}
 	else
-		scr_player_trybounce()
+		scr_player_dobounce()
 	hsp += move * smashbump
 }
 else if (state == playerstates.bounce && newstate == state)

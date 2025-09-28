@@ -10,7 +10,7 @@ if touchingplayer(x, y)
 		if (!small)
 		{
 			with (obj_player)
-				scr_player_trybounce()
+				scr_player_trybounce(dashbouncy)
 		}
 	}
 }
