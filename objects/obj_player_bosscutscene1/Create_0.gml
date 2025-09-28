@@ -10,11 +10,4 @@ if global.trial || global.levelloadtype=loadtype.respawn // skip the walk
 else {
 	x=-64
 }
-if global.char="Y"
-{
-	sprite_index=spr_yaysuu_idle
-}
-if global.char="T"
-{
-	sprite_index=spr_teddy_idle
-}
+sprite_index=global.playersprites[playersprite.idle]

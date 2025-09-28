@@ -118,17 +118,17 @@ else
 			audio_play_sound(snd_confirm,1,false)
 			if (chos == 1)
 			{
-				scr_changecharacter("Y")
+				scr_changecharacter("Y", 0)
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
 			else if (chos == 1.5)
 			{
-				scr_changecharacter("C")
+				scr_changecharacter("C", 0)
 				audio_play_sound(snd_cottonselect,1,false)
 			}
 			else
 			{
-				scr_changecharacter("T")
+				scr_changecharacter("T", 0)
 				audio_play_sound(snd_teddyselect,1,false)
 			}
 		}

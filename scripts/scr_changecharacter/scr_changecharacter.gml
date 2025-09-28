@@ -21,10 +21,11 @@ enum playersprite
 	launched,
 	golfstop,
 	hangglide,
-	wallslide
+	wallslide,
+	talk_confused
 }
 
-function scr_changecharacter(char){
+function scr_changecharacter(char, skin){
 	if (char == "Y")
 	{
 		global.playersprites[playersprite.idle] = spr_yaysuu_idle
@@ -35,7 +36,7 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.jumpstart] = spr_yaysuu_jump
 		global.playersprites[playersprite.jumploop] = spr_yaysuu_jumploop
 		global.playersprites[playersprite.fall] = spr_yaysuu_fall
-		global.playersprites[playersprite.runjump] = spr_yaysuu_launchjump // 
+		global.playersprites[playersprite.runjump] = spr_yaysuu_launchjump
 		global.playersprites[playersprite.runfall] = spr_yaysuu_launch
 		global.playersprites[playersprite.crouch] = spr_yaysuu_crouch
 		global.playersprites[playersprite.dash] = spr_yaysuu_airdash
@@ -48,6 +49,7 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.launched] = spr_yaysuu_spinnykicked
 		global.playersprites[playersprite.hangglide] = spr_yaysuu_hangglide
 		global.playersprites[playersprite.golfstop] = spr_yaysuu_spinball
+		global.playersprites[playersprite.talk_confused] = spr_yaysuu_talk_confused
 	}
 	else if (char == "T")
 	{
@@ -72,7 +74,8 @@ function scr_changecharacter(char){
 		global.playersprites[playersprite.launched] = spr_teddy_die
 		global.playersprites[playersprite.golfstop] = spr_teddy_spinball
 		global.playersprites[playersprite.hangglide] = spr_teddy_hangglide
-		global.playersprites[playersprite.wallslide] = spr_teddy_wallslide // prace holduh no longer
+		global.playersprites[playersprite.wallslide] = spr_teddy_wallslide
+		global.playersprites[playersprite.talk_confused] = spr_yaysuu_talk_confused
 	}
 	/*else if (char == "C")
 	{
