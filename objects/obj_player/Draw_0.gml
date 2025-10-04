@@ -1,4 +1,4 @@
-if (global.inlevel)
+if (global.inlevel || global.multiplayer)
 {
 	if (hascollision)
 		scr_draw_hitbox()

@@ -44,6 +44,16 @@ with (obj_fadeblack)
 	//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 }
 
+/*draw_set_valign(fa_top)
+draw_set_font(global.smalloptfont)
+if (instance_exists(obj_player))
+	draw_text_yxa(0, 0, "exists player", "none", false)
+else
+	draw_text_yxa(0, 0, "nope player", "none", false)
+if (global.mainplayer)
+	draw_text_yxa(0, 16, "we have a main player...", "none", false)
+else
+	draw_text_yxa(0, 16, "what the fuck!", "none", false)*/
 
 draw_set_valign(fa_top)
 draw_set_font(global.subtitlefont)

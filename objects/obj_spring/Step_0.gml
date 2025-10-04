@@ -2,16 +2,18 @@
 // You can write your code in this editor
 if touchingplayer(x, y) && sprite_index == normsprite
 {
+	var placate = scr_temphacky_closestplayer()
+	
 	if (vbounce != 0)
-		obj_player.vsp = vbounce * image_yscale
+		placate.vsp = vbounce * image_yscale
 	if (hbounce != 0)
-		obj_player.hsp = hbounce * image_xscale
+		placate.hsp = hbounce * image_xscale
 	audio_play_sound(snd_boing,1,false)
-	if (obj_player.state == playerstates.stomp)
-		obj_player.newstate = playerstates.bounce
+	if (placate.state == playerstates.stomp)
+		placate.newstate = playerstates.bounce
 	sprite_index = bouncesprite
-	obj_player.grounded = false
-	obj_player.slopey = false
-	obj_player.prevgrounded = false
-	obj_player.prevslopey = false
+	placate.grounded = false
+	placate.slopey = false
+	placate.prevgrounded = false
+	placate.prevslopey = false
 }

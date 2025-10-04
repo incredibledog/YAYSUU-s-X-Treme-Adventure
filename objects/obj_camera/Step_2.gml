@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.inlevel && global.mainplayer.state != playerstates.dead
+if (!global.inlevel)
+	return
+
+if (global.mainplayer.state != playerstates.dead)
 {
 	if (abs(global.mainplayer.x - x) > maxvarience || abs(global.mainplayer.y - y) > maxvarience)
 	    followtimer = 60

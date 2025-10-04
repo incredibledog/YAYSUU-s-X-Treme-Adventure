@@ -3,7 +3,7 @@ if (global.key_leftp && selection > 0)
 	selection--
 	audio_play_sound(snd_kablooey_jr, 0, false)
 }
-else if (global.key_rightp && selection < 4)
+else if (global.key_rightp && selection < 5)
 {
 	selection++
 	audio_play_sound(snd_kablooey_jr, 0, false)
@@ -38,6 +38,14 @@ switch (selection)
 		optiontext = "DEVROOM"
 		if (global.key_jumpp)
 			loadroom(room_dev, loadtype.newlevel)
+		break;
+	case 5:
+		optiontext = "START MULTIPLIER"
+		if (global.key_jumpp)
+		{
+			global.multiplayer = true
+			loadroom(room_mainmenu, loadtype.menu)
+		}
 		break;
 }
 

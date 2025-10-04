@@ -25,4 +25,9 @@ if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtyp
 		global.bosshp = 6
 		global.maxbosshp = 6
 	}
+	
+	if (global.levelloadtype == loadtype.newlevel && global.multiplayer)
+	{
+		global.otherplayer = instance_create_depth(0,0, 100, obj_player)
+	}
 }

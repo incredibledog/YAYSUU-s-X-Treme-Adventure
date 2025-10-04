@@ -1,4 +1,4 @@
-if (global.inlevel) && ((real(self.id)=global.mainplayer || (real(self.id)=global.otherplayer && global.multiplayer)))
+if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 {
 	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.nextroom || global.levelloadtype == loadtype.respawn)
 	{
@@ -71,7 +71,7 @@ if (global.inlevel) && ((real(self.id)=global.mainplayer || (real(self.id)=globa
 	obj_camera.x = x
 	obj_camera.y = y
 }
-else if (global.multiplayer)
+else if (global.multiplayer && isotherplayer)
 {
 	instance_destroy()
 }

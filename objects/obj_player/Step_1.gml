@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 showarrow = false // why is this here
+//to stop showing arrow obviously
 if !instance_exists(obj_stageclear)
 {
-	if real(self.id)=global.mainplayer // PLAYER 1 CONTROLS. yaysuu must think about if he's player 1 or not
+	if !isotherplayer
 	{
 		key_left=global.key_left
 		key_leftp=global.key_leftp
@@ -20,7 +21,7 @@ if !instance_exists(obj_stageclear)
 		key_run=global.key_run
 		key_runp=global.key_runp
 	}
-	if real(self.id)=global.otherplayer // PLAYER 2 CONTROLS. yaysuu knows for a fact he's second fiddle
+	else
 	{
 		key_left=global.p2_key_left
 		key_leftp=global.p2_key_leftp

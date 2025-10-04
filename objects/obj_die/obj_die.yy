@@ -8,8 +8,8 @@
   "name":"obj_die",
   "overriddenProperties":[],
   "parent":{
-    "name":"triggers",
-    "path":"folders/Objects/levelobjs/triggers.yy",
+    "name":"geometry",
+    "path":"folders/Objects/levelobjs/geometry.yy",
   },
   "parentObjectId":null,
   "persistent":false,

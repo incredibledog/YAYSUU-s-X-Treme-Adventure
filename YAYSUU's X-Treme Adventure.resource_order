@@ -77,7 +77,7 @@
     {"name":"obj_devnote","order":1,"path":"objects/obj_devnote/obj_devnote.yy",},
     {"name":"obj_diagspring","order":4,"path":"objects/obj_diagspring/obj_diagspring.yy",},
     {"name":"obj_dialoguebox","order":3,"path":"objects/obj_dialoguebox/obj_dialoguebox.yy",},
-    {"name":"obj_die","order":1,"path":"objects/obj_die/obj_die.yy",},
+    {"name":"obj_die","order":12,"path":"objects/obj_die/obj_die.yy",},
     {"name":"obj_electrobot_boolet","order":13,"path":"objects/obj_electrobot_boolet/obj_electrobot_boolet.yy",},
     {"name":"obj_electrobot_bosscutscene1","order":1,"path":"objects/obj_electrobot_bosscutscene1/obj_electrobot_bosscutscene1.yy",},
     {"name":"obj_electrobot_thunder","order":12,"path":"objects/obj_electrobot_thunder/obj_electrobot_thunder.yy",},
