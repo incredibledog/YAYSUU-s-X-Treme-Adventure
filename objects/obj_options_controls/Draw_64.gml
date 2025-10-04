@@ -2,23 +2,55 @@
 // You can write your code in this editor
 draw_set_font(global.optfont)
 draw_set_valign(fa_top)
-draw_text(32,32,"CONTROLS")
-var controllerstring = gamepad_get_description(global.p1_controlslot)
-draw_set_font(global.smalloptfont)
-draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p1_controlslot)+" ("+controllerstring+")","white",false,608)
-draw_text(32,96 ,"LEFT  "+keytostring(global.p1_leftkey))
-draw_text(32,112,"RIGHT "+keytostring(global.p1_rightkey))
-draw_text(32,128,"UP    "+keytostring(global.p1_upkey))
-draw_text(32,144,"DOWN  "+keytostring(global.p1_downkey))
-draw_text(32,160,"JUMP  "+keytostring(global.p1_jumpkey))
-draw_text(32,176,"DASH  "+keytostring(global.p1_dashkey))
-draw_text(32,192,"RUN   "+keytostring(global.p1_runkey))
-draw_text(32,208,"MENU  "+keytostring(global.p1_startkey))
+draw_text(32,32,"P"+string(player)+" CONTROLS")
+if player=1
+{
+	var controllerstring = gamepad_get_description(global.p1_controlslot)
+	draw_set_font(global.smalloptfont)
+	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p1_controlslot)+" ("+controllerstring+")","white",false,608)
+	draw_text(32,96 ,"LEFT  "+keytostring(global.p1_leftkey))
+	draw_text(32,112,"RIGHT "+keytostring(global.p1_rightkey))
+	draw_text(32,128,"UP    "+keytostring(global.p1_upkey))
+	draw_text(32,144,"DOWN  "+keytostring(global.p1_downkey))
+	draw_text(32,160,"JUMP  "+keytostring(global.p1_jumpkey))
+	draw_text(32,176,"DASH  "+keytostring(global.p1_dashkey))
+	draw_text(32,192,"RUN   "+keytostring(global.p1_runkey))
+	draw_text(32,208,"MENU  "+keytostring(global.p1_startkey))
+}
+if player=2
+{
+	var controllerstring = gamepad_get_description(global.p2_controlslot)
+	draw_set_font(global.smalloptfont)
+	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p2_controlslot)+" ("+controllerstring+")","white",false,608)
+	draw_text(32,96 ,"LEFT  "+keytostring(global.p2_leftkey))
+	draw_text(32,112,"RIGHT "+keytostring(global.p2_rightkey))
+	draw_text(32,128,"UP    "+keytostring(global.p2_upkey))
+	draw_text(32,144,"DOWN  "+keytostring(global.p2_downkey))
+	draw_text(32,160,"JUMP  "+keytostring(global.p2_jumpkey))
+	draw_text(32,176,"DASH  "+keytostring(global.p2_dashkey))
+	draw_text(32,192,"RUN   "+keytostring(global.p2_runkey))
+	draw_text(32,208,"MENU  "+keytostring(global.p2_startkey))
+}
 draw_set_font(global.optfont)
-draw_text(32,288,global.p1_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
+draw_text(32,256,"CURRENT PLAYER  "+string(player))
+if player=1
+{
+	draw_text(32,288,global.p1_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
+}
+if player=2
+{
+	draw_text(32,288,global.p2_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
+}
 draw_text(32,320,global.menubuttontype ? "MENU FUNC  EXIT" : "MENU FUNC  START")
-draw_text(32,352,"CONTROLLER SLOT  "+string(global.p1_controlslot))
-draw_text(32,384,"RESET 2 DEFAULT")
+if player=1
+{
+	draw_text(32,352,"CONTROLLER SLOT  "+string(global.p1_controlslot))
+}
+if player=2
+{
+	draw_text(32,352,"CONTROLLER SLOT  "+string(global.p2_controlslot))
+}
+draw_text(32,384,"RESET CHANGES")
 draw_text(32,416,"SAVE N QUIT")
 if !waitingforinput
 {
@@ -48,19 +80,22 @@ if !waitingforinput
 		case 8:
 		draw_sprite(spr_cursor_options,0,0,192)
 		break;
-		case 9: //big options
+		case 9: //bigger options
+		draw_sprite(spr_cursor_options,0,0,256)
+		break;
+		case 10: //big options
 		draw_sprite(spr_cursor_options,0,0,288)
 		break;
-		case 10:
+		case 11:
 		draw_sprite(spr_cursor_options,0,0,320)
 		break;
-		case 11:
+		case 12:
 		draw_sprite(spr_cursor_options,0,0,352)
 		break;
-		case 12:
+		case 13:
 		draw_sprite(spr_cursor_options,0,0,384)
 		break;
-		case 13:
+		case 14:
 		draw_sprite(spr_cursor_options,0,0,416)
 		break;
 	}

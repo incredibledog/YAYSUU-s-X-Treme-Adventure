@@ -46,6 +46,8 @@ global.inlevel = false
 global.nextroom = room_idlogo
 axislh = gamepad_axis_value(global.p1_controlslot,gp_axislh)
 axislv = gamepad_axis_value(global.p1_controlslot,gp_axislv)
+p2axislh = gamepad_axis_value(global.p2_controlslot,gp_axislh)
+p2axislv = gamepad_axis_value(global.p2_controlslot,gp_axislv)
 scr_changecharacter("Y", 0)
 global.currentsong = -1
 global.jumpscare = false
@@ -69,7 +71,7 @@ global.globaltimer = 0
 global.debugmessageoffset = 0
 global.skibispin = false
 global.quickmenu = false
-global.multiplayer = false
+global.multiplayer = false // i don't know why, I Don't Know Why, Setting this to True Crashes the game because of obj_camera. WHY?!
 windowtimer = 0
 windowname = ""
 newwindowname = ""
@@ -91,18 +93,13 @@ global.totalobjectidcount = 100
 while(object_exists(global.totalobjectidcount)) {
 	global.totalobjectidcount++;
 }
-
-if (os_type == os_android)
-	global.inputtype = 3
-else if (gamepad_is_connected(0))
-	global.inputtype = 2
-else
-	global.inputtype = 0
+global.inputtype = 0
+global.p2inputtype = 0
 
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, depth + 1, obj_fadeblack)
 global.mainplayer = instance_create_depth(0,0, 100, obj_player)
-global.otherplayer = noone
+global.otherplayer = noone // well THAT was a waste of time...
 instance_create_depth(0,0, 100, obj_hud)
 instance_create_depth(0,0, 100, obj_parallax)
 //instance_create_depth(128,416,100,obj_subtitle)

@@ -1,4 +1,4 @@
-if (global.inlevel)
+if (global.inlevel) && ((real(self.id)=global.mainplayer || (real(self.id)=global.otherplayer && global.multiplayer)))
 {
 	if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.nextroom || global.levelloadtype == loadtype.respawn)
 	{

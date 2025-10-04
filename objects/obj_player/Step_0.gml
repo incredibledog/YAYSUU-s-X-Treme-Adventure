@@ -16,7 +16,7 @@ enum playerstates
 	debug
 }
 
-if (!global.inlevel)
+if (!global.inlevel) || (global.inlevel && real(self.id)=global.otherplayer && !global.multiplayer)
 	return;
 
 if (inbackground)

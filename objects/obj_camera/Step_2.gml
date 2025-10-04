@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.inlevel && obj_player.state != playerstates.dead && obj_player.state != playerstates.dead
+if global.inlevel && global.mainplayer.state != playerstates.dead
 {
-	if (abs(obj_player.x - x) > maxvarience || abs(obj_player.y - y) > maxvarience)
+	if (abs(global.mainplayer.x - x) > maxvarience || abs(global.mainplayer.y - y) > maxvarience)
 	    followtimer = 60
-	else if (obj_player.hsp == 0 && obj_player.vsp == 0 && (!dontunfocus))
+	else if (global.mainplayer.hsp == 0 && global.mainplayer.vsp == 0 && (!dontunfocus))
 	    followtimer--
 	if (focusonpointstored != focusonpoint)
 	{
@@ -15,8 +15,8 @@ if global.inlevel && obj_player.state != playerstates.dead && obj_player.state !
 	{
 	    if (!focusonpoint)
 	    {
-	        focuspointx = obj_player.x
-	        focuspointy = obj_player.y
+	        focuspointx = global.mainplayer.x
+	        focuspointy = global.mainplayer.y
 	    }
 		if (lerpy >= 1)
 	    {
@@ -37,7 +37,7 @@ if global.inlevel && obj_player.state != playerstates.dead && obj_player.state !
 	}
 }
 
-if (obj_player.state != playerstates.debug)
+if (global.mainplayer.state != playerstates.debug)
 {
 	x = clamp(x, 320, (room_width - 320))
 	y = clamp(y, 240, (room_height - 240))
@@ -51,9 +51,9 @@ if (!focusonpoint)
 	actualcamy += voffset
 	
 	var wantedspeedoffset = 0
-	if (abs(obj_player.hsp) > obj_player.walkspeed)
+	if (abs(global.mainplayer.hsp) > global.mainplayer.walkspeed)
 	{
-		wantedspeedoffset = obj_player.hsp * speedoffsetscale
+		wantedspeedoffset = global.mainplayer.hsp * speedoffsetscale
 	}
 	
 	var speedoffsetspeed
@@ -78,7 +78,7 @@ if vshakeoffset > 0
 var shakey = vshakeoffset * vwobble
 actualcamx = round(actualcamx)
 actualcamy = round(actualcamy)
-if (obj_player.state != playerstates.debug)
+if (global.mainplayer.state != playerstates.debug)
 {
 	actualcamx = clamp(actualcamx, 320, (room_width - 320))
 	actualcamy = clamp(actualcamy, 240, (room_height - 240))
