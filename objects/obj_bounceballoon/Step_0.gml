@@ -2,19 +2,21 @@
 // You can write your code in this editor
 if touchingplayer(x, y) && sprite_index == normsprite
 {
-	if (obj_player.state == playerstates.stomp)
+	var whichplayer = scr_temphacky_closestplayer()
+	var whichchar = whichplayer.isotherplayer ? global.p2char : global.char
+	if (whichplayer.state == playerstates.stomp)
 	{
-		if (global.char == "T")
+		if (whichchar == "T")
 		{
 			sprite_index = popsprite
 			audio_play_sound(snd_balloonpop,1,false)
 		}
 		else
 		{
-			obj_player.newstate = playerstates.bounce
+			whichplayer.newstate = playerstates.bounce
 			if (vbounce != 0 && obj_player.vsp*image_yscale > vbounce*image_yscale)
 			{
-				obj_player.vsp = vbounce * image_yscale
+				whichplayer.vsp = vbounce * image_yscale
 				sprite_index = bigbouncesprite
 				audio_play_sound(snd_boing,1,false)
 			}
@@ -25,16 +27,16 @@ if touchingplayer(x, y) && sprite_index == normsprite
 	else
 	{
 		var intendedbounce = vbouncesmall
-		if (obj_player.key_jump || obj_player.bbox_bottom > y + 8)
+		if (whichplayer.key_jump || whichplayer.bbox_bottom > y + 8)
 			intendedbounce = vbouncejump
 		
-		if (obj_player.vsp*image_yscale > intendedbounce*image_yscale)
+		if (whichplayer.vsp*image_yscale > intendedbounce*image_yscale)
 		{
-			obj_player.vsp = intendedbounce * image_yscale
+			whichplayer.vsp = intendedbounce * image_yscale
 			sprite_index = bouncesprite
 			audio_play_sound(snd_boing,1,false)
-			if (global.char == "T")
-				obj_player.djump = false;
+			if (whichchar == "T")
+				whichplayer.djump = false;
 		}
 		//if (hbouncesmall != 0)
 		//	obj_player.hsp = hbouncesmall * image_xscale

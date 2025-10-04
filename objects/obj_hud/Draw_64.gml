@@ -10,12 +10,12 @@ if global.inlevel && !global.inhub
 		if (room=room_chillfields_boss)
 		{
 			boss_health_hearts(spr_fringleglasses)
-			healthheight = 96
+			healthheight = 64
 		}
 		else
 		{
 			draw_sprite(spr_scoreicon,0,32,32)
-			draw_text(64,32,global.score+global.scoreadd)
+			draw_text(64,32,string(global.score+global.scoreadd))
 			draw_sprite(spr_stopwatch,0,32,64)
 			draw_text(64, 64, timerstring)
 			if room=room_glowstickcity
@@ -26,10 +26,28 @@ if global.inlevel && !global.inhub
 				draw_sprite(spr_yaysuucoinicon,0,32,96)
 			draw_text(64,96,global.coins)
 		}
-		if (global.char == "C")
-			health_system_hearts(spr_carrot, global.hp, global.maxhp, 32, healthheight)
-		else
+		if !global.multiplayer
 			health_system_hearts(spr_pizza, global.hp, global.maxhp, 32, healthheight)
+		else if global.multiplayer {
+			if global.char="Y"
+			{
+				draw_sprite(spr_yaysuulifeicon,0,32,healthheight)
+			}
+			if global.char="T"
+			{
+				draw_sprite(spr_teddylifeicon,0,32,healthheight)
+			}
+			if global.p2char="Y"
+			{
+				draw_sprite(spr_yaysuulifeicon,0,32,healthheight+32)
+			}
+			if global.p2char="T"
+			{
+				draw_sprite(spr_teddylifeicon,0,32,healthheight+32)
+			}
+			health_system_hearts(spr_pizza, global.hp, global.maxhp, 64, healthheight)
+			health_system_hearts(spr_pizza, global.p2hp, global.p2maxhp, 64, healthheight+32)
+		}
 		if (comboshowtimer > 0)
 		{
 			if (global.combo>1) || (comboshowtimer>60) {

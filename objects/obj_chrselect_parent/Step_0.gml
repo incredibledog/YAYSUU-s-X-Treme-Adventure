@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if obj_chrselect_cursor.selected=true && obj_chrselect_cursor.chos=chosindex && sprite_index!=selectedsprite
+if obj_chrselect_cursor.selected=true && ((obj_chrselect_cursor.chos=chosindex && !global.multiplayer) || global.multiplayer) && sprite_index!=selectedsprite
 {
 	sprite_index=selectedsprite
 	image_index=0

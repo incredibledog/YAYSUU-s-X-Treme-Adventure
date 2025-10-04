@@ -29,19 +29,19 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 		if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 		{
 			sprite_index = global.playersprites[playersprite.idle]
-			if (global.char == "Y")
+			if (char == "Y")
 			{
 				rundamagespeed = 12
 				smashbump = 6
 				airdashboost = 20
 			}
-			else if (global.char == "T")
+			else if (char == "T")
 			{
 				rundamagespeed = 8
 				smashbump = 2
 				airdashboost = 17
 			}
-			else if (global.char == "C")
+			else if (char == "C")
 			{
 				rundamagespeed = 12
 				smashbump = 1
@@ -60,16 +60,19 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 	
 	if global.checkpoint == true && instance_exists(obj_checkpoint)
 	{
-		x = obj_checkpoint.x
+		x = obj_checkpoint.x-(64*isotherplayer)
 		y = obj_checkpoint.y
 	}
 	else
 	{
-		x = obj_spawn.x
+		x = obj_spawn.x-(64*isotherplayer)
 		y = obj_spawn.y
 	}
-	obj_camera.x = x
-	obj_camera.y = y
+	if !isotherplayer
+	{
+		obj_camera.x = x
+		obj_camera.y = y
+	}
 }
 else if (global.multiplayer && isotherplayer)
 {

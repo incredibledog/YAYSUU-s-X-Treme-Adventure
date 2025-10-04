@@ -1,18 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
-if touchingplayer(x, y) && obj_player.grounded
+var whichplayer=scr_temphacky_closestplayer()
+if touchingplayer(x, y) && whichplayer.grounded
 {
-	obj_player.showarrow = true
-	if (obj_player.key_upp)
+	whichplayer.showarrow = true
+	if (whichplayer.key_upp)
 	{
 		loadroom(warproom, warptype)
 		obj_player.newstate = playerstates.inactive
 		global.checkpoint=false
-		if (global.char == "Y")
-			obj_player.sprite_index = spr_yaysuu_idle
-		else if (global.char == "T")
-			obj_player.sprite_index = spr_teddy_idle
-		else if (global.char == "C")
-			obj_player.sprite_index = spr_cotton_idle
+		whichplayer.sprite_index=whichplayer.isotherplayer ? global.p2playersprites[playersprite.idle] : global.playersprites[playersprite.idle]
 	}
 }

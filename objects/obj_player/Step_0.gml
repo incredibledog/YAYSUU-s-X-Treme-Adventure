@@ -36,7 +36,7 @@ if (inwater)
 	grv = watergrav
 	maxfallspeed = normmaxfall
 }
-else if (state == playerstates.normal && !grounded && !djump && global.char == "C")
+else if (state == playerstates.normal && !grounded && !djump && char == "C")
 {
 	grv = floatgrav
 	maxfallspeed = floatmaxfall
@@ -66,7 +66,7 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 {
 	if (state == playerstates.crouch || state == playerstates.inactive || state == playerstates.win)
 		wsp = 0
-	else if (key_run && !(state == playerstates.stomp && global.char == "T"))
+	else if (key_run && !(state == playerstates.stomp && char == "T"))
 		wsp = runspeed
 	else
 		wsp = walkspeed
@@ -79,7 +79,7 @@ if (state != playerstates.hurt && state != playerstates.dead && state != players
 if (grounded || state == playerstates.golfstop)
 {
 	dshed = false
-	djump = (global.char == "T" || global.char == "C")
+	djump = (char == "T" || char == "C")
 	lastwall = 0
 }
 
@@ -103,12 +103,12 @@ if (candodashdo)
 }
 
 //airdash
-if ((!grounded) && key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo && global.char != "C")
+if ((!grounded) && key_dashp && (state == playerstates.normal || state == playerstates.bounce || state == playerstates.stomp) && newstate == state && !dshed && candodashdo && char != "C")
 {
 	if (global.skibispin)
 	{
 		hsp = lengthdir_x(dashboost, visualrotation) * facingdirection
-		if global.char == "T"
+		if char == "T"
 			vsp = lengthdir_y(dashboost, visualrotation) * facingdirection
 		else
 			vsp = lengthdir_y(dashboost, visualrotation) * facingdirection * 0.5
@@ -144,7 +144,7 @@ if ((!grounded) && key_downp && newstate == state && (state == playerstates.norm
 }
 else if (grounded && state == playerstates.stomp && newstate == state)
 {
-	if (global.char == "T")
+	if (char == "T")
 	{
 		newstate = playerstates.normal
 		grounded = true
@@ -155,7 +155,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 }
 else if (state == playerstates.bounce && newstate == state)
 {
-	if ((vsp >= 0 && global.char != "C") || grounded || slopey)
+	if ((vsp >= 0 && char != "C") || grounded || slopey)
 		newstate = playerstates.normal
 	else if (key_downp)
 	{
@@ -169,7 +169,7 @@ else if (state == playerstates.bounce && newstate == state)
 }
 
 //dash run
-if (key_runp && !key_down && state == playerstates.normal && newstate == state && !amiwalled(hsp) && global.char != "C" && !inwater)
+if (key_runp && !key_down && state == playerstates.normal && newstate == state && !amiwalled(hsp) && char != "C" && !inwater)
 {
 	yearnedhsp = facingdirection * runspeed
 	if (abs(hsp) < (yearnedhsp) || sign(hsp) != sign(yearnedhsp)) //you will not slow down if you start a run
@@ -218,7 +218,7 @@ if (grounded && key_runp && state = playerstates.crouch && (newstate == state ||
 	}
 }
 
-var canwalljump = !grounded && global.char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision) && !place_meeting(x+(facingdirection*8),y,obj_wallsoap)
+var canwalljump = !grounded && char="T" && move != 0 && facingdirection != lastwall && place_meeting(x+(facingdirection*8),y,obj_playercollision) && !place_meeting(x+(facingdirection*8),y,obj_wallsoap)
 // jumping
 if key_jumpp && (state != playerstates.inactive && state != playerstates.win && state != playerstates.golfstop && newstate != playerstates.golfstop && state != playerstates.dead && !forcecrouch)
 {
@@ -233,9 +233,12 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		facingdirection=-facingdirection
 		audio_play_sound(snd_walljump, 1, false)
 		image_index = 0
-		sprite_index = global.playersprites[playersprite.jumpstart]
+		if !isotherplayer
+			sprite_index = global.playersprites[playersprite.jumpstart]
+		else
+			sprite_index = global.p2playersprites[playersprite.jumpstart]
 	}
-	else if !grounded && global.char="T" && djump
+	else if !grounded && char="T" && djump
 	{
 		if (inwater)
 			vsp = wdjmp
@@ -245,7 +248,10 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		djump = false
 		newstate = playerstates.normal
 		image_index = 0
-		sprite_index = global.playersprites[playersprite.jumpstart]
+		if !isotherplayer
+			sprite_index = global.playersprites[playersprite.jumpstart]
+		else
+			sprite_index = global.p2playersprites[playersprite.jumpstart]
 	}
 	else if grounded
 	{
@@ -253,7 +259,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 			vsp = wjmp
 		else
 			vsp = jmp
-		if (global.char == "C")
+		if (char == "C")
 			audio_play_sound(snd_jump_c, 1, false)
 		else
 			audio_play_sound(snd_jump, 1, false)
@@ -263,7 +269,10 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		prevslopey = false
 		newstate = playerstates.normal
 		image_index = 0
-		sprite_index = global.playersprites[playersprite.jumpstart]
+		if !isotherplayer
+			sprite_index = global.playersprites[playersprite.jumpstart]
+		else
+			sprite_index = global.p2playersprites[playersprite.jumpstart]
 	}
 	else if (inwater)
 	{
@@ -303,10 +312,16 @@ if (ouchies)
 	if ((!global.inv && hurtt <= 0 && !winning) || deathies) && state != playerstates.dead && state != playerstates.inactive
 	{
 		if (deathies)
-			global.hp = 0
+			if !isotherplayer
+				global.hp = 0
+			else
+				global.p2hp = 0
 		else
-			global.hp--
-		if (global.hp > 0)
+			if !isotherplayer
+				global.hp--
+			else
+				global.p2hp--
+		if (global.hp > 0 && !isotherplayer) || (global.p2hp > 0 && isotherplayer)
 		{
 		    newstate = playerstates.hurt
 			grounded = false
@@ -326,10 +341,11 @@ if (ouchies)
 		    newstate = playerstates.dead
 			if !instance_exists(obj_stageclear)
 			{
-				if (global.lives > 0)
+				if (global.lives > 0) && !isotherplayer
 					global.lives--
 			    vsp = -abs(vsp)
-			    audio_stop_all()
+				if !isotherplayer
+					audio_stop_all()
 				if global.jumpscare
 				{
 					audio_play_sound(snd_jumpscare,1,false)
@@ -368,7 +384,7 @@ else
 
 //vulnerability
 var runattack = (abs(hsp) > rundamagespeed && sign(hsp) == sign(yearnedhsp) && state == playerstates.normal)
-vulnerable = !(global.inv == 1 || (newstate != playerstates.launched && (state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || runattack || ( (state == playerstates.bounce || newstate == playerstates.bounce) && global.char == "C")) ))
+vulnerable = !(global.inv == 1 || (newstate != playerstates.launched && (state == playerstates.dash || state == playerstates.slide || state == playerstates.stomp || newstate == playerstates.dash || newstate == playerstates.slide || newstate == playerstates.stomp || runattack || ( (state == playerstates.bounce || newstate == playerstates.bounce) && char == "C")) ))
 if (vulnerable) && (grounded)
 	global.combo = 0
 if (runattack)
@@ -380,7 +396,7 @@ else
 
 
 //the death fade
-if (state == playerstates.dead)
+if (state == playerstates.dead) && !isotherplayer
 {
 	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading && !instance_exists(obj_stageclear)) // anti-dying when you beat the stage check
 	{
@@ -392,6 +408,23 @@ if (state == playerstates.dead)
 				global.jumpscare=false
 				instance_create_depth(0,0,depth,obj_gameover)
 			}
+	}
+}
+if (state == playerstates.dead) && isotherplayer
+{
+	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading && !instance_exists(obj_stageclear)) // anti-dying when you beat the stage check
+	{
+	    if !(global.inboss) { // come back my brother
+			event_perform(ev_other,ev_room_start)
+			var canwalljump = 0
+			x=global.mainplayer.x
+			y=global.mainplayer.y
+			global.p2hp = 3
+			global.p2maxhp = 3
+		}
+		else {
+			state=playerstates.inactive
+		}
 	}
 }
 else
@@ -414,7 +447,7 @@ if (state != playerstates.dead || state != playerstates.debug)
 if (state != playerstates.golfstop && state != playerstates.dead && state != playerstates.hangglide && state != playerstates.debug)
 {
 	var accel
-	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && global.char == "C" //cotton's gradual run
+	if abs(hsp) >= walkspeed && (hsp * sign(hsp)) < (yearnedhsp * sign(hsp)) && !global.inv && char == "C" //cotton's gradual run
 		accel = yearnacceloverspeed
 	else if (sign(hsp) != sign(yearnedhsp) && sign(yearnedhsp) != 0) || (abs(hsp) <= runspeed) //wants to decrease below walking
 		accel = yearnaccelunderspeed
@@ -462,12 +495,12 @@ if (state == playerstates.hangglide)
 	}
 	if amiwalled(hsp)
 	{
-		if global.char="Y"
+		if char="Y"
 		{
 			yearnedhsp=-yearnedhsp
 			hsp=-hsp
 		}
-		if global.char="T"
+		if char="T"
 		{
 			hangglidedir=-hangglidedir
 		}
@@ -593,7 +626,7 @@ if (hascollision)
 			if (vsp > 0)
 				vsp = 0
 			
-			if (state == playerstates.bounce && global.char == "C") // ):<
+			if (state == playerstates.bounce && char == "C") // ):<
 				newstate = playerstates.normal
 		}
     }
@@ -752,6 +785,12 @@ if (hascollision)
 		}
 	}
 }
+if isotherplayer && offscreentimer=4*global.defaultfps && !(state=playerstates.dead || state=playerstates.inactive)
+{
+	x = global.mainplayer.x
+	y = global.mainplayer.y
+	offscreentimer = 0
+}
 x += hsp
 y += vsp
 if (place_meeting(x, y, obj_playercollision)) && hascollision //PANIC.
@@ -808,83 +847,82 @@ switch (state)
 		{
 			if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
 			{
-				if ((sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait]) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
-					newsprite = global.playersprites[playersprite.idle]
+				if ((sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait]) || ((sprite_index == global.p2playersprites[playersprite.idle] || sprite_index == global.p2playersprites[playersprite.wait]) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0))
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.idle] : global.playersprites[playersprite.idle]
 				else
-					newsprite = global.playersprites[playersprite.brake]
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.brake] : global.playersprites[playersprite.brake]
 			}
 			else if (abs(hsp) < yearnaccel)
 			{
 				if (idletime > 600)
-					newsprite = global.playersprites[playersprite.wait]
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.wait] : global.playersprites[playersprite.wait]
 				else
-					newsprite = global.playersprites[playersprite.idle]
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.idle] : global.playersprites[playersprite.idle]
 			}
 			else if (abs(hsp) > walkspeed)
-				newsprite = global.playersprites[playersprite.run]
+				newsprite = isotherplayer ? global.p2playersprites[playersprite.run] : global.playersprites[playersprite.run]
 			else
-				newsprite = global.playersprites[playersprite.walk]
+				newsprite = isotherplayer ? global.p2playersprites[playersprite.walk] : global.playersprites[playersprite.walk]
 		}
 		else
 		{
 			if (canwalljump)
-					newsprite = global.playersprites[playersprite.wallslide]
+				newsprite = isotherplayer ? global.p2playersprites[playersprite.wallslide] : global.playersprites[playersprite.wallslide]
 			else if (abs(hsp) > walkspeed)
 			{
 				if (vsp > 0)
-					newsprite = global.playersprites[playersprite.runfall]
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.runfall] : global.playersprites[playersprite.runfall]
 				else
-					newsprite = global.playersprites[playersprite.runjump]
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.runjump] : global.playersprites[playersprite.runjump]
 			}
 			else
 			{
 				if (vsp > 0)
-					newsprite = global.playersprites[playersprite.fall]
-				else if (sprite_index != global.playersprites[playersprite.jumpstart])
-					newsprite = global.playersprites[playersprite.jumploop]
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.fall] : global.playersprites[playersprite.fall]
+				else if (sprite_index != global.playersprites[playersprite.jumpstart] && sprite_index != global.p2playersprites[playersprite.jumpstart])
+					newsprite = isotherplayer ? global.p2playersprites[playersprite.jumploop] : global.playersprites[playersprite.jumploop]
 			}
 		}
-		
-		if (newsprite != global.playersprites[playersprite.brake])
+		if (newsprite != global.playersprites[playersprite.brake]) && (newsprite != global.p2playersprites[playersprite.brake])
 			image_xscale = facingdirection
 		break;
 	case playerstates.crouch:
-		newsprite = global.playersprites[playersprite.crouch]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.crouch] : global.playersprites[playersprite.crouch]
 		image_xscale = facingdirection
 		break;
 	case playerstates.dash:
-		newsprite = global.playersprites[playersprite.dash]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.dash] : global.playersprites[playersprite.dash]
 		break;
 	case playerstates.stomp:
-		newsprite = global.playersprites[playersprite.stomp]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.stomp] : global.playersprites[playersprite.stomp]
 		break;
 	case playerstates.hurt:
-		newsprite = global.playersprites[playersprite.ouchie]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.ouchie] : global.playersprites[playersprite.ouchie]
 		break;
 	case playerstates.inactive:
 		break;
 	case playerstates.dead:
-		newsprite = global.playersprites[playersprite.deaded]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.deaded] : global.playersprites[playersprite.deaded]
 		visualrotation += hsp
 		break;
 	case playerstates.slide:
-		newsprite = global.playersprites[playersprite.slide]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.slide] : global.playersprites[playersprite.slide]
 		break;
 	case playerstates.bounce:
-		newsprite = global.playersprites[playersprite.bounce]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.bounce] : global.playersprites[playersprite.bounce]
 		image_xscale = facingdirection
 		break;
 	case playerstates.win:
-		newsprite = global.playersprites[playersprite.win]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.win] : global.playersprites[playersprite.win]
 		break;
 	case playerstates.golfstop:
-		newsprite = global.playersprites[playersprite.golfstop]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.golfstop] : global.playersprites[playersprite.golfstop]
 		break;
 	case playerstates.launched:
-		newsprite = global.playersprites[playersprite.launched]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.launched] : global.playersprites[playersprite.launched]
 		break;
 	case playerstates.hangglide:
-		newsprite = global.playersprites[playersprite.hangglide]
+		newsprite = isotherplayer ? global.p2playersprites[playersprite.hangglide] : global.playersprites[playersprite.hangglide]
 		image_xscale = facingdirection
 		break;
 	case playerstates.debug:
@@ -899,23 +937,28 @@ switch (state)
 if (newsprite != sprite_index)
 {
 	image_index = 0
-	if sprite_index == global.playersprites[playersprite.brake]
+	if (sprite_index == global.playersprites[playersprite.brake] && !isotherplayer) || (sprite_index == global.p2playersprites[playersprite.brake] && isotherplayer)
 		image_xscale = facingdirection
 }
 sprite_index = newsprite
 
-if ((sprite_index == global.playersprites[playersprite.win]) && floor(image_index) == image_number-1)
+if (((sprite_index == global.p2playersprites[playersprite.win] || sprite_index == global.playersprites[playersprite.win]) && floor(image_index) == image_number-1)) {
 	image_speed = 0
-else
+}
+else {
 	image_speed = 1
-
-if (sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait])
+}
+if (sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait]) || (sprite_index == global.p2playersprites[playersprite.idle] || sprite_index == global.p2playersprites[playersprite.wait])
 	idletime++
 else
 	idletime = 0
+if isotherplayer && distance_to_object(global.mainplayer)>=320
+	offscreentimer++
+else
+	offscreentimer = 0
 if (!audio_exists(runningsound))
 	runningsound = audio_play_sound(snd_run, 1, true)
-if (sprite_index == global.playersprites[playersprite.run])
+if (sprite_index == global.playersprites[playersprite.run] || sprite_index == global.p2playersprites[playersprite.run])
 {
 	if audio_is_paused(runningsound)
 		audio_resume_sound(runningsound)
@@ -930,7 +973,7 @@ else if !audio_is_paused(runningsound)
 	image_speed = 1
 }
 	
-if (sprite_index == global.playersprites[playersprite.brake] && abs(hsp) > walkspeed)
+if ((sprite_index == global.playersprites[playersprite.brake] || sprite_index == global.p2playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
 {
 	if (!hasplayedbrakesound)
 	{

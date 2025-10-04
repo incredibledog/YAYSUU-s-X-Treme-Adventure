@@ -20,6 +20,7 @@ if !instance_exists(obj_stageclear)
 		key_dashp=global.key_dashp
 		key_run=global.key_run
 		key_runp=global.key_runp
+		char=global.char
 	}
 	else
 	{
@@ -37,6 +38,7 @@ if !instance_exists(obj_stageclear)
 		key_dashp=global.p2_key_dashp
 		key_run=global.p2_key_run
 		key_runp=global.p2_key_runp
+		char=global.p2char
 	}
 }
 else {

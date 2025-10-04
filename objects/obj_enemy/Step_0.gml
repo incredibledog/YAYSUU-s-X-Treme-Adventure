@@ -2,14 +2,15 @@
 // You can write your code in this editor
 if touchingplayer(x, y)
 {
-	if obj_player.vulnerable && candamage
-		obj_player.ouchies = true
-	else if !obj_player.vulnerable
+	var whichplayer = scr_temphacky_closestplayer()
+	if whichplayer.vulnerable && candamage
+		whichplayer.ouchies = true
+	else if !whichplayer.vulnerable
 	{
 		instance_destroy()
 		if (!small)
 		{
-			with (obj_player)
+			with (whichplayer)
 				scr_player_trybounce(other.dashbouncy)
 		}
 	}

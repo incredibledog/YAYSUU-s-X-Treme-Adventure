@@ -1,4 +1,4 @@
-if (!global.inlevel || !global.showcollision)
+if (!global.inlevel || !global.showcollision || isotherplayer)
 	return
 
 draw_set_valign(fa_bottom)

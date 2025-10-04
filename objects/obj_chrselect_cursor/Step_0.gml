@@ -107,7 +107,7 @@ if global.key_runp && !global.trial
 }
 else
 {
-	if global.key_menuaccept && !selected
+	if (global.key_menuaccept) || (global.p2_key_menuaccept && global.multiplayer) && !selected
 	{
 		if (!teddyavailable && chos == 2)
 			audio_play_sound(snd_nicetry,1,false)
@@ -119,6 +119,7 @@ else
 			if (chos == 1)
 			{
 				scr_changecharacter("Y", 0)
+				scr_p2changecharacter("T", 0)
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
 			else if (chos == 1.5)
@@ -129,11 +130,17 @@ else
 			else
 			{
 				scr_changecharacter("T", 0)
+				scr_p2changecharacter("Y", 0)
 				audio_play_sound(snd_teddyselect,1,false)
 			}
 		}
 	}
-	else if global.key_menuquit
+	if (global.p2_key_menuaccept && !global.multiplayer && global.trial)
+	{
+		global.multiplayer=true
+		audio_play_sound(snd_confirm,1,false)
+	}
+	else if global.key_menuquit || (global.p2_key_menuquit && !global.multiplayer)
 	{
 		if !selected
 		{
@@ -154,15 +161,21 @@ else
 		}
 		audio_play_sound(snd_nahnvm,1,false)
 	}
-	else if global.key_rightp && !selected
+	else if global.key_rightp || (global.p2_key_rightp && global.multiplayer) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		chos++
+		if chos=1
+			chos++
+		else if chos=2
+			chos--
 	}
-	else if global.key_leftp && !selected
+	else if global.key_leftp || (global.p2_key_leftp && global.multiplayer) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		chos--
+		if chos=1
+			chos++
+		else if chos=2
+			chos--
 	}
 	/*else if global.key_upp
 	{
@@ -171,7 +184,7 @@ else
 			prevchos = chos
 		chos = 1.5
 	}
-	 NOT YET...
+	 NOT EVER...
 	else if global.key_downp && chos == 1.5
 	{
 	audio_play_sound(snd_move,1,false)

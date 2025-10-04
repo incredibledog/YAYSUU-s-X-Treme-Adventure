@@ -49,6 +49,7 @@ axislv = gamepad_axis_value(global.p1_controlslot,gp_axislv)
 p2axislh = gamepad_axis_value(global.p2_controlslot,gp_axislh)
 p2axislv = gamepad_axis_value(global.p2_controlslot,gp_axislv)
 scr_changecharacter("Y", 0)
+scr_p2changecharacter("T", 0)
 global.currentsong = -1
 global.jumpscare = false
 global.debugmessage = ""
@@ -58,6 +59,8 @@ global.checkpoint=false
 global.coins=0
 global.hp = 3
 global.maxhp = 3
+global.p2hp = 3
+global.p2maxhp = 3
 global.bosshp = 6
 global.maxbosshp = 6
 global.scoreadd = 0

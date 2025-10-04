@@ -12,13 +12,17 @@ if (vsp != 0)
 	y += vsp
 	hsp -= sign(vsp)
 }
+var whichplayer = scr_temphacky_closestplayer()
 if (place_meeting(x,y,obj_player)) && !global.jumpscare
 {
 	if (global.inv=false)
 	{
-		obj_player.ouchies = true
-		obj_player.deathies = true
-		global.jumpscare=true
-		global.injumpscare = true;
+		whichplayer.ouchies = true
+		whichplayer.deathies = true
+		if whichplayer=global.mainplayer
+		{
+			global.jumpscare=true
+			global.injumpscare = true;
+		}
 	}
 }

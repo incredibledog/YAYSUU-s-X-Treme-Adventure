@@ -17,6 +17,8 @@ if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtyp
 {
 	global.hp = 3;
 	global.maxhp = 3;
+	global.p2hp = 3
+	global.p2maxhp = 3
 	global.scoreadd = 0
 	global.coins=0
 	global.coingoal=100

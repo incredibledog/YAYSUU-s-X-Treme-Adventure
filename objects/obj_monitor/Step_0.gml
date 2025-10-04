@@ -2,9 +2,10 @@
 // You can write your code in this editor
 movingobject_start()
 movingobject_end()
-if !obj_player.vulnerable && touchingplayer(x, y)
+var whichplayer=scr_temphacky_closestplayer()
+if !whichplayer.vulnerable && touchingplayer(x, y)
 {
 	instance_destroy()
-	with (obj_player)
+	with (whichplayer)
 		scr_player_trybounce(false)
 }

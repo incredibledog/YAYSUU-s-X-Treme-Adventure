@@ -9,12 +9,16 @@ p2axislv = gamepad_axis_value(global.p2_controlslot,gp_axislv)
 
 if (global.inputtype != 3)
 {
-	if keyboard_check_pressed(vk_anykey) && global.inputtype != 0
+	if keyboard_check_any_pressed(1) && global.inputtype != 0
 		global.inputtype = 0
 	if (gamepad_any_button_pressed(global.p1_controlslot) || axislh!=prevaxislh || axislv!=prevaxislv) && global.inputtype != 2
 		global.inputtype = 2
 	// NOT ANYMORE!
 }
+if keyboard_check_any_pressed(2) && global.p2inputtype != 0
+	global.p2inputtype = 0
+if gamepad_any_button_pressed(global.p2_controlslot) || p2axislh!=p2prevaxislh || p2axislv!=prevaxislv && global.p2inputtype != 2
+	global.p2inputtype = 2
 if (global.inputtype == 0) || (global.inputtype == 3)
 {
 	global.key_left = keyboard_check(global.p1_leftkey)
@@ -89,11 +93,11 @@ else if global.p2inputtype == 2
 		global.p2_key_left = p2axislh < -global.sensitivity || gamepad_button_check(global.p2_controlslot,gp_padl)
 		global.p2_key_leftp = (p2axislh < -global.sensitivity && p2prevaxislh >= -global.sensitivity) || gamepad_button_check_pressed(global.p2_controlslot,gp_padl)
 		global.p2_key_right = p2axislh > global.sensitivity || gamepad_button_check(global.p2_controlslot,gp_padr)
-		global.p2_key_rightp = (p2axislh > global.sensitivity && prevaxislh <= global.sensitivity) || gamepad_button_check_pressed(global.p2_controlslot,gp_padr)
+		global.p2_key_rightp = (p2axislh > global.sensitivity && p2prevaxislh <= global.sensitivity) || gamepad_button_check_pressed(global.p2_controlslot,gp_padr)
 		global.p2_key_up = p2axislv < -global.sensitivity || gamepad_button_check(global.p2_controlslot,gp_padu)
-		global.p2_key_upp = (p2axislv < -global.sensitivity && prevaxislv >= -global.sensitivity) || gamepad_button_check_pressed(global.p2_controlslot,gp_padu)
+		global.p2_key_upp = (p2axislv < -global.sensitivity && p2prevaxislv >= -global.sensitivity) || gamepad_button_check_pressed(global.p2_controlslot,gp_padu)
 		global.p2_key_down = p2axislv > global.sensitivity || gamepad_button_check(global.p2_controlslot,gp_padd)
-		global.p2_key_downp = (p2axislv > global.sensitivity && prevaxislv <= global.sensitivity) || gamepad_button_check_pressed(global.p1_controlslot,gp_padd)
+		global.p2_key_downp = (p2axislv > global.sensitivity && p2prevaxislv <= global.sensitivity) || gamepad_button_check_pressed(global.p1_controlslot,gp_padd)
 		global.p2_key_jump = gamepad_button_check(global.p2_controlslot,gp_face1)
 		global.p2_key_jumpp = gamepad_button_check_pressed(global.p2_controlslot,gp_face1)
 		global.p2_key_dash = gamepad_button_check(global.p2_controlslot,gp_face2)
@@ -101,10 +105,10 @@ else if global.p2inputtype == 2
 		global.p2_key_run = gamepad_button_check(global.p2_controlslot,gp_face3)
 		global.p2_key_runp = gamepad_button_check_pressed(global.p2_controlslot,gp_face3)
 		global.p2_key_start = gamepad_button_check_pressed(global.p2_controlslot,gp_start)
-		global.p2_key_menuaccept = global.p2_key_jumpp || global.key_start
+		global.p2_key_menuaccept = global.p2_key_jumpp || global.p2_key_start
 		global.p2_key_menuquit = global.p2_key_dashp
 	}
-	else if !instance_exists(obj_nocontroller)
+	else
 	{
 		global.p2inputtype = 0
 	}

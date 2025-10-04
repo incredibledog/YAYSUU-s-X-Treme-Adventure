@@ -3,6 +3,7 @@
 chos=1
 selected=false
 delay=0
+global.multiplayer = false
 global.char="Y"
 teddyavailable = true
 prevchos = 0

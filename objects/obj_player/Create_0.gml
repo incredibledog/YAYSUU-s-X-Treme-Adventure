@@ -85,5 +85,6 @@ key_dash=false
 key_dashp=false
 key_run=false
 key_runp=false
-
+offscreentimer=0
 isotherplayer = instance_number(obj_player) > 1
+char=isotherplayer ? global.p2char : global.char
