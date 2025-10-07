@@ -9,6 +9,6 @@ if touchingplayer(x, y) && whichplayer.grounded
 		loadroom(warproom, warptype)
 		obj_player.newstate = playerstates.inactive
 		global.checkpoint=false
-		whichplayer.sprite_index=whichplayer.isotherplayer ? global.p2playersprites[playersprite.idle] : global.playersprites[playersprite.idle]
+		whichplayer.sprite_index=whichplayer.playersprites[playersprite.idle]
 	}
 }

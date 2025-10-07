@@ -28,7 +28,6 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 		inwater = false
 		if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 		{
-			sprite_index = global.playersprites[playersprite.idle]
 			if (char == "Y")
 			{
 				rundamagespeed = 12

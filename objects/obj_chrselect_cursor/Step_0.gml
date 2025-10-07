@@ -118,19 +118,14 @@ else
 			audio_play_sound(snd_confirm,1,false)
 			if (chos == 1)
 			{
-				scr_changecharacter("Y", 0)
-				scr_p2changecharacter("T", 0)
+				global.char = "Y"
+				global.p2char = "T"
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
-			else if (chos == 1.5)
+			else if (chos == 2)
 			{
-				scr_changecharacter("C", 0)
-				audio_play_sound(snd_cottonselect,1,false)
-			}
-			else
-			{
-				scr_changecharacter("T", 0)
-				scr_p2changecharacter("Y", 0)
+				global.char = "T"
+				global.p2char = "Y"
 				audio_play_sound(snd_teddyselect,1,false)
 			}
 		}

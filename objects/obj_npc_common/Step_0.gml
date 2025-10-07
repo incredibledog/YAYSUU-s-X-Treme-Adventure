@@ -10,7 +10,7 @@ if !instance_exists(obj_stageclear)
 			dialogueprogress=0
 			talking=true
 			global.mainplayer.newstate = playerstates.inactive
-			global.mainplayer.sprite_index = global.playersprites[playersprite.idle]
+			global.mainplayer.sprite_index = global.mainplayer.playersprites[playersprite.idle]
 		}
 	}
 }

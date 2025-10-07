@@ -233,10 +233,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		facingdirection=-facingdirection
 		audio_play_sound(snd_walljump, 1, false)
 		image_index = 0
-		if !isotherplayer
-			sprite_index = global.playersprites[playersprite.jumpstart]
-		else
-			sprite_index = global.p2playersprites[playersprite.jumpstart]
+		sprite_index = playersprites[playersprite.jumpstart]
 	}
 	else if !grounded && char="T" && djump
 	{
@@ -248,10 +245,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		djump = false
 		newstate = playerstates.normal
 		image_index = 0
-		if !isotherplayer
-			sprite_index = global.playersprites[playersprite.jumpstart]
-		else
-			sprite_index = global.p2playersprites[playersprite.jumpstart]
+		sprite_index = playersprites[playersprite.jumpstart]
 	}
 	else if grounded
 	{
@@ -269,10 +263,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		prevslopey = false
 		newstate = playerstates.normal
 		image_index = 0
-		if !isotherplayer
-			sprite_index = global.playersprites[playersprite.jumpstart]
-		else
-			sprite_index = global.p2playersprites[playersprite.jumpstart]
+		sprite_index = playersprites[playersprite.jumpstart]
 	}
 	else if (inwater)
 	{
@@ -316,7 +307,7 @@ if (ouchies)
 				global.hp = 0
 			else
 				global.p2hp = 0
-		else
+		else if !fratricide
 			if !isotherplayer
 				global.hp--
 			else
@@ -332,7 +323,9 @@ if (ouchies)
 			hsp = yearnedhsp
 		    grounded = false
 			scr_collectcoins(-50)
-		    global.scoreadd -= 50
+			if !fratricide {
+				global.scoreadd -= 50
+			}
 			audio_play_sound(snd_ouchie, 1, false)
 		}
 		else
@@ -355,6 +348,10 @@ if (ouchies)
 				}
 			}
 		}
+	}
+	if fratricide
+	{
+		fratricide=false
 	}
 }
 if (state == playerstates.hurt && grounded)
@@ -391,10 +388,27 @@ if (runattack)
 	runanimtimer++
 else
 	runanimtimer = -1
-
 } //the skip that dead, inactive and debug do end here
-
-
+if touchingplayer(x,y) && !vulnerable
+{
+	if !isotherplayer
+	{
+		global.otherplayer.ouchies=true
+		global.otherplayer.fratricide=true
+	}
+	else if isotherplayer {
+		global.mainplayer.ouchies=true
+		global.mainplayer.fratricide=true
+		depth=global.mainplayer.depth-1
+		with (obj_hud)
+		{
+			event_user(0)
+		}
+	}
+	ouchies=false
+	fratricide=false
+	vulnerable=true
+}
 //the death fade
 if (state == playerstates.dead) && !isotherplayer
 {
@@ -847,82 +861,82 @@ switch (state)
 		{
 			if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
 			{
-				if ((sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait]) || ((sprite_index == global.p2playersprites[playersprite.idle] || sprite_index == global.p2playersprites[playersprite.wait]) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0))
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.idle] : global.playersprites[playersprite.idle]
+				if ((sprite_index == playersprites[playersprite.idle] || playersprites[playersprite.wait]) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
+					newsprite = playersprites[playersprite.idle]
 				else
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.brake] : global.playersprites[playersprite.brake]
+					newsprite = playersprites[playersprite.brake]
 			}
 			else if (abs(hsp) < yearnaccel)
 			{
 				if (idletime > 600)
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.wait] : global.playersprites[playersprite.wait]
+					newsprite = playersprites[playersprite.wait]
 				else
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.idle] : global.playersprites[playersprite.idle]
+					newsprite = playersprites[playersprite.idle]
 			}
 			else if (abs(hsp) > walkspeed)
-				newsprite = isotherplayer ? global.p2playersprites[playersprite.run] : global.playersprites[playersprite.run]
+				newsprite = playersprites[playersprite.run]
 			else
-				newsprite = isotherplayer ? global.p2playersprites[playersprite.walk] : global.playersprites[playersprite.walk]
+				newsprite = playersprites[playersprite.walk]
 		}
 		else
 		{
 			if (canwalljump)
-				newsprite = isotherplayer ? global.p2playersprites[playersprite.wallslide] : global.playersprites[playersprite.wallslide]
+				newsprite = playersprites[playersprite.wallslide]
 			else if (abs(hsp) > walkspeed)
 			{
 				if (vsp > 0)
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.runfall] : global.playersprites[playersprite.runfall]
+					newsprite = playersprites[playersprite.runfall]
 				else
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.runjump] : global.playersprites[playersprite.runjump]
+					newsprite = playersprites[playersprite.runjump]
 			}
 			else
 			{
 				if (vsp > 0)
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.fall] : global.playersprites[playersprite.fall]
-				else if (sprite_index != global.playersprites[playersprite.jumpstart] && sprite_index != global.p2playersprites[playersprite.jumpstart])
-					newsprite = isotherplayer ? global.p2playersprites[playersprite.jumploop] : global.playersprites[playersprite.jumploop]
+					newsprite = playersprites[playersprite.fall]
+				else if (sprite_index != playersprites[playersprite.jumpstart])
+					newsprite = playersprites[playersprite.jumploop]
 			}
 		}
-		if (newsprite != global.playersprites[playersprite.brake]) && (newsprite != global.p2playersprites[playersprite.brake])
+		if (newsprite != playersprites[playersprite.brake])
 			image_xscale = facingdirection
 		break;
 	case playerstates.crouch:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.crouch] : global.playersprites[playersprite.crouch]
+		newsprite = playersprites[playersprite.crouch]
 		image_xscale = facingdirection
 		break;
 	case playerstates.dash:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.dash] : global.playersprites[playersprite.dash]
+		newsprite = playersprites[playersprite.dash]
 		break;
 	case playerstates.stomp:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.stomp] : global.playersprites[playersprite.stomp]
+		newsprite = playersprites[playersprite.stomp]
 		break;
 	case playerstates.hurt:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.ouchie] : global.playersprites[playersprite.ouchie]
+		newsprite = playersprites[playersprite.ouchie]
 		break;
 	case playerstates.inactive:
 		break;
 	case playerstates.dead:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.deaded] : global.playersprites[playersprite.deaded]
+		newsprite = playersprites[playersprite.deaded]
 		visualrotation += hsp
 		break;
 	case playerstates.slide:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.slide] : global.playersprites[playersprite.slide]
+		newsprite = playersprites[playersprite.slide]
 		break;
 	case playerstates.bounce:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.bounce] : global.playersprites[playersprite.bounce]
+		newsprite = playersprites[playersprite.bounce]
 		image_xscale = facingdirection
 		break;
 	case playerstates.win:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.win] : global.playersprites[playersprite.win]
+		newsprite = playersprites[playersprite.win]
 		break;
 	case playerstates.golfstop:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.golfstop] : global.playersprites[playersprite.golfstop]
+		newsprite = playersprites[playersprite.golfstop]
 		break;
 	case playerstates.launched:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.launched] : global.playersprites[playersprite.launched]
+		newsprite = playersprites[playersprite.launched]
 		break;
 	case playerstates.hangglide:
-		newsprite = isotherplayer ? global.p2playersprites[playersprite.hangglide] : global.playersprites[playersprite.hangglide]
+		newsprite = playersprites[playersprite.hangglide]
 		image_xscale = facingdirection
 		break;
 	case playerstates.debug:
@@ -937,18 +951,18 @@ switch (state)
 if (newsprite != sprite_index)
 {
 	image_index = 0
-	if (sprite_index == global.playersprites[playersprite.brake] && !isotherplayer) || (sprite_index == global.p2playersprites[playersprite.brake] && isotherplayer)
+	if (sprite_index == playersprites[playersprite.brake])
 		image_xscale = facingdirection
 }
 sprite_index = newsprite
 
-if (((sprite_index == global.p2playersprites[playersprite.win] || sprite_index == global.playersprites[playersprite.win]) && floor(image_index) == image_number-1)) {
+if (((sprite_index == playersprites[playersprite.win]) && floor(image_index) == image_number-1)) {
 	image_speed = 0
 }
 else {
 	image_speed = 1
 }
-if (sprite_index == global.playersprites[playersprite.idle] || sprite_index == global.playersprites[playersprite.wait]) || (sprite_index == global.p2playersprites[playersprite.idle] || sprite_index == global.p2playersprites[playersprite.wait])
+if (sprite_index == playersprites[playersprite.idle] || sprite_index == playersprites[playersprite.wait])
 	idletime++
 else
 	idletime = 0
@@ -958,7 +972,7 @@ else
 	offscreentimer = 0
 if (!audio_exists(runningsound))
 	runningsound = audio_play_sound(snd_run, 1, true)
-if (sprite_index == global.playersprites[playersprite.run] || sprite_index == global.p2playersprites[playersprite.run])
+if (sprite_index == playersprites[playersprite.run])
 {
 	if audio_is_paused(runningsound)
 		audio_resume_sound(runningsound)
@@ -973,7 +987,7 @@ else if !audio_is_paused(runningsound)
 	image_speed = 1
 }
 	
-if ((sprite_index == global.playersprites[playersprite.brake] || sprite_index == global.p2playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
+if ((sprite_index == playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
 {
 	if (!hasplayedbrakesound)
 	{

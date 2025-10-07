@@ -10,4 +10,4 @@ if global.trial || global.levelloadtype=loadtype.respawn // skip the walk
 else {
 	x=-64
 }
-sprite_index=global.playersprites[playersprite.idle]
+sprite_index=spr_yaysuu_idle
