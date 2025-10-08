@@ -90,3 +90,7 @@ fratricide=false
 isotherplayer = instance_number(obj_player) > 1
 issecondplayer = isotherplayer // This is for CONTROLS ONLY.
 char=isotherplayer ? global.p2char : global.char
+if (global.p2char == global.char)
+	scr_setupcharacter(char, 1)
+else
+	scr_setupcharacter(char, 0)

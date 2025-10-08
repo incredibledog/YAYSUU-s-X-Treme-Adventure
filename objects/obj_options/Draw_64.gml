@@ -2,6 +2,7 @@
 // You can write your code in this editor
 draw_set_font(global.optfont)
 draw_set_valign(fa_top)
+draw_set_halign(fa_left)
 draw_text(32,32,"OPTIONS")
 draw_text(32,96,"VOLUME  "+string_format(round(volume / 0.05) * 0.05,1,2))
 if (chos == 1)

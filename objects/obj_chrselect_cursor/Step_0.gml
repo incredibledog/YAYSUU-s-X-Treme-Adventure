@@ -122,12 +122,16 @@ else
 			{
 				global.char = "Y"
 				global.p2char = "T"
+				with (global.mainplayer)
+					scr_setupcharacter("Y", 0)
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
 			else if (chos == 2)
 			{
 				global.char = "T"
 				global.p2char = "Y"
+				with (global.mainplayer)
+					scr_setupcharacter("T", 0)
 				audio_play_sound(snd_teddyselect,1,false)
 			}
 		}
