@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if touchingplayer(x, y) && sprite_index == normsprite
+if touchingplayer(x, y)
 {
 	var placate = scr_temphacky_closestplayer()
 	
@@ -12,6 +12,7 @@ if touchingplayer(x, y) && sprite_index == normsprite
 	if (placate.state == playerstates.stomp)
 		placate.newstate = playerstates.bounce
 	sprite_index = bouncesprite
+	image_index = 0
 	placate.grounded = false
 	placate.slopey = false
 	placate.prevgrounded = false
