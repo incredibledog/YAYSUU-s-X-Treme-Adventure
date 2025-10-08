@@ -32,26 +32,31 @@ if player=2
 	draw_text(32,208,"MENU  "+keytostring(global.p2_startkey))
 }
 draw_set_font(global.optfont)
-draw_text(32,256,"CURRENT PLAYER  "+string(player))
+if os_type=os_android && !gamepad_is_connected(0)
+	draw_text(32,224,"PAD OPACITY  "+string_format(global.controlalpha,1,2))
+else
+	draw_text(32,224,"DEADZONE  "+string_format(global.sensitivity,1,2))
+draw_text(32,256,global.vibration ? "VIBRATION  ON" : "VIBRATION  OFF")
+draw_text(32,288,"CURRENT PLAYER  "+string(player))
 if player=1
 {
-	draw_text(32,288,global.p1_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
+	draw_text(32,320,global.p1_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
 }
 if player=2
 {
-	draw_text(32,288,global.p2_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
+	draw_text(32,320,global.p2_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
 }
-draw_text(32,320,global.menubuttontype ? "MENU FUNC  EXIT" : "MENU FUNC  START")
+draw_text(32,352,global.menubuttontype ? "MENU FUNC  EXIT" : "MENU FUNC  START")
 if player=1
 {
-	draw_text(32,352,"CONTROLLER SLOT  "+string(global.p1_controlslot))
+	draw_text(32,384,"CONTROLLER SLOT  "+string(global.p1_controlslot))
 }
 if player=2
 {
-	draw_text(32,352,"CONTROLLER SLOT  "+string(global.p2_controlslot))
+	draw_text(32,384,"CONTROLLER SLOT  "+string(global.p2_controlslot))
 }
-draw_text(32,384,"RESET CHANGES")
-draw_text(32,416,"SAVE N QUIT")
+draw_text(32,416,"RESET CHANGES")
+draw_text(32,448,"SAVE N QUIT")
 if !waitingforinput
 {
 	switch chos
@@ -80,23 +85,31 @@ if !waitingforinput
 		case 8:
 		draw_sprite(spr_cursor_options,0,0,192)
 		break;
-		case 9: //bigger options
+		case 9: // AND THIS... IS TO GO EVEN FURTHER BEYOND
+		draw_sprite(spr_cursor_options,0,0,224)
+		draw_sprite(spr_cursor_options,1,320,224)
+		draw_sprite(spr_cursor_options,0,480,224)
+		break;
+		case 10:
 		draw_sprite(spr_cursor_options,0,0,256)
 		break;
-		case 10: //big options
+		case 11: //bigger options
 		draw_sprite(spr_cursor_options,0,0,288)
 		break;
-		case 11:
+		case 12: //big options
 		draw_sprite(spr_cursor_options,0,0,320)
 		break;
-		case 12:
+		case 13:
 		draw_sprite(spr_cursor_options,0,0,352)
 		break;
-		case 13:
+		case 14:
 		draw_sprite(spr_cursor_options,0,0,384)
 		break;
-		case 14:
+		case 15:
 		draw_sprite(spr_cursor_options,0,0,416)
+		break;
+		case 16:
+		draw_sprite(spr_cursor_options,0,0,448)
 		break;
 	}
 }

@@ -1,0 +1,2 @@
+warproom=room_options
+warptype=loadtype.menu

@@ -24,10 +24,7 @@ if (chos == 1)
 	draw_text(32,80,volumestring)
 }
 draw_set_font(global.optfont)
-if os_type=os_android && !gamepad_is_connected(0)
-	draw_text(32,128,"PAD OPACITY  "+string_format(global.controlalpha,1,2))
-else
-	draw_text(32,128,"SENSITIVITY  "+string_format(global.sensitivity,1,2))
+draw_text(32,128,"REBIND CONTROLS")
 if os_type=os_android
 	draw_set_alpha(0.5)
 if window_get_fullscreen() {
@@ -48,12 +45,12 @@ if global.borders=true
 else
 	draw_text(32,256,"BORDERS  OFF")
 if global.speedrun=true
-	draw_text(32,288,"SPEEDRUN TIMER  ON")
+	draw_text(32,288,"PRECISE TIMER  ON")
 else
-	draw_text(32,288,"SPEEDRUN TIMER  OFF")
+	draw_text(32,288,"PRECISE TIMER  OFF")
 draw_text(32,320,"RESET RECORDS")
 draw_text(32,352,"RESET 2 DEFAULT")
-draw_text(32,384,"REBIND CONTROLS")
+draw_text(32,384,"CONTROL TEST")
 draw_text(32,416,"SAVE N QUIT")
 switch chos
 {
@@ -64,8 +61,6 @@ switch chos
 	break;
 	case 2:
 	draw_sprite(spr_cursor_options,0,0,128)
-	draw_sprite(spr_cursor_options,1,416,128)
-	draw_sprite(spr_cursor_options,0,576,128)
 	break;
 	case 3:
 	draw_sprite(spr_cursor_options,0,0,160)

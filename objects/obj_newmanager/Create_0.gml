@@ -1,7 +1,7 @@
 ini_open("savedata.ini")
 // SETTINGS SAVEDATA INITIALIZATION
 audio_master_gain(ini_read_real("settings","volume",1))
-global.sensitivity=ini_read_real("settings","sensitivity",0.35)
+global.sensitivity=ini_read_real("settings","sensitivity",0.35) // actually deadzone but not gonna change the variable name now
 global.controlalpha=ini_read_real("settings","controlalpha",0.5)
 window_set_fullscreen(ini_read_real("settings","fullscreen",false))
 global.screenshake=ini_read_real("settings","screenshake",true)
@@ -21,6 +21,7 @@ global.p1_runkey=ini_read_real("controls","p1runkey",ord("C"))
 global.p1_startkey=ini_read_real("controls","p1startkey",vk_enter)
 global.p1_autorun=ini_read_real("controls","autorun",true)
 global.menubuttontype=ini_read_real("controls","menubuttontype",false)
+global.vibration=ini_read_real("controls","vibration",true)
 // P2 CONTROLS SAVEDATA INITIALIZATION
 global.p2_controlslot=ini_read_real("controls","p2controlslot",1)
 global.p2_leftkey=ini_read_real("controls","p2leftkey",ord("J"))

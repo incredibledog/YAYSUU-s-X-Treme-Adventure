@@ -39,36 +39,11 @@ switch chos
 	volume=clamp(volume,0,2)
 	break;
 	case 2:
-	if os_type=os_android && !gamepad_is_connected(0)
+	if global.key_menuaccept
 	{
-		if global.key_right 
-		{
-			global.controlalpha+=0.01
-		}
-		else if global.key_left 
-		{
-			global.controlalpha-=0.01
-		}
-		else
-		{
-			global.controlalpha = round(global.controlalpha / 0.05) * 0.05
-		}
-		global.controlalpha=clamp(global.controlalpha,0.01,1)
-	}
-	else {
-		if global.key_right 
-		{
-			global.sensitivity+=0.01
-		}
-		else if global.key_left 
-		{
-			global.sensitivity-=0.01
-		}
-		else
-		{
-			global.sensitivity = round(global.sensitivity / 0.05) * 0.05
-		}
-		global.sensitivity=clamp(global.sensitivity,0.01,1)
+		audio_play_sound(snd_confirm,1,false)
+		instance_deactivate_object(obj_options)
+		instance_create_depth(x,y,depth,obj_options_controls)
 	}
 	break;
 	case 3:
@@ -145,8 +120,15 @@ switch chos
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
-		instance_deactivate_object(obj_options)
-		instance_create_depth(x,y,depth,obj_options_controls)
+		global.timer = 0
+		global.score = 0
+		global.scoreadd = 0
+		global.checkpoint=false
+		global.coins=0
+		global.coingoal = 100
+		global.lives=3
+		global.multiplayer=true
+		loadroom(room_options_test, loadtype.newlevel)
 	}
 	break;
 	case 11:
@@ -154,7 +136,6 @@ switch chos
 	{
 		ini_open("savedata.ini")
 		ini_write_real("settings","volume",volume)
-		ini_write_real("settings","sensitivity",global.sensitivity)
 		ini_write_real("settings","controlalpha",global.controlalpha)
 		ini_write_real("settings","fullscreen",window_get_fullscreen())
 		ini_write_real("settings","screenshake",global.screenshake)
@@ -172,7 +153,6 @@ if global.key_menuquit
 {
 	ini_open("savedata.ini")
 	audio_master_gain(ini_read_real("settings","volume",1))
-	global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 	global.controlalpha=ini_read_real("settings","controlalpha",0.5)
 	window_set_fullscreen(ini_read_real("settings","fullscreen",0))
 	global.screenshake=ini_read_real("settings","screenshake",1)

@@ -2,6 +2,7 @@
 // You can write your code in this editor
 draw_set_font(global.subtitlefont)
 draw_set_valign(fa_top)
+draw_set_halign(fa_left)
 if !bosslvl
 {
 	draw_text_yxa(64,64,"Choose a Stage! \n" + lvlname + "\nLeft and right to cycle \n  " + string(hiscore) + "\n  " + timestring,"white",true)

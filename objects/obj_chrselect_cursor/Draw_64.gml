@@ -3,6 +3,7 @@
 // PLACEHOLDER SAVE DATA SCREEN!!! DON'T TOUCH!!! well.. if you're even ALIVE...
 if !global.trial
 {
+	draw_set_halign(fa_left)
 	draw_sprite(spr_savebar,0,0,0)
 	draw_set_font(global.subtitlefont)
 	draw_text_yxa(16,80,"  "+string(gameprogress)+"% \n  "+string(savelives[charlife])+"\n  "+string(savemonth[charlife])+"/"+string(saveday[charlife])+"/"+string_replace_all(string_format(saveyear[charlife],4,0)," ","0")+"\n"+string(lvlname),"white",true,6400)
@@ -11,5 +12,7 @@ if !global.trial
 	draw_sprite(spr_savetimeicon,0,16,46)
 }
 draw_set_font(global.font)
-draw_text(224,448,charname)
+draw_set_valign(fa_top)
+draw_set_halign(fa_center)
+draw_text(320,416,charname+(global.multiplayer ? "\n"+p2charname : ""))
 draw_set_font(global.subtitlefont)

@@ -91,6 +91,12 @@ deltax -= actualcamx
 deltax *= -1
 deltay -= actualcamy
 deltay *= -1
-
-gamepad_set_vibration(0, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
+if global.vibration {
+	gamepad_set_vibration(global.p1_controlslot, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
+	gamepad_set_vibration(global.p2_controlslot, -vwobble * vshakeoffset * 0.02, vwobble * vshakeoffset * 0.02)
+}
+else {
+	gamepad_set_vibration(global.p1_controlslot, 0, 0)
+	gamepad_set_vibration(global.p2_controlslot, 0, 0)
+}
 camera_set_view_pos(view_camera[0], actualcamx - 320, (actualcamy - 240) + shakey)

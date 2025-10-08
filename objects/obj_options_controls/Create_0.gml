@@ -3,3 +3,4 @@
 chos=1
 player=1
 waitingforinput=false
+vibrationexample=0

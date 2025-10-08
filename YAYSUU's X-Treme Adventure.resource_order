@@ -240,6 +240,7 @@
     {"name":"room_mysticmanor_2","order":32,"path":"rooms/room_mysticmanor_2/room_mysticmanor_2.yy",},
     {"name":"room_mysticmanor_2b","order":33,"path":"rooms/room_mysticmanor_2b/room_mysticmanor_2b.yy",},
     {"name":"room_mysticmanor_2c","order":36,"path":"rooms/room_mysticmanor_2c/room_mysticmanor_2c.yy",},
+    {"name":"room_options_test","order":38,"path":"rooms/room_options_test/room_options_test.yy",},
     {"name":"room_options","order":21,"path":"rooms/room_options/room_options.yy",},
     {"name":"room_setupinput","order":25,"path":"rooms/room_setupinput/room_setupinput.yy",},
     {"name":"room_soundtest","order":6,"path":"rooms/room_soundtest/room_soundtest.yy",},
@@ -717,6 +718,7 @@
     {"name":"spr_tile_manorcourt","order":15,"path":"sprites/spr_tile_manorcourt/spr_tile_manorcourt.yy",},
     {"name":"spr_tile_manordark","order":5,"path":"sprites/spr_tile_manordark/spr_tile_manordark.yy",},
     {"name":"spr_tile_manorroof","order":20,"path":"sprites/spr_tile_manorroof/spr_tile_manorroof.yy",},
+    {"name":"spr_tile_options","order":24,"path":"sprites/spr_tile_options/spr_tile_options.yy",},
     {"name":"spr_tile_tutorial","order":6,"path":"sprites/spr_tile_tutorial/spr_tile_tutorial.yy",},
     {"name":"spr_total","order":7,"path":"sprites/spr_total/spr_total.yy",},
     {"name":"spr_trialbutton","order":18,"path":"sprites/spr_trialbutton/spr_trialbutton.yy",},
@@ -781,6 +783,7 @@
     {"name":"til_mysticmanortiles_dark","order":7,"path":"tilesets/til_mysticmanortiles_dark/til_mysticmanortiles_dark.yy",},
     {"name":"til_mysticmanortiles_roof","order":10,"path":"tilesets/til_mysticmanortiles_roof/til_mysticmanortiles_roof.yy",},
     {"name":"til_mysticmanortiles","order":4,"path":"tilesets/til_mysticmanortiles/til_mysticmanortiles.yy",},
+    {"name":"til_optionstesttiles","order":11,"path":"tilesets/til_optionstesttiles/til_optionstesttiles.yy",},
     {"name":"til_tutorialtiles","order":1,"path":"tilesets/til_tutorialtiles/til_tutorialtiles.yy",},
   ],
 }

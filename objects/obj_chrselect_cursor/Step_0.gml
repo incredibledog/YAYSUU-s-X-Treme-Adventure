@@ -4,6 +4,7 @@ switch chos
 {
 	case 1:
 	charname="YAYSUU"
+	p2charname="AND TEDDY"
 	charlife=0
 	break;
 	case 1.5:
@@ -11,6 +12,7 @@ switch chos
 	break;
 	case 2:
 	charname="TEDDY"
+	p2charname="AND YAYSUU"
 	charlife=1
 	break;
 }

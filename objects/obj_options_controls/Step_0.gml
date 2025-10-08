@@ -28,12 +28,63 @@ if player=2
 		audio_play_sound(snd_move,1,false)
 	}
 }
-chos=clamp(chos,1,14)
+chos=clamp(chos,1,16)
 if !waitingforinput
 {
 	switch chos
 	{
 		case 9:
+		if os_type=os_android && !gamepad_is_connected(0)
+		{
+			if global.key_right 
+			{
+				global.controlalpha+=0.01
+			}
+			else if global.key_left 
+			{
+				global.controlalpha-=0.01
+			}
+			else
+			{
+				global.controlalpha = round(global.controlalpha / 0.05) * 0.05
+			}
+			global.controlalpha=clamp(global.controlalpha,0.01,1)
+		}
+		else {
+			if global.key_right 
+			{
+				global.sensitivity+=0.01
+			}
+			else if global.key_left 
+			{
+				global.sensitivity-=0.01
+			}
+			else
+			{
+				global.sensitivity = round(global.sensitivity / 0.05) * 0.05
+			}
+			global.sensitivity=clamp(global.sensitivity,0.01,1)
+		}
+		break;
+		case 10:
+		if player=1
+		{
+			if global.key_jumpp
+			{
+				global.vibration = !global.vibration
+				audio_play_sound(snd_confirm,1,false)
+			}
+		}
+		if player=2
+		{
+			if global.p2_key_jumpp
+			{
+				global.vibration = !global.vibration
+				audio_play_sound(snd_confirm,1,false)
+			}
+		}
+		break;
+		case 11:
 		if global.key_jumpp || global.p2_key_jumpp
 		{
 			if player=1
@@ -47,7 +98,7 @@ if !waitingforinput
 			audio_play_sound(snd_confirm,1,false)
 		}
 		break;
-		case 10:
+		case 12:
 		if player=1
 		{
 			if global.key_jumpp
@@ -65,14 +116,14 @@ if !waitingforinput
 			}
 		}
 		break;
-		case 11:
+		case 13:
 		if (global.key_jumpp && player=1) || (global.p2_key_jumpp && player=2)
 		{
 			global.menubuttontype = !global.menubuttontype
 			audio_play_sound(snd_move,1,false)
 		}
 		break;
-		case 12:
+		case 14:
 		if player=1
 		{
 			if global.key_rightp
@@ -142,7 +193,7 @@ if !waitingforinput
 			global.p2_controlslot=clamp(global.p2_controlslot,0,3)
 		}
 		break;
-		case 13:
+		case 15:
 		if player=1
 		{
 			if global.key_menuaccept
@@ -159,6 +210,8 @@ if !waitingforinput
 				global.p1_startkey=ini_read_real("controls","p1startkey",vk_enter)
 				global.p1_autorun=ini_read_real("controls","autorun",true)
 				global.menubuttontype=ini_read_real("controls","menubuttontype",false)
+				global.vibration=ini_read_real("controls","vibration",true)
+				global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 				ini_close()
 				audio_play_sound(snd_kablooey,1,false)
 			}
@@ -179,12 +232,14 @@ if !waitingforinput
 				global.p2_startkey=ini_read_real("controls","p2startkey",ord("Y"))
 				global.p2_autorun=ini_read_real("controls","p2autorun",true)
 				global.menubuttontype=ini_read_real("controls","menubuttontype",false)
+				global.vibration=ini_read_real("controls","vibration",true)
+				global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 				ini_close()
 				audio_play_sound(snd_kablooey,1,false)
 			}
 		}
 		break;
-		case 14:
+		case 16:
 		if (global.key_menuaccept && player=1) || (global.p2_key_menuaccept && player=2)
 		{
 			ini_open("savedata.ini")
@@ -209,6 +264,8 @@ if !waitingforinput
 			ini_write_real("controls","p2startkey",global.p2_startkey)
 			ini_write_real("controls","p2autorun",global.p2_autorun)
 			ini_write_real("controls","menubuttontype",global.menubuttontype)
+			ini_write_real("controls","vibration",global.vibration)
+			ini_write_real("settings","sensitivity",global.sensitivity)
 			ini_close()
 			instance_destroy()
 			instance_activate_object(obj_options)
