@@ -59,7 +59,7 @@ else if (vsp > maxfallspeed)
 	vsp -= grv
 prevgrounded = grounded
 prevslopey = slopey
-scr_updatecollision()
+scr_updatecollision(id)
 scr_player_checkground()
 
 if (state != playerstates.hurt && state != playerstates.dead && state != playerstates.debug)
@@ -608,7 +608,7 @@ if (state == playerstates.debug)
 }
 
 //COLLISIONS!!! WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-scr_updatecollision()
+scr_updatecollision(id)
 scr_player_checkground()
 var gotwalled = false
 if (!grounded)

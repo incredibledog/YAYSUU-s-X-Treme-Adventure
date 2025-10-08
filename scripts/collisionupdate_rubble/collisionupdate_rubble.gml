@@ -1,36 +1,35 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function collisionupdate_rubble(){
-	var whichplayer = scr_temphacky_closestplayer()
+function collisionupdate_rubble(player){
 	hascollision = true
-	if (!whichplayer.vulnerable)
+	if (!player.vulnerable)
 	{
-		if (whichplayer.state == playerstates.stomp)
+		if (player.state == playerstates.stomp)
 		{
-			hascollision = !(whichplayer.bbox_right > bbox_left && whichplayer.bbox_left < bbox_right && whichplayer.bbox_bottom < bbox_top)
+			hascollision = !(player.bbox_right > bbox_left && player.bbox_left < bbox_right && player.bbox_bottom < bbox_top)
 			checkoffsetx = 0
-			checkoffsety = whichplayer.vsp * 2
+			checkoffsety = player.vsp * 2
 		}
-		else if (whichplayer.state == playerstates.bounce)
+		else if (player.state == playerstates.bounce)
 		{
 			hascollision = false
-			checkoffsetx = whichplayer.hsp * 2
-			checkoffsety = whichplayer.vsp * 2
+			checkoffsetx = player.hsp * 2
+			checkoffsety = player.vsp * 2
 		}
 		else
 		{
-			if (whichplayer.facingdirection == 1)
-				hascollision = !(whichplayer.bbox_bottom-1 > bbox_top && whichplayer.bbox_top < bbox_bottom && whichplayer.bbox_left < bbox_right)
+			if (player.facingdirection == 1)
+				hascollision = !(player.bbox_bottom-1 > bbox_top && player.bbox_top < bbox_bottom && player.bbox_left < bbox_right)
 			else
-				hascollision = !(whichplayer.bbox_bottom-1 > bbox_top && whichplayer.bbox_top < bbox_bottom && whichplayer.bbox_right > bbox_left)
-			checkoffsetx = whichplayer.hsp * 2
+				hascollision = !(player.bbox_bottom-1 > bbox_top && player.bbox_top < bbox_bottom && player.bbox_right > bbox_left)
+			checkoffsetx = player.hsp * 2
 			checkoffsety = 0
 		}
 	}
-	else if (whichplayer.state == playerstates.bounce || whichplayer.state == playerstates.launched)
+	else if (player.state == playerstates.bounce || player.state == playerstates.launched)
 	{
-		hascollision = !(whichplayer.bbox_right > bbox_left && whichplayer.bbox_left < bbox_right && whichplayer.bbox_top > bbox_bottom)
+		hascollision = !(player.bbox_right > bbox_left && player.bbox_left < bbox_right && player.bbox_top > bbox_bottom)
 		checkoffsetx = 0
-		checkoffsety = whichplayer.vsp * 2
+		checkoffsety = player.vsp * 2
 	}
 }
