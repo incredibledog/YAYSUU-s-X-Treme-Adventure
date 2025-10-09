@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-chos=clamp(chos,1,9)
 if global.key_rightp
 {
 	audio_play_sound(snd_move,1,false)
@@ -11,6 +10,7 @@ if global.key_leftp
 	audio_play_sound(snd_move,1,false)
 	chos--
 }
+chos=clamp(chos,1,9)
 if global.key_menuquit
 {
 	audio_play_sound(snd_nahnvm,1,false)
