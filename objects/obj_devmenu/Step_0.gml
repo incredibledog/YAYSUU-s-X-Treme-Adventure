@@ -51,11 +51,13 @@ switch (selection)
 
 if (global.key_upp)
 {
-	scr_changecharacter("Y", 0)
+	global.char="Y"
+	scr_setupcharacter("Y", 0)
 	audio_play_sound(snd_slip, 0, false)
 }
 else if (global.key_downp)
 {
-	scr_changecharacter("T", 0)
+	global.char="T"
+	scr_setupcharacter("T", 0)
 	audio_play_sound(snd_slip, 0, false)
 }
