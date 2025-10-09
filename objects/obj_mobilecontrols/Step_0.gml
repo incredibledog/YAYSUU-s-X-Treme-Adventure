@@ -4,6 +4,6 @@ if instance_exists(obj_goalflag)
 {
 	if obj_goalflag.winning=true
 	{
-		instance_destroy()
+		instance_deactivate_object(obj_mobilecontrols)
 	}
 }

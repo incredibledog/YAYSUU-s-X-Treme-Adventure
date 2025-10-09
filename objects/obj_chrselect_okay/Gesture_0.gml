@@ -10,11 +10,15 @@ if obj_chrselect_cursor.selected=false
 	{
 		global.char="Y"
 		audio_play_sound(snd_yaysuuselect,1,false)
+		with (global.mainplayer)
+			scr_setupcharacter("Y", 0)
 	}
 	else if (obj_chrselect_cursor.chos == 2)
 	{
 		global.char="T"
 		audio_play_sound(snd_teddyselect,1,false)
+		with (global.mainplayer)
+			scr_setupcharacter("T", 0)
 	}
 	audio_play_sound(snd_confirm,1,false)
 }

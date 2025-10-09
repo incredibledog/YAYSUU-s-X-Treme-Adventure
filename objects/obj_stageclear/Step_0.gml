@@ -69,7 +69,7 @@ else if (!obj_fadeblack.fading)
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
-		instance_create_depth(0,0,100,obj_mobilecontrols)
+		instance_activate_object(obj_mobilecontrols)
 		if global.trial
 			if isextrastage()
 			{

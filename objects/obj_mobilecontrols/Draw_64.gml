@@ -46,6 +46,7 @@ if global.inputtype = 3 && hide=false && !instance_exists(obj_stageclear) && !in
 		draw_sprite(spr_run,0,544+global.controldistance,384)
 		if !(room=room_options_test) && !(room=room_soundtest)
 		{
+			draw_set_alpha(1)
 			draw_sprite(spr_pause,0,576,32)
 		}
 		draw_set_alpha(1)
