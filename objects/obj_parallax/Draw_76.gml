@@ -4,7 +4,11 @@ if (!global.inlevel)
 	return;
 x = camera_get_view_x(view_camera[0]);
 y = camera_get_view_y(view_camera[0]);
-
+if layer_exists("layer3")
+{
+	layer_x("layer3", x)
+	layer_y("layer3", y)
+}
 if layer_exists("layer2")
 {
 	layer_x("layer2", (x/6))
