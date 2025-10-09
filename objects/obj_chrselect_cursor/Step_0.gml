@@ -136,7 +136,7 @@ else
 			}
 		}
 	}
-	if (global.p2_key_menuaccept && !global.multiplayer && global.trial)
+	if (global.p2_key_menuaccept && !global.multiplayer && !global.mobile && global.trial)
 	{
 		global.multiplayer=true
 		audio_play_sound(snd_confirm,1,false)
@@ -162,7 +162,7 @@ else
 		}
 		audio_play_sound(snd_nahnvm,1,false)
 	}
-	else if global.key_rightp || (global.p2_key_rightp && global.multiplayer) && !selected
+	else if (global.key_rightp || (global.p2_key_rightp && global.multiplayer)) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
 		if chos=1
@@ -170,7 +170,7 @@ else
 		else if chos=2
 			chos--
 	}
-	else if global.key_leftp || (global.p2_key_leftp && global.multiplayer) && !selected
+	else if (global.key_leftp || (global.p2_key_leftp && global.multiplayer)) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
 		if chos=1

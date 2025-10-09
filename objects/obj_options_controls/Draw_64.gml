@@ -3,11 +3,11 @@
 draw_set_font(global.optfont)
 draw_set_valign(fa_top)
 draw_text(32,32,"P"+string(player)+" CONTROLS")
-if player=1
+if player=1 && global.inputtype!=3
 {
 	var controllerstring = gamepad_get_description(global.p1_controlslot)
 	draw_set_font(global.smalloptfont)
-	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p1_controlslot)+" ("+controllerstring+")","white",false,608)
+	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p1_controlslot)+" ("+controllerstring+")","none",false,608)
 	draw_text(32,96 ,"LEFT  "+keytostring(global.p1_leftkey))
 	draw_text(32,112,"RIGHT "+keytostring(global.p1_rightkey))
 	draw_text(32,128,"UP    "+keytostring(global.p1_upkey))
@@ -21,7 +21,7 @@ if player=2
 {
 	var controllerstring = gamepad_get_description(global.p2_controlslot)
 	draw_set_font(global.smalloptfont)
-	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p2_controlslot)+" ("+controllerstring+")","white",false,608)
+	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p2_controlslot)+" ("+controllerstring+")","none",false,608)
 	draw_text(32,96 ,"LEFT  "+keytostring(global.p2_leftkey))
 	draw_text(32,112,"RIGHT "+keytostring(global.p2_rightkey))
 	draw_text(32,128,"UP    "+keytostring(global.p2_upkey))
@@ -32,12 +32,18 @@ if player=2
 	draw_text(32,208,"MENU  "+keytostring(global.p2_startkey))
 }
 draw_set_font(global.optfont)
-if os_type=os_android && !gamepad_is_connected(0)
+if global.inputtype=3
 	draw_text(32,224,"PAD OPACITY  "+string_format(global.controlalpha,1,2))
 else
 	draw_text(32,224,"DEADZONE  "+string_format(global.sensitivity,1,2))
 draw_text(32,256,global.vibration ? "VIBRATION  ON" : "VIBRATION  OFF")
-draw_text(32,288,"CURRENT PLAYER  "+string(player))
+if global.inputtype=3
+{
+	draw_text(32,288,"CONTROL SPACING")
+}
+else {
+	draw_text(32,288,"CURRENT PLAYER  "+string(player))
+}
 if player=1
 {
 	draw_text(32,320,global.p1_autorun ? "AUTORUN  ON" : "AUTORUN  OFF")
@@ -87,8 +93,15 @@ if !waitingforinput
 		break;
 		case 9: // AND THIS... IS TO GO EVEN FURTHER BEYOND
 		draw_sprite(spr_cursor_options,0,0,224)
-		draw_sprite(spr_cursor_options,1,320,224)
-		draw_sprite(spr_cursor_options,0,480,224)
+		if global.inputtype=3
+		{
+			draw_sprite(spr_cursor_options,1,416,224)
+			draw_sprite(spr_cursor_options,0,576,224)
+		}
+		else {
+			draw_sprite(spr_cursor_options,1,320,224)
+			draw_sprite(spr_cursor_options,0,480,224)
+		}
 		break;
 		case 10:
 		draw_sprite(spr_cursor_options,0,0,256)

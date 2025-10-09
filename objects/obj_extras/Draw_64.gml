@@ -9,7 +9,12 @@ draw_text(32,128,"SOUNDTEST")
 draw_text(32,160,"CHEATS")
 draw_text(32,192,"EXTRA STAGES")
 draw_text(32,224,"ACHIEVEMENTS")
+if global.inputtype=3
+{
+	draw_set_alpha(0.5)
+}
 draw_text(32,256,"GALLERY")
+draw_set_alpha(1)
 draw_text(32,384,"QUIT")
 switch chos
 {

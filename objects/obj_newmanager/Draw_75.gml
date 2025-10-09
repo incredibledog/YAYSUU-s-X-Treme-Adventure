@@ -34,6 +34,14 @@ if window_get_fullscreen() && global.borders=true
 		break;
 	}
 }
+with (obj_options_controls_distance)
+{
+	event_perform(ev_draw,ev_gui)
+}
+with (obj_mobilecontrols)
+{
+	event_perform(ev_draw,ev_gui)
+}
 with (obj_fadeblack)
 {
 	gpu_set_blendmode(bm_subtract)

@@ -207,6 +207,7 @@
     {"id":{"name":"obj_npc_vip2","path":"objects/obj_npc_vip2/obj_npc_vip2.yy",},},
     {"id":{"name":"obj_npc_vip3","path":"objects/obj_npc_vip3/obj_npc_vip3.yy",},},
     {"id":{"name":"obj_npc_vip4","path":"objects/obj_npc_vip4/obj_npc_vip4.yy",},},
+    {"id":{"name":"obj_options_controls_distance","path":"objects/obj_options_controls_distance/obj_options_controls_distance.yy",},},
     {"id":{"name":"obj_options_controls","path":"objects/obj_options_controls/obj_options_controls.yy",},},
     {"id":{"name":"obj_options","path":"objects/obj_options/obj_options.yy",},},
     {"id":{"name":"obj_optionsbutton","path":"objects/obj_optionsbutton/obj_optionsbutton.yy",},},

@@ -37,6 +37,10 @@ if keyboard_check_pressed(vk_enter)
 		global.skibispin = true
 		keyboard_string=""
 		break;
+		case "exit":
+		audio_play_sound(snd_nahnvm,0,false)
+		instance_destroy()
+		break;
 		case "":
 		audio_play_sound(snd_nicetry,1,false)
 		rewardstring="Please enter in a cheat."

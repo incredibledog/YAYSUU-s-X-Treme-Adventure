@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (os_type != os_android)
+if (!global.mobile)
 	return;
-obj_mainmenu_cursor.chos=1
+obj_mainmenu_cursor.chos=4
 obj_mainmenu_cursor.nextroom=room_extras
 obj_mainmenu_cursor.image_alpha=1
 obj_mainmenu_cursor.image_speed=1

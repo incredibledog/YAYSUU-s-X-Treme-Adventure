@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+if room=room_options_test
+{
+	return;
+}
 if global.key_start && global.inlevel && !instance_exists(obj_gameover) && !instance_exists(obj_stageclear)
 {
 	global.pause = !global.pause
@@ -27,7 +31,7 @@ if (global.pause)
 		scroll++
 	else
 		scroll = 0
-	if (os_type != os_android)
+	if (!global.mobile)
 	{
 		if global.key_upp
 		{

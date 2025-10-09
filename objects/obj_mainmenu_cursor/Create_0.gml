@@ -19,7 +19,7 @@ image_speed=0
 selected=false
 delay=0
 menustring="TEST STRING!! "
-if os_type=os_android && !gamepad_is_connected(0)
+if global.inputtype=3
 {
 	image_alpha=0
 }

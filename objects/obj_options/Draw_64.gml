@@ -26,7 +26,7 @@ if (chos == 1)
 }
 draw_set_font(global.optfont)
 draw_text(32,128,"REBIND CONTROLS")
-if os_type=os_android
+if global.mobile
 	draw_set_alpha(0.5)
 if window_get_fullscreen() {
 	draw_text(32,160,"FULLSCREEN  ON")

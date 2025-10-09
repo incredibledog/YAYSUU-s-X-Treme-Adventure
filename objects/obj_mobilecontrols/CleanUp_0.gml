@@ -1,19 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-if os_type=os_android
+if global.mobile
 {
-	virtual_key_delete(keyleft)
-	virtual_key_delete(keyright)
-	virtual_key_delete(keyjump)
-	virtual_key_delete(keydash)
-	if !(room=room_trialmenu)
-	{
-		virtual_key_delete(keyup)
-		virtual_key_delete(keydown)
-	}
-	if !(room=room_trialmenu) && !(room=room_options)
-	{
-		virtual_key_delete(keyrun)
-		virtual_key_delete(keypause)
-	}
+	keyleft=-1
+	keyright=-1
+	keyup=-1
+	keydown=-1
+	keyjump=-1
+	keydash=-1
+	keyrun=-1
+	keypause=-1
 }

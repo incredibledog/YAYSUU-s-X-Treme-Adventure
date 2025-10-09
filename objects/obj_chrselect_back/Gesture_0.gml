@@ -1,6 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (os_type != os_android)
+if (global.inputtype!=3)
 	return;
-loadroom(room_mainmenu, loadtype.menu)
+if global.prevroom=room_extras || global.prevroom=room_extrastages
+{
+	loadroom(room_extras, loadtype.menu)
+}
+else {
+	loadroom(room_mainmenu, loadtype.menu)
+}
 audio_play_sound(snd_nahnvm,1,false)

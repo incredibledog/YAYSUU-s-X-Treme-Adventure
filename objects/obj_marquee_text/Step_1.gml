@@ -3,7 +3,7 @@
 var prevstrlen=strlen
 if global.inputtype=3
 {
-	str="Tap an option! "
+	str="Tap an option! Tap an option! Tap an option! "
 }
 else {
 	str=obj_mainmenu_cursor.menustring

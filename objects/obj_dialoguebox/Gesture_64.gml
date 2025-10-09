@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (global.mobile)
-{
-	loadroom(room_titlescreen, loadtype.menu)
-	audio_stop_all()
-}
+if (finished)
+    instance_destroy();
+else
+    finished = true;

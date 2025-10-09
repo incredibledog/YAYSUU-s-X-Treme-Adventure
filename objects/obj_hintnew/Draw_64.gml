@@ -3,7 +3,7 @@
 //if (audio_is_playing(hintsound))
 //{
 //	draw_set_font(global.subtitlefont)
-//	if os_type == os_android
+//	if global.mobile
 //		draw_text_yxa(128,320,subtitle,"purple",true,384)
 //	else
 //		draw_text_yxa(128,416,subtitle,"purple",true,384)

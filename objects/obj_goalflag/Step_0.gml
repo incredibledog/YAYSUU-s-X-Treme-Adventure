@@ -36,8 +36,6 @@ else if endtimer==0 && touched && !winning
 {
 	winning=true
 	audio_stop_all()
-	virtual_key_delete(6)
-	virtual_key_delete(7)
 	if global.char="Y"
 	{
 		if room=room_glowstickcity

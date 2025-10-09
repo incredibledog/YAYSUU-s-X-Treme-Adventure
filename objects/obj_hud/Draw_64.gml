@@ -62,7 +62,7 @@ if global.inlevel && !global.inhub
 		if (!global.showcollision) && !(instance_exists(obj_dialoguebox))
 		{
 			draw_set_font(global.font)
-			if (os_type != os_android)
+			if (!global.mobile)
 			{
 				if global.char="Y"
 					draw_sprite(spr_yaysuulifeicon,0,32,416)
@@ -80,7 +80,7 @@ if global.inlevel && !global.inhub
 					draw_sprite(spr_teddylifeicon,0,480,32)
 				else if global.char="C"
 					draw_sprite(spr_cottonlifeicon,0,480,32)
-				draw_text(64,416,global.lives)
+				draw_text(512,32,global.lives)
 			}
 		}
 	}

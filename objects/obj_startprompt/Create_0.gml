@@ -7,7 +7,7 @@ delay=0
 month = date_get_month(date_current_datetime())
 day = date_get_day(date_current_datetime())
 year = date_get_year(date_current_datetime())
-if global.inputtype=3
+if global.mobile
 {
 	sprite_index=spr_pressstart_m
 }

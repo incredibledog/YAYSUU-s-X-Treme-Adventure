@@ -61,10 +61,10 @@ if display>=5
 	}
 	else if global.inputtype == 3
 	{
-		draw_sprite(spr_next,2,416,416)
+		draw_sprite(spr_next,2,224,416)
 		if global.trial
 		{
-			draw_sprite(spr_retry,0,512,416)
+			draw_sprite(spr_retry,2,320,416)
 		}
 	}
 }

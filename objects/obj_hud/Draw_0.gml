@@ -24,7 +24,7 @@
 		draw_text(64,96,global.coins)
 	}
 	//health_system_hearts(spr_pizza);
-	if !(os_type=os_android)
+	if !(global.mobile)
 	{
 		if global.char="Y"
 		{

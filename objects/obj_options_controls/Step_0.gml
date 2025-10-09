@@ -28,7 +28,13 @@ if player=2
 		audio_play_sound(snd_move,1,false)
 	}
 }
-chos=clamp(chos,1,16)
+if global.inputtype=3
+{
+	chos=clamp(chos,9,16)
+}
+else {
+	chos=clamp(chos,1,16)
+}
 if vibrationexample>0
 {
 	vibrationexample--
@@ -40,7 +46,7 @@ if !waitingforinput
 	switch chos
 	{
 		case 9:
-		if os_type=os_android && !gamepad_is_connected(0)
+		if global.inputtype=3
 		{
 			if global.key_right 
 			{
@@ -75,7 +81,7 @@ if !waitingforinput
 		case 10:
 		if player=1
 		{
-			if global.key_jumpp
+			if global.key_menuaccept
 			{
 				global.vibration = !global.vibration
 				audio_play_sound(snd_confirm,1,false)
@@ -87,7 +93,7 @@ if !waitingforinput
 		}
 		if player=2
 		{
-			if global.p2_key_jumpp
+			if global.p2_key_menuaccept
 			{
 				global.vibration = !global.vibration
 				audio_play_sound(snd_confirm,1,false)
@@ -95,7 +101,7 @@ if !waitingforinput
 		}
 		break;
 		case 11:
-		if global.key_jumpp || global.p2_key_jumpp
+		if (global.key_menuaccept || global.p2_key_menuaccept) && !(global.inputtype=3)
 		{
 			if player=1
 			{
@@ -107,11 +113,20 @@ if !waitingforinput
 			}
 			audio_play_sound(snd_confirm,1,false)
 		}
+		else if global.inputtype=3
+		{
+			if global.key_menuaccept {
+				instance_destroy(obj_mobilecontrols)
+				instance_deactivate_object(obj_options_controls)
+				instance_create_depth(x,y,depth,obj_options_controls_distance)
+				audio_play_sound(snd_confirm,1,false)
+			}
+		}
 		break;
 		case 12:
 		if player=1
 		{
-			if global.key_jumpp
+			if global.key_menuaccept
 			{
 				global.p1_autorun = !global.p1_autorun
 				audio_play_sound(snd_confirm,1,false)
@@ -119,7 +134,7 @@ if !waitingforinput
 		}
 		if player=2
 		{
-			if global.p2_key_jumpp
+			if global.p2_key_menuaccept
 			{
 				global.p2_autorun = !global.p2_autorun
 				audio_play_sound(snd_confirm,1,false)
@@ -127,7 +142,7 @@ if !waitingforinput
 		}
 		break;
 		case 13:
-		if (global.key_jumpp && player=1) || (global.p2_key_jumpp && player=2)
+		if (global.key_menuaccept && player=1) || (global.p2_key_menuaccept && player=2)
 		{
 			global.menubuttontype = !global.menubuttontype
 			audio_play_sound(snd_move,1,false)

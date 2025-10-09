@@ -58,11 +58,15 @@ switch chos
 	}
 	break;
 	case 6:
-	if global.key_menuaccept
+	if global.key_menuaccept && !global.inputtype=3
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
 		instance_create_depth(x,y,depth,obj_gallery)
+	}
+	else if global.key_menuaccept && global.inputtype=3
+	{
+		audio_play_sound(snd_nicetry,1,false)
 	}
 	break;
 	case 7:

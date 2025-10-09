@@ -61,14 +61,15 @@ else if display = 4
 else if display == 5
 {
 	display = 6
-	virtual_key_add(224,416,96,32,vk_space)
-	virtual_key_add(320,416,96,32,vk_shift)
+	virtual_key_add(224,416,96,32,global.p1_jumpkey)
+	virtual_key_add(320,416,96,32,global.p1_dashkey)
 }
 else if (!obj_fadeblack.fading)
 {
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
+		instance_create_depth(0,0,100,obj_mobilecontrols)
 		if global.trial
 			if isextrastage()
 			{

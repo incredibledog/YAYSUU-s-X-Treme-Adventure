@@ -3,6 +3,7 @@ ini_open("savedata.ini")
 audio_master_gain(ini_read_real("settings","volume",1))
 global.sensitivity=ini_read_real("settings","sensitivity",0.35) // actually deadzone but not gonna change the variable name now
 global.controlalpha=ini_read_real("settings","controlalpha",0.5)
+global.controldistance=ini_read_real("settings","controldistance",0)
 window_set_fullscreen(ini_read_real("settings","fullscreen",false))
 global.screenshake=ini_read_real("settings","screenshake",true)
 global.borders=ini_read_real("settings","borders",true)
@@ -75,6 +76,13 @@ global.globaltimer = 0
 global.debugmessageoffset = 0
 global.skibispin = false
 global.quickmenu = false
+if os_type=os_android
+{
+	global.mobile = true
+}
+else {
+	global.mobile = false
+}
 global.multiplayer = false // i don't know why, I Don't Know Why, Setting this to True Crashes the game because of obj_camera. WHY?!
 windowtimer = 0
 windowname = ""
@@ -108,6 +116,7 @@ instance_create_depth(0,0, 100, obj_hud)
 instance_create_depth(0,0, 100, obj_parallax)
 //instance_create_depth(128,416,100,obj_subtitle)
 instance_create_depth(0,0, 100,obj_titlecard)
+instance_create_depth(0,0, 100,obj_mobilecontrols)
 instance_create_depth(0,0, 100, obj_pause)
 instance_create_depth(0,0, 100, obj_persistentachchecker)
 randomize()

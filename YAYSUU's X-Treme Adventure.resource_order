@@ -148,6 +148,7 @@
     {"name":"obj_npc_vip2","order":2,"path":"objects/obj_npc_vip2/obj_npc_vip2.yy",},
     {"name":"obj_npc_vip3","order":3,"path":"objects/obj_npc_vip3/obj_npc_vip3.yy",},
     {"name":"obj_npc_vip4","order":4,"path":"objects/obj_npc_vip4/obj_npc_vip4.yy",},
+    {"name":"obj_options_controls_distance","order":28,"path":"objects/obj_options_controls_distance/obj_options_controls_distance.yy",},
     {"name":"obj_options_controls","order":27,"path":"objects/obj_options_controls/obj_options_controls.yy",},
     {"name":"obj_options","order":15,"path":"objects/obj_options/obj_options.yy",},
     {"name":"obj_optionsbutton","order":3,"path":"objects/obj_optionsbutton/obj_optionsbutton.yy",},
