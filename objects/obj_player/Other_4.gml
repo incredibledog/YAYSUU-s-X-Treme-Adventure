@@ -50,10 +50,14 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 				whooshcolor = #C2C3C7
 			else
 				whooshcolor = #FFF1E8
-			if global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.nextroom
+			if global.levelloadtype == loadtype.newlevel
 			{
 				global.checkpoint = false
 			}
+		}
+		else if global.levelloadtype == loadtype.respawn
+		{
+			global.checkpoint = false
 		}
 	}
 	

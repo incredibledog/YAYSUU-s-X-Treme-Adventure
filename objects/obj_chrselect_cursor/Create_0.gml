@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 chos=1
+chos2=2
 selected=false
 delay=0
 global.multiplayer = false
@@ -28,3 +29,4 @@ ini_close()
 currentstage=room_househub
 lvlname="Chill Fields Stage 1"
 gameprogress=0
+p2x = 416

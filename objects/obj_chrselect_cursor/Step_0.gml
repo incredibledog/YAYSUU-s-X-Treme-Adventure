@@ -4,7 +4,6 @@ switch chos
 {
 	case 1:
 	charname="YAYSUU"
-	p2charname="AND TEDDY"
 	charlife=0
 	break;
 	case 1.5:
@@ -12,8 +11,16 @@ switch chos
 	break;
 	case 2:
 	charname="TEDDY"
-	p2charname="AND YAYSUU"
 	charlife=1
+	break;
+}
+switch chos2
+{
+	case 1:
+	p2charname="AND YAYSUU"
+	break;
+	case 2:
+	p2charname="AND TEDDY"
 	break;
 }
 switch savestage[charlife]
@@ -121,22 +128,22 @@ else
 			if (chos == 1)
 			{
 				global.char = "Y"
-				global.p2char = "T"
-				with (global.mainplayer)
-					scr_setupcharacter("Y", 0)
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
 			else if (chos == 2)
 			{
 				global.char = "T"
-				global.p2char = "Y"
-				with (global.mainplayer)
-					scr_setupcharacter("T", 0)
 				audio_play_sound(snd_teddyselect,1,false)
 			}
+			if (chos2 == 1)
+				global.p2char = "Y"
+			else if (chos2 == 2)
+				global.p2char = "T"
+			with (global.mainplayer)
+				scr_setupcharacter(global.char, 0)
 		}
 	}
-	if (global.p2_key_menuaccept && !global.multiplayer && !global.mobile && global.trial)
+	if ((global.p2_key_menuaccept || global.p2_key_jump) && !global.multiplayer && !global.mobile && global.trial)
 	{
 		global.multiplayer=true
 		audio_play_sound(snd_confirm,1,false)
@@ -178,6 +185,22 @@ else
 		else if chos=2
 			chos--
 	}
+	if global.p2_key_rightp && global.multiplayer && !selected
+	{
+		audio_play_sound(snd_move,1,false)
+		if chos2=1
+			chos2++
+		else if chos2=2
+			chos2--
+	}
+	else if global.p2_key_leftp && global.multiplayer && !selected
+	{
+		audio_play_sound(snd_move,1,false)
+		if chos2=1
+			chos2++
+		else if chos2=2
+			chos2--
+	}
 	/*else if global.key_upp
 	{
 		audio_play_sound(snd_move,1,false)
@@ -193,10 +216,15 @@ else
 	}*/
 	
 	chos=clamp(chos,1,2)
+	chos2=clamp(chos2,1,2)
 	if chos=1
 		x=224
-	else if chos=1.5
-		x=320
+	//else if chos=1.5
+	//	x=320
 	else
 		x=416
+	if chos2=1
+		p2x=224
+	else
+		p2x=416
 }
