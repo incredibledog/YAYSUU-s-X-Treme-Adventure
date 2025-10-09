@@ -29,6 +29,12 @@ if player=2
 	}
 }
 chos=clamp(chos,1,16)
+if vibrationexample>0
+{
+	vibrationexample--
+}
+gamepad_set_vibration(global.p1_controlslot, vibrationexample, vibrationexample)
+gamepad_set_vibration(global.p2_controlslot, vibrationexample, vibrationexample)
 if !waitingforinput
 {
 	switch chos
@@ -73,6 +79,10 @@ if !waitingforinput
 			{
 				global.vibration = !global.vibration
 				audio_play_sound(snd_confirm,1,false)
+				if global.vibration = true
+				{
+					vibrationexample=10
+				}
 			}
 		}
 		if player=2
