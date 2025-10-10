@@ -959,6 +959,9 @@ sprite_index = newsprite
 if (((sprite_index == playersprites[playersprite.win]) && floor(image_index) == image_number-1)) {
 	image_speed = 0
 }
+else if (((sprite_index == playersprites[playersprite.jumpstart]) && floor(image_index) == image_number-1)) {
+	sprite_index = playersprites[playersprite.jumploop]
+}
 else {
 	image_speed = 1
 }
@@ -997,93 +1000,6 @@ if ((sprite_index == playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
 }
 else
 	hasplayedbrakesound = false
-/*	var newsprite = sprite_index
-    switch (state)
-	{
-		case playerstates.normal:
-			if (grounded)
-			{
-				if (sign(hsp) != sign(yearnedhsp) && !gotwalled)
-				{
-					if ((sprite_index == spr_cotton_idle || sprite_index == spr_cotton_walk) && abs(hsp) < walkspeed && sign(yearnedhsp) == 0)
-						newsprite = spr_cotton_idle
-					else
-						newsprite = spr_cotton_brake
-				}
-				else if (abs(hsp) < yearnaccel)
-				{
-					if (idletime > 600)
-						newsprite = spr_cotton_wait
-					else
-						newsprite = spr_cotton_idle
-				}
-				else if (abs(hsp) > walkspeed)
-					newsprite = spr_cotton_run
-				else
-					newsprite = spr_cotton_walk
-			}
-			else
-			{
-				if (!djump)
-				{
-					newsprite = spr_cotton_fly
-				}
-				else
-				{
-					if (vsp > 0)
-						newsprite = spr_cotton_fall
-					else
-						newsprite = spr_cotton_jump
-				}
-			}
-			
-			if (newsprite != spr_cotton_brake)
-				image_xscale = facingdirection
-			break;
-		case playerstates.crouch:
-			newsprite = spr_cotton_crouch
-			image_xscale = facingdirection
-			break;
-		case playerstates.stomp:
-			newsprite = spr_cotton_ball
-			image_xscale = 1
-			break;
-		case playerstates.hurt:
-			newsprite = spr_cotton_ouchie
-			break;
-		case playerstates.inactive:
-			break;
-		case playerstates.dead:
-			newsprite = spr_cotton_dieded
-			image_angle += hsp
-			break;
-		case playerstates.slide:
-			newsprite = spr_cotton_slide
-			break;
-		case playerstates.bounce:
-			newsprite = spr_cotton_ball
-			image_xscale = 1
-			break;
-		case playerstates.win:
-			newsprite = spr_cotton_win
-			break;
-		case playerstates.golfstop:
-			newsprite = spr_cotton_ball
-			image_xscale = 1
-			break;
-		case playerstates.launched:
-			newsprite = spr_yaysuu_launched
-			break;
-		case playerstates.debug:
-			newsprite = object_get_sprite(selecteddebugobject)
-			if (newsprite == -1)
-			{
-				newsprite = spr_smalloptionstext
-				image_index = 75
-			}
-			break;
-	}
-}*/
 
 if (global.inv)
 {

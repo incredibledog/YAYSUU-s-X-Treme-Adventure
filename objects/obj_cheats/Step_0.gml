@@ -11,10 +11,8 @@ if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_face2)
 	audio_play_sound(snd_nahnvm,0,false)
 	instance_destroy()
 }
-if keyboard_string="gaster"
-{
+if keyboard_string="gaster" || keyboard_string="schmorgarefsu"
 	game_restart()
-}
 if keyboard_check_pressed(vk_enter)
 {
 	switch keyboard_string
@@ -35,6 +33,12 @@ if keyboard_check_pressed(vk_enter)
 		audio_play_sound(snd_confirm,1,false)
 		rewardstring="Skibidi spin enabled! Do a flip!"
 		global.skibispin = true
+		keyboard_string=""
+		break;
+		case "ifitwasawesome":
+		audio_play_sound(snd_confirm,1,false)
+		rewardstring="It's pwetty epic."
+		global.invertskin = true
 		keyboard_string=""
 		break;
 		case "exit":

@@ -148,7 +148,7 @@ else
 		global.multiplayer=true
 		audio_play_sound(snd_confirm,1,false)
 	}
-	else if global.key_menuquit || (global.p2_key_menuquit && !global.multiplayer)
+	else if global.key_menuquit
 	{
 		if !selected
 		{
@@ -169,37 +169,25 @@ else
 		}
 		audio_play_sound(snd_nahnvm,1,false)
 	}
-	else if (global.key_rightp || (global.p2_key_rightp && global.multiplayer)) && !selected
+	else if (global.key_rightp) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		if chos=1
-			chos++
-		else if chos=2
-			chos--
+		chos++
 	}
-	else if (global.key_leftp || (global.p2_key_leftp && global.multiplayer)) && !selected
+	else if (global.key_leftp) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		if chos=1
-			chos++
-		else if chos=2
-			chos--
+		chos--
 	}
 	if global.p2_key_rightp && global.multiplayer && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		if chos2=1
-			chos2++
-		else if chos2=2
-			chos2--
+		chos2++
 	}
 	else if global.p2_key_leftp && global.multiplayer && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		if chos2=1
-			chos2++
-		else if chos2=2
-			chos2--
+		chos2--
 	}
 	/*else if global.key_upp
 	{

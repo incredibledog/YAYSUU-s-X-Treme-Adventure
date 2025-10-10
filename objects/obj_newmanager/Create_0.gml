@@ -76,14 +76,12 @@ global.globaltimer = 0
 global.debugmessageoffset = 0
 global.skibispin = false
 global.quickmenu = false
+global.invertskin = false
 if os_type=os_android
-{
 	global.mobile = true
-}
-else {
+else 
 	global.mobile = false
-}
-global.multiplayer = false // i don't know why, I Don't Know Why, Setting this to True Crashes the game because of obj_camera. WHY?!
+global.multiplayer = false
 windowtimer = 0
 windowname = ""
 newwindowname = ""
@@ -111,7 +109,7 @@ global.p2inputtype = 0
 instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, depth + 1, obj_fadeblack)
 global.mainplayer = instance_create_depth(0,0, 100, obj_player)
-global.otherplayer = noone // well THAT was a waste of time...
+global.otherplayer = noone
 instance_create_depth(0,0, 100, obj_hud)
 instance_create_depth(0,0, 100, obj_parallax)
 //instance_create_depth(128,416,100,obj_subtitle)
