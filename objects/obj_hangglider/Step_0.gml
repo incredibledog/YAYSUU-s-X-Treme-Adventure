@@ -8,13 +8,20 @@ if obj_player.state=playerstates.hangglide && !global.multiplayer
 else {
 	image_alpha=1
 }
-if touchingplayer(x, y) && obj_player.grounded && !(obj_player.state=playerstates.hangglide)
+if touchingplayer(x, y)
 {
-	var whichplayer = scr_temphacky_closestplayer()
-	whichplayer.showarrow = true
-	if (whichplayer.key_upp) 
+	var whichplayer = noone
+	if (global.firstplayertouch.grounded && !(global.firstplayertouch.state=playerstates.hangglide))
+		whichplayer = global.firstplayertouch
+	else if (global.secondplayertouch.grounded && !(global.secondplayertouch.state=playerstates.hangglide))
+		whichplayer = global.secondplayertouch
+	if (whichplayer != noone)
 	{
-		whichplayer.newstate = playerstates.hangglide
-		whichplayer.hangglidedir = whichplayer.facingdirection
+		whichplayer.showarrow = true
+		if (whichplayer.key_upp) 
+		{
+			whichplayer.newstate = playerstates.hangglide
+			whichplayer.hangglidedir = whichplayer.facingdirection
+		}
 	}
 }

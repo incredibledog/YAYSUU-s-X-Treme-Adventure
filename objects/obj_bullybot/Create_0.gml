@@ -5,3 +5,4 @@
 event_inherited();
 candamage = false
 playerinfront = true
+player2infront = true

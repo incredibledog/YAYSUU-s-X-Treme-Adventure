@@ -2,10 +2,24 @@
 // You can write your code in this editor
 movingobject_start()
 movingobject_end()
-var whichplayer=scr_temphacky_closestplayer()
-if !whichplayer.vulnerable && touchingplayer(x, y)
+
+if touchingplayer(x, y)
 {
-	instance_destroy()
-	with (whichplayer)
-		scr_player_trybounce(false)
+	if (!global.firstplayertouch.vulnerable)
+	{
+		whichplayerispurpeguymurderer = global.firstplayertouch
+		instance_destroy()
+		with (global.firstplayertouch)
+			scr_player_trybounce(false)
+	}
+	else if (global.secondplayertouch != noone)
+	{
+		if (!global.secondplayertouch.vulnerable)
+		{
+			whichplayerispurpeguymurderer = global.secondplayertouch
+			instance_destroy()
+			with (global.secondplayertouch)
+				scr_player_trybounce(false)
+		}
+	}
 }

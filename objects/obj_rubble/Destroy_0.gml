@@ -8,10 +8,10 @@ repeat (3)
 	with(instance_create_depth(x, y, depth, obj_rubbledebris))
 	{
 		sprite_index = other.debrissprite
-		if (other.destroyedbyplayer)
+		if (other.destroyedbyplayer != noone)
 		{
-			hsp = (sqrt(abs(obj_player.hsp)) * sign(obj_player.hsp)) + random_range(-2, 4)
-			vsp = (sqrt(abs(obj_player.vsp)) * sign(obj_player.vsp)) + random_range(-6, 0)
+			hsp = (sqrt(abs(other.destroyedbyplayer.hsp)) * sign(other.destroyedbyplayer.hsp)) + random_range(-2, 4)
+			vsp = (sqrt(abs(other.destroyedbyplayer.vsp)) * sign(other.destroyedbyplayer.vsp)) + random_range(-6, 0)
 		}
 		else
 		{

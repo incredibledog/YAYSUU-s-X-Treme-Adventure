@@ -3,4 +3,4 @@
 
 // Inherit the parent event
 event_inherited();
-obj_player.ouchies = true
+whichplayerispurpeguymurderer.ouchies = true

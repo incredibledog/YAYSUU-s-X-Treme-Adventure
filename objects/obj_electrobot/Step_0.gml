@@ -25,31 +25,41 @@ switch (state)
 			image_xscale = 1
 		else if (obj_player.x < x)
 			image_xscale = -1
+		if (idledamagedelay > 0)
+			idledamagedelay--
+		else
+			candamage = true
 		if (!hasdamaged)
 		{
 			vulnerable = true
-			if (touchingplayer(x, y) && !obj_player.vulnerable)
+			if (touchingplayer(x, y))
 			{
-				var whichplayer = scr_temphacky_closestplayer()
-				delay = 1337
-				with (whichplayer)
-					scr_player_trybounce(false)
-				state = electrobotstates.damaged
-				candamage = false
-				vsp = -5
-				hsp = -3 * image_xscale
-				audio_play_sound(snd_ouchie,1,false)
-				global.bosshp--
-				scr_shake(30, false)
-				hasdamaged = true
-				if (global.bosshp == 3) //it gets HARDERS!?
+				var whichplayer = global.firstplayertouch
+				if (global.firstplayertouch.vulnerable && global.secondplayertouch)
+					whichplayer = global.secondplayertouch
+					
+				if (!whichplayer.vulnerable)
 				{
-					idledelay = 90
-					attackamount = 4
-					if (global.hp < 3)
-						instance_create_depth(320, -64, depth, obj_pizzamonitor)
+					delay = 1337
+					with (whichplayer)
+						scr_player_trybounce(false)
+					state = electrobotstates.damaged
+					candamage = false
+					vsp = -5
+					hsp = -3 * image_xscale
+					audio_play_sound(snd_ouchie,1,false)
+					global.bosshp--
+					scr_shake(30, false)
+					hasdamaged = true
+					if (global.bosshp == 3) //it gets HARDERS!?
+					{
+						idledelay = 90
+						attackamount = 4
+						if (global.hp < 3)
+							instance_create_depth(320, -64, depth, obj_pizzamonitor)
+					}
+					grounded = false
 				}
-				grounded = false
 			}
 		}
 		if (delay > 0)
@@ -149,10 +159,11 @@ switch (state)
 			}
 			else
 			{
+				var target = scr_closestplayer()
 				image_index = 0
-				if (obj_player.x > x)
+				if (target.x > x)
 					image_xscale = 1
-				else if (obj_player.x < x)
+				else if (target.x < x)
 					image_xscale = -1
 				with (instance_create_depth(x,y,depth+1,obj_electrobot_boolet))
 					image_xscale = other.image_xscale	
@@ -176,7 +187,7 @@ switch (state)
 			}
 			else
 			{
-				candamage = true
+				idledamagedelay = 30
 				state = electrobotstates.idle
 				delay = idledelay
 				vulnerable = false
@@ -210,10 +221,15 @@ switch (state)
 	case electrobotstates.fuckingdead:
 		if (!instance_exists(obj_explode) && !instance_exists(obj_goalflag))
 		{
-			if (obj_player.x > 320)
-				instance_create_depth(160,-64,depth,obj_fallinggoalflag)
+			if (global.multiplayer)
+				instance_create_depth(320,-64,depth,obj_fallinggoalflag)
 			else
-				instance_create_depth(480,-64,depth,obj_fallinggoalflag)
+			{
+				if (obj_player.x > 320)
+					instance_create_depth(160,-64,depth,obj_fallinggoalflag)
+				else
+					instance_create_depth(480,-64,depth,obj_fallinggoalflag)
+			}
 		}
 		break;
 }

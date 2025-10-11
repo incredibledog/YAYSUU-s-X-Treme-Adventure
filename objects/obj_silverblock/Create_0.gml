@@ -10,3 +10,4 @@ if (sprite_index == spr_rubble_cave)
 }
 debrissprite = spr_silverdebris
 breaksound = snd_breaksilver
+strong = true

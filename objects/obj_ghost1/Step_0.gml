@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var whichplayer = scr_temphacky_closestplayer()
+var whichplayer = scr_closestplayer()
 if noticed
 {
 	move_towards_point(whichplayer.x, whichplayer.y, 1)

@@ -1,4 +1,4 @@
-function scr_temphacky_closestplayer(){
+function scr_closestplayer(){
 	if (global.multiplayer)
 	{
 		if (distance_to_object(global.mainplayer) < distance_to_object(global.otherplayer))

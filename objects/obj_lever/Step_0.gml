@@ -3,12 +3,12 @@
 prevtoggled = toggled
 if (touchingplayer(x, y))
 {
-	obj_player.showarrow = true
-	if (obj_player.hsp * obj_player.image_xscale > obj_player.runspeed)
+	global.firstplayertouch.showarrow = true
+	if (global.firstplayertouch.hsp * global.firstplayertouch.image_xscale > global.firstplayertouch.runspeed)
 		toggled = true
-	else if (obj_player.hsp * -obj_player.image_xscale < -obj_player.runspeed)
+	else if (global.firstplayertouch.hsp * -global.firstplayertouch.image_xscale < -global.firstplayertouch.runspeed)
 		toggled = false
-	else if (global.key_upp)
+	else if (global.firstplayertouch.key_upp)
 		toggled = !toggled
 }
 

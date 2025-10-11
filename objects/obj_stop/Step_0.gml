@@ -4,9 +4,10 @@ if touchingplayer(x, y) && !goaway
 {
 	goaway=true
 	audio_play_sound(snd_stopngo,1,false)
-	obj_player.newstate = playerstates.golfstop
+	global.firstplayertouch.newstate = playerstates.golfstop
+	gottemplayer = global.firstplayertouch
 }
-else if goaway && obj_player.state != playerstates.golfstop
-	image_alpha-=0.1
+else if goaway && gottemplayer != noone && gottemplayer.state != playerstates.golfstop
+	image_alpha-=0.05
 if image_alpha=0
 	instance_destroy()

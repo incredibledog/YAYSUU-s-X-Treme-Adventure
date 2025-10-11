@@ -13,3 +13,4 @@ breaksound = snd_breakrubble
 hascollision = true
 checkoffsetx = 0
 checkoffsety = 0
+strong = false

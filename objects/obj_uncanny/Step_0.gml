@@ -1,5 +1,7 @@
+var whichplayer = scr_closestplayer()
+
 if (!global.jumpscare && abs(obj_camera.actualcamx - x) < 400 && abs(obj_camera.actualcamy - y) < 300)
-	move_towards_point(obj_player.x,obj_player.y,1)
+	move_towards_point(whichplayer.x,whichplayer.y,1)
 else
 	speed = 0
 if (hsp != 0)
@@ -12,16 +14,20 @@ if (vsp != 0)
 	y += vsp
 	hsp -= sign(vsp)
 }
-var whichplayer = scr_temphacky_closestplayer()
-if (place_meeting(x,y,obj_player)) && !global.jumpscare
+if (touchingplayer(x, y)) && !global.jumpscare
 {
-	if (global.inv=false)
+	if (!global.inv)
 	{
-		whichplayer.ouchies = true
-		whichplayer.deathies = true
-		if whichplayer=global.mainplayer
+		global.firstplayertouch.ouchies = true
+		global.firstplayertouch.deathies = true
+		if (global.secondplayertouch != noone)
 		{
-			global.jumpscare=true
+			global.secondplayertouch.ouchies = true
+			global.secondplayertouch.deathies = true
+		}
+		if global.firstplayertouch == global.mainplayer
+		{
+			global.jumpscare = true
 			global.injumpscare = true;
 		}
 	}

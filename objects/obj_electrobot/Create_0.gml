@@ -18,3 +18,4 @@ extradamagebounces = 0
 slowdown = 0
 attackamount = 3
 prevattack = state
+idledamagedelay = 0

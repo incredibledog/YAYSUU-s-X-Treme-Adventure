@@ -2,7 +2,9 @@
 // You can write your code in this editor
 if touchingplayer(x, y) && sprite_index == normsprite
 {
-	var whichplayer = scr_temphacky_closestplayer()
+	var whichplayer = global.firstplayertouch
+	if (global.secondplayertouch != noone && irandom(1) == 0) //too complicated 4 me lel
+		whichplayer = global.secondplayertouch
 	var whichchar = whichplayer.isotherplayer ? global.p2char : global.char
 	if (whichplayer.state == playerstates.stomp)
 	{
