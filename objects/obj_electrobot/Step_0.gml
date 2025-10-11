@@ -46,6 +46,8 @@ switch (state)
 				{
 					idledelay = 90
 					attackamount = 4
+					if (global.hp < 3)
+						instance_create_depth(320, -64, depth, obj_pizzamonitor)
 				}
 				grounded = false
 			}
