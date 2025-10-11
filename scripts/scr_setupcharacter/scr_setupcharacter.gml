@@ -22,6 +22,8 @@ enum playersprite
 	golfstop,
 	hangglide,
 	wallslide,
+	lifeicon,
+	lifemonitor
 }
 function scr_setupcharacter(char, skin)
 {
@@ -52,6 +54,8 @@ function scr_setupcharacter(char, skin)
 			playersprites[playersprite.launched] = spr_yan_dead
 			playersprites[playersprite.hangglide] = spr_yaysuu_hangglide
 			playersprites[playersprite.golfstop] = spr_yan_dance
+			playersprites[playersprite.lifeicon] = spr_yanlifeicon
+			playersprites[playersprite.lifemonitor] = spr_lifemonitor_yan
 		}
 		else
 		{
@@ -76,6 +80,8 @@ function scr_setupcharacter(char, skin)
 			playersprites[playersprite.launched] = spr_yaysuu_spinnykicked
 			playersprites[playersprite.hangglide] = spr_yaysuu_hangglide
 			playersprites[playersprite.golfstop] = spr_yaysuu_spinball
+			playersprites[playersprite.lifeicon] = spr_yaysuulifeicon
+			playersprites[playersprite.lifemonitor] = spr_lifemonitor_y
 		}
 	}
 	else if (char == "T")
@@ -102,6 +108,8 @@ function scr_setupcharacter(char, skin)
 		playersprites[playersprite.golfstop] = spr_teddy_spinball
 		playersprites[playersprite.hangglide] = spr_teddy_hangglide
 		playersprites[playersprite.wallslide] = spr_teddy_wallslide
+		playersprites[playersprite.lifeicon] = spr_teddylifeicon
+		playersprites[playersprite.lifemonitor] = spr_lifemonitor_t
 	}
 	else
 	{

@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_yaysuulifeicon",
+  "%Name":"spr_yanlifeicon",
   "bboxMode":0,
-  "bbox_bottom":31,
-  "bbox_left":0,
-  "bbox_right":30,
+  "bbox_bottom":26,
+  "bbox_left":2,
+  "bbox_right":29,
   "bbox_top":3,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9c9139c9-c46b-4c88-a9a0-0f1f5a328985","name":"9c9139c9-c46b-4c88-a9a0-0f1f5a328985","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1afc2ba2-b20d-4f8e-acbc-5a403f794734","name":"1afc2ba2-b20d-4f8e-acbc-5a403f794734","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"a2a2783f-dc8b-44df-a95c-1e3983227bf3","blendMode":0,"displayName":"default","isLocked":false,"name":"a2a2783f-dc8b-44df-a95c-1e3983227bf3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"821c6cff-a864-45a8-af4a-2f36330a6601","blendMode":0,"displayName":"default","isLocked":false,"name":"821c6cff-a864-45a8-af4a-2f36330a6601","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_yaysuulifeicon",
+  "name":"spr_yanlifeicon",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_yaysuulifeicon",
+    "%Name":"spr_yanlifeicon",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_yaysuulifeicon",
+    "name":"spr_yanlifeicon",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9c9139c9-c46b-4c88-a9a0-0f1f5a328985","path":"sprites/spr_yaysuulifeicon/spr_yaysuulifeicon.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ba1d0b69-a4b3-4c20-8c24-9ac839702d72","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1afc2ba2-b20d-4f8e-acbc-5a403f794734","path":"sprites/spr_yanlifeicon/spr_yanlifeicon.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"bdd44d07-6cbf-447e-8449-c96edf42a02c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -81,7 +81,7 @@
     "yorigin":0,
   },
   "swatchColours":null,
-  "swfPrecision":2.525,
+  "swfPrecision":0.5,
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",

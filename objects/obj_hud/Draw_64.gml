@@ -29,22 +29,8 @@ if global.inlevel && !global.inhub
 		if !global.multiplayer
 			health_system_hearts(spr_pizza, global.hp, global.maxhp, 32, healthheight)
 		else if global.multiplayer {
-			if global.char="Y"
-			{
-				draw_sprite(spr_yaysuulifeicon,0,32,healthheight)
-			}
-			if global.char="T"
-			{
-				draw_sprite(spr_teddylifeicon,0,32,healthheight)
-			}
-			if global.p2char="Y"
-			{
-				draw_sprite(spr_yaysuulifeicon,0,32,healthheight+32)
-			}
-			if global.p2char="T"
-			{
-				draw_sprite(spr_teddylifeicon,0,32,healthheight+32)
-			}
+			draw_sprite(global.mainplayer.playersprites[playersprite.lifeicon],0,32,healthheight)
+			draw_sprite(global.otherplayer.playersprites[playersprite.lifeicon],0,32,healthheight+32)
 			health_system_hearts(spr_pizza, global.hp, global.maxhp, 64, healthheight)
 			health_system_hearts(spr_pizza, global.p2hp, global.p2maxhp, 64, healthheight+32)
 		}
@@ -64,22 +50,12 @@ if global.inlevel && !global.inhub
 			draw_set_font(global.font)
 			if (!global.mobile)
 			{
-				if global.char="Y"
-					draw_sprite(spr_yaysuulifeicon,0,32,416)
-				else if global.char="T"
-					draw_sprite(spr_teddylifeicon,0,32,416)
-				else if global.char="C"
-					draw_sprite(spr_cottonlifeicon,0,32,416)
+				draw_sprite(global.mainplayer.playersprites[playersprite.lifeicon],0,32,416)
 				draw_text(64,416,global.lives)
 			}
 			else
 			{
-				if global.char="Y"
-					draw_sprite(spr_yaysuulifeicon,0,480,32)
-				else if global.char="T"
-					draw_sprite(spr_teddylifeicon,0,480,32)
-				else if global.char="C"
-					draw_sprite(spr_cottonlifeicon,0,480,32)
+				draw_sprite(global.mainplayer.playersprites[playersprite.lifeicon],0,480,32)
 				draw_text(512,32,global.lives)
 			}
 		}
