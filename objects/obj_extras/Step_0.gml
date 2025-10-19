@@ -15,7 +15,7 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false)
 }
-chos=clamp(chos,1,7)
+chos=clamp(chos,1,8)
 switch chos
 {
 	case 1:
@@ -70,6 +70,14 @@ switch chos
 	}
 	break;
 	case 7:
+	if global.key_menuaccept
+	{
+		audio_play_sound(snd_confirm,1,false)
+		instance_deactivate_object(obj_extras)
+		instance_create_depth(x,y,depth,obj_texttest)
+	}
+	break;
+	case 8:
 	if global.key_menuaccept
 	{
 		audio_stop_sound(mus_extras)

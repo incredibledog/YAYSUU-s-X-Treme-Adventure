@@ -7,7 +7,7 @@ if player=1 && global.inputtype!=3
 {
 	var controllerstring = gamepad_get_description(global.p1_controlslot)
 	draw_set_font(global.smalloptfont)
-	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p1_controlslot)+" ("+controllerstring+")","none",false,608)
+	draw_text_ext(32,64,"USING CONTROLLER "+string(global.p1_controlslot)+" ("+controllerstring+")",16,608)
 	draw_text(32,96 ,"LEFT  "+keytostring(global.p1_leftkey))
 	draw_text(32,112,"RIGHT "+keytostring(global.p1_rightkey))
 	draw_text(32,128,"UP    "+keytostring(global.p1_upkey))
@@ -21,7 +21,7 @@ if player=2
 {
 	var controllerstring = gamepad_get_description(global.p2_controlslot)
 	draw_set_font(global.smalloptfont)
-	draw_text_yxa(32,64,"USING CONTROLLER "+string(global.p2_controlslot)+" ("+controllerstring+")","none",false,608)
+	draw_text_ext(32,64,"USING CONTROLLER "+string(global.p2_controlslot)+" ("+controllerstring+")",16,608)
 	draw_text(32,96 ,"LEFT  "+keytostring(global.p2_leftkey))
 	draw_text(32,112,"RIGHT "+keytostring(global.p2_rightkey))
 	draw_text(32,128,"UP    "+keytostring(global.p2_upkey))

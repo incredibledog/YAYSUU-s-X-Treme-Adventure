@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.inputtype = 3 && hide=false && !instance_exists(obj_stageclear) && !instance_exists(obj_dialoguebox) && !instance_exists(obj_gameover)
+if global.inputtype = 3 && hide=false && !instance_exists(obj_stageclear) && !(instance_exists(obj_dialoguebox) && !instance_exists(obj_hintdialoguebox)) && !instance_exists(obj_gameover)
 {
 	if room=room_trialmenu || room=room_extrastages
 	{

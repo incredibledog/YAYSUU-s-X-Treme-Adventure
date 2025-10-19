@@ -262,6 +262,7 @@
     {"id":{"name":"obj_teddy2","path":"objects/obj_teddy2/obj_teddy2.yy",},},
     {"id":{"name":"obj_testnpc","path":"objects/obj_testnpc/obj_testnpc.yy",},},
     {"id":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},},
+    {"id":{"name":"obj_texttest","path":"objects/obj_texttest/obj_texttest.yy",},},
     {"id":{"name":"obj_titlecard","path":"objects/obj_titlecard/obj_titlecard.yy",},},
     {"id":{"name":"obj_trialbutton","path":"objects/obj_trialbutton/obj_trialbutton.yy",},},
     {"id":{"name":"obj_trialmenu","path":"objects/obj_trialmenu/obj_trialmenu.yy",},},

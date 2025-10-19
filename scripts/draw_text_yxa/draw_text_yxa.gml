@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
+function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = -1,subimg = 0){
 	var colorhex = #FF00FF
 	switch color {
 		case "white":
@@ -58,9 +58,108 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640){
 		show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to draw_text_yxa for more details.",true)
 		break;
 	}
-	//draw_set_font(global.subtitlefont)
+	draw_set_font(global.subtitlefont) // NOT SO FAST!
 	var alpha = draw_get_alpha()
-	if dropshadow
-		draw_text_ext_color(x+1,y+1,string(textstring),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
-	draw_text_ext_color(x,y,string(textstring),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
+	var xi = -1
+	var yi = 0
+	var codei = 0
+	var shake = false
+	var shakeoffset = 0
+	for (var i = 1; i<string_length(textstring); i++) {
+		xi++
+		if ((x+(16*(xi))>=maxlength) && string_char_at(textstring,i)=" ") || string_char_at(textstring,i)="\n"
+		{
+			yi+=16
+			xi=-1
+		}
+		if string_char_at(textstring,i)="`"
+		{
+			i++
+			switch string_char_at(textstring,i)
+			{
+				case "s":
+				shake = true
+				i++
+				codei--
+				break;
+				case "u":
+				shake = false
+				i++
+				codei--
+				break;
+				case "d":
+				draw_sprite(sprite,subimg,x+(16*xi),y+yi-16)
+				i++
+				codei--
+				break;
+				case "c":
+				i++
+				codei--
+				switch string_char_at(textstring,i)
+				{
+					case "l":
+					colorhex = #FFF1E8 
+					break;
+					case "e":
+					colorhex = #C2C3C7 
+					break;
+					case "c":
+					colorhex = #5F574F 
+					break;
+					case "a":
+					colorhex = #000000 
+					break;
+					case "d":
+					colorhex = #1D2B53 
+					break;
+					case "m":
+					colorhex = #7E2553 
+					break;
+					case "w":
+					colorhex = #008751 
+					break;
+					case "s":
+					colorhex = #AB5236 
+					break;
+					case "r":
+					colorhex = #FF004D 
+					break;
+					case "o":
+					colorhex = #FFA300 
+					break;
+					case "y":
+					colorhex = #FFEC27 
+					break;
+					case "g":
+					colorhex = #00E436 
+					break;
+					case "b":
+					colorhex = #29ADFF 
+					break;
+					case "f":
+					colorhex = #83769C 
+					break;
+					case "p":
+					colorhex = #FF77A8 
+					break;
+					case "t":
+					colorhex = #FFCCAA 
+					break;
+					case "n":
+					colorhex = #FFFFFF 
+					break;
+					default:
+					show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to draw_text_yxa for more details.",true)
+					break;
+				}
+				i++
+				codei--
+				break;
+			}
+		}
+		shakeoffset = shake?choose(-1,0,1):0
+		if dropshadow
+			draw_text_ext_color(x+(16*(xi))+(shakeoffset)+1,y+(yi)+(shakeoffset)+1,string_char_at(textstring,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
+		draw_text_ext_color(x+(16*(xi))+(shakeoffset),y+(yi)+(shakeoffset),string_char_at(textstring,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
+	}
 }

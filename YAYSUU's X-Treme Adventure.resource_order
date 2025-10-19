@@ -200,6 +200,7 @@
     {"name":"obj_teddy","order":1,"path":"objects/obj_teddy/obj_teddy.yy",},
     {"name":"obj_teddy2","order":3,"path":"objects/obj_teddy2/obj_teddy2.yy",},
     {"name":"obj_text","order":4,"path":"objects/obj_text/obj_text.yy",},
+    {"name":"obj_texttest","order":29,"path":"objects/obj_texttest/obj_texttest.yy",},
     {"name":"obj_titlecard","order":1,"path":"objects/obj_titlecard/obj_titlecard.yy",},
     {"name":"obj_trialbutton","order":2,"path":"objects/obj_trialbutton/obj_trialbutton.yy",},
     {"name":"obj_trialmenu","order":16,"path":"objects/obj_trialmenu/obj_trialmenu.yy",},
