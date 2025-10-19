@@ -61,8 +61,8 @@ else if display = 4
 else if display == 5
 {
 	display = 6
-	virtual_key_add(224,416,96,32,global.p1_jumpkey)
-	virtual_key_add(320,416,96,32,global.p1_dashkey)
+	virtual_key_add(480,384,64,64,global.p1_jumpkey)
+	virtual_key_add(544,384,64,64,global.p1_dashkey)
 }
 else if (!obj_fadeblack.fading)
 {

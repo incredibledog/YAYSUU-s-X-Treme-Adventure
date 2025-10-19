@@ -10,6 +10,8 @@ if (!donotannoymewhiletesting)
 			with instance_create_depth(0,0,depth,obj_hintdialoguebox)
 			{
 				text=other.subtitle
+				sprite=other.button
+				subimg=other.subimg
 				color="purple"
 				nobox=true
 			}

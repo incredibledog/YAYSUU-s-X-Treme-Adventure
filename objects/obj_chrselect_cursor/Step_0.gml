@@ -116,7 +116,7 @@ if global.key_runp && !global.trial
 }
 else
 {
-	if (global.key_menuaccept) || (global.p2_key_menuaccept && global.multiplayer) && !selected
+	if ((global.key_menuaccept) || (global.p2_key_menuaccept && global.multiplayer)) && !selected
 	{
 		if (!teddyavailable && chos == 2)
 			audio_play_sound(snd_nicetry,1,false)

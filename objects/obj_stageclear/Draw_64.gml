@@ -45,26 +45,30 @@ if display>=5
 {
 	if global.inputtype == 2
 	{
-		draw_sprite(spr_next,1,416,416)
+		//draw_sprite(spr_next,1,416,416)
+		draw_text_yxa(384,432,"`d  Next","yellow",true,,spr_xboxbuttons,4)
 		if global.trial
 		{
-			draw_sprite(spr_retry,1,512,416)
+			//draw_sprite(spr_retry,1,512,416)
+			draw_text_yxa(496,432,"`d  Retry","orange",true,,spr_xboxbuttons,5)
 		}
 	}
 	else if global.inputtype == 1 || global.inputtype == 0
 	{
-		draw_sprite(spr_next,0,416,416)
+		//draw_sprite(spr_next,0,416,416)
+		draw_text_yxa(384,432,keytostring(global.p1_jumpkey)+" Next","yellow",true)
 		if global.trial
 		{
-			draw_sprite(spr_retry,0,512,416)
+			//draw_sprite(spr_retry,0,512,416)
+			draw_text_yxa(496,432,keytostring(global.p1_dashkey)+" Retry","orange",true)
 		}
 	}
 	else if global.inputtype == 3
 	{
-		draw_sprite(spr_next,2,224,416)
+		draw_sprite(spr_resume,0,480,384)
 		if global.trial
 		{
-			draw_sprite(spr_retry,2,320,416)
+			draw_sprite(spr_redo,0,544,384)
 		}
 	}
 }

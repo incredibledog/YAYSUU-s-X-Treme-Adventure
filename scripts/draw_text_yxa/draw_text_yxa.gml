@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640-x,sprite = -1,subimg = 0){
+function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = -1,subimg = 0){
 	var colorhex = #FF00FF
 	switch color {
 		case "white":
@@ -60,43 +60,48 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640-x,sprite 
 	}
 	draw_set_font(global.subtitlefont) // NOT SO FAST!
 	var alpha = draw_get_alpha()
-	var xi = 0
+	var xi = -1
 	var yi = 0
+	var codei = 0
 	var shake = false
-	var shakeoffsetx = 0
-	var shakeoffsety = 0
-	var wrappedtext = string_wrap(textstring,maxlength)
-	for (var i = 1; i<string_length(wrappedtext)+1; i++) {
-		if string_char_at(wrappedtext,i)="\\"
+	var xshakeoffset = 0
+	var yshakeoffset = 0
+	
+	textstring = string_wrap(string_replace_all(textstring, "\\n", "\n"),maxlength); // gotta love gamemaker!
+	
+	for (var i = 1; i<=string_length(textstring); i++) {
+		xi++
+		var ch = string_char_at(textstring, i)
+		if (((x+(16*xi) >= maxlength) && (ch == " ")) || (ord(ch) == 10) || (ord(ch) == 13))
 		{
-			i++
-			if string_char_at(wrappedtext,i)="n"
-			{
-				yi++
-				xi=0
-				i++
-			}
+			yi+=16
+			xi=-1
+			continue;
 		}
-		if string_char_at(wrappedtext,i)="`"
+		if ch == "`"
 		{
 			i++
-			switch string_char_at(wrappedtext,i)
+			switch string_char_at(textstring, i)
 			{
 				case "s":
 				shake = true
 				i++
+				codei--
 				break;
 				case "u":
 				shake = false
 				i++
+				codei--
 				break;
 				case "d":
-				draw_sprite(sprite,subimg,x+(16*xi),y+yi-16)
+				draw_sprite(sprite,subimg,x+(16*xi),y+yi)
 				i++
+				codei--
 				break;
 				case "c":
 				i++
-				switch string_char_at(wrappedtext,i)
+				codei--
+				switch string_char_at(textstring, i)
 				{
 					case "l":
 					colorhex = #FFF1E8 
@@ -154,14 +159,17 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640-x,sprite 
 					break;
 				}
 				i++
+				codei--
 				break;
 			}
+			xi -= 1;
+			i -= 1;
+			continue;
 		}
-		shakeoffsetx = shake?choose(-1,0,1):0
-		shakeoffsety = shake?choose(-1,0,1):0
+		xshakeoffset = shake?choose(-1,0,1):0
+		yshakeoffset = shake?choose(-1,0,1):0
 		if dropshadow
-			draw_text_ext_color(x+(16*xi)+(shakeoffsetx)+1,y+(16*yi)+(shakeoffsety)+1,string_char_at(wrappedtext,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
-		draw_text_ext_color(x+(16*xi)+(shakeoffsetx),y+(16*yi)+(shakeoffsety),string_char_at(wrappedtext,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
-		xi++
+			draw_text_ext_color(x+(16*(xi))+(xshakeoffset)+1,y+(yi)+(yshakeoffset)+1,string_char_at(textstring,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
+		draw_text_ext_color(x+(16*(xi))+(xshakeoffset),y+(yi)+(yshakeoffset),string_char_at(textstring,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
 	}
 }

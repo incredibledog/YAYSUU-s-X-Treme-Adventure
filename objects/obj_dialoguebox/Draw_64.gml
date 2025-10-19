@@ -6,6 +6,6 @@ if !nobox
 }
 draw_text_yxa(16,327,name,"white",true)
 if (finished)
-    draw_text_yxa(16, 363, text, color, nobox, 608);
+    draw_text_yxa(16, 363, text, color, nobox, 608, sprite, subimg);
 else
-    draw_text_yxa(16, 363, string_copy(text, 1, progress), color, nobox, 608);
+    draw_text_yxa(16, 363, string_copy(text, 1, progress), color, nobox, 608, sprite, subimg);
