@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = -1,subimg = 0){
+function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640-x,sprite = -1,subimg = 0){
 	var colorhex = #FF00FF
 	switch color {
 		case "white":
@@ -60,42 +60,43 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 	}
 	draw_set_font(global.subtitlefont) // NOT SO FAST!
 	var alpha = draw_get_alpha()
-	var xi = -1
+	var xi = 0
 	var yi = 0
-	var codei = 0
 	var shake = false
-	var shakeoffset = 0
-	for (var i = 1; i<string_length(textstring); i++) {
-		xi++
-		if ((x+(16*(xi))>=maxlength) && string_char_at(textstring,i)=" ") || string_char_at(textstring,i)="\n"
-		{
-			yi+=16
-			xi=-1
-		}
-		if string_char_at(textstring,i)="`"
+	var shakeoffsetx = 0
+	var shakeoffsety = 0
+	var wrappedtext = string_wrap(textstring,maxlength)
+	for (var i = 1; i<string_length(wrappedtext)+1; i++) {
+		if string_char_at(wrappedtext,i)="\\"
 		{
 			i++
-			switch string_char_at(textstring,i)
+			if string_char_at(wrappedtext,i)="n"
+			{
+				yi++
+				xi=0
+				i++
+			}
+		}
+		if string_char_at(wrappedtext,i)="`"
+		{
+			i++
+			switch string_char_at(wrappedtext,i)
 			{
 				case "s":
 				shake = true
 				i++
-				codei--
 				break;
 				case "u":
 				shake = false
 				i++
-				codei--
 				break;
 				case "d":
 				draw_sprite(sprite,subimg,x+(16*xi),y+yi-16)
 				i++
-				codei--
 				break;
 				case "c":
 				i++
-				codei--
-				switch string_char_at(textstring,i)
+				switch string_char_at(wrappedtext,i)
 				{
 					case "l":
 					colorhex = #FFF1E8 
@@ -153,13 +154,14 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 					break;
 				}
 				i++
-				codei--
 				break;
 			}
 		}
-		shakeoffset = shake?choose(-1,0,1):0
+		shakeoffsetx = shake?choose(-1,0,1):0
+		shakeoffsety = shake?choose(-1,0,1):0
 		if dropshadow
-			draw_text_ext_color(x+(16*(xi))+(shakeoffset)+1,y+(yi)+(shakeoffset)+1,string_char_at(textstring,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
-		draw_text_ext_color(x+(16*(xi))+(shakeoffset),y+(yi)+(shakeoffset),string_char_at(textstring,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
+			draw_text_ext_color(x+(16*xi)+(shakeoffsetx)+1,y+(16*yi)+(shakeoffsety)+1,string_char_at(wrappedtext,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
+		draw_text_ext_color(x+(16*xi)+(shakeoffsetx),y+(16*yi)+(shakeoffsety),string_char_at(wrappedtext,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
+		xi++
 	}
 }

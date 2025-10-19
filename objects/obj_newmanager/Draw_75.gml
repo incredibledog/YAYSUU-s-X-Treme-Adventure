@@ -42,6 +42,10 @@ with (obj_mobilecontrols)
 {
 	event_perform(ev_draw,ev_gui)
 }
+with (obj_texttest)
+{
+	event_perform(ev_draw,ev_gui)
+}
 with (obj_fadeblack)
 {
 	gpu_set_blendmode(bm_subtract)
