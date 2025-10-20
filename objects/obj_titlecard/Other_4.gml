@@ -24,6 +24,9 @@ switch room {
 	case room_tutorial:
 	sprite_index=spr_tutorial
 	break;
+	case room_chilifields_a:
+	sprite_index=spr_chilifields
+	break;
 	default:
 	image_alpha=0
 	break;

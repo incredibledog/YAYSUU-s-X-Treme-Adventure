@@ -1,0 +1,1 @@
+text = "we HATE the cloud!!! EVIL!!!!"

@@ -110,6 +110,10 @@ instance_create_depth(0,0, 100, obj_camera)
 instance_create_depth(0,0, depth + 1, obj_fadeblack)
 global.mainplayer = instance_create_depth(0,0, 100, obj_player)
 global.otherplayer = noone
+with (global.mainplayer)
+{
+	isotherplayer=false
+}
 instance_create_depth(0,0, 100, obj_hud)
 instance_create_depth(0,0, 100, obj_parallax)
 //instance_create_depth(128,416,100,obj_subtitle)

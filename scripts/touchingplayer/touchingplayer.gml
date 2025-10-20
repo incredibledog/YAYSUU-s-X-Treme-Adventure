@@ -72,3 +72,16 @@ function touchingplayerspecific(checkx, checky, whichplayer, background = false)
 	}
 	return false
 }
+function touchingwho(checkx, checky, background = false){
+	if (obj_player.hascollision && obj_player.inbackground == background)
+	{
+		if (place_meeting(checkx, checky, obj_player))
+			if global.mainplayer=other
+				return global.mainplayer
+			else
+				return global.otherplayer
+		else
+			return false
+	}
+	return false
+}
