@@ -11,10 +11,14 @@ else {
 if touchingplayer(x, y)
 {
 	var whichplayer = noone
-	if (global.firstplayertouch.grounded && !(global.firstplayertouch.state=playerstates.hangglide))
+	if(global.firstplayertouch != noone && instance_exists(global.firstplayertouch)){
+		if (global.firstplayertouch.grounded && !(global.firstplayertouch.state=playerstates.hangglide))
 		whichplayer = global.firstplayertouch
-	else if (global.secondplayertouch.grounded && !(global.secondplayertouch.state=playerstates.hangglide))
+	}
+	if(global.secondplayertouch != noone && instance_exists(global.secondplayertouch)){
+		if (global.secondplayertouch.grounded && !(global.secondplayertouch.state=playerstates.hangglide))
 		whichplayer = global.secondplayertouch
+	}
 	if (whichplayer != noone)
 	{
 		whichplayer.showarrow = true
