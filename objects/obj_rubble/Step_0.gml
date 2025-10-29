@@ -8,9 +8,9 @@ else
 	mycollision.y = -2763
 	if touchingplayer(x - checkoffsetx, y - checkoffsety)
 	{
-		if (global.firstplayertouch.char != "T" && strong)
+		if (global.firstplayertouch.char != "T" && strong) // how does this work (it doesn't)
 		{
-			if (global.secondplayertouch != noone)
+			if instance_exists(global.secondplayertouch)
 			{
 				if (global.secondplayertouch.char != "T" && strong)
 					return; //no breaky...

@@ -68,11 +68,12 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 	var yshakeoffset = 0
 	
 	textstring = string_wrap(string_replace_all(textstring, "\\n", "\n"),maxlength); // gotta love gamemaker!
+	var alignleft=draw_get_halign()=fa_right ? string_width(textstring) : 0
 	
 	for (var i = 1; i<=string_length(textstring); i++) {
 		xi++
 		var ch = string_char_at(textstring, i)
-		if (((x+(16*xi) >= maxlength) && (ch == " ")) || (ord(ch) == 10) || (ord(ch) == 13))
+		if (ord(ch) == 10) || (ord(ch) == 13)
 		{
 			yi+=16
 			xi=-1
@@ -94,7 +95,7 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 				codei--
 				break;
 				case "d":
-				draw_sprite(sprite,subimg,x+(16*xi),y+yi)
+				draw_sprite(sprite,subimg,x+(16*xi)-alignleft,y+yi)
 				i++
 				codei--
 				break;
@@ -169,7 +170,7 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 		xshakeoffset = shake?choose(-1,0,1):0
 		yshakeoffset = shake?choose(-1,0,1):0
 		if dropshadow
-			draw_text_ext_color(x+(16*(xi))+(xshakeoffset)+1,y+(yi)+(yshakeoffset)+1,string_char_at(textstring,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
-		draw_text_ext_color(x+(16*(xi))+(xshakeoffset),y+(yi)+(yshakeoffset),string_char_at(textstring,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
+			draw_text_ext_color(x+(16*(xi))+(xshakeoffset)+1-alignleft,y+(yi)+(yshakeoffset)+1,string_char_at(textstring,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
+		draw_text_ext_color(x+(16*(xi))+(xshakeoffset)-alignleft,y+(yi)+(yshakeoffset),string_char_at(textstring,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
 	}
 }
