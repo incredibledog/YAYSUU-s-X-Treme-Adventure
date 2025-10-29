@@ -15,7 +15,7 @@ else
 				if (global.secondplayertouch.char != "T" && strong)
 					return; //no breaky...
 				else
-					destroyedbyplayer = global.firstplayertouch
+					destroyedbyplayer = global.secondplayertouch // i think this was an oversight??
 			}
 		}
 		else
