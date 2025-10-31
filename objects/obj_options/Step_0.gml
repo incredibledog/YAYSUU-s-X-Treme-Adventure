@@ -66,10 +66,6 @@ switch chos
 		audio_play_sound(snd_move,1,false)
 	}
 	global.screenscale=clamp(global.screenscale,1,3)
-	if !(global.screenscale=prevscale)
-	{
-		window_set_size(640*global.screenscale,480*global.screenscale)
-	}
 	break;
 	case 5:
 	if global.key_menuaccept
@@ -137,11 +133,9 @@ switch chos
 		ini_open("savedata.ini")
 		ini_write_real("settings","volume",volume)
 		ini_write_real("settings","controlalpha",global.controlalpha)
-		ini_write_real("settings","fullscreen",window_get_fullscreen())
 		ini_write_real("settings","screenshake",global.screenshake)
 		ini_write_real("settings","borders",global.borders)
 		ini_write_real("settings","speedrun",global.speedrun)
-		ini_write_real("settings","screenscale",global.screenscale)
 		ini_close()
 		audio_stop_sound(mus_options)
 		audio_play_sound(snd_confirm,1,false)
@@ -154,11 +148,11 @@ if global.key_menuquit
 	ini_open("savedata.ini")
 	audio_master_gain(ini_read_real("settings","volume",1))
 	global.controlalpha=ini_read_real("settings","controlalpha",0.5)
-	window_set_fullscreen(ini_read_real("settings","fullscreen",0))
+	window_set_fullscreen(false)
 	global.screenshake=ini_read_real("settings","screenshake",1)
 	global.borders=ini_read_real("settings","borders",1)
 	global.speedrun=ini_read_real("settings","speedrun",1)
-	global.screenscale=ini_read_real("settings","screenscale",1)
+	global.screenscale=1
 	ini_close()
 	window_set_size(640*global.screenscale,480*global.screenscale)
 	audio_stop_sound(mus_options)

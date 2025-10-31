@@ -4,12 +4,12 @@ audio_master_gain(ini_read_real("settings","volume",1))
 global.sensitivity=ini_read_real("settings","sensitivity",0.35) // actually deadzone but not gonna change the variable name now
 global.controlalpha=ini_read_real("settings","controlalpha",0.5)
 global.controldistance=ini_read_real("settings","controldistance",0)
-window_set_fullscreen(ini_read_real("settings","fullscreen",false))
+window_set_fullscreen(false)
 global.screenshake=ini_read_real("settings","screenshake",true)
 global.borders=ini_read_real("settings","borders",true)
 global.keytype=ini_read_real("settings","keytype",-1)
 global.speedrun=ini_read_real("settings","speedrun",false)
-global.screenscale=ini_read_real("settings","screenscale",1)
+global.screenscale=1
 // P1 CONTROLS SAVEDATA INITIALIZATION
 global.p1_controlslot=ini_read_real("controls","p1controlslot",0)
 global.p1_leftkey=ini_read_real("controls","p1leftkey",vk_left)
@@ -38,7 +38,7 @@ ini_close()
 window_set_size(640*global.screenscale,480*global.screenscale)
 global.voicelines=false
 audio_group_load(voicelines)
-window_enable_borderless_fullscreen(true)
+window_enable_borderless_fullscreen(false)
 global.trial=false
 global.font=font_add_sprite_ext(spr_text,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.,:!?-",false,0)
 global.subtitlefont=font_add_sprite_ext(spr_subtitlefont, "()[]!#$%'*,.:-/+?@^abcdefghijklmnopqrstuvwxyz~{}0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",false,0)

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":45.096,
+  "duration":45.064854,
   "name":"mus_night",
   "parent":{
     "name":"Sounds",
