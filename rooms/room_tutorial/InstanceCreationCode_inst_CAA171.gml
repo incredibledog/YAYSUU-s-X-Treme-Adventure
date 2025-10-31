@@ -12,5 +12,8 @@ else if global.inputtype=3
 }
 else if global.inputtype=0
 {
-	subtitle = "Press "+keytostring(global.p1_jumpkey)+" to jump!"
+	if (random_range(0, 1000) == 0) //teehee ;3
+		subtitle = "Press "+keytostring(global.p1_jumpkey)+" to gedagedi!"
+	else
+		subtitle = "Press "+keytostring(global.p1_jumpkey)+" to jump!"
 }
