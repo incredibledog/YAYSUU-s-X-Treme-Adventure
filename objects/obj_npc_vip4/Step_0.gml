@@ -34,13 +34,85 @@ else if talking && talked
 			case 1:
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
-				text="(Better get going!)"
+				text="you don't belong here, do you?"
 				color="white"
 			}
 			break;
 			case 2:
-			talking=false
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text=""
+				color="white"
+			}
+			break;
+			case 3:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text="you don't belong here, do you?"
+				color="white"
+			}
+			break;
+			case 4:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text=""
+				color="white"
+			}
+			break;
+			case 5:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text="you don't belong here, do you?"
+				color="white"
+			}
+			break;
+			case 6:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text=""
+				color="white"
+			}
+			break;
+			case 7:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text="you don't belong here, do you?"
+				color="white"
+			}
+			break;
+			case 8:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text=""
+				color="white"
+			}
+			break;
+			case 9:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text="you don't belong here, do you?"
+				color="white"
+			}
+			break;
+			case 10:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text=""
+				color="white"
+			}
+			break;
+			case 11:
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
+			{
+				text="you don't belong here, do you?"
+				color="white"
+			}
 			obj_player.newstate=playerstates.normal
+			break;
+			case 12:
+			talking = false
+			obj_player.newstate=playerstates.normal
+			break;
 		}
 	}
 }

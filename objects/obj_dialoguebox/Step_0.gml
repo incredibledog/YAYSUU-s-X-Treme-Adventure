@@ -24,10 +24,7 @@ if (!finished)
         }
 		else if (!playaudiosingle)
         {
-			if !(string_char_at(text, progress)==" ")
-			{
-				audio_play_sound(dialoguesound, 1, false);
-			}
+			audio_play_sound(dialoguesound, 1, false);
         }
     }
     else

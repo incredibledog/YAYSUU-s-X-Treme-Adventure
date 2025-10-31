@@ -9,10 +9,7 @@
     "name":"npcs",
     "path":"folders/Objects/levelobjs/npcs.yy",
   },
-  "parentObjectId":{
-    "name":"obj_npc_common",
-    "path":"objects/obj_npc_common/obj_npc_common.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

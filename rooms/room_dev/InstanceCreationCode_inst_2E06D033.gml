@@ -1,1 +1,0 @@
-text = "new version of a door system, although i still need to figure out a way to prevent you from just platfalling through it."

@@ -1,1 +1,0 @@
-text = "irregular slopes test (no tiles)"

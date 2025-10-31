@@ -19,7 +19,7 @@ if fading
 			{
 				if (global.levelloadtype == loadtype.jumbojosh)
 				{
-					room_goto(-global.nextroom)
+					room_goto(-48)
 				}
 				else
 				{

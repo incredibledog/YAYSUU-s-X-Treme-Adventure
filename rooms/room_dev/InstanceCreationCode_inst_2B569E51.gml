@@ -1,1 +1,0 @@
-connectedthing = inst_buttondemonstrationplatform

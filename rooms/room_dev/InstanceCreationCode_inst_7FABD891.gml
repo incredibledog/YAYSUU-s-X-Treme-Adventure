@@ -1,1 +1,0 @@
-text = "balloons get popped by teddy. they can be used together with silver blocks to give yaysuu and teddy 2 different paths."

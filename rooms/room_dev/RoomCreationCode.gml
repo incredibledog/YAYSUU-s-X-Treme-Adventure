@@ -1,2 +1,2 @@
-global.currentsong=mus_mussic
+global.currentsong=mus_night
 scr_windowtitle("Test some things out... in Fun Dev Room!")

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if room=room_options_test
+if room=room_options_test || room=room_charredforest
 {
 	return;
 }

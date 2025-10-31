@@ -853,10 +853,7 @@ switch (state)
 			}
 			else if (abs(hsp) < yearnaccel)
 			{
-				if (idletime > 600)
-					newsprite = playersprites[playersprite.wait]
-				else
-					newsprite = playersprites[playersprite.idle]
+				newsprite = playersprites[playersprite.idle]
 			}
 			else if (abs(hsp) > walkspeed)
 				newsprite = playersprites[playersprite.run]
@@ -979,7 +976,7 @@ if ((sprite_index == playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
 {
 	if (!hasplayedbrakesound)
 	{
-		audio_play_sound(snd_brake, 1, false)
+		audio_play_sound(snd_brake, 0.5, false)
 		hasplayedbrakesound = true
 	}
 }

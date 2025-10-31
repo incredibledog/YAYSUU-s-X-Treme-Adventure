@@ -1,1 +1,1 @@
-conveyorspeed = 2
+conveyorspeed = 0

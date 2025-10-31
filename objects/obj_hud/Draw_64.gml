@@ -51,12 +51,10 @@ if global.inlevel && !global.inhub
 			if (!global.mobile)
 			{
 				draw_sprite(global.mainplayer.playersprites[playersprite.lifeicon],0,32,416)
-				draw_text(64,416,global.lives)
 			}
 			else
 			{
 				draw_sprite(global.mainplayer.playersprites[playersprite.lifeicon],0,480,32)
-				draw_text(512,32,global.lives)
 			}
 		}
 	}

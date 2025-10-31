@@ -23,7 +23,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,obj_credits)
+		instance_create_depth(x,y,depth,-1282)
 	}
 	break;
 	case 2:
@@ -38,7 +38,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,-obj_cheats)
+		instance_create_depth(x,y,depth,-193)
 	}
 	break;
 	case 4:
@@ -54,7 +54,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,-obj_achievements)
+		instance_create_depth(x,y,depth,-9327)
 	}
 	break;
 	case 6:
@@ -62,7 +62,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,-obj_gallery)
+		instance_create_depth(x,y,depth,-348)
 	}
 	else if global.key_menuaccept && global.inputtype=3
 	{

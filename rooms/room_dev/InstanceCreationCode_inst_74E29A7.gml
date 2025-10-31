@@ -1,1 +1,0 @@
-text = "switch conveyor direction"
