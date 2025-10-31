@@ -2,7 +2,7 @@
 // You can write your code in this editor
 image_alpha=clamp(image_alpha,0,1)
 color=make_color_rgb(red,green,blue)
-var fadespeed = global.quickmenu ? 255 : 51;
+var fadespeed = global.quickmenu ? 255 : 25.5;
 if fading
 {
 	if (instaswitch)
@@ -17,8 +17,15 @@ if fading
 		{
 			if blue=255
 			{
-				preloadactualroom()
-				room_goto(global.nextroom)
+				if (global.levelloadtype == loadtype.jumbojosh)
+				{
+					room_goto(-1)
+				}
+				else
+				{
+					preloadactualroom()
+					room_goto(global.nextroom)
+				}
 			}
 			if blue<255
 				blue+=fadespeed

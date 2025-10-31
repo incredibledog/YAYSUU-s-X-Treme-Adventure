@@ -3,7 +3,8 @@ enum loadtype
     newlevel,
 	respawn,
 	nextroom,
-	menu
+	menu,
+	jumbojosh
 }
 function loadroom (newroom, levelloadtype, instant = false){
 	obj_fadeblack.fading = true
