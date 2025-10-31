@@ -5,6 +5,9 @@ switch chos
 	case 1:
 	charname="YAYSUU"
 	charlife=0
+	currentstage=room_tutorial
+	lvlname="Tutorial"
+	gameprogress=0
 	break;
 	case 1.5:
 	charname="COTTON"
@@ -12,6 +15,9 @@ switch chos
 	case 2:
 	charname="TEDDY"
 	charlife=1
+	currentstage=room_jasperror
+	lvlname="???"
+	gameprogress=404
 	break;
 }
 switch chos2
@@ -21,44 +27,6 @@ switch chos2
 	break;
 	case 2:
 	p2charname="AND TEDDY"
-	break;
-}
-switch savestage[charlife]
-{
-	case 0:
-	currentstage=room_tutorial
-	lvlname="Tutorial"
-	gameprogress=0
-	break;
-	case 1:
-	currentstage=room_chillfields_1
-	lvlname="Chill Fields Stage 1"
-	gameprogress=4
-	break;
-	case 2:
-	currentstage=room_chillfields_2
-	lvlname="Chill Fields Stage 2"
-	gameprogress=8
-	break;
-	case 3:
-	currentstage=room_chillfields_boss
-	lvlname="Vs. Electrobot"
-	gameprogress=17
-	break;
-	case 4:
-	currentstage=room_mysticmanor_1
-	lvlname="Mystic Manor Stage 1"
-	gameprogress=25
-	break;
-	case 5:
-	currentstage=room_mysticmanor_2
-	lvlname="Mystic Manor Stage 2"
-	gameprogress=33
-	break;
-	default:
-	currentstage=room_jasperror
-	lvlname="???"
-	gameprogress=404
 	break;
 }
 if (selected)

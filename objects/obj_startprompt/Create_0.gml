@@ -15,3 +15,4 @@ else
 {
 	sprite_index=spr_pressstart
 }
+image_speed=0

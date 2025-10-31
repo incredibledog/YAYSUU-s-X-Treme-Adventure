@@ -12,11 +12,11 @@ if (!finished)
     {
         progress++
         if (string_char_at(text, progress) == "." || string_char_at(text, progress) == "?" || string_char_at(text, progress) == "!" || string_char_at(text, progress) == ":") && string_char_at(text,progress+1) == " "
-            progressdelay = 15;
+            progressdelay = 30;
         else if (string_char_at(text, progress) == ",") && string_char_at(text, progress+1) == " "
-            progressdelay = 10;
+            progressdelay = 20;
         else
-            progressdelay = 1;
+            progressdelay = 2;
         
         if (progress >= string_length(text))
         {

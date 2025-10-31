@@ -32,7 +32,7 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 			{
 				rundamagespeed = 12
 				smashbump = 6
-				airdashboost = 20
+				airdashboost = 18
 			}
 			else if (char == "T")
 			{

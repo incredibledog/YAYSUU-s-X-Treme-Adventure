@@ -39,7 +39,6 @@ if !global.inboss
 	if display>=4
 	{
 		draw_sprite(spr_ranktext,0,544,256)
-		draw_sprite(spr_rank,rank,544,288)
 	}
 }
 if display>=5

@@ -20,15 +20,6 @@ if touchingplayer(x, y) && !touched
 	else
 		audio_play_sound(snd_flagspin,1,false)
 	global.score += global.scoreadd + obj_hud.timebonus + (global.coins * 10)
-	if (!cheatsing())
-	{
-		ini_open("savedata.ini")
-		if global.score > ini_read_real("records", string(room) + "_score", 0) && !global.inboss
-			ini_write_real("records", string(room) + "_score", global.score)
-		if obj_hud.timer < ini_read_real("records", string(room) + "_time", 359999) && !global.inboss
-			ini_write_real("records", string(room) + "_time", obj_hud.timer)
-		ini_close()
-	}
 }
 if endtimer>0 && touched
 	endtimer--
@@ -36,40 +27,4 @@ else if endtimer==0 && touched && !winning
 {
 	winning=true
 	audio_stop_all()
-	if global.char="Y"
-	{
-		if room=room_glowstickcity
-		{
-			audio_play_sound(mus_glowstickcity_win,1,false)
-		}
-		else {
-			audio_play_sound(mus_yaysuuwin,1,false)
-		}
-		audio_group_stop_all(voicelines)
-		if global.inboss
-		{
-			audio_play_sound(snd_yaysuuwinboss,1,false)
-		}
-		else {
-			audio_play_sound(snd_yaysuuwinstage,1,false)
-		}
-	}
-	else if global.char="T"
-	{
-		if room=room_glowstickcity
-		{
-			audio_play_sound(mus_glowstickcity_win,1,false)
-		}
-		else {
-			audio_play_sound(mus_teddywin,1,false)
-		}
-		audio_group_stop_all(voicelines)
-		if global.inboss
-		{
-			audio_play_sound(snd_teddywinboss,1,false)
-		}
-		else {
-			audio_play_sound(snd_teddywinstage,1,false)
-		}
-	}
 }

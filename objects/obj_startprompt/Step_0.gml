@@ -30,6 +30,6 @@ else if st==0
 		delay=60
 		audio_stop_sound(mus_title)
 		audio_play_sound(snd_confirm,1,false)
-		image_speed=2
+		image_speed=1
 	}
 }

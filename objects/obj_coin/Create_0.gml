@@ -8,4 +8,4 @@ else
 	sprite_index=spr_yaysuucoin
 	
 if (room != room_chillfields_1 && room != room_tutorial)
-	instance_destroy(this, false)
+	instance_destroy(self, false)

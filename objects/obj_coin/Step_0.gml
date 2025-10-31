@@ -3,5 +3,5 @@
 if touchingplayer(x, y)
 {
 	instance_destroy()
-	scr_collectcoins(1)
+	scr_collectcoins(0)
 }
