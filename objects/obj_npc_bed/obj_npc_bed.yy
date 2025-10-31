@@ -1,10 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_npc_bed",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_npc_bed",
   "overriddenProperties":[],
@@ -34,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bed",
-    "path":"sprites/spr_bed/spr_bed.yy",
+    "name":"spr_bed2",
+    "path":"sprites/spr_bed2/spr_bed2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

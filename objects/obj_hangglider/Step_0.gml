@@ -24,8 +24,7 @@ if touchingplayer(x, y)
 		whichplayer.showarrow = true
 		if (whichplayer.key_upp) 
 		{
-			whichplayer.newstate = playerstates.hangglide
-			whichplayer.hangglidedir = whichplayer.facingdirection
+			whichplayer.x += 275
 		}
 	}
 }

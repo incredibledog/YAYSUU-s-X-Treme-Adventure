@@ -1,1 +1,0 @@
-sprite_index=spr_secrettile_manor

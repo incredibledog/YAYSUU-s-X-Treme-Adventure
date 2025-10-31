@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":51.226124,
+  "duration":76.826126,
   "name":"mus_zzz",
   "parent":{
     "name":"Sounds",

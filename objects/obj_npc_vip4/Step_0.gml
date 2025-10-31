@@ -11,28 +11,13 @@ if talking && !talked
 			case 1:
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
-				text="(Knock knock...)"
+				text=""
 				color="white"
 				dialoguesound=snd_knockknock
 				playaudiosingle=true
 			}
 			break;
 			case 2:
-			with instance_create_depth(0,0,depth,obj_dialoguebox)
-			{
-				text="Sometimes I paint myself orange, and roll outside in the dirt, pretending I'm a carrot. It makes me feel safe."
-				color="orange"
-				name="???"
-			}
-			break;
-			case 3:
-			with instance_create_depth(0,0,depth,obj_dialoguebox)
-			{
-				text="(...???)"
-				color="white"
-			}
-			break;
-			case 4:
 			talking=false
 			talked=true
 			obj_player.newstate=playerstates.normal

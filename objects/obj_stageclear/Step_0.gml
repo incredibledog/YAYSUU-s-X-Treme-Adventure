@@ -32,7 +32,7 @@ else if display < 3 // shows the time and coin bonuses
 }
 else if display = 3
 {
-	if yearnedscore=global.score // shows your RANK!
+	if yearnedscore=global.score || global.score < 0 // shows your RANK!
 	{
 		display++
 		audio_play_sound(bangsound,1,false)
