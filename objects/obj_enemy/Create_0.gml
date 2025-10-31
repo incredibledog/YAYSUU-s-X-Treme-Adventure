@@ -6,3 +6,4 @@ candamage = true
 hitboxcolor = c_red
 deathobject = obj_explode
 dashbouncy = false
+instance_destroy(self, false)

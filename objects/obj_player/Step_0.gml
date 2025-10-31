@@ -307,11 +307,6 @@ if (ouchies)
 				global.hp = 0
 			else
 				global.p2hp = 0
-		else if !fratricide
-			if !isotherplayer
-				global.hp--
-			else
-				global.p2hp--
 		if (global.hp > 0 && !isotherplayer) || (global.p2hp > 0 && isotherplayer)
 		{
 		    newstate = playerstates.hurt
@@ -412,18 +407,8 @@ if touchingplayer(x,y) && !vulnerable
 //the death fade
 if (state == playerstates.dead) && !isotherplayer
 {
-	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading && !instance_exists(obj_stageclear)) // anti-dying when you beat the stage check
-	{
-	    if (global.lives > 0)
-			loadroom(room, loadtype.respawn)
-		else
-		    if !instance_exists(obj_gameover)
-			{
-				global.jumpscare=false
-				instance_create_depth(0,0,depth,obj_gameover)
-			}
-	}
 }
+
 if (state == playerstates.dead) && isotherplayer
 {
 	if (!audio_is_playing(mus_dead) && !audio_is_playing(snd_jumpscare) && !obj_fadeblack.fading && !instance_exists(obj_stageclear)) // anti-dying when you beat the stage check

@@ -4,5 +4,6 @@ function preloadactualroom(){
 	global.inhub = (global.nextroom == room_househub || global.nextroom == room_househub_extra || global.nextroom == room_options_test)
 	global.jumpscare = false
 	global.prevroom = room
+	global.multiplayer = false
 	instance_activate_all()
 }

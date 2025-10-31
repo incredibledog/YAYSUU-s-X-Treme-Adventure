@@ -30,7 +30,7 @@ switch chos
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false)
-		loadroom(room_soundtest,loadtype.menu)
+		loadroom(room_soundtest,loadtype.jumbojosh)
 	}
 	break;
 	case 3:
@@ -38,7 +38,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,obj_cheats)
+		instance_create_depth(x,y,depth,-obj_cheats)
 	}
 	break;
 	case 4:
@@ -54,7 +54,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,obj_achievements)
+		instance_create_depth(x,y,depth,-obj_achievements)
 	}
 	break;
 	case 6:
@@ -62,7 +62,7 @@ switch chos
 	{
 		audio_play_sound(snd_confirm,1,false)
 		instance_deactivate_object(obj_extras)
-		instance_create_depth(x,y,depth,obj_gallery)
+		instance_create_depth(x,y,depth,-obj_gallery)
 	}
 	else if global.key_menuaccept && global.inputtype=3
 	{
