@@ -2,10 +2,11 @@
 // You can write your code in this editor
 talking=false
 bossname="ELECTRO-BOT"
+bossname=" :  Y  -FW "
 stringchr=0
 if global.trial || global.levelloadtype=loadtype.respawn
 {
-	global.cutscenestate=8 // CUTSCENES, ARE FOR STORY MODE!
+	global.cutscenestate=1 // CUTSCENES, ARE FOR STORY MODE!
 	alarm_set(0,15)
 }
 else {

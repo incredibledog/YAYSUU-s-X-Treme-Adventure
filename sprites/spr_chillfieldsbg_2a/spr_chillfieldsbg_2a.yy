@@ -5,21 +5,21 @@
   "bbox_bottom":959,
   "bbox_left":0,
   "bbox_right":639,
-  "bbox_top":5,
+  "bbox_top":27,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a57c82bf-4a38-46d5-b9f3-85b2e52a0bdf","name":"a57c82bf-4a38-46d5-b9f3-85b2e52a0bdf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2d23c9f1-7209-48a0-95e2-0bcf534519b3","name":"2d23c9f1-7209-48a0-95e2-0bcf534519b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":960,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"e0f02703-9c47-4248-84b5-1770e380c630","blendMode":0,"displayName":"default","isLocked":false,"name":"e0f02703-9c47-4248-84b5-1770e380c630","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"33f38cb9-3e19-457c-9fa4-5de05fc0dc11","blendMode":0,"displayName":"default","isLocked":false,"name":"33f38cb9-3e19-457c-9fa4-5de05fc0dc11","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_chillfieldsbg_2a",
   "nineSlice":null,
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a57c82bf-4a38-46d5-b9f3-85b2e52a0bdf","path":"sprites/spr_chillfieldsbg_2a/spr_chillfieldsbg_2a.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a0814b3e-097f-4b0e-9cf5-12312699e842","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2d23c9f1-7209-48a0-95e2-0bcf534519b3","path":"sprites/spr_chillfieldsbg_2a/spr_chillfieldsbg_2a.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"de90b5f6-d0df-4449-9f22-b712f4d4b4a8","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
