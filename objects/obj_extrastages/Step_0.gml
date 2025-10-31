@@ -39,8 +39,8 @@ if (changedlevel)
 			bosslvl=false
 			break;
 		case 2:
-			currentlevel=room_chilifields_a
-			endlevel=room_chilifields_a
+			currentlevel=room_charredforest
+			endlevel=room_charredforest
 			lvlname="Chili Fields"
 			sprname=spr_chillfieldsbossscroll
 			bosslvl=false

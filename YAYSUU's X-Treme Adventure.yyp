@@ -236,6 +236,7 @@
     {"id":{"name":"obj_rubble","path":"objects/obj_rubble/obj_rubble.yy",},},
     {"id":{"name":"obj_rubbledebris","path":"objects/obj_rubbledebris/obj_rubbledebris.yy",},},
     {"id":{"name":"obj_sagelogo","path":"objects/obj_sagelogo/obj_sagelogo.yy",},},
+    {"id":{"name":"obj_scarywin","path":"objects/obj_scarywin/obj_scarywin.yy",},},
     {"id":{"name":"obj_seecret","path":"objects/obj_seecret/obj_seecret.yy",},},
     {"id":{"name":"obj_semislope","path":"objects/obj_semislope/obj_semislope.yy",},},
     {"id":{"name":"obj_semisolid_a","path":"objects/obj_semisolid_a/obj_semisolid_a.yy",},},

@@ -3,59 +3,11 @@
 function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = -1,subimg = 0){
 	var colorhex = #FF00FF
 	switch color {
-		case "white":
+		default:
 		colorhex = #FFF1E8 
-		break;
-		case "lgray":
-		colorhex = #C2C3C7 
-		break;
-		case "dgray":
-		colorhex = #5F574F 
-		break;
-		case "black":
-		colorhex = #000000 
-		break;
-		case "dblue":
-		colorhex = #1D2B53 
-		break;
-		case "dred":
-		colorhex = #7E2553 
-		break;
-		case "dgreen":
-		colorhex = #008751 
-		break;
-		case "brown":
-		colorhex = #AB5236 
-		break;
-		case "red":
-		colorhex = #FF004D 
-		break;
-		case "orange":
-		colorhex = #FFA300 
-		break;
-		case "yellow":
-		colorhex = #FFEC27 
-		break;
-		case "green":
-		colorhex = #00E436 
-		break;
-		case "blue":
-		colorhex = #29ADFF 
-		break;
-		case "purple":
-		colorhex = #83769C 
-		break;
-		case "pink":
-		colorhex = #FF77A8 
-		break;
-		case "peach":
-		colorhex = #FFCCAA 
 		break;
 		case "none":
 		colorhex = #FFFFFF 
-		break;
-		default:
-		show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to draw_text_yxa for more details.",true)
 		break;
 	}
 	draw_set_font(global.subtitlefont) // NOT SO FAST!
@@ -104,59 +56,11 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 				codei--
 				switch string_char_at(textstring, i)
 				{
-					case "l":
+					default:
 					colorhex = #FFF1E8 
-					break;
-					case "e":
-					colorhex = #C2C3C7 
-					break;
-					case "c":
-					colorhex = #5F574F 
-					break;
-					case "a":
-					colorhex = #000000 
-					break;
-					case "d":
-					colorhex = #1D2B53 
-					break;
-					case "m":
-					colorhex = #7E2553 
-					break;
-					case "w":
-					colorhex = #008751 
-					break;
-					case "s":
-					colorhex = #AB5236 
-					break;
-					case "r":
-					colorhex = #FF004D 
-					break;
-					case "o":
-					colorhex = #FFA300 
-					break;
-					case "y":
-					colorhex = #FFEC27 
-					break;
-					case "g":
-					colorhex = #00E436 
-					break;
-					case "b":
-					colorhex = #29ADFF 
-					break;
-					case "f":
-					colorhex = #83769C 
-					break;
-					case "p":
-					colorhex = #FF77A8 
-					break;
-					case "t":
-					colorhex = #FFCCAA 
 					break;
 					case "n":
 					colorhex = #FFFFFF 
-					break;
-					default:
-					show_error("Hey! Dumbass! That's not a PICO 8 Color!!! Refer to draw_text_yxa for more details.",true)
 					break;
 				}
 				i++
@@ -167,10 +71,8 @@ function draw_text_yxa(x,y,textstring,color,dropshadow,maxlength = 640,sprite = 
 			i -= 1;
 			continue;
 		}
-		xshakeoffset = shake?choose(-1,0,1):0
-		yshakeoffset = shake?choose(-1,0,1):0
-		if dropshadow
-			draw_text_ext_color(x+(16*(xi))+(xshakeoffset)+1-alignleft,y+(yi)+(yshakeoffset)+1,string_char_at(textstring,i),16,maxlength,c_black,c_black,c_black,c_black,alpha/2)
+		xshakeoffset = 0
+		yshakeoffset = 0
 		draw_text_ext_color(x+(16*(xi))+(xshakeoffset)-alignleft,y+(yi)+(yshakeoffset),string_char_at(textstring,i),16,maxlength,colorhex,colorhex,colorhex,colorhex,alpha)
 	}
 }

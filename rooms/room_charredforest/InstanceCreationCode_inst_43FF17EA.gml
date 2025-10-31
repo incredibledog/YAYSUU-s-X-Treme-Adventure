@@ -1,1 +1,1 @@
-text = "show collisions"
+text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?:-_()+%'abcdefghijklmnopqrstuvwxyz✓✗"

@@ -24,7 +24,7 @@ if touchingplayer(x, y)
 		whichplayer.showarrow = true
 		if (whichplayer.key_upp) 
 		{
-			whichplayer.x += 275
+			whichplayer.x += 398
 		}
 	}
 }

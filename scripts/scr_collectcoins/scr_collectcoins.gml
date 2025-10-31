@@ -4,12 +4,15 @@ function scr_collectcoins(amount){
 	global.coins += amount
 	if (global.coins < 0)
 		global.coins = 0
-	if room == room_glowstickcity
-		audio_play_sound(snd_uncannycoin,1,false)
-	else if (global.char == "C")
-		audio_play_sound(snd_balloon,1,false)
-	else
-		audio_play_sound(snd_coin,1,false)
+	if (amount >= 0)
+	{
+		if room == room_glowstickcity
+			audio_play_sound(snd_uncannycoin,1,false)
+		else if (global.char == "C")
+			audio_play_sound(snd_balloon,1,false)
+		else
+			audio_play_sound(snd_coin,1,false)
+	}
 	if (global.coins >= global.coingoal)
 	{
 		global.coingoal += 100

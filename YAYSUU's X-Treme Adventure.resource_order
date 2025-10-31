@@ -175,6 +175,7 @@
     {"name":"obj_rubble","order":7,"path":"objects/obj_rubble/obj_rubble.yy",},
     {"name":"obj_rubbledebris","order":2,"path":"objects/obj_rubbledebris/obj_rubbledebris.yy",},
     {"name":"obj_sagelogo","order":11,"path":"objects/obj_sagelogo/obj_sagelogo.yy",},
+    {"name":"obj_scarywin","order":16,"path":"objects/obj_scarywin/obj_scarywin.yy",},
     {"name":"obj_seecret","order":5,"path":"objects/obj_seecret/obj_seecret.yy",},
     {"name":"obj_semislope","order":4,"path":"objects/obj_semislope/obj_semislope.yy",},
     {"name":"obj_semisolid_a","order":6,"path":"objects/obj_semisolid_a/obj_semisolid_a.yy",},

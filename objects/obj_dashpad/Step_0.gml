@@ -8,8 +8,8 @@ if touchingplayer(x, y)
 		bounceboth = 2
 	repeat(bounceboth)
 	{
-		whichplayer.hsp = 25 * image_xscale * launchdirection
-		if (abs(whichplayer.hsp) < 25)
+		whichplayer.hsp = 13 * image_xscale * launchdirection
+		if (abs(whichplayer.hsp) < 13)
 			audio_play_sound(snd_dashpad,1,false)
 			if (global.secondplayertouch != noone)
 				whichplayer = global.secondplayertouch
