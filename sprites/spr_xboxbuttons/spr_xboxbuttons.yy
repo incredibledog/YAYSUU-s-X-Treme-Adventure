@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_xboxbuttons",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f9f2f3f5-db71-4d83-884a-50a40fed482c","name":"f9f2f3f5-db71-4d83-884a-50a40fed482c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"789b5455-4990-479e-8f97-59e597c8390c","name":"789b5455-4990-479e-8f97-59e597c8390c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"8d31a14f-e58e-4865-85a1-5ea80334a0da","name":"8d31a14f-e58e-4865-85a1-5ea80334a0da","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c24232e6-3ceb-44d4-bf14-afc4d39db62c","name":"c24232e6-3ceb-44d4-bf14-afc4d39db62c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"701eef95-9c4f-4410-90bb-64abe72f9508","name":"701eef95-9c4f-4410-90bb-64abe72f9508","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7eb93a96-a27e-4f96-bf58-8a4b4766a06a","name":"7eb93a96-a27e-4f96-bf58-8a4b4766a06a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"af7d90e3-4ca0-4237-80d7-ef982ceb62f8","name":"af7d90e3-4ca0-4237-80d7-ef982ceb62f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"2e075841-8533-451c-a8de-54b84616521b","name":"2e075841-8533-451c-a8de-54b84616521b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f9f2f3f5-db71-4d83-884a-50a40fed482c","name":"f9f2f3f5-db71-4d83-884a-50a40fed482c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"789b5455-4990-479e-8f97-59e597c8390c","name":"789b5455-4990-479e-8f97-59e597c8390c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8d31a14f-e58e-4865-85a1-5ea80334a0da","name":"8d31a14f-e58e-4865-85a1-5ea80334a0da","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c24232e6-3ceb-44d4-bf14-afc4d39db62c","name":"c24232e6-3ceb-44d4-bf14-afc4d39db62c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"701eef95-9c4f-4410-90bb-64abe72f9508","name":"701eef95-9c4f-4410-90bb-64abe72f9508","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7eb93a96-a27e-4f96-bf58-8a4b4766a06a","name":"7eb93a96-a27e-4f96-bf58-8a4b4766a06a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"af7d90e3-4ca0-4237-80d7-ef982ceb62f8","name":"af7d90e3-4ca0-4237-80d7-ef982ceb62f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2e075841-8533-451c-a8de-54b84616521b","name":"2e075841-8533-451c-a8de-54b84616521b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -77,30 +77,14 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f9f2f3f5-db71-4d83-884a-50a40fed482c","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"228351b8-de81-4f47-9d01-76e3fa513361","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"789b5455-4990-479e-8f97-59e597c8390c","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c021ca85-3dd3-4b32-97c5-2b415a7899cb","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8d31a14f-e58e-4865-85a1-5ea80334a0da","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"54ad5315-160e-4f8d-ab55-a259e6c3e64f","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c24232e6-3ceb-44d4-bf14-afc4d39db62c","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d6b1b9dd-16e3-4a37-b33a-33dc11ee3234","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"701eef95-9c4f-4410-90bb-64abe72f9508","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3b0ead4a-8850-44c6-a61d-4a76b08b4fed","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7eb93a96-a27e-4f96-bf58-8a4b4766a06a","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"993992da-f62b-42c0-86e9-ea645e60a3af","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"af7d90e3-4ca0-4237-80d7-ef982ceb62f8","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a3eeb95e-4d3e-40cc-9718-493e2c1d02ca","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2e075841-8533-451c-a8de-54b84616521b","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8e532a83-2d22-4663-b786-68f3ddd868c9","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"f9f2f3f5-db71-4d83-884a-50a40fed482c","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"228351b8-de81-4f47-9d01-76e3fa513361","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"789b5455-4990-479e-8f97-59e597c8390c","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"c021ca85-3dd3-4b32-97c5-2b415a7899cb","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"8d31a14f-e58e-4865-85a1-5ea80334a0da","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"54ad5315-160e-4f8d-ab55-a259e6c3e64f","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"c24232e6-3ceb-44d4-bf14-afc4d39db62c","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"d6b1b9dd-16e3-4a37-b33a-33dc11ee3234","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"701eef95-9c4f-4410-90bb-64abe72f9508","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"3b0ead4a-8850-44c6-a61d-4a76b08b4fed","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"7eb93a96-a27e-4f96-bf58-8a4b4766a06a","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"993992da-f62b-42c0-86e9-ea645e60a3af","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"af7d90e3-4ca0-4237-80d7-ef982ceb62f8","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"a3eeb95e-4d3e-40cc-9718-493e2c1d02ca","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"2e075841-8533-451c-a8de-54b84616521b","path":"sprites/spr_xboxbuttons/spr_xboxbuttons.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"8e532a83-2d22-4663-b786-68f3ddd868c9","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

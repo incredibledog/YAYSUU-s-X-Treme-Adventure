@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_yaysuucoin",
   "bboxMode":1,
   "bbox_bottom":31,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6ee94cc1-6986-4c72-ba73-0313c5e31b75","name":"6ee94cc1-6986-4c72-ba73-0313c5e31b75","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"a678f9b9-335a-4a5c-95cb-5aac4a488d13","name":"a678f9b9-335a-4a5c-95cb-5aac4a488d13","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1cc6d6ce-fd36-4459-9dd3-aff00f79e95f","name":"1cc6d6ce-fd36-4459-9dd3-aff00f79e95f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"430f4c24-16d8-4b78-a820-32dbfbe9d9c0","name":"430f4c24-16d8-4b78-a820-32dbfbe9d9c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e7788752-6398-4f37-8dea-b6d0fe8fbde8","name":"e7788752-6398-4f37-8dea-b6d0fe8fbde8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"427cb22a-718a-4722-96dc-d06998e75107","name":"427cb22a-718a-4722-96dc-d06998e75107","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"5a0cd2d7-301d-46b5-a10a-f7bb8331ccc1","name":"5a0cd2d7-301d-46b5-a10a-f7bb8331ccc1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f50728d4-5427-40f7-8075-9408386e582f","name":"f50728d4-5427-40f7-8075-9408386e582f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6ee94cc1-6986-4c72-ba73-0313c5e31b75","name":"6ee94cc1-6986-4c72-ba73-0313c5e31b75","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a678f9b9-335a-4a5c-95cb-5aac4a488d13","name":"a678f9b9-335a-4a5c-95cb-5aac4a488d13","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1cc6d6ce-fd36-4459-9dd3-aff00f79e95f","name":"1cc6d6ce-fd36-4459-9dd3-aff00f79e95f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"430f4c24-16d8-4b78-a820-32dbfbe9d9c0","name":"430f4c24-16d8-4b78-a820-32dbfbe9d9c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e7788752-6398-4f37-8dea-b6d0fe8fbde8","name":"e7788752-6398-4f37-8dea-b6d0fe8fbde8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"427cb22a-718a-4722-96dc-d06998e75107","name":"427cb22a-718a-4722-96dc-d06998e75107","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5a0cd2d7-301d-46b5-a10a-f7bb8331ccc1","name":"5a0cd2d7-301d-46b5-a10a-f7bb8331ccc1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f50728d4-5427-40f7-8075-9408386e582f","name":"f50728d4-5427-40f7-8075-9408386e582f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -77,30 +77,14 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6ee94cc1-6986-4c72-ba73-0313c5e31b75","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"16a8afc0-9e87-44d3-a17f-a8f563647cbb","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a678f9b9-335a-4a5c-95cb-5aac4a488d13","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e3fc631d-f7e9-402b-b862-8d4534ae4800","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1cc6d6ce-fd36-4459-9dd3-aff00f79e95f","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bb4d7de3-3f5d-4b0b-ae03-7c52c2ab0e33","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"430f4c24-16d8-4b78-a820-32dbfbe9d9c0","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c4f004af-433a-492c-9604-3cfc8e98a722","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e7788752-6398-4f37-8dea-b6d0fe8fbde8","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"1551f312-d6dc-4b21-a361-8f29ce9e7d9c","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"427cb22a-718a-4722-96dc-d06998e75107","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2aec65f9-47ba-4f9d-9bc3-75493f59f3ba","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5a0cd2d7-301d-46b5-a10a-f7bb8331ccc1","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"66a1da46-f72d-4807-9e5c-fdd62400e4a4","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f50728d4-5427-40f7-8075-9408386e582f","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3a22f5ee-48d2-4db6-85b1-0d57e39a2e49","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"6ee94cc1-6986-4c72-ba73-0313c5e31b75","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"16a8afc0-9e87-44d3-a17f-a8f563647cbb","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"a678f9b9-335a-4a5c-95cb-5aac4a488d13","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"e3fc631d-f7e9-402b-b862-8d4534ae4800","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"1cc6d6ce-fd36-4459-9dd3-aff00f79e95f","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"bb4d7de3-3f5d-4b0b-ae03-7c52c2ab0e33","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"430f4c24-16d8-4b78-a820-32dbfbe9d9c0","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"c4f004af-433a-492c-9604-3cfc8e98a722","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"e7788752-6398-4f37-8dea-b6d0fe8fbde8","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"1551f312-d6dc-4b21-a361-8f29ce9e7d9c","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"427cb22a-718a-4722-96dc-d06998e75107","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"2aec65f9-47ba-4f9d-9bc3-75493f59f3ba","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"5a0cd2d7-301d-46b5-a10a-f7bb8331ccc1","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"66a1da46-f72d-4807-9e5c-fdd62400e4a4","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"f50728d4-5427-40f7-8075-9408386e582f","path":"sprites/spr_yaysuucoin/spr_yaysuucoin.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"3a22f5ee-48d2-4db6-85b1-0d57e39a2e49","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
