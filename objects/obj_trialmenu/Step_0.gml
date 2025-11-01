@@ -1,10 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-if xoffset=632
-	xoffset=0
-else
-	xoffset+=8
-
 var prevselect = select
 if global.key_leftp
 {

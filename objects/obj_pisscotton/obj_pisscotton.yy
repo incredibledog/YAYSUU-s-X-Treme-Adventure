@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_scarywin",
+  "%Name":"obj_pisscotton",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_scarywin",
+  "name":"obj_pisscotton",
   "overriddenProperties":[],
   "parent":{
-    "name":"lvlassets",
-    "path":"folders/Objects/levelobjs/lvlassets.yy",
+    "name":"uncommom",
+    "path":"folders/Objects/levelobjs/lvlassets/uncommom.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,9 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_goalflag_a",
-    "path":"sprites/spr_goalflag_a/spr_goalflag_a.yy",
+    "name":"spr_pisscotton",
+    "path":"sprites/spr_pisscotton/spr_pisscotton.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
