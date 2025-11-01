@@ -15,7 +15,6 @@ if global.inputtype=3
 }
 draw_text(32,256,"GALLERY")
 draw_set_alpha(1)
-draw_text(32,288,"TEXT TEST")
 draw_text(32,384,"QUIT")
 switch chos
 {
@@ -38,9 +37,6 @@ switch chos
 	draw_sprite(spr_menucursor,0,0,256)
 	break;
 	case 7:
-	draw_sprite(spr_menucursor,0,0,288)
-	break;
-	case 8:
 	draw_sprite(spr_menucursor,0,0,384)
 	break;
 }

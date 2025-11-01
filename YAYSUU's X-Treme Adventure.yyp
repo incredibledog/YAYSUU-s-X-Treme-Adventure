@@ -703,6 +703,7 @@
     {"id":{"name":"spr_notification","path":"sprites/spr_notification/spr_notification.yy",},},
     {"id":{"name":"spr_optionsbg","path":"sprites/spr_optionsbg/spr_optionsbg.yy",},},
     {"id":{"name":"spr_optionsbutton","path":"sprites/spr_optionsbutton/spr_optionsbutton.yy",},},
+    {"id":{"name":"spr_ostrecord","path":"sprites/spr_ostrecord/spr_ostrecord.yy",},},
     {"id":{"name":"spr_othercollision","path":"sprites/spr_othercollision/spr_othercollision.yy",},},
     {"id":{"name":"spr_pause","path":"sprites/spr_pause/spr_pause.yy",},},
     {"id":{"name":"spr_paused","path":"sprites/spr_paused/spr_paused.yy",},},

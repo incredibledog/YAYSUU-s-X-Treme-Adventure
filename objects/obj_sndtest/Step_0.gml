@@ -10,6 +10,11 @@ if global.key_rightp && !audio_is_playing(currentsound)
 	select+=1
 }
 select=clamp(select,0,16)
+if audio_is_playing(currentsound)
+	angle--
+else
+	angle=0
+angle=angle % 360
 if global.key_jumpp
 {
 	audio_stop_all()

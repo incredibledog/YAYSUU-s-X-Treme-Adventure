@@ -621,6 +621,7 @@
     {"name":"spr_notification","order":54,"path":"sprites/spr_notification/spr_notification.yy",},
     {"name":"spr_optionsbg","order":15,"path":"sprites/spr_optionsbg/spr_optionsbg.yy",},
     {"name":"spr_optionsbutton","order":19,"path":"sprites/spr_optionsbutton/spr_optionsbutton.yy",},
+    {"name":"spr_ostrecord","order":56,"path":"sprites/spr_ostrecord/spr_ostrecord.yy",},
     {"name":"spr_othercollision","order":20,"path":"sprites/spr_othercollision/spr_othercollision.yy",},
     {"name":"spr_pause","order":7,"path":"sprites/spr_pause/spr_pause.yy",},
     {"name":"spr_paused","order":3,"path":"sprites/spr_paused/spr_paused.yy",},
