@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":21.323175,
+  "duration":21.333334,
   "exportDir":"",
   "name":"mus_glowstickcity_results",
   "parent":{

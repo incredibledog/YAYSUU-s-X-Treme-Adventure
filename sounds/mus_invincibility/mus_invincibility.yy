@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":17.39755,
+  "duration":17.397562,
   "exportDir":"",
   "name":"mus_invincibility",
   "parent":{
