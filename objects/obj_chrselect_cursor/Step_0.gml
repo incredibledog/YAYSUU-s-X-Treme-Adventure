@@ -90,31 +90,15 @@ if (selected)
 }
 if global.key_runp && !global.trial
 {
-	ini_open("savedata.ini")
-	if charlife=0
+	with instance_create_depth(0,0,depth-1,obj_notification)
 	{
-		ini_section_delete("fileY")
-		savelives[0]=ini_read_real("fileY","lives",3)
-		savescore[0]=ini_read_real("fileY","score",0)
-		savestage[0]=ini_read_real("fileY","stage",0)
-		saveday[0]=ini_read_real("fileY","day",0)
-		savemonth[0]=ini_read_real("fileY","month",0)
-		saveyear[0]=ini_read_real("fileY","year",0)
+		text="Are you sure you want to delete save data for "+other.charname+"?"
+		color="red"
+		choicer=true
+		notifid=1
 	}
-	else if charlife=1
-	{
-		ini_section_delete("fileT")
-		savelives[1]=ini_read_real("fileT","lives",3)
-		savescore[1]=ini_read_real("fileT","score",0)
-		savestage[1]=ini_read_real("fileT","stage",0)
-		saveday[1]=ini_read_real("fileT","day",0)
-		savemonth[1]=ini_read_real("fileT","month",0)
-		saveyear[1]=ini_read_real("fileT","year",0)
-	}
-	audio_play_sound(snd_kablooey,1,false)
-	ini_close()
 }
-else
+else if !instance_exists(obj_notification)
 {
 	if ((global.key_menuaccept) || (global.p2_key_menuaccept && global.multiplayer)) && !selected
 	{

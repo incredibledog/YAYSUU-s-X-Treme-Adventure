@@ -1,26 +1,31 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.key_rightp
+if !instance_exists(obj_notification)
 {
-	audio_play_sound(snd_move,1,false)
-	chos++
-}
-if global.key_leftp
-{
-	audio_play_sound(snd_move,1,false)
-	chos--
-}
-chos=clamp(chos,1,9)
-if global.key_menuquit
-{
-	audio_play_sound(snd_nahnvm,1,false)
-	instance_destroy()
+	if global.key_rightp
+	{
+		audio_play_sound(snd_move,1,false)
+		chos++
+	}
+	if global.key_leftp
+	{
+		audio_play_sound(snd_move,1,false)
+		chos--
+	}
+	chos=clamp(chos,1,9)
+	if global.key_menuquit
+	{
+		audio_play_sound(snd_nahnvm,1,false)
+		instance_destroy()
+	}
 }
 if global.key_runp
 {
-	audio_play_sound(snd_kablooey,1,false)
-	ini_open("savedata.ini")
-	ini_section_delete("achievements")
-	ini_close()
-	getachievementdescriptions()
+	with instance_create_depth(0,0,depth-1,obj_notification)
+	{
+		text="Are you sure you want to wipe ALL achievement data?"
+		color="red"
+		choicer=true
+		notifid=2
+	}
 }

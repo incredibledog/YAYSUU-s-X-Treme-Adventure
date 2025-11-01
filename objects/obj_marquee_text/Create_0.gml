@@ -4,3 +4,4 @@ xoffset=0
 str="TEST STRING!! "
 strlen=string_length(str)
 draw_set_font(global.subtitlefont)
+draw_set_halign(fa_left)
