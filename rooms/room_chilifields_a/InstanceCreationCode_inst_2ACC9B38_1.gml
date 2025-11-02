@@ -1,2 +1,2 @@
-sprite_index = spr_secrettile_chill
-topsprite = spr_secrettile_chillgrass
+sprite_index = spr_secrettile_chili
+topsprite = spr_secrettile_chiligrass

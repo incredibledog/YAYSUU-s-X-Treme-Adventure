@@ -13,10 +13,7 @@
     "name":"monitors",
     "path":"folders/Objects/levelobjs/monitors.yy",
   },
-  "parentObjectId":{
-    "name":"obj_movingobject",
-    "path":"objects/obj_movingobject/obj_movingobject.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
