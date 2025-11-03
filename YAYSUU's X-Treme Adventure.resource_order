@@ -220,6 +220,7 @@
     {"name":"room_charselect","order":2,"path":"rooms/room_charselect/room_charselect.yy",},
     {"name":"room_chilifields_a","order":39,"path":"rooms/room_chilifields_a/room_chilifields_a.yy",},
     {"name":"room_chilifields_b","order":40,"path":"rooms/room_chilifields_b/room_chilifields_b.yy",},
+    {"name":"room_chilifields_c","order":41,"path":"rooms/room_chilifields_c/room_chilifields_c.yy",},
     {"name":"room_chillfields_2","order":7,"path":"rooms/room_chillfields_2/room_chillfields_2.yy",},
     {"name":"room_chillfields_2b","order":13,"path":"rooms/room_chillfields_2b/room_chillfields_2b.yy",},
     {"name":"room_chillfields_2c","order":17,"path":"rooms/room_chillfields_2c/room_chillfields_2c.yy",},

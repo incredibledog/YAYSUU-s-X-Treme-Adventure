@@ -1,0 +1,2 @@
+sprite_index=spr_secrettile_chili
+topsprite=spr_secrettile_chiligrass

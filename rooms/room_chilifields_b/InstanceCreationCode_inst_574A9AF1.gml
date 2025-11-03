@@ -1,2 +1,0 @@
-sprite_index = spr_secrettile_chilldark
-topsprite = spr_secrettile_darkgrass

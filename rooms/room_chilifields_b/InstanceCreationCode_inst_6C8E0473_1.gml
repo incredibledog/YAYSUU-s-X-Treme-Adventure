@@ -1,1 +1,0 @@
-sound=snd_chillfields1vo2_y

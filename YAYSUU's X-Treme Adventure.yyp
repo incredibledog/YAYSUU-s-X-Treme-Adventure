@@ -282,6 +282,7 @@
     {"id":{"name":"room_charselect","path":"rooms/room_charselect/room_charselect.yy",},},
     {"id":{"name":"room_chilifields_a","path":"rooms/room_chilifields_a/room_chilifields_a.yy",},},
     {"id":{"name":"room_chilifields_b","path":"rooms/room_chilifields_b/room_chilifields_b.yy",},},
+    {"id":{"name":"room_chilifields_c","path":"rooms/room_chilifields_c/room_chilifields_c.yy",},},
     {"id":{"name":"room_chillfields_1","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},},
     {"id":{"name":"room_chillfields_2","path":"rooms/room_chillfields_2/room_chillfields_2.yy",},},
     {"id":{"name":"room_chillfields_2b","path":"rooms/room_chillfields_2b/room_chillfields_2b.yy",},},
@@ -968,6 +969,7 @@
     {"roomId":{"name":"room_options_test","path":"rooms/room_options_test/room_options_test.yy",},},
     {"roomId":{"name":"room_chilifields_a","path":"rooms/room_chilifields_a/room_chilifields_a.yy",},},
     {"roomId":{"name":"room_chilifields_b","path":"rooms/room_chilifields_b/room_chilifields_b.yy",},},
+    {"roomId":{"name":"room_chilifields_c","path":"rooms/room_chilifields_c/room_chilifields_c.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

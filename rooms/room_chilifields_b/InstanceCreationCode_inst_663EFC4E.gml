@@ -1,1 +1,1 @@
-text="This is section 2. UNFINISHED! I HAVEN'T EVEN STARTED ON IT YET!"
+text="This is section 2. FINISHED! AS IS SECTION 3! Section 4... Well... Let's just say... All hands on deck. it's gonna be rough"

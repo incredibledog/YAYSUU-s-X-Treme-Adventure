@@ -7,7 +7,7 @@ draw_text(32,32,"SOUND TEST")
 draw_set_font(global.subtitlefont)
 if global.inputtype=0
 {
-	draw_text_yxa(x,y,string(obj_sndtest.sndname) + string("\nPress left or right to cycle \n"+keytostring(global.p1_jumpkey)+" to play \n"+keytostring(global.p1_dashkey)+" to stop \n"+keytostring(global.p1_jumpkey)+" to leave"),"white",true,500)
+	draw_text_yxa(x,y,string(obj_sndtest.sndname) + string("\nPress left or right to cycle \n"+keytostring(global.p1_jumpkey)+" to play \n"+keytostring(global.p1_dashkey)+" to stop \n"+keytostring(global.p1_runkey)+" to leave"),"white",true,500)
 }
 if global.inputtype=2
 {
