@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_chillfieldscavebg_2",
+  "%Name":"spr_chilifieldscavebg",
   "bboxMode":0,
   "bbox_bottom":479,
   "bbox_left":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e99380d5-f57e-426d-809a-c5594b1204b9","name":"e99380d5-f57e-426d-809a-c5594b1204b9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"abc8a721-3080-4b3e-8a5e-963b849fc1d3","name":"abc8a721-3080-4b3e-8a5e-963b849fc1d3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":480,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"eba1fec6-ce81-45f5-af1b-ff4d22fcf273","blendMode":0,"displayName":"default","isLocked":false,"name":"eba1fec6-ce81-45f5-af1b-ff4d22fcf273","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2a6f8b75-b60d-4396-a7b1-0ce02b141816","blendMode":0,"displayName":"default","isLocked":false,"name":"2a6f8b75-b60d-4396-a7b1-0ce02b141816","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_chillfieldscavebg_2",
+  "name":"spr_chilifieldscavebg",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_chillfieldscavebg_2",
+    "%Name":"spr_chilifieldscavebg",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_chillfieldscavebg_2",
+    "name":"spr_chilifieldscavebg",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e99380d5-f57e-426d-809a-c5594b1204b9","path":"sprites/spr_chillfieldscavebg_2/spr_chillfieldscavebg_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c233ac18-1527-4ee6-b43c-c72e0970d485","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"abc8a721-3080-4b3e-8a5e-963b849fc1d3","path":"sprites/spr_chilifieldscavebg/spr_chilifieldscavebg.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d0a55c7a-ed1f-4ddf-a492-cf4e92e521a8","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

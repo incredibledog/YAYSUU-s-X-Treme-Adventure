@@ -283,6 +283,7 @@
     {"id":{"name":"room_chilifields_a","path":"rooms/room_chilifields_a/room_chilifields_a.yy",},},
     {"id":{"name":"room_chilifields_b","path":"rooms/room_chilifields_b/room_chilifields_b.yy",},},
     {"id":{"name":"room_chilifields_c","path":"rooms/room_chilifields_c/room_chilifields_c.yy",},},
+    {"id":{"name":"room_chilifields_d","path":"rooms/room_chilifields_d/room_chilifields_d.yy",},},
     {"id":{"name":"room_chillfields_1","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},},
     {"id":{"name":"room_chillfields_2","path":"rooms/room_chillfields_2/room_chillfields_2.yy",},},
     {"id":{"name":"room_chillfields_2b","path":"rooms/room_chillfields_2b/room_chillfields_2b.yy",},},
@@ -526,6 +527,7 @@
     {"id":{"name":"spr_chilifields","path":"sprites/spr_chilifields/spr_chilifields.yy",},},
     {"id":{"name":"spr_chilifieldsbg_3","path":"sprites/spr_chilifieldsbg_3/spr_chilifieldsbg_3.yy",},},
     {"id":{"name":"spr_chilifieldsbg","path":"sprites/spr_chilifieldsbg/spr_chilifieldsbg.yy",},},
+    {"id":{"name":"spr_chilifieldscavebg","path":"sprites/spr_chilifieldscavebg/spr_chilifieldscavebg.yy",},},
     {"id":{"name":"spr_chilifieldsscroll","path":"sprites/spr_chilifieldsscroll/spr_chilifieldsscroll.yy",},},
     {"id":{"name":"spr_chilihills","path":"sprites/spr_chilihills/spr_chilihills.yy",},},
     {"id":{"name":"spr_chillfields_border","path":"sprites/spr_chillfields_border/spr_chillfields_border.yy",},},
@@ -970,6 +972,7 @@
     {"roomId":{"name":"room_chilifields_a","path":"rooms/room_chilifields_a/room_chilifields_a.yy",},},
     {"roomId":{"name":"room_chilifields_b","path":"rooms/room_chilifields_b/room_chilifields_b.yy",},},
     {"roomId":{"name":"room_chilifields_c","path":"rooms/room_chilifields_c/room_chilifields_c.yy",},},
+    {"roomId":{"name":"room_chilifields_d","path":"rooms/room_chilifields_d/room_chilifields_d.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
