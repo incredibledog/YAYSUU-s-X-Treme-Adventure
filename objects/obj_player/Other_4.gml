@@ -53,7 +53,12 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 			if global.levelloadtype == loadtype.newlevel
 			{
 				global.checkpoint = false
-				issecondplayer = isotherplayer
+				if issecondplayer != isotherplayer
+				{
+					issecondplayer = isotherplayer
+					char=isotherplayer ? global.p2char : global.char
+					scr_setupcharacter(char, 0)
+				}
 			}
 		}
 		else if global.levelloadtype == loadtype.respawn

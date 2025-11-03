@@ -71,6 +71,21 @@ if (global.pause)
 				case 2:
 					global.checkpoint=false
 					audio_play_sound(snd_confirm,1,false)
+					if global.multiplayer && global.mainplayer.issecondplayer
+					{
+						if (global.char="T")
+						{
+							global.char = "Y"
+							global.p2char = "T"
+						}
+						else if (global.char="Y")
+						{
+							global.char = "T"
+							global.p2char = "Y"
+						}
+						with (global.mainplayer)
+							scr_setupcharacter(global.char, 0)
+					}
 					if global.trial
 						if isextrastage()
 							loadroom(room_extrastages, loadtype.menu)

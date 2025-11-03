@@ -112,17 +112,15 @@ else if !instance_exists(obj_notification)
 			if (chos == 1)
 			{
 				global.char = "Y"
+				global.p2char = "T"
 				audio_play_sound(snd_yaysuuselect,1,false)
 			}
 			else if (chos == 2)
 			{
 				global.char = "T"
+				global.p2char = "Y"
 				audio_play_sound(snd_teddyselect,1,false)
 			}
-			if (chos2 == 1)
-				global.p2char = "Y"
-			else if (chos2 == 2)
-				global.p2char = "T"
 			with (global.mainplayer)
 				scr_setupcharacter(global.char, 0)
 		}
@@ -153,25 +151,23 @@ else if !instance_exists(obj_notification)
 		}
 		audio_play_sound(snd_nahnvm,1,false)
 	}
-	else if (global.key_rightp) && !selected
+	else if ((global.key_rightp) || (global.p2_key_rightp && global.multiplayer)) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		chos++
+		if chos=1
+			chos++
+		else if chos=2
+			chos--
+		chos2=chos=1 ? 2 : 1
 	}
-	else if (global.key_leftp) && !selected
+	else if ((global.key_leftp) || (global.p2_key_leftp && global.multiplayer)) && !selected
 	{
 		audio_play_sound(snd_move,1,false)
-		chos--
-	}
-	if global.p2_key_rightp && global.multiplayer && !selected
-	{
-		audio_play_sound(snd_move,1,false)
-		chos2++
-	}
-	else if global.p2_key_leftp && global.multiplayer && !selected
-	{
-		audio_play_sound(snd_move,1,false)
-		chos2--
+		if chos=1
+			chos++
+		else if chos=2
+			chos--
+		chos2=chos=1 ? 2 : 1
 	}
 	/*else if global.key_upp
 	{
