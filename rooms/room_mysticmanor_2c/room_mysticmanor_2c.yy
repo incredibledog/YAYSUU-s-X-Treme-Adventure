@@ -315,6 +315,7 @@
     {"name":"inst_757407A1","path":"rooms/room_mysticmanor_2c/room_mysticmanor_2c.yy",},
     {"name":"inst_6046942F","path":"rooms/room_mysticmanor_2c/room_mysticmanor_2c.yy",},
     {"name":"inst_7808C4BC","path":"rooms/room_mysticmanor_2c/room_mysticmanor_2c.yy",},
+    {"name":"inst_3F45D8A5","path":"rooms/room_mysticmanor_2c/room_mysticmanor_2c.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -630,6 +631,7 @@
         {"$GMRInstance":"v4","%Name":"inst_757407A1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_757407A1","objectId":{"name":"obj_ghost1","path":"objects/obj_ghost1/obj_ghost1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":10144.0,"y":224.0,},
         {"$GMRInstance":"v4","%Name":"inst_6046942F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6046942F","objectId":{"name":"obj_spring","path":"objects/obj_spring/obj_spring.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":32.0,"y":1184.0,},
         {"$GMRInstance":"v4","%Name":"inst_7808C4BC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7808C4BC","objectId":{"name":"obj_wallsoap","path":"objects/obj_wallsoap/obj_wallsoap.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":21.0,"x":12800.0,"y":0.0,},
+        {"$GMRInstance":"v4","%Name":"inst_3F45D8A5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3F45D8A5","objectId":{"name":"obj_spawn_p2","path":"objects/obj_spawn_p2/obj_spawn_p2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":864.0,},
       ],"layers":[],"name":"game","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"decor","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_31E70568","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_31E70568","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_manorwindow_ext","path":"sprites/spr_manorwindow_ext/spr_manorwindow_ext.yy",},"x":192.0,"y":448.0,},

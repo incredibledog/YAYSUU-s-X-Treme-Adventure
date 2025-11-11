@@ -74,6 +74,11 @@ if (global.inlevel) && (!isotherplayer || (isotherplayer && global.multiplayer))
 	}
 	else
 	{
+		if isotherplayer && instance_exists(obj_spawn_p2)
+		{
+			x = obj_spawn_p2.x
+			y = obj_spawn_p2.y
+		}
 		x = obj_spawn.x-(64*isotherplayer)
 		y = obj_spawn.y
 	}
