@@ -14,7 +14,7 @@ if (touchingplayer(x, y))
 			else
 				fpschange = 1
 			gamefps -= fpschange
-			audio_play_sound(snd_typewriterclick, 1, false)
+			audio_play_sound(snd_typewriterclick, 1, false, global.sndvol)
 		}
 		else if (global.firstplayertouch.key_upp && gamefps != 120)
 		{
@@ -26,7 +26,7 @@ if (touchingplayer(x, y))
 			else
 				fpschange = 1
 			gamefps += fpschange
-			audio_play_sound(snd_typewriterclick, 1, false)
+			audio_play_sound(snd_typewriterclick, 1, false, global.sndvol)
 		}
 	}
 }

@@ -19,11 +19,11 @@ function donotifchoice(notifid){
 		obj_chrselect_cursor.saveday[charlife]=ini_read_real(filename,"day",0)
 		obj_chrselect_cursor.savemonth[charlife]=ini_read_real(filename,"month",0)
 		obj_chrselect_cursor.saveyear[charlife]=ini_read_real(filename,"year",0)
-		audio_play_sound(snd_kablooey,1,false)
+		audio_play_sound(snd_kablooey,1,false,global.sndvol)
 		ini_close()
 		break;
 		case 2: // achievement save deletion
-		audio_play_sound(snd_kablooey,1,false)
+		audio_play_sound(snd_kablooey,1,false,global.sndvol)
 		ini_open("savedata.ini")
 		ini_section_delete("achievements")
 		ini_close()

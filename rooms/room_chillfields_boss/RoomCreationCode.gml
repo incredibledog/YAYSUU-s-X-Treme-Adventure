@@ -6,3 +6,4 @@ else {
 	global.currentsong=mus_cutscene
 }
 scr_windowtitle("A Dastardly Creation... VS. Electro-Bot!")
+obj_parallax.indoors=true

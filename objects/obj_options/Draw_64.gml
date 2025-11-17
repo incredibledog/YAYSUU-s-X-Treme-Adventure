@@ -4,26 +4,7 @@ draw_set_font(global.optfont)
 draw_set_valign(fa_top)
 draw_set_halign(fa_left)
 draw_text(32,32,"OPTIONS")
-draw_text(32,96,"VOLUME  "+string_format(round(volume / 0.05) * 0.05,1,2))
-if (chos == 1)
-{
-	var roundedvolume = round(volume / 0.05) * 0.05
-	var volumestring = ""
-	if (roundedvolume == 0 || roundedvolume == 2)
-		volumestring = "i am deaf incarnate!"
-	else if (roundedvolume < 0.4)
-		volumestring = "i'm too sensitive for sound"
-	else if (roundedvolume < 0.8)
-		volumestring = "hey, not too loud"
-	else if (roundedvolume < 1.2)
-		volumestring = "hear me plenty"
-	else if (roundedvolume < 1.6)
-		volumestring = "ultra-volume"
-	else
-		volumestring = "my ear!"
-	draw_set_font(global.smalloptfont)
-	draw_text(32,80,volumestring)
-}
+draw_text(32,96,"AUDIO OPTIONS")
 draw_set_font(global.optfont)
 draw_text(32,128,"REBIND CONTROLS")
 if global.mobile
@@ -57,8 +38,6 @@ switch chos
 {
 	case 1:
 	draw_sprite(spr_cursor_options,0,0,96)
-	draw_sprite(spr_cursor_options,1,256,96)
-	draw_sprite(spr_cursor_options,0,416,96)
 	break;
 	case 2:
 	draw_sprite(spr_cursor_options,0,0,128)

@@ -6,7 +6,7 @@ function sayvoiceline(voiceline,voicetext,voicecolor){ // say the line, bart!
 		return
 	}
 	else {
-		audio_play_sound(voiceline,1,false)
+		audio_play_sound(voiceline,1,false,global.sndvol*global.voicelines)
 		with instance_create_depth(0,0,0,obj_subtitle_new)
 		{
 			dialoguesound=voiceline

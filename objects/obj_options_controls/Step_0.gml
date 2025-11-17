@@ -7,12 +7,12 @@ if player=1
 	if global.key_downp && !waitingforinput
 	{
 		chos++
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 	if global.key_upp && !waitingforinput
 	{
 		chos--
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 }
 if player=2
@@ -20,12 +20,12 @@ if player=2
 	if global.p2_key_downp && !waitingforinput
 	{
 		chos++
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 	if global.p2_key_upp && !waitingforinput
 	{
 		chos--
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 }
 if global.inputtype=3
@@ -84,7 +84,7 @@ if !waitingforinput
 			if global.key_menuaccept
 			{
 				global.vibration = !global.vibration
-				audio_play_sound(snd_confirm,1,false)
+				audio_play_sound(snd_confirm,1,false,global.sndvol)
 				if global.vibration = true
 				{
 					vibrationexample=10
@@ -96,7 +96,7 @@ if !waitingforinput
 			if global.p2_key_menuaccept
 			{
 				global.vibration = !global.vibration
-				audio_play_sound(snd_confirm,1,false)
+				audio_play_sound(snd_confirm,1,false,global.sndvol)
 			}
 		}
 		break;
@@ -111,7 +111,7 @@ if !waitingforinput
 			{
 				player=1
 			}
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 		}
 		else if global.inputtype=3
 		{
@@ -119,7 +119,7 @@ if !waitingforinput
 				instance_destroy(obj_mobilecontrols)
 				instance_deactivate_object(obj_options_controls)
 				instance_create_depth(x,y,depth,obj_options_controls_distance)
-				audio_play_sound(snd_confirm,1,false)
+				audio_play_sound(snd_confirm,1,false,global.sndvol)
 			}
 		}
 		break;
@@ -129,7 +129,7 @@ if !waitingforinput
 			if global.key_menuaccept
 			{
 				global.p1_autorun = !global.p1_autorun
-				audio_play_sound(snd_confirm,1,false)
+				audio_play_sound(snd_confirm,1,false,global.sndvol)
 			}
 		}
 		if player=2
@@ -137,7 +137,7 @@ if !waitingforinput
 			if global.p2_key_menuaccept
 			{
 				global.p2_autorun = !global.p2_autorun
-				audio_play_sound(snd_confirm,1,false)
+				audio_play_sound(snd_confirm,1,false,global.sndvol)
 			}
 		}
 		break;
@@ -145,7 +145,7 @@ if !waitingforinput
 		if (global.key_menuaccept && player=1) || (global.p2_key_menuaccept && player=2)
 		{
 			global.menubuttontype = !global.menubuttontype
-			audio_play_sound(snd_move,1,false)
+			audio_play_sound(snd_move,1,false,global.sndvol)
 		}
 		break;
 		case 14:
@@ -164,7 +164,7 @@ if !waitingforinput
 					{
 						global.p1_controlslot++
 					}
-					audio_play_sound(snd_move,1,false)
+					audio_play_sound(snd_move,1,false,global.sndvol)
 				}
 			if global.key_leftp
 			{
@@ -179,7 +179,7 @@ if !waitingforinput
 				{
 					global.p1_controlslot--
 				}
-				audio_play_sound(snd_move,1,false)
+				audio_play_sound(snd_move,1,false,global.sndvol)
 			}
 			global.p1_controlslot=clamp(global.p1_controlslot,0,3)
 		}
@@ -198,7 +198,7 @@ if !waitingforinput
 					{
 						global.p2_controlslot++
 					}
-					audio_play_sound(snd_move,1,false)
+					audio_play_sound(snd_move,1,false,global.sndvol)
 				}
 			if global.p2_key_leftp
 			{
@@ -213,7 +213,7 @@ if !waitingforinput
 				{
 					global.p2_controlslot--
 				}
-				audio_play_sound(snd_move,1,false)
+				audio_play_sound(snd_move,1,false,global.sndvol)
 			}
 			global.p2_controlslot=clamp(global.p2_controlslot,0,3)
 		}
@@ -238,7 +238,7 @@ if !waitingforinput
 				global.vibration=ini_read_real("controls","vibration",true)
 				global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 				ini_close()
-				audio_play_sound(snd_kablooey,1,false)
+				audio_play_sound(snd_kablooey,1,false,global.sndvol)
 			}
 		}
 		if player=2
@@ -260,7 +260,7 @@ if !waitingforinput
 				global.vibration=ini_read_real("controls","vibration",true)
 				global.sensitivity=ini_read_real("settings","sensitivity",0.35)
 				ini_close()
-				audio_play_sound(snd_kablooey,1,false)
+				audio_play_sound(snd_kablooey,1,false,global.sndvol)
 			}
 		}
 		break;
@@ -294,14 +294,14 @@ if !waitingforinput
 			ini_close()
 			instance_destroy()
 			instance_activate_object(obj_options)
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 		}
 		break;
 		default:
 		if (global.key_menuaccept && player=1) || (global.p2_key_menuaccept && player=2)
 		{
 			waitingforinput=true
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 		}
 		return;
 	}
@@ -368,7 +368,7 @@ if keyboard_check_pressed(vk_anykey) && !(keyboard_check_pressed(vk_f1) || keybo
 			break;
 		}
 	}
-	audio_play_sound(snd_confirm,1,false)
+	audio_play_sound(snd_confirm,1,false,global.sndvol)
 	waitingforinput=false
 }
 if ((global.key_menuquit && player=1) || (global.p2_key_menuquit && player=2)) && !waitingforinput
@@ -398,5 +398,5 @@ if ((global.key_menuquit && player=1) || (global.p2_key_menuquit && player=2)) &
 	ini_close()
 	instance_destroy()
 	instance_activate_object(obj_options)
-	audio_play_sound(snd_confirm,1,false)
+	audio_play_sound(snd_confirm,1,false,global.sndvol)
 }

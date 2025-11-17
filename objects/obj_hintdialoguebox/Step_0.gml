@@ -4,7 +4,7 @@ if (!finished)
 {
     if (playaudiosingle && !hasplayedaudiosingle)
     {
-        audio_play_sound(dialoguesound, 1, false);
+        audio_play_sound(dialoguesound, 1, false, global.sndvol);
         hasplayedaudiosingle = true;
     }
     
@@ -26,7 +26,7 @@ if (!finished)
         {
 			if !(string_char_at(text, progress)==" ")
 			{
-				audio_play_sound(dialoguesound, 1, false);
+				audio_play_sound(dialoguesound, 1, false, global.sndvol);
 			}
         }
     }

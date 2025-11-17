@@ -10,7 +10,7 @@ if touchingplayer(x, y)
 	{
 		whichplayer.hsp = 25 * image_xscale * launchdirection
 		if (abs(whichplayer.hsp) < 25)
-			audio_play_sound(snd_dashpad,1,false)
+			audio_play_sound(snd_dashpad,1,false,global.sndvol)
 			if (global.secondplayertouch != noone)
 				whichplayer = global.secondplayertouch
 	}

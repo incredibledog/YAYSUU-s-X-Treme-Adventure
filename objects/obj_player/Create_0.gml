@@ -46,7 +46,7 @@ move = 0
 facingdirection = 1
 ouchies = false
 rainbowtimer = 0
-runningsound = audio_play_sound(snd_run, 1, true)
+runningsound = audio_play_sound(snd_run, 1, true, global.sndvol)
 audio_pause_sound(runningsound)
 hasplayedbrakesound = false
 deathies = false

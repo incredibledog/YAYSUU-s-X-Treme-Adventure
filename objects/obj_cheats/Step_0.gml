@@ -8,7 +8,7 @@ if string_length(keyboard_string)>15
 }
 if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_face2)
 {
-	audio_play_sound(snd_nahnvm,0,false)
+	audio_play_sound(snd_nahnvm,0,false,global.sndvol)
 	instance_destroy()
 }
 if keyboard_string="gaster" || keyboard_string="schmorgarefsu"
@@ -18,40 +18,40 @@ if keyboard_check_pressed(vk_enter)
 	switch keyboard_string
 	{
 		case "yeahletsgo":
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		rewardstring="Scuffed voicelines enabled!"
 		global.voicelines=true
 		keyboard_string=""
 		break;
 		case "zopkonserf":
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		rewardstring="SURPRISE!"
 		loadroom(room_mystery,loadtype.menu)
 		keyboard_string=""
 		break;
 		case "skibiditoilet":
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		rewardstring="Skibidi spin enabled! Do a flip!"
 		global.skibispin = true
 		keyboard_string=""
 		break;
 		case "ifitwasawesome":
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		rewardstring="It's pwetty epic."
 		global.invertskin = true
 		keyboard_string=""
 		break;
 		case "exit":
-		audio_play_sound(snd_nahnvm,0,false)
+		audio_play_sound(snd_nahnvm,0,false,global.sndvol)
 		instance_destroy()
 		break;
 		case "":
-		audio_play_sound(snd_nicetry,1,false)
+		audio_play_sound(snd_nicetry,1,false,global.sndvol)
 		rewardstring="Please enter in a cheat."
 		keyboard_string=""
 		break;
 		default:
-		audio_play_sound(snd_nicetry,1,false)
+		audio_play_sound(snd_nicetry,1,false,global.sndvol)
 		rewardstring=choose("WRONG!","NOPE!","I'm afraid not.","Nuh uh.","Don't feel like it.","Try again!","loud incorrect buzzer","You stupid!")
 		keyboard_string=""
 		break;

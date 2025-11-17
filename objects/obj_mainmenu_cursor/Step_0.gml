@@ -3,12 +3,12 @@
 if global.key_upp && selected=false
 {
 	chos--
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 }
 else if global.key_downp && selected=false
 {
 	chos++
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 }
 chos=clamp(chos,1,4)
 switch (chos)
@@ -45,7 +45,7 @@ if (global.key_menuaccept) && selected=false
 			image_speed=1
 			delay=60 
 			selected=true
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			break
 		case 2:
 			global.trial=true
@@ -54,7 +54,7 @@ if (global.key_menuaccept) && selected=false
 			image_speed=1
 			delay=60 
 			selected=true
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			break
 		case 3:
 			nextroom=room_options
@@ -62,7 +62,7 @@ if (global.key_menuaccept) && selected=false
 			image_speed=1
 			delay=60 
 			selected=true
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			break
 		case 4:
 			nextroom=room_extras
@@ -70,7 +70,7 @@ if (global.key_menuaccept) && selected=false
 			image_speed=1
 			delay=60 
 			selected=true
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			break
 	}
 }

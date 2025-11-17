@@ -6,5 +6,5 @@ if (touchingplayer(x, y)) && global.checkpoint=false
 	global.score+=global.scoreadd
 	global.scoreadd=0
 	sprite_index=spr_goalflag_transition_c
-	audio_play_sound(snd_flagspin,1,false)
+	audio_play_sound(snd_flagspin,1,false,global.sndvol)
 }

@@ -11,6 +11,6 @@ with (instance_create_layer(320+(instance_number(obj_itemdefault)*32),416,"gui",
 	if (sprite_index == spr_itemlife_y || sprite_index == spr_itemlife_t)
 	{
 		audio_pause_sound(global.currentsong)
-		audio_play_sound(snd_extralife,1,false)
+		audio_play_sound(snd_extralife,1,false,global.sndvol)
 	}
 }

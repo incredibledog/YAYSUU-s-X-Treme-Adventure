@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 instance_destroy(mycollision)
-audio_play_sound(breaksound, 1, false, 1, 0, random_range(0.8, 1.2))
+audio_play_sound(breaksound, 1, false, global.sndvol, 0, random_range(0.8, 1.2))
 scr_shake(2, true)
 repeat (3)
 {

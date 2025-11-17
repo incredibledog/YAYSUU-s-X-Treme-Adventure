@@ -12,7 +12,7 @@ if touchingplayer(x, y)
 			placate.vsp = vbounce * image_yscale
 		if (hbounce != 0)
 			placate.hsp = hbounce * image_xscale
-		audio_play_sound(snd_boing,1,false)
+		audio_play_sound(snd_boing,1,false,global.sndvol)
 		if (placate.state == playerstates.stomp)
 			placate.newstate = playerstates.bounce
 		sprite_index = bouncesprite

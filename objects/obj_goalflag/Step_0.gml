@@ -16,9 +16,9 @@ if touchingplayer(x, y) && !touched
 	else if global.char="C"
 		sprite_index=spr_goalflag_transition_cotton
 	if room=room_glowstickcity
-		audio_play_sound(snd_glowstickcity_flagspin,1,false)
+		audio_play_sound(snd_glowstickcity_flagspin,1,false,global.sndvol)
 	else
-		audio_play_sound(snd_flagspin,1,false)
+		audio_play_sound(snd_flagspin,1,false,global.sndvol)
 	global.score += global.scoreadd + obj_hud.timebonus + (global.coins * 10)
 	if (!cheatsing())
 	{
@@ -40,36 +40,36 @@ else if endtimer==0 && touched && !winning
 	{
 		if room=room_glowstickcity
 		{
-			audio_play_sound(mus_glowstickcity_win,1,false)
+			audio_play_sound(mus_glowstickcity_win,1,false,global.musvol)
 		}
 		else {
-			audio_play_sound(mus_yaysuuwin,1,false)
+			audio_play_sound(mus_yaysuuwin,1,false,global.musvol)
 		}
 		audio_group_stop_all(voicelines)
 		if global.inboss
 		{
-			audio_play_sound(snd_yaysuuwinboss,1,false)
+			audio_play_sound(snd_yaysuuwinboss,1,false,global.sndvol*global.voicelines)
 		}
 		else {
-			audio_play_sound(snd_yaysuuwinstage,1,false)
+			audio_play_sound(snd_yaysuuwinstage,1,false,global.sndvol*global.voicelines)
 		}
 	}
 	else if global.char="T"
 	{
 		if room=room_glowstickcity
 		{
-			audio_play_sound(mus_glowstickcity_win,1,false)
+			audio_play_sound(mus_glowstickcity_win,1,false,global.musvol)
 		}
 		else {
-			audio_play_sound(mus_teddywin,1,false)
+			audio_play_sound(mus_teddywin,1,false,global.musvol)
 		}
 		audio_group_stop_all(voicelines)
 		if global.inboss
 		{
-			audio_play_sound(snd_teddywinboss,1,false)
+			audio_play_sound(snd_teddywinboss,1,false,global.sndvol*global.voicelines)
 		}
 		else {
-			audio_play_sound(snd_teddywinstage,1,false)
+			audio_play_sound(snd_teddywinstage,1,false,global.sndvol*global.voicelines)
 		}
 	}
 }

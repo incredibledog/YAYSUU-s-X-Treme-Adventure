@@ -66,6 +66,6 @@ switch image_index
 }
 if global.key_start
 {
-	audio_play_sound(snd_nahnvm,1,false)
+	audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 	instance_destroy()
 }

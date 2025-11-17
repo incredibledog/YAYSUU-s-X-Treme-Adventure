@@ -10,8 +10,8 @@
   "name":"obj_parallax",
   "overriddenProperties":[],
   "parent":{
-    "name":"parallaxobjs",
-    "path":"folders/Objects/levelobjs/parallaxobjs.yy",
+    "name":"technical",
+    "path":"folders/Objects/levelobjs/technical.yy",
   },
   "parentObjectId":null,
   "persistent":true,

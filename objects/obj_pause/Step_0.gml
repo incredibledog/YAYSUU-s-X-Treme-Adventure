@@ -11,7 +11,7 @@ if global.key_start && global.inlevel && !instance_exists(obj_gameover) && !inst
 	{
 		audio_pause_all()
 		audio_stop_sound(snd_paused)
-		audio_play_sound(snd_paused,1,false)
+		audio_play_sound(snd_paused,1,false,global.sndvol)
 		instance_deactivate_all(true)
 		instance_activate_object(obj_newmanager)
 		instance_activate_object(obj_fadeblack)
@@ -20,7 +20,7 @@ if global.key_start && global.inlevel && !instance_exists(obj_gameover) && !inst
 	{
 		audio_resume_all()
 		audio_stop_sound(snd_paused)
-		audio_play_sound(snd_paused,1,false)
+		audio_play_sound(snd_paused,1,false,global.sndvol)
 		instance_activate_all()
 	}
 }
@@ -36,12 +36,12 @@ if (global.pause)
 		if global.key_upp
 		{
 			cursor--
-			audio_play_sound(snd_move,1,false)
+			audio_play_sound(snd_move,1,false,global.sndvol)
 		}
 		if global.key_downp
 		{
 			cursor++
-			audio_play_sound(snd_move,1,false)
+			audio_play_sound(snd_move,1,false,global.sndvol)
 		}
 		cursor=clamp(cursor,0,2)
 		
@@ -51,26 +51,26 @@ if (global.pause)
 			{
 				case 0:
 					global.pause = false
-					audio_play_sound(snd_confirm,1,false)
+					audio_play_sound(snd_confirm,1,false,global.sndvol)
 					audio_resume_all()
 					instance_activate_all()
 					break;
 				case 1:
 					if (global.lives <= 1 && !global.trial)
-						audio_play_sound(snd_nicetry,1,false)
+						audio_play_sound(snd_nicetry,1,false,global.sndvol)
 					else
 					{
 						if (!global.trial)
 							global.lives--
 						global.checkpoint=false
 						audio_stop_all()
-						audio_play_sound(snd_confirm,1,false)
+						audio_play_sound(snd_confirm,1,false,global.sndvol)
 						scr_restartlevel()
 					}
 					break;
 				case 2:
 					global.checkpoint=false
-					audio_play_sound(snd_confirm,1,false)
+					audio_play_sound(snd_confirm,1,false,global.sndvol)
 					if global.multiplayer && global.mainplayer.issecondplayer
 					{
 						if (global.char="T")
@@ -108,32 +108,32 @@ if (global.pause)
 		if resumekey
 		{
 			global.pause = false
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			audio_resume_all()
 			instance_activate_all()
 		}
 		if retrykey && !(room=room_househub || room=room_househub_extra) && global.lives!=1
 		{
 			if (global.lives <= 1 && !global.trial)
-				audio_play_sound(snd_nicetry,1,false)
+				audio_play_sound(snd_nicetry,1,false,global.sndvol)
 			else
 			{
 				if (!global.trial)
 					global.lives--
 				global.checkpoint=false
 				audio_stop_all()
-				audio_play_sound(snd_confirm,1,false)
+				audio_play_sound(snd_confirm,1,false,global.sndvol)
 				scr_restartlevel()
 			}
 		}
 		if retrykey && (room=room_househub || room=room_househub_extra || global.lives=1)
 		{
-			audio_play_sound(snd_nicetry,1,false)
+			audio_play_sound(snd_nicetry,1,false,global.sndvol)
 		}
 		if quitkey
 		{
 			global.checkpoint=false
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			if global.trial
 				if isextrastage()
 					loadroom(room_extrastages, loadtype.menu)

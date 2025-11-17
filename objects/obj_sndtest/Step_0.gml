@@ -9,7 +9,7 @@ if global.key_rightp && !audio_is_playing(currentsound)
 {
 	select+=1
 }
-select=clamp(select,0,16)
+select=clamp(select,0,18)
 if audio_is_playing(currentsound)
 	angle--
 else
@@ -18,7 +18,7 @@ angle=angle % 360
 if global.key_jumpp
 {
 	audio_stop_all()
-	audio_play_sound(currentsound,1,loopthis)
+	audio_play_sound(currentsound,1,loopthis,global.musvol)
 }
 if global.key_dashp
 {
@@ -76,43 +76,52 @@ switch select
 		loopthis=true
 	break;
 	case 9:
-		currentsound=mus_glowstickcity
-		sndname="Glowstick City (Plus Mix) - UCG OST"
+		currentsound=mus_chilifields
+		sndname="Chili Fields - YXA OST"
 		loopthis=true
 	break;
 	case 10:
+		currentsound=mus_glowstickcity
+		sndname="Glowstick City (Plus Mix) - UCG OST"
+		loopthis=true
+	case 11:
 		currentsound=mus_trialmenu
 		sndname="Trial Menu - YXA OST"
 		loopthis=true
 	break;
-	case 11:
+	case 12:
 		currentsound=mus_options
 		sndname="Options - YXA OST"
 		loopthis=true
 	break;
-	case 12:
+	case 13:
 		currentsound=mus_extras
 		sndname="Extras - YXA OST"
 		loopthis=true
 	break;
-	case 13:
+	case 14:
 		currentsound=mus_yaysuuwin
 		sndname="Stage Clear! YAYSUU - YXA OST"
 		loopthis=false
 	break;
-	case 14:
+	case 15:
 		currentsound=mus_teddywin
 		sndname="Stage Clear! Teddy - YXA OST"
 		loopthis=false
 	break;
-	case 15:
+	case 16:
 		currentsound=mus_gameover_y
 		sndname="Game Over! YAYSUU - YXA OST"
 		loopthis=false
 	break;
-	case 16:
+	case 17:
 		currentsound=mus_gameover_t
 		sndname="Game Over! Teddy - YXA OST"
 		loopthis=false
+	break;
+	case 18:
+		currentsound=mus_cutscene
+		sndname="Story Beats - YXA OST"
+		loopthis=true
 	break;
 }

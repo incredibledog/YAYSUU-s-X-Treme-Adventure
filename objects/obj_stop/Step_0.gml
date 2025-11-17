@@ -3,7 +3,7 @@
 if touchingplayer(x, y) && !goaway
 {
 	goaway=true
-	audio_play_sound(snd_stopngo,1,false)
+	audio_play_sound(snd_stopngo,1,false,global.sndvol)
 	global.firstplayertouch.newstate = playerstates.golfstop
 	gottemplayer = global.firstplayertouch
 }

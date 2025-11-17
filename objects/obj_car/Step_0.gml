@@ -6,7 +6,7 @@ if touchingplayer(x, y)
 		global.firstplayertouch.vsp = vbounce * image_yscale
 	if (hbounce != 0)
 		global.firstplayertouch.hsp = hbounce * image_xscale
-	audio_play_sound(snd_stopngo,1,false)
+	audio_play_sound(snd_stopngo,1,false,global.sndvol)
 	audio_play_sound(choose(snd_carhorn_1,snd_carhorn_2),1,false,1,0,random_range(1,2))
 	global.scoreadd+=10
 	if (global.firstplayertouch.state == playerstates.stomp)

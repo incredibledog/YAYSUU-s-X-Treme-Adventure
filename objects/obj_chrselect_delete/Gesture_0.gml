@@ -25,6 +25,6 @@ if obj_chrselect_cursor.selected=false
 		obj_chrselect_cursor.savemonth[1]=ini_read_real("fileT","month",0)
 		obj_chrselect_cursor.saveyear[1]=ini_read_real("fileT","year",0)
 	}
-	audio_play_sound(snd_kablooey,1,false)
+	audio_play_sound(snd_kablooey,1,false,global.sndvol)
 	ini_close()
 }

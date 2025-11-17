@@ -20,7 +20,7 @@ if (moving)
 	if (wantedside == position)
 	{
 		moving = false
-		audio_play_sound(snd_movingplatform_change, 1, false)
+		audio_play_sound(snd_movingplatform_change, 1, false, global.sndvol)
 	}
 	var smoothedpos = (sin(pi*(position-0.5))*0.5)+0.5 //i love math.
 	var oldx = x
@@ -63,7 +63,7 @@ else
 			else
 				wantedside = 0
 			moving = true
-			audio_play_sound(snd_movingplatform_change, 1, false)
+			audio_play_sound(snd_movingplatform_change, 1, false, global.sndvol)
 		}
 		playertouching = true
 	}

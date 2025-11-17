@@ -9,4 +9,4 @@ if global.prevroom=room_extras || global.prevroom=room_extrastages
 else {
 	loadroom(room_mainmenu, loadtype.menu)
 }
-audio_play_sound(snd_nahnvm,1,false)
+audio_play_sound(snd_nahnvm,1,false,global.sndvol)

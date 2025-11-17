@@ -9,13 +9,13 @@ var prevselect = select
 if global.key_leftp
 {
 	select-=1
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 	changedlevel = true
 }
 else if global.key_rightp
 {
 	select+=1
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 	changedlevel = true
 }
 if global.indev
@@ -70,12 +70,12 @@ changedlevel = false
 if global.key_menuaccept
 {
 	audio_stop_all()
-	audio_play_sound(snd_confirm,1,false)
+	audio_play_sound(snd_confirm,1,false,global.sndvol)
 	loadnewstage(3, currentlevel)
 }
 else if global.key_menuquit
 {
 	audio_stop_all()
-	audio_play_sound(snd_nahnvm,1,false)
+	audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 	loadroom(room_charselect, loadtype.menu)
 }

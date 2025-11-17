@@ -3,4 +3,4 @@
 if (!global.mobile || obj_chrselect_cursor.selected)
 	return;
 obj_chrselect_cursor.chos=chosindex
-audio_play_sound(snd_move,1,false)
+audio_play_sound(snd_move,1,false,global.sndvol)

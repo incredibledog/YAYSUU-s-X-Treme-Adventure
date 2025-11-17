@@ -9,6 +9,6 @@ if touchingplayer(x, y)
 	    global.firstplayertouch.vsp = lengthdir_y(boostspeed, dir);
 	}
 
-	audio_play_sound(snd_stopngo,1,false)
+	audio_play_sound(snd_stopngo,1,false,global.sndvol)
 	instance_destroy()
 }

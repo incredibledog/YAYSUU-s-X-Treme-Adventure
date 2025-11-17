@@ -21,13 +21,13 @@ else if (display == 0) // skips straight to the next and retry if you're in a bo
 		display=4
 	else
 		display=1
-	audio_play_sound(bangsound,1,false)
+	audio_play_sound(bangsound,1,false,global.sndvol)
 	bangtimer=15
 }
 else if display < 3 // shows the time and coin bonuses
 {
 	display+=1
-	audio_play_sound(bangsound,1,false)
+	audio_play_sound(bangsound,1,false,global.sndvol)
 	bangtimer=15
 }
 else if display = 3
@@ -35,13 +35,13 @@ else if display = 3
 	if yearnedscore=global.score // shows your RANK!
 	{
 		display++
-		audio_play_sound(bangsound,1,false)
+		audio_play_sound(bangsound,1,false,global.sndvol)
 		bangtimer=75
 	}
 	if yearnedscore<global.score
 	{
 		yearnedscore+=global.score/60
-		audio_play_sound(snd_dialogue_default,0,false)
+		audio_play_sound(snd_dialogue_default,0,false,global.sndvol)
 	}
 }
 else if display = 4
@@ -51,10 +51,10 @@ else if display = 4
 	{
 		if room=room_glowstickcity
 		{
-			audio_play_sound(mus_glowstickcity_results,1,true)
+			audio_play_sound(mus_glowstickcity_results,1,true,global.musvol)
 		}
 		else {
-			audio_play_sound(mus_results,1,true)
+			audio_play_sound(mus_results,1,true,global.musvol)
 		}
 	}
 }
@@ -68,7 +68,7 @@ else if (!obj_fadeblack.fading)
 {
 	if global.key_menuaccept
 	{
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		instance_activate_object(obj_mobilecontrols)
 		if global.trial
 			if isextrastage()
@@ -111,7 +111,7 @@ else if (!obj_fadeblack.fading)
 	}
 	else if global.key_menuquit && global.trial
 	{
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		scr_restartlevel()
 	}
 }

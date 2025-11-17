@@ -9,8 +9,8 @@
   "name":"obj_p_layer2",
   "overriddenProperties":[],
   "parent":{
-    "name":"parallaxobjs",
-    "path":"folders/Objects/levelobjs/parallaxobjs.yy",
+    "name":"old",
+    "path":"folders/Objects/levelobjs/old.yy",
   },
   "parentObjectId":null,
   "persistent":true,

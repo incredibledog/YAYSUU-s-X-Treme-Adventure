@@ -25,7 +25,7 @@ if (touchingplayer(x,y) && sprite_index != spr_bullybot_kick)
 	{
 		movespeed = 0
 		sprite_index = spr_bullybot_kick
-		audio_play_sound(snd_bang, 1, false) //placeholder
+		audio_play_sound(snd_bang, 1, false, global.sndvol) //placeholder
 		boomkickem.newstate = playerstates.launched
 		boomkickem.vulnerable = true
 		boomkickem.vsp = -14

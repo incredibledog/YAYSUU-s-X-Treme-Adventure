@@ -24,7 +24,7 @@ if spotted
 	{
 		with (instance_create_depth(x + (24 * image_xscale), y - 6, depth + 1, obj_robot2_boolet))
 			image_xscale = other.image_xscale
-		audio_play_sound(snd_shoot,1,false)
+		audio_play_sound(snd_shoot,1,false,global.sndvol)
 		sprite_index=spr_robot2_shoot
 		shoottimer=60
 	}

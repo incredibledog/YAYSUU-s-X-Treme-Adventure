@@ -7,7 +7,7 @@ if !started
 		global.inputtype=0
 		delay=60
 		started=true
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		image_speed=2
 	}
 	if gamepad_button_check_pressed(global.p1_controlslot,gp_start)
@@ -15,7 +15,7 @@ if !started
 		global.inputtype=2
 		delay=60
 		started=true
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		image_speed=2
 	}
 }

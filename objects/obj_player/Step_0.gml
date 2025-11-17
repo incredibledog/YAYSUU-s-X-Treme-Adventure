@@ -121,7 +121,7 @@ if ((!grounded) && key_dashp && (state == playerstates.normal || state == player
 	}
     dshed = true
 	newstate = playerstates.dash
-    audio_play_sound(snd_airdash, 1, false)
+    audio_play_sound(snd_airdash, 1, false, global.sndvol)
 }
 if (state == playerstates.dash && newstate == state && grounded)
 	newstate = playerstates.normal
@@ -131,7 +131,7 @@ if (grounded && ((abs(hsp) > walkspeed && key_downp) || key_dashp) && (state == 
 {
     hsp = dashboost * facingdirection
 	newstate = playerstates.slide
-    audio_play_sound(snd_slide, 1, false)
+    audio_play_sound(snd_slide, 1, false, global.sndvol)
 }
 
 //stomp
@@ -139,7 +139,7 @@ if ((!grounded) && key_downp && newstate == state && (state == playerstates.norm
 {	
 	vsp = 15
 	//yearnedhsp = 15
-    audio_play_sound(snd_stomp, 1, false)
+    audio_play_sound(snd_stomp, 1, false, global.sndvol)
 	newstate = playerstates.stomp
 }
 else if (grounded && state == playerstates.stomp && newstate == state)
@@ -163,7 +163,7 @@ else if (state == playerstates.bounce && newstate == state)
 			vsp /= 2
 		//vsp = 15
 		//yearnedhsp = 15
-		audio_play_sound(snd_stomp, 1, false)
+		audio_play_sound(snd_stomp, 1, false, global.sndvol)
 		newstate = playerstates.stomp
 	}
 }
@@ -174,7 +174,7 @@ if (key_runp && !key_down && state == playerstates.normal && newstate == state &
 	yearnedhsp = facingdirection * runspeed
 	if (abs(hsp) < (yearnedhsp) || sign(hsp) != sign(yearnedhsp)) //you will not slow down if you start a run
 		hsp = yearnedhsp
-	audio_play_sound(snd_dashpad, 1, false)
+	audio_play_sound(snd_dashpad, 1, false, global.sndvol)
 	with (instance_create_depth(x, y, depth + 1, obj_animatedeffect))
 	{
 		image_xscale = other.facingdirection
@@ -211,7 +211,7 @@ if (grounded && key_runp && state = playerstates.crouch && (newstate == state ||
 		y += 1
 		grounded = false
 		prevgrounded = false
-		audio_play_sound(snd_platfall, 1, false)
+		audio_play_sound(snd_platfall, 1, false, global.sndvol)
 		newstate = playerstates.normal
 		with (instance_place(x, y + vsp + checkscale, obj_semisolid_gothrough))
 			y = -2763
@@ -231,7 +231,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		hsp=wallbump * facingdirection
 		lastwall = facingdirection
 		facingdirection=-facingdirection
-		audio_play_sound(snd_walljump, 1, false)
+		audio_play_sound(snd_walljump, 1, false, global.sndvol)
 		image_index = 0
 		sprite_index = playersprites[playersprite.jumpstart]
 	}
@@ -241,7 +241,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 			vsp = wdjmp
 		else
 			vsp = djmp
-		audio_play_sound(snd_doublejump, 1, false)
+		audio_play_sound(snd_doublejump, 1, false, global.sndvol)
 		djump = false
 		newstate = playerstates.normal
 		image_index = 0
@@ -254,9 +254,9 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 		else
 			vsp = jmp
 		if (char == "C")
-			audio_play_sound(snd_jump_c, 1, false)
+			audio_play_sound(snd_jump_c, 1, false, global.sndvol)
 		else
-			audio_play_sound(snd_jump, 1, false)
+			audio_play_sound(snd_jump, 1, false, global.sndvol)
 		grounded = false
 		prevgrounded = false
 		slopey = false
@@ -268,7 +268,7 @@ if key_jumpp && (state != playerstates.inactive && state != playerstates.win && 
 	else if (inwater)
 	{
 		vsp = wbop
-		audio_play_sound(snd_waterswim, 1, false)
+		audio_play_sound(snd_waterswim, 1, false, global.sndvol)
 	}
 }
 
@@ -326,7 +326,7 @@ if (ouchies)
 			if !fratricide {
 				global.scoreadd -= 50
 			}
-			audio_play_sound(snd_ouchie, 1, false)
+			audio_play_sound(snd_ouchie, 1, false, global.sndvol)
 		}
 		else
 		{
@@ -341,10 +341,10 @@ if (ouchies)
 					audio_stop_all()
 				if global.jumpscare
 				{
-					audio_play_sound(snd_jumpscare,1,false)
+					audio_play_sound(snd_jumpscare,1,false,global.sndvol)
 				}
 				else {
-					audio_play_sound(mus_dead, 1, false)
+					audio_play_sound(mus_dead, 1, false, global.sndvol)
 				}
 			}
 		}
@@ -521,7 +521,7 @@ if (state == playerstates.hangglide)
 	}
 	if key_jumpp
 	{
-		audio_play_sound(snd_jump,1,false)
+		audio_play_sound(snd_jump,1,false,global.sndvol)
 		vsp=jmp
 		newstate=playerstates.bounce
 		state=playerstates.bounce
@@ -537,14 +537,14 @@ if (state == playerstates.debug)
 		vsp = (key_down - key_up) * 20
 		if (key_jumpp)
 		{
-			audio_play_sound(snd_typewriterclick, 1, false)
+			audio_play_sound(snd_typewriterclick, 1, false, global.sndvol)
 			selecteddebugobject--
 			if (selecteddebugobject == -1)
 				selecteddebugobject = global.totalobjectidcount-1
 		}
 		else if (key_dashp)
 		{
-			audio_play_sound(snd_balloonpop, 1, false)
+			audio_play_sound(snd_balloonpop, 1, false, global.sndvol)
 			state = playerstates.normal
 			newstate = playerstates.normal
 		}
@@ -555,14 +555,14 @@ if (state == playerstates.debug)
 		vsp = (key_down - key_up) * 6
 		if (key_jumpp)
 		{
-			audio_play_sound(snd_typewriterclick, 1, false)
+			audio_play_sound(snd_typewriterclick, 1, false, global.sndvol)
 			selecteddebugobject++
 			if (selecteddebugobject == global.totalobjectidcount)
 				selecteddebugobject = 0
 		}
 		else if (key_dashp)
 		{
-			audio_play_sound(snd_bang, 1, false)
+			audio_play_sound(snd_bang, 1, false, global.sndvol)
 			with (instance_create_depth(x, y, depth, selecteddebugobject))
 			{
 				//set default values for certain objects so that you can use them
@@ -974,7 +974,7 @@ if isotherplayer && distance_to_object(global.mainplayer)>=320
 else
 	offscreentimer = 0
 if (!audio_exists(runningsound))
-	runningsound = audio_play_sound(snd_run, 1, true)
+	runningsound = audio_play_sound(snd_run, 1, true, global.sndvol)
 if (sprite_index == playersprites[playersprite.run])
 {
 	if audio_is_paused(runningsound)
@@ -994,7 +994,7 @@ if ((sprite_index == playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
 {
 	if (!hasplayedbrakesound)
 	{
-		audio_play_sound(snd_brake, 1, false)
+		audio_play_sound(snd_brake, 1, false, global.sndvol)
 		hasplayedbrakesound = true
 	}
 }

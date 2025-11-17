@@ -15,7 +15,7 @@ if layer_exists("layer2")
 	if indoors
 		layer_y("layer2",y)
 	else
-		layer_y("layer2",(y/6)+(obj_spawn.y/2))
+		layer_y("layer2",(y/6)+(instance_exists(obj_parallaxh) ? obj_parallaxh.y/2 : obj_spawn.y/2))
 }
 if layer_exists("layer1")
 {

@@ -16,7 +16,7 @@ if (!donotannoymewhiletesting)
 				nobox=true
 			}
 		}
-		audio_play_sound(snd_hint,1,false)
+		audio_play_sound(snd_hint,1,false,global.sndvol)
 	}
 	if !touchingplayer(x, y) && hint
 	{

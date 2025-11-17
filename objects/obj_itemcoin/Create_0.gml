@@ -3,4 +3,4 @@
 
 // Inherit the parent event
 event_inherited();
-audio_play_sound(snd_coin,1,false)
+audio_play_sound(snd_coin,1,false,global.sndvol)

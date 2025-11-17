@@ -11,7 +11,7 @@ if touchingplayer(x, y) && sprite_index == normsprite
 		if (whichchar == "T")
 		{
 			sprite_index = popsprite
-			audio_play_sound(snd_balloonpop,1,false)
+			audio_play_sound(snd_balloonpop,1,false,global.sndvol)
 		}
 		else
 		{
@@ -20,7 +20,7 @@ if touchingplayer(x, y) && sprite_index == normsprite
 			{
 				whichplayer.vsp = vbounce * image_yscale
 				sprite_index = bigbouncesprite
-				audio_play_sound(snd_boing,1,false)
+				audio_play_sound(snd_boing,1,false,global.sndvol)
 			}
 			//if (hbounce != 0)
 			//	obj_player.hsp = hbounce * image_xscale
@@ -36,7 +36,7 @@ if touchingplayer(x, y) && sprite_index == normsprite
 		{
 			whichplayer.vsp = intendedbounce * image_yscale
 			sprite_index = bouncesprite
-			audio_play_sound(snd_boing,1,false)
+			audio_play_sound(snd_boing,1,false,global.sndvol)
 			if (whichchar == "T")
 				whichplayer.djump = false;
 		}

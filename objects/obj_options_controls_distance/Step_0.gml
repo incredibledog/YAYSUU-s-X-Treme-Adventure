@@ -13,10 +13,10 @@ if (global.inputtype=2 || global.inputtype=0) || keyboard_check_pressed(vk_f7)
 if keyboard_check_pressed(vk_f5)
 {
 	global.controldistance+=10
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 }
 else if keyboard_check_pressed(vk_f6)
 {
 	global.controldistance-=10
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 }

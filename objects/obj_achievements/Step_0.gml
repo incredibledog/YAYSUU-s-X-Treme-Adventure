@@ -4,18 +4,18 @@ if !instance_exists(obj_notification)
 {
 	if global.key_rightp
 	{
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 		chos++
 	}
 	if global.key_leftp
 	{
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 		chos--
 	}
 	chos=clamp(chos,1,9)
 	if global.key_menuquit
 	{
-		audio_play_sound(snd_nahnvm,1,false)
+		audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 		instance_destroy()
 	}
 }

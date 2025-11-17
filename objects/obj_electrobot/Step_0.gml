@@ -47,7 +47,7 @@ switch (state)
 					candamage = false
 					vsp = -5
 					hsp = -3 * image_xscale
-					audio_play_sound(snd_ouchie,1,false)
+					audio_play_sound(snd_ouchie,1,false,global.sndvol)
 					global.bosshp--
 					scr_shake(30, false)
 					hasdamaged = true
@@ -80,7 +80,7 @@ switch (state)
 					grounded = false
 					break;
 				case electrobotstates.spin:
-					audio_play_sound(snd_speen,1,true)
+					audio_play_sound(snd_speen,1,true,global.sndvol)
 					vsp = -3
 					break;
 				case electrobotstates.shoot:

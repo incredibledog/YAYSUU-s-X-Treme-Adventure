@@ -5,10 +5,10 @@ else if !audio_is_playing(global.currentsong)
 	audio_stop_all()
 	if global.currentsong=mus_title
 	{
-		audio_play_sound(global.currentsong, 1, false);
+		audio_play_sound(global.currentsong, 1, false, global.musvol);
 	}
 	else {
-		audio_play_sound(global.currentsong, 1, true);
+		audio_play_sound(global.currentsong, 1, true, global.musvol);
 	}
 }
 global.itempopupdepth = 100

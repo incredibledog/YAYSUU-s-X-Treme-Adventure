@@ -6,5 +6,5 @@ if st=0 && started=false && global.mobile
 	delay=60
 	started=true
 	image_speed=2
-	audio_play_sound(snd_confirm,1,false)
+	audio_play_sound(snd_confirm,1,false,global.sndvol)
 }

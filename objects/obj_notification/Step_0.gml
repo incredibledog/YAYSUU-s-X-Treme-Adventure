@@ -34,14 +34,14 @@ if selectable && !byebye
 	}
 	if global.key_menuaccept
 	{
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		byebye=true
 		if (choicer && choice=1) || !choicer
 			donotifchoice(notifid)
 	}
 	if global.key_menuquit
 	{
-		audio_play_sound(snd_nahnvm,1,false)
+		audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 		byebye=true
 	}
 }

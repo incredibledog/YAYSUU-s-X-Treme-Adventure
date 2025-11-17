@@ -1,6 +1,9 @@
 ini_open("savedata.ini")
 // SETTINGS SAVEDATA INITIALIZATION
 audio_master_gain(ini_read_real("settings","volume",1))
+global.musvol=ini_read_real("settings","musvol",1)
+global.sndvol=ini_read_real("settings","sndvol",1)
+global.voicelines=ini_read_real("settings","voicelines",true)
 global.sensitivity=ini_read_real("settings","sensitivity",0.35) // actually deadzone but not gonna change the variable name now
 global.controlalpha=ini_read_real("settings","controlalpha",0.5)
 global.controldistance=ini_read_real("settings","controldistance",0)
@@ -36,7 +39,6 @@ global.p2_startkey=ini_read_real("controls","p2startkey",ord("Y"))
 global.p2_autorun=ini_read_real("controls","p2autorun",true)
 ini_close()
 window_set_size(640*global.screenscale,480*global.screenscale)
-global.voicelines=false
 audio_group_load(voicelines)
 window_enable_borderless_fullscreen(true)
 global.trial=false

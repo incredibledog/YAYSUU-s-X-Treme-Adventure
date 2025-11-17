@@ -1,1 +1,2 @@
-scr_windowtitle("At Last! We Made It... in Chill Fields Stage 2")
+scr_windowtitle("One Last Surprise... in Chili Fields")
+obj_parallax.indoors=true

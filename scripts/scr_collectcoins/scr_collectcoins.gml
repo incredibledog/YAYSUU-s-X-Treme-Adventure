@@ -7,11 +7,11 @@ function scr_collectcoins(amount){
 	if (amount > 0)
 	{
 		if room == room_glowstickcity
-			audio_play_sound(snd_uncannycoin,1,false)
+			audio_play_sound(snd_uncannycoin,1,false,global.sndvol)
 		else if (global.char == "C")
-			audio_play_sound(snd_balloon,1,false)
+			audio_play_sound(snd_balloon,1,false,global.sndvol)
 		else
-			audio_play_sound(snd_coin,1,false)
+			audio_play_sound(snd_coin,1,false,global.sndvol)
 	}
 	if (global.coins >= global.coingoal)
 	{
@@ -30,13 +30,13 @@ function scr_collectcoins(amount){
 					sprite_index=spr_itemlife_t
 				}
 				audio_pause_sound(global.currentsong)
-				audio_play_sound(snd_extralife,1,false)
+				audio_play_sound(snd_extralife,1,false,global.sndvol)
 			}
 		}
 		else
 		{
 			global.hp++
-			audio_play_sound(snd_heal,1,false,3)
+			audio_play_sound(snd_heal,1,false,global.sndvol)
 		}
 	}
 }

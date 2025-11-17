@@ -6,5 +6,5 @@ if !instance_exists(obj_invincibility)
 else
 {
 	audio_stop_sound(mus_invincibility)
-	audio_play_sound(mus_invincibility,1,false)
+	audio_play_sound(mus_invincibility,1,false,global.sndvol)
 }

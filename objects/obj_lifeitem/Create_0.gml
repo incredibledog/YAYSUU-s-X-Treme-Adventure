@@ -13,4 +13,4 @@ else
 }
 global.lives+=1
 audio_pause_sound(global.currentsong)
-audio_play_sound(snd_extralife,1,false)
+audio_play_sound(snd_extralife,1,false,global.sndvol)

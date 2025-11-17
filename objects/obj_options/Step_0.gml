@@ -6,42 +6,28 @@ if (obj_fadeblack.fading)
 if global.key_downp
 {
 	chos++
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 }
 if global.key_upp
 {
 	chos--
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 }
 chos=clamp(chos,1,11)
 switch chos
 {
 	case 1:
-	if global.key_right
+	if global.key_menuaccept
 	{
-		if (global.key_rightp)
-			volume+=0.02
-		volume+=0.01
-		audio_master_gain(round(volume / 0.05) * 0.05)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
+		instance_deactivate_object(obj_options)
+		instance_create_depth(x,y,depth,obj_options_volume)
 	}
-	else if global.key_left
-	{
-		if (global.key_rightp)
-			volume-=0.02
-		volume-=0.01
-		audio_master_gain(round(volume / 0.05) * 0.05)
-	}
-	else
-	{
-		volume = round(volume / 0.05) * 0.05
-		audio_master_gain(volume)
-	}
-	volume=clamp(volume,0,2)
 	break;
 	case 2:
 	if global.key_menuaccept
 	{
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		instance_deactivate_object(obj_options)
 		instance_create_depth(x,y,depth,obj_options_controls)
 	}
@@ -50,7 +36,7 @@ switch chos
 	if global.key_menuaccept
 	{
 		window_set_fullscreen(!window_get_fullscreen())
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 	}
 	break;
 	case 4:
@@ -58,12 +44,12 @@ switch chos
 	if global.key_rightp
 	{
 		global.screenscale++
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 	if global.key_leftp
 	{
 		global.screenscale--
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 	global.screenscale=clamp(global.screenscale,1,3)
 	if !(global.screenscale=prevscale)
@@ -75,21 +61,21 @@ switch chos
 	if global.key_menuaccept
 	{
 		global.screenshake=!global.screenshake
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 	}
 	break;
 	case 6:
 	if global.key_menuaccept
 	{
 		global.borders=!global.borders
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 	}
 	break;
 	case 7:
 	if global.key_menuaccept
 	{
 		global.speedrun=!global.speedrun
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 	}
 	break;
 	case 8:
@@ -98,7 +84,7 @@ switch chos
 		ini_open("savedata.ini")
 		ini_section_delete("records")
 		ini_close()
-		audio_play_sound(snd_kablooey,1,false)
+		audio_play_sound(snd_kablooey,1,false,global.sndvol)
 	}
 	break;
 	case 9:
@@ -113,22 +99,15 @@ switch chos
 		global.speedrun=false
 		global.screenscale=1
 		window_set_size(640*global.screenscale,480*global.screenscale)
-		audio_play_sound(snd_kablooey,1,false)
+		audio_play_sound(snd_kablooey,1,false,global.sndvol)
 	}
 	break;
 	case 10:
 	if global.key_menuaccept
 	{
-		audio_play_sound(snd_confirm,1,false)
-		global.timer = 0
-		global.score = 0
-		global.scoreadd = 0
-		global.checkpoint=false
-		global.coins=0
-		global.coingoal = 100
-		global.lives=3
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		global.multiplayer=true
-		loadroom(room_options_test, loadtype.newlevel)
+		loadnewstage(420, room_options_test)
 	}
 	break;
 	case 11:
@@ -144,7 +123,7 @@ switch chos
 		ini_write_real("settings","screenscale",global.screenscale)
 		ini_close()
 		audio_stop_sound(mus_options)
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		loadroom(room_mainmenu, false)
 	}
 	break;
@@ -162,6 +141,6 @@ if global.key_menuquit
 	ini_close()
 	window_set_size(640*global.screenscale,480*global.screenscale)
 	audio_stop_sound(mus_options)
-	audio_play_sound(snd_nahnvm,1,false)
+	audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 	loadroom(room_mainmenu, false)
 }

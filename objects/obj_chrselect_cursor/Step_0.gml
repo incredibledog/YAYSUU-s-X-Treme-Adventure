@@ -96,23 +96,23 @@ else if !instance_exists(obj_notification)
 	if ((global.key_menuaccept) || (global.p2_key_menuaccept && global.multiplayer)) && !selected
 	{
 		if (!teddyavailable && chos == 2)
-			audio_play_sound(snd_nicetry,1,false)
+			audio_play_sound(snd_nicetry,1,false,global.sndvol)
 		else
 		{
 			delay=120
 			selected=true
-			audio_play_sound(snd_confirm,1,false)
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
 			if (chos == 1)
 			{
 				global.char = "Y"
 				global.p2char = "T"
-				audio_play_sound(snd_yaysuuselect,1,false)
+				audio_play_sound(snd_yaysuuselect,1,false,global.sndvol*global.voicelines)
 			}
 			else if (chos == 2)
 			{
 				global.char = "T"
 				global.p2char = "Y"
-				audio_play_sound(snd_teddyselect,1,false)
+				audio_play_sound(snd_teddyselect,1,false,global.sndvol*global.voicelines)
 			}
 			with (global.mainplayer)
 				scr_setupcharacter(global.char, 0)
@@ -121,7 +121,7 @@ else if !instance_exists(obj_notification)
 	if ((global.p2_key_menuaccept || global.p2_key_jump) && !global.multiplayer && !global.mobile && global.trial)
 	{
 		global.multiplayer=true
-		audio_play_sound(snd_confirm,1,false)
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
 	}
 	else if global.key_menuquit
 	{
@@ -142,11 +142,11 @@ else if !instance_exists(obj_notification)
 			audio_stop_sound(snd_yaysuuselect)
 			audio_stop_sound(snd_teddyselect)
 		}
-		audio_play_sound(snd_nahnvm,1,false)
+		audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 	}
 	else if ((global.key_rightp) || (global.p2_key_rightp && global.multiplayer)) && !selected
 	{
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 		if chos=1
 			chos++
 		else if chos=2
@@ -155,7 +155,7 @@ else if !instance_exists(obj_notification)
 	}
 	else if ((global.key_leftp) || (global.p2_key_leftp && global.multiplayer)) && !selected
 	{
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 		if chos=1
 			chos++
 		else if chos=2
@@ -164,7 +164,7 @@ else if !instance_exists(obj_notification)
 	}
 	/*else if global.key_upp
 	{
-		audio_play_sound(snd_move,1,false)
+		audio_play_sound(snd_move,1,false,global.sndvol)
 		if (chos != 1.5)
 			prevchos = chos
 		chos = 1.5
@@ -172,7 +172,7 @@ else if !instance_exists(obj_notification)
 	 NOT EVER...
 	else if global.key_downp && chos == 1.5
 	{
-	audio_play_sound(snd_move,1,false)
+	audio_play_sound(snd_move,1,false,global.sndvol)
 		chos = prevchos
 	}*/
 	

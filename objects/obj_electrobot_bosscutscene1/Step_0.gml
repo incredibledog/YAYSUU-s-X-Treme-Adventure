@@ -7,25 +7,38 @@ if global.cutscenestate=2 || global.cutscenestate=4
 if global.cutscenestate=2 && !audio_is_playing(snd_elecboss2vo)
 {
 	global.cutscenestate=3
-	sayvoiceline(snd_elecboss3vo_y,"Huh? What the... You must have something to do with the weird deeds goin' on around here!","purple")
+	if global.char="Y"
+		sayvoiceline(snd_elecboss3vo_y,"Huh? What the... You must have something to do with the weird deeds goin' on around here!","purple")
+	else if global.char="T"
+		sayvoiceline(snd_elecboss3vo_t,"So. What in the world are YOU supposed to be?","orange")
 	sprite_index=spr_electrobot_idle
 }
-if global.cutscenestate=4 && !audio_is_playing(snd_elecboss4vo_y)
+if global.cutscenestate=4 && !audio_is_playing(snd_elecboss4vo_y) && !audio_is_playing(snd_elecboss4vo_t)
 {
 	global.cutscenestate=5
-	sayvoiceline(snd_elecboss5vo_y,"Immediate elimination, huh? Well, you'll have to BEAT ME FIRST!","purple")
+	if global.char="Y"
+		sayvoiceline(snd_elecboss5vo_y,"Immediate elimination, huh? Well, you'll have to BEAT ME FIRST!","purple")
+	else if global.char="T"
+		sayvoiceline(snd_elecboss5vo_t,"Elimination by... proxy?","orange")
 	sprite_index=spr_electrobot_idle
 }
 if global.cutscenestate=7
 {
-	sprite_index=spr_electrobot_talk2
+	if global.char="Y"
+	{
+		sprite_index=spr_electrobot_talk2
+	}
+	else if global.char="T"
+	{
+		sprite_index=spr_electrobot_idle
+	}
 	audio_sound_gain(global.currentsong,0,2000)
 }
-if global.cutscenestate=7 && !audio_is_playing(snd_elecboss7vo_y)
+if global.cutscenestate=7 && !audio_is_playing(snd_elecboss7vo_y) && !audio_is_playing(snd_elecboss7vo_t)
 {
 	global.cutscenestate=8
 	sprite_index=spr_electrobot_idle
 	global.currentsong=mus_chillfields_boss
-	audio_play_sound(global.currentsong,1,true)
+	audio_play_sound(global.currentsong,1,true,global.musvol)
 	alarm_set(0,15)
 }
