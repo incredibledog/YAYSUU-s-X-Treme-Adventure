@@ -60,7 +60,7 @@ if global.cutscenestate=5 && !audio_is_playing(snd_elecboss5vo_y) && !audio_is_p
 	}
 	else if global.char="T"
 	{
-		sayvoiceline(snd_elecboss6vo_t,"DETECTED FAMILIAL RELATION WITH MAIN TARGET. CANNOT BE ALLOWED TO EXIST","yellow")
+		sayvoiceline(snd_elecboss6vo_t,"DETECTED FAMILIAL RELATION WITH MAIN TARGET. CANNOT BE ALLOWED TO EXIST","red")
 		sprite_index=spr_teddy_idle
 	}
 }

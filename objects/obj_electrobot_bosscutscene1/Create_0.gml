@@ -3,6 +3,7 @@
 talking=false
 bossname="ELECTRO-BOT"
 stringchr=0
+audio_sound_gain(global.currentsong,global.musvol) // Why Doesn't This Work
 if global.trial || global.levelloadtype=loadtype.respawn
 {
 	global.cutscenestate=8 // CUTSCENES, ARE FOR STORY MODE!
