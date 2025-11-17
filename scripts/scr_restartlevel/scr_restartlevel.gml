@@ -5,6 +5,7 @@ function scr_restartlevel(){
 	global.score = 0
 	global.scoreadd = 0
 	global.checkpoint=false
+	global.firstroom=true
 	global.coins=0
 	global.coingoal = 100
 	switch (room)
@@ -24,6 +25,12 @@ function scr_restartlevel(){
 		case room_mysticmanor_2b:
 		case room_mysticmanor_2c:
 			loadroom(room_mysticmanor_2, loadtype.newlevel)
+			break;
+		case room_chilifields_b:
+		case room_chilifields_c:
+		case room_chilifields_d:
+		case room_chilifields_e:
+			loadroom(room_chilifields_a, loadtype.newlevel)
 			break;
 		case room_househub:
 		case room_househub_extra:

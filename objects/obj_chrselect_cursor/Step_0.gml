@@ -68,14 +68,7 @@ if (selected)
 	else if (!obj_fadeblack.fading)
 	{
 		if !(global.trial) {
-			global.timer = 0
-			global.score = savescore[charlife]
-			global.scoreadd = 0
-			global.checkpoint=false
-			global.coins=0
-			global.coingoal = 100
-			global.lives=savelives[charlife]
-			loadroom(currentstage, loadtype.newlevel)
+			loadnewstage(savelives[charlife],currentstage)
 		}
 		else {
 			if global.prevroom=room_extrastages || global.prevroom=room_extras

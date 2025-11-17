@@ -8,6 +8,7 @@ if touchingplayer(x, y)
 		loadroom(warproom, warptype)
 		global.firstplayertouch.newstate = playerstates.inactive
 		global.checkpoint=false
+		global.firstroom=false
 		global.firstplayertouch.sprite_index=global.firstplayertouch.playersprites[playersprite.idle]
 	}
 }

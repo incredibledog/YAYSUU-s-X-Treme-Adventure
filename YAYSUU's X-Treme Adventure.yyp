@@ -285,6 +285,7 @@
     {"id":{"name":"room_chilifields_b","path":"rooms/room_chilifields_b/room_chilifields_b.yy",},},
     {"id":{"name":"room_chilifields_c","path":"rooms/room_chilifields_c/room_chilifields_c.yy",},},
     {"id":{"name":"room_chilifields_d","path":"rooms/room_chilifields_d/room_chilifields_d.yy",},},
+    {"id":{"name":"room_chilifields_e","path":"rooms/room_chilifields_e/room_chilifields_e.yy",},},
     {"id":{"name":"room_chillfields_1","path":"rooms/room_chillfields_1/room_chillfields_1.yy",},},
     {"id":{"name":"room_chillfields_2","path":"rooms/room_chillfields_2/room_chillfields_2.yy",},},
     {"id":{"name":"room_chillfields_2b","path":"rooms/room_chillfields_2b/room_chillfields_2b.yy",},},
@@ -349,6 +350,7 @@
     {"id":{"name":"scr_isextrastage","path":"scripts/scr_isextrastage/scr_isextrastage.yy",},},
     {"id":{"name":"scr_keytostring","path":"scripts/scr_keytostring/scr_keytostring.yy",},},
     {"id":{"name":"scr_levelstart","path":"scripts/scr_levelstart/scr_levelstart.yy",},},
+    {"id":{"name":"scr_loadnewstage","path":"scripts/scr_loadnewstage/scr_loadnewstage.yy",},},
     {"id":{"name":"scr_obtainachievement","path":"scripts/scr_obtainachievement/scr_obtainachievement.yy",},},
     {"id":{"name":"scr_player_checkground","path":"scripts/scr_player_checkground/scr_player_checkground.yy",},},
     {"id":{"name":"scr_player_trybounce","path":"scripts/scr_player_trybounce/scr_player_trybounce.yy",},},
@@ -975,6 +977,7 @@
     {"roomId":{"name":"room_chilifields_b","path":"rooms/room_chilifields_b/room_chilifields_b.yy",},},
     {"roomId":{"name":"room_chilifields_c","path":"rooms/room_chilifields_c/room_chilifields_c.yy",},},
     {"roomId":{"name":"room_chilifields_d","path":"rooms/room_chilifields_d/room_chilifields_d.yy",},},
+    {"roomId":{"name":"room_chilifields_e","path":"rooms/room_chilifields_e/room_chilifields_e.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

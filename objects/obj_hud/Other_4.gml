@@ -6,7 +6,7 @@ if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtyp
 	hide=false
 	comboshowtimer = 0
 	showncombo = 0
-	if (!global.checkpoint && global.levelloadtype == loadtype.newlevel)
+	if (global.firstroom)
 	{
 		timer = 0
 		timebonus=1200

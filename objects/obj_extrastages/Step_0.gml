@@ -35,7 +35,7 @@ if (changedlevel)
 			break;
 		case 1:
 			currentlevel=room_chilifields_a
-			endlevel=room_chilifields_a
+			endlevel=room_chilifields_e
 			lvlname="Chili Fields (Hard Mode)"
 			sprname=spr_chilifieldsscroll
 			bosslvl=false
@@ -71,14 +71,7 @@ if global.key_menuaccept
 {
 	audio_stop_all()
 	audio_play_sound(snd_confirm,1,false)
-	global.timer = 0
-	global.score = 0
-	global.scoreadd = 0
-	global.checkpoint=false
-	global.coins=0
-	global.coingoal = 100
-	global.lives=3
-	loadroom(currentlevel, loadtype.newlevel)
+	loadnewstage(3, currentlevel)
 }
 else if global.key_menuquit
 {

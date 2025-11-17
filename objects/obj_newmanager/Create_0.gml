@@ -58,6 +58,7 @@ global.debugmessage = ""
 global.timer = 0
 global.score = 0
 global.checkpoint=false
+global.firstroom=false
 global.coins=0
 global.hp = 3
 global.maxhp = 3
