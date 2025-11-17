@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_elecboss5vo_t",
+  "audioGroupId":{
+    "name":"voicelines",
+    "path":"audiogroups/voicelines",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.3800454,
+  "exportDir":"",
+  "name":"snd_elecboss5vo_t",
+  "parent":{
+    "name":"cutscenevo",
+    "path":"folders/Sounds/cutscenevo.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_elecboss5vo_t.wav",
+  "volume":1.0,
+}
