@@ -9,3 +9,4 @@ keydash=-1
 keyrun=-1
 keypause=-1
 hide=false
+event_perform(ev_other,ev_room_start)

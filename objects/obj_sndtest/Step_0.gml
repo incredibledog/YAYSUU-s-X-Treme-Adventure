@@ -84,6 +84,7 @@ switch select
 		currentsound=mus_glowstickcity
 		sndname="Glowstick City (Plus Mix) - UCG OST"
 		loopthis=true
+	break;
 	case 11:
 		currentsound=mus_trialmenu
 		sndname="Trial Menu - YXA OST"

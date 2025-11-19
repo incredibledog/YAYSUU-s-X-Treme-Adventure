@@ -21,6 +21,16 @@ if global.inputtype = 3 && hide=false && !instance_exists(obj_stageclear) && !(i
 		draw_sprite(spr_dash,1,480+global.controldistance,384)
 		draw_set_alpha(1)
 	}
+	else if room=room_soundtest
+	{
+		draw_set_alpha(1)
+		draw_sprite(spr_left,0,192,352)
+		draw_sprite(spr_resume,0,256,352)
+		draw_sprite(spr_cease,0,320,352)
+		draw_sprite(spr_right,0,384,352)
+		draw_sprite(spr_quit,0,288,416)
+		draw_set_alpha(1)
+	}
 	else if room=room_extras
 	{
 		if !(instance_exists(obj_cheats) || instance_exists(obj_credits))
@@ -32,10 +42,14 @@ if global.inputtype = 3 && hide=false && !instance_exists(obj_stageclear) && !(i
 			draw_sprite(spr_down,0,96-global.controldistance,384)
 			draw_sprite(spr_resume,0,416+global.controldistance,384)
 			draw_sprite(spr_quit,0,480+global.controldistance,384)
+			if instance_exists(obj_achievements)
+			{
+				draw_sprite(spr_delete,0,544+global.controldistance,384)
+			}
 			draw_set_alpha(1)
 		}
 	}
-	else if global.inlevel || room=room_soundtest {
+	else if global.inlevel {
 		draw_set_alpha(global.controlalpha)
 		draw_sprite(spr_up,0,96-global.controldistance,256)
 		draw_sprite(spr_left,0,32-global.controldistance,320)

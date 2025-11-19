@@ -19,7 +19,7 @@ if !instance_exists(obj_notification)
 		instance_destroy()
 	}
 }
-if global.key_runp
+if global.key_runp && !instance_exists(obj_notification)
 {
 	with instance_create_depth(0,0,depth-1,obj_notification)
 	{

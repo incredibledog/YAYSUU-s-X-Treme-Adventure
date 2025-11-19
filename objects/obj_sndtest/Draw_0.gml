@@ -18,6 +18,6 @@ if global.inputtype=2
 }
 if global.inputtype=3
 {
-	draw_text_yxa(x,y,string(obj_sndtest.sndname) + string("\nYou're not supposed to be here."),"white",true,500)
+	draw_text_yxa(x,y,string(obj_sndtest.sndname),"white",true,500)
 }
 draw_sprite_ext(spr_ostrecord,0,512,352,1,1,angle,c_white,1)

@@ -8,18 +8,31 @@ if image_yscale=1
 }
 if image_yscale=1 && choicer=true
 {
-	draw_text_yxa(82,332,"  Yes\n  No","white",false)
-	switch choice
+	if global.inputtype=3
 	{
-		case 0:
-		draw_sprite(spr_menucursor_small,0,82,348)
-		break;
-		case 1:
-		draw_sprite(spr_menucursor_small,0,82,332)
-		break;
+		draw_sprite(spr_yes,0,224,320)
+		draw_sprite(spr_quit,0,352,320)
+	}
+	else {
+		draw_text_yxa(82,332,"  Yes\n  No","white",false)
+		switch choice
+		{
+			case 0:
+			draw_sprite(spr_menucursor_small,0,82,348)
+			break;
+			case 1:
+			draw_sprite(spr_menucursor_small,0,82,332)
+			break;
+		}
 	}
 }
 else if image_yscale=1 {
-	draw_text_yxa(82,332,"  OK","white",false)
-	draw_sprite(spr_menucursor_small,0,82,332)
+	if global.inputtype=3
+	{
+		draw_sprite(spr_yes,0,288,320)
+	}
+	else {
+		draw_text_yxa(82,332,"  OK","white",false)
+		draw_sprite(spr_menucursor_small,0,82,332)
+	}
 }

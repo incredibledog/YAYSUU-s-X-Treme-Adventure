@@ -81,7 +81,7 @@ if (selected)
 		}
 	}
 }
-if global.key_runp && !global.trial
+if global.key_runp && !global.trial && !instance_exists(obj_notification)
 {
 	with instance_create_depth(0,0,depth-1,obj_notification)
 	{
