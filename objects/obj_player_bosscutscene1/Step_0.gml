@@ -10,7 +10,7 @@ else if global.cutscenestate=0 {
 	if global.char="Y"
 	{
 		sayvoiceline(snd_elecboss1vo_y,"Hey, who's that?","purple")
-		sprite_index=spr_yaysuu_talk_confused
+		sprite_index=spr_yaysuu_talk_surprised
 	}
 	else if global.char="T"
 	{

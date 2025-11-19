@@ -45,6 +45,9 @@ switch (state)
 	case playerstates.hangglide:
 		actualstatename = "hang glider"
 		break;
+	case playerstates.fireass:
+		actualstatename = "fire ass"
+		break;
 	case playerstates.debug:
 		actualstatename = "debug"
 		break;

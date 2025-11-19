@@ -46,6 +46,7 @@ move = 0
 facingdirection = 1
 ouchies = false
 rainbowtimer = 0
+walktimer = 0
 runningsound = audio_play_sound(snd_run, 1, true, global.sndvol)
 audio_pause_sound(runningsound)
 hasplayedbrakesound = false
@@ -53,6 +54,7 @@ deathies = false
 maxfallspeed = 10
 smashbump = -0
 runanimtimer = -1
+runtrailtimer = 0
 hascollision = true
 normmaxfall = 10
 stompmaxfall = 15

@@ -21,6 +21,7 @@ enum playersprite
 	launched,
 	golfstop,
 	hangglide,
+	fireass,
 	wallslide,
 	lifeicon,
 	lifemonitor
@@ -79,6 +80,7 @@ function scr_setupcharacter(char, skin)
 			playersprites[playersprite.win] = spr_yaysuu_win
 			playersprites[playersprite.launched] = spr_yaysuu_spinnykicked
 			playersprites[playersprite.hangglide] = spr_yaysuu_hangglide
+			playersprites[playersprite.fireass] = spr_yaysuu_fireass
 			playersprites[playersprite.golfstop] = spr_yaysuu_spinball
 			playersprites[playersprite.lifeicon] = spr_yaysuulifeicon
 			playersprites[playersprite.lifemonitor] = spr_lifemonitor_y
@@ -107,6 +109,7 @@ function scr_setupcharacter(char, skin)
 		playersprites[playersprite.launched] = spr_teddy_die
 		playersprites[playersprite.golfstop] = spr_teddy_spinball
 		playersprites[playersprite.hangglide] = spr_teddy_hangglide
+		playersprites[playersprite.fireass] = spr_teddy_fireass
 		playersprites[playersprite.wallslide] = spr_teddy_wallslide
 		playersprites[playersprite.lifeicon] = spr_teddylifeicon
 		playersprites[playersprite.lifemonitor] = spr_lifemonitor_t

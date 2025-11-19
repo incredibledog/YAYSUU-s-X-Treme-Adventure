@@ -13,6 +13,7 @@ enum playerstates
 	golfstop,
 	launched,
 	hangglide,
+	fireass,
 	debug
 }
 
@@ -30,7 +31,27 @@ inwater = place_meeting(x, y, obj_water)
 move = (key_right - key_left)
 if (move != 0 && !(global.skibispin && !grounded))
 	facingdirection = move
-
+if place_meeting(x, y, obj_lava) && state!=playerstates.dead
+{
+	if !isotherplayer
+		global.hp--
+	else
+		global.p2hp--
+	if (!isotherplayer && global.hp=0) || (isotherplayer && global.p2hp=0)
+	{
+		newstate = playerstates.dead
+		audio_stop_all()
+		audio_play_sound(mus_dead,1,false,global.sndvol)
+	}
+	else {
+		newstate = playerstates.fireass
+	}
+	vsp = bounceheight*1.5
+	audio_play_sound(snd_ouchie, 1, false, global.sndvol)
+	grounded = false
+	prevgrounded = false
+	dshed = false
+}
 if (inwater)
 {
 	grv = watergrav
@@ -148,6 +169,7 @@ else if (grounded && state == playerstates.stomp && newstate == state)
 	{
 		newstate = playerstates.normal
 		grounded = true
+		audio_play_sound(snd_stompland, 1, false, global.sndvol)
 	}
 	else
 		scr_player_dobounce()
@@ -288,7 +310,7 @@ if (state == playerstates.golfstop && newstate == state)
 }
 
 //launched
-if (state == playerstates.launched && newstate == state)
+if ((state == playerstates.launched || state == playerstates.fireass) && newstate == state)
 {
 	if (grounded)
 	{
@@ -939,6 +961,9 @@ switch (state)
 		newsprite = playersprites[playersprite.hangglide]
 		image_xscale = facingdirection
 		break;
+	case playerstates.fireass:
+		newsprite = playersprites[playersprite.fireass]
+		break;
 	case playerstates.debug:
 		newsprite = object_get_sprite(selecteddebugobject)
 		if (newsprite == -1)
@@ -973,6 +998,18 @@ if isotherplayer && distance_to_object(global.mainplayer)>=320
 	offscreentimer++
 else
 	offscreentimer = 0
+if (sprite_index == playersprites[playersprite.walk])
+{
+	walktimer++
+	if walktimer=24
+	{
+		walktimer=0
+		audio_play_sound(snd_footstep,1,false,global.sndvol,0,random_range(1,1.2))
+	}
+}
+else {
+	walktimer=0
+}
 if (!audio_exists(runningsound))
 	runningsound = audio_play_sound(snd_run, 1, true, global.sndvol)
 if (sprite_index == playersprites[playersprite.run])
@@ -989,7 +1026,23 @@ else if !audio_is_paused(runningsound)
 	audio_pause_sound(runningsound)
 	image_speed = 1
 }
-	
+if abs(hsp)>walkspeed
+{
+	runtrailtimer++
+	if runtrailtimer=25
+	{
+		runtrailtimer=0
+		with instance_create_depth(x,y,depth,obj_boost_trail)
+		{
+			sprite_index=other.sprite_index
+			image_index=other.image_index
+			image_xscale=other.image_xscale
+		}
+	}
+}
+else {
+	runtrailtimer=0
+}
 if ((sprite_index == playersprites[playersprite.brake]) && abs(hsp) > walkspeed)
 {
 	if (!hasplayedbrakesound)

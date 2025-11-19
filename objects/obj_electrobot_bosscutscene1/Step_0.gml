@@ -36,12 +36,12 @@ if global.cutscenestate=7
 	{
 		sprite_index=spr_electrobot_idle
 	}
-	audio_sound_gain(global.currentsong,0,2000)
+	audio_sound_gain(mus_cutscene,0,2000)
 }
 if global.cutscenestate=7 && !audio_is_playing(snd_elecboss7vo_y) && !audio_is_playing(snd_elecboss7vo_t)
 {
 	global.cutscenestate=8
-	audio_stop_sound(global.currentsong)
+	audio_stop_sound(mus_cutscene)
 	sprite_index=spr_electrobot_idle
 	global.currentsong=mus_chillfields_boss
 	audio_play_sound(global.currentsong,1,true,global.musvol)

@@ -12,6 +12,7 @@ function scr_player_dobounce(){
 		vsp = bounceheightbigger
 	else
 	vsp = bounceheight
+	audio_play_sound(snd_stompland, 1, false, global.sndvol)
 	audio_play_sound(snd_bounce, 1, false, global.sndvol)
 	grounded = false
 	prevgrounded = false
