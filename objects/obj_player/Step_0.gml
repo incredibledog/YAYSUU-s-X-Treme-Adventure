@@ -42,11 +42,14 @@ if place_meeting(x, y, obj_lava) && state!=playerstates.dead
 		newstate = playerstates.dead
 		audio_stop_all()
 		audio_play_sound(mus_dead,1,false,global.sndvol)
+		global.lives--
 	}
 	else {
 		newstate = playerstates.fireass
+		audio_play_sound(snd_ahooga, 1, false, global.sndvol)
 	}
 	vsp = bounceheight*1.5
+	audio_play_sound(snd_fire, 1, false, global.sndvol)
 	audio_play_sound(snd_ouchie, 1, false, global.sndvol)
 	grounded = false
 	prevgrounded = false
