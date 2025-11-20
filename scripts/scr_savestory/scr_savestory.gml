@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function savestory(stageprogress){
+	if global.arcade
+		return;
 	ini_open("savedata.ini")
 	var characterfile = "file" + global.char
 	var allclear = ini_read_real(characterfile,"stage",0)=6

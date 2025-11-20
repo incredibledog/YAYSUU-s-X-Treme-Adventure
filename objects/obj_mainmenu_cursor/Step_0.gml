@@ -74,7 +74,11 @@ if (global.key_menuaccept) && selected=false
 			break
 	}
 }
-
+if global.key_menuquit && selected=false
+{
+	audio_play_sound(snd_nahnvm,1,false,global.sndvol)
+	loadroom(room_titlescreen, loadtype.menu)
+}
 if delay>0 && !global.quickmenu
 	delay--
 else if selected=true && !obj_fadeblack.fading

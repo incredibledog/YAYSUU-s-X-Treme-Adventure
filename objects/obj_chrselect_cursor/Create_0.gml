@@ -5,6 +5,7 @@ chos2=2
 selected=false
 delay=0
 global.multiplayer = false
+global.arcade = false
 global.char="Y"
 teddyavailable = true
 prevchos = 0

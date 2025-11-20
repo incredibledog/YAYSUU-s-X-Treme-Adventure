@@ -9,5 +9,7 @@ if image_xscale>1
 }
 if uwt>0
 	uwt--
-else
+else {
 	sprite_index=spr_logo
+	scr_windowtitle("YAYSUU's X-Treme Adventure!")
+}

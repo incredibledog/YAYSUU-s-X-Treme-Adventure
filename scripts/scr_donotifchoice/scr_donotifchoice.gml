@@ -56,6 +56,9 @@ function donotifchoice(notifid){
 			obj_extrastages.changedlevel=true
 		}
 		break;
+		case 6: // quit game
+		game_end()
+		break;
 		default:
 		show_error("INVALID NOTIF ID! STUPID! See scr_donotifchoice for more info.",false)
 		break;

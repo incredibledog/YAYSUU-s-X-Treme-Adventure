@@ -42,6 +42,7 @@ window_set_size(640*global.screenscale,480*global.screenscale)
 audio_group_load(voicelines)
 window_enable_borderless_fullscreen(true)
 global.trial=false
+global.arcade=false
 global.font=font_add_sprite_ext(spr_text,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.,:!?-",false,0)
 global.subtitlefont=font_add_sprite_ext(spr_subtitlefont, "()[]!#$%'*,.:-/+?@^abcdefghijklmnopqrstuvwxyz~{}0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",false,0)
 global.optfont=font_add_sprite_ext(spr_text_options,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.,:!?-",false,0)
@@ -55,6 +56,7 @@ p2axislv = gamepad_axis_value(global.p2_controlslot,gp_axislv)
 global.char = "Y"
 global.p2char = "T" // SO LONG, USELESS FUNCTIONS!
 global.currentsong = -1
+global.cutscenestate = 0
 global.jumpscare = false
 global.debugmessage = ""
 global.timer = 0

@@ -73,7 +73,10 @@ if (selected)
 	else if (!obj_fadeblack.fading)
 	{
 		if !(global.trial) {
-			loadnewstage(savelives[charlife],currentstage)
+			if global.arcade
+				loadnewstage(3,room_tutorial)
+			else
+				loadnewstage(savelives[charlife],currentstage)
 		}
 		else {
 			if global.prevroom=room_extrastages || global.prevroom=room_extras
@@ -86,7 +89,7 @@ if (selected)
 		}
 	}
 }
-if global.key_runp && !global.trial && !instance_exists(obj_notification)
+if global.key_runp && !global.trial && !global.arcade && !instance_exists(obj_notification)
 {
 	with instance_create_depth(0,0,depth-1,obj_notification)
 	{
@@ -166,6 +169,11 @@ else if !instance_exists(obj_notification)
 		else if chos=2
 			chos--
 		chos2=chos=1 ? 2 : 1
+	}
+	else if ((global.key_upp) || (global.key_downp)) && !selected && !global.trial
+	{
+		global.arcade=!global.arcade
+		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 	/*else if global.key_upp
 	{

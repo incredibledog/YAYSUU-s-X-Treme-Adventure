@@ -152,33 +152,13 @@ if !waitingforinput
 		if player=1
 		{
 			if global.key_rightp
-				{
-					if global.p1_controlslot+1=global.p2_controlslot
-					{
-						if global.p2_controlslot!=3
-						{
-							global.p1_controlslot+=2
-						}
-					}
-					else
-					{
-						global.p1_controlslot++
-					}
-					audio_play_sound(snd_move,1,false,global.sndvol)
-				}
+			{
+				global.p1_controlslot++
+				audio_play_sound(snd_move,1,false,global.sndvol)
+			}
 			if global.key_leftp
 			{
-				if global.p1_controlslot-1=global.p2_controlslot
-				{
-					if global.p2_controlslot!=0
-					{
-						global.p1_controlslot-=2
-					}
-				}
-				else 
-				{
-					global.p1_controlslot--
-				}
+				global.p1_controlslot--
 				audio_play_sound(snd_move,1,false,global.sndvol)
 			}
 			global.p1_controlslot=clamp(global.p1_controlslot,0,3)
@@ -186,33 +166,13 @@ if !waitingforinput
 		if player=2
 		{
 			if global.p2_key_rightp
-				{
-					if global.p2_controlslot+1=global.p1_controlslot
-					{
-						if global.p1_controlslot!=3
-						{
-							global.p2_controlslot+=2
-						}
-					}
-					else
-					{
-						global.p2_controlslot++
-					}
-					audio_play_sound(snd_move,1,false,global.sndvol)
-				}
+			{
+				global.p2_controlslot++
+				audio_play_sound(snd_move,1,false,global.sndvol)
+			}
 			if global.p2_key_leftp
 			{
-				if global.p2_controlslot-1=global.p1_controlslot
-				{
-					if global.p1_controlslot!=0
-					{
-						global.p2_controlslot-=2
-					}
-				}
-				else
-				{
-					global.p2_controlslot--
-				}
+				global.p2_controlslot--
 				audio_play_sound(snd_move,1,false,global.sndvol)
 			}
 			global.p2_controlslot=clamp(global.p2_controlslot,0,3)

@@ -12,7 +12,7 @@ if (started)
 	else if (!obj_fadeblack.fading)
 		loadroom(room_mainmenu, loadtype.menu)
 }
-else if st==0
+else if st==0 && !instance_exists(obj_notification)
 {
 	if keyboard_check_pressed(global.p1_startkey) || keyboard_check_pressed(global.p1_jumpkey)
 	{
@@ -24,7 +24,16 @@ else if st==0
 		global.inputtype=2
 		started = true
 	}
-	
+	if keyboard_check_pressed(vk_escape)
+	{
+		with instance_create_depth(0,0,0,obj_notification)
+		{
+			text="Are you sure you want to quit the game?"
+			color="white"
+			choicer=true
+			notifid=6
+		}
+	}
 	if started
 	{
 		delay=60
