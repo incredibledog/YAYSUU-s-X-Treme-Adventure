@@ -7,7 +7,12 @@ draw_text(32,32,"EXTRAS")
 draw_text(32,96,"CREDITS")
 draw_text(32,128,"SOUNDTEST")
 draw_text(32,160,"CHEATS")
+if !extrasunlock
+{
+	draw_set_alpha(0.5)
+}
 draw_text(32,192,"EXTRA STAGES")
+draw_set_alpha(1)
 draw_text(32,224,"ACHIEVEMENTS")
 if global.inputtype=3
 {

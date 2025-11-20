@@ -42,11 +42,15 @@ switch chos
 	}
 	break;
 	case 4:
-	if global.key_menuaccept
+	if global.key_menuaccept && extrasunlock
 	{
 		audio_play_sound(snd_confirm,1,false,global.sndvol)
 		global.trial=true
 		loadroom(room_charselect,loadtype.menu)
+	}
+	else if global.key_menuaccept && !extrasunlock
+	{
+		audio_play_sound(snd_nicetry,1,false,global.sndvol)
 	}
 	break;
 	case 5:
