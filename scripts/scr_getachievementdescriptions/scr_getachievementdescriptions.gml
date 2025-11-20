@@ -52,7 +52,7 @@ function getachievementdescriptions(){
 	}
 	if getachievement(8)
 	{
-		description[8]="Can't get this achievement yet. I HAVEN'T IMPLEMENTED IT!!!!"
+		description[8]="You beat the demo! Congratulationations!"
 	}
 	else {
 		description[8]="Complete your adventure."
