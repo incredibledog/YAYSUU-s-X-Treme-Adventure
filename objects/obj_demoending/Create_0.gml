@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 init=false
+obtainachievement(8)
 wait=4*global.defaultfps
 if global.char="Y"
 {
