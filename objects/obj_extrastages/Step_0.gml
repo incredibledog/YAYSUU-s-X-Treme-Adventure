@@ -4,7 +4,8 @@ if xoffset=632
 	xoffset=0
 else
 	xoffset+=8
-
+if instance_exists(obj_notification)
+	return;
 var prevselect = select
 if global.key_leftp
 {
@@ -78,4 +79,14 @@ else if global.key_menuquit
 	audio_stop_all()
 	audio_play_sound(snd_nahnvm,1,false,global.sndvol)
 	loadroom(room_charselect, loadtype.menu)
+}
+if global.key_runp && !instance_exists(obj_notification)
+{
+	with instance_create_depth(0,0,depth-1,obj_notification)
+	{
+		text="Are you sure you want to delete ALL Trial Mode and Extra Stages records?"
+		color="red"
+		choicer=true
+		notifid=5
+	}
 }

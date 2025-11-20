@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.inlevel && !global.inboss && !instance_exists(obj_enemy)
+if global.inlevel && !global.inboss && !global.inhub && !instance_exists(obj_enemy)
 {
 	obtainachievement(1)
 }

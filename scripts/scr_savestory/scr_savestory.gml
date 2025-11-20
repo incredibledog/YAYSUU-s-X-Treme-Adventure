@@ -3,6 +3,12 @@
 function savestory(stageprogress){
 	ini_open("savedata.ini")
 	var characterfile = "file" + global.char
+	var allclear = ini_read_real(characterfile,"stage",0)=6
+	if allclear
+	{
+		ini_close()
+		return;
+	}
 	ini_write_real(characterfile,"lives",global.lives)
 	ini_write_real(characterfile,"stage",stageprogress)
 	ini_write_real(characterfile,"month",date_get_month(date_current_datetime()))

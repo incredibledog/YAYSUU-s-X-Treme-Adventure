@@ -83,24 +83,28 @@ else if (!obj_fadeblack.fading)
 			switch (room)
 			{
 				case room_tutorial:
-					loadroom(room_chillfields_1, loadtype.newlevel)
+					loadnewstage(global.lives, room_chillfields_1)
 					stageprogress=1
 					break;
 				case room_chillfields_1:
-					loadroom(room_chillfields_2, loadtype.newlevel)
+					loadnewstage(global.lives, room_chillfields_2)
 					stageprogress=2
 					break;
 				case room_chillfields_2d:
-					loadroom(room_chillfields_boss, loadtype.newlevel)
+					loadnewstage(global.lives, room_chillfields_boss)
 					stageprogress=3
 					break;
 				case room_chillfields_boss:
-					loadroom(room_mysticmanor_1, loadtype.newlevel)
+					loadnewstage(global.lives, room_mysticmanor_1)
 					stageprogress=4
 					break;
 				case room_mysticmanor_1c:
-					loadroom(room_mysticmanor_2, loadtype.newlevel)
+					loadnewstage(global.lives, room_mysticmanor_2)
 					stageprogress=5
+					break;
+				case room_mysticmanor_2c:
+					loadroom(room_demoending, loadtype.menu)
+					stageprogress=6
 					break;
 				default:
 					loadroom(room_mainmenu, false)

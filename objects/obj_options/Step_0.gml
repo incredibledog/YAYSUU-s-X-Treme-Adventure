@@ -3,12 +3,12 @@
 if (obj_fadeblack.fading)
 	return
 
-if global.key_downp
+if global.key_downp && !instance_exists(obj_notification)
 {
 	chos++
 	audio_play_sound(snd_move,1,false,global.sndvol)
 }
-if global.key_upp
+if global.key_upp && !instance_exists(obj_notification)
 {
 	chos--
 	audio_play_sound(snd_move,1,false,global.sndvol)
@@ -79,12 +79,15 @@ switch chos
 	}
 	break;
 	case 8:
-	if global.key_menuaccept
+	if global.key_menuaccept && !instance_exists(obj_notification)
 	{
-		ini_open("savedata.ini")
-		ini_section_delete("records")
-		ini_close()
-		audio_play_sound(snd_kablooey,1,false,global.sndvol)
+		with (instance_create_depth(0,0,depth-1,obj_notification))
+		{
+			text="Are you sure you want to delete ALL save data?"
+			color="red"
+			choicer=true
+			notifid=4
+		}
 	}
 	break;
 	case 9:

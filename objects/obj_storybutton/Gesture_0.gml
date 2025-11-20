@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (!global.mobile)
+if (!global.mobile) || (obj_mainmenu_cursor.selected)
 	return;
 obj_mainmenu_cursor.chos=1
 obj_mainmenu_cursor.nextroom=room_charselect

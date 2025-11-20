@@ -8,6 +8,7 @@ function donotifchoice(notifid){
 		case 1: // story save deletion
 		ini_open("savedata.ini")
 		var filename=""
+		var charlife=obj_chrselect_cursor.charlife
 		if obj_chrselect_cursor.charlife=0
 			filename="fileY"
 		else if obj_chrselect_cursor.charlife=1
@@ -29,6 +30,31 @@ function donotifchoice(notifid){
 		ini_close()
 		with obj_achievements
 			getachievementdescriptions()
+		break;
+		case 3: // unlock extra stages
+		ini_open("savedata.ini")
+		ini_write_real("extras","extrastageunlock",true)
+		ini_close()
+		loadroom(room_titlescreen,loadtype.menu)
+		break;
+		case 4: // reset ALL data
+		if file_exists("savedata.ini")
+			file_delete("savedata.ini")
+		audio_play_sound(snd_kablooey,1,false,global.sndvol)
+		break;
+		case 5: // reset records
+		audio_play_sound(snd_kablooey,1,false,global.sndvol)
+		ini_open("savedata.ini")
+		ini_section_delete("records")
+		ini_close()
+		if (instance_exists(obj_trialmenu))
+		{
+			obj_trialmenu.changedlevel=true
+		}
+		if (instance_exists(obj_extrastages))
+		{
+			obj_extrastages.changedlevel=true
+		}
 		break;
 		default:
 		show_error("INVALID NOTIF ID! STUPID! See scr_donotifchoice for more info.",false)

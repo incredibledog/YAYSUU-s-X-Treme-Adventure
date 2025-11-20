@@ -55,6 +55,11 @@ switch savestage[charlife]
 	lvlname="Mystic Manor Stage 2"
 	gameprogress=33
 	break;
+	case 6:
+	currentstage=room_househub
+	lvlname="ALL CLEAR"
+	gameprogress=100
+	break;
 	default:
 	currentstage=room_jasperror
 	lvlname="???"

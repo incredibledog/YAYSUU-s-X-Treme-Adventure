@@ -30,7 +30,7 @@ if global.speedrun=true
 	draw_text(32,288,"PRECISE TIMER  ON")
 else
 	draw_text(32,288,"PRECISE TIMER  OFF")
-draw_text(32,320,"RESET RECORDS")
+draw_text(32,320,"RESET ALL DATA")
 draw_text(32,352,"RESET 2 DEFAULT")
 draw_text(32,384,"CONTROL TEST")
 draw_text(32,416,"SAVE N QUIT")

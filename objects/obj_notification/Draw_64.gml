@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 draw_set_halign(fa_left)
+draw_set_valign(fa_top)
 draw_sprite_ext(spr_notification,image_index,320,240,image_xscale,image_yscale,0,c_white,1)
 if image_yscale=1
 {
