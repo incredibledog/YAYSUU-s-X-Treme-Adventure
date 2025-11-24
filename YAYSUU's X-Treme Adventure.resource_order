@@ -304,6 +304,7 @@
     {"name":"scr_roomstart","order":3,"path":"scripts/scr_roomstart/scr_roomstart.yy",},
     {"name":"scr_savestory","order":29,"path":"scripts/scr_savestory/scr_savestory.yy",},
     {"name":"scr_setlogicobject","order":18,"path":"scripts/scr_setlogicobject/scr_setlogicobject.yy",},
+    {"name":"scr_settingsinit","order":46,"path":"scripts/scr_settingsinit/scr_settingsinit.yy",},
     {"name":"scr_setupcharacter","order":30,"path":"scripts/scr_setupcharacter/scr_setupcharacter.yy",},
     {"name":"scr_shake","order":26,"path":"scripts/scr_shake/scr_shake.yy",},
     {"name":"scr_temphacky_closestplayer","order":40,"path":"scripts/scr_temphacky_closestplayer/scr_temphacky_closestplayer.yy",},

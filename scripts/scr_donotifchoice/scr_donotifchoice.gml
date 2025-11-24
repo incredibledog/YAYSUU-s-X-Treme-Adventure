@@ -40,6 +40,7 @@ function donotifchoice(notifid){
 		case 4: // reset ALL data
 		if file_exists("savedata.ini")
 			file_delete("savedata.ini")
+		settings_init()
 		audio_play_sound(snd_kablooey,1,false,global.sndvol)
 		break;
 		case 5: // reset records

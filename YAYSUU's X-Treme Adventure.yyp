@@ -367,6 +367,7 @@
     {"id":{"name":"scr_roomstart","path":"scripts/scr_roomstart/scr_roomstart.yy",},},
     {"id":{"name":"scr_savestory","path":"scripts/scr_savestory/scr_savestory.yy",},},
     {"id":{"name":"scr_setlogicobject","path":"scripts/scr_setlogicobject/scr_setlogicobject.yy",},},
+    {"id":{"name":"scr_settingsinit","path":"scripts/scr_settingsinit/scr_settingsinit.yy",},},
     {"id":{"name":"scr_setupcharacter","path":"scripts/scr_setupcharacter/scr_setupcharacter.yy",},},
     {"id":{"name":"scr_shake","path":"scripts/scr_shake/scr_shake.yy",},},
     {"id":{"name":"scr_temphacky_closestplayer","path":"scripts/scr_temphacky_closestplayer/scr_temphacky_closestplayer.yy",},},

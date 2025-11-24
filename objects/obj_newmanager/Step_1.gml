@@ -17,7 +17,7 @@ if (global.inputtype != 3)
 }
 if keyboard_check_any_pressed(2) && global.p2inputtype != 0
 	global.p2inputtype = 0
-if gamepad_any_button_pressed(global.p2_controlslot) || p2axislh!=p2prevaxislh || p2axislv!=prevaxislv && global.p2inputtype != 2
+if (gamepad_any_button_pressed(global.p2_controlslot) || p2axislh!=p2prevaxislh || p2axislv!=prevaxislv) && global.p2inputtype != 2
 	global.p2inputtype = 2
 if (global.inputtype == 0) || (global.inputtype == 3)
 {
@@ -41,7 +41,7 @@ if (global.inputtype == 0) || (global.inputtype == 3)
 }
 else if global.inputtype == 2
 {
-	if gamepad_is_connected(0)
+	if gamepad_is_connected(global.p1_controlslot)
 	{
 		global.key_left = axislh < -global.sensitivity || gamepad_button_check(global.p1_controlslot,gp_padl)
 		global.key_leftp = (axislh < -global.sensitivity && prevaxislh >= -global.sensitivity) || gamepad_button_check_pressed(global.p1_controlslot,gp_padl)
@@ -88,7 +88,7 @@ if (global.p2inputtype == 0)
 }
 else if global.p2inputtype == 2
 {
-	if gamepad_is_connected(0)
+	if gamepad_is_connected(global.p2_controlslot)
 	{
 		global.p2_key_left = p2axislh < -global.sensitivity || gamepad_button_check(global.p2_controlslot,gp_padl)
 		global.p2_key_leftp = (p2axislh < -global.sensitivity && p2prevaxislh >= -global.sensitivity) || gamepad_button_check_pressed(global.p2_controlslot,gp_padl)
