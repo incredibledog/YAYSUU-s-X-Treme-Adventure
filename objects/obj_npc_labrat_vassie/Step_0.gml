@@ -12,7 +12,7 @@ if talking && !talked
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
 				name="Vassie"
-				text="from skibidi toilet's sigmær adventure to this?"
+				text="from skibidi toilet's sigmaer adventure to this?"
 				color="pink"
 			}
 			break;
@@ -43,7 +43,7 @@ else if talking && talked
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
 				name="Vassie"
-				text="they're already making \"the rise and fall of fazmade\"... i can TASTE it..."
+				text="they're already making the rise and fall of fazmade... i can TASTE it..."
 				color="pink"
 			}
 			break;
