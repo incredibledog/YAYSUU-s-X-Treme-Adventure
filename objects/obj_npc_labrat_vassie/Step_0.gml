@@ -11,33 +11,20 @@ if talking && !talked
 			case 1:
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
-				text="(It's a small, sleeping self-insert.)"
-				color="white"
+				name="Vassie"
+				text="from skibidi toilet's sigmær adventure to this?"
+				color="pink"
 			}
 			break;
 			case 2:
-			if instance_exists(obj_robot1)
+			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
-				talking=false
-				talked=true
-				obj_player.newstate=playerstates.normal
-			}
-			else {
-				with instance_create_depth(0,0,depth,obj_dialoguebox)
-				{
-					text="(Seems you saved him from that annoying orange...)"
-					color="white"
-				}
+				name="Vassie"
+				text="zoo wee mama! talk about a glow-DOWN!"
+				color="pink"
 			}
 			break;
 			case 3:
-			with instance_create_depth(0,0,depth,obj_dialoguebox)
-			{
-				text="(He will surely dream of a finished game...)"
-				color="white"
-			}
-			break;
-			case 4:
 			talking=false
 			talked=true
 			obj_player.newstate=playerstates.normal
@@ -55,8 +42,9 @@ else if talking && talked
 			case 1:
 			with instance_create_depth(0,0,depth,obj_dialoguebox)
 			{
-				text="(The programmer takes a nap. Holdout! Programmer!)"
-				color="white"
+				name="Vassie"
+				text="they're already making \"the rise and fall of fazmade\"... i can TASTE it..."
+				color="pink"
 			}
 			break;
 			case 2:

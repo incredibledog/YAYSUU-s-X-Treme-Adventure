@@ -151,6 +151,7 @@
     {"name":"obj_npc_labrat_middy","order":16,"path":"objects/obj_npc_labrat_middy/obj_npc_labrat_middy.yy",},
     {"name":"obj_npc_labrat_midi","order":18,"path":"objects/obj_npc_labrat_midi/obj_npc_labrat_midi.yy",},
     {"name":"obj_npc_labrat_sircub","order":17,"path":"objects/obj_npc_labrat_sircub/obj_npc_labrat_sircub.yy",},
+    {"name":"obj_npc_labrat_vassie","order":20,"path":"objects/obj_npc_labrat_vassie/obj_npc_labrat_vassie.yy",},
     {"name":"obj_npc_lockeddoor","order":9,"path":"objects/obj_npc_lockeddoor/obj_npc_lockeddoor.yy",},
     {"name":"obj_npc_lockeddoor2","order":13,"path":"objects/obj_npc_lockeddoor2/obj_npc_lockeddoor2.yy",},
     {"name":"obj_npc_tv","order":6,"path":"objects/obj_npc_tv/obj_npc_tv.yy",},

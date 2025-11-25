@@ -210,6 +210,7 @@
     {"id":{"name":"obj_npc_labrat_middy","path":"objects/obj_npc_labrat_middy/obj_npc_labrat_middy.yy",},},
     {"id":{"name":"obj_npc_labrat_midi","path":"objects/obj_npc_labrat_midi/obj_npc_labrat_midi.yy",},},
     {"id":{"name":"obj_npc_labrat_sircub","path":"objects/obj_npc_labrat_sircub/obj_npc_labrat_sircub.yy",},},
+    {"id":{"name":"obj_npc_labrat_vassie","path":"objects/obj_npc_labrat_vassie/obj_npc_labrat_vassie.yy",},},
     {"id":{"name":"obj_npc_lockeddoor","path":"objects/obj_npc_lockeddoor/obj_npc_lockeddoor.yy",},},
     {"id":{"name":"obj_npc_lockeddoor2","path":"objects/obj_npc_lockeddoor2/obj_npc_lockeddoor2.yy",},},
     {"id":{"name":"obj_npc_tv","path":"objects/obj_npc_tv/obj_npc_tv.yy",},},
