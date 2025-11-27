@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
-  "compressionQuality":4,
+  "compression":1,
+  "compressionQuality":0,
   "conversionMode":0,
-  "duration":2.586122,
+  "duration":2.5365534,
   "exportDir":"",
   "name":"mus_idalogo",
   "parent":{

@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
-  "compressionQuality":4,
+  "compression":1,
+  "compressionQuality":10,
   "conversionMode":0,
-  "duration":1.2277551,
+  "duration":1.2277708,
   "exportDir":"",
   "name":"snd_stomp",
   "parent":{
@@ -20,7 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":48000,
   "soundFile":"snd_stomp.mp3",
   "volume":1.0,
 }
