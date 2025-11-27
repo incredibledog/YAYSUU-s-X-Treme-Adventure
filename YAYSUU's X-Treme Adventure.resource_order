@@ -227,6 +227,7 @@
     {"name":"obj_water","order":9,"path":"objects/obj_water/obj_water.yy",},
     {"name":"obj_yaysuudance","order":9,"path":"objects/obj_yaysuudance/obj_yaysuudance.yy",},
     {"name":"obj_yaysuurun","order":17,"path":"objects/obj_yaysuurun/obj_yaysuurun.yy",},
+    {"name":"obj_yaysuuwalk","order":33,"path":"objects/obj_yaysuuwalk/obj_yaysuuwalk.yy",},
     {"name":"room_charredforest","order":37,"path":"rooms/room_charredforest/room_charredforest.yy",},
     {"name":"room_charselect","order":2,"path":"rooms/room_charselect/room_charselect.yy",},
     {"name":"room_chilifields_a","order":39,"path":"rooms/room_chilifields_a/room_chilifields_a.yy",},

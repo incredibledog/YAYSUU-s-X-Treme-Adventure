@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 select=0
+t=0
 currentlevel=room_glowstickcity
 endlevel=room_glowstickcity
 lvlname="Glowstick City (Uncanny Cat Golf)"

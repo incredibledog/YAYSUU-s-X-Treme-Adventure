@@ -288,6 +288,7 @@
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
     {"id":{"name":"obj_yaysuudance","path":"objects/obj_yaysuudance/obj_yaysuudance.yy",},},
     {"id":{"name":"obj_yaysuurun","path":"objects/obj_yaysuurun/obj_yaysuurun.yy",},},
+    {"id":{"name":"obj_yaysuuwalk","path":"objects/obj_yaysuuwalk/obj_yaysuuwalk.yy",},},
     {"id":{"name":"room_charredforest","path":"rooms/room_charredforest/room_charredforest.yy",},},
     {"id":{"name":"room_charselect","path":"rooms/room_charselect/room_charselect.yy",},},
     {"id":{"name":"room_chilifields_a","path":"rooms/room_chilifields_a/room_chilifields_a.yy",},},
