@@ -1,6 +1,8 @@
 settings_init()
 audio_group_load(voicelines)
 window_enable_borderless_fullscreen(true)
+global.menurepeat_delay=15
+global.menurepeat_holddelay=7
 global.trial=false
 global.arcade=false
 global.font=font_add_sprite_ext(spr_text,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.,:!?-",false,0)
