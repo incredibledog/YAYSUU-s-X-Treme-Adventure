@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"mus_trialmenu_gc",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"trialmenu",
+    "path":"audiogroups/trialmenu",
   },
   "bitDepth":1,
   "channelFormat":1,

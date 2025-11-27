@@ -4,6 +4,7 @@
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMAudioGroup":"v1","%Name":"voicelines","exportDir":"","name":"voicelines","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"trialmenu","exportDir":"","name":"trialmenu","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -406,6 +407,7 @@
     {"id":{"name":"mus_mysticmanor_1","path":"sounds/mus_mysticmanor_1/mus_mysticmanor_1.yy",},},
     {"id":{"name":"mus_mysticmanor_2","path":"sounds/mus_mysticmanor_2/mus_mysticmanor_2.yy",},},
     {"id":{"name":"mus_night","path":"sounds/mus_night/mus_night.yy",},},
+    {"id":{"name":"mus_none","path":"sounds/mus_none/mus_none.yy",},},
     {"id":{"name":"mus_options","path":"sounds/mus_options/mus_options.yy",},},
     {"id":{"name":"mus_results","path":"sounds/mus_results/mus_results.yy",},},
     {"id":{"name":"mus_teddywin","path":"sounds/mus_teddywin/mus_teddywin.yy",},},

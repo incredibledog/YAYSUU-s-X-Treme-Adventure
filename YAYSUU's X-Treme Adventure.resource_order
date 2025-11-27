@@ -342,6 +342,7 @@
     {"name":"mus_mysticmanor_1","order":56,"path":"sounds/mus_mysticmanor_1/mus_mysticmanor_1.yy",},
     {"name":"mus_mysticmanor_2","order":94,"path":"sounds/mus_mysticmanor_2/mus_mysticmanor_2.yy",},
     {"name":"mus_night","order":42,"path":"sounds/mus_night/mus_night.yy",},
+    {"name":"mus_none","order":117,"path":"sounds/mus_none/mus_none.yy",},
     {"name":"mus_options","order":58,"path":"sounds/mus_options/mus_options.yy",},
     {"name":"mus_results","order":100,"path":"sounds/mus_results/mus_results.yy",},
     {"name":"mus_teddywin","order":30,"path":"sounds/mus_teddywin/mus_teddywin.yy",},

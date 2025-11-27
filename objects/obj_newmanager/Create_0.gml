@@ -1,4 +1,5 @@
 settings_init()
+audio_group_load(trialmenu)
 audio_group_load(voicelines)
 window_enable_borderless_fullscreen(true)
 global.menurepeat_delay=15
