@@ -1,13 +1,37 @@
-if (global.key_leftp && selection > 0)
+if global.key_left
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		selection--
+		audio_play_sound(snd_kablooey_jr, 0, false)	
+	}
+} else if global.key_right
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		selection++
+		audio_play_sound(snd_kablooey_jr, 0, false)
+	}
+} else {
+	dedede = 0
+}
+
+if (global.key_leftp)
 {
 	selection--
 	audio_play_sound(snd_kablooey_jr, 0, false)
 }
-else if (global.key_rightp && selection < 5)
+else if (global.key_rightp)
 {
 	selection++
 	audio_play_sound(snd_kablooey_jr, 0, false)
 }
+
+lastitem = 5
+if selection > lastitem selection = 0 else if selection < 0 selection = lastitem
+
 switch (selection)
 {
 	case 0:

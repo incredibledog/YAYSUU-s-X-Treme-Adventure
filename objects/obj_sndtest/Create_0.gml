@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 audio_stop_all()
+dedede=0
 select=0
 rot=0
 currentsound=snd_hfail

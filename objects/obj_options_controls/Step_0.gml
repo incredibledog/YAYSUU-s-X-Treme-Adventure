@@ -4,6 +4,25 @@ if (obj_fadeblack.fading)
 	return
 if player=1
 {
+	if global.key_down && !waitingforinput
+	{
+		dedede++
+		if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+		{
+			chos++
+			audio_play_sound(snd_move,1,false,global.sndvol)	
+		}
+	} else if global.key_up && !waitingforinput
+	{
+		dedede++
+		if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+		{
+			chos--
+			audio_play_sound(snd_move,1,false,global.sndvol)
+		}
+	} else {
+		dedede = 0
+	}
 	if global.key_downp && !waitingforinput
 	{
 		chos++
@@ -17,6 +36,25 @@ if player=1
 }
 if player=2
 {
+	if global.p2_key_down && !waitingforinput
+	{
+		dedede++
+		if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+		{
+			chos++
+			audio_play_sound(snd_move,1,false,global.sndvol)	
+		}
+	} else if global.p2_key_up && !waitingforinput
+	{
+		dedede++
+		if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+		{
+			chos--
+			audio_play_sound(snd_move,1,false,global.sndvol)
+		}
+	} else {
+		dedede = 0
+	}
 	if global.p2_key_downp && !waitingforinput
 	{
 		chos++
@@ -30,11 +68,14 @@ if player=2
 }
 if global.inputtype=3
 {
-	chos=clamp(chos,9,16)
+	firstitem = 9
+	lastitem = 16
 }
 else {
-	chos=clamp(chos,1,16)
+	firstitem = 1
+	lastitem = 16
 }
+if chos > lastitem chos = firstitem else if chos < firstitem chos = lastitem
 if vibrationexample>0
 {
 	vibrationexample--

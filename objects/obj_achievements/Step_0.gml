@@ -2,6 +2,26 @@
 // You can write your code in this editor
 if !instance_exists(obj_notification)
 {
+	if global.key_left
+	{
+		dedede++
+		if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+		{
+			chos--
+			audio_play_sound(snd_move,1,false,global.sndvol)	
+		}
+	} else if global.key_right
+	{
+		dedede++
+		if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+		{
+			chos++
+			audio_play_sound(snd_move,1,false,global.sndvol)
+		}
+	} else {
+		dedede = 0
+	}
+	
 	if global.key_rightp
 	{
 		audio_play_sound(snd_move,1,false,global.sndvol)
@@ -12,7 +32,8 @@ if !instance_exists(obj_notification)
 		audio_play_sound(snd_move,1,false,global.sndvol)
 		chos--
 	}
-	chos=clamp(chos,1,9)
+	lastitem = 9
+	if chos > lastitem chos = 1 else if chos < 1 chos = lastitem
 	if global.key_menuquit
 	{
 		audio_play_sound(snd_nahnvm,1,false,global.sndvol)
