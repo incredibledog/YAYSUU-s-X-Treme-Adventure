@@ -33,7 +33,10 @@ if global.key_upp && !instance_exists(obj_notification)
 	chos--
 	audio_play_sound(snd_move,1,false,global.sndvol)
 }
-if chos > 11 || chos < 1 chos = 1
+
+lastitem = 11
+if chos > lastitem chos = 1 else if chos < 1 chos = lastitem
+
 switch chos
 {
 	case 1:
