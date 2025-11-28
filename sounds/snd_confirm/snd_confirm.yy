@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
-  "compressionQuality":4,
+  "compression":1,
+  "compressionQuality":6,
   "conversionMode":0,
-  "duration":0.78367347,
+  "duration":0.7836875,
   "exportDir":"",
   "name":"snd_confirm",
   "parent":{
@@ -20,7 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":48000,
   "soundFile":"snd_confirm.mp3",
   "volume":1.0,
 }

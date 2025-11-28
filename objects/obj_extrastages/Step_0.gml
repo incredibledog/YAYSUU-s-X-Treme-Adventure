@@ -1,9 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+t += 1
+layer_y(layer_get_id("Background"), sin(t / 32) * 32)
+
 if xoffset=632
 	xoffset=0
 else
-	xoffset+=8
+	xoffset+=2
 if instance_exists(obj_notification)
 	return;
 var prevselect = select

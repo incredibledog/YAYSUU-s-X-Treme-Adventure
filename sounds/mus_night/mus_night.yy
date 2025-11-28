@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":45.096,
+  "duration":45.064854,
   "exportDir":"",
   "name":"mus_night",
   "parent":{

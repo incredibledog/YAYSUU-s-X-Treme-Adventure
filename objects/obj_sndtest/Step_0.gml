@@ -1,15 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
 // I'M SALVAGING THE OLD SOUND TEST!! WE'RE BACK!! AND BETTER THAN EVER!!!
+
+if global.key_left && !audio_is_playing(currentsound)
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		select--	
+	}
+} else if global.key_right && !audio_is_playing(currentsound)
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		select++
+	}
+} else {
+	dedede = 0
+}
+
 if global.key_leftp && !audio_is_playing(currentsound)
 {
-	select-=1
+	select--
 }
 if global.key_rightp && !audio_is_playing(currentsound)
 {
-	select+=1
+	select++
 }
-select=clamp(select,0,18)
+
+lastitem = 18
+if select > lastitem select = 1 else if select < 1 select = lastitem
+
 if audio_is_playing(currentsound)
 	angle--
 else

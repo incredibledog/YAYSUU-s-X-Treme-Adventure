@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
-  "compressionQuality":4,
+  "compression":1,
+  "compressionQuality":10,
   "conversionMode":0,
-  "duration":1.4522449,
+  "duration":1.45225,
   "exportDir":"",
   "name":"snd_kablooey",
   "parent":{
@@ -20,7 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":32000,
   "soundFile":"snd_kablooey.mp3",
   "volume":1.0,
 }

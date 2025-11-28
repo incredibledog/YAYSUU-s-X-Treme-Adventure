@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 chos=1
+dedede=0
 ini_open("savedata.ini")
 extrasunlock=ini_read_real("extras","extrastageunlock",false)
 ini_close()

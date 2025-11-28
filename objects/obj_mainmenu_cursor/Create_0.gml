@@ -17,6 +17,7 @@ switch (global.prevroom)
 }
 image_speed=0
 selected=false
+dedede=0
 delay=0
 menustring="TEST STRING!! "
 if global.inputtype=3

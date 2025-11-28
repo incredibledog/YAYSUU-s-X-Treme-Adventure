@@ -3,6 +3,26 @@
 if (obj_fadeblack.fading)
 	return
 
+if global.key_down && !instance_exists(obj_notification)
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		chos++
+		audio_play_sound(snd_move,1,false,global.sndvol)	
+	}
+} else if global.key_up && !instance_exists(obj_notification)
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		chos--
+		audio_play_sound(snd_move,1,false,global.sndvol)
+	}
+} else {
+	dedede = 0
+}
+
 if global.key_downp && !instance_exists(obj_notification)
 {
 	chos++
@@ -13,7 +33,10 @@ if global.key_upp && !instance_exists(obj_notification)
 	chos--
 	audio_play_sound(snd_move,1,false,global.sndvol)
 }
-chos=clamp(chos,1,11)
+
+lastitem = 11
+if chos > lastitem chos = 1 else if chos < 1 chos = lastitem
+
 switch chos
 {
 	case 1:

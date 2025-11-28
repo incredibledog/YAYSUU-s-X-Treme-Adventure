@@ -4,6 +4,26 @@
 // don't worry about the cheats or museum or story menu I'll do those -yaysuu
 if (obj_fadeblack.fading)
 	return
+	
+if global.key_down
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		chos++
+		audio_play_sound(snd_move,1,false,global.sndvol)	
+	}
+} else if global.key_up
+{
+	dedede++
+	if dedede >= global.menurepeat_delay && dedede % global.menurepeat_holddelay == 0
+	{
+		chos--
+		audio_play_sound(snd_move,1,false,global.sndvol)
+	}
+} else {
+	dedede = 0
+}
 
 if global.key_downp
 {
@@ -15,7 +35,9 @@ if global.key_upp
 	chos--
 	audio_play_sound(snd_move,1,false,global.sndvol)
 }
-chos=clamp(chos,1,7)
+
+lastitem = 7
+if chos > lastitem chos = 1 else if chos < 1 chos = lastitem
 switch chos
 {
 	case 1:

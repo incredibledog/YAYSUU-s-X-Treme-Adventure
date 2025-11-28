@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
-  "compressionQuality":4,
+  "compression":1,
+  "compressionQuality":10,
   "conversionMode":0,
-  "duration":3.2391837,
+  "duration":3.2391875,
   "exportDir":"",
   "name":"snd_dashpad",
   "parent":{
@@ -20,7 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":48000,
   "soundFile":"snd_dashpad.mp3",
   "volume":1.0,
 }

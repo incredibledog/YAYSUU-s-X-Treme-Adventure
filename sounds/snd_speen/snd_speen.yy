@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
-  "compressionQuality":4,
+  "compression":1,
+  "compressionQuality":10,
   "conversionMode":0,
-  "duration":0.9266667,
+  "duration":0.9266458,
   "exportDir":"",
   "name":"snd_speen",
   "parent":{
@@ -20,7 +20,7 @@
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
-  "sampleRate":44100,
+  "sampleRate":48000,
   "soundFile":"snd_speen.wav",
   "volume":1.0,
 }
