@@ -15,6 +15,8 @@ if touchingplayer(x, y)
 		audio_play_sound(snd_boing,1,false,global.sndvol)
 		if (placate.state == playerstates.stomp)
 			placate.newstate = playerstates.bounce
+		else if placate.state != playerstates.normal
+			placate.newstate = playerstates.normal // No More Spring bug
 		sprite_index = bouncesprite
 		image_index = 0
 		placate.grounded = false
