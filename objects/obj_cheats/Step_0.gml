@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-// I'M SALVAGING THE OLD SOUND TEST!! WE'RE BACK!! AND BETTER THAN EVER!!!
 keyboard_string=string_letters(string_lower(keyboard_string))
 if string_length(keyboard_string)>15
 {
@@ -49,6 +48,18 @@ if keyboard_check_pressed(vk_enter)
 		ini_open("savedata.ini")
 		ini_write_real("extras","extrastageunlock",true)
 		ini_close()
+		keyboard_string=""
+		break;
+		case "findher":
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
+		rewardstring="Where is COTTON?"
+		loadroom(room_findher,loadtype.menu)
+		keyboard_string=""
+		break;
+		case "jaspernap":
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
+		rewardstring="You can't see this text lalalalala"
+		loadroom(room_jasperror,loadtype.menu,true)
 		keyboard_string=""
 		break;
 		case "":

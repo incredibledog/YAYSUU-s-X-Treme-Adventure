@@ -309,6 +309,7 @@
     {"id":{"name":"room_ending","path":"rooms/room_ending/room_ending.yy",},},
     {"id":{"name":"room_extras","path":"rooms/room_extras/room_extras.yy",},},
     {"id":{"name":"room_extrastages","path":"rooms/room_extrastages/room_extrastages.yy",},},
+    {"id":{"name":"room_findher","path":"rooms/room_findher/room_findher.yy",},},
     {"id":{"name":"room_gameover","path":"rooms/room_gameover/room_gameover.yy",},},
     {"id":{"name":"room_glowstickcity","path":"rooms/room_glowstickcity/room_glowstickcity.yy",},},
     {"id":{"name":"room_househub_extra","path":"rooms/room_househub_extra/room_househub_extra.yy",},},
@@ -645,6 +646,7 @@
     {"id":{"name":"spr_fadeblack","path":"sprites/spr_fadeblack/spr_fadeblack.yy",},},
     {"id":{"name":"spr_fadewhite","path":"sprites/spr_fadewhite/spr_fadewhite.yy",},},
     {"id":{"name":"spr_fallthroughsign","path":"sprites/spr_fallthroughsign/spr_fallthroughsign.yy",},},
+    {"id":{"name":"spr_findher","path":"sprites/spr_findher/spr_findher.yy",},},
     {"id":{"name":"spr_flower","path":"sprites/spr_flower/spr_flower.yy",},},
     {"id":{"name":"spr_fringleglasses","path":"sprites/spr_fringleglasses/spr_fringleglasses.yy",},},
     {"id":{"name":"spr_fringlemonitor","path":"sprites/spr_fringlemonitor/spr_fringlemonitor.yy",},},
@@ -1017,6 +1019,7 @@
     {"roomId":{"name":"room_chilifields_d","path":"rooms/room_chilifields_d/room_chilifields_d.yy",},},
     {"roomId":{"name":"room_chilifields_e","path":"rooms/room_chilifields_e/room_chilifields_e.yy",},},
     {"roomId":{"name":"room_demoending","path":"rooms/room_demoending/room_demoending.yy",},},
+    {"roomId":{"name":"room_findher","path":"rooms/room_findher/room_findher.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
