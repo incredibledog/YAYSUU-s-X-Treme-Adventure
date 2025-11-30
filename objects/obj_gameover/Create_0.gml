@@ -16,4 +16,4 @@ else if global.char="T"
 	gameoversong=mus_gameover_c
 }
 image_alpha=0
-audio_play_sound(gameoversong,1,false,global.sndvol)
+audio_play_sound(gameoversong,1,false,global.musvol)

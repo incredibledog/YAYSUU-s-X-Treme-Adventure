@@ -43,6 +43,14 @@ if keyboard_check_pressed(vk_enter)
 		global.godmode = true
 		keyboard_string=""
 		break;
+		case "gimmegimme":
+		audio_play_sound(snd_confirm,1,false,global.sndvol)
+		rewardstring="Extra stages unlocked!"
+		ini_open("savedata.ini")
+		ini_write_real("extras","extrastageunlock",true)
+		ini_close()
+		keyboard_string=""
+		break;
 		case "":
 		audio_play_sound(snd_nicetry,1,false,global.sndvol)
 		rewardstring="Please enter in a cheat."

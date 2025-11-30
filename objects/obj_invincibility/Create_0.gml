@@ -9,4 +9,4 @@ if audio_is_playing(global.currentsong)
 {
 	audio_pause_sound(global.currentsong)
 }
-audio_play_sound(mus_invincibility,1,false,global.sndvol)
+audio_play_sound(mus_invincibility,1,false,global.musvol)
