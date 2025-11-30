@@ -80,7 +80,6 @@
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"DONTREADME_CONTROLS.png","CopyToMask":-1,"filePath":"datafiles","name":"DONTREADME_CONTROLS.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"idlogo.mp4","CopyToMask":-1,"filePath":"datafiles","name":"idlogo.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
