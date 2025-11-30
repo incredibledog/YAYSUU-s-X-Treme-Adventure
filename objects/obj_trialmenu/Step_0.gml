@@ -5,6 +5,7 @@ if !sgstarted {
 	sgstarted = true
 	sg = audio_create_sync_group(true);
 	audio_play_in_sync_group(sg, mus_trialmenu_t);
+	audio_sound_gain(mus_trialmenu_t, global.musvol, 0); // MUSIC VOLUME EXISTS YA KNO
 	audio_play_in_sync_group(sg, mus_trialmenu_cf1);
 	audio_sound_gain(mus_trialmenu_cf1, 0, 0);
 	audio_play_in_sync_group(sg, mus_trialmenu_cf2);
@@ -13,6 +14,8 @@ if !sgstarted {
 	audio_sound_gain(mus_trialmenu_cf3, 0, 0);
 	audio_play_in_sync_group(sg, mus_trialmenu_mm1);
 	audio_sound_gain(mus_trialmenu_mm1, 0, 0);
+	audio_play_in_sync_group(sg, mus_trialmenu_mm2);
+	audio_sound_gain(mus_trialmenu_mm2, 0, 0);
 	audio_start_sync_group(sg);	
 }
 
@@ -44,6 +47,7 @@ if (changedlevel)
 	audio_sound_gain(mus_trialmenu_cf2, 0, 0);
 	audio_sound_gain(mus_trialmenu_cf3, 0, 0);
 	audio_sound_gain(mus_trialmenu_mm1, 0, 0);
+	audio_sound_gain(mus_trialmenu_mm2, 0, 0);
 	switch select
 	{
 		case 0:
@@ -52,7 +56,7 @@ if (changedlevel)
 			lvlname="Tutorial Stage"
 			sprname=spr_tutorialscroll
 			bosslvl=false
-			audio_sound_gain(mus_trialmenu_t, 1)
+			audio_sound_gain(mus_trialmenu_t, global.musvol)
 			break;
 		case 1:
 			currentlevel=room_chillfields_1
@@ -60,7 +64,7 @@ if (changedlevel)
 			lvlname="Chill Fields Stage 1"
 			sprname=spr_chillfields1scroll
 			bosslvl=false
-			audio_sound_gain(mus_trialmenu_cf1, 1)
+			audio_sound_gain(mus_trialmenu_cf1, global.musvol)
 			break;
 		case 2:
 			currentlevel=room_chillfields_2
@@ -68,7 +72,7 @@ if (changedlevel)
 			lvlname="Chill Fields Stage 2"
 			sprname=spr_chillfields2scroll
 			bosslvl=false
-			audio_sound_gain(mus_trialmenu_cf2, 1)
+			audio_sound_gain(mus_trialmenu_cf2, global.musvol)
 			break;
 		case 3:
 			currentlevel=room_chillfields_boss
@@ -76,7 +80,7 @@ if (changedlevel)
 			lvlname="Vs. Electrobot"
 			sprname=spr_chillfieldsbossscroll
 			bosslvl=true
-			audio_sound_gain(mus_trialmenu_cf3, 1)
+			audio_sound_gain(mus_trialmenu_cf3, global.musvol)
 			break;
 		case 4:
 			currentlevel=room_mysticmanor_1
@@ -84,7 +88,7 @@ if (changedlevel)
 			lvlname="Mystic Manor Stage 1"
 			sprname=spr_mysticmanor1scroll
 			bosslvl=false
-			audio_sound_gain(mus_trialmenu_mm1, 1)
+			audio_sound_gain(mus_trialmenu_mm1, global.musvol)
 			break;
 		case 5:
 			currentlevel=room_mysticmanor_2
@@ -92,7 +96,7 @@ if (changedlevel)
 			lvlname="Mystic Manor Stage 2"
 			sprname=spr_mysticmanor2scroll
 			bosslvl=false
-			audio_sound_gain(mus_trialmenu_mm1, 1)
+			audio_sound_gain(mus_trialmenu_mm2, global.musvol)
 			break;
 	}
 

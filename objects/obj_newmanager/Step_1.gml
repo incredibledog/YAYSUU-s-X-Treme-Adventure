@@ -61,10 +61,8 @@ else if global.inputtype == 2
 		global.key_menuaccept = global.key_jumpp || global.key_start
 		global.key_menuquit = global.key_dashp
 	}
-	else if !instance_exists(obj_nocontroller)
-	{
-		instance_create_depth(0,0,0,obj_nocontroller)
-	}
+	else
+		global.inputtype=0 // FUCK YOU NO CONTROLLER SCREEN!
 }
 if (global.p2inputtype == 0)
 {
@@ -109,9 +107,7 @@ else if global.p2inputtype == 2
 		global.p2_key_menuquit = global.p2_key_dashp
 	}
 	else
-	{
 		global.p2inputtype = 0
-	}
 }
 else
 {

@@ -1029,7 +1029,7 @@ else if !audio_is_paused(runningsound)
 	audio_pause_sound(runningsound)
 	image_speed = 1
 }
-if abs(hsp)>walkspeed
+if abs(hsp)>walkspeed && state=playerstates.normal // forgor, the sequel
 {
 	runtrailtimer++
 	if runtrailtimer=25

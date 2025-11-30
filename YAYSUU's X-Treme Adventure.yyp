@@ -417,6 +417,7 @@
     {"id":{"name":"mus_trialmenu_cf3","path":"sounds/mus_trialmenu_cf3/mus_trialmenu_cf3.yy",},},
     {"id":{"name":"mus_trialmenu_gc","path":"sounds/mus_trialmenu_gc/mus_trialmenu_gc.yy",},},
     {"id":{"name":"mus_trialmenu_mm1","path":"sounds/mus_trialmenu_mm1/mus_trialmenu_mm1.yy",},},
+    {"id":{"name":"mus_trialmenu_mm2","path":"sounds/mus_trialmenu_mm2/mus_trialmenu_mm2.yy",},},
     {"id":{"name":"mus_trialmenu_t","path":"sounds/mus_trialmenu_t/mus_trialmenu_t.yy",},},
     {"id":{"name":"mus_trialmenu","path":"sounds/mus_trialmenu/mus_trialmenu.yy",},},
     {"id":{"name":"mus_tutorial","path":"sounds/mus_tutorial/mus_tutorial.yy",},},

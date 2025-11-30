@@ -6,7 +6,8 @@ if global.inputtype = 3
 	if room=room_trialmenu || room=room_extrastages
 	{
 		keyleft=virtual_key_add(96,192,64,64,global.p1_leftkey)
-		keyjump=virtual_key_add(224,192,64,64,global.p1_jumpkey)
+		keyrun=virtual_key_add(224,192,64,64,global.p1_runkey)
+		keyjump=virtual_key_add(288,192,64,64,global.p1_jumpkey)
 		keydash=virtual_key_add(352,192,64,64,global.p1_dashkey)
 		keyright=virtual_key_add(480,192,64,64,global.p1_rightkey)
 	}

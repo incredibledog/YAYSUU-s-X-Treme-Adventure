@@ -56,7 +56,7 @@ switch chos
 	}
 	break;
 	case 3:
-	if global.key_menuaccept
+	if global.key_menuaccept && !global.mobile
 	{
 		window_set_fullscreen(!window_get_fullscreen())
 		audio_play_sound(snd_confirm,1,false,global.sndvol)
@@ -64,12 +64,12 @@ switch chos
 	break;
 	case 4:
 	var prevscale=global.screenscale
-	if global.key_rightp
+	if global.key_rightp && !global.mobile
 	{
 		global.screenscale++
 		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
-	if global.key_leftp
+	if global.key_leftp && !global.mobile
 	{
 		global.screenscale--
 		audio_play_sound(snd_move,1,false,global.sndvol)
