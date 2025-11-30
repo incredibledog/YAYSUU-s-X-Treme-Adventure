@@ -34,9 +34,15 @@ if (move != 0 && !(global.skibispin && !grounded))
 if place_meeting(x, y, obj_lava) && state!=playerstates.dead
 {
 	if !isotherplayer
-		global.hp--
+	{
+		if !global.godmode
+			global.hp--
+	}
 	else
-		global.p2hp--
+	{
+		if !global.godmode
+			global.p2hp--
+	}
 	if (!isotherplayer && global.hp=0) || (isotherplayer && global.p2hp=0)
 	{
 		newstate = playerstates.dead
@@ -332,7 +338,7 @@ if (ouchies)
 				global.hp = 0
 			else
 				global.p2hp = 0
-		else if !fratricide
+		else if !fratricide && !global.godmode
 			if !isotherplayer
 				global.hp--
 			else
@@ -523,7 +529,7 @@ if (state == playerstates.hangglide)
 		vsp-=0.5
 	}
 	yearnedhsp = (facingdirection * 5) + (vsp * 0.5)
-	visualrotation = -(vsp)*2
+	visualrotation = -(yearnedvsp)*2
 	if yearnedhsp>hsp
 	{
 		hsp+=0.5

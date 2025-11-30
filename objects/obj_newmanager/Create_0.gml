@@ -42,7 +42,9 @@ global.levelloadtype = loadtype.menu
 global.inhub = false
 global.globaltimer = 0
 global.debugmessageoffset = 0
-global.skibispin = false
+global.skibispin = false // FIX THIS NEXT RELEASE! Thank you.
+global.bobcat = false
+global.godmode = false
 global.quickmenu = false
 global.invertskin = false
 if os_type=os_android
@@ -95,6 +97,6 @@ instance_create_depth(0,0, 100, obj_pause)
 instance_create_depth(0,0, 100, obj_persistentachchecker)
 randomize()
 
-global.indev = false
+global.indev = true
 global.prevroom = room_initbruv
 room_goto(room_idlogo)

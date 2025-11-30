@@ -30,7 +30,7 @@ if global.key_rightp && !audio_is_playing(currentsound)
 }
 
 lastitem = 18
-if select > lastitem select = 1 else if select < 1 select = lastitem
+if select > lastitem select = 0 else if select < 0 select = lastitem
 
 if audio_is_playing(currentsound)
 	angle--
@@ -55,7 +55,7 @@ switch select
 	case 0:
 		currentsound=mus_title
 		sndname="Title Theme - YXA OST"
-		loopthis=true
+		loopthis=false
 	break;
 	case 1:
 		currentsound=mus_mainmenu

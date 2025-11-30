@@ -42,4 +42,5 @@ function settings_init(){
 	global.p2_autorun=ini_read_real("controls","p2autorun",true)
 	ini_close()
 	window_set_size(640*global.screenscale,480*global.screenscale)
+	display_set_gui_size(640,480)
 }

@@ -15,10 +15,19 @@ global.itempopupdepth = 100
 
 if (global.levelloadtype == loadtype.newlevel || global.levelloadtype == loadtype.respawn)
 {
-	global.hp = 3;
-	global.maxhp = 3;
-	global.p2hp = 3
-	global.p2maxhp = 3
+	if global.bobcat
+	{
+		global.hp = 1
+		global.maxhp = 1
+		global.p2hp = 1
+		global.p2maxhp = 1
+	}
+	else {
+		global.hp = 3;
+		global.maxhp = 3;
+		global.p2hp = 3
+		global.p2maxhp = 3
+	}
 	global.scoreadd = 0
 	global.coins=0
 	global.coingoal=100

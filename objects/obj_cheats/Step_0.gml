@@ -6,7 +6,7 @@ if string_length(keyboard_string)>15
 {
 	keyboard_string=string_copy(keyboard_string,1,15)
 }
-if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_face2)
+if keyboard_check_pressed(vk_escape) || gamepad_button_check_pressed(0,gp_face2) || (!keyboard_virtual_status() && global.mobile)
 {
 	audio_play_sound(snd_nahnvm,0,false,global.sndvol)
 	instance_destroy()
@@ -17,33 +17,31 @@ if keyboard_check_pressed(vk_enter)
 {
 	switch keyboard_string
 	{
-		case "yeahletsgo":
+		case "opensalami":
+		if global.mobile
+		{
+			audio_play_sound(snd_nicetry,1,false,global.sndvol)
+			rewardstring="Have you tried not having a phone?"
+			keyboard_string=""
+		}
+		else {
+			audio_play_sound(snd_confirm,1,false,global.sndvol)
+			rewardstring="Indev mode enabled! Use the FUNCTION KEYS!!"
+			global.indev = true
+			keyboard_string=""
+		}
+		break;
+		case "bobcatblues":
 		audio_play_sound(snd_confirm,1,false,global.sndvol)
-		rewardstring="Scuffed voicelines enabled!"
-		global.voicelines=true
+		rewardstring="What could possibly go wrong?"
+		global.bobcat = true
 		keyboard_string=""
 		break;
-		case "zopkonserf":
+		case "iamgod":
 		audio_play_sound(snd_confirm,1,false,global.sndvol)
-		rewardstring="SURPRISE!"
-		loadroom(room_mystery,loadtype.menu)
+		rewardstring="Immortality achieved!"
+		global.godmode = true
 		keyboard_string=""
-		break;
-		case "skibiditoilet":
-		audio_play_sound(snd_confirm,1,false,global.sndvol)
-		rewardstring="Skibidi spin enabled! Do a flip!"
-		global.skibispin = true
-		keyboard_string=""
-		break;
-		case "ifitwasawesome":
-		audio_play_sound(snd_confirm,1,false,global.sndvol)
-		rewardstring="It's pwetty epic."
-		global.invertskin = true
-		keyboard_string=""
-		break;
-		case "exit":
-		audio_play_sound(snd_nahnvm,0,false,global.sndvol)
-		instance_destroy()
 		break;
 		case "":
 		audio_play_sound(snd_nicetry,1,false,global.sndvol)

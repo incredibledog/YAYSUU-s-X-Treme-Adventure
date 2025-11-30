@@ -132,7 +132,7 @@ switch chos
 	if global.key_menuaccept
 	{
 		audio_play_sound(snd_confirm,1,false,global.sndvol)
-		global.multiplayer=true
+		global.multiplayer= !(global.mobile)
 		loadnewstage(420, room_options_test)
 	}
 	break;
