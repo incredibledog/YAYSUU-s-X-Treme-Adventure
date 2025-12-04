@@ -50,7 +50,7 @@ global.invertskin = false
 if os_type=os_android
 	global.mobile = true
 else 
-	global.mobile = true
+	global.mobile = false
 global.multiplayer = false
 windowtimer = 0
 windowname = ""
