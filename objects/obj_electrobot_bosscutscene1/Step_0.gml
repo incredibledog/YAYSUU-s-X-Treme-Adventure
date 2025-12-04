@@ -38,7 +38,7 @@ if global.cutscenestate=7
 	}
 	audio_sound_gain(mus_cutscene,0,2000)
 }
-if global.cutscenestate=7 && !audio_is_playing(snd_elecboss7vo_y) && !audio_is_playing(snd_elecboss7vo_t)
+if (global.cutscenestate=7 && !audio_is_playing(snd_elecboss7vo_y) && !audio_is_playing(snd_elecboss7vo_t)) || global.key_runp && global.cutscenestate<8
 {
 	global.cutscenestate=8
 	audio_stop_sound(mus_cutscene)

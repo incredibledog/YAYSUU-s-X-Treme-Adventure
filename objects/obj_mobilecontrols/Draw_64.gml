@@ -40,18 +40,24 @@ if global.inputtype = 3 && hide=false && !instance_exists(obj_stageclear) && !(i
 		}
 	}
 	if global.inlevel {
-		draw_sprite_ext(spr_up,0,96-global.controldistance,256,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_up))
-		draw_sprite_ext(spr_left,0,32-global.controldistance,320,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_left))
-		draw_sprite_ext(spr_right,0,160-global.controldistance,320,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_right))
-		draw_sprite_ext(spr_down,0,96-global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_down))
-		draw_sprite_ext(spr_jump,0,416+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_jump))
-		draw_sprite_ext(spr_dash,0,480+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_dash))
-		draw_sprite_ext(spr_run,0,544+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_run)) // YEEESH what a mess. Anything for VISUAL FEEDBACK...
-		if !(room=room_options_test) && !(room=room_soundtest)
+		if instance_exists(obj_electrobot_bosscutscene1)
 		{
-			draw_set_alpha(1)
-			draw_sprite(spr_pause,0,576,32)
+			draw_sprite_ext(spr_resume,0,544+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_run))
 		}
-		draw_set_alpha(1)
+		else {
+			draw_sprite_ext(spr_up,0,96-global.controldistance,256,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_up))
+			draw_sprite_ext(spr_left,0,32-global.controldistance,320,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_left))
+			draw_sprite_ext(spr_right,0,160-global.controldistance,320,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_right))
+			draw_sprite_ext(spr_down,0,96-global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_down))
+			draw_sprite_ext(spr_jump,0,416+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_jump))
+			draw_sprite_ext(spr_dash,0,480+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_dash))
+			draw_sprite_ext(spr_run,0,544+global.controldistance,384,1,1,0,c_white,global.controlalpha-(global.controlalpha*0.5*global.key_run)) // YEEESH what a mess. Anything for VISUAL FEEDBACK...
+			if !(room=room_options_test) && !(room=room_soundtest)
+			{
+				draw_set_alpha(1)
+				draw_sprite(spr_pause,0,576,32)
+			}
+			draw_set_alpha(1)
+		}
 	}
 }

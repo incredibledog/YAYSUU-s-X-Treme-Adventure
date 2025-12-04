@@ -3,7 +3,7 @@
 global.hp=3
 talking=false
 image_angle = 0
-if global.trial || global.levelloadtype=loadtype.respawn // skip the walk
+if global.trial || global.arcade || global.levelloadtype=loadtype.respawn // skip the walk
 {
 	x=160
 }

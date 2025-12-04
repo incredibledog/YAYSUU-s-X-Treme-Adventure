@@ -6,7 +6,12 @@ draw_set_halign(fa_left)
 draw_text(32,32,"EXTRAS")
 draw_text(32,96,"CREDITS")
 draw_text(32,128,"SOUNDTEST")
+if global.inputtype!=0
+{
+	draw_set_alpha(0.5)
+}
 draw_text(32,160,"CHEATS")
+draw_set_alpha(1)
 if !extrasunlock
 {
 	draw_set_alpha(0.5)

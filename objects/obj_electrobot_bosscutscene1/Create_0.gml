@@ -3,7 +3,7 @@
 talking=false
 bossname="ELECTRO-BOT"
 stringchr=0
-if global.trial || global.levelloadtype=loadtype.respawn
+if global.trial || global.arcade || global.levelloadtype=loadtype.respawn
 {
 	global.cutscenestate=8 // CUTSCENES, ARE FOR STORY MODE!
 	alarm_set(0,15)

@@ -80,6 +80,9 @@ if global.cutscenestate=6 && !audio_is_playing(snd_elecboss6vo_y) && !audio_is_p
 }
 if global.cutscenestate=8
 {
+	instance_destroy(obj_subtitle_new)
+	audio_group_stop_all(voicelines)
+	x=160
 	if global.char="Y"
 		sprite_index=spr_yaysuu_idle
 	else if global.char="T"

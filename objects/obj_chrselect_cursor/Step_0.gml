@@ -89,7 +89,7 @@ if (selected)
 		}
 	}
 }
-if global.key_runp && !global.trial && !global.arcade && !instance_exists(obj_notification)
+if global.key_runp && !global.trial && !global.arcade && !instance_exists(obj_notification) && !selected
 {
 	with instance_create_depth(0,0,depth-1,obj_notification)
 	{
@@ -126,7 +126,7 @@ else if !instance_exists(obj_notification)
 				scr_setupcharacter(global.char, 0)
 		}
 	}
-	if ((global.p2_key_menuaccept || global.p2_key_jump) && !global.multiplayer && !global.mobile && global.trial)
+	if ((global.p2_key_menuaccept || global.p2_key_jump) && !global.multiplayer && !global.mobile && (global.trial || global.arcade))
 	{
 		global.multiplayer=true
 		audio_play_sound(snd_confirm,1,false,global.sndvol)
@@ -173,6 +173,10 @@ else if !instance_exists(obj_notification)
 	else if ((global.key_upp) || (global.key_downp)) && !selected && !global.trial
 	{
 		global.arcade=!global.arcade
+		if !global.arcade
+		{
+			global.multiplayer=false
+		}
 		audio_play_sound(snd_move,1,false,global.sndvol)
 	}
 	/*else if global.key_upp

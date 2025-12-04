@@ -84,33 +84,32 @@ else if (!obj_fadeblack.fading)
 			{
 				case room_tutorial:
 					loadnewstage(global.lives, room_chillfields_1)
-					stageprogress=1
+					savestory(1)
 					break;
 				case room_chillfields_1:
 					loadnewstage(global.lives, room_chillfields_2)
-					stageprogress=2
+					savestory(2)
 					break;
 				case room_chillfields_2d:
 					loadnewstage(global.lives, room_chillfields_boss)
-					stageprogress=3
+					savestory(3)
 					break;
 				case room_chillfields_boss:
 					loadnewstage(global.lives, room_mysticmanor_1)
-					stageprogress=4
+					savestory(4)
 					break;
 				case room_mysticmanor_1c:
 					loadnewstage(global.lives, room_mysticmanor_2)
-					stageprogress=5
+					savestory(5)
 					break;
 				case room_mysticmanor_2c:
 					loadroom(room_demoending, loadtype.menu)
-					stageprogress=6
+					savestory(6)
 					break;
 				default:
 					loadroom(room_mainmenu, false)
 					break;
 			}
-			savestory(stageprogress)
 		}
 	}
 	else if global.key_menuquit && global.trial
